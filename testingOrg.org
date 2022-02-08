@@ -1,0 +1,13 @@
+#+TITLE: Testing Org
+
+#+begin_src python :output=file
+import numpy as np
+import matplotlib.pyplot as plt
+
+k = np.linspace(0, 1, 100)
+plt.plot(k, k + np.abs(k))
+plt.show()
+#+end_src
+
+#+RESULTS:
+: None

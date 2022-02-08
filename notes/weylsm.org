@@ -1,0 +1,218 @@
+#+TITLE: WIP Notes on Weyl and Dirac semimetals
+
+See meeting [[file:~/Documents/NTNU/10semester/meetings/01-17.org::Crossing][Type II SM]] for initial notes about this
+
+
+* Outline of section -- Type II
+This is partially based on the notes written on the meeting [[file:~/Documents/NTNU/10semester/meetings/01-17.org][01-17]]
+
+** History
+soluyanovTypeIIWeylSemimetals2015 first described these.
+The possibility of tilting the cone below the plane, giving conic sections with finite length, had not been considered before.
+In high energy phsycics this makes no sense, as it would break lorentz invairance (describe in more depth. See [[*Breaking Lorentz invariance][Breaking Lorentz invariance]]).
+In condensed matter physics, however, this is not an issue, and this tilting gives rise to a new class of weyl SM.
+The transition from type i to type ii is a critical/phase/abrupt transition, as the fermi surface goes from a point to a finite line.
+This gives rise to different material properties (cite, cite, cite), as the density of states is finite (check) due to the electron and hole pockets now being at the fermi level (define what these pockets are).
+
+Maybe mention some of the original predictions made about type ii, and whether or not they were correct.
+
+Can take inspiration from [[Weyl SM YT video][Weyl SM YT video]]  /Note: the talk is actually about Weyl semimetals in general, not only type ii/
+
+#+begin_quote
+The problem of the conic section of a plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines.
+Despite this, the possibility of a Weyl cone tilted such that the bands crosses the Fermi surface was never considered before Soluyanov et al described this new class of Weyl semimetals in 2015.
+This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects (some examples or cites).
+#+end_quote
+
+** Hamiltonian
+Firstly show example of realistic Hamiltonian of a Weyl SM, with a tunable parameter going from type I to type II.
+See also [[*Inclusion of more realistic energy dispersion for a Weyl SM][Inclusion of more realistic energy dispersion for a Weyl SM]] and the ridgeline plot in [[*Ridgeline plot][Ridgeline plot]]
+Around each of the nodes, the Hamiltonian may be linearized, giving the simple model of the linearized dirac cone, which perfectly matches its high energy equivalent particle -- the massless fermion.
+These linearized models are much easier to work with, and does well in describing the low energy interaction/behavior of the system.
+
+** Eigenvalues and -states
+Find the eigenvalues.
+Find spin states
+See [[*Eigenvalues and eigenstates][Eigenvalues and eigenstates]]
+Berry curvature
+See also [[*Inclusion of more realistic energy dispersion for a Weyl SM][Inclusion of more realistic energy dispersion for a Weyl SM]] 
+
+*** Landau level description
+Landau level description only valid for certain directions of the B field for a type II sm
+Outside of the region of validity the levels break down, and some other basis must be used.
+Worth to mention that this confused the original discoverers of the Tyep II to believe the chiral anomaly did not hold for certain directions, but later calculations has proved otherwise.
+
+Can use the very pretty figures showing the regions of validity of the LL
+[[file:figures/typeii_ll_region_yu.png]]
+
+[[file:figures/typeii_ll_region_Tchoumakov.png]]
+
+In the project thesis we did fin the LL of a untilted system, with quite a manual approach
+Apparently, this is not the best solution, and Tchoumakov et al for example write /while the Hamiltopnian can, in principle, within a lengthy calculation, be solvbed by the introduction of the ladder operators, .... a more elegant methjod consist of usign t a hyperbocli trransofrmation to change teh eigenvalue eqaution/
+Probaby better to use that formulation
+
+**** TODO Find the LL of untilted WP using the boost
+It might be that this does not make sense, and that the purpose of the boost is simply to get it into a frame where we have an untilted cone.
+/Yes, I think this is the case/
+
+**** TODO Fidn the LL of tilted WP using the boost
+The issue to be solved is that for the tilted system we have qx/qy present in the diagonal of our hamiltonian, and wer are thus unable to use the ladder operator approach.
+However, we may use a boost to transform our Hamiltonian to a form where qx/qy are restricted to the off-diagonal elements.
+
+*** Plot
+
+*** Fermi Arc?
+
+** Show calculation of Chiral anomaly?
+Done using quasiclassical theory.
+Original paper's issue when using LL
+
+** Interpretation of the states dipping through the plane (pockets)
+
+** Material realizations
+
+
+* Eigenvalues and eigenstates
+
+** DONE Show the eigenstates as well as values for a Dirac SM.
+Should show how the spin behaves on the cone, probably similar to a Rashba.
+This is useful showing more explicilty the chirality of the cones?
+
+*** DONE Without v_f
+We did this, and found the spin expectation values to be \( (k_x, k_y, k_z) \).
+See [[file:~/Documents/NTNU/10semester/mathematica/Spin_state_weyl.nb]] and notes on Remarkable
+
+*** DONE With v_f
+
+** Notes about the eigenstates
+The expectation value of the spin we arrived at takes the shape of a "hedgehog", or a source/sink.
+This corresponds exactly with the theory of Berry curvature/charge, and the topological nature of the Weyl points.
+Is this coincidental or is there a relation/even the exact same thing?
+See more in burkovTopologicalSemimetals2016b.
+
+The expectation value of the spin in a rashba system, as shown in the project thesis, takes the form of a rotating field around the origin.
+Can we relate this to berry curvature or some topological quantity as well?
+d
+
+** Ridgeline plot
+Using the Hamiltonian in sharmaChiralAnomalyLongitudinal2017 we found the eigenvalues of a more realistic model of a Type II weyl sm and plotted the transition from at type I to a type II.
+See [[file:~/Documents/NTNU/10semester/mathematica/TYPEII_model.nb][Notebook on the TypeII model]], and the figure [[file:figures/typeIIridgeline.png][file:~/Documents/NTNU/10semester/notes/figures/typeIIridgeline.png]]
+
+
+* Weyl SM YT video
+[[youtube:Du5z7NEYYDw][Talk about Weyl SM]]
+Nice intro we might use for an introduction or something, with nice words like discovery of the year and such
+
+** Quick live notes
+- The /fermion trio/ completed with Dirac(2005), Majonara(2012), and Weyl(2015).
+  Maybe interesting to briefly note what Majonara Fermions are?
+- Some confusion to 2D vs 3D. Seems like he calls 2D (graphene) Dirac and 3D Weyl.
+  Am I mistaken, does he use out of date terminmology or is there several contradictory terminmologies out there?
+- What are right and left movers in 3D?
+  This is related to the chirality of the weyl points. What is the chirality in three (or event two) dim? <<dim_discussion>>
+- Surface state gives spiral motion in real space
+  Why? I don't understand this
+- Realistic Hamiltonian.
+  In the project thesis we used the simplest expansion of a cone around the weyl point.
+  Would it be interesting to use a more realistic Hamiltonian, valid for a larger region of the Brillouine zone?
+- Landauer formula vs. Kubor formula
+  Could this be a better way to do stuff?
+
+
+* Type II - Quick notes
+First described in soluyanovTypeIIWeylSemimetals2015, quite well written.
+Can write about classification, thermodynamic properties, the fact that the chiral anomaly is broken if the magnetic field is not in a certain direction.
+
+Should better understand what hole and electron pockets are
+
+** Classification Type I and Type II
+Refer to quadric surfaces and conic sections.
+See for example https://link.springer.com/content/pdf/10.1007%2F978-1-4612-4390-8.pdf p. 195
+
+*** In two dimensions
+In two dimensions this is the conic intersection problem.
+Specifically, as the plane of intersection passes through the origin, we have the degenerate conic intersection.
+It is a matter of definition if this case is included in the conic intersections, so this is important to be aware of.
+However, the solutions to the degenerate conic intersection is simple, and we straight out get a set of cases.
+We may use these to show that is must be one of two cases.
+
+*** In three dimension
+I believe it is here also the /degerate/ quadric surface problem, but I don't really know.
+Probably important to check that the degerate case is included in whatever formalism one uses for categroization.
+Anyways, the link above should probably give some good insight.
+
+** What is the interpretation of the states "dipping" through the plane?
+We reffer to these as electron and hole pockets, I believe, but what is the interpretation of this and which physical consequences does it have?
+
+** Breaking Lorentz invariance
+Explicitly show how the lorentz invairance is broken
+All sources state that the lorentz invariance is broken when over-tilting a cone, but would be nice to show explicilty
+Also somewhere noted that when the velocity is the fermi velocity and not the speed of light, lorentz invairance is broken anyways
+
+** Anoamly and Landau levels
+
++The chiral anomaly is not preserved in Type II if the magentic field is of a certain direction.
+This has to do with the landau levels being gapped, so it is probably an issue for us as well.+
+The results foun by Burkov that the chiral anomaly does not hold for certain directions of the magnetic field was mistaken.
+As was shown by sharmaChiralAnomalyLongitudinal2017, the calculation done by Burkov was too naive.
+
+** Fermi arc
+What is a Fermi arc?
+- Talked about in YouTube video [[*Weyl SM YT video][Weyl SM YT video]], where he discusses Fermi circle vs arc.
+- Generally called Fermi contours
+
+** Source of the tilting vector
+What is the physical origin of the tilt/tilting vector?
+It is to some degree material spesific, but is it also dependent on for example externally applied fields
+
+** Conic seciton not at the "origin"
+If the Fermi level is above (below) the dirac node, will not the conic seciton be more exotic?
+
+* Collapse of Landau levels in Weyl semimetals
+** Collapse of LL and pseudo LL
+arjonaCollapseLandauLevels2017
+What on earth are pseudo LL (landau levels)?
+
+* Conformal anomaly in Type II weyl SM
+
+** Thoughts
+
+*** Inclusion of more realistic energy dispersion for a Weyl SM
+I think a better structure of the section on weyl sm i sto first present a more realistic dispersion relation, and then show how we may linaearize the cones about the node points.
+This also illustrates clearly how the cones should be tilted in realtion to each other etc.
+
+** Landau levels
+The issue with Type II Weyl SM is that the Landau level description collapses for certain directions of the magnetic field.
+For type I all directions are compatible with LL, but for Type II only some directions are.
+This caused for example the original paper describing Type II to mistakenly believe that the Chiral anomaly would only be present for certian directions of the B field, however, as was shown later, this was an errenous conclusion caused by not recognizing the collapse of the LL.
+A quasiclassical computation showed that the Chiral anomaly is present for all directions of the magnetic field, and that one observes no critical effects at the transition between Type I and Type II.
+As far as I understood, the quasiclassical approach was able to include the effects of the anomaly by including an axion term, the origin of the chiral anomaly.
+If we were to try something similar, we would, I think, have to find a similar term causing the conformal anomaly.
+Whether such a term exists, I don't know.
+We will, probably, be able to use the LL approach within the region of validity for the LL description.
+
+* Nature Burkov
+burkovTopologicalSemimetals2016b
+** Chiral anomaly
+Always see the chiral anomaly described in one dimesnion.
+What are the states and what is the meaning of right and left movers when we are in two or three dimensions?
+See also [[dim_discussion]] above.
+
+*Answer:*
+The Landau levels are degenerate in \(k_x, k_y\) (for a B-field in the z-direction).
+Thus, the Landau level energy spectrum is effectively one-dimensional, making the usual discussion perfectly sound.
+** Supplementary material, anomaly dependence on direction
+
+*** Contradictory results?
+sharmaChiralAnomalyLongitudinal2017 writes
+=It has been suggested that ... [the] chiral-anomaly-induced negative LMR is strongly anisotropic, vanishing when the applied magnetic field is perpendicular to the direction of tilt of Weyl fermion cones in a type-II WSM=
+however
+=We analyze chiral anomaly in a type-II WSM in a quasiclassical Boltzmann framework, and find that the chiral-anomaly-induced positive longitudinal magnetoconductivity is present along any arbitrary direction.=
+Is this to be understood as them getting a contradictory result?
+In that casek, we must find out who are right.
+
+*It seems like the results found in Burkov was wrong*
+
+*** Figure 3
+Is this figure wrong?
+How did they get separation of the upper and lower energy levels?

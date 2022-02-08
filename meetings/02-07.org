@@ -1,0 +1,8 @@
+#+TITLE: 02 07
+#+DATE: [2022-02-07 Mon]
+
+* Summary
+- Said that I had read much, mainly about type II.
+- Will try to write down more for the next meeting
+- LL collapse for Type II for certain directions.
+  Will affect how we can calculate the conformal anomaly
