@@ -1,6 +1,5 @@
 \section{Type II Weyl semimetals}
 
-
 The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines.
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \citeauthor{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
@@ -14,6 +13,7 @@ The transition between Type-I and Type-II is abrubt -- the Fermi surface goes fo
 \todo{Make sure it is one dim also for the 3D case, quadric surface, not conic intersection}
 Type-II also has electron and particle pockets at the Fermi level.
 While the density of states for a Type-I semimetal goes to zero as one approaches the Fermi level, this causes Type-II to have a finite density of states at the Fermi level.
+\todo{End with something like: all in all this gives type ii weyl semimetal manifestly different properties from tyep i, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective}
 
 \subsection{Hamiltonian}
 We will firstly consider a slightly more realistic toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
@@ -22,15 +22,196 @@ We will then continue by linearizing the model around the Weyl points, regaining
 
 Using the general time-reversal breaking model described by \citeauthor{mccormickMinimalModelsTopological2017} we have
 \begin{equation}
-  H(\vec{k}) = \left[ ( \cos k_x + \cos k_z - 2 )m + 2 t (\cos k_x - \cos k_0) \right] \sigma_1
-  - 2 t \sin k_y \sigma_2 - 2t \sin k_z \sigma_3
-  + \gamma (\cos k_x - \cos k_0).
+  \begin{split}
+    H(\vec{k}) &= \left[ ( \cos k_x + \cos k_z - 2 )m + 2 t (\cos k_x - \cos k_0) \right] \sigma_1\\
+    &\pe - 2 t \sin k_y \sigma_2 - 2t \sin k_z \sigma_3
+    + \gamma (\cos k_x - \cos k_0).
+  \end{split}
 \end{equation}
-The parameter $\gamma$ controls the tilting of the emerging cones.
+The model has Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
+Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
+The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
+We call these hole and electron pockets, respectively.
+
+Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac cone
+\begin{equation}
+  \label{eq:1}
+  H(\vec{K}' ^{\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \quad k_{x}, k_{y}, k_{z} \ll 1.
+\end{equation}
+When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian of around the cone, is
+\begin{equation}
+  \label{eq:2}
+  H'(\vec{k}) = \mp 2 t k_{x} \sigma_{x} - 2t k_{y} \sigma_{y} - 2 t k_{z} \sigma_{z} \mp \gamma k_{x}.
+  % h'(\vec{v}) = -2t \vec{k} \vec{\sigma} - \gamma k_{x}.
+\end{equation}
+However, as the two noes are brought closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
+The expression may be made even more clear by moving the sign \(\pm\)-sign into the tilt parameter \(\gamma\).
+The Hamiltonian is invariant under a sign change of the first term, as the isotropic Dirac Hamiltonian is invariant under inversion.
+In the tilt-term, we move the sign dependence into \(\gamma \), and the linearized model is
+\begin{equation}
+  \label{eq:3}
+  H'(\vec{k}) = - 2t \vec{k} \vec{\sigma} - \gamma^{\pm} k_{x},
+\end{equation}
+where \(\gamma ^{\pm} = \pm \gamma \) with the upper sign corresponding to the node at \(k_{x} = + k_{0}\) and the lower sign corresponds to the node at \(k_{x} = - k_{0}\).
+As expected, we get two Dirac cones, tilting in opposite direction, but with the same amount.
+\todo{How does this affect the Berry curvature and chern number?}
+\todo{Maybe prettier/more correct to invert ky and kz, as that would also give the opposite chirality of the dirac points}
+
+The linearized model are accurate in describing low energy interactions around the Fermi level.
+For higher energies their validity falls apart, and more complex models are warranted.
+In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
+
+\begin{itemize}
+  \item gives rise to cones tilting opposite direction
+  \item Linearized model valid for low energy interaction. For higher energy, the perfect cone model is not valid, as the cones does in fact touch.
+  \item In this model, the hole pocket is ``shared'' between the two cones. There are also models with individual pockets (see \cite{mccormickMinimalModelsTopological2017})
+\end{itemize}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/conicSection}
+  \caption{\label{fig:conic-section-sketch} }
+\end{figure}
+
 
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.7\textwidth]{figures/typeIIridgeline}
-  \caption{\label{fig:ridgeline} \todo{Write this} }
+  \caption{\label{fig:ridgeline} \todo{Write this} The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).}
 \end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
+  \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
+    See main text for details about the model.}
+\end{figure}
+
+
+\subsection{Eigenstates and Landau levels}
+The eigenvalues of Type-II Weyl semimetal simple to find, and are not qualitatively different from those of Type-I, other than the appearence of particle and hole pockets at the Fermi level.
+We will also consider the Landau levels of these materials, which importantly are very different from Type-I.
+In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field \cite{soluyanovTypeIIWeylSemimetals2015}\cite{sharmaChiralAnomalyLongitudinal2017}.
+
+Eigenstates, spin, berry, etc
+
+The issue with the Landau level description is that for certain directions of the \(B\)-field, the levels break down and become imaginary.
+For Type-I materials, the description is valid for all dierections of the \(B\)-field, but as the cone tip into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt is increased, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
+
+Consider the Hamiltonian
+\begin{equation}
+  \label{eq:4}
+  H = \vec{\omega_{0}} \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma},
+\end{equation}
+where \(\vec{\omega_{0}}\) is the tilt vector and \(\vec{v}\) is the Fermi velocity, which in general is anisotropic.
+To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
+Firstly, assume that the tilt vector \(\vec{\omega_{0}}\) is in the \(x,z\)-plane, \(\vec{\omega_{0}} = (\omega_{\perp}, 0, \omega_{\parallel})\), which we can always achieve by a rotation around \(z\).
+\todo{Proof by figure}
+Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{q} = \vec{k} + e \vec{A}\), and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
+The Hamitonian can thus be written
+\begin{equation}
+  \label{eq:5}
+  H_{B} = \omega _{\perp} \left(k_{x} - e B_{z} y \right) + \omega _{\parallel} k_{z} + v_{y} k_{y} \sigma _{y} + v_{z} k_{z} \sigma _{z} + v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
+\end{equation}
+and the Landau level equation is
+\begin{equation}
+  \label{eq:6}
+  \left(H_{B} - E\right) \ket{\psi } = 0.
+\end{equation}
+In order to use the ladder operator method used for the untilted cone, we must get rid of the \(q_{x}\) on the diagonal of the Hamiltonian.
+To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
+Act with the hyperbolic rotation operator \(\exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:6}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
+By introducing the state in the rotate frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
+\begin{equation}
+  \label{eq:7}
+  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}}.
+\end{equation}
+
+We rewrite the Hamiltonian (Eq. \eqref{eq:5}) in a more compact and explicit way
+\begin{equation}
+  \label{eq:8}
+  H_{B} = \left(\omega _{\perp} q_{x} + \omega _{\parallel}\right) \mathcal{I}_2 + \sum_i v_{i} q_{i} \sigma _{i},
+\end{equation}
+where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
+We now make the fortunate observation that, with the hyperbolic rotation operator denoted \( R = \exp [\Theta / 2 \sigma_{x}]\), the diagonal elements of
+\[
+R \sigma_{i} R
+\]
+are zero for $i=y$ and non-zero for \(i=x,z\).
+We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, without accidentaly rotating the \(y\) components into the diagonal.
+
+The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(q_{x}\) on the diagonal, i.e.
+\[
+  \omega _{\perp} q_{x} \mathcal{I}_{2} + v_{x} q_{x} \sigma _{x}.
+\]
+We will now find the boost parameter that eliminates \(q_{x}\) from the diagonal.
+We have
+\begin{equation}
+  \label{eq:9}
+  R^{2} = e^{\Theta \sigma _{x} } =
+  \begin{pmatrix}
+    \cosh \theta & \sinh \theta \\
+    \sinh \theta & \cosh \theta
+  \end{pmatrix}
+\end{equation}
+and as $[R, \sigma_{x}] = 0$,
+\begin{equation}
+  \label{eq:10}
+  R \sigma _{x} R =  R^{2} \sigma _{x} =
+  \begin{pmatrix}
+    \sinh \theta & \cosh \theta \\
+    \cosh \theta & \sinh \theta
+  \end{pmatrix},
+\end{equation}
+as the effect of \(\sigma _{x}\) is to transpose the rows.
+The requirement for \(q_{x}\) to be rotated out of the diagonal is thus
+\begin{equation}
+  \label{eq:11}
+  \omega _{\perp} \cosh \theta + v_{x} \sinh \theta = 0.
+\end{equation}
+Solving for \(\theta \) we get
+\begin{equation}
+  \label{eq:12}
+  \theta = \log (
+  \pm \frac{\sqrt{v_{x} - \omega _{\perp}}}{\sqrt{v_{x} + \omega _{\perp}}}
+  ).
+\end{equation}
+Alternatively, written in a slightly suggestive form,
+\begin{equation}
+  \label{eq:13}
+  \tanh \theta =
+  - \frac{\omega _{\perp}}{v_{x}}.
+\end{equation}
+\todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
+
+Before we proceed any further, we will put the above into a more solid context, defining some useful quantities and more carefully investigte what is going on, which will be of help later when considering for the regions of validity, and the physical reason behind it.
+
+\todo{nice plot of the landau levels acutally being squeezed}
+
+Introduce the dimensionless \emph{tilt parameter}
+\[
+  \vec{t} =
+  \left(
+  \frac{\omega_{0x}}{v_{x}},
+  \frac{\omega_{0y}}{v_{y}},
+  \frac{\omega_{0z}}{v_{z}}
+\right).
+\]
+Let also \(v_{i} = v_{0} a_{i}\), where \(\vec{a}\) is a vector describing the anisotropy of the system.
+In these parameters, the eigenvalues of the system are
+\begin{equation}
+  \label{eq:14}
+  E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}}.
+\end{equation}
+The system is Type-II if the first term dominates for any \(\vec{k}\), and Type-I if the last term dominates \cite{soluyanovTypeIIWeylSemimetals2015}.
+The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
+\begin{proof}
+  We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
+  In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
+\end{proof}
+
+
+We will boost the frame of the tilted cone such that the system is again isotropic, and use the well known solution for the Landau levels in that frame.
+The issue is that the boost is only valid for certain directions of the field.
+Add pretty figures describing the situation.
