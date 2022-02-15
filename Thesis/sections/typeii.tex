@@ -37,7 +37,7 @@ We call these hole and electron pockets, respectively.
 Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac cone
 \begin{equation}
   \label{eq:1}
-  H(\vec{K}' ^{\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \quad k_{x}, k_{y}, k_{z} \ll 1.
+  H(\vec{K} ^{'\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \quad k_{x}, k_{y}, k_{z} \ll 1.
 \end{equation}
 When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian of around the cone, is
 \begin{equation}
@@ -177,6 +177,7 @@ Solving for \(\theta \) we get
   \pm \frac{\sqrt{v_{x} - \omega _{\perp}}}{\sqrt{v_{x} + \omega _{\perp}}}
   ).
 \end{equation}
+\todo{NB: depending of choice of sign in log, we get different signs in answer}
 Alternatively, written in a slightly suggestive form,
 \begin{equation}
   \label{eq:13}
@@ -210,6 +211,109 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
   We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
   In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
 \end{proof}
+
+
+Expressed in the parameter \(t\), the result in Eq. \eqref{eq:13} has an intuitive, and quite visual, interpretation.
+As described above, we have rotated our frame such that the tilt is confined to the \(x,z\)-plane, i.e. no tilt in the \(y\)-direction.
+The required hyperbolic tilt angle to eliminate the \(q_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
+\begin{equation}
+  \label{eq:15}
+  \theta = - \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - \tanh^{-1} t_{x}.
+\end{equation}
+The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
+\begin{figure}[ht]
+  \centering
+  % \includegraphics[options]{figures/path.pdf}
+  \begin{tikzpicture}
+    \pgfkeys{/pgf/declare function={arctanh(\x) = 0.5*(ln((1+\x)/(1-\x)));}}
+    \begin{axis}[
+      xmin=-1.2, xmax=1.2,
+      ymin=-3.9, ymax=3.9,
+      samples=200,
+      enlarge x limits=false,
+      grid=both,
+      no markers,
+      % axis equal
+      xlabel=\(x\),
+      ylabel=\(\tanh^{-1} x\),
+      % ytick=none,
+      ]
+      \addplot +[thick,domain=-0.999:0.999] {arctanh(x)};
+      \draw +[thick,dashed,domain=-0.99:0.99] (axis cs:1,-4) -- (axis cs:1,4);
+      \draw +[thick,dashed,domain=-0.99:0.99] (axis cs:-1,-4) -- (axis cs:-1,4);
+    \end{axis}
+  \end{tikzpicture}
+  \caption{\label{fig:arctanh} Plot of \(\tanh^{-1}\), which diverges as the argument goes to \(\pm 1\).}
+\end{figure}
+For \(t_{x} < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
+For \(t_{x} \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
+\todo{ Is this argumentation sufficient? What if we just have to use a different approach to find the LLs? }
+It is also interesting that there are no restrictions on the tilt in \(z, t_{z}\).
+Visually, this can be visualized by plotting the \(t\)-vector inside a unit sphere.
+If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
+Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
+All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of the \(t\)-vector.
+As the \(t\)-vector gets larger, the region of valid directions is reduced to an ever smaller cone around \(z\).
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground.png}
+  \caption{\label{fig:tiltSphere} TODO}
+\end{figure}
+
+We now return to solving Eq. \eqref{eq:7}, using the solution angle we just found.
+By insertion, and after some clean up, we get
+\emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
+\begin{equation}
+  \label{eq:16}
+  =
+  \begin{pmatrix}
+    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + \gamma q_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma /v_{x}\\
+    i k_{y} v_{y} + \gamma q_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma  / v_{x}
+    & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
+  \end{pmatrix}.
+\end{equation}
+after some more clean up
+\begin{equation}
+  \label{eq:17}
+  =
+  \begin{pmatrix}
+    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + v_{x} q_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta \\
+    i k_{y} v_{y} + v_{x} q_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta
+    & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
+  \end{pmatrix}.
+\end{equation}
+Introducing \(\tilde{q}_{x} = q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) this may be further simplified as
+\begin{equation}
+  \label{eq:18}
+  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} + \tilde{q}_{x} v_{x} \sigma _{x} + q_{y} v_{y} \sigma _{y} + q_{z} v_{z} \sigma _{z}.
+\end{equation}
+If we now again introduce the magnetic field using minimal coupling, \(q_{x} \to  q_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} / \gamma \) in the new quantities, as \(\tilde{q}_{x} \to  \tilde{q}_{x} - e y B_{z} /\gamma \).
+The Landau level equation thus reads
+\begin{equation}
+  \label{eq:19}
+  \left[
+  \sum\limits_{i} v_{i} \left(\tilde{q}_{i} + e A_{i} \right) \sigma _{i}
+\right  ] \ket{\tilde{\psi}} =
+(E-\omega_{\parallel} k_{z}) \gamma \ket{\tilde{\psi}},
+\end{equation}
+where \( \tilde{q}_{x} = q_{x}, \tilde{q}_{y} = q_{y}, \vec{A}=-B_{z} / \gamma  y \hat{x}\).
+We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
+\begin{equation}
+  \label{eq:20}
+  \left(E-\omega _{\parallel} k_{z} \right) \gamma = \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{\gamma } \hbar + k_{z}^2 \hbar ^2}
+\end{equation}
+\begin{equation}
+  \label{eq:21}
+  E = \omega _{\parallel} k_{z} + \sign(m) v_{F} \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + k_{z}^2\hbar ^2 /\gamma ^2}
+\end{equation}
+
+We may now use our previous solution
+Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
+\todo{Fix anisotropic directions}
+
+
+\todo{Squeezing, etc}
+
 
 
 We will boost the frame of the tilted cone such that the system is again isotropic, and use the well known solution for the Landau levels in that frame.

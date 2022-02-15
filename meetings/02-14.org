@@ -1,0 +1,15 @@
+#+TITLE: 02 14
+
+* Splitting of cones in tilted system
+How does the Hamiltonian look like when we split the cones in a tilted system?
+Which symmetries are broken etc.
+This would necessitate extending to a 4x4 system, I believe
+
+* Symmetries of H
+Alireza wants to know the symmetries of H, P and T
+Which symmetries are broken for nodal loop?
+Maybe look at charge conjugation C and CT
+
+* Remember to think about dimensionality
+
+* PRL 118, 106402 (2017)
