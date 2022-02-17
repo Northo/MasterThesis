@@ -1,0 +1,7 @@
+#+TITLE: 02 28
+
+* Minimal model and two cones
+In the minimal model for Type II we have a 2x2 H with two momentum-separated cones.
+If I understand correctly, we can extend the Hamiltonian to 4x4, and explicitly see the degeneracy of the spins.
+Alternatively, we see that if the H is TR invariant, the spin flipped state is also an eigenstate??
+So, are there really four cones in the minimal coupling, with two and two superimposed??
