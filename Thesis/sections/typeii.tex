@@ -319,6 +319,27 @@ The effect of the tilt on the Landau levels is to squeeze the Landau levels toge
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
 
+The eigenstate in the position basis
+\begin{equation}
+  \label{eq:27}
+  \braket{\vec{r} | \tilde{\psi}} =
+  \frac{1}{\sqrt{L_{x} L_{y}}}
+  \frac{e^{ik_{x} x} e^{ik_{y} y}}{\sqrt{\alpha _{k_{z} m s}^2 + 1}}
+  e^{-\frac{y - k_{x} l_{B}^2}{2 l_{B} ^2}}
+  \begin{pmatrix}
+    \frac{\alpha _{k_{z} m s}}{\sqrt{
+        2^{M-1} (M-1)! \sqrt{\pi} l_{B}
+      }}
+    H_{M-1} \left(\frac{y-k_{x} l_{B}^2}{l_{B}}\right)\\
+    \frac{1}{\sqrt{
+        2^{M} M! \sqrt{\pi} l_{B}
+      }}
+    H_{M} \left(\frac{y-k_{x} l_{B}^2}{l_{B}}\right)\\
+  \end{pmatrix},
+\end{equation}
+and thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\psi }\) of the tilted system is easily found.
+
+
 \todo{squeezing figure}
 
 Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
@@ -332,3 +353,127 @@ Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
 We will boost the frame of the tilted cone such that the system is again isotropic, and use the well known solution for the Landau levels in that frame.
 The issue is that the boost is only valid for certain directions of the field.
 Add pretty figures describing the situation.
+
+\section{Notes}
+\subsection{Spin states for Dirac cone}
+See mathematica file.
+
+Consider a simple Dirac cone Hamiltonian \(H_{D} = s v_{F} \vec{\sigma} \vec{p}\), with \(s\) denoting the chirality of the cone.
+The eigenvalues of the system is of course \(E = \pm v_{F} k, \quad k=|\vec{k}|\).
+We want to find the eigenstates of this system.
+Assume plane wave state, and some arbitrary linear combination of spin up and spin down,
+\[
+  \psi _{\pm} = e^{i \vec{k} \vec{r}} \alpha
+  \begin{pmatrix}
+    1\\
+    b
+  \end{pmatrix},
+\]
+where \(\alpha \) is some normalization.
+Solving the time independent Schrodinger equation
+\[
+H \psi = E \psi,
+\]
+we may solve for \(b\), which gives
+\begin{equation}
+  \label{eq:23}
+  b = -\frac{k_{z} \pm k}{k_{x} - i k_{y}}.
+\end{equation}
+Requiring normalization of the state \(\braket{\psi | \psi } = 1\) gives the normalization
+\[
+|\alpha |^2 = \frac{1}{1 + |b|^2}.
+\]
+
+Having found the states, we find the spin expectation value
+\begin{equation}
+  \label{eq:24}
+  \vec{S} = \braket{\psi | \hat{S} | \psi },
+\end{equation}
+where \(\vec{S}\) is the spin expectation value and \(\hat{S} = \frac{\vec{\sigma}}{2} \) is the spin operator, where \(\hbar \) was set to 1.
+Simply evaluating Eq. \eqref{eq:24}, yields
+\begin{equation}
+  \label{eq:25}
+  \vec{S} = \pm \frac{\vec{k}}{2 k}.
+\end{equation}
+
+The spin structure is that of a hedgehog.
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/spinStructureWeyl}
+  \caption{\label{fig:spinStructure} }
+\end{figure}
+
+
+
+\subsection{4x4 tilted weyl cone}
+In order to separate weyl cones in momentum, we introduce a pseuod spin degree of freedom, making the system 4x4.
+We may then get solutions with the cones separated in momentum (or energy).
+We may also ask what heppens if we try to separate tilted cones?
+
+Firstly, in the most intuitive way to extend the 2x2 tilted cones to 4x4, we get that the cones tilt opposite direction, thus not superimposed even before separating in momentum.
+They are after that simple to separate in momentum.
+We might wonder if it makes sense to do it in this way.
+
+The lattice model of the energy dispersion to explain tilted cones gives two cones separated in momentum, and tilting corresponds to ``bending'' the dispersion curves between them.
+Maybe we therefore always have cones separated in momentum, and thus tilting superimposed does not make sense?
+All depends on the origin of the tilt I believe.
+Also, we must not confuse the global dispersion relation, to the Dirac cones which are expansions around the nodes.
+
+Key to understand how spin behaves in all of this, and also maybe the symmetries.
+
+To properly investigate the symmetry properties of the system, we must consider the 4x4, not 2x2 Hamiltonians.
+While the 2x2 system does a goood job at describing a single cone, much important phsycis is lost when reducing the 4x4 Hamiltonian.
+For example, the requirement that the total Berry curvature over the entire Briolluine zone is zero is not met for the 2x2 Hamiltonian, as it describes only one cone of a certain chirality.
+The 4x4, however, includes two cones, which may in general be superimposed, thus conserving the total zero-divergence of the Berry curvature.
+As a matter of fact, the inclusion of both cones is important also for symmetry considerations.
+
+Let
+\[
+  H = v_{F} \tau _{x} \otimes \vec{\sigma} \vec{k},
+\]
+where \(\tau \) is some pseudo spin degree of freedom, transforming like \(\vec{r}\) under parity in time reversal.
+This system describes two superimposed cones at the origin, with opposite chirality.
+The effect of parity \(\mathcal{P}\) and time reversal \(\mathcal{T}\) is
+\begin{table}[h]
+  \centering
+  \begin{tabular}{LC}
+    & \(\mathcal{P}\) & \(\mathcal{T}\)\\
+    \hline
+    \(\tau \) & - & +\\
+    \(\sigma \) & + & -\\
+    \(k\) & - & -
+  \end{tabular}
+\end{table}
+\begin{equation}
+  \label{eq:26}
+  \begin{aligned}
+    \mathcal{P} \tau \mathcal{P}^{\dagger} &= -\tau, & \mathcal{T} \tau \mathcal{T}^{\dagger} &= +\tau\\
+    \mathcal{P} \sigma  \mathcal{P}^{\dagger} &= + \sigma,  & \mathcal{T} \sigma  \mathcal{T}^{\dagger} &= -\sigma \\
+    \mathcal{P} k \mathcal{P}^{\dagger} &= -k, & \mathcal{T} k \mathcal{T}^{\dagger} &= -k
+  \end{aligned}
+\end{equation}
+Obviously then, the Hamiltonian is both time reversal and parity invariant, as \(\mathcal{P} \mathcal{P}^{\dagger} = \mathcal{T} \mathcal{T}^{\dagger} = 1\).
+
+A tilt term \(\tau _{x} \otimes \mathcal{I} \vec{\omega} _{0} \vec{k}\) breaks time reversal invariance, while maintaining parity invariance.
+This is due to the two cones of opposite chirality tilting in opposite directions.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[->] (-4, 0) -- (4, 0) node[right] {\(k\)};
+    \draw[->] (0, 0) -- (0, 4) node[right] {\(E\)};
+
+    % vf = 1, v0 = 0.8
+    \draw[blue] (-3.5, 0.7) -- (0, 0) -- (2, 3.6) node[right] {\(\ket{\uparrow}\)} coordinate[pos=0.7] (a);
+    \draw[red] (3.5, 0.7) node[right] {\(\ket{\downarrow }\)} -- (0, 0) -- (-2, 3.6)
+    coordinate[pos=0.7] (b);
+
+    \draw[->] (a) -- ++(1, 0);
+    \draw[->] (b) -- ++(1, 0);
+  \end{tikzpicture}
+  \caption{Time reversal breaking in tilted system.
+    Cross section in the tilt direction shown, with blue showing one cone and red the other.
+    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
+  }
+\end{figure}

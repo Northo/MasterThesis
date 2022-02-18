@@ -5,3 +5,9 @@ In the minimal model for Type II we have a 2x2 H with two momentum-separated con
 If I understand correctly, we can extend the Hamiltonian to 4x4, and explicitly see the degeneracy of the spins.
 Alternatively, we see that if the H is TR invariant, the spin flipped state is also an eigenstate??
 So, are there really four cones in the minimal coupling, with two and two superimposed??
+
+* Hamiltonian or energy band must be invariant symmetry?
+Is it the Hamiltonian or energy band that must be invariant under a symmetry?
+Take, for example, \(H=v_{F} k \sigma \).
+Under time reversal, \(k\to -k, \sigma \to -\sigma \), it is obviously invariant.
+However, under inversion, \(k\to -k, \sigma \to \sigma \), it is not, but the energy bands are.
