@@ -120,6 +120,10 @@ and the Landau level equation is
   \left(H_{B} - E\right) \ket{\psi } = 0.
 \end{equation}
 In order to use the ladder operator method used for the untilted cone, we must get rid of the \(q_{x}\) on the diagonal of the Hamiltonian.
+\footnote{It would also be possible to choose the frame such that the tilt was both in \(x\) and \(y\) direction, in which case we would get ladder operators also on the diagonal.
+  This system, albeight tedious, could also have been solved directly.
+  \todo{Verify this}
+}
 To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
 Act with the hyperbolic rotation operator \(\exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:6}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
 By introducing the state in the rotate frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
@@ -282,36 +286,52 @@ after some more clean up
     & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
   \end{pmatrix}.
 \end{equation}
-Introducing \(\tilde{q}_{x} = q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) this may be further simplified as
+In order to simplify this further, absorb \(\gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) into \(q_{x}\).
+Also, we will rescale all momenta to make the effective Fermi velocity isotropic.
+Thus, let
+\begin{equation}
+  \begin{split}
+    \tilde{q}_{x} &= \frac{v_{x}}{v_{F}} \left[  q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - e}{v_{x}} \right],\\
+    \tilde{q}_{y} &= \frac{v_{y}}{v_{F}} q_{y},\\
+    \tilde{q}_{z} &= \frac{v_{z}}{v_{F}} q_{z}.\\
+  \end{split}
+\end{equation}
+The Hamiltonian is thus
 \begin{equation}
   \label{eq:18}
-  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} + \tilde{q}_{x} v_{x} \sigma _{x} + q_{y} v_{y} \sigma _{y} + q_{z} v_{z} \sigma _{z}.
+  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} +
+  v_{F} \tilde{q}_{i} \sigma _{i}.
 \end{equation}
-If we now again introduce the magnetic field using minimal coupling, \(q_{x} \to  q_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} / \gamma \) in the new quantities, as \(\tilde{q}_{x} \to  \tilde{q}_{x} - e y B_{z} /\gamma \).
+If we now again introduce the magnetic field using minimal coupling, \(q_{x} \to  q_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
+This is because \(\tilde{q}_{x} \to  \tilde{q}_{x} - e y \frac{v_{x}}{v_{F}}  B_{z} /\gamma \), and including the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
+
 The Landau level equation thus reads
 \begin{equation}
   \label{eq:19}
   \left[
-  \sum\limits_{i} v_{i} \left(\tilde{q}_{i} + e A_{i} \right) \sigma _{i}
+  \sum\limits_{i} v_{F} \left(\tilde{q}_{i} + e A_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
 (E-\omega_{\parallel} k_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
-where \( \tilde{q}_{x} = q_{x}, \tilde{q}_{y} = q_{y}, \vec{A}=-B_{z} / \gamma  y \hat{x}\).
+where \(\vec{A}=-B_{z} \frac{v_{x} v_{y} }{v_{F}^2} / \gamma  \tilde{y} \hat{x}\).
 We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
-\begin{equation}
+\begin{align}
   \label{eq:20}
-  \left(E-\omega _{\parallel} k_{z} \right) \gamma = \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{\gamma } \hbar + k_{z}^2 \hbar ^2}
-\end{equation}
-\begin{equation}
+  \left(E-\omega _{\parallel} k_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B v_{x} v_{y}}{ v_{F} ^2 \gamma } \hbar + \tilde{q}_{z}^2 \hbar ^2}, & m \neq 0,\\
+  \left(E-\omega _{\parallel} k_{z} \right) \gamma &= - s \hbar  \tilde{q}_{z} v_{F}, & m=0.
+\end{align}
+Cleaning up, we get
+\begin{align}
   \label{eq:21}
-  E = \omega _{\parallel} k_{z} + \sign(m) v_{F} \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + k_{z}^2\hbar ^2 /\gamma ^2}
-\end{equation}
+  E &= \omega _{\parallel} k_{z} + \sign(m) \sqrt{2 |m| e \frac{v_{y} v_{x} B}{\gamma ^3} \hbar + v_{z}^2 k_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
+  E &= k_{z} \left( \omega _{\parallel} - s \hbar v_{z} / \gamma  ), & m=0.
+\end{align}
 
 As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
-With the trivial substitution \(\alpha = \frac{1}{\gamma }\), this gets an intuitive interpretation.
+With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:22}
-  E = \omega _{\parallel} k_{z} + \sign(m) v_{F} \sqrt{2 |m| e B \alpha  ^3 \hbar + k_{z}^2\hbar ^2 \alpha ^2}
+  E = \omega _{\parallel} k_{z} + \sign(m)  \sqrt{2 |m| e B v_{x} v_{y} \alpha  ^3 \hbar + v_{z} ^2 k_{z}^2\hbar ^2 \alpha ^2}
 \end{equation}
 As the tilt increases, the Landau levels converge towards \(\omega _{\parallel} k_{z}\).
 In particular, the separation between Landau levels \(m\) \todo{maybe use the word cyclotron frequency} is reduced by a factor \(\alpha ^{\frac{3}{2}}\).
