@@ -129,7 +129,7 @@ Act with the hyperbolic rotation operator \(\exp[\Theta /2 \sigma_{x}]\) on Eq. 
 By introducing the state in the rotate frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
 \begin{equation}
   \label{eq:7}
-  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}}.
+  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0.
 \end{equation}
 
 We rewrite the Hamiltonian (Eq. \eqref{eq:5}) in a more compact and explicit way
@@ -243,8 +243,8 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
       % ytick=none,
       ]
       \addplot +[thick,domain=-0.999:0.999] {arctanh(x)};
-      \draw +[thick,dashed,domain=-0.99:0.99] (axis cs:1,-4) -- (axis cs:1,4);
-      \draw +[thick,dashed,domain=-0.99:0.99] (axis cs:-1,-4) -- (axis cs:-1,4);
+      \draw [thick,dashed,domain=-0.99:0.99] (1,-4) -- (1,4);
+      \draw [thick,dashed,domain=-0.99:0.99] (-1,-4) -- (-1,4);
     \end{axis}
   \end{tikzpicture}
   \caption{\label{fig:arctanh} Plot of \(\tanh^{-1}\), which diverges as the argument goes to \(\pm 1\).}
@@ -291,16 +291,16 @@ Also, we will rescale all momenta to make the effective Fermi velocity isotropic
 Thus, let
 \begin{equation}
   \begin{split}
-    \tilde{q}_{x} &= \frac{v_{x}}{v_{F}} \left[  q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - e}{v_{x}} \right],\\
+    \tilde{q}_{x} &= \frac{v_{x}}{v_{F}} \left[  q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}} \right],\\
     \tilde{q}_{y} &= \frac{v_{y}}{v_{F}} q_{y},\\
     \tilde{q}_{z} &= \frac{v_{z}}{v_{F}} q_{z}.\\
   \end{split}
 \end{equation}
-The Hamiltonian is thus
+The eigenvalue equation is simply
 \begin{equation}
   \label{eq:18}
-  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} +
-  v_{F} \tilde{q}_{i} \sigma _{i}.
+  \left[  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} +
+  v_{F} \tilde{q}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
 If we now again introduce the magnetic field using minimal coupling, \(q_{x} \to  q_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
 This is because \(\tilde{q}_{x} \to  \tilde{q}_{x} - e y \frac{v_{x}}{v_{F}}  B_{z} /\gamma \), and including the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
@@ -324,7 +324,7 @@ Cleaning up, we get
 \begin{align}
   \label{eq:21}
   E &= \omega _{\parallel} k_{z} + \sign(m) \sqrt{2 |m| e \frac{v_{y} v_{x} B}{\gamma ^3} \hbar + v_{z}^2 k_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
-  E &= k_{z} \left( \omega _{\parallel} - s \hbar v_{z} / \gamma  ), & m=0.
+  E &= k_{z} \left( \omega _{\parallel} - s \hbar v_{z} / \gamma  \right), & m=0.
 \end{align}
 
 As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
@@ -339,25 +339,173 @@ The effect of the tilt on the Landau levels is to squeeze the Landau levels toge
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
 
-The eigenstate in the position basis
+The eigenstate of
+\[
+H = v_{F} \sigma ^{i} ( p_{i} + e A_{i} ),
+\]
+with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis is
 \begin{equation}
-  \label{eq:27}
-  \braket{\vec{r} | \tilde{\psi}} =
-  \frac{1}{\sqrt{L_{x} L_{y}}}
-  \frac{e^{ik_{x} x} e^{ik_{y} y}}{\sqrt{\alpha _{k_{z} m s}^2 + 1}}
-  e^{-\frac{y - k_{x} l_{B}^2}{2 l_{B} ^2}}
+  \phi _{\vec{k} m s}(\vec{r}) = \frac{1}{\sqrt{L_xL_z}}
+  \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{\alpha _{k_z m s}^2 + 1}}
+  e^{-\frac{y-k_x l^2}{2 l_B^2}}
   \begin{pmatrix}
-    \frac{\alpha _{k_{z} m s}}{\sqrt{
-        2^{M-1} (M-1)! \sqrt{\pi} l_{B}
-      }}
-    H_{M-1} \left(\frac{y-k_{x} l_{B}^2}{l_{B}}\right)\\
-    \frac{1}{\sqrt{
-        2^{M} M! \sqrt{\pi} l_{B}
-      }}
-    H_{M} \left(\frac{y-k_{x} l_{B}^2}{l_{B}}\right)\\
+    \frac{\alpha _{k_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_B}} H_{M-1}\left( \frac{y-k_x l_B^2}{l_B} \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_B}} H_M \left( \frac{y-k_x l_B^2}{l_B} \right)
   \end{pmatrix},
 \end{equation}
-and thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\psi }\) of the tilted system is easily found.
+where capital letters indicate absolute value of corresponding quantity, $M=|m|, \vec{k} = (k_x, k_z)$, and with the normalization factor
+\begin{equation}
+  \alpha _{k_z m s} = \frac{-\sqrt{2eB\hbar M}}{\frac{E_{k_z m s}}{s v_{F}} - \hbar  k_z}.
+\end{equation}
+Taking care to keep track of boosted and rescaled quantites, the eigenstate in the boosted frame is
+\begin{equation}
+  \label{eq:29}
+  \tilde{\psi}(\vec{r}) =
+  \frac{1}{\sqrt{L_xL_z}}
+  \frac{e^{ik_x x}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
+  e^{-\frac{\left(\tilde{y} - \tilde{q}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}
+  \begin{pmatrix}
+    \frac{\alpha _{\tilde{q}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \frac{\tilde{y} - \tilde{q}_x l_{B'}^2}{l_{B'}} \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \frac{\tilde{y} - \tilde{q}_x l_{B'}^2}{l_{B'}} \right)
+  \end{pmatrix},
+\end{equation}
+with
+\begin{equation}
+  \alpha _{\tilde{q}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{q}_z m s} - \omega _{\parallel} k_{z}}{s v_{F}} - \hbar  \tilde{q}_z},
+\end{equation}
+where \(E\) is the solution in the unboosted frame and
+\[
+B' = B \frac{v_{x} v_{y}}{v_{F}^2} \alpha
+\]
+\todo{Check if Ly should be changed}
+
+
+and thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
+
+Repeating the calculation of the response function is now straightforward, but rather tedious.
+Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:29}, mix.
+We thus have twice as many terms to keep track of.
+Take for example the matrix element of the current operator
+\[
+  J_{\vec{k} m s; \vec{k}+\qvec{q} n s } (\vec{q}) = \int \mathrm{d}y e^{-i q_{y} y}
+  s v_{F} e \phi ^{*}_{\vec{k} m s} (y) \sigma ^{x} \phi _{\vec{k} + \qvec{q} n s}(y).
+\]
+We must find the matrix product \(\phi \sigma_{x} \phi \).
+Recall that \(\phi \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
+\[
+  \phi ^{*} \sigma _{x} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi} =  \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}.
+\]
+With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the rather simple form
+\[
+  e^{\theta \sigma _{x}} =
+  \begin{pmatrix}
+    1 & -t_{x}\\
+    -t_{x} & 1
+  \end{pmatrix}
+  \frac{1}{\sqrt{1-t_{x}^2}}.
+\]
+With
+\[
+  \tilde{\phi} = e^{-\frac{(y - k_{x} l_{B}^2)^2}{2 l_{B}^2}}
+  \begin{pmatrix}
+    a_{\vec{k} m s} H_{M-1} (\frac{y-k_{x} l_{B}^2}{l_{B}})\\
+    b_{\vec{k} m s} H_{M} (\frac{y-k_{x} l_{B}^2}{l_{B}})
+  \end{pmatrix}
+\]
+we see how the expressions change when \(t_{x}\) become non-zero.
+Where we previoulsy had
+\begin{equation}
+  \label{eq:27}
+  \phi ^{*}_{\vec{k} m s} \sigma _{x} \phi _{\vec{k} + \qvec{q} n s}
+  =
+  a_{\vec{k} m s} H_{M-1}(\dots) \left[ b_{\vec{k}+\qvec{q} n s} H_{N}(\dots) \right]
+  + \dots
+\end{equation}
+the contents of the square brackets must now include also the other element of the spinor:
+\begin{equation}
+  \label{eq:28}
+  \phi ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \phi _{\vec{k} + \qvec{q} n s}
+  =
+  a_{\vec{k} m s} H_{M-1}(\dots)
+  \left[
+    b_{\vec{k}+\qvec{q} n s} H_{N}(\dots)
+    - t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
+  \right]
+  \frac{1}{\sqrt{1-t_{x}^2}}
+  + \dots .
+\end{equation}
+Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
+\begin{equation}
+  \label{eq:28}
+  \begin{split}
+    J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
+    s v_F e \int \mathrm{d}\tilde{y} \: l_B
+\exp \left[- \frac{1}{4} l_B^2 \left\{
+    \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
+    \right\}\right]\\
+  e^{-\tilde{y}^2}
+   &\left[
+    a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
+    H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+    H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
+    &+ a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
+    H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+    H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)\\
+   & +
+    b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+    H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+    H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)\\
+    &\left. +
+    b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
+    H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+    H_{N} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
+    \right].
+  \end{split}
+\end{equation}
+Let us in addition to Eqs. (4.66)-(4.73) in project report define
+\begin{multline}
+  \label{eq:30}
+  \frac{\Xi _3(\vec{q}, m, n, s)}{
+    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
+    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
+  }
+  =
+  \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
+  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
+  H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+  H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
+  ,
+\end{multline}
+and
+\begin{multline}
+  \label{eq:31}
+  \frac{\Xi _4(\vec{q}, m, n, s)}{
+    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
+    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
+  }
+  =
+  \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
+  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
+  H_{M} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
+  H_{N}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
+  ,
+\end{multline}
+with
+\begin{align}
+  \Xi_4 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} M \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
+                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M}
+                                   L^{N-M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   %%%
+  \Xi_4 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} \sqrt{\frac{2^{M} N!}{2^{N-1} (M-1)!}}
+                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N}
+                                   L^{M - N}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+  \Xi_4(\vec{q}, m, n, s) &=
+          \begin{cases}
+            \Xi _4 ^{(1)} & \text{if } N \geq M\\
+            \Xi _4 ^{(2)} & \text{if } N \leq M
+          \end{cases}, \label{eq:42}
+\end{align}
+\todo{Used the wrong prefactor, note that it is a a, not a b}
 
 
 \todo{squeezing figure}
@@ -457,7 +605,7 @@ This system describes two superimposed cones at the origin, with opposite chiral
 The effect of parity \(\mathcal{P}\) and time reversal \(\mathcal{T}\) is
 \begin{table}[h]
   \centering
-  \begin{tabular}{LC}
+  \begin{tabular}{lcc}
     & \(\mathcal{P}\) & \(\mathcal{T}\)\\
     \hline
     \(\tau \) & - & +\\
