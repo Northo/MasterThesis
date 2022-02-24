@@ -442,20 +442,21 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
 \exp \left[- \frac{1}{4} l_B^2 \left\{
     \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
-    \right\}\right]\\
+  \right\}\right]
+(1-t_{x}^2)^{-\frac{1}{2}}\\
   e^{-\tilde{y}^2}
    &\left[
     a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
     H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
-    &+ a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
+    &- t_{x} a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
     H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)\\
    & +
     b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
     H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)\\
-    &\left. +
+    &\left. - t_{x}
     b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
     H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
@@ -527,6 +528,21 @@ with
             \Xi _4 ^{(2)} & \text{if } N \leq M
           \end{cases}, \label{eq:42}
 \end{align}
+Expressed in these quantites, we may write (corresponding to Eq. (4.74))
+\begin{multline}
+  \label{eq:32}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
+  s v_{F} e
+  \frac{\exp \left[- \frac{l_{B}^2}{4} - l_{B}^2 i q_{y} (k_{x} + \frac{q_{x}}{2}) \right]}
+  {\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec n s}^2 + 1 }} (1-t_{x}^2)^{-\frac{1}{2}}\\
+  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
+  \left[
+    \chi_{1} (\vec{q}, m, n, s)
+    + \chi _{2} (\vec{q}, m, n, s)
+    - t_{x} \chi _{3} (\vec{q}, m, n, s)
+    - t_{x} \chi _{4} (\vec{q}, m, n, s)
+  \right].
+\end{multline}
 
 
 \todo{squeezing figure}
