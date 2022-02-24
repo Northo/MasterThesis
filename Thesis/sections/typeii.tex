@@ -462,6 +462,14 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     \right].
   \end{split}
 \end{equation}
+\begin{align}
+  a_{\vec{k} m s} a_{\vec{k} + \qvec{q} n s} &=
+  \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}}
+  \left[ 2^{M+N-2} (M-1)! (N-1)! \pi l_{B}^2 \right]^{-\frac{1}{2}}\\
+  b_{\vec{k} m s} b_{\vec{k} + \qvec{q} n s} &=
+  \frac{1}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}}
+  \left[ 2^{M+N} M! N! \pi l_{B}^2 \right]^{-\frac{1}{2}}
+\end{align}
 Let us in addition to Eqs. (4.66)-(4.73) in project report define
 \begin{multline}
   \label{eq:30}
@@ -471,7 +479,7 @@ Let us in addition to Eqs. (4.66)-(4.73) in project report define
   }
   =
   \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
-  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
+  a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}\\
   H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
   H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
   ,
@@ -485,18 +493,32 @@ and
   }
   =
   \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
-  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
+  b_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
   H_{M} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
   H_{N}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
   ,
 \end{multline}
 with
 \begin{align}
-  \Xi_4 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} M \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
+  \Xi_3 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{N-1} (M-1)!}{2^{M-1} (N-1)!}}
+                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M}
+                                   L^{N-M}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   %%%
+  \Xi_3 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{M-1} (N-1)!}{2^{N-1} (M-1)!}}
+                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N}
+                                   L^{M - N}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+  \Xi_3(\vec{q}, m, n, s) &=
+          \begin{cases}
+            \Xi _4 ^{(1)} & \text{if } N \geq M\\
+            \Xi _4 ^{(2)} & \text{if } N \leq M
+          \end{cases}, \label{eq:42}
+\end{align}
+\begin{align}
+  \Xi_4 ^{(1)}(\vec{q}, m, n, s) &=  \sqrt{\frac{2^N M!}{2^M N!}}
                                    \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M}
                                    L^{N-M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
                                    %%%
-  \Xi_4 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} \sqrt{\frac{2^{M} N!}{2^{N-1} (M-1)!}}
+  \Xi_4 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M} N!}{2^N M!}}
                                    \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N}
                                    L^{M - N}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
   \Xi_4(\vec{q}, m, n, s) &=
@@ -505,7 +527,6 @@ with
             \Xi _4 ^{(2)} & \text{if } N \leq M
           \end{cases}, \label{eq:42}
 \end{align}
-\todo{Used the wrong prefactor, note that it is a a, not a b}
 
 
 \todo{squeezing figure}
