@@ -382,16 +382,76 @@ B' = B \frac{v_{x} v_{y}}{v_{F}^2} \alpha
 
 and thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
 
+\todo{ Write down the full form of \( \phi _{\vec{k} m s} (\vec{r}) \), taking care to use the original momenta, and not the rescaled. }
+
+Reinserting explicitly, in the boosted frame, that \(\tilde{q}_{x} = \alpha q_{x} + \frac{\beta}{\alpha } \frac{k_{z} \omega _{\parallel} - E}{v_{x}} \) and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
+\todo{note we have used isotropic velocity}
+we get
+\begin{equation}
+  \label{eq:41}
+  \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
+  =
+  \frac{y - \alpha q_{x} l_{B'}^2 - \frac{\beta l_{B'}^2}{\alpha } \frac{k_{z} \omega _{\parallel} - E}{v_{x}}}{l_{B'}}
+  =
+  \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B} - \alpha^{-\frac{3}{2}}  \beta l_{B} \frac{k_{z} \omega _{\parallel} - E}{v_{x}}.
+\end{equation}
+Using the explicit form of \(E\)
+\begin{equation}
+  \label{eq:43}
+  \chi =
+  \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
+  =
+  \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B}
+  - \operatorname{sign}(m)
+  \beta
+  \sqrt{2 |m| + \frac{k_{z}^2 l_{B}^2}{\alpha }}.
+\end{equation}
+where \(\hbar \) is taken to be one.
+\todo{ Clean up in \(\hbar \) }
+
+
+\todo{Maybe better to introduce some quanity here, for example \(\chi\) representing resized y}
+\begin{equation}
+  \label{eq:40}
+  \tilde{\phi} _{\vec{k} m s} (\vec{r})
+  =
+  \frac{1}{\sqrt{L_xL_z}}
+  \frac{e^{ik_x x}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
+  e^{-\frac{1}{2} \chi ^2}
+  \begin{pmatrix}
+    \frac{\alpha _{\tilde{q}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \chi  \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \chi \right)
+  \end{pmatrix},
+\end{equation}
+
+
 Repeating the calculation of the response function is now straightforward, but rather tedious.
 Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:29}, mix.
 We thus have twice as many terms to keep track of.
+
+Consider the expression for the current operator, Eq. 4.39, which we derived form the time evolution relation
+\[
+  \dot{A} = [A, H]/i\hbar,
+\]
+by considering \(\vec{v} = \vec\dot{r}\), as \(\vec{J} = e \vec{v}\).
+In the tilted Hamiltonian, the tilt term thus causes another term in the current operator.
+\begin{equation}
+  \label{eq:36}
+  \begin{split}
+    \vec{v} = \vec\dot{r} &= \frac{1}{i \hbar } [\vec{r}, H] \\
+    &= \frac{s v_{F} \sigma ^{ i}}{i \hbar } [\vec{r}, p_{i} + e A_{i}] + \frac{1}{i\hbar } [\vec{r}, \omega_{0} \vec{k}]\\
+    &= \frac{s v_{F} \sigma ^{ i}}{i \hbar } (i\hbar + e[\vec{r}, A_{i}]) + \vec{\omega}_{0}\\
+    &= s v_{F} \sigma ^{i} + \vec{\omega} _{0}.
+  \end{split}
+\end{equation}
+
 Take for example the matrix element of the current operator
 \[
   J_{\vec{k} m s; \vec{k}+\qvec{q} n s } (\vec{q}) = \int \mathrm{d}y e^{-i q_{y} y}
   s v_{F} e \phi ^{*}_{\vec{k} m s} (y) \sigma ^{x} \phi _{\vec{k} + \qvec{q} n s}(y).
 \]
 We must find the matrix product \(\phi \sigma_{x} \phi \).
-Recall that \(\phi \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
+Recall that \(\phi = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
 \[
   \phi ^{*} \sigma _{x} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi} =  \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}.
 \]
@@ -406,10 +466,10 @@ With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the 
 \]
 With
 \[
-  \tilde{\phi} = e^{-\frac{(y - k_{x} l_{B}^2)^2}{2 l_{B}^2}}
+  \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
-    a_{\vec{k} m s} H_{M-1} (\frac{y-k_{x} l_{B}^2}{l_{B}})\\
-    b_{\vec{k} m s} H_{M} (\frac{y-k_{x} l_{B}^2}{l_{B}})
+    a_{\vec{k} m s} H_{M-1} (\chi)\\
+    b_{\vec{k} m s} H_{M} (\chi)
   \end{pmatrix}
 \]
 we see how the expressions change when \(t_{x}\) become non-zero.
@@ -434,32 +494,64 @@ the contents of the square brackets must now include also the other element of t
   \frac{1}{\sqrt{1-t_{x}^2}}
   + \dots .
 \end{equation}
+
+First of all, let us consider the exponent of the product.
+Due to the extra term in \(\chi\), this becomes more elaborate.
+The exponent is of course
+\begin{equation}
+  \label{eq:46}
+  \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}
+\end{equation}
+A straightforward but tedious calculation shows that this can be written as
+\begin{equation}
+  \label{eq:47}
+  -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (A+B)\alpha)\right)^2
+  -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2),
+\end{equation}
+where we have defined
+\begin{align}
+  A &= k_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}\\
+  B &= k_{x} + q_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
+\end{align}
+Eq. \eqref{eq:47} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
+Make a change of variable
+\[
+\tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - (A+B) \alpha)\right),
+\]
+\todo{Follow up the substitiuoin of the root in the integral. Consider moving the root into \(\Xi \)}
+to get the exponent on the form \(e^{-\tilde{y}^2}\).
+With this susbstitiuion,
+\begin{align}
+  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right)\\
+  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right)
+\end{align}
+
 Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
 \begin{equation}
   \label{eq:28}
   \begin{split}
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
-    s v_F e \int \mathrm{d}\tilde{y} \: l_B
-\exp \left[- \frac{1}{4} l_B^2 \left\{
-    \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
-  \right\}\right]
-(1-t_{x}^2)^{-\frac{1}{2}}\\
-  e^{-\tilde{y}^2}
+    \frac{s v_F e}{\sqrt{\alpha }} \int \mathrm{d}\tilde{y} \: l_B
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    \right]
+    (1-t_{x}^2)^{-\frac{1}{2}}\\
+    e^{-\tilde{y}^2}
    &\left[
     a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
-    H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-    H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
+    H_{M-1} \left(  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
+    H_N\left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right) \right.\\
     &- t_{x} a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
-    H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-    H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)\\
+    H_{M-1} \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
+    H_{N-1}\left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right)\\
    & +
     b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
-    H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-    H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)\\
+    H_M \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
+    H_{N-1} \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right)\\
     &\left. - t_{x}
     b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
-    H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-    H_{N} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
+    H_M \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
+    H_{N} \left(  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right)\right)
     \right].
   \end{split}
 \end{equation}
@@ -481,8 +573,8 @@ Let us in addition to Eqs. (4.66)-(4.73) in project report define
   =
   \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
   a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}\\
-  H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-  H_{N-1}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
+  H_{M-1} \left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (B-A) - iq_y) \right)
+  H_{N-1}\left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (A-B) - iq_y) \right)
   ,
 \end{multline}
 and
@@ -495,46 +587,56 @@ and
   =
   \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
   b_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
-  H_{M} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-  H_{N}\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
+  H_{M} \left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (B-A) - iq_y) \right)
+  H_{N}\left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (A-B) - iq_y) \right)
   ,
 \end{multline}
 with
 \begin{align}
   \Xi_3 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{N-1} (M-1)!}{2^{M-1} (N-1)!}}
-                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M}
-                                   L^{N-M}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{\alpha (A-B) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-M}
+                                   L^{N-M}_{M-1} (\xi ),\\
                                    %%%
   \Xi_3 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{M-1} (N-1)!}{2^{N-1} (M-1)!}}
-                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N}
-                                   L^{M - N}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{\alpha (B-A) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N}
+                                   L^{M - N}_{N-1} (\xi),\\
   \Xi_3(\vec{q}, m, n, s) &=
           \begin{cases}
-            \Xi _4 ^{(1)} & \text{if } N \geq M\\
-            \Xi _4 ^{(2)} & \text{if } N \leq M
+            \Xi _3 ^{(1)} & \text{if } N \geq M\\
+            \Xi _3 ^{(2)} & \text{if } N \leq M
           \end{cases}, \label{eq:42}
 \end{align}
 \begin{align}
   \Xi_4 ^{(1)}(\vec{q}, m, n, s) &=  \sqrt{\frac{2^N M!}{2^M N!}}
-                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M}
-                                   L^{N-M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{\alpha (A-B) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-M}
+                                   L^{N-M}_{M} (\xi),\\
                                    %%%
   \Xi_4 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M} N!}{2^N M!}}
-                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N}
-                                   L^{M - N}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{\alpha (B-A) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N}
+                                   L^{M - N}_N (\xi),\\
   \Xi_4(\vec{q}, m, n, s) &=
           \begin{cases}
             \Xi _4 ^{(1)} & \text{if } N \geq M\\
             \Xi _4 ^{(2)} & \text{if } N \leq M
           \end{cases}, \label{eq:42}
 \end{align}
+with
+\[
+  \xi = \frac{l_{B}^2}{2 \alpha } \left[q_{y}^2 + \alpha^2 (B-A)^2\right].
+\]
+
 Expressed in these quantites, we may write (corresponding to Eq. (4.74))
 \begin{multline}
   \label{eq:32}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
-  s v_{F} e
-  \frac{\exp \left[- \frac{l_{B}^2}{4} - l_{B}^2 i q_{y} (k_{x} + \frac{q_{x}}{2}) \right]}
-  {\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec n s}^2 + 1 }} (1-t_{x}^2)^{-\frac{1}{2}}\\
+  \frac{s v_{F} e}{\sqrt{\alpha }}
+  \frac{
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    \right]
+  }{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
+  } (1-t_{x}^2)^{-\frac{1}{2}}\\
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
   \left[
     \chi_{1} (\vec{q}, m, n, s)
@@ -544,7 +646,85 @@ Expressed in these quantites, we may write (corresponding to Eq. (4.74))
   \right].
 \end{multline}
 
+Now we will consider the second term of the current operator.
+\begin{equation}
+  \label{eq:37}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  \int \mathrm{d} y
+  e^{-iq_{y} y} e
+  \phi ^{*}_{\vec{k} m s}(y) \omega _{0 x} \phi _{\vec{k} + \qvec{q} n s}(y).
+\end{equation}
+Thus
+\begin{multline}
+  \label{eq:38}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  \frac{e \omega _{0 x}}{\mathcal{N}^{*} \mathcal{N}}
+  \int \mathrm{d} y
+  \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\} \\
+  \tilde{\phi} ^{*}_{\vec{k} m s}(y) e^{\theta \sigma _{x}} \tilde{\phi} _{\vec{k} + \qvec{q} n s}(y).
+\end{multline}
+We have
+\begin{multline}
+  \label{eq:39}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N}}
+  \int \mathrm{d} \tilde{y}
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    \right]\\
+  e^{-\tilde{y}^2} \big[
+    a_{\vec{k} m s} H_{M-1}(\dots) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1} - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N} \right)\\
+   +
+    b_{\vec{k} m s} H_{M}(\dots) \left(-t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} + b_{\vec{k} + \qvec{q} n s} H_{N} \right)
+    \big]
+    (1 - t_{x}^2)^{-\frac{1}{2}}.
+\end{multline}
+Thus
+\begin{multline}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N}}
+  \frac{
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    \right]
+  }{
+    \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
+  }
+  (1-t_{x})^{-\frac{1}{2}}\\
+  \left[
+    \Xi _{3} - t_{x} \Xi _{1}
+    - t_{x} \Xi _{2} + \Xi_{4}
+  \right].
+\end{multline}
 
+
+\subsubsection{Stress-energy tensor}
+Consider now
+\begin{equation}
+  \label{eq:33}
+  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y(1)} (\vec{q}) =
+  \frac{1}{4}
+  \int \mathrm{d} y
+  e^{i q_{y} y}
+  \phi ^{*}_{\vec{k} + \qvec{q} n s}(y) s \sigma ^{y}
+  (E_{k \mu  s} + E_{\lambda \nu s} - 2 \mu)
+  \phi _{\vec{k} m s} (y).
+\end{equation}
+As
+\begin{equation}
+  \label{eq:34}
+  % e^{\theta /2 \sigma _{x}} \sigma _{y} e^{\theta /2 \sigma _{x}} = 1
+  \sigma _{y} e^{\theta /2 \sigma _{x}} = e^{-\theta /2 \sigma _{x}} \sigma _{y}
+\end{equation}
+we get the very fortunate result
+\begin{equation}
+  \label{eq:35}
+  \phi \sigma _{y} \phi = \tilde{\phi} \sigma _{y} \tilde{\phi}.
+\end{equation}
+The first term of the stress-energy tensor thus has the exact same form as the untilted case.
+
+
+\todo{Remember normailzation factor \(\mathcal{N}\)!!!}
 \todo{squeezing figure}
 
 Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
