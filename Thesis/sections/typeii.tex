@@ -465,13 +465,13 @@ With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the 
   \frac{1}{\sqrt{1-t_{x}^2}}.
 \]
 With
-\[
+\begin{equation}\label{eq:45}
   \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
     a_{\vec{k} m s} H_{M-1} (\chi)\\
     b_{\vec{k} m s} H_{M} (\chi)
   \end{pmatrix}
-\]
+\end{equation}
 we see how the expressions change when \(t_{x}\) become non-zero.
 Where we previoulsy had
 \begin{equation}
@@ -719,20 +719,208 @@ As
 we get the very fortunate result
 \begin{equation}
   \label{eq:35}
-  \phi \sigma _{y} \phi = \tilde{\phi} \sigma _{y} \tilde{\phi}.
+  \phi^{*} \sigma _{y} \phi = \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
 The first term of the stress-energy tensor thus has the exact same form as the untilted case.
+Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:45},
+\[
+  \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
+  \begin{pmatrix}
+    a_{\vec{k} m s} H_{M-1} (\chi)\\
+    b_{\vec{k} m s} H_{M} (\chi)
+  \end{pmatrix},
+\]
+where
+\[
+\chi = \sqrt{\alpha} (y - q_{x} l_{B}^2 ) /l_{B} - \sign(m) \beta \sqrt{2 |m| + \frac{k_{z}^2 l_{B}^2}{\alpha }}.
+\]
+We thus get
+\begin{multline}
+  \label{eq:48}
+  T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y (1)} (\vec{q}) =
+  \frac{is}{4} (E_{k\mu  s} + E_{\lambda \nu s} - 2 \mu)
+  \int \mathrm{d} y
+  e^{i q_{y} y}
+  e^{-\frac{1}{2} (\chi_{\vec{k}+\qvec{q}}^2 + \chi_{\vec{k}} ^2) }\\
+  [
+  -a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s} H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}})
+  + b_{\vec{k} + \qvec{q} n s} a_{\vec{k} ms} H_{N}(\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}})
+  ].
+\end{multline}
+We will perform once again the completion of the square and substituion of \(y\).
+The exponent is the same as that which we found for the current operator case, Eq. \eqref{eq:47}, with the change \(q_{y} \to - q_{y}\).
+We thus make the change of variables
+\begin{equation}
+  \label{eq:49}
+  \tilde{y} = \frac{\sqrt{\alpha}}{l_{B}} \left(y  - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (A + B) \alpha )\right),
+\end{equation}
+giving
+\begin{align}
+  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right),\\
+  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right).
+\end{align}
+Thus, analogous to Eq. (4.79), we get
+\begin{multline}
+  \label{eq:50}
+  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) =\\
+  \frac{is}{4 \sqrt{\alpha} }
+  (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu)
+  \exp \left[
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+  \right  ]
+  \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
+ \Big[
+  - a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s}
+  H_{N-1} \left(\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} (\alpha(B-A) + iq_{y})\right)
+  H_{M} \left(
+  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha}} \left( \alpha (A-B) + i q_{y} \right)
+\right  ) \\
+  + b_{\vec{k} + \qvec{q} ns } a_{\vec{k} m s}
+  H_{N} \left(
+  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} (\alpha(B-A) + iq_{y})
+\right  )
+  H_{M-1} \left(
+  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha}} \left( \alpha (A-B) + i q_{y} \right)
+\right  )
+  \Big]
+\end{multline}
+And thus we have
+\begin{align}
+  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
+  \frac{is}{4 \sqrt{\alpha} }
+  \frac{E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
+  }\\
+  &\pe \exp \left[
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+  \right  ]\\
+  &\pe (-\Xi_{2} (\bar{\vec{q}}, m, n, s) + \Xi_{1}(\bar{\vec{q}}, m, n, s)),
+\end{align}
+where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
+
+We must now consider the latter parts of the stress energy tensor
+\begin{align}
+  T_{\vec{k} + \qvec{q} ns, \vec{k} ms}^{0y (2)} (\vec{q}) &=
+                                                             + \frac{1}{4} \int \mathrm{d} y
+                                                             e^{iq_{y} y} v_{F}
+                                                             \phi ^{*}_{\vec{k}+\qvec{q} ns} (y) p_{y} \phi _{\vec{k} m s} (y),\\
+  T_{\vec{k} + \qvec{q} ns, \vec{k} ms}^{0y (3)} (\vec{q}) &=
+                                                             - \frac{1}{4} \int \mathrm{d} y
+                                                             e^{iq_{y} y} v_{F}
+                                                             (p_{y} \phi ^{*}_{\vec{k}+\qvec{q} ns} (y))  \phi _{\vec{k} m s} (y).
+\end{align}
+Firstly, we note that
+\[
+  [p_{y} , e^{\theta /2 \sigma _{x}}] = 0.
+\]
+Furthermore, exactly as for the untilted case, the momentum operator acting on the exponential prefactor of \(\phi \) gives contributions proportional to \(q_{x}\).
+In the local limit \(q\to  0\) this term vanishes, and we need only consider the effect of the momentum operator acting on the Hermite polynomials.
+
+Denote by \(\tilde{p}_{y}\) the momentum operator \(p_{y}\) acting only on the Hermite polynomial part of \(\phi \).
+Furthermore, we will use the property of Hermite polynomials \(\partial _{x} H_{n} (x) = 2 n H_{n-1} (x)\) \cite[Eq.~18.9.25]{NIST:DLMF}.
+\begin{align}
+  \tilde{p}_{y} \phi _{\vec{k} ms} &=
+  -i \hbar
+  e^{\theta /2 \sigma _{x}}
+  e^{-\frac{1}{2} \chi ^2}
+  \partial _{y}
+  \begin{pmatrix}
+    a_{\vec{k} m s} H_{M-1} (\chi) \\
+    b_{\vec{k} ms} H_{M} (\chi)
+  \end{pmatrix}\\
+                                   &=
+                                     -i \hbar
+                                     e^{\theta /2 \sigma _{x}}
+                                     e^{-\frac{1}{2} \chi ^2}
+                                     2 \frac{\partial \chi }{\partial y}
+                                     \begin{pmatrix}
+                                       a_{\vec{k} m s} (M-1) H_{M-2} (\chi) \\
+                                       b_{\vec{k} ms} (M) H_{M-1} (\chi)
+                                     \end{pmatrix}\\
+                                   &=
+                                     -i \hbar
+                                     e^{\theta /2 \sigma _{x}}
+                                     e^{-\frac{1}{2} \chi ^2}
+                                     \frac{2}{\sqrt{\alpha } }
+                                     \begin{pmatrix}
+                                       a_{\vec{k} m s} (M-1) H_{M-2} (\chi) \\
+                                       b_{\vec{k} ms} (M) H_{M-1} (\chi)
+                                     \end{pmatrix}.
+\end{align}
+And thus, recalling that
+\[
+  e^{\theta \sigma _{x}} =
+  \begin{pmatrix}
+    1 & -t_{x}\\
+    -t_{x} & 1
+  \end{pmatrix}
+  \frac{1}{\sqrt{1-t_{x}^2}},
+\]
+we find the product
+\begin{multline}
+  \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \tilde{p}_{y} \phi _{\vec{k} m s}
+  = -\frac{i\hbar 2}{\alpha }
+  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}
+  \phi ^{*}_{\vec{k} + \qvec{q} ns}(y)
+  e^{\theta \sigma _{x}}
+  \phi _{\vec{k} ms} (y)\\
+  %
+  = -\frac{i\hbar 2}{\alpha \sqrt{1 - t_{x}^2} }
+  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} H_{N-1}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} H_{N} (\chi_{\dot{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) + b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+Completing the square and substituting
+\[
+  \tilde{y} = \frac{\sqrt{\sigma}}{l_{B}}
+  \left(y - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (A + B) \alpha) \right)
+\]
+gives
+\begin{multline}
+  \int \mathrm{d}y
+  e^{i q_{y}}
+  \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \tilde{p}_{y}
+  \phi_{\vec{k} ms} (y)
+  =
+  - \frac{i\hbar}{\alpha 2 \sqrt{1 - t_{x}^2} }
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+  \right  ]\\
+  \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} H_{N-1}(\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right))
+  \left\{
+    a_{\vec{k} ms} (M-1) H_{M-2} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
+    - t_{x} b_{\vec{k} ms} M H_{M-1} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} H_{N} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right))
+  \left\{
+    -t_{x} a_{\vec{k} ms} (M-1) H_{M-2} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
+    + b_{\vec{k} ms} M H_{M-1} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
+  \right\}
+  \Big].
+\end{multline}
+\todo{probably better to go back to using \(\chi \), and then include here a refresher of what that is expressed with \(\tilde{y}\)}
 
 
-\todo{Remember normailzation factor \(\mathcal{N}\)!!!}
+
+\todo{Remember normalization factor \(\mathcal{N}\)!!!}
 \todo{squeezing figure}
+
 
 Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
 \todo{Fix anisotropic directions}
 
 
-\todo{Squeezing, etc}
 
+\todo{Squeezing, etc}
 
 
 We will boost the frame of the tilted cone such that the system is again isotropic, and use the well known solution for the Landau levels in that frame.
@@ -791,7 +979,7 @@ The spin structure is that of a hedgehog.
 
 
 
-\subsection{4x4 tilted weyl cone}
+\subsection{Symmetries}
 In order to separate weyl cones in momentum, we introduce a pseuod spin degree of freedom, making the system 4x4.
 We may then get solutions with the cones separated in momentum (or energy).
 We may also ask what heppens if we try to separate tilted cones?
@@ -861,4 +1049,90 @@ This is due to the two cones of opposite chirality tilting in opposite direction
     Cross section in the tilt direction shown, with blue showing one cone and red the other.
     Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
   }
+\end{figure}
+
+The unperturbed Dirac Hamiltonian is Lorentz invariant, given that we consider an ``effective speed of light'', namely the Fermi velocity, instead of the actual speed of light \( c \).
+Specifically, Lorentz invariance means invariance under the \emph{Lorentz group}.
+The Lorentz group is the \( O(1,3) \) Lie group that conserves
+\[
+x_{\mu } x^{\mu } = t^2 - x^2 - y^2 - z^2,
+\]
+i.e. all isometries of Minkowski space.
+More specifically, the group consists of all 3D rotations, \( O(3) \), and all \emph{boosts}.
+A boost is a hyperbolic rotation from a spactial dimension to the temporal dimension.
+If we now direct our focus at the Hamiltonian of the Dirac cone
+\[
+H = \pm v_{F} \vec{\sigma} \vec{p},
+\]
+we may easily show the Lorentz invariance of the system.
+The time independent Schrodinger equation is
+\begin{equation}
+  \label{eq:44}
+  H \ket{\psi } = E \ket{\psi } \implies (H^2 - E^2) \ket{\psi } = 0.
+\end{equation}
+As
+\[
+p^{\mu } = (\frac{E}{c}, \vec{p}),
+\]
+Eq. \eqref{eq:44} is nothing more than
+\begin{equation}
+  \label{eq:51}
+  H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2p^{(0) 2},
+\end{equation}
+where we used the anticommutation relation
+\[
+{\sigma_{i}, \sigma_{j}} =  2 \delta _{ij}
+\]
+of the Pauli matrices.
+
+
+
+
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{groupplot}[
+      group style={group size=1 by 4},
+      cycle list name=linestyles,
+      ymin=-3, ymax=3,
+      xmin=-3, xmax=3,
+      ]
+      % \foreach \paramwpp in {0,0.2,0.5,1} {
+      % \foreach \paramalpha in {1, 0.8, 0.5, 0.2} {
+      \pgfplotsinvokeforeach{1,2,3,4} {
+        \nextgroupplot
+        \newcommand{\paramwpp}{0}
+        \newcommand{\paramalpha}{#1}
+        % \newcommand{\paramalpha}{0.5}
+        % \begin{axis}[
+        %   cycle list name=linestyles,
+        %   ymin=-3, ymax=3,
+        %   ]
+        \addplot {(\paramwpp - \paramalpha)  * x};
+        % \foreach \n in {1,2,3,4} {
+        %   \addplot {
+        %     \paramwpp * x + sqrt(2 * \n * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
+        %   };
+        %   \pgfplotsset{cycle list shift=-1}
+        %   \addplot {
+        %     \paramwpp * x - sqrt(2 * \n * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
+        %   };
+        % }
+
+        \pgfplotsinvokeforeach{1,2,3,4} {
+          \addplot {
+            \paramwpp * x + sqrt(2 * ##1 * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
+          };
+          \pgfplotsset{cycle list shift=-1}
+          \addplot {
+            \paramwpp * x - sqrt(2 * ##1 * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
+          };
+        }
+        % \end{axis}
+      }
+    \end{groupplot}
+  \end{tikzpicture}
+
+  \caption{}
 \end{figure}

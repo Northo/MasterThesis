@@ -11,3 +11,26 @@ Is it the Hamiltonian or energy band that must be invariant under a symmetry?
 Take, for example, \(H=v_{F} k \sigma \).
 Under time reversal, \(k\to -k, \sigma \to -\sigma \), it is obviously invariant.
 However, under inversion, \(k\to -k, \sigma \to \sigma \), it is not, but the energy bands are.
+
+How does this relate to the 2x2 vs 4x4?
+When extending to 4x4, many of the symmetries are explicitly present
+
+* What I have done since last time:
+
+** Looked at the symmetry of the system
+
+** Moved forward with the calculations for the tilted cone
+Boost into a untilted frame
+We get eigenvalues and eigenfunctions similar to what we had before, but with some extra terms and prefactors
+
+I think this is a good way of making progress and better understand the problem.
+
+*** Is the extra term in current operator correct?
+
+*** Currently only do temperature gradient in the same direction as the tilt
+
+* TODO Consider hole vs electron carrier when overtilt
+
+* TODO C operator
+
+* TODO Lorentz invariance

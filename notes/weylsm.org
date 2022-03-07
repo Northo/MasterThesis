@@ -2,6 +2,17 @@
 
 See meeting [[file:~/Documents/NTNU/10semester/meetings/01-17.org::Crossing][Type II SM]] for initial notes about this
 
+* Current issues
+
+** Must include extra term in current operator due to extra term in H
+
+** LL rotate system around z
+In LL derivation we say that we may freely rotate our system around z to get w0 only in x and z, and not in y.
+However, how do we make this compatible with our external geometry, i.e. that the grad T is in the y direction.
+We probably just have to be careful about when we talk about which frame.
+
+** Is the requriement for the LL description equivalent with the B field being inside of the cone?
+I.e. find out if the LL limit is at the same point where the B field ends up outside of the cone
 
 * Outline of section -- Type II
 This is partially based on the notes written on the meeting [[file:~/Documents/NTNU/10semester/meetings/01-17.org][01-17]]
