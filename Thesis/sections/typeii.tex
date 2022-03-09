@@ -895,19 +895,52 @@ gives
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
-  a_{\vec{k} + \qvec{q} ns} H_{N-1}(\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right))
+  a_{\vec{k} + \qvec{q} ns} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )
   \left\{
-    a_{\vec{k} ms} (M-1) H_{M-2} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
-    - t_{x} b_{\vec{k} ms} M H_{M-1} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))\right\}\\
+    a_{\vec{k} ms} (M-1) H_{M-2} ( \chi _{\vec{k}} )
+    - t_{x} b_{\vec{k} ms} M H_{M-1} ( \chi _{\vec{k}} ) \right\}\\
   +
-  b_{\vec{k} + \qvec{q} ns} H_{N} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right))
+  b_{\vec{k} + \qvec{q} ns} H_{N} ( \chi _{\vec{k} + \qvec{q}} )
   \left\{
-    -t_{x} a_{\vec{k} ms} (M-1) H_{M-2} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
-    + b_{\vec{k} ms} M H_{M-1} (\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right))
+    -t_{x} a_{\vec{k} ms} (M-1) H_{M-2} ( \chi _{\vec{k}} )
+    + b_{\vec{k} ms} M H_{M-1} ( \chi _{\vec{k}} )
   \right\}
   \Big].
 \end{multline}
-\todo{probably better to go back to using \(\chi \), and then include here a refresher of what that is expressed with \(\tilde{y}\)}
+
+We must now evaluate the integral, and express the result in the \( \chi  \)-functions.
+\[
+    \begin{pmatrix}
+      a_{\vec{k} + \qvec{q} n s} H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )\\
+      b_{\vec{k} + \qvec{q} ns} H_N ( \chi _{\vec{k} + \qvec{q}} )
+    \end{pmatrix}^{T}
+  \underbrace{
+    \begin{pmatrix}
+      1 & -t_x\\
+      -t_x & 1
+    \end{pmatrix}
+    }_{T}
+    \begin{pmatrix}
+      a_{\vec{k} m s} (M-1) H_{M-2} (\chi_{\vec{k}})\\
+      b_{\vec{k} m s} M H_{M-1} ( \chi _{\vec{k}} )
+    \end{pmatrix}
+\]
+For each of the entries in \( T \), we get a product on of Hermite polynomials.
+Where the untilted cone had two such terms, the tilt parameter \( t _x \) now gives two extra products, which we must evaluate.
+Let \( M_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
+\begin{align}
+  M_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (M-1) H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} ( M-1 ) H_{N} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_N (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}).
+\end{align}
+We want to evaluate
+\begin{equation}
+  \label{eq:54}
+  F_{ij} = \int \mathrm{d} \tilde{y} \frac{l_{B}}{ \sqrt{\alpha} }
+  e^{-\tilde{y}^2}
+  M_{ij}.
+\end{equation}
 
 
 
@@ -1072,19 +1105,31 @@ The time independent Schrodinger equation is
 \end{equation}
 As
 \[
-p^{\mu } = (\frac{E}{c}, \vec{p}),
+p^{\mu } = \left(\frac{E}{c}, \vec{p}\right),
 \]
-Eq. \eqref{eq:44} is nothing more than
+the operator in Eq. \eqref{eq:44} is nothing more than
+\todo{ Make clear the matrix strucute here. There is an implicit identity matrix of size 2 }
 \begin{equation}
   \label{eq:51}
-  H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2p^{(0) 2},
+  H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2 \left(p^0\right)^2 ,
 \end{equation}
 where we used the anticommutation relation
 \[
-{\sigma_{i}, \sigma_{j}} =  2 \delta _{ij}
+\{\sigma_{i}, \sigma_{j}\} =  2 \delta _{ij}
 \]
 of the Pauli matrices.
+Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:51} is
+\begin{equation}
+  \label{eq:52}
+  - v_F^2 p_{\mu } p^{\mu }.
+\end{equation}
 
+Consider now a \emph{tilted} Dirac cone
+\begin{equation}
+  \label{eq:53}
+  H = \pm v_F \vec{\sigma} \vec{p} + \omega_{\perp} k_x,
+\end{equation}
+where we, without loss of generality, chose the tilt to be in the \( x \)-direction.
 
 
 
