@@ -34,3 +34,9 @@ I think this is a good way of making progress and better understand the problem.
 * TODO C operator
 
 * TODO Lorentz invariance
+Easy to show that the Dirac equation, i.e. Dirac cone equation, is exactly
+\(p_{\mu} p^{\mu} = 0,)\
+which is indeed manifestly Lorentz invariant.
+
+Need to show that the tilt term is not Lorentz invariant, which should be quite easy.
+Simply do a Lorentz transformation.

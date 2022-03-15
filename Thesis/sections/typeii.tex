@@ -502,7 +502,7 @@ The exponent is of course
   \label{eq:46}
   \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}
 \end{equation}
-A straightforward but tedious calculation shows that this can be written as
+A straightforward but tedious calculation shows that the argument of the exponent can be written as
 \begin{equation}
   \label{eq:47}
   -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (A+B)\alpha)\right)^2
@@ -539,19 +539,19 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     e^{-\tilde{y}^2}
    &\left[
     a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
-    H_{M-1} \left(  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
-    H_N\left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right) \right.\\
+    H_{M-1} \left(  \chi_{\vec{k}} \right)
+    H_N\left( \chi_{\vec{k} + \qvec{q}} \right) \right.\\
     &- t_{x} a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
-    H_{M-1} \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
-    H_{N-1}\left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right)\\
+    H_{M-1} \left( \chi_{\vec{k}} \right)
+    H_{N-1}\left( \chi_{\vec{k} + \qvec{q}} \right)\\
    & +
     b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
-    H_M \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
-    H_{N-1} \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right) \right)\\
+    H_M \left( \chi_{\vec{k}} \right)
+    H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)\\
     &\left. - t_{x}
     b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
-    H_M \left( \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right) \right)
-    H_{N} \left(  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right)\right)
+    H_M \left( \chi_{\vec{k}} \right)
+    H_{N} \left(  \chi_{\vec{k} + \qvec{q}}\right)
     \right].
   \end{split}
 \end{equation}
@@ -639,10 +639,10 @@ Expressed in these quantites, we may write (corresponding to Eq. (4.74))
   } (1-t_{x}^2)^{-\frac{1}{2}}\\
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
   \left[
-    \chi_{1} (\vec{q}, m, n, s)
-    + \chi _{2} (\vec{q}, m, n, s)
-    - t_{x} \chi _{3} (\vec{q}, m, n, s)
-    - t_{x} \chi _{4} (\vec{q}, m, n, s)
+    \Xi_{1} (\vec{q}, m, n, s)
+    + \Xi _{2} (\vec{q}, m, n, s)
+    - t_{x} \Xi _{3} (\vec{q}, m, n, s)
+    - t_{x} \Xi _{4} (\vec{q}, m, n, s)
   \right].
 \end{multline}
 
@@ -667,22 +667,22 @@ We have
 \begin{multline}
   \label{eq:39}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N}}
+  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
     \right]\\
   e^{-\tilde{y}^2} \big[
-    a_{\vec{k} m s} H_{M-1}(\dots) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1} - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N} \right)\\
+    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
    +
-    b_{\vec{k} m s} H_{M}(\dots) \left(-t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} + b_{\vec{k} + \qvec{q} n s} H_{N} \right)
+    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(-t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
     \big]
     (1 - t_{x}^2)^{-\frac{1}{2}}.
 \end{multline}
-Thus
+Thus,
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N}}
+  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha } }
   \frac{
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
@@ -771,17 +771,11 @@ Thus, analogous to Eq. (4.79), we get
   \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
  \Big[
   - a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s}
-  H_{N-1} \left(\tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} (\alpha(B-A) + iq_{y})\right)
-  H_{M} \left(
-  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha}} \left( \alpha (A-B) + i q_{y} \right)
-\right  ) \\
+  H_{N-1} ( \chi _{\vec{k}} )
+  H_{M} ( \chi _{\vec{k} + \qvec{q}} )
   + b_{\vec{k} + \qvec{q} ns } a_{\vec{k} m s}
-  H_{N} \left(
-  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} (\alpha(B-A) + iq_{y})
-\right  )
-  H_{M-1} \left(
-  \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha}} \left( \alpha (A-B) + i q_{y} \right)
-\right  )
+  H_{N}( \chi _{\vec{k}} )
+  H_{M-1} ( \chi _{\vec{k} + \qvec{q}} )
   \Big]
 \end{multline}
 And thus we have
@@ -842,7 +836,7 @@ Furthermore, we will use the property of Hermite polynomials \(\partial _{x} H_{
                                      -i \hbar
                                      e^{\theta /2 \sigma _{x}}
                                      e^{-\frac{1}{2} \chi ^2}
-                                     \frac{2}{\sqrt{\alpha } }
+                                     \frac{2 \sqrt{\alpha}}{ l_{B} }
                                      \begin{pmatrix}
                                        a_{\vec{k} m s} (M-1) H_{M-2} (\chi) \\
                                        b_{\vec{k} ms} (M) H_{M-1} (\chi)
@@ -860,25 +854,25 @@ And thus, recalling that
 we find the product
 \begin{multline}
   \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \tilde{p}_{y} \phi _{\vec{k} m s}
-  = -\frac{i\hbar 2}{\alpha }
+  = -\frac{i\hbar 2 \sqrt{\alpha } }{ l_{B} }
   e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}
   \phi ^{*}_{\vec{k} + \qvec{q} ns}(y)
   e^{\theta \sigma _{x}}
   \phi _{\vec{k} ms} (y)\\
   %
-  = -\frac{i\hbar 2}{\alpha \sqrt{1 - t_{x}^2} }
+  = -\frac{i\hbar 2 \sqrt{\alpha } }{l_{B} \sqrt{1 - t_{x}^2} }
   e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
   \Big[
   a_{\vec{k} + \qvec{q} ns} H_{N-1}(\chi_{\vec{k}+\qvec{q}})
   \left\{a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}\\
   +
-  b_{\vec{k} + \qvec{q} ns} H_{N} (\chi_{\dot{k} + \qvec{q}})
+  b_{\vec{k} + \qvec{q} ns} H_{N} (\chi_{\vec{k} + \qvec{q}})
   \left\{-t_{x} a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) + b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}
   \Big].
 \end{multline}
 Completing the square and substituting
 \[
-  \tilde{y} = \frac{\sqrt{\sigma}}{l_{B}}
+  \tilde{y} = \frac{\sqrt{ \alpha  }}{l_{B}}
   \left(y - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (A + B) \alpha) \right)
 \]
 gives
@@ -888,7 +882,7 @@ gives
   \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \tilde{p}_{y}
   \phi_{\vec{k} ms} (y)
   =
-  - \frac{i\hbar}{\alpha 2 \sqrt{1 - t_{x}^2} }
+  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
     - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
@@ -908,7 +902,7 @@ gives
   \Big].
 \end{multline}
 
-We must now evaluate the integral, and express the result in the \( \chi  \)-functions.
+We must now evaluate the integral, and express the result in the \( \Xi \)-functions.
 \[
     \begin{pmatrix}
       a_{\vec{k} + \qvec{q} n s} H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )\\
@@ -937,11 +931,71 @@ Let \( M_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
 We want to evaluate
 \begin{equation}
   \label{eq:54}
-  F_{ij} = \int \mathrm{d} \tilde{y} \frac{l_{B}}{ \sqrt{\alpha} }
+  F_{ij} = \int \mathrm{d} \tilde{y}
   e^{-\tilde{y}^2}
   M_{ij}.
 \end{equation}
 
+Notice that
+\begin{equation}
+  \label{eq:55}
+  F_{21}
+  =
+    -t_{x} (M-1) \frac{a_{\vec{k} m s}}{l_B a_{\vec{k} m \mp 2 s}} \frac{\Xi_{1} (\vec{q}, m\mp 2, n, s)}{
+    \sqrt{\alpha _{\vec{k} m\mp 2 s} ^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
+    },
+\end{equation}
+and
+\begin{equation}
+  F_{12}
+  = -t_{x} M \frac{a_{\vec{k} + \qvec{q} n s}}{l_B a_{\vec{k} + \qvec{q} n \mp 1 s}}
+  \frac{\Xi_{1}(\vec{q}, m, n\mp1, s)}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n \mp 1 s} ^2 + 1}
+  }.
+\end{equation}
+\( F_{11} \) and \( F_{22} \) are the same as for the untilted case:
+\begin{equation}
+  \label{eq:56}
+  F_{11} = \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} \alpha _{\vec{k} m\mp 1 s}}
+  \frac{\Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s)}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  },
+\end{equation}
+and
+\begin{equation}
+  \label{eq:57}
+  F_{22} =
+  \frac{\sqrt{M} }{l_B \alpha _{\vec{k} m s} \sqrt{2} }
+  \frac{\Xi_{1} ( \bar{\vec{q}}, m, n, s )}{
+    \sqrt{\alpha _{\vec{k} m s} ^2 + 1}
+    \sqrt{ \alpha _{\vec{k} + \qvec{q} n s} ^2 + 1 }
+  }.
+\end{equation}
+In summary we have
+\begin{align}
+  \label{eq:58}
+  T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q}) &= + \frac{v_F}{2} \int \mathrm{d} y
+  e^{i q_y q} \phi _{\vec{k} + \qvec{q} ns}^{*} (y) p_{y} \phi _{\vec{k} ms} (y)\\
+&= -\frac{ i \hbar v_{F} }{2}
+                                                                                     \Gamma _{\vec{k} \qvec{q} m n s}^+
+\sum\limits_{i,j}^{} F_{ij},
+\end{align}
+where
+\[
+  \Gamma _{\vec{k} \qvec{q} m n s}^+ =
+  \frac{
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+  \right  ]
+}{
+  \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+  \sqrt{1 - t_x^2 }}
+}
+\]
 
 
 \todo{Remember normalization factor \(\mathcal{N}\)!!!}
