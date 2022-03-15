@@ -555,79 +555,8 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     \right].
   \end{split}
 \end{equation}
-\begin{align}
-  a_{\vec{k} m s} a_{\vec{k} + \qvec{q} n s} &=
-  \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}}
-  \left[ 2^{M+N-2} (M-1)! (N-1)! \pi l_{B}^2 \right]^{-\frac{1}{2}}\\
-  b_{\vec{k} m s} b_{\vec{k} + \qvec{q} n s} &=
-  \frac{1}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}}
-  \left[ 2^{M+N} M! N! \pi l_{B}^2 \right]^{-\frac{1}{2}}
-\end{align}
-Let us in addition to Eqs. (4.66)-(4.73) in project report define
-\begin{multline}
-  \label{eq:30}
-  \frac{\Xi _3(\vec{q}, m, n, s)}{
-    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  =
-  \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
-  a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}\\
-  H_{M-1} \left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (B-A) - iq_y) \right)
-  H_{N-1}\left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (A-B) - iq_y) \right)
-  ,
-\end{multline}
-and
-\begin{multline}
-  \label{eq:31}
-  \frac{\Xi _4(\vec{q}, m, n, s)}{
-    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  =
-  \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
-  b_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
-  H_{M} \left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (B-A) - iq_y) \right)
-  H_{N}\left( \tilde{y} + \frac{l_B}{2 \sqrt{\alpha }}(\alpha (A-B) - iq_y) \right)
-  ,
-\end{multline}
-with
-\begin{align}
-  \Xi_3 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{N-1} (M-1)!}{2^{M-1} (N-1)!}}
-                                   \left( \frac{\alpha (A-B) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-M}
-                                   L^{N-M}_{M-1} (\xi ),\\
-                                   %%%
-  \Xi_3 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \sqrt{\frac{2^{M-1} (N-1)!}{2^{N-1} (M-1)!}}
-                                   \left( \frac{\alpha (B-A) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N}
-                                   L^{M - N}_{N-1} (\xi),\\
-  \Xi_3(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _3 ^{(1)} & \text{if } N \geq M\\
-            \Xi _3 ^{(2)} & \text{if } N \leq M
-          \end{cases}, \label{eq:42}
-\end{align}
-\begin{align}
-  \Xi_4 ^{(1)}(\vec{q}, m, n, s) &=  \sqrt{\frac{2^N M!}{2^M N!}}
-                                   \left( \frac{\alpha (A-B) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-M}
-                                   L^{N-M}_{M} (\xi),\\
-                                   %%%
-  \Xi_4 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M} N!}{2^N M!}}
-                                   \left( \frac{\alpha (B-A) - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N}
-                                   L^{M - N}_N (\xi),\\
-  \Xi_4(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _4 ^{(1)} & \text{if } N \geq M\\
-            \Xi _4 ^{(2)} & \text{if } N \leq M
-          \end{cases}, \label{eq:42}
-\end{align}
-with
-\[
-  \xi = \frac{l_{B}^2}{2 \alpha } \left[q_{y}^2 + \alpha^2 (B-A)^2\right].
-\]
 
-Expressed in these quantites, we may write (corresponding to Eq. (4.74))
 \begin{multline}
-  \label{eq:32}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
   \frac{s v_{F} e}{\sqrt{\alpha }}
   \frac{
@@ -640,11 +569,50 @@ Expressed in these quantites, we may write (corresponding to Eq. (4.74))
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
   \left[
     \Xi_{1} (\vec{q}, m, n, s)
-    + \Xi _{2} (\vec{q}, m, n, s)
-    - t_{x} \Xi _{3} (\vec{q}, m, n, s)
-    - t_{x} \Xi _{4} (\vec{q}, m, n, s)
+    + \Xi _{2} (\vec{q}, m, n, s)\\
+    - t_x \frac{a_{\vec{k} + \qvec{q} }}{b_{\vec{k} + \qvec{q} n \mp 1}} \Xi _1(\vec{q}, m, n\mp 1, s)
+    - t_x \frac{b_{\vec{k} + \qvec{q} }}{a_{\vec{k} + \qvec{q} n \pm 1}} \Xi _2(\vec{q}, m, n\pm 1, s)
   \right].
 \end{multline}
+
+We here used definitions of \( \Xi \) similar to that in the project thesis, but modified to the tilted case.
+\begin{equation}
+  \label{eq:30}
+  \frac{\Xi_1 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  }
+  =
+  \int \mathrm{d} \tilde{y}
+  l_{B}
+  a_{\vec{k} m s} b_{\vec{k} + \qvec{q} ns}
+  H_{M-1} (\chi_{\vec{k}})
+  H_N ( \chi _{\vec{k} + \qvec{q}} )
+\end{equation}
+\begin{equation}
+  \label{eq:31}
+  \frac{\Xi_2 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  }
+  =
+  \int \mathrm{d} \tilde{y}
+  l_{B}
+  b_{\vec{k} m s} a_{\vec{k} + \qvec{q} ns}
+  H_{M} (\chi_{\vec{k}})
+  H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )
+\end{equation}
+Using that
+\begin{equation}
+  \label{eq:31}
+  a_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
+  =
+  \frac{a_{\vec{k} m s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
+  \left[
+  2^{N+M-1} (M-1)! N! \pi l_{B}^2
+\right  ]^{-\frac{1}{2}}
+\end{equation}
+
 
 Now we will consider the second term of the current operator.
 \begin{equation}
