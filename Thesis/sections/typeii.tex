@@ -108,7 +108,7 @@ where \(\vec{\omega_{0}}\) is the tilt vector and \(\vec{v}\) is the Fermi veloc
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 Firstly, assume that the tilt vector \(\vec{\omega_{0}}\) is in the \(x,z\)-plane, \(\vec{\omega_{0}} = (\omega_{\perp}, 0, \omega_{\parallel})\), which we can always achieve by a rotation around \(z\).
 \todo{Proof by figure}
-Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{q} = \vec{k} + e \vec{A}\), and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
+Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\), and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
 The Hamitonian can thus be written
 \begin{equation}
   \label{eq:5}
@@ -119,7 +119,7 @@ and the Landau level equation is
   \label{eq:6}
   \left(H_{B} - E\right) \ket{\psi } = 0.
 \end{equation}
-In order to use the ladder operator method used for the untilted cone, we must get rid of the \(q_{x}\) on the diagonal of the Hamiltonian.
+In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian.
 \footnote{It would also be possible to choose the frame such that the tilt was both in \(x\) and \(y\) direction, in which case we would get ladder operators also on the diagonal.
   This system, albeight tedious, could also have been solved directly.
   \todo{Verify this}
@@ -135,7 +135,7 @@ By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \The
 We rewrite the Hamiltonian (Eq. \eqref{eq:5}) in a more compact and explicit way
 \begin{equation}
   \label{eq:8}
-  H_{B} = \left(\omega _{\perp} q_{x} + \omega _{\parallel} q_{z} \right) \mathcal{I}_2 + \sum_i v_{i} q_{i} \sigma _{i},
+  H_{B} = \left(\omega _{\perp} k^B_{x} + \omega _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i v_{i} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 We now make the fortunate observation that, with the hyperbolic rotation operator denoted \( R = \exp [\Theta / 2 \sigma_{x}]\), the diagonal elements of
@@ -145,9 +145,9 @@ R \sigma_{i} R
 are zero for $i=y$ and non-zero for \(i=x,z\).
 We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, without accidentaly rotating the \(y\) components into the diagonal.
 
-The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(q_{x}\) on the diagonal, i.e.
+The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(k^B_{x}\) on the diagonal, i.e.
 \[
-  \omega _{\perp} q_{x} \mathcal{I}_{2} + v_{x} q_{x} \sigma _{x}.
+  \omega _{\perp} k^B_{x} \mathcal{I}_{2} + v_{x} k^B_{x} \sigma _{x}.
 \]
 We will now find the boost parameter that eliminates \(q_{x}\) from the diagonal.
 We have
@@ -169,7 +169,7 @@ and as $[R, \sigma_{x}] = 0$,
   \end{pmatrix},
 \end{equation}
 as the effect of \(\sigma _{x}\) is to transpose the rows.
-The requirement for \(q_{x}\) to be rotated out of the diagonal is thus
+The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
   \label{eq:11}
   \omega _{\perp} \cosh \theta + v_{x} \sinh \theta = 0.
@@ -219,7 +219,7 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
 
 Expressed in the parameter \(t\), the result in Eq. \eqref{eq:13} has an intuitive, and quite visual, interpretation.
 As described above, we have rotated our frame such that the tilt is confined to the \(x,z\)-plane, i.e. no tilt in the \(y\)-direction.
-The required hyperbolic tilt angle to eliminate the \(q_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
+The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
 \begin{equation}
   \label{eq:15}
   \theta = - \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - \tanh^{-1} t_{x}.
@@ -271,8 +271,8 @@ By insertion, and after some clean up, we get
   \label{eq:16}
   =
   \begin{pmatrix}
-    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + \gamma q_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma /v_{x}\\
-    i k_{y} v_{y} + \gamma q_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma  / v_{x}
+    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + \gamma k^{B}_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma /v_{x}\\
+    i k_{y} v_{y} + \gamma k^B_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma  / v_{x}
     & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
   \end{pmatrix}.
 \end{equation}
@@ -281,59 +281,60 @@ after some more clean up
   \label{eq:17}
   =
   \begin{pmatrix}
-    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + v_{x} q_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta \\
-    i k_{y} v_{y} + v_{x} q_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta
+    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + v_{x} k^B_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta \\
+    i k_{y} v_{y} + v_{x} k^B_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta
     & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
   \end{pmatrix}.
 \end{equation}
-In order to simplify this further, absorb \(\gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) into \(q_{x}\).
+In order to simplify this further, absorb \(\gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) into \(k_{x}\).
 Also, we will rescale all momenta to make the effective Fermi velocity isotropic.
 Thus, let
 \begin{equation}
   \begin{split}
-    \tilde{q}_{x} &= \frac{v_{x}}{v_{F}} \left[  q_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}} \right],\\
-    \tilde{q}_{y} &= \frac{v_{y}}{v_{F}} q_{y},\\
-    \tilde{q}_{z} &= \frac{v_{z}}{v_{F}} q_{z}.\\
+    \tilde{k}_{x} &= \frac{v_{x}}{v_{F}} \left[  k_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}} \right],\\
+    \tilde{k}_{y} &= \frac{v_{y}}{v_{F}} k_{y},\\
+    \tilde{k}_{z} &= \frac{v_{z}}{v_{F}} k_{z}.\\
   \end{split}
 \end{equation}
 The eigenvalue equation is simply
 \begin{equation}
   \label{eq:18}
-  \left[  \gamma (\omega_{\parallel} k_{z} - E) \mathcal{I}_{2} +
-  v_{F} \tilde{q}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
+  v_{F} \left[  \gamma \left( \frac{\omega_{\parallel}}{v_{z}} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
+  \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
-If we now again introduce the magnetic field using minimal coupling, \(q_{x} \to  q_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
-This is because \(\tilde{q}_{x} \to  \tilde{q}_{x} - e y \frac{v_{x}}{v_{F}}  B_{z} /\gamma \), and including the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
+If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
+This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e \tilde{y} \frac{v_{y} v_{x}}{v_{F}^2}  B_{z} /\gamma \), where the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
 
 The Landau level equation thus reads
 \begin{equation}
   \label{eq:19}
   \left[
-  \sum\limits_{i} v_{F} \left(\tilde{q}_{i} + e A_{i} \right) \sigma _{i}
+  \sum\limits_{i} v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
-(E-\omega_{\parallel} k_{z}) \gamma \ket{\tilde{\psi}},
+(E- t_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
-where \(\vec{A}=-B_{z} \frac{v_{x} v_{y} }{v_{F}^2} / \gamma  \tilde{y} \hat{x}\).
+where \(\vec{\tilde{A}}=-B_{z} \frac{v_{x} v_{y} }{v_{F}^2} / \gamma  \tilde{y} \hat{x}\).
 We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
 \begin{align}
   \label{eq:20}
-  \left(E-\omega _{\parallel} k_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B v_{x} v_{y}}{ v_{F} ^2 \gamma } \hbar + \tilde{q}_{z}^2 \hbar ^2}, & m \neq 0,\\
-  \left(E-\omega _{\parallel} k_{z} \right) \gamma &= - s \hbar  \tilde{q}_{z} v_{F}, & m=0.
+  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B v_{x} v_{y}}{ v_{F} ^2 \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
+  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
 \end{align}
 Cleaning up, we get
 \begin{align}
   \label{eq:21}
-  E &= \omega _{\parallel} k_{z} + \sign(m) \sqrt{2 |m| e \frac{v_{y} v_{x} B}{\gamma ^3} \hbar + v_{z}^2 k_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
-  E &= k_{z} \left( \omega _{\parallel} - s \hbar v_{z} / \gamma  \right), & m=0.
+  E &= t_{\parallel} v_F \tilde{k}_{z} + \sign(m) \sqrt{2 |m| e \frac{v_{y} v_{x} B}{\gamma ^3} \hbar + v_{F}^2 \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
+  E &= \tilde{k}_{z} v_{F} \left( t_{\parallel}  - s \hbar / \gamma  \right), & m=0.
 \end{align}
 
 As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:22}
-  E = \omega _{\parallel} k_{z} + \sign(m)  \sqrt{2 |m| e B v_{x} v_{y} \alpha  ^3 \hbar + v_{z} ^2 k_{z}^2\hbar ^2 \alpha ^2}
+  E = t_{\parallel} v_{F} \tilde{k}_{z} + \sign(m)  \sqrt{2 |m| e B v_{x} v_{y} \alpha  ^3 \hbar + v_{F} ^2 \tilde{k}_{z}^2\hbar ^2 \alpha ^2}
 \end{equation}
-As the tilt increases, the Landau levels converge towards \(\omega _{\parallel} k_{z}\).
+As the tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
+\todo{Note that \( \tilde{k}\to 0 \) as we overtilt as well, so all the levels go to zero.}
 In particular, the separation between Landau levels \(m\) \todo{maybe use the word cyclotron frequency} is reduced by a factor \(\alpha ^{\frac{3}{2}}\).
 The effect of the tilt on the Landau levels is to squeeze the Landau levels together, and we will call the \(\alpha ^{\frac{3}{2}}\) the \emph{squeezing factor}.
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
@@ -343,7 +344,7 @@ The eigenstate of
 \[
 H = v_{F} \sigma ^{i} ( p_{i} + e A_{i} ),
 \]
-with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis is
+with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis, is
 \begin{equation}
   \phi _{\vec{k} m s}(\vec{r}) = \frac{1}{\sqrt{L_xL_z}}
   \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{\alpha _{k_z m s}^2 + 1}}
@@ -360,27 +361,26 @@ where capital letters indicate absolute value of corresponding quantity, $M=|m|,
 Taking care to keep track of boosted and rescaled quantites, the eigenstate in the boosted frame is
 \begin{equation}
   \label{eq:29}
-  \tilde{\psi}(\vec{r}) =
+  \tilde{\psi}(\tilde{\vec{r}}) =
   \frac{1}{\sqrt{L_xL_z}}
   \frac{e^{ik_x x}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
-  e^{-\frac{\left(\tilde{y} - \tilde{q}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}
+  e^{-\frac{\left(\tilde{y} - \tilde{k}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}
   \begin{pmatrix}
-    \frac{\alpha _{\tilde{q}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \frac{\tilde{y} - \tilde{q}_x l_{B'}^2}{l_{B'}} \right)\\
-    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \frac{\tilde{y} - \tilde{q}_x l_{B'}^2}{l_{B'}} \right)
+    \frac{\alpha _{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \frac{\tilde{y} - \tilde{k}_x l_{B'}^2}{l_{B'}} \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \frac{\tilde{y} - \tilde{k}_x l_{B'}^2}{l_{B'}} \right)
   \end{pmatrix},
 \end{equation}
 with
 \begin{equation}
-  \alpha _{\tilde{q}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{q}_z m s} - \omega _{\parallel} k_{z}}{s v_{F}} - \hbar  \tilde{q}_z},
+  \alpha _{\tilde{k}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} - \hbar  \tilde{k}_z},
 \end{equation}
 where \(E\) is the solution in the unboosted frame and
 \[
 B' = B \frac{v_{x} v_{y}}{v_{F}^2} \alpha
 \]
-\todo{Check if Ly should be changed}
 
 
-and thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
+And thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
 
 \todo{ Write down the full form of \( \phi _{\vec{k} m s} (\vec{r}) \), taking care to use the original momenta, and not the rescaled. }
 
