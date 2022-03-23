@@ -363,7 +363,7 @@ Taking care to keep track of boosted and rescaled quantites, the eigenstate in t
   \label{eq:29}
   \tilde{\psi}(\tilde{\vec{r}}) =
   \frac{1}{\sqrt{L_xL_z}}
-  \frac{e^{ik_x x}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
+  \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
   e^{-\frac{\left(\tilde{y} - \tilde{k}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}
   \begin{pmatrix}
     \frac{\alpha _{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \frac{\tilde{y} - \tilde{k}_x l_{B'}^2}{l_{B'}} \right)\\
@@ -410,19 +410,62 @@ where \(\hbar \) is taken to be one.
 \todo{ Clean up in \(\hbar \) }
 
 
-\todo{Maybe better to introduce some quanity here, for example \(\chi\) representing resized y}
 \begin{equation}
   \label{eq:40}
-  \tilde{\phi} _{\vec{k} m s} (\vec{r})
+  \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}})
   =
   \frac{1}{\sqrt{L_xL_z}}
-  \frac{e^{ik_x x}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
+  \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
+  e^{-\frac{1}{2} \chi ^2}
+  \sqrt[4]{\alpha }
+  \begin{pmatrix}
+    \frac{\alpha _{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B}}} H_{M-1}\left( \chi  \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B}}} H_M \left( \chi \right)
+  \end{pmatrix}.
+\end{equation}
+For later convenience, let us explicitly define
+\begin{equation}
+  \label{eq:32}
+  \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}}) =
+  \frac{e^{i \tilde{k}_{x} \tilde{x} + i k_{z} z}}{\sqrt{L_{x} L_{z}} }
+  \underbrace{
+  \frac{
+    e^{-\frac{1}{2} \chi ^2}
+    \sqrt[4]{\alpha }
+  }
+  {\sqrt{\alpha^2_{\tilde{k}_{z} m s} + 1} }
+  \begin{pmatrix}
+    \frac{\alpha _{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B}}} H_{M-1}\left( \chi  \right)\\
+    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B}}} H_M \left( \chi \right)
+  \end{pmatrix}}_{\tilde{\phi}_{\vec{k} m s} (y)},
+\end{equation}
+and thus
+\begin{equation}
+  \label{eq:42}
+  \tilde{\phi}_{\vec{k} m s} (y) =
   e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
-    \frac{\alpha _{\tilde{q}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \chi  \right)\\
-    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \chi \right)
+    a_{\vec{k} m s} H_{M-1} (\chi)\\
+    b_{\vec{k} m s} H_{M} (\chi)
   \end{pmatrix},
 \end{equation}
+with
+\begin{align}
+  a_{\vec{k} m s} &=
+                    \frac{
+                    \alpha _{\tilde{k}_z m s} \sqrt[4]{\alpha }
+                    }{
+                    \sqrt{\alpha^2 _{\tilde{k}_z m s} + 1}
+                    \sqrt{2^{M-1} (M-1)! \sqrt{\pi} l_B}
+                    },\\
+  b_{\vec{k} m s} &=
+                    \frac{
+                     \sqrt[4]{\alpha }
+                    }{
+                    \sqrt{\alpha^2 _{\tilde{k}_z m s} + 1}
+                    \sqrt{2^{M} M! \sqrt{\pi} l_B}
+                    }.\\
+\end{align}
 
 
 Repeating the calculation of the response function is now straightforward, but rather tedious.
@@ -567,12 +610,12 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
   } (1-t_{x}^2)^{-\frac{1}{2}}\\
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-  \left[
+  \Big[
     \Xi_{1} (\vec{q}, m, n, s)
     + \Xi _{2} (\vec{q}, m, n, s)\\
     - t_x \frac{a_{\vec{k} + \qvec{q} }}{b_{\vec{k} + \qvec{q} n \mp 1}} \Xi _1(\vec{q}, m, n\mp 1, s)
     - t_x \frac{b_{\vec{k} + \qvec{q} }}{a_{\vec{k} + \qvec{q} n \pm 1}} \Xi _2(\vec{q}, m, n\pm 1, s)
-  \right].
+  \Big].
 \end{multline}
 
 We here used definitions of \( \Xi \) similar to that in the project thesis, but modified to the tilted case.
@@ -822,12 +865,12 @@ And thus, recalling that
 we find the product
 \begin{multline}
   \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \tilde{p}_{y} \phi _{\vec{k} m s}
-  = -\frac{i\hbar 2 \sqrt{\alpha } }{ l_{B} }
-  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}
-  \phi ^{*}_{\vec{k} + \qvec{q} ns}(y)
-  e^{\theta \sigma _{x}}
-  \phi _{\vec{k} ms} (y)\\
-  %
+  % = -\frac{i\hbar 2 \sqrt{\alpha } }{ l_{B} }
+  % e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}
+  % \phi ^{*}_{\vec{k} + \qvec{q} ns}(y)
+  % e^{\theta \sigma _{x}}
+  % \phi _{\vec{k} ms} (y)\\
+  % %
   = -\frac{i\hbar 2 \sqrt{\alpha } }{l_{B} \sqrt{1 - t_{x}^2} }
   e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
   \Big[
@@ -962,15 +1005,101 @@ where
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
   \sqrt{1 - t_x^2 }}
-}
 \]
+
+In a similar procedure, we find \( T^{0y~(2)}_{\vec{k}+\qvec{q} ns, \vec{k} ms}(\vec{q}) \).
+\begin{equation}
+  \tilde{p}_y \phi^{*}_{\vec{k}+\qvec{q} m s} = \frac{-i \hbar \sqrt{\alpha } }{l_{B}}  e^{-\frac{1}{2} \chi ^2}
+                                   \begin{pmatrix}
+                                     a_{\vec{k}+\qvec{q} m s} (M-1) H_{M-2} (\chi) \\
+                                     b_{\vec{k}+\qvec{q} m s} (M) H_{M-1} (\chi)
+                                   \end{pmatrix}.
+\end{equation}
+And thus,
+\begin{multline}
+  \left( \tilde{p}_y \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \right) \phi _{\vec{k} m s}
+  = -\frac{i\hbar 2 \sqrt{\alpha } }{l_{B} \sqrt{1 - t_{x}^2} }
+  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} (N-1) H_{N-2}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} H_{M-1} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} N H_{N-1} (\chi_{\vec{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms}  H_{M-1} (\chi_{\vec{k}}) + b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+With the now well-known completion of the square and substitution, we have
+\begin{multline}
+  \int \mathrm{d}y
+  e^{i q_{y}}
+  \left[\tilde{p}_y \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \right]
+  \phi_{\vec{k} ms} (y)
+  =
+  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+  \right  ]\\
+  \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} (N-1) H_{N-2}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} H_{M-1} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} N H_{N-1} (\chi_{\vec{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms}  H_{M-1} (\chi_{\vec{k}}) + b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+Denote the terms of the integrand by
+\begin{align}
+  M^{(3)}_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (N-1) H_{N-2} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(3)}_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} (N-1) H_{N-2} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}}),\\
+  M^{(3)}_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} N H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(3)}_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} N H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}}).
+\end{align}
+We must evaluate
+\begin{equation}
+  \label{eq:59}
+  F^{(3)}_{ij} = \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
+\end{equation}
+From the untilted case we know
+\begin{align}
+  F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
+                 \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
+                 \frac{\Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s )}{
+                 \sqrt{\alpha^2_{\vec{k} m s} + 1}
+                 \sqrt{\alpha^2 _{\vec{k} + \qvec{q} n s} + 1}
+                 },\\
+  F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
+                 \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
+                 \frac{\Xi_{2} (\bar{\vec{q}}, m, n, s)}{
+                 \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+                 \sqrt{\alpha _{\vec{k} + \qvec{q} ns}^2 + 1}
+                 }
+\end{align}
+Furthermore,
+\begin{align}
+  F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
+                 \sqrt{\frac{N-1}{2}}
+                 \frac{\Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s)}{
+                 \sqrt{\alpha ^2_{\vec{k} m s} + 1}
+                 \sqrt{\alpha ^2_{\vec{k}  + \qvec{q} n} + 1}
+                 },\\
+  F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
+                 \sqrt{\frac{N}{2}}
+                 \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
+                 \frac{\Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s )}{
+                 \sqrt{\alpha _{\vec{k} m} ^2 + 1}
+                 \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2 + 1}
+                 }.
+\end{align}
+
+
 
 
 \todo{Remember normalization factor \(\mathcal{N}\)!!!}
 \todo{squeezing figure}
 
 
-Maybe use squeezing \(\alpha \) instead of \(\gamma \)?
 \todo{Fix anisotropic directions}
 
 
