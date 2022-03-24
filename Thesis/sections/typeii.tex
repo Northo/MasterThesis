@@ -942,48 +942,40 @@ Let \( M^{(2)}_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
 We want to evaluate
 \begin{equation}
   \label{eq:54}
-  F^{(2)}_{ij} = \int \mathrm{d} \tilde{y}
+  F^{(2)}_{ij} =
+  \left[(\alpha_{\vec{k} m s}^2 + 1) ( \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 )\right]^{\frac{1}{2}}
+  \int \mathrm{d} \tilde{y}
   e^{-\tilde{y}^2}
-  M^{(2)}_{ij}.
+  M^{(2)}_{ij},
 \end{equation}
+with the prefactor introduced for later convenience.
 
 Notice that
 \begin{equation}
   \label{eq:55}
   F^{(2)}_{21}
   =
-    -t_{x} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}}{l_B a_{\vec{k} m \mp 1 s}} \frac{\Xi_{1} (\vec{q}, m \mp 1, n, s)}{
-    \sqrt{\alpha _{\vec{k} m s} ^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
-    },
+  -t_{x} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}}{l_B a_{\vec{k} m \mp 1 s}}
+  \Xi_{1} (\vec{q}, m \mp 1, n, s),
 \end{equation}
 and
 \begin{equation}
   F^{(2)}_{12}
   = -t_{x} \frac{M}{\sqrt{2 (N-1)} } \frac{a_{\vec{k} + \qvec{q} n s}}{l_B a_{\vec{k} + \qvec{q} n \mp 1 s}}
-  \frac{\Xi_{1}(\vec{q}, m, n\mp1, s)}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
-  }.
+  \Xi_{1}(\vec{q}, m, n\mp1, s).
 \end{equation}
 \( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
 \begin{equation}
   \label{eq:56}
   F^{(2)}_{11} = \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} \alpha _{\vec{k} m\mp 1 s}}
-  \frac{\Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s)}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
-  },
+  \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),
 \end{equation}
 and
 \begin{equation}
   \label{eq:57}
   F^{(2)}_{22} =
   \frac{\sqrt{M} }{l_B \alpha _{\vec{k} m s} \sqrt{2} }
-  \frac{\Xi_{1} ( \bar{\vec{q}}, m, n, s )}{
-    \sqrt{\alpha _{\vec{k} m s} ^2 + 1}
-    \sqrt{ \alpha _{\vec{k} + \qvec{q} n s} ^2 + 1 }
-  }.
+  \Xi_{1} ( \bar{\vec{q}}, m, n, s ).
 \end{equation}
 In summary we have
 \begin{align}
@@ -1059,38 +1051,26 @@ Denote the terms of the integrand by
 We must evaluate
 \begin{equation}
   \label{eq:59}
-  F^{(3)}_{ij} = \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
+  F^{(3)}_{ij} = \left[(\alpha_{\vec{k} m s}^2  + 1) ( \alpha _{\vec{k} + \qvec{q} ns}^2 + 1 )\right]^{\frac{1}{2}} \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
 \end{equation}
 From the untilted case we know
 \begin{align}
   F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
                  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
-                 \frac{\Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s )}{
-                 \sqrt{\alpha^2_{\vec{k} m s} + 1}
-                 \sqrt{\alpha^2 _{\vec{k} + \qvec{q} n s} + 1}
-                 },\\
+                 \Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s ),\\
   F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
                  \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
-                 \frac{\Xi_{2} (\bar{\vec{q}}, m, n, s)}{
-                 \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-                 \sqrt{\alpha _{\vec{k} + \qvec{q} ns}^2 + 1}
-                 }
+                 \Xi_{2} (\bar{\vec{q}}, m, n, s).
 \end{align}
 Furthermore,
 \begin{align}
   F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
                  \sqrt{\frac{N-1}{2}}
-                 \frac{\Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s)}{
-                 \sqrt{\alpha ^2_{\vec{k} m s} + 1}
-                 \sqrt{\alpha ^2_{\vec{k}  + \qvec{q} n} + 1}
-                 },\\
+                 \Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s),\\
   F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
                  \sqrt{\frac{N}{2}}
                  \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
-                 \frac{\Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s )}{
-                 \sqrt{\alpha _{\vec{k} m} ^2 + 1}
-                 \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2 + 1}
-                 }.
+                 \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
 \end{align}
 
 
