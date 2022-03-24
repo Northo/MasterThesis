@@ -627,6 +627,7 @@ We here used definitions of \( \Xi \) similar to that in the project thesis, but
   }
   =
   \int \mathrm{d} \tilde{y}
+  ~e^{-\tilde{y}^2}
   l_{B}
   a_{\vec{k} m s} b_{\vec{k} + \qvec{q} ns}
   H_{M-1} (\chi_{\vec{k}})
@@ -640,6 +641,7 @@ We here used definitions of \( \Xi \) similar to that in the project thesis, but
   }
   =
   \int \mathrm{d} \tilde{y}
+  ~e^{-\tilde{y}^2}
   l_{B}
   b_{\vec{k} m s} a_{\vec{k} + \qvec{q} ns}
   H_{M} (\chi_{\vec{k}})
@@ -980,7 +982,7 @@ and
 In summary we have
 \begin{align}
   \label{eq:58}
-  T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q}) &= + \frac{v_F}{2} \int \mathrm{d} y
+  T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q}) &= + \frac{v_F}{4} \int \mathrm{d} y
   e^{i q_y q} \phi _{\vec{k} + \qvec{q} ns}^{*} (y) p_{y} \phi _{\vec{k} ms} (y)\\
 &= -\frac{ i \hbar v_{F} }{2}
                                                                                      \Gamma _{\vec{k} \qvec{q} m n s}^+
@@ -1071,6 +1073,18 @@ Furthermore,
                  \sqrt{\frac{N}{2}}
                  \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
                  \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
+\end{align}
+We thus have
+\begin{align}
+  \label{eq:60}
+  T^{0y~(3)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q})
+  &= - \frac{v_F}{4}
+    \int \mathrm{d} y
+    e^{i q_y y}
+    \left( p_y \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \right) \phi _{\vec{k} m s}(y)\\
+  &= \frac{i \hbar v_F}{2}
+    \Gamma ^{+}_{\vec{k} \qvec{q} m n s}
+    \sum\limits_{ij}^{} F^{(3)}_{ij}.
 \end{align}
 
 
