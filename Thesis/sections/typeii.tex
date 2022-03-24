@@ -548,10 +548,19 @@ The exponent is of course
 A straightforward but tedious calculation shows that the argument of the exponent can be written as
 \begin{equation}
   \label{eq:47}
-  -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (A+B)\alpha)\right)^2
-  -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2),
+  -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (q'_x + 2 k'_x))\right)^2
+  -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (q'_x + 2 k'_x) q_{y} + ( q' _{x} )^2 ),
 \end{equation}
 where we have defined
+\begin{align}
+  q' _x &= \frac{q_x + \exists_B - \exists _A}{\alpha }\\
+  k' _x &= \frac{k_x + \exists _A}{\alpha }
+\end{align}
+where
+\[
+  \exists _A = \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}, \quad
+  \exists _B = \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
+\]
 \begin{align}
   A &= k_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}\\
   B &= k_{x} + q_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
@@ -559,14 +568,14 @@ where we have defined
 Eq. \eqref{eq:47} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
-\tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - (A+B) \alpha)\right),
+\tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - 2 k' _x - q' _x )\right),
 \]
 \todo{Follow up the substitiuoin of the root in the integral. Consider moving the root into \(\Xi \)}
 to get the exponent on the form \(e^{-\tilde{y}^2}\).
-With this susbstitiuion,
+With this substitution,
 \begin{align}
-  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) - i q_{y}\right)\\
-  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) - i q_{y}\right)
+  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(q' _x - i q_{y}\right)\\
+  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(- q' _x - i q_{y}\right)
 \end{align}
 
 Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
@@ -576,7 +585,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     \frac{s v_F e}{\sqrt{\alpha }} \int \mathrm{d}\tilde{y} \: l_B
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+      -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + k'_x^2 \right)
     \right]
     (1-t_{x}^2)^{-\frac{1}{2}}\\
     e^{-\tilde{y}^2}
@@ -604,7 +613,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
   \frac{s v_{F} e}{\sqrt{\alpha }}
   \frac{
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + k'_x^2 )
     \right]
   }{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
@@ -683,7 +692,7 @@ We have
   \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + q'_x^2 )
     \right]\\
   e^{-\tilde{y}^2} \big[
     a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
@@ -698,7 +707,7 @@ Thus,
   \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha } }
   \frac{
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + q'_x^2 )
     \right]
   }{
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
@@ -765,12 +774,12 @@ The exponent is the same as that which we found for the current operator case, E
 We thus make the change of variables
 \begin{equation}
   \label{eq:49}
-  \tilde{y} = \frac{\sqrt{\alpha}}{l_{B}} \left(y  - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (A + B) \alpha )\right),
+  \tilde{y} = \frac{\sqrt{\alpha}}{l_{B}} \left(y  - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (2k' _x + q' _x) )\right),
 \end{equation}
 giving
 \begin{align}
-  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (B-A) + i q_{y}\right),\\
-  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(\alpha (A-B) + i q_{y}\right).
+  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left( q'_x + i q_{y}\right),\\
+  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left( -q' _{x} + i q_{y}\right).
 \end{align}
 Thus, analogous to Eq. (4.79), we get
 \begin{multline}
@@ -779,7 +788,7 @@ Thus, analogous to Eq. (4.79), we get
   \frac{is}{4 \sqrt{\alpha} }
   (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu)
   \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + q' _x^2 )
   \right  ]
   \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
  \Big[
@@ -800,7 +809,7 @@ And thus we have
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
   }\\
   &\pe \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (A+B) q_{y} \alpha + (A-B)^2 \alpha^2)
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i ( 2k' _x + q' _x ) q_{y} + q' _x^2)
   \right  ]\\
   &\pe (-\Xi_{2} (\bar{\vec{q}}, m, n, s) + \Xi_{1}(\bar{\vec{q}}, m, n, s)),
 \end{align}
@@ -886,7 +895,7 @@ we find the product
 Completing the square and substituting
 \[
   \tilde{y} = \frac{\sqrt{ \alpha  }}{l_{B}}
-  \left(y - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (A + B) \alpha) \right)
+  \left(y - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (2 k'_x + q' _x) ) \right)
 \]
 gives
 \begin{multline}
@@ -898,7 +907,7 @@ gives
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
@@ -994,7 +1003,7 @@ where
   \frac{
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
   \right  ]
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
@@ -1032,7 +1041,7 @@ With the now well-known completion of the square and substitution, we have
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (A+B) q_{y} \alpha + (A-B)^2\alpha^2)
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
