@@ -932,25 +932,25 @@ We must now evaluate the integral, and express the result in the \( \Xi \)-funct
 \]
 For each of the entries in \( T \), we get a product on of Hermite polynomials.
 Where the untilted cone had two such terms, the tilt parameter \( t _x \) now gives two extra products, which we must evaluate.
-Let \( M_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
+Let \( M^{(2)}_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
 \begin{align}
-  M_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (M-1) H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
-  M_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
-  M_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} ( M-1 ) H_{N} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
-  M_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_N (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}).
+  M^{(2)}_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (M-1) H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M^{(2)}_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(2)}_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} ( M-1 ) H_{N} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M^{(2)}_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_N (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}).
 \end{align}
 We want to evaluate
 \begin{equation}
   \label{eq:54}
-  F_{ij} = \int \mathrm{d} \tilde{y}
+  F^{(2)}_{ij} = \int \mathrm{d} \tilde{y}
   e^{-\tilde{y}^2}
-  M_{ij}.
+  M^{(2)}_{ij}.
 \end{equation}
 
 Notice that
 \begin{equation}
   \label{eq:55}
-  F_{21}
+  F^{(2)}_{21}
   =
     -t_{x} (M-1) \frac{a_{\vec{k} m s}}{l_B a_{\vec{k} m \mp 2 s}} \frac{\Xi_{1} (\vec{q}, m\mp 2, n, s)}{
     \sqrt{\alpha _{\vec{k} m\mp 2 s} ^2 + 1}
@@ -959,17 +959,17 @@ Notice that
 \end{equation}
 and
 \begin{equation}
-  F_{12}
+  F^{(2)}_{12}
   = -t_{x} M \frac{a_{\vec{k} + \qvec{q} n s}}{l_B a_{\vec{k} + \qvec{q} n \mp 1 s}}
   \frac{\Xi_{1}(\vec{q}, m, n\mp1, s)}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n \mp 1 s} ^2 + 1}
   }.
 \end{equation}
-\( F_{11} \) and \( F_{22} \) are the same as for the untilted case:
+\( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
 \begin{equation}
   \label{eq:56}
-  F_{11} = \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} \alpha _{\vec{k} m\mp 1 s}}
+  F^{(2)}_{11} = \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} \alpha _{\vec{k} m\mp 1 s}}
   \frac{\Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s)}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
@@ -978,7 +978,7 @@ and
 and
 \begin{equation}
   \label{eq:57}
-  F_{22} =
+  F^{(2)}_{22} =
   \frac{\sqrt{M} }{l_B \alpha _{\vec{k} m s} \sqrt{2} }
   \frac{\Xi_{1} ( \bar{\vec{q}}, m, n, s )}{
     \sqrt{\alpha _{\vec{k} m s} ^2 + 1}
@@ -992,7 +992,7 @@ In summary we have
   e^{i q_y q} \phi _{\vec{k} + \qvec{q} ns}^{*} (y) p_{y} \phi _{\vec{k} ms} (y)\\
 &= -\frac{ i \hbar v_{F} }{2}
                                                                                      \Gamma _{\vec{k} \qvec{q} m n s}^+
-\sum\limits_{i,j}^{} F_{ij},
+\sum\limits_{i,j}^{} F^{(2)}_{ij},
 \end{align}
 where
 \[
