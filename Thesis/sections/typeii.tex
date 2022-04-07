@@ -340,6 +340,23 @@ The effect of the tilt on the Landau levels is to squeeze the Landau levels toge
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
 
+Consider now isotropic velocities \( v_i = v_F \).
+Even for anisotripic systems, we may rescale the momenta to arrive at such a description.
+We may rewrite the energy as
+\[
+  E =
+  \begin{cases}
+    t_{\parallel} v_F k_z + \operatorname{sign}(m) v_F \alpha \sqrt{2 |m| e B \alpha + k_z^2} & m\neq 0\\
+    t_{\parallel} v_F k_z - s \alpha v_F k_z & m=0,
+  \end{cases}
+\]
+where \( \hbar = 1 \).
+Notice that this is exactly
+\[
+E = t_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
+\]
+where \( E^0_{m, B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
+
 The eigenstate of
 \[
 H = v_{F} \sigma ^{i} ( p_{i} + e A_{i} ),
@@ -402,11 +419,8 @@ Using the explicit form of \(E\)
   \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
   =
   \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B}
-  - \operatorname{sign}(m)
-  \beta
-  \sqrt{2 |m| + \frac{k_{z}^2 l_{B}^2}{\alpha }}.
-\end{equation}
-where \(\hbar \) is taken to be one.
+  + \frac{ \beta l_B }{ \sqrt{\alpha}} E^{0}_{m, \alpha B},
+\end{equation}.
 \todo{ Clean up in \(\hbar \) }
 
 
@@ -553,14 +567,9 @@ A straightforward but tedious calculation shows that the argument of the exponen
 \end{equation}
 where we have defined
 \begin{align}
-  q' _x &= \frac{q_x + \exists_B - \exists _A}{\alpha }\\
-  k' _x &= \frac{k_x + \exists _A}{\alpha }
+  q' _x &= \frac{q_x}{\alpha } + \frac{\beta}{v_{F} \alpha }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ),\\
+  k' _x &= \frac{k_x}{\alpha } + \frac{\beta}{v_F \alpha } E^0_{m, \alpha B}.
 \end{align}
-where
-\[
-  \exists _A = \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}, \quad
-  \exists _B = \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
-\]
 \begin{align}
   A &= k_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}\\
   B &= k_{x} + q_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
@@ -1113,6 +1122,69 @@ We thus have
 We will boost the frame of the tilted cone such that the system is again isotropic, and use the well known solution for the Landau levels in that frame.
 The issue is that the boost is only valid for certain directions of the field.
 Add pretty figures describing the situation.
+
+
+\subsection{Solving the kx integral -- draft}
+Note that throughout this seciton, \( \hbar = 1 \).
+We must solve integrals on the form
+\begin{equation}
+  \label{eq:61}
+  \sum_{mn} \int \mathrm{d} k_x [ \Theta (-E_{k_z m}) - \Theta (-E_{k_z n} ) ]
+  \frac{
+    J T
+  }{
+    ( E_{k_z m } - E_{k_z n} )^2
+  }.
+\end{equation}
+First of all, note that the factor with the step functions \( \Theta  \) will restrict our \( m,n \)-sum to states with energy of opposite sign.
+For Type-I this means that \( m n \leq 0 \).
+We will rewrite the integral on dimensionless form, to facilitate for integration.
+Introduce \( \kappa _z = k_z / \sqrt{2 eB}  \) and \( \epsilon _{\kappa _z m} = \frac{E_{k_z m}}{v_{F } \sqrt{2 eB} } \).
+Note that \( B \) is here the actual \( B \), not the rescaled \( B' = \alpha B \).
+
+Recall the previously defined
+\[
+  q' _x = \frac{q_x}{\alpha } + \frac{\beta}{v_{F} \alpha }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ).
+\]
+In terms of the dimensionless quantities we have
+\[
+  q' _x = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha l_B }( \epsilon ^0_{n,\alpha B} - \epsilon ^0_{m, \alpha B} )
+  = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha^2 l_{B} }( \epsilon_n - \epsilon_m ).
+\]
+In other words
+\[
+\lim_{q\to 0} \frac{l_B}{\sqrt{2} } q'_x = \beta \frac{\epsilon_n-\epsilon_m}{\alpha ^2}.
+\]
+
+We thus have
+\begin{equation}
+  \label{eq:62}
+  \sum\limits_{[mn]}^{}
+  \int  \frac{\mathrm{d} \kappa _z}{v_F^2 \sqrt{2 eB}}
+  \frac{
+    J T
+  }{
+    (\epsilon_{\kappa _z m} - \epsilon_{\kappa _z n})^2
+  },
+\end{equation}
+where \( [mn] \) is understood as the sum over all \( m,n \) following the selection rule given above.
+
+Consider \( J T^1 \) as a concrete, and the simplest, example.
+\begin{equation}
+  \label{eq:63}
+  \lim_{q\to 0} J T^1 \sim \frac{e^{- \frac{\beta^2}{\alpha ^4} ( \epsilon _n - \epsilon _m )^2}}{
+    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
+  }
+  \frac{(\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) ( \Xi _1^2 - \Xi _2^2 )}{
+(\epsilon_{\kappa _{z} m} - \epsilon_{\kappa _{z} n}) ^2
+  }.
+\end{equation}
+
+Should make more clear the selection rules and tricks we may use.
+Especially how we may neglect the \( \Xi _1 \) part and only consider \( \Xi _2 \) and multiply.
+Also look at \( m \leftrightarrow n \), I think they are duplicates.
+
+Probably better to redefine \( \Xi  \) without the \( \alpha  \) term, as it only causes trouble
 
 \section{Notes}
 \subsection{Spin states for Dirac cone}
