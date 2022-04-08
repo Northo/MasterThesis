@@ -1283,6 +1283,70 @@ Probably better to redefine \( \Xi  \) without the \( \alpha  \) term, as it onl
   \label{fig:nmregion}
 \end{figure}
 
+Consider the part of the response function from the product \( J^{(1)} T^{(1)} \)
+\todo{Take more care in the expressions with being careful and clear on whether we have taken the limit \( q\to 0 \) or not}
+\begin{equation}
+  \label{eq:64}
+  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
+  \frac{iv_F eB}{(2\pi)^2}
+  \sum\limits_{mn}^{} \int \mathrm{d} k_z
+  (n_{k _z m} - n_{k _z n})
+  \frac{J^{(1)} T^{(1)}}{(E_{k _{z} m} - E_{k _{z} n})(E_{k _{z} m} - E_{k _{z} n} + \omega)}.
+\end{equation}
+With the dimensionless quantities and using \( (n_{\kappa _z m} - n_{\kappa _z n}) = -\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0}) \) in the fourth quadrant, we have
+\begin{equation}
+  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
+  \frac{iv_F eB}{(2\pi)^2}
+  \sum\limits_{[mn]}^{} \int \mathrm{d} \kappa_z
+[-\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0})]
+  \frac{J^{(1)} T^{(1)} / (v_F^2 \sqrt{2eB} )
+  }{(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n})(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n} + \omega)}.
+\end{equation}
+By insertion
+\begin{multline}
+  \label{eq:66}
+   \frac{J^{(1)} T^{(1)}}{v_{F}^2 \sqrt{2eB} } =
+  \frac{i e}{4 \alpha^2 }
+  \frac{\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}}{
+    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
+  }
+  e^{-\frac{l_B^2}{2 \alpha } (q'_x)^2}
+  (\Xi_1 - \Xi_2)\\
+  \Big[
+  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+  + \alpha _{\vec{k} n s} \Xi _{2} (\vec{q}, m, n, s)\\
+  - t_x \alpha _{\kappa_z m s} \Xi _1(\vec{q}, m, n\mp 1, s)
+  - t_x \alpha _{\kappa_z n s} \Xi _2(\vec{q}, m, n\pm 1, s)
+  \Big]
+\end{multline}
+
+
+Inserting the current and stress-energy matrix elements we have
+
+\begin{equation}
+  \label{eq:65}
+  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
+  \frac{iv_F eB}{(2\pi)^2}
+  \sum\limits_{mn}^{} \int \mathrm{d} \kappa _z
+  (n_{\kappa _z m} - n_{\kappa _z n})
+  \frac{s v_F e}{\sqrt{\alpha}}
+  \frac{is}{4 \sqrt{\alpha } }
+  e^{-\frac{l_B^2}{2 \alpha } (q' _x)^2}
+  \frac{E_{\kappa _z m} + E_{\kappa _z n}}{
+    (\alpha_{\kappa _z m}^2 + 1)(\alpha_{\kappa _z n}^2 + 1)
+  }
+  (1-t_{x}^2)^{-\frac{1}{2}}\\
+  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
+  \Big[
+  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+  + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
+  - t_x \alpha _{\vec{k} m s} \Xi _1(\vec{q}, m, n\mp 1, s)
+  - t_x \alpha _{\vec{k} + \qvec{q} n s} \Xi _2(\vec{q}, m, n\pm 1, s)
+  \Big]
+  (\Xi_1 - \Xi_2)
+  \frac{1}{(E_{\kappa _{z} m} - E_{\kappa _{z} n})(E_{\kappa _{z} m} - E_{\kappa _{z} n} + \omega)}.
+\end{equation}
+
 We carry out the integral numerically for different values of \( t_x \).
 The results may be seen in Figure TODO.
 
