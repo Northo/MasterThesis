@@ -570,10 +570,6 @@ where we have defined
   q' _x &= \frac{q_x}{\alpha } + \frac{\beta}{v_{F} \alpha }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ),\\
   k' _x &= \frac{k_x}{\alpha } + \frac{\beta}{v_F \alpha } E^0_{m, \alpha B}.
 \end{align}
-\begin{align}
-  A &= k_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(m) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 M}\\
-  B &= k_{x} + q_{x} + \frac{\beta}{l_{B} \sqrt{\alpha }} \sign(n) \sqrt{\frac{k_{z}^2l_{B}^2}{\alpha } + 2 N}
-\end{align}
 Eq. \eqref{eq:47} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
@@ -594,7 +590,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     \frac{s v_F e}{\sqrt{\alpha }} \int \mathrm{d}\tilde{y} \: l_B
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + k'_x^2 \right)
+      -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (k'_x)^2 \right)
     \right]
     (1-t_{x}^2)^{-\frac{1}{2}}\\
     e^{-\tilde{y}^2}
@@ -622,17 +618,17 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
   \frac{s v_{F} e}{\sqrt{\alpha }}
   \frac{
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + k'_x^2 )
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (k'_x)^2 )
     \right]
   }{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
   } (1-t_{x}^2)^{-\frac{1}{2}}\\
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
   \Big[
-    \Xi_{1} (\vec{q}, m, n, s)
-    + \Xi _{2} (\vec{q}, m, n, s)\\
-    - t_x \frac{a_{\vec{k} + \qvec{q} }}{b_{\vec{k} + \qvec{q} n \mp 1}} \Xi _1(\vec{q}, m, n\mp 1, s)
-    - t_x \frac{b_{\vec{k} + \qvec{q} }}{a_{\vec{k} + \qvec{q} n \pm 1}} \Xi _2(\vec{q}, m, n\pm 1, s)
+   \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+    + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
+    - t_x \alpha _{\vec{k} m s} \Xi _1(\vec{q}, m, n\mp 1, s)
+    - t_x \alpha _{\vec{k} + \qvec{q} n s} \Xi _2(\vec{q}, m, n\pm 1, s)
   \Big].
 \end{multline}
 
@@ -708,6 +704,7 @@ Using that
           \end{cases}, \label{eq:43}
 \end{align}
 Here, \( \qvec{q}_y = (q'_x, q_y) \).
+\todo{In the future, might be nice to go over to having only one function, Xi1, and simply mix around the arguments}
 
 
 Now we will consider the second term of the current operator.
@@ -734,7 +731,7 @@ We have
   \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + q'_x^2 )
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
     \right]\\
   e^{-\tilde{y}^2} \big[
     a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
@@ -750,7 +747,7 @@ Thus,
   \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha } }
   \frac{
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + q'_x^2 )
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
     \right]
   }{
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
@@ -831,7 +828,7 @@ Thus, analogous to Eq. (4.79), we get
   \frac{is}{4 \sqrt{\alpha} }
   (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu)
   \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + q' _x^2 )
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]
   \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
  \Big[
@@ -852,7 +849,7 @@ And thus we have
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
   }\\
   &\pe \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i ( 2k' _x + q' _x ) q_{y} + q' _x^2)
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i ( 2k' _x + q' _x ) q_{y} + (q' _x)^2)
   \right  ]\\
   &\pe (-\Xi_{2} (\bar{\vec{q}}, m, n, s) + \Xi_{1}(\bar{\vec{q}}, m, n, s)),
 \end{align}
@@ -950,7 +947,7 @@ gives
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
@@ -1046,7 +1043,7 @@ where
   \frac{
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
@@ -1084,7 +1081,7 @@ With the now well-known completion of the square and substitution, we have
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + q' _x^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
@@ -1181,10 +1178,11 @@ Recall the previously defined
   q' _x = \frac{q_x}{\alpha } + \frac{\beta}{v_{F} \alpha }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ).
 \]
 In terms of the dimensionless quantities we have
-\[
+\begin{equation}
+  \label{eq:qprimelimit}
   q' _x = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha l_B }( \epsilon ^0_{n,\alpha B} - \epsilon ^0_{m, \alpha B} )
   = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha^2 l_{B} }( \epsilon_n - \epsilon_m ).
-\]
+\end{equation}
 In other words
 \[
 \lim_{q\to 0} \frac{l_B}{\sqrt{2} } q'_x = \beta \frac{\epsilon_n-\epsilon_m}{\alpha ^2}.
@@ -1209,16 +1207,133 @@ Consider \( J T^1 \) as a concrete, and the simplest, example.
   \lim_{q\to 0} J T^1 \sim \frac{e^{- \frac{\beta^2}{\alpha ^4} ( \epsilon _n - \epsilon _m )^2}}{
     (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
   }
-  \frac{(\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) ( \Xi _1^2 - \Xi _2^2 )}{
+  \frac{(\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) ( \alpha _{\kappa _z m}^2 \Xi _1^2 - \alpha _{\kappa _z n}^2 \Xi _2^2 )}{
 (\epsilon_{\kappa _{z} m} - \epsilon_{\kappa _{z} n}) ^2
   }.
 \end{equation}
+We make the observation that \( \Xi_{1}(M,N) = \Xi _2(N, M)  \) and that the rest of factors are invariant under the interchange of \( m \leftrightarrow n \), except for a sign change from the step function.
+We may thus, by interchanging \( m,n \) and relabelling the indices, consider
+\[
+  \alpha _{\kappa _z m}^2 \Xi _1^2 - \alpha _{\kappa _z n}^2 \Xi _2^2 \to  2 \alpha _{\kappa _z m}^2 \Xi _1^2
+\].
+
+The step function term restricts our sum to \( m,n \) such that the energies of the corresponding states have opposite sign.
+Restricting ourselves to Type-I Weyl semimetals, the sign of the state with quantum number \( m \) is given by the state of \( m \) itself, excluding of course the zeroth state.
+For the zeroth state, the sign of the energy is \( \operatorname{sign} (- s \kappa_z) \).
+Using these considerations, we may make certain seletion rules for the sum.
+In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as there \( m n > 0 \), i.e. they have the same sign.
+Our sum is thus restricted to the second and fourth quadrant.
+Furthermore, the contributions from those quadrants are equal, which we will now show.
+The mapping \( (m,n) \mapsto (-m, -n) \), i.e. a \( \pi \) rotation, transforms point in the second quadrant to the fourth quadrant.
+
+We want to consider how the integrand in question transforms under such a mapping.
+First of all, recall that
+\[
+\alpha _{\kappa _z m} = \frac{-\sqrt{M} }{ \epsilon_{\kappa_z m} /s - \kappa _z},
+\]
+and thus \( \alpha _{\kappa _z m} = -\alpha _{-\kappa _z -m} \).
+We consider this factor squared, so no overall sign is introduced.
+The sign of \( \kappa_z  \) is however flipped, but no issue as we integrate over \( (-\infty, \infty) \).
+By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-M-1} \) when \( N-1 > M \), however this gives no overall change as we consider \( \Xi_2 ^2 \).
+Lastly, \( (\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) \) acquires a negative sign change, which cancels with the negative sign from the step function factor.
+Every term of the sum from the second quadrant may thus be mapped to a term from the fourth quadrant.
+We may thus restrict the sum to the fourth quadrant, by simply introducing a factor 2.
+
+We have thus restrited our \( m,n \) sum to the fourth quadrant in the \( (m,n) \) plane, and we consider only the \( \Xi _2^2 \) contribution.
+In fact, \( \Xi _2 \) is zero for \( n=0 \), which is seen directly from its definition.
+So the region to sum over is \( m \geq 0, n < 0 \).
+For the untilted case, one has the dipolar \todo{verify name} selection rule \( N = M + 1 \), or \( n = -1 -m \) in this quadrant.
+As one introduces tilt, this sharp line ``diffuses'', and one gets contributions also from terms away from the \( n= -1 -m \) line.
+The situation is depicted in Figure \ref{fig:nmregion}.
+We will now show that this line represents a mirror symmetry for the contributions of the fourth quadrant, thus giving us yet another selection rule for our sum.
+
+A reflection about the line correspond to the mapping \( (m,n) \mapsto (-n-1, -m-1) \).
+This is in fact the same as mapping from one flavor of \( \Xi _2 \) to another, i.e. from \( \Xi _2^{(1)} \) to \( \Xi _2^{(2)} \) and vica versa.
+The relation between the two flavors is exactly
+\[
+  \Xi _2^{(1)} = \Xi _2^{(1)} \big|_{M\to N-1, N\to M+1, }
+\]
+\todo{ Be careful with q'x term in Xi, make sure si correct }
+\todo{ I am now pretty sure that this is not correct. The line is not a mirror symmetry. However, it might be useful to look at above and below the line separately for analytical, as we may then use one or the other flavor }
 
 Should make more clear the selection rules and tricks we may use.
 Especially how we may neglect the \( \Xi _1 \) part and only consider \( \Xi _2 \) and multiply.
 Also look at \( m \leftrightarrow n \), I think they are duplicates.
 
 Probably better to redefine \( \Xi  \) without the \( \alpha  \) term, as it only causes trouble
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \draw[step=1cm,gray,very thin] (-1.9,1.9) grid (5.9,-5.9);
+    \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {\( m \)};
+    \draw[thick,->] (0,-5.3) -- (0,0.5) node[anchor=south east] {\( n \)};
+    \foreach \x in {0,1,2,3,4}
+    \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=south] {$\x$};
+    \foreach \y in {0,-1,-2,-3,-4,-5}
+    \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+    % \fill[blue!20, opacity=0.4] (-0.5, 0) -- (4, -4.5) -- (-0.5, -4.5) -- (-0.5, 0);
+    % \fill[red!20, opacity=0.4] (0, -0.5) -- (4.5, -5) -- (4.5, -0.5) -- (0, -0.5);
+    \fill[blue!20, opacity=0.4] (0, -1) -- (4, -5) -- (0, -5) -- (-0, 0);
+    \fill[red!20, opacity=0.4] (0,-1) -- (4, -5) -- (4, -1) -- (1,-1);
+    \draw (0, -1) -- (4, -5);
+  \end{tikzpicture}
+
+  \caption{TODO}
+  \label{fig:nmregion}
+\end{figure}
+
+We carry out the integral numerically for different values of \( t_x \).
+The results may be seen in Figure TODO.
+
+\begin{figure}[H]
+  \centering
+  \pgfplotsset{
+    % colormap={X}{ gray(0cm)=(1); gray(1cm)=(0);},
+    colormap={mycool}{ rgb255(0)=(255,0,255); rgb255(8)=(0,128,255); rgb255(10)=(255,255,255);},
+  }
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis equal,
+      xmin=0, xmax=12,
+      ymin=-12, ymax=0,
+      ]
+      \addplot [
+      matrix plot*,
+      mesh/cols=12,
+      point meta=explicit,
+      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis equal,
+      xmin=0, xmax=12,
+      ymin=-12, ymax=0,
+      ]
+      \addplot [
+      matrix plot*,
+      mesh/cols=12,
+      point meta=explicit,
+      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.1.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis equal,
+      xmin=0, xmax=12,
+      ymin=-12, ymax=0,
+      colorbar
+      ]
+      \addplot [
+      matrix plot*,
+      mesh/cols=12,
+      point meta=explicit,
+      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.4.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{TODO}
+\end{figure}
 
 \section{Notes}
 \subsection{Spin states for Dirac cone}
