@@ -615,7 +615,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
 
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
-  \frac{s v_{F} e}{\sqrt{\alpha }}
+  s v_{F} e
   \frac{
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (k'_x)^2 )
@@ -627,16 +627,15 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
   \Big[
    \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
     + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-    - t_x \alpha _{\vec{k} m s} \Xi _1(\vec{q}, m, n\mp 1, s)
-    - t_x \alpha _{\vec{k} + \qvec{q} n s} \Xi _2(\vec{q}, m, n\pm 1, s)
+    - t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
+    - t_x \Xi _2(\vec{q}, m, n\pm 1, s)
   \Big].
 \end{multline}
 
 We here used definitions of \( \Xi \) similar to that in the project thesis, but modified to the tilted case.
 \begin{equation}
   \label{eq:30}
-  \frac{\Xi_1 ( \vec{q}, m, n, s )}{
-    \alpha _{\vec{k} m s}
+  \frac{ \sqrt{\alpha } \alpha _{\vec{k} m s} \Xi_1 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
   }
@@ -650,8 +649,7 @@ We here used definitions of \( \Xi \) similar to that in the project thesis, but
 \end{equation}
 \begin{equation}
   \label{eq:31}
-  \frac{\Xi_2 ( \vec{q}, m, n, s )}{
-    \alpha _{\vec{k} + \vec{q} n s}
+  \frac{ \sqrt{\alpha } \alpha _{\vec{k} + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
   }
@@ -663,26 +661,57 @@ We here used definitions of \( \Xi \) similar to that in the project thesis, but
   H_{M} (\chi_{\vec{k}})
   H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )
 \end{equation}
-Using that
+
+Recall the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
+  \label{eq:hermite-shift-ortho}
+  \int\limits_{-\infty }^{\infty } \mathrm{d}x
+  e^{-x^2} H_m(x+y) H_n(x+z)
+  = 2^n \pi^{\frac{1}{2}} m! y^{n-m} L^{n-m}_m(-2yz), \quad m\leq n,
+\end{equation}
+where \(L^{a}_{b}\) is the \emph{generalized Laguerre polynomial} of order \(b\) and type \(a\).
+Using that
+\begin{align}
   \label{eq:31}
   a_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
-  =
-  \frac{a_{\vec{k} m s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
-  \left[
-  2^{N+M-1} (M-1)! N! \pi l_{B}^2
-\right  ]^{-\frac{1}{2}}
-\end{equation}
+  &=
+    \sqrt{\alpha } \frac{\alpha_{\vec{k} m s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
+    \left[
+    2^{N+M-1} (M-1)! N! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}}\\
+  b_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
+  &=
+    \sqrt{\alpha } \frac{\alpha_{\vec{k} + \qvec{q} n s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
+    \left[
+    2^{N+M-1} (N-1)! M! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}}\\
+  a_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
+  &=
+    \sqrt{\alpha } \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} n s}}{
+    \sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}
+    }
+    \left[
+    2^{N+M-2} (M-1)! (N-1)! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}}\\
+  b_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
+  &=
+    \sqrt{\alpha } \frac{1}{
+    \sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}
+    }
+    \left[
+    2^{N+M} M! N! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}}\\
+\end{align}
 \todo{NB!! definition changed compared to project thesis. Here, we have dropped the \( \alpha  \) factor}
 \todo{Verify if we need to add some factors due to the tilt.}
 \begin{align}
   \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
-                                   \left( \frac{-q'_x - iq_y}{2} l_B \right)^{N-M + 1}
-                                   L^{N-M+1}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
+                                   L^{N-M+1}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
                                    %%%
   \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
-                                   \left( \frac{q'_x - iq_y}{2} l_B \right)^{M-N - 1}
-                                   L^{M - N - 1}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{M-N - 1}
+                                   L^{M - N - 1}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
   \Xi_1(\vec{q}, m, n, s) &=
           \begin{cases}
             \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
@@ -691,12 +720,12 @@ Using that
 \end{align}
 \begin{align}
   \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
-                                   \left( \frac{-q'_x - iq_y}{2} l_B \right)^{N-1 - M}
-                                   L^{N-1 -M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-1 - M}
+                                   L^{N-1 -M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
                                    %%%
   \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
-                                   \left( \frac{q'_x - iq_y}{2} l_B \right)^{M-N + 1}
-                                   L^{M - N + 1}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
+                                   \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N + 1}
+                                   L^{M - N + 1}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
   \Xi_2(\vec{q}, m, n, s) &=
           \begin{cases}
             \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
@@ -1218,14 +1247,14 @@ We may thus, by interchanging \( m,n \) and relabelling the indices, consider
 \].
 
 The step function term restricts our sum to \( m,n \) such that the energies of the corresponding states have opposite sign.
-Restricting ourselves to Type-I Weyl semimetals, the sign of the state with quantum number \( m \) is given by the state of \( m \) itself, excluding of course the zeroth state.
+Restricting ourselves to Type-I Weyl semimetals, the sign of the state with quantum number \( m \) is given by the sign of \( m \) itself, excluding of course the zeroth state.
 For the zeroth state, the sign of the energy is \( \operatorname{sign} (- s \kappa_z) \).
 Using these considerations, we may make certain seletion rules for the sum.
 In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as there \( m n > 0 \), i.e. they have the same sign.
 Our sum is thus restricted to the second and fourth quadrant.
 Furthermore, the contributions from those quadrants are equal, which we will now show.
-The mapping \( (m,n) \mapsto (-m, -n) \), i.e. a \( \pi \) rotation, transforms point in the second quadrant to the fourth quadrant.
 
+The mapping \( (m,n) \mapsto (-m, -n) \), i.e. a \( \pi \) rotation, transforms points in the second quadrant to the fourth quadrant.
 We want to consider how the integrand in question transforms under such a mapping.
 First of all, recall that
 \[
@@ -1234,7 +1263,7 @@ First of all, recall that
 and thus \( \alpha _{\kappa _z m} = -\alpha _{-\kappa _z -m} \).
 We consider this factor squared, so no overall sign is introduced.
 The sign of \( \kappa_z  \) is however flipped, but no issue as we integrate over \( (-\infty, \infty) \).
-By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-M-1} \) when \( N-1 > M \), however this gives no overall change as we consider \( \Xi_2 ^2 \).
+By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-M-1} \) when \( N-1 > M \), however this gives no overall change as we consider \( (\Xi_2) ^2 \).
 Lastly, \( (\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) \) acquires a negative sign change, which cancels with the negative sign from the step function factor.
 Every term of the sum from the second quadrant may thus be mapped to a term from the fourth quadrant.
 We may thus restrict the sum to the fourth quadrant, by simply introducing a factor 2.
@@ -1245,16 +1274,33 @@ So the region to sum over is \( m \geq 0, n < 0 \).
 For the untilted case, one has the dipolar \todo{verify name} selection rule \( N = M + 1 \), or \( n = -1 -m \) in this quadrant.
 As one introduces tilt, this sharp line ``diffuses'', and one gets contributions also from terms away from the \( n= -1 -m \) line.
 The situation is depicted in Figure \ref{fig:nmregion}.
-We will now show that this line represents a mirror symmetry for the contributions of the fourth quadrant, thus giving us yet another selection rule for our sum.
+% We will now show that this line represents a mirror symmetry for the contributions of the fourth quadrant, thus giving us yet another selection rule for our sum.
 
-A reflection about the line correspond to the mapping \( (m,n) \mapsto (-n-1, -m-1) \).
-This is in fact the same as mapping from one flavor of \( \Xi _2 \) to another, i.e. from \( \Xi _2^{(1)} \) to \( \Xi _2^{(2)} \) and vica versa.
-The relation between the two flavors is exactly
-\[
-  \Xi _2^{(1)} = \Xi _2^{(1)} \big|_{M\to N-1, N\to M+1, }
-\]
+% A reflection about the line correspond to the mapping \( (m,n) \mapsto (-n-1, -m-1) \).
+% This is in fact the same as mapping from one flavor of \( \Xi _2 \) to another, i.e. from \( \Xi _2^{(1)} \) to \( \Xi _2^{(2)} \) and vica versa.
+% The relation between the two flavors is exactly
+% \[
+%   \Xi _2^{(1)} = \Xi _2^{(1)} \big|_{M\to N-1, N\to M+1, }
+% \]
 \todo{ Be careful with q'x term in Xi, make sure si correct }
 \todo{ I am now pretty sure that this is not correct. The line is not a mirror symmetry. However, it might be useful to look at above and below the line separately for analytical, as we may then use one or the other flavor }
+
+In the fourth quadrant, \( m \geq 0, n \leq 0 \), the step function factor may be simplified.
+We are still, as mentioned above, considering only Type-I, where the sign of the energy of state \( m, |m| > 0 \) is given by the sign of \( m \) itself.
+There
+\begin{equation}
+  \label{eq:67}
+  \begin{split}
+    \Theta ( -\epsilon _m ) - \Theta (- \epsilon_n) &= \delta _{m,0} \delta (\kappa_z) - (1 - \delta_{n,0} \delta(-\kappa_z))\\
+    &=
+      \begin{cases}
+        -1 & m,n \neq  0,\\
+        - \delta (-\kappa_z) & m=0, n\neq 0,\\
+        - \delta (\kappa_z) & n=0, m \neq 0,\\
+        0 & m,n = 0.
+      \end{cases}
+  \end{split}
+\end{equation}
 
 Should make more clear the selection rules and tricks we may use.
 Especially how we may neglect the \( \Xi _1 \) part and only consider \( \Xi _2 \) and multiply.
@@ -1317,35 +1363,30 @@ By insertion
   + \alpha _{\vec{k} n s} \Xi _{2} (\vec{q}, m, n, s)\\
   - t_x \alpha _{\kappa_z m s} \Xi _1(\vec{q}, m, n\mp 1, s)
   - t_x \alpha _{\kappa_z n s} \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big]
+  \Big].
+\end{multline}
+Isolating the dimensionfull and dimensionless quantities we have
+\begin{multline}
+  \label{eq:65}
+  \frac{v_F e^2 B}{4 (2 \pi)^2 \alpha ^2}
+  \sum\limits_{[mn]}^{} \int \mathrm{d} \kappa_z
+  \frac{
+  [-\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0})]
+  }{(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n})(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n} + \omega)}
+  \frac{\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}}{
+    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
+  }
+  e^{-\frac{l_B^2}{2 \alpha } (q'_x)^2}
+  (\Xi_1 - \Xi_2)\\
+  \Big[
+  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+  + \alpha _{\vec{k} n s} \Xi _{2} (\vec{q}, m, n, s)\\
+  - t_x \alpha _{\kappa_z m s} \Xi _1(\vec{q}, m, n\mp 1, s)
+  - t_x \alpha _{\kappa_z n s} \Xi _2(\vec{q}, m, n\pm 1, s)
+  \Big].
 \end{multline}
 
 
-Inserting the current and stress-energy matrix elements we have
-
-\begin{equation}
-  \label{eq:65}
-  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
-  \frac{iv_F eB}{(2\pi)^2}
-  \sum\limits_{mn}^{} \int \mathrm{d} \kappa _z
-  (n_{\kappa _z m} - n_{\kappa _z n})
-  \frac{s v_F e}{\sqrt{\alpha}}
-  \frac{is}{4 \sqrt{\alpha } }
-  e^{-\frac{l_B^2}{2 \alpha } (q' _x)^2}
-  \frac{E_{\kappa _z m} + E_{\kappa _z n}}{
-    (\alpha_{\kappa _z m}^2 + 1)(\alpha_{\kappa _z n}^2 + 1)
-  }
-  (1-t_{x}^2)^{-\frac{1}{2}}\\
-  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-  \Big[
-  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-  + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-  - t_x \alpha _{\vec{k} m s} \Xi _1(\vec{q}, m, n\mp 1, s)
-  - t_x \alpha _{\vec{k} + \qvec{q} n s} \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big]
-  (\Xi_1 - \Xi_2)
-  \frac{1}{(E_{\kappa _{z} m} - E_{\kappa _{z} n})(E_{\kappa _{z} m} - E_{\kappa _{z} n} + \omega)}.
-\end{equation}
 
 We carry out the integral numerically for different values of \( t_x \).
 The results may be seen in Figure TODO.
