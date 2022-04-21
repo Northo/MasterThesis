@@ -1031,30 +1031,31 @@ We want to evaluate
 with the prefactor introduced for later convenience.
 
 Notice that
+\todo{Verify \( l_B \) in this section}
+\begin{equation}
+  F^{(2)}_{12}
+  = -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha _{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n).
+\end{equation}
+and
 \begin{equation}
   \label{eq:55}
   F^{(2)}_{21}
   =
-  -t_{x} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}}{l_B a_{\vec{k} m \mp 1 s}}
-  \Xi_{1} (\vec{q}, m \mp 1, n, s),
-\end{equation}
-and
-\begin{equation}
-  F^{(2)}_{12}
-  = -t_{x} \frac{M}{\sqrt{2 (N-1)} } \frac{a_{\vec{k} + \qvec{q} n s}}{l_B a_{\vec{k} + \qvec{q} n \mp 1 s}}
-  \Xi_{1}(\vec{q}, m, n\mp1, s).
+  -t_{x} \sqrt{\alpha} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}^2}{l_B a_{\vec{k} m \mp 1 s}}
+  \Xi_{1} (\bar{\vec{q}}, m \mp 1, n, s).
 \end{equation}
 \( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
 \begin{equation}
   \label{eq:56}
-  F^{(2)}_{11} = \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} \alpha _{\vec{k} m\mp 1 s}}
+  F^{(2)}_{11} = \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
   \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),
 \end{equation}
 and
 \begin{equation}
   \label{eq:57}
   F^{(2)}_{22} =
-  \frac{\sqrt{M} }{l_B \alpha _{\vec{k} m s} \sqrt{2} }
+  \sqrt{\alpha }
+  \frac{\sqrt{M} }{l_B \sqrt{2} }
   \Xi_{1} ( \bar{\vec{q}}, m, n, s ).
 \end{equation}
 In summary we have
@@ -1352,7 +1353,7 @@ By insertion
 \begin{multline}
   \label{eq:66}
    \frac{J^{(1)} T^{(1)}}{v_{F}^2 \sqrt{2eB} } =
-  \frac{i e}{4 \alpha^2 }
+  \frac{i e}{4 \alpha^{\frac{3}{2}} }
   \frac{\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}}{
     (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
   }
@@ -1368,7 +1369,7 @@ By insertion
 Isolating the dimensionfull and dimensionless quantities we have
 \begin{multline}
   \label{eq:65}
-  \frac{v_F e^2 B}{4 (2 \pi)^2 \alpha ^2}
+  \frac{v_F e^2 B}{4 (2 \pi)^2 \alpha ^{\frac{3}{2}}}
   \sum\limits_{[mn]}^{} \int \mathrm{d} \kappa_z
   \frac{
   [-\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0})]
