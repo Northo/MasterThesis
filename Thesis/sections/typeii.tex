@@ -857,7 +857,7 @@ Thus, analogous to Eq. (4.79), we get
   \frac{is}{4 \sqrt{\alpha} }
   (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu)
   \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q' _x)^2 )
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2i (2 k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]
   \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
  \Big[
@@ -878,7 +878,7 @@ And thus we have
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
   }\\
   &\pe \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i ( 2k' _x + q' _x ) q_{y} + (q' _x)^2)
+    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2i ( 2k' _x + q' _x ) q_{y} + (q' _x)^2)
   \right  ]\\
   &\pe (-\Xi_{2} (\bar{\vec{q}}, m, n, s) + \Xi_{1}(\bar{\vec{q}}, m, n, s)),
 \end{align}
@@ -976,7 +976,7 @@ gives
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
@@ -1073,7 +1073,7 @@ where
   \frac{
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
@@ -1111,7 +1111,7 @@ With the now well-known completion of the square and substitution, we have
   - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
   \Big[
@@ -1190,21 +1190,15 @@ In summary we have
   \label{eq:68}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) &=
   \begin{multlined}[t]
-    \frac{s v_{F} e}{\alpha }
-    \frac{
-      \exp \left[
-        -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (k'_x)^2 )
-      \right]
-    }{
-      \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
-    }\\
+    s v_{F} e
+    \Gamma ^-_{\vec{k} \qvec{q} m n s}
     % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
     \Big[
     \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
       + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
       - t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
       - t_x \Xi _2(\vec{q}, m, n\pm 1, s)
-    \Big].
+    \Big],
   \end{multlined}\\
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
   \frac{is \sqrt{\alpha} }{4  }
@@ -1221,11 +1215,11 @@ In summary we have
 \end{align}
 with
 \[
-  \Gamma _{\vec{k} \qvec{q} m n s}^+ =
+  \Gamma _{\vec{k} \qvec{q} m n s}^{\pm} =
   \frac{
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
   \right  ]
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
