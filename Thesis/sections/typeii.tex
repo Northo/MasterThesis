@@ -590,7 +590,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     \frac{s v_F e}{\sqrt{\alpha }} \int \mathrm{d}\tilde{y} \: l_B
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (k'_x)^2 \right)
+      -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
     \right]
     (1-t_{x}^2)^{-\frac{1}{2}}\\
     e^{-\tilde{y}^2}
@@ -618,7 +618,7 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
   \frac{s v_{F} e}{\alpha }
   \frac{
     \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (k'_x)^2 )
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (q'_x)^2 )
     \right]
   }{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
@@ -748,16 +748,16 @@ Thus
 \begin{multline}
   \label{eq:38}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e \omega _{0 x}}{\mathcal{N}^{*} \mathcal{N}}
+  \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N}}
   \int \mathrm{d} y
   \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\} \\
   \tilde{\phi} ^{*}_{\vec{k} m s}(y) e^{\theta \sigma _{x}} \tilde{\phi} _{\vec{k} + \qvec{q} n s}(y).
 \end{multline}
-We have
+Using the same substitution and completion of the square as above, this is
 \begin{multline}
   \label{eq:39}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha}}
+  \frac{e v_F t_x l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
@@ -771,23 +771,24 @@ We have
 \end{multline}
 Thus,
 \todo{Change from old notation \( \Xi _{3,4} \) to new one with \( \Xi _{1,2} \)}
+\footnote{Note to self: note that we dropped the \( \frac{1}{\sqrt{\alpha } } \) for the \( \sqrt{\alpha }  \) coming from the \( \Xi  \) definition.}
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e \omega _{0 x} l_{B}}{\mathcal{N}^{*} \mathcal{N} \sqrt{\alpha } }
+  \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N} \alpha }
   \frac{
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
     \right]
   }{
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
-  }
-  (1-t_{x})^{-\frac{1}{2}}\\
-  \left[
-    \Xi _{3} - t_{x} \Xi _{1}
-    - t_{x} \Xi _{2} + \Xi_{4}
-  \right].
+  }\\
+  \Big[
+  -t_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
+  + \alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
+  + \Xi_2(\vec{q}, m, n \pm 1) \Big].
 \end{multline}
-
+We notice that this part has the same form as \( J^{(1)} \), with only a change of the prefactors of the \( \Xi  \)-functions.
+\emph{Note to self: } I believe it is here important to consider if we have an inversion symmetric or inversion unsymmetric case. In the former, this makes everything easier, as the nasty terms are dropped.
 
 \subsubsection{Stress-energy tensor}
 Consider now
@@ -1305,6 +1306,7 @@ First of all, recall that
 and thus \( \alpha _{\kappa _z m} = -\alpha _{-\kappa _z -m} \).
 We consider this factor squared, so no overall sign is introduced.
 The sign of \( \kappa_z  \) is however flipped, but no issue as we integrate over \( (-\infty, \infty) \).
+\todo{Be careful with this argument. It also requires the rest of the integrand to be symmetric under \( \kappa \to -\kappa  \), which I believe might be the case only for \( t_{z} = 0 \).}
 By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-M-1} \) when \( N-1 > M \), however this gives no overall change as we consider \( (\Xi_2) ^2 \).
 Lastly, \( (\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) \) acquires a negative sign change, which cancels with the negative sign from the step function factor.
 Every term of the sum from the second quadrant may thus be mapped to a term from the fourth quadrant.
