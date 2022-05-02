@@ -1484,6 +1484,54 @@ The results may be seen in Figure TODO.
   \caption{TODO}
 \end{figure}
 
+\subsection{Tilt parallell to the magnetic field}
+We consider here a tilt parallell to the magnetic field, \( \vec{t} \parallel \vec{B} \). We will consider only the canonical part of the energy-momentum tensor, and not the full symmetrized form, as described \citeauthor{vanderwurffMagnetovorticalThermoelectricTransport2019} \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
+\begin{equation}
+  \label{eq:70}
+  T^{\mu 0} = \frac{i}{2}
+  [
+  \partial_j \bar{\psi} \Gamma ^j \gamma ^0 \Gamma ^{\mu } \psi - \bar{\psi} \Gamma ^{\mu } \gamma ^0 \Gamma ^j \partial _j \psi
+  ],
+\end{equation}
+where \( \Gamma ^{\mu } = \gamma ^{\mu } + \gamma ^0 t^{\mu } \) with \( t^{\mu } = (0, \vec{t}) \) when inversion symmetry is broken and \( \Gamma ^{\mu }= \gamma ^{\mu } = \gamma ^0 \gamma ^5 t^{\mu } \) in the inversion symmetric case.
+
+We have, with \( \vec{t}^{\chi } = \vec{t} \) in the inversion symmetric case, and \( \vec{t}^{\chi } = \vec{t} \) in the symmetry broken case.
+The expression is exactly the same as for the untilted case, only with different energies.
+The dimensionless quantities are
+\begin{equation}
+  \label{eq:71}
+  \epsilon_{\kappa m s} =
+  \begin{cases}
+    t_z^{\chi } \kappa + \sign{m} \sqrt{M + \kappa ^2} & m \neq 0\\
+    (t_z^{\chi } - s) \kappa & m = 0
+  \end{cases}.
+\end{equation}
+The normalization factor \( \alpha _{\vec{k} m s} \) is, expressed in dimensionless quantities,
+\begin{equation}
+  \label{eq:72}
+  \alpha _{\kappa m s} =
+  -\sqrt{\frac{M}{(\epsilon_{\kappa  m s} - t_{z}^{\chi })s - \kappa }}.
+\end{equation}
+The integrand is
+\begin{equation}
+  \label{eq:73}
+  \sum\limits_{mn}^{}
+  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) (\alpha_{\kappa n s}^2 \delta _{N, M+1}- \alpha_{\kappa m s}^2 \delta_{M, N+1}).
+\end{equation}
+As described above, the contributions from the \( \alpha _{\kappa n s}^2  \) and \( \alpha _{\kappa m s}^2 \) terms are identical, and we may simply take
+\begin{equation}
+  \label{eq:74}
+  \sum\limits_{\underset{N=M+1}{mn}}^{}
+  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) \alpha_{\kappa n s}^2.
+\end{equation}
+For Type-I semimetals, the sign energy of state \( m \neq 0 \) is given by the sign of \( m \) itself.
+For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
+Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
+In the case of Type-II, however, the situation is not so simple.
+The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
+\todo{Include a figure}
+
+
 \section{Notes}
 \subsection{Spin states for Dirac cone}
 See mathematica file.
