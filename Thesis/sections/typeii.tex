@@ -790,6 +790,22 @@ Thus,
 We notice that this part has the same form as \( J^{(1)} \), with only a change of the prefactors of the \( \Xi  \)-functions.
 \emph{Note to self: } I believe it is here important to consider if we have an inversion symmetric or inversion unsymmetric case. In the former, this makes everything easier, as the nasty terms are dropped.
 
+\begin{multline}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
+  \frac{e v_F }{\mathcal{N}^{*} \mathcal{N} \alpha }
+  \frac{
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
+    \right]
+  }{
+    \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
+  }\\
+  \Big[
+  (s-t_x^2) [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
+  + tx(1-s) [\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
+  + \Xi_2(\vec{q}, m, n \pm 1)] \Big].
+\end{multline}
+
 \subsubsection{Stress-energy tensor}
 Consider now
 \begin{equation}
@@ -811,7 +827,7 @@ As
 we get the very fortunate result
 \begin{equation}
   \label{eq:35}
-  \phi^{*} \sigma _{y} \phi = \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
+  \phi^{*} \sigma _{y} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
 The first term of the stress-energy tensor thus has the exact same form as the untilted case.
 Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:45},
