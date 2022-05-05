@@ -102,7 +102,7 @@ For Type-I materials, the description is valid for all dierections of the \(B\)-
 Consider the Hamiltonian
 \begin{equation}
   \label{eq:4}
-  H = \vec{\omega_{0}} \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma},
+  H = \vec{\omega_{0}} \vec{k} + s (\vec{v} \odot \vec{k}) \vec{\sigma},
 \end{equation}
 where \(\vec{\omega_{0}}\) is the tilt vector and \(\vec{v}\) is the Fermi velocity, which in general is anisotropic.
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
@@ -112,7 +112,7 @@ Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B 
 The Hamitonian can thus be written
 \begin{equation}
   \label{eq:5}
-  H_{B} = \omega _{\perp} \left(k_{x} - e B_{z} y \right) + \omega _{\parallel} k_{z} + v_{y} k_{y} \sigma _{y} + v_{z} k_{z} \sigma _{z} + v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
+  H_{B} = \omega _{\perp} \left(k_{x} - e B_{z} y \right) + \omega _{\parallel} k_{z} + s v_{y} k_{y} \sigma _{y} + s v_{z} k_{z} \sigma _{z} + s v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
 \end{equation}
 and the Landau level equation is
 \begin{equation}
@@ -135,7 +135,7 @@ By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \The
 We rewrite the Hamiltonian (Eq. \eqref{eq:5}) in a more compact and explicit way
 \begin{equation}
   \label{eq:8}
-  H_{B} = \left(\omega _{\perp} k^B_{x} + \omega _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i v_{i} k^B_{i} \sigma _{i},
+  H_{B} = \left(\omega _{\perp} k^B_{x} + \omega _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{i} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 We now make the fortunate observation that, with the hyperbolic rotation operator denoted \( R = \exp [\Theta / 2 \sigma_{x}]\), the diagonal elements of
@@ -147,7 +147,7 @@ We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, with
 
 The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(k^B_{x}\) on the diagonal, i.e.
 \[
-  \omega _{\perp} k^B_{x} \mathcal{I}_{2} + v_{x} k^B_{x} \sigma _{x}.
+  \omega _{\perp} k^B_{x} \mathcal{I}_{2} + s v_{x} k^B_{x} \sigma _{x}.
 \]
 We will now find the boost parameter that eliminates \(q_{x}\) from the diagonal.
 We have
@@ -172,13 +172,13 @@ as the effect of \(\sigma _{x}\) is to transpose the rows.
 The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
   \label{eq:11}
-  \omega _{\perp} \cosh \theta + v_{x} \sinh \theta = 0.
+  \omega _{\perp} \cosh \theta + s v_{x} \sinh \theta = 0.
 \end{equation}
 Solving for \(\theta \) we get
 \begin{equation}
   \label{eq:12}
   \theta = \log (
-  \pm \frac{\sqrt{v_{x} - \omega _{\perp}}}{\sqrt{v_{x} + \omega _{\perp}}}
+  \pm \frac{\sqrt{s v_{x} - \omega _{\perp}}}{\sqrt{s v_{x} + \omega _{\perp}}}
   ).
 \end{equation}
 \todo{NB: depending of choice of sign in log, we get different signs in answer}
@@ -186,7 +186,7 @@ Alternatively, written in a slightly suggestive form,
 \begin{equation}
   \label{eq:13}
   \tanh \theta =
-  - \frac{\omega _{\perp}}{v_{x}}.
+  - s \frac{\omega _{\perp}}{v_{x}}.
 \end{equation}
 \todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
 
@@ -222,7 +222,7 @@ As described above, we have rotated our frame such that the tilt is confined to 
 The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
 \begin{equation}
   \label{eq:15}
-  \theta = - \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - \tanh^{-1} t_{x}.
+  \theta = - s \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - s \tanh^{-1} t_{x}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
 \begin{figure}[ht]
@@ -493,8 +493,8 @@ and
 e^{\theta \sigma _x} =
 \frac{1}{\alpha }
 \begin{pmatrix}
-  1 & -t_x\\
-  -t_x & 1
+  1 & -s t_x\\
+  -s t_x & 1
 \end{pmatrix}.
 \]
 The upper and lower part of the spinor are orthogonal, thus we have
@@ -540,8 +540,8 @@ With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the 
 \[
   e^{\theta \sigma _{x}} =
   \begin{pmatrix}
-    1 & -t_{x}\\
-    -t_{x} & 1
+    1 & - s t_{x}\\
+    -s t_{x} & 1
   \end{pmatrix}
   \frac{1}{\sqrt{1-t_{x}^2}}.
 \]
@@ -570,7 +570,7 @@ the contents of the square brackets must now include also the other element of t
   a_{\vec{k} m s} H_{M-1}(\dots)
   \left[
     b_{\vec{k}+\qvec{q} n s} H_{N}(\dots)
-    - t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
+    - s t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
   \right]
   \frac{1}{\sqrt{1-t_{x}^2}}
   + \dots .
@@ -625,14 +625,14 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
     H_{M-1} \left(  \chi_{\vec{k}} \right)
     H_N\left( \chi_{\vec{k} + \qvec{q}} \right) \right.\\
-    &- t_{x} a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
+    &- s t_{x} a_{\vec{k}ms}a_{\vec{k} + \qvec{q} ns}
     H_{M-1} \left( \chi_{\vec{k}} \right)
     H_{N-1}\left( \chi_{\vec{k} + \qvec{q}} \right)\\
    & +
     b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
     H_M \left( \chi_{\vec{k}} \right)
     H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)\\
-    &\left. - t_{x}
+    &\left. - s t_{x}
     b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
     H_M \left( \chi_{\vec{k}} \right)
     H_{N} \left(  \chi_{\vec{k} + \qvec{q}}\right)
@@ -655,8 +655,8 @@ where we used \( \mathcal{N}^{*}\mathcal{N} \alpha = 1 \)
   \Big[
    \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
     + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-    - t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
-    - t_x \Xi _2(\vec{q}, m, n\pm 1, s)
+    -s t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
+    -s t_x \Xi _2(\vec{q}, m, n\pm 1, s)
   \Big].
 \end{multline}
 
@@ -791,9 +791,9 @@ Using the same substitution and completion of the square as above, this is
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
     \right]\\
   e^{-\tilde{y}^2} \big[
-    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
+    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - s t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
    +
-    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(-t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
+    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- s t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
     \big].
 \end{multline}
 Thus
@@ -809,7 +809,7 @@ Thus
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
   }\\
   \Big[
-  -t_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
+  -s t_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
   + \alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
   + \Xi_2(\vec{q}, m, n \pm 1) \Big].
 \end{multline}
@@ -818,7 +818,7 @@ We notice that this part has the same form as \( J^{(1)} \), with only a change 
 
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
-  e v_F
+  e v_F s \alpha^2
   \frac{
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
@@ -826,11 +826,11 @@ We notice that this part has the same form as \( J^{(1)} \), with only a change 
   }{
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
   }\\
-  \Big[
-  (s-t_x^2) [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
-  + tx(1-s) [\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
-  + \Xi_2(\vec{q}, m, n \pm 1)] \Big].
+  \left[
+     \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n)
+  \right].
 \end{multline}
+We used here that \( 1 - t_x^2 = \alpha^2 \).
 
 \subsubsection{Stress-energy tensor}
 Consider now
@@ -1232,17 +1232,11 @@ In summary we have
 \begin{align}
   \label{eq:68}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) &=
-  \begin{multlined}[t]
-    v_{F} e
+    v_{F} e s \alpha^2
     \Gamma ^-_{\vec{k} \qvec{q} m n s}
     % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-    [
-    (s-t_x^2) \left[ \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-      + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s) \right]\\
-      + t_x (1-s) \left[ \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
-      + \Xi _2(\vec{q}, m, n\pm 1, s) \right]
-    ],
-  \end{multlined}\\
+    \left[ \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+      + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
   \frac{is \alpha}{4  }
   (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
