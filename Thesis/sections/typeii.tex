@@ -102,17 +102,18 @@ For Type-I materials, the description is valid for all dierections of the \(B\)-
 Consider the Hamiltonian
 \begin{equation}
   \label{eq:4}
-  H = \vec{\omega_{0}} \vec{k} + s (\vec{v} \odot \vec{k}) \vec{\sigma},
+  H = v_{F} \vec{t} \vec{k} + s (\vec{v} \odot \vec{k}) \vec{\sigma},
 \end{equation}
-where \(\vec{\omega_{0}}\) is the tilt vector and \(\vec{v}\) is the Fermi velocity, which in general is anisotropic.
+where \(\vec{t}\) is the \emph{tilt vector} and \(\vec{v}\) is the Fermi velocity, which in general is anisotropic.
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
-Firstly, assume that the tilt vector \(\vec{\omega_{0}}\) is in the \(x,z\)-plane, \(\vec{\omega_{0}} = (\omega_{\perp}, 0, \omega_{\parallel})\), which we can always achieve by a rotation around \(z\).
+Firstly, assume that the tilt vector \(\vec{ t }\) is in the \(x,z\)-plane, \(\vec{t} = (t_{\perp}, 0, t_{\parallel})\), which we can always achieve by a rotation around \(z\).
 \todo{Proof by figure}
-Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\), and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
-The Hamitonian can thus be written
+Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\).
+We take the field to be in the \( z \)-direction, and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
+The Hamiltonian can thus be written
 \begin{equation}
   \label{eq:5}
-  H_{B} = \omega _{\perp} \left(k_{x} - e B_{z} y \right) + \omega _{\parallel} k_{z} + s v_{y} k_{y} \sigma _{y} + s v_{z} k_{z} \sigma _{z} + s v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
+  H_{B} = v_F t _{\perp} \left(k_{x} - e B_{z} y \right) + v_F t _{\parallel} k_{z} + s v_{y} k_{y} \sigma _{y} + s v_{z} k_{z} \sigma _{z} + s v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
 \end{equation}
 and the Landau level equation is
 \begin{equation}
@@ -135,21 +136,21 @@ By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \The
 We rewrite the Hamiltonian (Eq. \eqref{eq:5}) in a more compact and explicit way
 \begin{equation}
   \label{eq:8}
-  H_{B} = \left(\omega _{\perp} k^B_{x} + \omega _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{i} k^B_{i} \sigma _{i},
+  H_{B} = v_F \left(t _{\perp} k^B_{x} + t _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{i} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 We now make the fortunate observation that, with the hyperbolic rotation operator denoted \( R = \exp [\Theta / 2 \sigma_{x}]\), the diagonal elements of
 \[
-R \sigma_{i} R
+  R \sigma_{i} R
 \]
 are zero for $i=y$ and non-zero for \(i=x,z\).
 We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, without accidentaly rotating the \(y\) components into the diagonal.
 
 The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(k^B_{x}\) on the diagonal, i.e.
 \[
-  \omega _{\perp} k^B_{x} \mathcal{I}_{2} + s v_{x} k^B_{x} \sigma _{x}.
+  v_F t_{\perp} k^B_{x} \mathcal{I}_{2} + s v_{x} k^B_{x} \sigma _{x}.
 \]
-We will now find the boost parameter that eliminates \(q_{x}\) from the diagonal.
+We will now find the boost parameter that eliminates \(k_{x}\) from the diagonal.
 We have
 \begin{equation}
   \label{eq:9}
@@ -172,13 +173,13 @@ as the effect of \(\sigma _{x}\) is to transpose the rows.
 The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
   \label{eq:11}
-  \omega _{\perp} \cosh \theta + s v_{x} \sinh \theta = 0.
+  t_{\perp} \cosh \theta + s \sinh \theta = 0.
 \end{equation}
 Solving for \(\theta \) we get
 \begin{equation}
   \label{eq:12}
   \theta = \log (
-  \pm \frac{\sqrt{s v_{x} - \omega _{\perp}}}{\sqrt{s v_{x} + \omega _{\perp}}}
+  \pm \frac{\sqrt{s - t_{\perp}}}{\sqrt{s + t_{\perp}}}
   ).
 \end{equation}
 \todo{NB: depending of choice of sign in log, we get different signs in answer}
@@ -186,7 +187,7 @@ Alternatively, written in a slightly suggestive form,
 \begin{equation}
   \label{eq:13}
   \tanh \theta =
-  - s \frac{\omega _{\perp}}{v_{x}}.
+  - s t_{\perp}.
 \end{equation}
 \todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
 
@@ -252,8 +253,9 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
 For \(t_{x} < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
 For \(t_{x} \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
 \todo{ Is this argumentation sufficient? What if we just have to use a different approach to find the LLs? }
+\todo{ Discuss magnetic vs electric regime }
 It is also interesting that there are no restrictions on the tilt in \(z, t_{z}\).
-Visually, this can be visualized by plotting the \(t\)-vector inside a unit sphere.
+Visually, this can be visualized by plotting the \(t\)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
 All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of the \(t\)-vector.
@@ -267,39 +269,29 @@ As the \(t\)-vector gets larger, the region of valid directions is reduced to an
 We now return to solving Eq. \eqref{eq:7}, using the solution angle we just found.
 By insertion, and after some clean up, we get
 \emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
-\begin{equation}
+\begin{multline}
   \label{eq:16}
-  =
-  \begin{pmatrix}
-    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + \gamma k^{B}_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma /v_{x}\\
-    i k_{y} v_{y} + \gamma k^B_{x} (v_{x} - \frac{\omega_{\perp}^{2}}{v_{x}}) + E \omega_{\perp} \gamma /v_{x} - k_{z} \omega _{\perp} \omega _{\parallel} \gamma  / v_{x}
-    & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
-  \end{pmatrix}.
+  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0\\
+  = v_F \begin{pmatrix}
+    k_z (1 + t_{\parallel} \gamma) - \frac{E \gamma}{v_{F}}   & -i k_{y} + k_{x} / \gamma  - \frac{E  \gamma \beta}{v_{F}}  + k_{z} t_{\parallel} \gamma \beta \\
+      i k_{y} + k_{x} / \gamma  - \frac{E  \gamma \beta}{v_{F}}  + k_{z} t_{\parallel} \gamma \beta
+    & -k_{z} (1 - t_{\parallel} \gamma) - \frac{E \gamma}{v_{F}}
+    \end{pmatrix}
+    \ket{\psi}.
 \end{equation}
-after some more clean up
-\begin{equation}
-  \label{eq:17}
-  =
-  \begin{pmatrix}
-    k_z (v_{z} + \omega_{\parallel} \gamma) - E \gamma   & -i k_{y} v_{y} + v_{x} k^B_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta \\
-    i k_{y} v_{y} + v_{x} k^B_{x} / \gamma  - E  \gamma \beta  + k_{z} \omega _{\parallel} \gamma \beta
-    & -k_{z} (v_{z} - \omega_{\parallel} \gamma) - E \gamma
-  \end{pmatrix}.
-\end{equation}
-In order to simplify this further, absorb \(\gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}}\) into \(k_{x}\).
-Also, we will rescale all momenta to make the effective Fermi velocity isotropic.
+In order to simplify this further, absorb \(\gamma \beta (k_{z} t_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
   \begin{split}
-    \tilde{k}_{x} &= \frac{v_{x}}{v_{F}} \left[  k_{x} / \gamma + \gamma \beta \frac{k_{z} \omega_{\parallel} - E}{v_{x}} \right],\\
-    \tilde{k}_{y} &= \frac{v_{y}}{v_{F}} k_{y},\\
-    \tilde{k}_{z} &= \frac{v_{z}}{v_{F}} k_{z}.\\
+    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta (k_{z} t_{\parallel} - E /v_F),\\
+    \tilde{k}_{y} &=  k_{y},\\
+    \tilde{k}_{z} &=  k_{z}.\\
   \end{split}
 \end{equation}
 The eigenvalue equation is simply
 \begin{equation}
   \label{eq:18}
-  v_{F} \left[  \gamma \left( \frac{\omega_{\parallel}}{v_{z}} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
+  \left[  \gamma \left( t_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
   \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
 If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
@@ -313,17 +305,17 @@ The Landau level equation thus reads
 \right  ] \ket{\tilde{\psi}} =
 (E- t_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
-where \(\vec{\tilde{A}}=-B_{z} \frac{v_{x} v_{y} }{v_{F}^2} / \gamma  \tilde{y} \hat{x}\).
+where \(\vec{\tilde{A}}=-B_{z}/ \gamma  \tilde{y} \hat{x}\).
 We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
 \begin{align}
   \label{eq:20}
-  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B v_{x} v_{y}}{ v_{F} ^2 \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
+  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
   \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
 \end{align}
 Cleaning up, we get
 \begin{align}
   \label{eq:21}
-  E &= t_{\parallel} v_F \tilde{k}_{z} + \sign(m) \sqrt{2 |m| e \frac{v_{y} v_{x} B}{\gamma ^3} \hbar + v_{F}^2 \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
+  E &= t_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
   E &= \tilde{k}_{z} v_{F} \left( t_{\parallel}  - s \hbar / \gamma  \right), & m=0.
 \end{align}
 
@@ -331,7 +323,7 @@ As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infin
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:22}
-  E = t_{\parallel} v_{F} \tilde{k}_{z} + \sign(m)  \sqrt{2 |m| e B v_{x} v_{y} \alpha  ^3 \hbar + v_{F} ^2 \tilde{k}_{z}^2\hbar ^2 \alpha ^2}
+  E = t_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}
 \end{equation}
 As the tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
 \todo{Note that \( \tilde{k}\to 0 \) as we overtilt as well, so all the levels go to zero.}
