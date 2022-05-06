@@ -278,7 +278,7 @@ By insertion, and after some clean up, we get
     & -k_{z} (1 - t_{\parallel} \gamma) - \frac{E \gamma}{v_{F}}
     \end{pmatrix}
     \ket{\psi}.
-\end{equation}
+\end{multline}
 In order to simplify this further, absorb \(\gamma \beta (k_{z} t_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
@@ -383,10 +383,26 @@ with
 \begin{equation}
   \alpha _{\tilde{k}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} - \hbar  \tilde{k}_z},
 \end{equation}
-where \(E\) is the solution in the unboosted frame and
+where
 \[
-B' = B \frac{v_{x} v_{y}}{v_{F}^2} \alpha.
+B' = B \alpha.
 \]
+We note that \( \alpha_{k_z 0 s} = 0 \), so using the explicit form of the energy we may simplify the expression some.
+For \( m\neq 0 \)
+\[
+  \frac{
+    E_{k_z m s} - t_{\parallel} v_F k_z
+  }{s v_{F}} = \sign(m) s \alpha \sqrt{2 M e B \alpha + k_{z}^2}
+\]
+and thus
+\begin{equation}
+  \label{eq:78}
+  \alpha_{k_z m s} =
+  \frac{-\sqrt{ \alpha M }}{\sign(m) s \sqrt{\alpha M + \kappa^2} - \kappa}
+\end{equation}
+where we defined the dimensionless \( \kappa_z = \sqrt{2 e B} k_z  \).
+
+
 Note that
 
 
@@ -395,25 +411,19 @@ The normalization factor \( \mathcal{N} \) is needed as the boost transformation
 
 \todo{ Write down the full form of \( \phi _{\vec{k} m s} (\vec{r}) \), taking care to use the original momenta, and not the rescaled. }
 
-Reinserting explicitly, in the boosted frame, that \(\tilde{q}_{x} = \alpha q_{x} + \frac{\beta}{\alpha } \frac{k_{z} \omega _{\parallel} - E}{v_{x}} \) and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
-\todo{note we have used isotropic velocity}
-we get
-\begin{equation}
-  \label{eq:41}
-  \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
-  =
-  \frac{y - \alpha q_{x} l_{B'}^2 - \frac{\beta l_{B'}^2}{\alpha } \frac{k_{z} \omega _{\parallel} - E}{v_{x}}}{l_{B'}}
-  =
-  \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B} - \alpha^{-\frac{3}{2}}  \beta l_{B} \frac{k_{z} \omega _{\parallel} - E}{v_{x}}.
-\end{equation}
-Using the explicit form of \(E\)
+Reinserting explicitly, in the boosted frame, that
+\[
+  \tilde{q}_{x} = \alpha q_{x} - \frac{\beta}{\alpha} \frac{E_{k_z m s}- k_{z} v_F t_{\parallel} }{v_{x}}
+  = \alpha q_x - \beta \frac{E^0_{m, \alpha B} }{v_{F}}
+\]
+and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 \begin{equation}
   \label{eq:43}
   \chi =
   \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
   =
   \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B}
-  + \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B},
+  + \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
 \end{equation}.
 \todo{ Clean up in \(\hbar \) }
 
@@ -459,6 +469,7 @@ and thus
 \end{equation}
 with
 \begin{align}
+ \label{eq:79}
   a_{\vec{k} m s} &=
                     \frac{
                     \alpha _{\tilde{k}_z m s} \sqrt[4]{\alpha }
@@ -496,7 +507,40 @@ The upper and lower part of the spinor are orthogonal, thus we have
 \end{equation}
 We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
 
+\begin{Proposition}
+  The tilted Hamiltonian
+  \[
+    H = v_F \vec{t} \vec{k} + s v_F \vec{k} \vec{\sigma}
+  \]
+  in a magnetic field \( \vec{B} \) has the Landau levels
+  \[
+    E =
+    \begin{cases}
+      t_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0\\
+      t_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0
+    \end{cases}.
+  \]
+  The associated eigenstates in the position basis are
+  \[
+    \tilde{\psi}(\vec{r}) = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma_x}
+    \frac{
+      e^{ik_{x} x + ik_{z} z}
+    }{
+      \sqrt{L_{x}  L_z}
+    } \psi(y),
+    \]
+    where
+    \[
+      \psi(y) = e^{-\frac{1}{2} \chi^2}
+      \begin{pmatrix}
+        a_{k_z m s} H_{M - 1} (\chi) \\
+        b_{k_z m s} H_M (\chi)
+      \end{pmatrix},
+    \]
+    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{\beta l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:79}.
+\end{Proposition}
 
+\section{The response of a tilted cone}
 
 Repeating the calculation of the response function is now straightforward, but rather tedious.
 Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:29}, mix.
