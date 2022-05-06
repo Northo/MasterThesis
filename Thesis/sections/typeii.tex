@@ -1391,75 +1391,33 @@ Writing out the matrix products we have
   }
 \end{multline}
 
-
-
-Note that throughout this seciton, \( \hbar = 1 \).
-We must solve integrals on the form
-\begin{equation}
-  \label{eq:61}
-  \sum_{mn} \int \mathrm{d} k_x [ \Theta (-E_{k_z m}) - \Theta (-E_{k_z n} ) ]
-  \frac{
-    J T
-  }{
-    ( E_{k_z m } - E_{k_z n} )^2
-  }.
-\end{equation}
-First of all, note that the factor with the step functions \( \Theta  \) will restrict our \( m,n \)-sum to states with energy of opposite sign.
-For Type-I this means that \( m n \leq 0 \).
-We will rewrite the integral on dimensionless form, to facilitate for integration.
-Introduce \( \kappa _z = k_z / \sqrt{2 eB}  \) and \( \epsilon _{\kappa _z m} = \frac{E_{k_z m}}{v_{F } \sqrt{2 eB} } \).
-Note that \( B \) is here the actual \( B \), not the rescaled \( B' = \alpha B \).
-
-Recall the previously defined
+We make the observation that \( \Xi _1(M, N) = \Xi _2(N, M) \).
+The rest of the factors are invariant under the interchange \( m \leftrightarrow n \), except for the step functions, which gives an overall sign change.
+Thus, using \( \Xi _1(M, N) = \Xi _2(N, M) \) and relabelling the summation indices we may consider
 \[
-  q' _x = \frac{q_x}{\alpha } + \frac{\beta}{v_{F} \alpha }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ).
-\]
-In terms of the dimensionless quantities we have
-\begin{equation}
-  \label{eq:qprimelimit}
-  q' _x = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha l_B }( \epsilon ^0_{n,\alpha B} - \epsilon ^0_{m, \alpha B} )
-  = \frac{q_x}{\alpha } + \frac{\beta \sqrt{2} }{\alpha^2 l_{B} }( \epsilon_n - \epsilon_m ).
-\end{equation}
-In other words
-\[
-\lim_{q\to 0} \frac{l_B}{\sqrt{2} } q'_x = \beta \frac{\epsilon_n-\epsilon_m}{\alpha ^2}.
+  \alpha_{\kappa_z m s}^2 \Xi_1^2 - \alpha_{\kappa_z n s}^2 \to 2 \alpha_{\kappa_z m s}^2 \Xi_1^2.
 \]
 
-We thus have
-\begin{equation}
-  \label{eq:62}
-  \sum\limits_{[mn]}^{}
-  \int  \frac{\mathrm{d} \kappa _z}{v_F^2 \sqrt{2 eB}}
-  \frac{
-    J T
-  }{
-    (\epsilon_{\kappa _z m} - \epsilon_{\kappa _z n})^2
-  },
-\end{equation}
-where \( [mn] \) is understood as the sum over all \( m,n \) following the selection rule given above.
-
-Consider \( J T^1 \) as a concrete, and the simplest, example.
-\begin{equation}
-  \label{eq:63}
-  \lim_{q\to 0} J T^1 \sim \frac{e^{- \frac{\beta^2}{\alpha ^4} ( \epsilon _n - \epsilon _m )^2}}{
-    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
-  }
-  \frac{(\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) ( \alpha _{\kappa _z m}^2 \Xi _1^2 - \alpha _{\kappa _z n}^2 \Xi _2^2 )}{
-(\epsilon_{\kappa _{z} m} - \epsilon_{\kappa _{z} n}) ^2
-  }.
-\end{equation}
-We make the observation that \( \Xi_{1}(M,N) = \Xi _2(N, M)  \) and that the rest of factors are invariant under the interchange of \( m \leftrightarrow n \), except for a sign change from the step function.
-We may thus, by interchanging \( m,n \) and relabelling the indices, consider
-\[
-  \alpha _{\kappa _z m}^2 \Xi _1^2 - \alpha _{\kappa _z n}^2 \Xi _2^2 \to  2 \alpha _{\kappa _z m}^2 \Xi _1^2
-\].
-
-The step function term restricts our sum to \( m,n \) such that the energies of the corresponding states have opposite sign.
-Restricting ourselves to Type-I Weyl semimetals, the sign of the state with quantum number \( m \) is given by the sign of \( m \) itself, excluding of course the zeroth state.
-For the zeroth state, the sign of the energy is \( \operatorname{sign} (- s \kappa_z) \).
+We may also simplify the step function expression.
+Physically, the step function term corresponds to only considering overlap between states with energies of opposite sign.
+Restricting ourselves to Type-I for now, the energy of the state with quantum number \( n \) has the same sign as \( n \) itself, excluding of course the zeroth state.
+For the zeroth state, the sign of the energy is \( \sign(-s \kappa_z) \).
 Using these considerations, we may make certain seletion rules for the sum.
 In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as there \( m n > 0 \), i.e. they have the same sign.
 Our sum is thus restricted to the second and fourth quadrant.
+We have
+\begin{equation}
+  \label{eq:77}
+  n_{\vec{k} m s} - n_{\vec{k} + \qvec{q} n s} =
+  \begin{cases}
+    \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0\\
+    - \sign(m) & m,n \neq 0\\
+    \phantom{-} \sign(n) \theta(\sign(n) s \kappa) & m = 0\\
+    -\sign(m) \theta(\sign(m) s \kappa) & n = 0
+  \end{cases}.
+\end{equation}
+
+\newpage
 Furthermore, the contributions from those quadrants are equal, which we will now show.
 
 The mapping \( (m,n) \mapsto (-m, -n) \), i.e. a \( \pi \) rotation, transforms points in the second quadrant to the fourth quadrant.
@@ -1476,46 +1434,6 @@ By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-
 Lastly, \( (\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) \) acquires a negative sign change, which cancels with the negative sign from the step function factor.
 Every term of the sum from the second quadrant may thus be mapped to a term from the fourth quadrant.
 We may thus restrict the sum to the fourth quadrant, by simply introducing a factor 2.
-
-We have thus restrited our \( m,n \) sum to the fourth quadrant in the \( (m,n) \) plane, and we consider only the \( \Xi _2^2 \) contribution.
-In fact, \( \Xi _2 \) is zero for \( n=0 \), which is seen directly from its definition.
-So the region to sum over is \( m \geq 0, n < 0 \).
-For the untilted case, one has the dipolar \todo{verify name} selection rule \( N = M + 1 \), or \( n = -1 -m \) in this quadrant.
-As one introduces tilt, this sharp line ``diffuses'', and one gets contributions also from terms away from the \( n= -1 -m \) line.
-The situation is depicted in Figure \ref{fig:nmregion}.
-% We will now show that this line represents a mirror symmetry for the contributions of the fourth quadrant, thus giving us yet another selection rule for our sum.
-
-% A reflection about the line correspond to the mapping \( (m,n) \mapsto (-n-1, -m-1) \).
-% This is in fact the same as mapping from one flavor of \( \Xi _2 \) to another, i.e. from \( \Xi _2^{(1)} \) to \( \Xi _2^{(2)} \) and vica versa.
-% The relation between the two flavors is exactly
-% \[
-%   \Xi _2^{(1)} = \Xi _2^{(1)} \big|_{M\to N-1, N\to M+1, }
-% \]
-\todo{ Be careful with q'x term in Xi, make sure si correct }
-\todo{ I am now pretty sure that this is not correct. The line is not a mirror symmetry. However, it might be useful to look at above and below the line separately for analytical, as we may then use one or the other flavor }
-
-In the fourth quadrant, \( m \geq 0, n \leq 0 \), the step function factor may be simplified.
-We are still, as mentioned above, considering only Type-I, where the sign of the energy of state \( m, |m| > 0 \) is given by the sign of \( m \) itself.
-There
-\begin{equation}
-  \label{eq:67}
-  \begin{split}
-    \Theta ( -\epsilon _m ) - \Theta (- \epsilon_n) &= \delta _{m,0} \delta (\kappa_z) - (1 - \delta_{n,0} \delta(-\kappa_z))\\
-    &=
-      \begin{cases}
-        -1 & m,n \neq  0,\\
-        - \delta (-\kappa_z) & m=0, n\neq 0,\\
-        - \delta (\kappa_z) & n=0, m \neq 0,\\
-        0 & m,n = 0.
-      \end{cases}
-  \end{split}
-\end{equation}
-
-Should make more clear the selection rules and tricks we may use.
-Especially how we may neglect the \( \Xi _1 \) part and only consider \( \Xi _2 \) and multiply.
-Also look at \( m \leftrightarrow n \), I think they are duplicates.
-
-Probably better to redefine \( \Xi  \) without the \( \alpha  \) term, as it only causes trouble
 
 \begin{figure}[h]
   \centering
@@ -1537,68 +1455,6 @@ Probably better to redefine \( \Xi  \) without the \( \alpha  \) term, as it onl
   \caption{TODO}
   \label{fig:nmregion}
 \end{figure}
-
-Consider the part of the response function from the product \( J^{(1)} T^{(1)} \)
-\todo{Take more care in the expressions with being careful and clear on whether we have taken the limit \( q\to 0 \) or not}
-\begin{equation}
-  \label{eq:64}
-  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
-  \frac{iv_F eB}{(2\pi)^2}
-  \sum\limits_{mn}^{} \int \mathrm{d} k_z
-  (n_{k _z m} - n_{k _z n})
-  \frac{J^{(1)} T^{(1)}}{(E_{k _{z} m} - E_{k _{z} n})(E_{k _{z} m} - E_{k _{z} n} + \omega)}.
-\end{equation}
-With the dimensionless quantities and using \( (n_{\kappa _z m} - n_{\kappa _z n}) = -\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0}) \) in the fourth quadrant, we have
-\begin{equation}
-  \chi ^{xy~(1,1)} (\omega, \vec{q}) =
-  \frac{iv_F eB}{(2\pi)^2}
-  \sum\limits_{[mn]}^{} \int \mathrm{d} \kappa_z
-[-\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0})]
-  \frac{J^{(1)} T^{(1)} / (v_F^2 \sqrt{2eB} )
-  }{(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n})(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n} + \omega)}.
-\end{equation}
-By insertion
-\begin{multline}
-  \label{eq:66}
-   \frac{J^{(1)} T^{(1)}}{v_{F}^2 \sqrt{2eB} } =
-  \frac{i e}{4 \alpha^{\frac{3}{2}} }
-  \frac{\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}}{
-    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
-  }
-  e^{-\frac{l_B^2}{2 \alpha } (q'_x)^2}
-  (\Xi_1 - \Xi_2)\\
-  \Big[
-  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-  + \alpha _{\vec{k} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-  - t_x \alpha _{\kappa_z m s} \Xi _1(\vec{q}, m, n\mp 1, s)
-  - t_x \alpha _{\kappa_z n s} \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big].
-\end{multline}
-Isolating the dimensionfull and dimensionless quantities we have
-\begin{multline}
-  \label{eq:65}
-  \frac{v_F e^2 B}{4 (2 \pi)^2 \alpha ^{\frac{3}{2}}}
-  \sum\limits_{[mn]}^{} \int \mathrm{d} \kappa_z
-  \frac{
-  [-\delta (-\kappa_z) \delta _{m,0} - (1-\delta_{m,0})]
-  }{(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n})(\epsilon _{\kappa _{z} m} - \epsilon _{\kappa _{z} n} + \omega)}
-  \frac{\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}}{
-    (\alpha_{\kappa _{z} m}^2 + 1)(\alpha_{\kappa _{z} n}^2 + 1)
-  }
-  e^{-\frac{l_B^2}{2 \alpha } (q'_x)^2}
-  (\Xi_1 - \Xi_2)\\
-  \Big[
-  \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-  + \alpha _{\vec{k} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-  - t_x \alpha _{\kappa_z m s} \Xi _1(\vec{q}, m, n\mp 1, s)
-  - t_x \alpha _{\kappa_z n s} \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big].
-\end{multline}
-
-
-
-We carry out the integral numerically for different values of \( t_x \).
-The results may be seen in Figure TODO.
 
 \begin{figure}[H]
   \centering
