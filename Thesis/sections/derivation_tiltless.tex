@@ -505,11 +505,21 @@ where the matrix elements are
               \phi _{\vec{k}-\qvec{q} n s}(y).
 \end{align}
 
+We will consider the response function in the static limit \( \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \).
+We may use the property of the limit of a product of functions \( \lim A\cdot B = \lim A \cdot \lim B \) to write
+\begin{equation}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F \hbar}{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
+  \frac{
+    J^x_{\vec{k} m s, \vec{k} n s} T^{0y}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
+  }{
+    (E_{\vec{k} m s} - E_{\vec{k} n s}) (E_{\vec{k} m s}- E_{\vec{k} n s})
+  },
+\end{equation}
+where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:11} and \eqref{eq:12} taken in the limit.
+
 
 \subsection{Finding numerical values for the matrix elements}
-In order to evaluate the response function the product of the matrix elements of the current operator and the stress-energy tensor must be found.
-In order to facilitate for this calculation, we will here evaluate the $y$-integral of the matrix elements in Eqs.~(\ref{eq:11}) and (\ref{eq:12}), which will remove the Hermite polynomials, and then show that all the matrix elements are proportional to linear combinations of some functions $\Xi $ defined below;
-in the limit $q \to 0$ this will greatly simplify the calculation, as products of the functions $\Xi $ will be shown to give non-vanishing contributions only for certain choices of $m,n$, thus giving a selection rule for the sum over $m,n$ in the response function.
+Compared to the procedure used by \autocite{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, taking the limit of each matrix element by itself greatly simplifies the calculation.
 
 Let
 \begin{equation}
@@ -526,39 +536,6 @@ thus implicitly defining the prefactors $a_{\vec{k} ms}, b_{\vec{k} ms}$.
 
 \subsubsection{The current operator}
 The matrix element
-% \begin{align}
-%   &J_{\vec{k}ms; \vec{k}+\vec{q} ns}(\vec{q})\\
-%   \nonumber &= \frac{1}{(2\pi )^{\frac{3}{2}}} \int \mathrm{d}y
-%     e^{-iq_yy} sv_Fe \phi ^{*}_{\vec{k}ms}(y)
-%     \sigma ^x
-%     \phi _{\vec{k} +\vec{q}ns}(y)\\
-%   &= \frac{s v_F e}{(2\pi )^{\frac{3}{2}}} \int \mathrm{d}y
-%     \exp \left\{
-%     - i q_yy - \frac{(y-k_xl_B^2)^2 + (y-l_xl_B^2)^2}{2 l_B^2}
-%     \right\}\\
-%   \nonumber &\left[
-%     a_{\vec{k}ms}b_{\vec{l}ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - l_xl_B^2}{l_B} \right)\right.\\
-%   \nonumber &+
-%     \left.  b_{\vec{k}ms} a_{\vec{l}ns}
-%     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
-%     H_{N-1} \left( \frac{y - l_xl_B^2}{l_B} \right)
-%     \right]\\
-%     %%% 
-%   &= \frac{s v_F e}{(2\pi )^{\frac{3}{2}}} \int \mathrm{d}y
-%     \exp \left[-\left\{
-%     y+ \frac{l_B^2}{2} \left( iq_y - k_x - l_x \right)
-%     \right\}^2 /l_B^2\right]\\
-%   \nonumber & \exp \left[- \frac{1}{4} l_B^2 \left\{
-%     (k_x-l_x)^2 + 2 i (k_x + l_x) q_y + q_y^2
-%     \right\}\right]\\
-%   \nonumber &\left[
-%     a_{\vec{k}ms}b_{\vec{l}ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - l_xl_B^2}{l_B} \right) \right.\\
-%   \nonumber &\left. +
-%     b_{\vec{k}ms} a_{\vec{l}ns}
-%     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
-%     H_{N-1} \left( \frac{y - l_xl_B^2}{l_B} \right)
-%     \right]
-% \end{align}
 \begin{align}
   &J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q})\\
   \nonumber &=  \int \mathrm{d}y
@@ -615,6 +592,55 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
     \right].
   \end{split}
 \end{equation}
+Taking the limit we find the simple form
+\begin{equation}
+  \label{eq:41}
+  J_{\vec{k} m s; \vec{k} n s} =
+  s v_F e \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
+  \left[
+    a_{\vec{k}ms} b_{\vec{k} n s} H_{M-1}(\tilde{y} )H_N(\tilde{y} )
+    + b_{\vec{k} m s} a _{\vec{k} n s} H_M(\tilde{y} )H_{N-1}(\tilde{y} )
+  \right].
+\end{equation}
+We employ now the orthogonality relation of the Hermite polynomials \cite[Table~18.3.1]{NIST:DLMF}
+\begin{equation}
+  \label{eq:61}
+  \int\limits_{-\infty}^{\infty} \mathrm{d}x e^{-x^2} H_n(x)H_m(x) = \sqrt{\pi} 2^{n} n! \delta_{n,m}
+\end{equation}
+to write
+\begin{equation}
+  \label{eq:62}
+  J_{\vec{k} m s, \vec{k} n s} = s v_F e \sqrt{\pi} (a_{\vec{k} ms} b_{\vec{k} n s} \delta_{M-1, N} 2^N N! + a_{\vec{k} m s} b_{\vec{k} n s} \delta_{M, N-1} 2^M M!).
+\end{equation}
+With
+\begin{align}
+  a_{\vec{k}ms}b_{\vec{k}ns} &= 
+  \frac{\alpha_{\vec{k}ms} }{
+    \sqrt{\alpha _{\vec{k} ms}^2 +1}
+    \sqrt{\alpha _{\vec{k} ns}^2 + 1}
+  }
+  \left[ 2^{N+M-1} (M-1)! N! \pi l_B^2 \right]^{-\frac{1}{2}},\\
+  b_{\vec{k}ms}a_{\vec{k} ns} &= 
+  \frac{\alpha_{\vec{k}ns} }{
+    \sqrt{\alpha _{\vec{k} ms}^2 +1}
+    \sqrt{\alpha _{\vec{k} ns}^2 + 1}
+  }
+  \left[ 2^{N+M-1} (N-1)! M! \pi l_B^2 \right]^{-\frac{1}{2}}.
+\end{align}
+we find explicitly
+\begin{multline}
+  J_{\vec{k} m s, \vec{k} n s} = \frac{s v_F e}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} n s}^2 + 1}}\\
+  \left(
+    \alpha _{\vec{k} m s}
+    \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
+    +
+    \alpha _{\vec{k} n s}
+    \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
+  \right).
+\end{multline}
+
+
+
 Note that the Hermite polynomials of the first factor is related to the second factor by interchanging $M-1 \to M$ and $N\to  N-1$.
 The integration over $y$ is now on the form
 \[
@@ -849,18 +875,19 @@ By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
   \begin{split}
     T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
-    (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )\\
-    &\pe \frac{
-      \exp\left[
-        -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2- 2 i q_y (2 k_x + q_x) \right\}
-      \right]
-    }{
+      \frac{
+      (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
+      }{
       \sqrt{\alpha _{\vec{k}ms}^2 +1}
-      \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-    }\\
-    &\pe \left(
--\Xi_2(\bar{\vec{q}}, m, n, s) + \Xi _1(\bar{\vec{q}}, m, n, s)
-    \right),
+      \sqrt{\alpha _{\vec{k}ns}^2 + 1}
+      }\\
+    &\left(
+      \alpha _{\vec{k} m s}
+      \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
+      -
+      \alpha _{\vec{k} n s}
+      \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
+      \right).
   \end{split}
 \end{equation}
 where $\bar{\vec{q}} = (q_x, -q_y, q_z)$.
@@ -1136,14 +1163,14 @@ For $N=M$, we have
   \end{split}
 \end{equation}
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/MNregion}
-  \caption{The regions of validity of the functions $\Xi _i ^{(j)}$ of N with respect to M.
-    For $N\leq M-1$, $\Xi _i ^{(2)}$ are valid and for $N \geq M+1$, $\Xi _i ^{(1)}$ are valid.
-    Only for $N=M$ must the two flavors, $\Xi _i ^{(1)}, \Xi _i ^{(2)}$ mix.}
-  \label{fig:mnregion}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{figures/MNregion}
+%   \caption{The regions of validity of the functions $\Xi _i ^{(j)}$ of N with respect to M.
+%     For $N\leq M-1$, $\Xi _i ^{(2)}$ are valid and for $N \geq M+1$, $\Xi _i ^{(1)}$ are valid.
+%     Only for $N=M$ must the two flavors, $\Xi _i ^{(1)}, \Xi _i ^{(2)}$ mix.}
+%   \label{fig:mnregion}
+% \end{figure}
 
 In the local limit $q\to  0$ only certain choices of $m,n$ give non-vanishing results, as is seen from these expressions.
 In the case $N=M$, the result always vanishes in the limit.
@@ -1169,7 +1196,7 @@ It is thus sufficient to check only
         (\mp q_x + iq_y)^{\pm [N-M + 1]}
       \end{multlined}
       \\
-      &= [\qvec{q}^2]^{\pm [N-M+1]} + [\qvec{q}^2]^{\pm [N-M-1]} (\mp q_x + iq_y)^{\pm 2} \right],
+      &= [\qvec{q}^2]^{\pm [N-M+1]} + [\qvec{q}^2]^{\pm [N-M-1]} (\mp q_x + iq_y)^{\pm 2},
   \end{split}
 \end{equation}
 and
@@ -1456,12 +1483,12 @@ The first 300 contributions were calculated, shown in Figure \ref{fig:convergenc
 %   = \frac{e^2B v_F}{2 (2\pi )^2 \hbar }.
 % \end{equation}
 
-\begin{figure}[h]
-  \centering
-  \input{figures/convergence_chi}
-  \caption{Prefactor $\gamma_N$ of $\chi$ vs. number of terms $N$ included in sum.}
-  \label{fig:convergence_chi}
-\end{figure}
+% \begin{figure}[h]
+%   \centering
+%   \input{figures/convergence_chi}
+%   \caption{Prefactor $\gamma_N$ of $\chi$ vs. number of terms $N$ included in sum.}
+%   \label{fig:convergence_chi}
+% \end{figure}
 
 
 \section{Discussion of results}
