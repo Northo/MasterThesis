@@ -1,9 +1,9 @@
 We will find the current response of a single Dirac cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
 The current response of interest in the given geometry is thus in the $x$-direction,
-\begin{equation}\label{eq:45}
+\begin{equation}\label{eq:1}
   J^x = \chi ^{xy} \frac{- \nabla _yT}{T},
 \end{equation}
-with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:45}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
+with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:1}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
 In the derivation of~\citeauthor{chernodubGenerationNernstCurrent2018}~\cite{chernodubGenerationNernstCurrent2018} the response
 \begin{equation}
   \chi ^{xy} = \frac{e^2 v_F B}{18 \pi ^2 \hbar }
@@ -15,9 +15,9 @@ The above result is what is meant, to the best of our understanding.}
   \chi ^{xy} = \frac{e^2 v_F B}{4 \pi ^2 \hbar }.
 \end{equation}
 
-Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-luttinger-gravity-final}), found through Luttinger's approach.
+Recall the linear response from the Kubo formalism in Eq. (\ref{eq:99current-luttinger-gravity-final}), found through Luttinger's approach.
 \begin{equation}
-  \label{eq:4}
+  \label{eq:2}
   \braket{J^i}(t, \vec{r}) =
   \int\limits_{-\infty }^{\infty } \mathrm{d}t' \mathrm{d}\vec{r}'
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
@@ -30,8 +30,8 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
   \partial _j' \psi (t', \vec{r}').
 \end{equation}
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
-As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:4}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
-Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:4}) is
+As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:2}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
+Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:2}) is
 \[
   \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \partial _j' \psi  (\vec{r}'),
 \]
@@ -84,7 +84,7 @@ In frequency space
                    \Theta (t) \Braket{\left[ J(t), T(t'') \right]}.
 \end{align}
 In frequency and momentum space the response function is thus
-\begin{equation}\label{eq:39}
+\begin{equation}\label{eq:3}
   \chi ^{ij} (w, \vec{q}) =
   \frac{-iv_F}{\mathcal{V} \hbar } 
   \int \mathrm{d}t e^{i\omega t}
@@ -100,7 +100,7 @@ To evaluate the correlator of the response function, the matrix elements of the 
 In order to do this, we find eigenstates in the Landau basis of the system.
 The Weyl Hamiltonian
 \begin{equation}
-  \label{eq:weyl-hamil}
+  \label{eq:99weyl-hamil}
   H_s = s v_F \sigma^i \left( p_i + e A_i \right),
 \end{equation}
 with $s$ being the chirality, $p_i$ the momentum operator, and $e = |e|$ the coupling constant to the electromagnetic field $\vec{A}$.
@@ -114,7 +114,7 @@ where $\tilde{H}$ is the result of replacing $p_z \to \hbar k_z, p_x\to \hbar  k
 Absorb the chirality $s$ as a sign in the velocity $v_F$, for more concise notation. 
 Thus, writing everything explicitly, the spectrum is given by
 \begin{equation}
-  \label{eq:1}
+  \label{eq:4}
   -\hbar  v_F
   \begin{pmatrix}
     - k_z & \partial _y + e y B_{z} / \hbar  - k_x\\
@@ -125,7 +125,7 @@ Thus, writing everything explicitly, the spectrum is given by
 We will now find the spectrum $E$ of the Hamiltonian.
 
 Inspired by the derivation for the spectrum of the 2D Dirac Hamiltonian in~\cite{wehlingDiracMaterials2014}, we introduce the length scale $l_B = \sqrt{\hbar / eB}$, and the dimensionless quantity $\chi = y /l_{B} - k_x l_{B}$.
-In dimensionless quantities Eq. (\ref{eq:1}) becomes
+In dimensionless quantities Eq. (\ref{eq:4}) becomes
 \begin{equation}
   -\frac{{\hbar v_F}}{l_{B}}
   \begin{pmatrix}
@@ -309,7 +309,7 @@ which further simplifies the expression.
 \begin{comment}
   The stress-energy tensor of the massless QED
   \begin{equation}
-    \label{eq:2}
+    \label{eq:5}
     \mathcal{L} = -\frac{1}{4} F^{\mu \nu }F_{\mu \nu } + \overline{\psi} i \slashed{D} \psi
   \end{equation}
   is given by~\cite{chernodubGenerationNernstCurrent2018}
@@ -322,12 +322,12 @@ which further simplifies the expression.
   Thus, the stress-energy tensor is given by
   \begin{equation}
     T^{\mu \nu } = \frac{i}{2} \psi ^{\dagger} \left( \sigma ^{\mu } D^{\nu } + \sigma ^{\nu } D^{\mu } \right) \psi  - \eta ^{\mu \nu } \psi ^{\dagger} i \sigma ^{\mu } D_{\mu } \psi ,
-    \label{eq:35}
+    \label{eq:6}
   \end{equation}
   where $\psi $ is to be understood as the solutions found above, $D_{\mu }=\partial _{\mu }  - i e A_{\mu }$ is the covariant derivative, and $\sigma ^{\mu } = (I, \sigma ^i)$
   In our calculations we will require the $T^{0y}$ component, which we will now find.
 
-  By using Eq. (\ref{eq:35}) directly
+  By using Eq. (\ref{eq:6}) directly
   \begin{align}
     T^{0y} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
            &= \frac{i}{2} \psi ^{\dagger} \left( \partial ^{y} + \sigma ^{y} \partial ^{0} \right)\psi \\
@@ -350,7 +350,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:2}) to our system.
+  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:5}) to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\hbar\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -368,12 +368,12 @@ which further simplifies the expression.
 
 Fourier transforming the position gives
 \begin{align}
-  \label{eq:3}
+  \label{eq:7}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}
                     J^x_{\vec{k}ms, \vec{l}ns}(\vec{q})
                     a^{\dagger}_{\vec{k}ms}(t)
                     a_{\vec{l} ns}(t),\\
-  \label{eq:33}
+  \label{eq:8}
   T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}^{}
                     T^{0y}_{\vec{k}m s, \vec{l}n s}(\vec{q})
                     a^{\dagger}_{\vec{k}m s}(t)
@@ -383,7 +383,7 @@ where the matrix elements in momentum space are given by
 \begin{align}
   J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) \sigma ^x \phi _{\vec{l}ns}(\vec{r}),\\
   %%
-  \label{eq:36}
+  \label{eq:9}
   T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{4} \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}} \left[
                                                   v_F \phi ^{*}_{\vec{k} m s}(\vec{r})  p_y \phi _{\vec{l} ns} (\vec{r})
                                                   - v_F (p_y \phi ^{*}_{\vec{k}m s}) \phi _{\vec{l} ns }(\vec{r})
@@ -393,11 +393,11 @@ where the matrix elements in momentum space are given by
                                                 \phi ^{*}_{\vec{k}m s}(\vec{r}) s \sigma ^y
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
-Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:36}).
+Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:9}).
 
 As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
-The sum over $\vec{l}$ in Eq. (\ref{eq:3}) can be replaced by an integration, as it is a good quantum number.
+The sum over $\vec{l}$ in Eq. (\ref{eq:7}) can be replaced by an integration, as it is a good quantum number.
 As usual, the measure in the integration is given by the density of states in momentum space, the well known $L_{i} /2\pi $, with $L_i$ being the length of the system in the $i$-direction.
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, n}^{} \int \mathrm{d}l_x \mathrm{d}l_z \frac{L_xL_z}{4 \pi ^2}
@@ -407,7 +407,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
-The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:33}).
+The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:8}).
 Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
@@ -440,9 +440,9 @@ the correlation function is given by
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right].
 \end{multline}
 
-We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:39})
+We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:3})
 \begin{equation}
-  \label{eq:5}
+  \label{eq:10}
   \chi ^{xy}(\omega, \vec{q}) =
   \frac{-i v_F}{\mathcal{V} \hbar } 
   \int \mathrm{d}t e^{i \omega t} \int\limits_{-\infty }^0 \mathrm{d}t'
@@ -452,7 +452,7 @@ J^x(t, \vec{q}), T^{0y}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
-The integral part of Eq. (\ref{eq:5}), ignoring everything without time dependence for clarity, is then
+The integral part of Eq. (\ref{eq:10}), ignoring everything without time dependence for clarity, is then
 \begin{multline}
   \lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
@@ -479,12 +479,12 @@ The response function then reads
   \left[ E_{\vec{k}ms} - E_{\vec{k}+\qvec{q} ns} + i \eta \hbar  \right]^{-1},
 \end{multline}
 where the matrix elements are
-\begin{align}\label{eq:40}
+\begin{align}\label{eq:11}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q}) &= \int \mathrm{d}y
                                                 e^{-i q_y y}
                                                 s v_F e\phi ^{*}_{\vec{k}m s}(y) \sigma^x
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:41}
+  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:12}
                                                            \int \mathrm{d}y
                                                            e^{iq_y y}
                                                            \left[
@@ -508,12 +508,12 @@ where the matrix elements are
 
 \subsection{Finding numerical values for the matrix elements}
 In order to evaluate the response function the product of the matrix elements of the current operator and the stress-energy tensor must be found.
-In order to facilitate for this calculation, we will here evaluate the $y$-integral of the matrix elements in Eqs.~(\ref{eq:40}) and (\ref{eq:41}), which will remove the Hermite polynomials, and then show that all the matrix elements are proportional to linear combinations of some functions $\Xi $ defined below;
+In order to facilitate for this calculation, we will here evaluate the $y$-integral of the matrix elements in Eqs.~(\ref{eq:11}) and (\ref{eq:12}), which will remove the Hermite polynomials, and then show that all the matrix elements are proportional to linear combinations of some functions $\Xi $ defined below;
 in the limit $q \to 0$ this will greatly simplify the calculation, as products of the functions $\Xi $ will be shown to give non-vanishing contributions only for certain choices of $m,n$, thus giving a selection rule for the sum over $m,n$ in the response function.
 
 Let
 \begin{equation}
-  \label{eq:16}
+  \label{eq:13}
   \phi _{\vec{k}ms}(y)
   = e^{-\frac{(y-k_xl_B^2)^2}{2 l_{B}^2}}
   \begin{pmatrix}
@@ -596,7 +596,7 @@ where we completed the square in the exponent, to get the form $e^{-a(y + b)^2}$
 Also, $\qvec{q}_y=(q_x, q_y)$, was introduced, not to be confused with $\qvec{q} = (q_x, q_z)$.
 By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the matrix element may be rewritten
 \begin{equation}
-  \label{eq:13}
+  \label{eq:14}
   \begin{split}
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
@@ -622,42 +622,42 @@ The integration over $y$ is now on the form
 \]
 and so we may utilize that the Hermite polynomials satisfy the \emph{shifted orthogonality} relation~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
-  \label{eq:hermite-shift-ortho}
+  \label{eq:99hermite-shift-ortho}
   \int\limits_{-\infty }^{\infty } \mathrm{d}x
   e^{-x^2} H_m(x+y) H_n(x+z)
   = 2^n \pi^{\frac{1}{2}} m! y^{n-m} L^{n-m}_m(-2yz), \quad m\leq n,
 \end{equation}
 where \(L^{a}_{b}\) is the \emph{generalized Laguerre polynomial} of order \(b\) and type \(a\).
-Taking care to consider the region of validity of Eq. (\ref{eq:hermite-shift-ortho}), this gives three different regimes $N < M, N=M, N>M$, which must be considered separately.
-The first term of Eq. (\ref{eq:13}) gives, considering only the $y$-dependent factors,
+Taking care to consider the region of validity of Eq. (\ref{eq:99hermite-shift-ortho}), this gives three different regimes $N < M, N=M, N>M$, which must be considered separately.
+The first term of Eq. (\ref{eq:14}) gives, considering only the $y$-dependent factors,
 \begin{equation}
-  \label{eq:8}
+  \label{eq:15}
   2^N \pi^{\frac{1}{2}}  (M-1)!
   \left[ \frac{l_B}{2} (q_x - i q_y)  \right]^{N - M + 1}
   L_{M-1}^{N-M+1} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N \geq M-1,
 \end{equation}
 \begin{equation}
-  \label{eq:9}
+  \label{eq:16}
   2^{M-1} \pi^{\frac{1}{2}}  N!
   \left[ \frac{l_B}{2} (-q_x - i q_y)  \right]^{M-1-N}
   L_{N}^{M-1-N} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N \leq M-1,
 \end{equation}
 and similarly the second term, by the interchange of $M$ and $N$ as described above, gives
 \begin{equation}
-  \label{eq:10}
+  \label{eq:17}
   2^{N-1} \pi^{\frac{1}{2}}  M!
   \left[ \frac{l_B}{2} (q_x - i q_y)  \right]^{N - 1 - M}
   L_{M}^{N-1 - M} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N-1 \geq M,
 \end{equation}
 \begin{equation}
-  \label{eq:11}
+  \label{eq:18}
   2^{M} \pi^{\frac{1}{2}}  (N-1)!
   \left[ \frac{l_B}{2} (-q_x - i q_y)  \right]^{M-N + 1}
   L_{N-1}^{M-N + 1} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N - 1\leq M.
 \end{equation}
 Reintroducing the explicit forms of the prefactors $a_{\vec{k}ms}, b_{\vec{k}ms}$, which are easily shown to be
 \begin{equation}
-  \label{eq:12}
+  \label{eq:19}
   a_{\vec{k}ms}b_{\vec{k}+\qvec{q} ns} = 
   \frac{\alpha_{\vec{k}ms} }{
     \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
@@ -668,10 +668,10 @@ Reintroducing the explicit forms of the prefactors $a_{\vec{k}ms}, b_{\vec{k}ms}
 and similarly under $\vec{k} \leftrightarrow \vec{k} + \qvec{q}, m \leftrightarrow n$,
 the full current matrix element can be written out.
 
-To write out the entire matrix element (\ref{eq:13}) it is useful to define quantities combining the prefactors (\ref{eq:12}) with the results found in (\ref{eq:8})-(\ref{eq:11}).
+To write out the entire matrix element (\ref{eq:14}) it is useful to define quantities combining the prefactors (\ref{eq:19}) with the results found in (\ref{eq:15})-(\ref{eq:18}).
 Explicitly, let
 \begin{multline}
-  \label{eq:21}
+  \label{eq:20}
   \frac{\Xi _1(\vec{q}, m, n, s)}{
     \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
     \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
@@ -684,7 +684,7 @@ Explicitly, let
   , 
 \end{multline}
 \begin{multline}
-  \label{eq:22}
+  \label{eq:21}
   \frac{\Xi _2 (\vec{q}, m, n, s)}{
     \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
     \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
@@ -729,10 +729,10 @@ With $\Xi_i$ defined as
           \begin{cases}
             \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
             \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases}, \label{eq:42}
+          \end{cases}, \label{eq:22}
 \end{align}
-corresponding to Eq. (\ref{eq:8}) and (\ref{eq:9}).
-Similarly, for the Eq. (\ref{eq:10}) and (\ref{eq:11}), the second term of the matrix element, define
+corresponding to Eq. (\ref{eq:15}) and (\ref{eq:16}).
+Similarly, for the Eq. (\ref{eq:17}) and (\ref{eq:18}), the second term of the matrix element, define
 \begin{align}
   \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} + \qvec{q} ns} \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
                                    \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-1 - M}
@@ -745,9 +745,9 @@ Similarly, for the Eq. (\ref{eq:10}) and (\ref{eq:11}), the second term of the m
           \begin{cases}
             \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
             \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases}, \label{eq:43}
+          \end{cases}, \label{eq:23}
 \end{align}
-The current matrix element (\ref{eq:13}) is thus expressed in terms of these functions as
+The current matrix element (\ref{eq:14}) is thus expressed in terms of these functions as
 \begin{equation}
   J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
   sv_Fe
@@ -767,7 +767,7 @@ The current matrix element (\ref{eq:13}) is thus expressed in terms of these fun
 \subsubsection{The stress-energy tensor operator}
 Consider the first part of the stress-energy matrix element
 \begin{equation}
-\label{eq:14}
+\label{eq:24}
 T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
 \frac{1}{4}
@@ -816,10 +816,10 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
   \end{split}
 \end{equation}
 The arguments of the Hermite polynomials have been dropped for brevity of notation.
-As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:hermite-shift-ortho}).
+As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:99hermite-shift-ortho}).
 Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
 \begin{equation}
-  \label{eq:19}
+  \label{eq:25}
   \begin{split}
     T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
@@ -843,9 +843,9 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
   \end{split}
 \end{equation}
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
-By Eqs.~(\ref{eq:21}) and (\ref{eq:22})
+By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
 \begin{equation}
-  \label{eq:20}
+  \label{eq:26}
   \begin{split}
     T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
@@ -867,14 +867,14 @@ where $\bar{\vec{q}} = (q_x, -q_y, q_z)$.
 
 Consider now the latter part of the stress-energy tensor, which is split into two parts
 \begin{align}
-  \label{eq:17}
+  \label{eq:27}
   T ^{0y\; (2)} _{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &= + 
                                                             \frac{1}{4}
                                                             \int \mathrm{d}y
                                                             e^{iq_y y} v_F
                                                             \phi ^{*}_{\vec{k}+\qvec{q} ns}(y)
                                                             p_y \phi _{\vec{k}ms} (y),\\
-  \label{eq:18}
+  \label{eq:28}
   T ^{0y\; (3)} _{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &= -
                                                             \frac{1}{4}
                                                             \int \mathrm{d}y
@@ -882,14 +882,14 @@ Consider now the latter part of the stress-energy tensor, which is split into tw
                                                             \left( p_y\phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \right)
                                                             \phi _{\vec{k}ms}(y).
 \end{align}
-Recall that $\phi_{\vec{k}ms} (y)$, defined in Eq. (\ref{eq:16}), consists of two $y$-dependent factors:
+Recall that $\phi_{\vec{k}ms} (y)$, defined in Eq. (\ref{eq:13}), consists of two $y$-dependent factors:
 \(
   \exp \left[-\frac{(y-k_x l_B^2)^2}{2 l_{B}^2 } \right]
 \)
 and the Hermite polynomials.
 The operator $p_y$ thus produces two terms when operating on $\phi $.
 The first term, coming from the exponent, is proportional to $y-k_xl_B^2$.
-The operator in Eqs. (\ref{eq:17}) and (\ref{eq:18}) acts on $\phi $ with the quantum  number $\vec{k}$ and $\vec{k} + \qvec{q}$, respectively;
+The operator in Eqs. (\ref{eq:27}) and (\ref{eq:28}) acts on $\phi $ with the quantum  number $\vec{k}$ and $\vec{k} + \qvec{q}$, respectively;
 when summing the two contributions, everything thus cancels except for a term proportional to $q_x$, which vanishes in the local limit.
 
 It remains to consider the result of $p_y$ operating on the Hermite polynomials.
@@ -939,9 +939,9 @@ Upon introducing $\tilde{y} = \frac{y}{l_B} + l_B( -iq_y - q_x - 2k_x) / 2$, as 
   H_N \left( \tilde{y} + \frac{l_B}{2}(iq_y - q_x) \right)
   \Bigg\},
 \end{multline}
-where we may use equation (\ref{eq:hermite-shift-ortho}) to evaluate the integral.
+where we may use equation (\ref{eq:99hermite-shift-ortho}) to evaluate the integral.
 
-Comparing with Eqs. (\ref{eq:21}) and (\ref{eq:22}), it is apparent that
+Comparing with Eqs. (\ref{eq:20}) and (\ref{eq:21}), it is apparent that
 \begin{multline}
   \int \mathrm{d}\tilde{y} e^{-\tilde{y}^2} a_{\vec{k}ms} a_{\vec{k}+\qvec{q} ns} H_{M-2}(\dots ) H_{N-1}(\dots )\\
   \begin{split}
@@ -1098,14 +1098,14 @@ The product $J^x T^{0y \; (1)}$ is then on the form
   \end{split}
 \end{equation}
 Here the upper and lower signs corresponds to the $\Xi _i ^{(1)}$ and $\Xi _{i} ^{(2)}$ functions respectively.
-The flavors $\Xi_i^{(1)}$ and $\Xi_i ^{(2)}$ must must be chosen according to the value of $N$ compared to $M$, as they were defined in Eqs.~(\ref{eq:42}) and (\ref{eq:43}).
+The flavors $\Xi_i^{(1)}$ and $\Xi_i ^{(2)}$ must must be chosen according to the value of $N$ compared to $M$, as they were defined in Eqs.~(\ref{eq:22}) and (\ref{eq:23}).
 For clarity, Figure \ref{fig:mnregion} shows which flavor must be chosen for the different regions.
 The $s = \pm 1$  encodes the non-overlapping regions of validity of the two flavors $\Xi _i^{(1)}$ and $\Xi _{i} ^{(2)}$;
 in other words, $s=+1$ corresponds to $N\neq M$, where only one flavor is used.
 In the case $M = N$ where $\Xi _1$ should take the form $\Xi _1 ^{(1)}$ and $\Xi _2$ the form $\Xi _2^{(2)}$, $s=-1$.
 Firstly, consider the case $s=+1$.
 \begin{align}
-  \label{eq:15}
+  \label{eq:29}
   \left( \widehat{\Xi}_1 (\vec{q}) + \widehat{\Xi} _2(\vec{q}) \right)
   \left( \widehat{\Xi} _1(\bar{\vec{q}}) - \widehat{\Xi} _2(\bar{\vec{q}}) \right)
   &=
@@ -1147,7 +1147,7 @@ For $N=M$, we have
 
 In the local limit $q\to  0$ only certain choices of $m,n$ give non-vanishing results, as is seen from these expressions.
 In the case $N=M$, the result always vanishes in the limit.
-From Eq. (\ref{eq:15}) we see that the result will be finite only for $N-M-1 = 0$ and $N-M+1=0$, in which case the first factor will be independent of $q$.
+From Eq. (\ref{eq:29}) we see that the result will be finite only for $N-M-1 = 0$ and $N-M+1=0$, in which case the first factor will be independent of $q$.
 One also never gets a negative exponent, which would go to infinity as $q \to 0$, as we will now show.
 Consider the upper sign, corresponding to the region $N\geq M+1$ and the flavors $\Xi _i ^{(1)}$.
 For the exponent to be negative, $N-M \mp 1 < 0 \implies  N < M \pm 1$, contrary to the region of validity.
@@ -1159,7 +1159,7 @@ As the difference $M-N$ does not change under $m\to m-1, n\to n-1$, the exponent
 Therefore, $\widehat{\Xi} _i(\vec{q}, m, n, s) = \widehat{\Xi} _i(\vec{q}, m-1, n-1, s)$.
 It is thus sufficient to check only
 \begin{equation}
-  \label{eq:23}
+  \label{eq:30}
   \begin{split}
     (\widehat{\Xi} _1(\vec{q}) + \widehat{\Xi} _2(\vec{q}))
     \widehat{\Xi} _1(\bar{\vec{q}})
@@ -1174,7 +1174,7 @@ It is thus sufficient to check only
 \end{equation}
 and
 \begin{equation}
-  \label{eq:24}
+  \label{eq:31}
   \begin{split}
     (\widehat{\Xi} _1(\vec{q}) + \widehat{\Xi} _2(\vec{q}))
     \widehat{\Xi} _2(\bar{\vec{q}})
@@ -1187,7 +1187,7 @@ and
       &= [\qvec{q}^2]^{\pm [N-M-1]} \left[ (\mp q_x - iq_y )^{\pm 2} +  1 \right].
   \end{split}
 \end{equation}
-Similar reasoning as above may be applied to Eqs. (\ref{eq:23}) and (\ref{eq:24}).
+Similar reasoning as above may be applied to Eqs. (\ref{eq:30}) and (\ref{eq:31}).
 We get the selection rules \( N = M - 1, N= M+1 \), respectively.
 
 Consequently, when taking the matrix elements $J^x_{\vec{k} ms, \vec{k}+\vec{q}ns} T^{0y \; (i)}_{\vec{k}+\vec{q}ns, \vec{k}ms}$, only certain combinations of the $\Xi_j$-functions will give finite contributions.
@@ -1342,7 +1342,7 @@ and
 Considering now the local limit $q\to 0$, and using the previously found selection rules for products of the $\Xi _i$-functions.
 Using that the Laguerre polynomials are unity at the origin and writing out the $\Xi $-functions with the selection rules
 \begin{align}
-  \label{eq:46}
+  \label{eq:32}
   \lim_{\vec{q}\to 0} \chi ^{xy\; (1)} (\omega , \vec{q}) &=
                                         \lim_{\eta \to 0} \frac{1}{4(2\pi )^2}
                                         \frac{e^2 B v_F}{\hbar }
@@ -1351,7 +1351,7 @@ Using that the Laguerre polynomials are unity at the origin and writing out the 
   \xi(\kappa _z)
   (\epsilon _{\vec{\kappa}  m  s} + \epsilon _{\vec{\kappa} ns} - 2 \frac{\hbar \mu }{v_F \sqrt{2eB\hbar }})
  (\alpha _{\kappa n s}^2 \delta _{N, M+1} - a_{\kappa m s}^2 \delta _{N, M-1}) ,\\
-  \label{eq:47}
+  \label{eq:33}
   \lim_{\vec{q}\to 0} \chi ^{xy\; (2)} (\omega , \vec{q}) &=
                                         \lim_{\eta \to 0} \frac{1}{4(2\pi )^2}
                                         \frac{e^2 B s v_F}{\hbar }
@@ -1363,7 +1363,7 @@ Using that the Laguerre polynomials are unity at the origin and writing out the 
                                           +
                                           \sqrt{M-1} \alpha _{\vec{\kappa } n s} \alpha _{\vec{\kappa } ms}^2
                                         \right\},\\
-  \label{eq:48}
+  \label{eq:34}
   \lim_{\vec{q}\to 0} \chi ^{xy\; (3)} (\omega , \vec{q}) &=
                                         \lim_{\eta \to 0} \frac{-1}{4(2\pi )^2}
                                         \frac{e^2 B s v_F}{\hbar }
@@ -1378,8 +1378,8 @@ Using that the Laguerre polynomials are unity at the origin and writing out the 
 \end{align}
 The function \( \xi \) is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \).
 Using this, we may simplify our expressions some.
-Firstly, in the second term of Eq. \eqref{eq:46}, we may relabel \( m \leftrightarrow n \), and using that \( \xi  \) is odd to get twice the first term.
-Doing a similar trick for Eq. \eqref{eq:47} renders it identical to Eq. \eqref{eq:48}.
+Firstly, in the second term of Eq. \eqref{eq:32}, we may relabel \( m \leftrightarrow n \), and using that \( \xi  \) is odd to get twice the first term.
+Doing a similar trick for Eq. \eqref{eq:33} renders it identical to Eq. \eqref{eq:34}.
 In total, we get
 \begin{align}
   \lim_{\vec{q}\to 0} \chi ^{xy\; (1)} (\omega , \vec{q}) &=
@@ -1425,7 +1425,7 @@ The total transverse response function with only first level contributions is th
 \end{equation}
 Including higher order contributions, only gives additional numerical prefactors,
 \begin{equation}
- \label{eq:34} 
+ \label{eq:35} 
   \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
   \chi ^{xy}
   = \gamma_M \frac{e^2B v_F}{4 (2\pi )^2 \hbar },
@@ -1466,7 +1466,7 @@ The first 300 contributions were calculated, shown in Figure \ref{fig:convergenc
 
 \section{Discussion of results}
 In the static and local limit $\lim_{\omega \to 0} \lim_{\vec{q}\to 0}$ the  transverse response function $\chi^{xy}$ of the charge current to a temperature perturbation
-\begin{equation}\label{eq:44}
+\begin{equation}\label{eq:36}
   J^x = \chi ^{xy} \frac{- \nabla^y T}{T}
 \end{equation}
 from a single Dirac point was found  to be
