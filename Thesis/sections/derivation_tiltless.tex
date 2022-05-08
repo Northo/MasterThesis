@@ -519,7 +519,7 @@ where the current and energy-momentum tensor matrix elements are the expression 
 
 
 \subsection{Finding numerical values for the matrix elements}
-Compared to the procedure used by \autocite{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, taking the limit of each matrix element by itself greatly simplifies the calculation.
+Compared to the procedure used by \authorcite{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, taking the limit of each matrix element by itself greatly simplifies the calculation.
 
 Let
 \begin{equation}
@@ -638,156 +638,6 @@ we find explicitly
     \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
   \right).
 \end{multline}
-
-
-
-Note that the Hermite polynomials of the first factor is related to the second factor by interchanging $M-1 \to M$ and $N\to  N-1$.
-The integration over $y$ is now on the form
-\[
-  \int \mathrm{d}y e^{-y^2} H_{M-1}(y +a) H_N(y + b),
-\]
-and so we may utilize that the Hermite polynomials satisfy the \emph{shifted orthogonality} relation~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
-\begin{equation}
-  \label{eq:99hermite-shift-ortho}
-  \int\limits_{-\infty }^{\infty } \mathrm{d}x
-  e^{-x^2} H_m(x+y) H_n(x+z)
-  = 2^n \pi^{\frac{1}{2}} m! y^{n-m} L^{n-m}_m(-2yz), \quad m\leq n,
-\end{equation}
-where \(L^{a}_{b}\) is the \emph{generalized Laguerre polynomial} of order \(b\) and type \(a\).
-Taking care to consider the region of validity of Eq. (\ref{eq:99hermite-shift-ortho}), this gives three different regimes $N < M, N=M, N>M$, which must be considered separately.
-The first term of Eq. (\ref{eq:14}) gives, considering only the $y$-dependent factors,
-\begin{equation}
-  \label{eq:15}
-  2^N \pi^{\frac{1}{2}}  (M-1)!
-  \left[ \frac{l_B}{2} (q_x - i q_y)  \right]^{N - M + 1}
-  L_{M-1}^{N-M+1} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N \geq M-1,
-\end{equation}
-\begin{equation}
-  \label{eq:16}
-  2^{M-1} \pi^{\frac{1}{2}}  N!
-  \left[ \frac{l_B}{2} (-q_x - i q_y)  \right]^{M-1-N}
-  L_{N}^{M-1-N} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N \leq M-1,
-\end{equation}
-and similarly the second term, by the interchange of $M$ and $N$ as described above, gives
-\begin{equation}
-  \label{eq:17}
-  2^{N-1} \pi^{\frac{1}{2}}  M!
-  \left[ \frac{l_B}{2} (q_x - i q_y)  \right]^{N - 1 - M}
-  L_{M}^{N-1 - M} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N-1 \geq M,
-\end{equation}
-\begin{equation}
-  \label{eq:18}
-  2^{M} \pi^{\frac{1}{2}}  (N-1)!
-  \left[ \frac{l_B}{2} (-q_x - i q_y)  \right]^{M-N + 1}
-  L_{N-1}^{M-N + 1} \left(\frac{\qvec{q}_y^2l_B^2}{2} \right), \quad N - 1\leq M.
-\end{equation}
-Reintroducing the explicit forms of the prefactors $a_{\vec{k}ms}, b_{\vec{k}ms}$, which are easily shown to be
-\begin{equation}
-  \label{eq:19}
-  a_{\vec{k}ms}b_{\vec{k}+\qvec{q} ns} = 
-  \frac{\alpha_{\vec{k}ms} }{
-    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  \left[ 2^{N+M-1} (M-1)! N! \pi l_B^2 \right]^{-\frac{1}{2}},
-\end{equation}
-and similarly under $\vec{k} \leftrightarrow \vec{k} + \qvec{q}, m \leftrightarrow n$,
-the full current matrix element can be written out.
-
-To write out the entire matrix element (\ref{eq:14}) it is useful to define quantities combining the prefactors (\ref{eq:19}) with the results found in (\ref{eq:15})-(\ref{eq:18}).
-Explicitly, let
-\begin{multline}
-  \label{eq:20}
-  \frac{\Xi _1(\vec{q}, m, n, s)}{
-    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  =
-  \int \mathrm{d}\tilde{y} \; l_B e^{-y^2}
-  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}\\
-  H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-  H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
-  , 
-\end{multline}
-\begin{multline}
-  \label{eq:21}
-  \frac{\Xi _2 (\vec{q}, m, n, s)}{
-    \sqrt{\alpha _{\vec{k} \vphantom{\qvec{q}} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  =
-  \int \mathrm{d} \tilde{y} \; l_B e^{-y^2}
-  b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}\\
-  H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-  H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right).
-\end{multline}
-% \begin{align}
-%   \frac{\Xi _1}{
-%     \sqrt{\alpha _{\vec{k}ms}^2 +1}
-%     \sqrt{\alpha _{\vec{k}+\vec{q} ns}^2 + 1}
-%   }
-%   &=
-%   \int \mathrm{d}y \; l_B 
-%   a_{\vec{k}ms}b_{\vec{k} + \vec{q} ns}
-%   H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-%   H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right)
-%   , \\
-%   \frac{\Xi _2}{
-%     \sqrt{\alpha _{\vec{k}ms}^2 +1}
-%     \sqrt{\alpha _{\vec{k}+\vec{q} ns}^2 + 1}
-%   }
-%   &=
-%   \int \mathrm{d}y \; l_B
-%   b_{\vec{k}ms} a_{\vec{k} + \vec{q} ns}
-%   H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
-%   H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right).
-% \end{align}
-With $\Xi_i$ defined as
-\begin{align}
-  \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
-                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-M + 1}
-                                   L^{N-M+1}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
-                                   %%%
-  \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k}ms} \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
-                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N - 1}
-                                   L^{M - N - 1}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
-  \Xi_1(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
-            \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases}, \label{eq:22}
-\end{align}
-corresponding to Eq. (\ref{eq:15}) and (\ref{eq:16}).
-Similarly, for the Eq. (\ref{eq:17}) and (\ref{eq:18}), the second term of the matrix element, define
-\begin{align}
-  \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} + \qvec{q} ns} \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
-                                   \left( \frac{-q_x - iq_y}{2} l_B \right)^{N-1 - M}
-                                   L^{N-1 -M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
-                                   %%%
-  \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \alpha _{\vec{k} + \qvec{q} ns} \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
-                                   \left( \frac{q_x - iq_y}{2} l_B \right)^{M-N + 1}
-                                   L^{M - N + 1}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2} \right),\\
-  \Xi_2(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
-            \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases}, \label{eq:23}
-\end{align}
-The current matrix element (\ref{eq:14}) is thus expressed in terms of these functions as
-\begin{equation}
-  J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
-  sv_Fe
-  \frac{
-    \exp \left[
-      % -\frac{1}{4} l_B^2 \left\{ q^2 + 2 i (2k_x + q_x)q_y \right\}
-      -\frac{l_B^2}{4}  \qvec{q}_y^2 - l_B^2 i q_y(k_x + \frac{q_x}{2})
-    \right]
-  }{
-    \sqrt{\alpha _{\vec{k}ms}^2 +1}
-    \sqrt{\alpha _{\vec{k}+\qvec{q} ns}^2 + 1}
-  }
-  \left[ \Xi _1(\vec{q}, m, n, s) + \Xi _2(\vec{q}, m, n, s) \right].
-\end{equation}
 
 
 \subsubsection{The stress-energy tensor operator}
@@ -1057,16 +907,23 @@ which with the same procedure as above gives
 
 In summary then, we have
 \begin{align}
-  J_{\vec{k} ms; \vec{k} + \qvec{q} ns}( \vec{q}) &=
-                                                   \Gamma ^{-}_{\vec{k} \qvec{q} m n s}
+  J_{\vec{k} ms; \vec{k} ns}&=
+                                                   \Gamma_{\vec{k} \qvec{q} m n s}
                                                    sv_F e
-                                                   \left( \Xi _1 + \Xi _2 \right),\\
+                                                    \left(
+                                                    \alpha_{\vec{k} m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta _{M-1, N}
+                                                    + m\leftrightarrow n
+                                                    \right),\\
                                                    %% 
-  T^{0y\; (1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q}) &=
+  T^{0y\; (1)}_{\vec{k} ns, \vec{k}ms} &=
                                                          \begin{multlined}[t]
-                                                           \frac{is \Gamma^{+} _{\vec{k} \qvec{q} m n s}}{4}
-                                                           \left( E_{\vec{k} ms} + E_{\vec{k} + \qvec{q} ns} - 2\mu  \right)\\
-                                                           \left( \Xi_1(\bar{\vec{q}}, m, n, s) - \Xi_2(\bar{\vec{q}}, m, n, s)  \right)
+                                                           \frac{is \Gamma_{\vec{k} \qvec{q} m n s}}{4}
+                                                           \left( E_{\vec{k} ms} + E_{\vec{k} ns} - 2\mu  \right)\\
+                                                           \left(
+                                                             \alpha_{\vec{k} m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
+                                                             -
+                                                             m\leftrightarrow n
+                                                           \right)
                                                          \end{multlined}\\
                                                          %
   T^{0y\; (2)}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q}) &=
@@ -1097,140 +954,45 @@ In summary then, we have
                                                            \right\}
                                                          \end{multlined}
 \end{align}
-with
+where \( m \leftrightarrow n \) represent the preceding term under the interchange of \( m, n \) and where we have defined
 $
-\Gamma^{\pm} _{\vec{k}, \qvec{q}, m, n, s} =
-\left[(\alpha _{\vec{k}m s}^2 + 1) (\alpha _{\vec{k} + \qvec{q} n s}^2 + 1) \right]^{-\frac{1}{2}} \exp \left[ -\frac{l_B^2}{4} \qvec{q}_y^2 \pm iq_y l_B^2 (k_x + \frac{q_x}{2}) \right]
+\Gamma_{\vec{k}, \qvec{q}, m, n, s} =
+\left[(\alpha _{\vec{k}m s}^2 + 1) (\alpha _{\vec{k} + \qvec{q} n s}^2 + 1) \right]^{-\frac{1}{2}}
 $.
 
+\subsection{Comment on the energy-momentum tensor}
+The symmetric form of the energy-momentum tensor, used by \authorcite{arjonaFingerprintsConformalAnomaly2019}, gives additional contributions to the energy-momentum matrix element.
+We will here show that in the case of no tilt, these contributions are identical to those of the non-symmetric tensor.
+In the tilted case, however, the contributions differ.
+
+The first other contribution is
+\todo{take care of prefactors}
+\begin{equation}
+  \label{eq:15}
+  \left(\frac{\sqrt{M}}{\alpha_{\vec{k} m s}} + \sqrt{(M-1)} \alpha_{\vec{k} n s}\right) \alpha_{\vec{k} m s} \delta_{M-1, N}.
+\end{equation}
+The normalization factor, given in dimensionless quantities is,
+\[
+\alpha_{k_z m s} = - \frac{s \sqrt{M}}{\epsilon_{m} - s \kappa}.
+\]
+Inserting this, and using the explicit form of the energy for \( m \neq 0 \)
+\[
+\epsilon_n = \sign(m) \sqrt{M + \kappa^2},
+\]
+for the case \( N > 0 \) the contribution can be shown to be
+\begin{equation}
+  \label{eq:16}
+  -s (\epsilon_m + \epsilon_n)\alpha_{\vec{k} m s} \delta_{M-1, N}.
+\end{equation}
+For \( n = 0 \), the second term of Eq. \eqref{eq:15} is zero, and we have
+\begin{equation}
+  \label{eq:17}
+  -(\epsilon_m - s \kappa) \alpha_{k m s} \delta_{M-1, N},
+\end{equation}
+and by identifying \( \epsilon_0 = - s \kappa \) this has the same form as Eq. \eqref{eq:16}.
+
+
 \subsection{Numerical value of response function}
-\subsubsection{Selection rule for product of matrix elements}
-The response function contains the product of the current density matrix element and the stress-energy tensor matrix element, which both consists of the functions $\Xi_1, \Xi _2$.
-We will now show that this gives selection rules for $m,n$ in the local limit $\vec{q} \to  0$.
-
-The current matrix element is proportional to $\Xi_1 (\vec{q}, m, n, s) + \Xi _2(\vec{q}, m,n,s)$ while the first part of the stress-energy tensor is on the form $\Xi _1(\bar{\vec{q}}, m, n, s) - \Xi _2(\bar{\vec{q}}, m,n,s)$, where prefactors in front of $\Xi _1, \Xi _2$ are here dropped, and will be reinserted later.
-Let $\widehat{\Xi}_i$ be only the $(\pm q_x - i q_y)^{\pm (N - M \pm 1)}$ factor of $\Xi _i$.
-The product $J^x T^{0y \; (1)}$ is then on the form
-\begin{equation}
-  \begin{split}
-    \left( \widehat{\Xi}_1 (\vec{q}) + \widehat{\Xi} _2(\vec{q}) \right)
-    \left( \widehat{\Xi} _1(\bar{\vec{q}}) - \widehat{\Xi} _2(\bar{\vec{q}}) \right)
-    &=
-    \left[
-      (\mp q_x - iq_y) ^{\pm [N-(M-1)]} + (\mp s q_x  - iq_y ) ^{\pm s [N-1-M]}
-    \right]\\
-    &\pe \left[
-      (\mp  q_x + iq_y) ^{\pm  [N-(M-1)]} - (\mp s q_x  + iq_y ) ^{\pm s [N-1-M]}
-    \right].
-  \end{split}
-\end{equation}
-Here the upper and lower signs corresponds to the $\Xi _i ^{(1)}$ and $\Xi _{i} ^{(2)}$ functions respectively.
-The flavors $\Xi_i^{(1)}$ and $\Xi_i ^{(2)}$ must must be chosen according to the value of $N$ compared to $M$, as they were defined in Eqs.~(\ref{eq:22}) and (\ref{eq:23}).
-For clarity, Figure \ref{fig:mnregion} shows which flavor must be chosen for the different regions.
-The $s = \pm 1$  encodes the non-overlapping regions of validity of the two flavors $\Xi _i^{(1)}$ and $\Xi _{i} ^{(2)}$;
-in other words, $s=+1$ corresponds to $N\neq M$, where only one flavor is used.
-In the case $M = N$ where $\Xi _1$ should take the form $\Xi _1 ^{(1)}$ and $\Xi _2$ the form $\Xi _2^{(2)}$, $s=-1$.
-Firstly, consider the case $s=+1$.
-\begin{align}
-  \label{eq:29}
-  \left( \widehat{\Xi}_1 (\vec{q}) + \widehat{\Xi} _2(\vec{q}) \right)
-  \left( \widehat{\Xi} _1(\bar{\vec{q}}) - \widehat{\Xi} _2(\bar{\vec{q}}) \right)
-  &=
-    [\qvec{q}_y^2]^{\pm[N-M+1]} - [\qvec{q}_y^2]^{\pm[N-M-1]}\\
-  \nonumber &- [\qvec{q}_y^2]^{\pm[N-M-1]} \left( \mp q_x - iq_y \right)^{\pm 2}\\
-   \nonumber &+ [\qvec{q}_y^2]^{\pm [N-M-1]} \left( \mp q_x + iq_y \right)^{\pm 2}\\
-   &= [\qvec{q}_y^2]^{\pm[N-M+1]} - [\qvec{q}_y^2]^{\pm[N-M-1]}\\
-  \nonumber &\pe [\qvec{q}_{y}^{2}]^{\pm N-M-1} \left[ ( \mp q_x + iq_y)^{\pm 2} - (\mp q_x - iq_y)^{\pm 2} \right].
-\end{align}
-For $N=M$, we have
-\begin{equation}
-  \begin{split}
-    \left( \widehat{\Xi}_1 (\vec{q}) + \widehat{\Xi} _2(\vec{q}) \right)
-    \left( \widehat{\Xi} _1(\bar{\vec{q}}) - \widehat{\Xi} _2(\bar{\vec{q}}) \right)
-    &= 
-    \left[
-      (- q_x - iq_y) ^{N-(M-1)} + (q_x  - iq_y ) ^{-[N-1-M]}
-    \right]\\
-    &\pe \left[
-      (-  q_x + iq_y) ^{N-(M-1)} - (q_x  + iq_y ) ^{-[N-1-M]}
-    \right]\\
-    &= \left[
-      (- q_x - iq_y) ^{1} + (q_x  - iq_y ) ^{1}
-    \right]\\
-    &\pe \left[
-      (-  q_x + iq_y) ^{1} - (q_x  + iq_y ) ^{1}
-    \right].
-  \end{split}
-\end{equation}
-
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.7\textwidth]{figures/MNregion}
-%   \caption{The regions of validity of the functions $\Xi _i ^{(j)}$ of N with respect to M.
-%     For $N\leq M-1$, $\Xi _i ^{(2)}$ are valid and for $N \geq M+1$, $\Xi _i ^{(1)}$ are valid.
-%     Only for $N=M$ must the two flavors, $\Xi _i ^{(1)}, \Xi _i ^{(2)}$ mix.}
-%   \label{fig:mnregion}
-% \end{figure}
-
-In the local limit $q\to  0$ only certain choices of $m,n$ give non-vanishing results, as is seen from these expressions.
-In the case $N=M$, the result always vanishes in the limit.
-From Eq. (\ref{eq:29}) we see that the result will be finite only for $N-M-1 = 0$ and $N-M+1=0$, in which case the first factor will be independent of $q$.
-One also never gets a negative exponent, which would go to infinity as $q \to 0$, as we will now show.
-Consider the upper sign, corresponding to the region $N\geq M+1$ and the flavors $\Xi _i ^{(1)}$.
-For the exponent to be negative, $N-M \mp 1 < 0 \implies  N < M \pm 1$, contrary to the region of validity.
-In the second region, $N \leq M-1$, corresponding to the lower sing, the criterion $-(N-M \mp 1) < 0 \implies N> M \pm 1$ must hold, but also here the requirement is outside the region of validity.
-In conclusion, the overall contribution is \( \delta _{N, M-1} - \delta _{N, M+1} \).
-
-Consider now to the second and third parts of the stress-energy tensor, which are on the form $\Xi _i(\vec{q}, m, n , s) + \Xi _i (\vec{q}, m-1, n-1, s)$, in the local limit.
-As the difference $M-N$ does not change under $m\to m-1, n\to n-1$, the exponent of $\widehat{\Xi} _i(q, m-1, n-1)$ is the same as $\widehat{\Xi} _i(q, m, n)$.
-Therefore, $\widehat{\Xi} _i(\vec{q}, m, n, s) = \widehat{\Xi} _i(\vec{q}, m-1, n-1, s)$.
-It is thus sufficient to check only
-\begin{equation}
-  \label{eq:30}
-  \begin{split}
-    (\widehat{\Xi} _1(\vec{q}) + \widehat{\Xi} _2(\vec{q}))
-    \widehat{\Xi} _1(\bar{\vec{q}})
-      &=
-      \begin{multlined}[t]
-        \left[ (\mp q_x - iq_y)^{\pm [N-M + 1]} + (\mp q_x - iq_y)^{\pm [N-M-1]} \right]\\
-        (\mp q_x + iq_y)^{\pm [N-M + 1]}
-      \end{multlined}
-      \\
-      &= [\qvec{q}^2]^{\pm [N-M+1]} + [\qvec{q}^2]^{\pm [N-M-1]} (\mp q_x + iq_y)^{\pm 2},
-  \end{split}
-\end{equation}
-and
-\begin{equation}
-  \label{eq:31}
-  \begin{split}
-    (\widehat{\Xi} _1(\vec{q}) + \widehat{\Xi} _2(\vec{q}))
-    \widehat{\Xi} _2(\bar{\vec{q}})
-      &=
-      \begin{multlined}[t]
-        \left[ (\mp q_x - iq_y)^{\pm [N-M + 1]} + (\mp q_x - iq_y)^{\pm [N-M-1]} \right]\\
-        (\mp q_x + iq_y)^{\pm [N-M - 1]}
-      \end{multlined}
-      \\
-      &= [\qvec{q}^2]^{\pm [N-M-1]} \left[ (\mp q_x - iq_y )^{\pm 2} +  1 \right].
-  \end{split}
-\end{equation}
-Similar reasoning as above may be applied to Eqs. (\ref{eq:30}) and (\ref{eq:31}).
-We get the selection rules \( N = M - 1, N= M+1 \), respectively.
-
-Consequently, when taking the matrix elements $J^x_{\vec{k} ms, \vec{k}+\vec{q}ns} T^{0y \; (i)}_{\vec{k}+\vec{q}ns, \vec{k}ms}$, only certain combinations of the $\Xi_j$-functions will give finite contributions.
-The surviving contributions are summarized as follows, where prefactors are omitted to highlight the structure and signs of the  terms,
-\begin{align*}
-  J^x_{\vec{k} ms, \vec{k}+\qvec{q}ns} T^{0y \; (1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms}
-  &: \Xi_{1} (\vec{q}, m,n,s) \Xi_1 (\bar{\vec{q}}, m, n, s) \delta _{N, M-1} - \Xi_{2} (\vec{q}, m,n,s) \Xi_2 (\bar{\vec{q}}, m, n, s) \delta _{N, M+1},\\
-  J^x_{\vec{k} ms, \vec{k}+\qvec{q}ns} T^{0y \; (2)}_{\vec{k} + \qvec{q}ns, \vec{k}ms}
-  &:  \Xi_{1} (\vec{q}, m,n,s) \left[
-    \Xi_{1} (\bar{\vec{q}}, m, n, s) + \Xi _1 (\bar{\vec{q}}, m-1, n-1, s)
-  \right] \delta _{N, M-1},\\
-  J^x_{\vec{k} ms, \vec{k}+\qvec{q}ns} T^{0y \; (3)}_{\vec{k}+\qvec{q}ns, \vec{k}ms}
-  &: \Xi_{2} (\vec{q}, m,n,s) \left[
-    \Xi_{2} (\bar{\vec{q}}, m, n, s) + \Xi _2 (\bar{\vec{q}}, m-1, n-1, s)
-  \right] \delta _{N, M+1}.\\
-\end{align*}
 
 \subsubsection{Final form of response function}
 It is now finally possible to write out the entire response function.
