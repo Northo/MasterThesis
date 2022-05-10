@@ -90,56 +90,54 @@ In our calculations the linear models is sufficient, and much easier to work wit
 
 
 \subsection{Eigenstates and Landau levels}
-The eigenvalues of Type-II Weyl semimetal simple to find, and are not qualitatively different from those of Type-I, other than the appearence of particle and hole pockets at the Fermi level.
+The eigenvalues of Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
 We will also consider the Landau levels of these materials, which importantly are very different from Type-I.
 In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field \cite{soluyanovTypeIIWeylSemimetals2015}\cite{sharmaChiralAnomalyLongitudinal2017}.
 
 Eigenstates, spin, berry, etc
 
-The issue with the Landau level description is that for certain directions of the \(B\)-field, the levels break down and become imaginary.
-For Type-I materials, the description is valid for all dierections of the \(B\)-field, but as the cone tip into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt is increased, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
+The issue with the Landau level description is that for certain directions of the \(B\)-field, the Landau levels break down.
+For Type-I materials, the description is valid for all directions of the \(B\)-field, but as the cone tip into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt increases, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
+We will in this section derive and elucidate the Landau levels and their regions of validity.
 
 Consider the Hamiltonian
 \begin{equation}
   \label{eq:40}
-  H = v_{F} \vec{t} \vec{k} + s (\vec{v} \odot \vec{k}) \vec{\sigma},
+  H = v_{F} \vec{t} \vec{k} + s v_{F} \vec{k} \vec{\sigma},
 \end{equation}
-where \(\vec{t}\) is the \emph{tilt vector} and \(\vec{v}\) is the Fermi velocity, which in general is anisotropic.
+where \(\vec{t}\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
+\footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}.
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 Firstly, assume that the tilt vector \(\vec{ t }\) is in the \(x,z\)-plane, \(\vec{t} = (t_{\perp}, 0, t_{\parallel})\), which we can always achieve by a rotation around \(z\).
 \todo{Proof by figure}
 Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\).
 We take the field to be in the \( z \)-direction, and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
-The Hamiltonian can thus be written
-\begin{equation}
-  \label{eq:41}
-  H_{B} = v_F t _{\perp} \left(k_{x} - e B_{z} y \right) + v_F t _{\parallel} k_{z} + s v_{y} k_{y} \sigma _{y} + s v_{z} k_{z} \sigma _{z} + s v_{x} \left(k_{x} - e B_{z} y\right) \sigma _{x},
-\end{equation}
-and the Landau level equation is
+
+The Landau level equation is
 \begin{equation}
   \label{eq:42}
-  \left(H_{B} - E\right) \ket{\psi } = 0.
+  \left(H_{B} - E\right) \ket{\psi } = 0,
 \end{equation}
+with
+\begin{equation}
+  \label{eq:44}
+  H_{B} = v_F \left(t _{\perp} k^B_{x} + t _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} k^B_{i} \sigma _{i},
+\end{equation}
+where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian.
 \footnote{It would also be possible to choose the frame such that the tilt was both in \(x\) and \(y\) direction, in which case we would get ladder operators also on the diagonal.
   This system, albeight tedious, could also have been solved directly.
   \todo{Verify this}
 }
 To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
-Act with the hyperbolic rotation operator \(\exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:42}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
+Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:42}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
 \begin{equation}
   \label{eq:43}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0.
 \end{equation}
 
-We rewrite the Hamiltonian (Eq. \eqref{eq:41}) in a more compact and explicit way
-\begin{equation}
-  \label{eq:44}
-  H_{B} = v_F \left(t _{\perp} k^B_{x} + t _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{i} k^B_{i} \sigma _{i},
-\end{equation}
-where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
-We now make the fortunate observation that, with the hyperbolic rotation operator denoted \( R = \exp [\Theta / 2 \sigma_{x}]\), the diagonal elements of
+We now make the fortunate observation that the diagonal elements of
 \[
   R \sigma_{i} R
 \]
@@ -148,7 +146,7 @@ We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, with
 
 The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(k^B_{x}\) on the diagonal, i.e.
 \[
-  v_F t_{\perp} k^B_{x} \mathcal{I}_{2} + s v_{x} k^B_{x} \sigma _{x}.
+  v_F t_{\perp} k^B_{x} \mathcal{I}_{2} + s v_{F} k^B_{x} \sigma _{x}.
 \]
 We will now find the boost parameter that eliminates \(k_{x}\) from the diagonal.
 We have
@@ -195,22 +193,13 @@ Before we proceed any further, we will put the above into a more solid context, 
 
 \todo{nice plot of the landau levels acutally being squeezed}
 
-Introduce the dimensionless \emph{tilt parameter}
-\[
-  \vec{t} =
-  \left(
-  \frac{\omega_{0x}}{v_{x}},
-  \frac{\omega_{0y}}{v_{y}},
-  \frac{\omega_{0z}}{v_{z}}
-\right).
-\]
-Let also \(v_{i} = v_{0} a_{i}\), where \(\vec{a}\) is a vector describing the anisotropy of the system.
-In these parameters, the eigenvalues of the system are
+With no magnetic field, the eigenvalues of the system are
 \begin{equation}
   \label{eq:50}
-  E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}}.
+  E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
 \end{equation}
-The system is Type-II if the first term dominates for any \(\vec{k}\), and Type-I if the last term dominates \cite{soluyanovTypeIIWeylSemimetals2015}.
+where in the literature the first term is sometimes referred to as the \emph{kinetick} term while the latter is the \emph{potential} term.
+The definition for the system to be Type-II is that there exists a direction in momentum space for which the kinetic term dominates over the potential term \cite{soluyanovTypeIIWeylSemimetals2015}.
 The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
 \begin{proof}
   We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
@@ -252,10 +241,13 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
 \end{figure}
 For \(t_{x} < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
 For \(t_{x} \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
-\todo{ Is this argumentation sufficient? What if we just have to use a different approach to find the LLs? }
+More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( t_x \to 1 \), the level separation \( \Delta E \to 0 \).
+
 \todo{ Discuss magnetic vs electric regime }
-It is also interesting that there are no restrictions on the tilt in \(z, t_{z}\).
-Visually, this can be visualized by plotting the \(t\)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
+
+
+Interestingly, there are no restrictions in the perpendicual tilt, \( t_z \).
+The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plottin the \( t \)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
 All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of the \(t\)-vector.
@@ -287,6 +279,11 @@ Thus, let
     \tilde{k}_{y} &=  k_{y},\\
     \tilde{k}_{z} &=  k_{z}.\\
   \end{split}
+\end{equation}
+This, of course, corresponds exactly with a Lorentz boost of the momenta
+\begin{equation}
+  \label{eq:22}
+  \tilde{q}_i =
 \end{equation}
 The eigenvalue equation is simply
 \begin{equation}
