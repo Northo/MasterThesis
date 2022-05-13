@@ -1,0 +1,494 @@
+\chapter{Contributions from symmetric energy-momentum tensor}
+As noted in the main text, there are some subtlety in the definition of the energy-momentum tensor.
+The \emph{canonical} definition, which we have used in the main text, is in general not symmetric.
+The tensor enter our calculation from the conservation law
+\[
+\partial_\mu T^{\mu \nu} = 0,
+\]
+which for \( \nu = 0 \) is nothing more than the conservation law of energy: \( \partial_t \epsilon - \vec{\nabla} \vec{J}_\epsilon = 0 \), where \( \epsilon \) is energy density and \( \vec{J}_\epsilon \) is the energy current.
+In the calculation by \citeauthor{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, the symmetrized energy-momentum tensor
+\[
+T_S^{\mu \nu} = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}
+\]
+was used.
+In this appendix we show the contributions of the symmetric tensor.
+The contributions from \( T^{\mu \nu} \) and \( T^{\nu \mu} \) is shown to be equal in the non-tilted case.
+
+\section{No tilt}
+In the main text we have already found the contributions from the canonical tensor, and so we focus here on the contributions from \( T_F^{\mu \nu } = T^{\nu \mu} \).
+The relevant element is \( T_F^{y 0} = \frac{v_F}{4}\left( \phi^{\dagger} p_y \phi - p_y\phi^{\dagger} \phi \right) \)
+
+Consider now the latter part of the stress-energy tensor, which is split into two parts
+\begin{align}
+  \label{eq:27}
+  T ^{0y\; (2)} _{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &= +
+                                                            \frac{1}{4}
+                                                            \int \mathrm{d}y
+                                                            e^{iq_y y} v_F
+                                                            \phi ^{*}_{\vec{k}+\qvec{q} ns}(y)
+                                                            p_y \phi _{\vec{k}ms} (y),\\
+  \label{eq:28}
+  T ^{0y\; (3)} _{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &= -
+                                                            \frac{1}{4}
+                                                            \int \mathrm{d}y
+                                                            e^{iq_y y} v_F
+                                                            \left( p_y\phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \right)
+                                                            \phi _{\vec{k}ms}(y).
+\end{align}
+Recall that $\phi_{\vec{k}ms} (y)$, defined in Eq. (\ref{eq:13}), consists of two $y$-dependent factors:
+\(
+  \exp \left[-\frac{(y-k_x l_B^2)^2}{2 l_{B}^2 } \right]
+\)
+and the Hermite polynomials.
+The operator $p_y$ thus produces two terms when operating on $\phi $.
+The first term, coming from the exponent, is proportional to $y-k_xl_B^2$.
+The operator in Eqs. (\ref{eq:27}) and (\ref{eq:28}) acts on $\phi $ with the quantum  number $\vec{k}$ and $\vec{k} + \qvec{q}$, respectively;
+when summing the two contributions, everything thus cancels except for a term proportional to $q_x$, which vanishes in the local limit.
+
+It remains to consider the result of $p_y$ operating on the Hermite polynomials.
+Let $\tilde{p}_y$ indicate the $p_y$ operator acting only on the Hermite polynomial part of $\phi $, and use the property of Hermite polynomials $\partial _x H_n(x) = 2 n H_{n-1}(x)$~\cite[Eq.~18.9.25]{NIST:DLMF}.
+\begin{multline}
+      \phi ^{*}_{\vec{k}+\qvec{q}ns}(y) \tilde{p}_y \phi _{\vec{k}ms} =
+    -i \hbar \exp \left\{
+      - \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}
+    \right\}\\
+    \frac{2}{l_B}\Bigg\{
+      (M-1) a _{\vec{k} ms}a _{\vec{k}+\qvec{q} ns} H_{M-2}\left( \frac{y-k_x l_B^2}{l_B} \right) H_{N-1} \left( \frac{y - (k_x+q_x)l_B^2}{l_B} \right)\\
+      + M b _{\vec{k} ms} b _{\vec{k}+\qvec{q} ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N \left( \frac{y - (k_x+q_x)l_B^2}{l_B} \right)
+    \Bigg\}.
+\end{multline}
+Completing the square, we get
+\begin{multline}
+  \int \mathrm{d}y e^{iq_y y} \phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \tilde{p}_y \phi _{\vec{k} ms}(y) =
+  -i\hbar
+  \exp \left[ -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2iq_y ( 2k_x + q_x) \right\} \right]\\
+  \int \mathrm{d}y
+  \exp \left[
+    - \left\{
+      y + \frac{l_B^2}{2} \left( -iq_y - 2k_x - q_x \right)
+    \right\} ^2
+    / l_B^2
+  \right]\\
+  \frac{2}{l_B}\Bigg\{
+  (M-1) a _{\vec{k}ms}a _{\vec{k}+\qvec{q} ns} H_{M-2}\left( \frac{y-k_x l_B^2}{l_B} \right) H_{N-1} \left( \frac{y - (k_x+q_x)l_B^2}{l_B} \right)\\
+  + M b _{\vec{k} ms} b _{\vec{k}+\qvec{q} ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N \left( \frac{y - (k_x+q_x)l_B^2}{l_B} \right)
+  \Bigg\}.
+\end{multline}
+Upon introducing $\tilde{y} = \frac{y}{l_B} + l_B( -iq_y - q_x - 2k_x) / 2$, as was also done in the main text, the expression reduces to
+\begin{multline}
+  \int \mathrm{d}y e^{iq_y y} \phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \tilde{p}_y \phi _{\vec{k} ms}(y) =
+  -i\hbar
+  \exp \left[ -\frac{l_B^2}{4} \left\{ q_x^2 + q_y^2 - 2iq_y ( 2k_x + q_x) \right\} \right]\\
+  \int \mathrm{d}\tilde{y} l_B
+  \exp \left[
+    - \tilde{y}^2
+  \right]\\
+  \frac{2}{l_B}\Bigg\{
+  (M-1) a _{\vec{k}ms}a _{\vec{k}+\qvec{q} ns}
+  H_{M-2}\left( \tilde{y} + \frac{l_B}{2}(iq_y + q_x) \right)
+  H_{N-1} \left( \tilde{y} + \frac{l_B}{2}(iq_y - q_x) \right)\\
+  + M b _{\vec{k} ms} b _{\vec{k}+\qvec{q} ns}
+  H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(iq_y + q_x)\right)
+  H_N \left( \tilde{y} + \frac{l_B}{2}(iq_y - q_x) \right)
+  \Bigg\}.
+\end{multline}
+
+Considering now the local limit \( \vec{q} \to 0 \), the expression greatly simplifies, and we may use the orthogonality relation for the Hermite polynomials Eq. \eqref{eq:hermite-ortho}
+\[
+  \int\limits_{-\infty}^{\infty} \mathrm{d}x e^{-x^2} H_n(x)H_m(x) = \sqrt{\pi} 2^{n} n! \delta_{n,m}
+\]
+to evaulate the integral.
+\begin{equation}
+  \label{eq:113}
+  \lim_{\vec{q} \to 0} \int \mathrm{d}y e^{iq_y y} \phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \tilde{p}_y \phi _{\vec{k} ms}(y) =
+  -i \hbar \sqrt{2}
+  \frac{
+    \alpha_{k m s} \alpha_{k n s} \sqrt{M-1}
+    +
+    \sqrt{M}
+  }{
+    {l_{B} \sqrt{\alpha_{k m s}^2 + 1}\sqrt{\alpha_{k n s} ^2 + 1}}
+  }
+  \delta_{N, M-1}.
+\end{equation}
+
+Similarly, for $T^{0y\; (3)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})$, one has
+\begin{multline}
+  \left( \tilde{p}_y \phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \right)
+  \phi _{\vec{k} m s}(y) =
+  -i \hbar \exp \left\{
+    - \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}
+  \right\}\\
+  \frac{2}{l_{B}} \left\{
+    (N-1) a_{\vec{k} m s} a_{\vec{k} + \qvec{q} n s} H_{M-1} \left( \frac{y-k_xl_B^2}{l_B} \right)H_{N-2} \left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right) \right.\\
+  \left. +
+    N b_{\vec{k} m s} b_{\vec{k}+\qvec{q} n s} H_M \left( \frac{y - k_xl_B^2}{l_B} \right) H_{N-1}\left( \frac{y-(k_x+q_x) l_B^2}{l_B} \right)
+  \right\}
+\end{multline}
+which with the same procedure as above gives
+\begin{equation}
+ \lim_{\vec{q}\to 0} \int \mathrm{d}y e^{iq_y y}
+  \left( \tilde{p}_y \phi ^{*}_{\vec{k}+\qvec{q} ns}(y) \right)
+  \phi _{\vec{k} m s}(y)
+  =
+  -i \hbar \sqrt{2}
+  \frac{
+    \alpha_{k m s} \alpha_{k n s} \sqrt{N-1}
+    +
+    \sqrt{N}
+  }{
+    {l_{B} \sqrt{\alpha_{k m s}^2 + 1}\sqrt{\alpha_{k n s} ^2 + 1}}
+  }
+  \delta_{M, N-1}.
+\end{equation}
+
+\section{With tilt}
+In the tilted case, we have shown in the main text that \todo{insert ref}
+\[
+  T^{\mu 0} = \frac{i}{2}
+  \left[\partial_i \bar{\psi} \Gamma^j \gamma^0 \Gamma^{\mu} \psi
+    - \bar{\psi} \Gamma^{\mu} \gamma^0 \Gamma^j \partial_j \psi
+  \right].
+\]
+Swapping the indices, we have for \( \mu \neq 0 \) \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}
+\[
+  T^{0 i} = \frac{i}{2} [\bar{\psi} \gamma^0 \partial^{\mu } \psi
+  - \partial^{\mu }\bar{\psi} \gamma^{0 } \psi ].
+\]
+In our work, we have considered only tilt perpendiculat to the thermal gradient,  so the component of the energy-momentum tensor of interest are not affected by the tilt.
+
+or
+\begin{align}
+  T_{\vec{k} + \qvec{q} ns, \vec{k} ms}^{0y (2)} (\vec{q}) &=
+                                                             + \frac{1}{4} \int \mathrm{d} y
+                                                             e^{iq_{y} y} v_{F}
+                                                             \phi ^{*}_{\vec{k}+\qvec{q} ns} (y) p_{y} \phi _{\vec{k} m s} (y),\\
+  T_{\vec{k} + \qvec{q} ns, \vec{k} ms}^{0y (3)} (\vec{q}) &=
+                                                             - \frac{1}{4} \int \mathrm{d} y
+                                                             e^{iq_{y} y} v_{F}
+                                                             (p_{y} \phi ^{*}_{\vec{k}+\qvec{q} ns} (y))  \phi _{\vec{k} m s} (y).
+\end{align}
+Firstly, we note that
+\[
+  [p_{y} , e^{\theta /2 \sigma _{x}}] = 0.
+\]
+Furthermore, exactly as for the untilted case, the momentum operator acting on the exponential prefactor of \(\phi \) gives contributions proportional to \(q_{x}\).
+In the local limit \(q\to  0\) this term vanishes, and we need only consider the effect of the momentum operator acting on the Hermite polynomials.
+
+Denote by \(\tilde{p}_{y}\) the momentum operator \(p_{y}\) acting only on the Hermite polynomial part of \(\phi \).
+Furthermore, we will use the property of Hermite polynomials \(\partial _{x} H_{n} (x) = 2 n H_{n-1} (x)\) \cite[Eq.~18.9.25]{NIST:DLMF}.
+\begin{align}
+  \tilde{p}_{y} \phi _{\vec{k} ms} &=
+  -i \hbar
+  e^{\theta /2 \sigma _{x}}
+  e^{-\frac{1}{2} \chi ^2}
+  \partial _{y}
+  \begin{pmatrix}
+    a_{\vec{k} m s} H_{M-1} (\chi) \\
+    b_{\vec{k} ms} H_{M} (\chi)
+  \end{pmatrix}\\
+                                   &=
+                                     -i \hbar
+                                     e^{\theta /2 \sigma _{x}}
+                                     e^{-\frac{1}{2} \chi ^2}
+                                     2 \frac{\partial \chi }{\partial y}
+                                     \begin{pmatrix}
+                                       a_{\vec{k} m s} (M-1) H_{M-2} (\chi) \\
+                                       b_{\vec{k} ms} (M) H_{M-1} (\chi)
+                                     \end{pmatrix}\\
+                                   &=
+                                     -i \hbar
+                                     e^{\theta /2 \sigma _{x}}
+                                     e^{-\frac{1}{2} \chi ^2}
+                                     \frac{2 \sqrt{\alpha}}{ l_{B} }
+                                     \begin{pmatrix}
+                                       a_{\vec{k} m s} (M-1) H_{M-2} (\chi) \\
+                                       b_{\vec{k} ms} (M) H_{M-1} (\chi)
+                                     \end{pmatrix}.
+\end{align}
+And thus, recalling that
+\[
+  e^{\theta \sigma _{x}} =
+  \begin{pmatrix}
+    1 & -t_{x}\\
+    -t_{x} & 1
+  \end{pmatrix}
+  \frac{1}{\sqrt{1-t_{x}^2}},
+\]
+we find the product
+\begin{multline}
+  \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \tilde{p}_{y} \phi _{\vec{k} m s}
+  % = -\frac{i\hbar 2 \sqrt{\alpha } }{ l_{B} }
+  % e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}
+  % \phi ^{*}_{\vec{k} + \qvec{q} ns}(y)
+  % e^{\theta \sigma _{x}}
+  % \phi _{\vec{k} ms} (y)\\
+  % %
+  = -\frac{i\hbar 2 \sqrt{\alpha } }{l_{B} \sqrt{1 - t_{x}^2} }
+  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} H_{N-1}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} H_{N} (\chi_{\vec{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms} (M-1) H_{M-2} (\chi_{\vec{k}}) + b_{\vec{k} ms} M H_{M-1} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+Completing the square and substituting
+\[
+  \tilde{y} = \frac{\sqrt{ \alpha  }}{l_{B}}
+  \left(y - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (2 k'_x + q' _x) ) \right)
+\]
+gives
+\begin{multline}
+  \int \mathrm{d}y
+  e^{i q_{y}}
+  \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \tilde{p}_{y}
+  \phi_{\vec{k} ms} (y)
+  =
+  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+  \right  ]\\
+  \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )
+  \left\{
+    a_{\vec{k} ms} (M-1) H_{M-2} ( \chi _{\vec{k}} )
+    - t_{x} b_{\vec{k} ms} M H_{M-1} ( \chi _{\vec{k}} ) \right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} H_{N} ( \chi _{\vec{k} + \qvec{q}} )
+  \left\{
+    -t_{x} a_{\vec{k} ms} (M-1) H_{M-2} ( \chi _{\vec{k}} )
+    + b_{\vec{k} ms} M H_{M-1} ( \chi _{\vec{k}} )
+  \right\}
+  \Big].
+\end{multline}
+
+We must now evaluate the integral, and express the result in the \( \Xi \)-functions.
+\[
+    \begin{pmatrix}
+      a_{\vec{k} + \qvec{q} n s} H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )\\
+      b_{\vec{k} + \qvec{q} ns} H_N ( \chi _{\vec{k} + \qvec{q}} )
+    \end{pmatrix}^{T}
+  \underbrace{
+    \begin{pmatrix}
+      1 & -t_x\\
+      -t_x & 1
+    \end{pmatrix}
+    }_{T}
+    \begin{pmatrix}
+      a_{\vec{k} m s} (M-1) H_{M-2} (\chi_{\vec{k}})\\
+      b_{\vec{k} m s} M H_{M-1} ( \chi _{\vec{k}} )
+    \end{pmatrix}
+\]
+For each of the entries in \( T \), we get a product on of Hermite polynomials.
+Where the untilted cone had two such terms, the tilt parameter \( t _x \) now gives two extra products, which we must evaluate.
+Let \( M^{(2)}_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
+\begin{align}
+  M^{(2)}_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (M-1) H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M^{(2)}_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(2)}_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} ( M-1 ) H_{N} (\chi_{\vec{k} + \qvec{q}}) H_{M-2} (\chi_{\vec{k}}),\\
+  M^{(2)}_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} M H_N (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}).
+\end{align}
+We want to evaluate
+\begin{equation}
+  \label{eq:83}
+  F^{(2)}_{ij} =
+  \left[(\alpha_{\vec{k} m s}^2 + 1) ( \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 )\right]^{\frac{1}{2}}
+  \int \mathrm{d} \tilde{y}
+  e^{-\tilde{y}^2}
+  M^{(2)}_{ij},
+\end{equation}
+with the prefactor introduced for later convenience.
+
+Notice that
+\todo{Verify \( l_B \) in this section}
+\begin{equation}
+  F^{(2)}_{12}
+  = -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha _{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n).
+\end{equation}
+and
+\begin{equation}
+  \label{eq:84}
+  F^{(2)}_{21}
+  =
+  -t_{x} \sqrt{\alpha} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}^2}{l_B a_{\vec{k} m \mp 1 s}}
+  \Xi_{1} (\bar{\vec{q}}, m \mp 1, n, s).
+\end{equation}
+\( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
+\begin{equation}
+  \label{eq:85}
+  F^{(2)}_{11} = \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
+  \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),
+\end{equation}
+and
+\begin{equation}
+  \label{eq:86}
+  F^{(2)}_{22} =
+  \sqrt{\alpha }
+  \frac{\sqrt{M} }{l_B \sqrt{2} }
+  \Xi_{1} ( \bar{\vec{q}}, m, n, s ).
+\end{equation}
+In summary we have
+\begin{align}
+  \label{eq:87}
+  T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q}) &= + \frac{v_F}{4} \int \mathrm{d} y
+  e^{i q_y q} \phi _{\vec{k} + \qvec{q} ns}^{*} (y) p_{y} \phi _{\vec{k} ms} (y)\\
+&= -\frac{ i \hbar v_{F} }{2}
+                                                                                     \Gamma _{\vec{k} \qvec{q} m n s}^+
+\sum\limits_{i,j}^{} F^{(2)}_{ij},
+\end{align}
+where
+\[
+  \Gamma _{\vec{k} \qvec{q} m n s}^+ =
+  \frac{
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+  \right  ]
+}{
+  \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+  \sqrt{1 - t_x^2 }}
+\]
+
+In a similar procedure, we find \( T^{0y~(2)}_{\vec{k}+\qvec{q} ns, \vec{k} ms}(\vec{q}) \).
+\begin{equation}
+  \tilde{p}_y \phi^{*}_{\vec{k}+\qvec{q} m s} = \frac{-i \hbar \sqrt{\alpha } }{l_{B}}  e^{-\frac{1}{2} \chi ^2}
+                                   \begin{pmatrix}
+                                     a_{\vec{k}+\qvec{q} m s} (M-1) H_{M-2} (\chi) \\
+                                     b_{\vec{k}+\qvec{q} m s} (M) H_{M-1} (\chi)
+                                   \end{pmatrix}.
+\end{equation}
+And thus,
+\begin{multline}
+  \left( \tilde{p}_y \phi ^{*} _{\vec{k} + \qvec{q} ns} (y) \right) \phi _{\vec{k} m s}
+  = -\frac{i\hbar 2 \sqrt{\alpha } }{l_{B} \sqrt{1 - t_{x}^2} }
+  e^{-\frac{1}{2} \chi _{\vec{k}}^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}} ^2}\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} (N-1) H_{N-2}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} H_{M-1} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} N H_{N-1} (\chi_{\vec{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms}  H_{M-1} (\chi_{\vec{k}}) + b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+With the now well-known completion of the square and substitution, we have
+\begin{multline}
+  \int \mathrm{d}y
+  e^{i q_{y}}
+  \left[\tilde{p}_y \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \right]
+  \phi_{\vec{k} ms} (y)
+  =
+  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
+  \exp
+  \left[
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
+  \right  ]\\
+  \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
+  \Big[
+  a_{\vec{k} + \qvec{q} ns} (N-1) H_{N-2}(\chi_{\vec{k}+\qvec{q}})
+  \left\{a_{\vec{k} ms} H_{M-1} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}\\
+  +
+  b_{\vec{k} + \qvec{q} ns} N H_{N-1} (\chi_{\vec{k} + \qvec{q}})
+  \left\{-t_{x} a_{\vec{k} ms}  H_{M-1} (\chi_{\vec{k}}) + b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}
+  \Big].
+\end{multline}
+Denote the terms of the integrand by
+\begin{align}
+  M^{(3)}_{11} &= \phantom{-t_x} a_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} (N-1) H_{N-2} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(3)}_{12} &= -t_x a_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} (N-1) H_{N-2} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}}),\\
+  M^{(3)}_{21} &= -t_x b_{\vec{k} + \qvec{q} ns} a_{\vec{k} ms} N H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}}),\\
+  M^{(3)}_{22} &= \phantom{-t_x} b_{\vec{k} + \qvec{q} ns} b_{\vec{k} ms} N H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}}).
+\end{align}
+We must evaluate
+\begin{equation}
+  \label{eq:88}
+  F^{(3)}_{ij} = \left[(\alpha_{\vec{k} m s}^2  + 1) ( \alpha _{\vec{k} + \qvec{q} ns}^2 + 1 )\right]^{\frac{1}{2}} \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
+\end{equation}
+From the untilted case we know
+\begin{align}
+  F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
+                 \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
+                 \Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s ),\\
+  F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
+                 \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
+                 \Xi_{2} (\bar{\vec{q}}, m, n, s).
+\end{align}
+Furthermore,
+\begin{align}
+  F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
+                 \sqrt{\frac{N-1}{2}}
+                 \Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s),\\
+  F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
+                 \sqrt{\frac{N}{2}}
+                 \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
+                 \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
+\end{align}
+We thus have
+\begin{align}
+  \label{eq:89}
+  T^{0y~(3)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q})
+  &= - \frac{v_F}{4}
+    \int \mathrm{d} y
+    e^{i q_y y}
+    \left( p_y \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \right) \phi _{\vec{k} m s}(y)\\
+  &= \frac{i \hbar v_F}{2}
+    \Gamma ^{+}_{\vec{k} \qvec{q} m n s}
+    \sum\limits_{ij}^{} F^{(3)}_{ij}.
+\end{align}
+
+\begin{summary}
+The non-canonical part of the energy-momentum tensor \( T_F^{\mu \nu} = T^{\nu \mu} \) in a tilted system have the matrix elements
+  \begin{align}
+    T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q})
+    &= -\frac{ i \hbar v_{F} }{2}
+      \Gamma _{\vec{k} \qvec{q} m n s}^+
+      \sum\limits_{i,j}^{} F^{(2)}_{ij},\\
+    T^{0y~(3)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q})
+    &= \frac{i \hbar v_F}{2}
+      \Gamma ^{+}_{\vec{k} \qvec{q} m n s}
+      \sum\limits_{ij}^{} F^{(3)}_{ij}.
+  \end{align}
+  with
+  \[
+    \Gamma _{\vec{k} \qvec{q} m n s}^{\pm} =
+    \frac{
+      \exp
+      \left[
+        - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
+      \right  ]
+    }{
+      \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+    }
+  \]
+  and where the factors \( F_{ij}^{(n)} \) where found to be
+  \begin{align}
+    F^{(2)}_{12}
+    &= -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha _{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n),\\
+    F^{(2)}_{21}
+    &=
+      -t_{x} \sqrt{\alpha} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}^2}{l_B a_{\vec{k} m \mp 1 s}}
+      \Xi_{1} (\bar{\vec{q}}, m \mp 1, n, s),\\
+    F^{(2)}_{11} &= \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
+                   \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),\\
+    F^{(2)}_{22} &=
+                   \sqrt{\alpha }
+                   \frac{\sqrt{M} }{l_B \sqrt{2} }
+                   \Xi_{1} ( \bar{\vec{q}}, m, n, s ),\\
+    F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
+                   \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
+                   \Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s ),\\
+    F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
+                   \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
+                   \Xi_{2} (\bar{\vec{q}}, m, n, s),\\
+    F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
+                   \sqrt{\frac{N-1}{2}}
+                   \Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s),\\
+    F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
+                   \sqrt{\frac{N}{2}}
+                 \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
+                 \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
+\end{align}
+\end{summary}
