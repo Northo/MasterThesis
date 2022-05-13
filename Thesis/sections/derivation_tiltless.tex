@@ -911,6 +911,7 @@ which with the same procedure as above gives
   \right\}.
 \end{multline}
 
+\begin{summary}
 In summary then, we have
 \begin{align}
   J_{\vec{k} ms; \vec{k} ns}&=
@@ -965,8 +966,43 @@ $
 \Gamma_{\vec{k}, \qvec{q}, m, n, s} =
 \left[(\alpha _{\vec{k}m s}^2 + 1) (\alpha _{\vec{k} + \qvec{q} n s}^2 + 1) \right]^{-\frac{1}{2}}
 $.
+\end{summary}
 
 \subsection{Comment on the energy-momentum tensor}
+There is some ambiguity with regards to the definition of th energy-momentum tensor \todo{cite}.
+The \emph{canonical} energy-momentum tensor, derived from Lagrangian mechanics, is defined as
+\begin{equation}
+	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
+\end{equation}
+On the other hand, from general relativity, the (\emph{dynamical}?) energy-momentum tensor is defined by the variation of the action with respsect to the metric
+\begin{equation}
+	T^{\mu \nu} = something something \frac{\delta S}{\delta g_{\mu \nu}}.
+\end{equation}
+Immediately, we see that the first definition is in general not symmetric, while the latter is, as the metric is always symmetric \footnote{something with torsion never}.
+...
+Something about the non-defitness of the tensor, we may add some total derivative or something.
+
+We may of course symmetrize the energy-momentum tensor.
+Denote by \( T^{\mu \nu } \) the \emph{canonical} tensor, and let the symmetrized tensor
+\begin{equation}
+  \label{eq:symstress}
+  T_S^{\mu \nu} = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}.
+\end{equation}
+
+In the case of our untilted system, the Weyl Lagrangian, the components of interest are
+\begin{align}
+  \label{eq:112}
+  T^{0 y} &= \frac{v_F}{4}
+  \left[
+  \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
+  \right],\\
+  T^{y 0} &= \frac{s i}{4}
+  \left[
+  \phi^{\dagger} \sigma_y \partial_{0} \phi - \partial_0 \phi^{\dagger} \sigma_y \phi
+  \right].\\
+\end{align}
+
+
 The symmetric form of the energy-momentum tensor, used by \citeauthor{arjonaFingerprintsConformalAnomaly2019}, gives additional contributions to the energy-momentum matrix element.
 We will here show that in the case of no tilt, these contributions are identical to those of the non-symmetric tensor.
 In the tilted case, however, the contributions differ.
