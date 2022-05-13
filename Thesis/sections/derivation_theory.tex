@@ -1,0 +1,24 @@
+\subsection{Transport and magnetization}
+Recall that we generally define the transport coeffieicents
+\[
+J^i = e^2 L^{ij}_{11} E_j + e L_{12}^{ij} \nabla_jT,
+\]
+where \( J^i \) is the electrical current.
+In our work, we focus on the \( L_{12} \) coefficient, however the following discussion is valid also more generally.
+The definition of transport currents becomes more subtle in systems with broken time-reversal symmetry\cite{vanderwurffMagnetovorticalThermoelectricTransport2019, chernodubThermalTransportGeometry2021}.
+In such systems, unobservable, circulating \emph{magnetization} currents arise.
+These currents do not contribute to transport, but the Kubo treatment derives the local current, which in general also includes non-transporting currents.
+Let
+\begin{equation}
+  \label{eq:110}
+  \vec{J} = \vec{J}_{\text{tr}} + \vec{J}_M,
+\end{equation}
+where \( \vec{J} \) is the total local current, \( \vec{J}_{\text{tr}} \) is the transport current, and \( \vec{J}_M \) is the circulating magnetization current.
+While our response \( \chi \) relates to the total current, we are more interested in the experimentally measurable transport resonse \( L^{ij}_{12} \), related to our Kubo result as \cite{arjonaFingerprintsConformalAnomaly2019}
+\todo{this might not be a first-hand source. See thermal transport...geometry chernodub eq. 62}
+\begin{equation}
+  \label{eq:111}
+  L_{12}^{ij} = \chi^{12} - \epsilon^{ijl} M_l,
+\end{equation}
+with \( M_l \) the magnetization.
+For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \).
