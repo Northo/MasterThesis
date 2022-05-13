@@ -438,8 +438,8 @@ the correlation function is given by
   \Braket{\left[ J^x(t, \vec{q}), T^{0y}(t', -\vec{q}) \right]}
   =
   \sum\limits_{\vec{k} mn}^{}
-  e^{\frac{i}{\hbar }( E_{\vec{k}ms} - E_{\vec{k}+\qvec{q} ns} )t}
-  e^{\frac{i}{\hbar }( E_{\vec{k}+\qvec{q}ns} - E_{\vec{k}ms} ) t'}\\
+  e^{\frac{i}{\hbar }( E_{k_zms} - E_{k_z+\qvec{q}_z ns} )t}
+  e^{\frac{i}{\hbar }( E_{k_z+\qvec{q}_z ns} - E_{k_z ms} ) t'}\\
   \times
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
   T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
@@ -463,14 +463,14 @@ The integral part of Eq. (\ref{eq:10}), ignoring everything without time depende
   \lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
     \exp \left[ \frac{i}{\hbar } \left(
-        E_{\vec{k} m s} - E_{\vec{k}+\qvec{q} ns} + \omega \hbar  + i \eta \hbar 
+        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i \eta \hbar
       \right) t \right]
     \exp \left[ \frac{i}{\hbar } \left(
-        E_{\vec{k} m s} - E_{\vec{k}+\qvec{q} ns} + i \eta \hbar 
+        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar
       \right) t' \right]\\
   =
-  \lim_{\eta \to 0}\frac{\hbar}{i} \left[ E_{\vec{k}ms} - E_{\vec{k}+\qvec{q} ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
-\frac{\hbar}{i} \left[ E_{\vec{k}ms} - E_{\vec{k}+\qvec{q} ns} + i \eta \hbar  \right]^{-1}.
+  \lim_{\eta \to 0}\frac{\hbar}{i} \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
+\frac{\hbar}{i} \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1}.
 \end{multline}
 The response function then reads
 \begin{multline}
@@ -481,8 +481,8 @@ The response function then reads
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
   T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right] \\
-  \left[ E_{\vec{k}ms} - E_{\vec{k}-\qvec{q} ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
-  \left[ E_{\vec{k}ms} - E_{\vec{k}+\qvec{q} ns} + i \eta \hbar  \right]^{-1},
+  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
+  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1},
 \end{multline}
 where the matrix elements are
 \begin{align}\label{eq:11}
@@ -506,7 +506,7 @@ where the matrix elements are
               \phi ^{*}_{\vec{k}m s}(y)
               s\sigma ^y
               \left(
-              E_{\vec{k}m s} + E_{\vec{k}-\qvec{q} n s} - 2 \mu  
+              E_{k_zm s} + E_{k_z+\qvec{q}_z n s} - 2 \mu
               \right)
               \phi _{\vec{k}-\qvec{q} n s}(y).
 \end{align}
@@ -518,7 +518,7 @@ We may use the property of the limit of a product of functions \( \lim A\cdot B 
   \frac{
     J^x_{\vec{k} m s, \vec{k} n s} T^{0y}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
   }{
-    (E_{\vec{k} m s} - E_{\vec{k} n s}) (E_{\vec{k} m s}- E_{\vec{k} n s})
+    (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
   },
 \end{equation}
 where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:11} and \eqref{eq:12} taken in the limit.
@@ -533,11 +533,11 @@ Let
   \phi _{\vec{k}ms}(y)
   = e^{-\frac{(y-k_xl_B^2)^2}{2 l_{B}^2}}
   \begin{pmatrix}
-    a_{\vec{k}ms} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right)\\
-    b_{\vec{k}ms} H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
+    a_{k_zms} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right)\\
+    b_{k_zms} H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
   \end{pmatrix},
 \end{equation}
-thus implicitly defining the prefactors $a_{\vec{k} ms}, b_{\vec{k} ms}$.
+thus implicitly defining the prefactors $a_{k_z ms}, b_{k_z ms}$.
 
 
 \subsubsection{The current operator}
@@ -545,17 +545,17 @@ The matrix element
 \begin{align}
   &J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q})\\
   \nonumber &=  \int \mathrm{d}y
-    e^{-iq_yy} sv_Fe \phi ^{*}_{\vec{k}ms}(y)
+    e^{-iq_yy} sv_Fe \phi ^{*}_{\vec{k} ms}(y)
     \sigma ^x
-    \phi _{\vec{k} +\qvec{q}ns}(y)\\
+    \phi _{\vec{k} +\qvec{q} ns}(y)\\
   &= s v_F e \int \mathrm{d}y
     \exp \left\{
     - i q_yy - \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}
     \right\}\\
   \nonumber &\pe \left[
-    a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)\right.\\
+    a_{k_zms}b_{k_z + \qvec{q}_z ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)\right.\\
   \nonumber &+
-    \left.  b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+    \left.  b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x+ q_x) l_B^2}{l_B} \right)
     \right]\\
@@ -568,9 +568,9 @@ The matrix element
     \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y 
     \right\}\right]\\
   \nonumber &\pe \left[
-    a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right) \right.\\
+    a_{k_zms}b_{k_z + \qvec{q}_z ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right) \right.\\
   \nonumber &\left. +
-    b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+    b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)
     \right],
@@ -588,11 +588,11 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
     \right\}\right]\\
   e^{-\tilde{y}^2}
    &\left[
-    a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
+    a_{k_zms}b_{k_z + \qvec{q}_z ns}
     H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
    &\left. +
-    b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+    b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
     \right].
@@ -601,13 +601,14 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
 Taking the limit we find the simple form
 \begin{equation}
   \label{eq:41}
-  J_{\vec{k} m s; \vec{k} n s} =
+  J_{\vec{k} m s; \vec{k} n s} = J_{k_z m n s} =
   s v_F e \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
   \left[
-    a_{\vec{k}ms} b_{\vec{k} n s} H_{M-1}(\tilde{y} )H_N(\tilde{y} )
-    + b_{\vec{k} m s} a _{\vec{k} n s} H_M(\tilde{y} )H_{N-1}(\tilde{y} )
-  \right].
+    a_{k_zms} b_{k_z n s} H_{M-1}(\tilde{y} )H_N(\tilde{y} )
+    + m \leftrightarrow n
+  \right],
 \end{equation}
+where \( m \leftrightarrow n \) are the repetition of the previous term under the interchange of \( m, n \).
 We employ now the orthogonality relation of the Hermite polynomials \cite[Table~18.3.1]{NIST:DLMF}
 \begin{equation}
   \label{eq:hermite-ortho}
@@ -616,31 +617,33 @@ We employ now the orthogonality relation of the Hermite polynomials \cite[Table~
 to write
 \begin{equation}
   \label{eq:62}
-  J_{\vec{k} m s, \vec{k} n s} = s v_F e \sqrt{\pi} (a_{\vec{k} ms} b_{\vec{k} n s} \delta_{M-1, N} 2^N N! + a_{\vec{k} m s} b_{\vec{k} n s} \delta_{M, N-1} 2^M M!).
+  J_{\vec{k} m s, \vec{k} n s} = J_{k_z m n s}
+  = s v_F e \sqrt{\pi} (a_{k_z ms} b_{k_z n s} \delta_{M-1, N} 2^N N! + m \leftrightarrow n).
 \end{equation}
 With
 \begin{align}
   a_{\vec{k}ms}b_{\vec{k}ns} &= 
-  \frac{\alpha_{\vec{k}ms} }{
-    \sqrt{\alpha _{\vec{k} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k} ns}^2 + 1}
+  \frac{\alpha_{k_z ms} }{
+    \sqrt{\alpha _{k_z ms}^2 +1}
+    \sqrt{\alpha _{k_z ns}^2 + 1}
   }
   \left[ 2^{N+M-1} (M-1)! N! \pi l_B^2 \right]^{-\frac{1}{2}},\\
   b_{\vec{k}ms}a_{\vec{k} ns} &= 
-  \frac{\alpha_{\vec{k}ns} }{
-    \sqrt{\alpha _{\vec{k} ms}^2 +1}
-    \sqrt{\alpha _{\vec{k} ns}^2 + 1}
+  \frac{\alpha_{k_z ns} }{
+    \sqrt{\alpha _{k_z ms}^2 +1}
+    \sqrt{\alpha _{k_z ns}^2 + 1}
   }
   \left[ 2^{N+M-1} (N-1)! M! \pi l_B^2 \right]^{-\frac{1}{2}}.
 \end{align}
 we find explicitly
 \begin{multline}
-  J_{\vec{k} m s, \vec{k} n s} = \frac{s v_F e}{\sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k} n s}^2 + 1}}\\
+  J_{\vec{k} m s, \vec{k} n s} = J_{k_z m n s} =
+  \frac{s v_F e}{\sqrt{\alpha _{k_z m s}^2 + 1} \sqrt{\alpha _{k_z n s}^2 + 1}}\\
   \left(
-    \alpha _{\vec{k} m s}
+    \alpha _{k_z m s}
     \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
     +
-    \alpha _{\vec{k} n s}
+    \alpha _{k_z n s}
     \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
   \right).
 \end{multline}
@@ -654,7 +657,7 @@ T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
 \frac{1}{4}
 \int \mathrm{d}y e^{iq_y y}
-\phi ^* _{\vec{k}+\qvec{q} ns}(y) s \sigma ^y (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
+\phi ^* _{\vec{k}+\qvec{q} ns}(y) s \sigma ^y (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
 \phi _{\vec{k} ms}(y).
 \end{equation}
 Recall that 
@@ -662,19 +665,19 @@ Recall that
   \phi _{\vec{k}ms}(y) =
   e^{- \frac{(y - k_x l_B ^2)^2}{2 l_B^2}}
   \begin{pmatrix}
-    a_{\vec{k} ms} H_{M-1} \left( \frac{y-k_x l_B^2}{l_B} \right)\\
-    b_{\vec{k} ms} H_M \left( \frac{y - k_x l_B^2}{l_B} \right)
+    a_{k_z ms} H_{M-1} \left( \frac{y-k_x l_B^2}{l_B} \right)\\
+    b_{k_z ms} H_M \left( \frac{y - k_x l_B^2}{l_B} \right)
   \end{pmatrix}.
 \end{equation}
 The form of the integrand is very similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
 \begin{align}
 &T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
   \nonumber &= \frac{i s}{4}
-    (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
+    (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \int \mathrm{d}y e^{iq_y y} e^{- \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}}\\
     \nonumber & \phantom{=} \left[
-    - a_{\vec{k}+\qvec{q} ns} b_{\vec{k} ms} H_{N-1} (\dots ) H_M(\dots )
-    + b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms} H_N(\dots ) H_{M-1}(\dots )
+    - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )
+    + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
     \right].
 \end{align}
 Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done 
@@ -683,7 +686,7 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
     &T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
     &=
     \frac{i s}{4}
-    (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
+    (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \exp \left[
       -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\}
     \right]\\
@@ -692,8 +695,8 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
       -\left\{ y + \frac{l_B^2}{2} (-iq_y - 2 k_x - q_x) \right\}^2 / l_B^2
     \right]\\
     &\phantom{=} \left[
-      - a_{\vec{k}+\qvec{q} ns} b_{\vec{k} ms} H_{N-1} (\dots ) H_M(\dots )
-      + b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms} H_N(\dots ) H_{M-1}(\dots )
+      - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )
+      + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
     \right].
   \end{split}
 \end{equation}
@@ -729,19 +732,19 @@ By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
 \begin{equation}
   \label{eq:26}
   \begin{split}
-    T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
+    T^{0y \;(1)}_{\vec{k} ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
       \frac{
-      (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
+      (E_{k_z m s} + E_{k_z n s}- 2\mu )
       }{
-      \sqrt{\alpha _{\vec{k}ms}^2 +1}
-      \sqrt{\alpha _{\vec{k}ns}^2 + 1}
+      \sqrt{\alpha _{k_zms}^2 +1}
+      \sqrt{\alpha _{k_zns}^2 + 1}
       }\\
     &\left(
-      \alpha _{\vec{k} m s}
+      \alpha _{k_z m s}
       \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
       -
-      \alpha _{\vec{k} n s}
+      \alpha _{k_z n s}
       \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
       \right).
   \end{split}
@@ -749,10 +752,10 @@ By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
 where $\bar{\vec{q}} = (q_x, -q_y, q_z)$.
 
 \begin{summary}
-In summary then, we have
+  For a untilted case, in the local limit \( q\to 0 \), we have the matrix elements
 \begin{align}
   J_{\vec{k} ms; \vec{k} ns}&=
-                                                   \Gamma_{\vec{k} \qvec{q} m n s}
+                                                   \Gamma_{k_z m n s}
                                                    sv_F e
                                                     \left(
                                                     \alpha_{\vec{k} m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta _{M-1, N}
@@ -761,10 +764,10 @@ In summary then, we have
                                                    %% 
   T^{0y\; (1)}_{\vec{k} ns, \vec{k}ms} &=
                                                          \begin{multlined}[t]
-                                                           \frac{is \Gamma_{\vec{k} \qvec{q} m n s}}{4}
-                                                           \left( E_{\vec{k} ms} + E_{\vec{k} ns} - 2\mu  \right)\\
+                                                           \frac{is \Gamma_{k_z m n s}}{4}
+                                                           \left(E_{k_z m s} + E_{k_z n s}- 2\mu \right)\\
                                                            \left(
-                                                             \alpha_{\vec{k} m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
+                                                             \alpha_{k_z m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
                                                              -
                                                              m\leftrightarrow n
                                                            \right)
@@ -772,8 +775,8 @@ In summary then, we have
 \end{align}
 where \( m \leftrightarrow n \) represent the preceding term under the interchange of \( m, n \) and where we have defined
 $
-\Gamma_{\vec{k}, \qvec{q}, m, n, s} =
-\left[(\alpha _{\vec{k}m s}^2 + 1) (\alpha _{\vec{k} + \qvec{q} n s}^2 + 1) \right]^{-\frac{1}{2}}
+\Gamma_{k_z m n s} =
+\left[(\alpha _{k_zm s}^2 + 1) (\alpha _{k_z n s}^2 + 1) \right]^{-\frac{1}{2}}
 $.
 \end{summary}
 
@@ -883,8 +886,8 @@ Recall the response function
     \;
     [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
   }{
-    (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + i \hbar  \eta )
-    (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + \hbar \omega + i \hbar  \eta )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + i \hbar  \eta )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + \hbar \omega + i \hbar  \eta )
   }
   .
 \end{equation}
