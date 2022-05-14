@@ -1,0 +1,32 @@
+#+TITLE: 03 16
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-16 Wed 14:46]
+| Headline                         | Time   |      |
+|----------------------------------+--------+------|
+| *Total time*                     | *3:35* |      |
+|----------------------------------+--------+------|
+| Clean up report                  | 3:35   |      |
+| \_  Clean up confusion about k q |        | 3:35 |
+#+END:
+
+
+* Clean up report
+
+** Clean up confusion about k q
+:LOGBOOK:
+CLOCK: [2022-03-16 Wed 13:48]--[2022-03-16 Wed 14:46] =>  0:58
+CLOCK: [2022-03-16 Wed 13:18]--[2022-03-16 Wed 13:30] =>  0:12
+CLOCK: [2022-03-16 Wed 11:32]--[2022-03-16 Wed 12:03] =>  0:31
+CLOCK: [2022-03-16 Wed 10:33]--[2022-03-16 Wed 11:29] =>  0:56
+CLOCK: [2022-03-16 Wed 09:55]--[2022-03-16 Wed 10:23] =>  0:28
+CLOCK: [2022-03-16 Wed 09:18]--[2022-03-16 Wed 09:48] =>  0:30
+:END:
+Find explicit expression for eigenstate, thus also the prefactors a b
+
+Must find out where to use \(k_z\) and where to use \(\tilde{k}_z\).
+Note that the paper by Yu gives prop to, not equal to
+
+** Write explicit expression for Xi12
+
+* Div

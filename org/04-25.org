@@ -1,0 +1,63 @@
+#+title: 04 25
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-25 Mon 17:51]
+| Headline        |   Time |
+|-----------------+--------|
+| *Total time*    | *5:43* |
+|-----------------+--------|
+| Focus on tz     |   4:31 |
+| Meeting Alireza |   1:12 |
+#+END:
+
+
+* Focus on tz
+:LOGBOOK:
+CLOCK: [2022-04-25 Mon 16:54]--[2022-04-25 Mon 17:51] =>  0:57
+CLOCK: [2022-04-25 Mon 16:43]--[2022-04-25 Mon 16:44] =>  0:01
+CLOCK: [2022-04-25 Mon 14:10]--[2022-04-25 Mon 14:30] =>  0:20
+CLOCK: [2022-04-25 Mon 13:09]--[2022-04-25 Mon 14:08] =>  0:59
+CLOCK: [2022-04-25 Mon 11:02]--[2022-04-25 Mon 11:58] =>  0:56
+CLOCK: [2022-04-25 Mon 10:23]--[2022-04-25 Mon 10:53] =>  0:30
+CLOCK: [2022-04-25 Mon 09:30]--[2022-04-25 Mon 10:18] =>  0:48
+:END:
+
+In the tz case, we may simply take the \( q -> 0\) limit immediately, as the limit gives the ditomic (?) selection rule
+
+** TODO Remember to include s
+
+* Meeting Alireza
+:LOGBOOK:
+CLOCK: [2022-04-25 Mon 16:44]--[2022-04-25 Mon 16:51] =>  0:07
+CLOCK: [2022-04-25 Mon 15:15]--[2022-04-25 Mon 16:20] =>  1:05
+:END:
+
+Talked about:
+
+** Magnetization current
+We should maybe consider if there are any magnetization currents.
+\( L = \chi - M \)
+we find chi, but the actual transport is found by subtracting local magnetization currents.
+
+** What separates this result from earlier
+The new thing about conformal anomaly response as opposed to earlier work is that it persists in the limit \( T-> 0 \).
+\[
+E_y = N B_z ( \frac{d T}{dx} ),
+\]
+Earlier \( N -> 0\) when \( T ->0 \).
+Now \( N \) finite when \( T -> 0\)
+
+** TODO Read once more the two papers [1/2]
+
+*** TODO "Thermoelectric relation sin the conforemal ...."
+
+*** DONE "Generation of a Nernst current"
+
+** TATARA
+Maybe consider the procedure proposed by Tatara, where instead of a scalar potential we use a vector potential in the Luttinger method, to avoid divergence in \( T->0\)
+oRead in thermal transport, geometry... sec B
+** Eq. (71) in Thermoelectric properties of Weyl and Dirac semimetals
+What is the difference between this response and ours?
+
+Maybe calculate, but Alireza thinks that the answer is that the berry curvature from the two cones cancel each other.
+** TODO Create PRB paper project

@@ -1,0 +1,34 @@
+#+TITLE: 03 31
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-31 Thu 17:57]
+| Headline                                | Time   |      |
+|-----------------------------------------+--------+------|
+| *Total time*                            | *3:23* |      |
+|-----------------------------------------+--------+------|
+| Make mathematica solve the selection... | 3:23   |      |
+| \_  Extend to tilted case               |        | 2:01 |
+#+END:
+
+
+* Make mathematica solve the selection rule thing
+:LOGBOOK:
+CLOCK: [2022-03-31 Thu 10:41]--[2022-03-31 Thu 11:09] =>  0:28
+CLOCK: [2022-03-31 Thu 10:31]--[2022-03-31 Thu 10:35] =>  0:04
+CLOCK: [2022-03-31 Thu 09:37]--[2022-03-31 Thu 10:25] =>  0:48
+CLOCK: [2022-03-31 Thu 09:30]--[2022-03-31 Thu 09:32] =>  0:02
+:END:
+
+** Extend to tilted case
+:LOGBOOK:
+CLOCK: [2022-03-31 Thu 17:42]--[2022-03-31 Thu 17:57] =>  0:15
+CLOCK: [2022-03-31 Thu 15:28]--[2022-03-31 Thu 15:52] =>  0:24
+CLOCK: [2022-03-31 Thu 15:06]--[2022-03-31 Thu 15:24] =>  0:18
+CLOCK: [2022-03-31 Thu 13:25]--[2022-03-31 Thu 14:11] =>  0:46
+CLOCK: [2022-03-31 Thu 11:47]--[2022-03-31 Thu 12:02] =>  0:15
+CLOCK: [2022-03-31 Thu 11:09]--[2022-03-31 Thu 11:12] =>  0:03
+:END:
+It is not apparent that we in the local limit get the same type of selection rules
+Are we sure that we should take the limit q->0, and not some other "canonical/effective" momentum go to zero?
+Firstly, it is probably smart to consider what is the relation between q' and the tilted qtilde.
+Also, are we able to solve it without the selection rules, by simply showing/assuming that higher values of |x| (N = M + x)?

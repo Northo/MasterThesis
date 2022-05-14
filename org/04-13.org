@@ -1,0 +1,18 @@
+#+TITLE: 04 13
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-13 Wed 13:26]
+| Headline                     | Time   |
+|------------------------------+--------|
+| *Total time*                 | *2:43* |
+|------------------------------+--------|
+| Complete computation of J T1 | 2:43   |
+#+END:
+
+
+* Complete computation of J T1
+:LOGBOOK:
+CLOCK: [2022-04-13 Wed 13:08]--[2022-04-13 Wed 13:26] =>  0:18
+CLOCK: [2022-04-13 Wed 11:29]--[2022-04-13 Wed 13:00] =>  1:31
+CLOCK: [2022-04-13 Wed 10:25]--[2022-04-13 Wed 11:19] =>  0:54
+:END:

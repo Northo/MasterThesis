@@ -1,0 +1,19 @@
+#+title: 05 09
+
+* Stoof
+
+** As the off-diagonal response is inherently dissipationless, we considered a clean s
+
+** The response matrices from Eqs. (3), (5),
+Why the antisymmetric response part
+
+* Divergences
+Looks like we get divergences
+These are fixed by doing a momenta cutoff, however, I wonder if there is a more pure way to do it?
+For example stoof have lots of divergences, but manage them
+
+Diverge even for t << 1, which is troublesome
+
+Also in graphene
+
+* TODO Does tilt term break conformal symmetry

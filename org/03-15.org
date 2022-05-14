@@ -1,0 +1,62 @@
+#+TITLE: 03 15
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-15 Tue 15:57]
+| Headline                                    |   Time |      |
+|---------------------------------------------+--------+------|
+| *Total time*                                | *3:17* |      |
+|---------------------------------------------+--------+------|
+| Clean up of report                          |   2:54 |      |
+| \_  Change J and T to use Chi instead of... |        | 0:12 |
+| \_  Verify prefactors, especially \(...     |        | 0:16 |
+| \_  Remove Xi34 and replace with Xi12       |        | 2:26 |
+| Div                                         |   0:23 |      |
+| \_  Set up langtool                         |        | 0:23 |
+#+END:
+
+
+* Clean up of report
+
+** Change J and T to use Chi instead of explicit form
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 09:29]--[2022-03-15 Tue 09:41] =>  0:12
+:END:
+
+** Verify prefactors, especially \( \sqrt{\alpha} \) and \( l_B\)
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 10:13]--[2022-03-15 Tue 10:16] =>  0:03
+CLOCK: [2022-03-15 Tue 10:06]--[2022-03-15 Tue 10:07] =>  0:01
+CLOCK: [2022-03-15 Tue 09:41]--[2022-03-15 Tue 09:53] =>  0:12
+:END:
+
+** Remove Xi34 and replace with Xi12
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 11:23]--[2022-03-15 Tue 11:27] =>  0:04
+CLOCK: [2022-03-15 Tue 10:44]--[2022-03-15 Tue 11:10] =>  0:26
+:END:
+
+*** Clean up confusion with q and k
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 15:50]--[2022-03-15 Tue 15:57] =>  0:07
+CLOCK: [2022-03-15 Tue 15:08]--[2022-03-15 Tue 15:20] =>  0:12
+CLOCK: [2022-03-15 Tue 14:35]--[2022-03-15 Tue 15:06] =>  0:31
+CLOCK: [2022-03-15 Tue 13:51]--[2022-03-15 Tue 14:01] =>  0:10
+CLOCK: [2022-03-15 Tue 13:04]--[2022-03-15 Tue 13:31] =>  0:27
+:END:
+In the derivation of the system, k vs q is very confusing.
+K is the acutal momenta, while q is the minimal coupling momenta.
+Probably better to chagne to use k all the way.
+
+*** Find explicitly expressions for Xi12
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 11:27]--[2022-03-15 Tue 11:56] =>  0:29
+:END:
+
+** Clean up the derivation of the eigensystem
+In particular, make sure we use the correct quantities for the various frames.
+
+* Div
+** Set up langtool
+:LOGBOOK:
+CLOCK: [2022-03-15 Tue 10:16]--[2022-03-15 Tue 10:39] =>  0:23
+:END:

@@ -1,0 +1,34 @@
+#+TITLE: 03 29
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-29 Tue 16:15]
+| Headline                       | Time   |      |
+|--------------------------------+--------+------|
+| *Total time*                   | *3:55* |      |
+|--------------------------------+--------+------|
+| Compute the result numerically | 3:55   |      |
+| \_  Compute the untilted case  |        | 3:55 |
+#+END:
+
+
+* Compute the result numerically
+I fear the tilted case will be difficult to do analytically with the solution we are trying now.
+Maybe some other method (propagator etc) will be better.
+However, for now, it is a good idea to try to have Mathematica do the computations.
+
+** Compute the untilted case
+:LOGBOOK:
+CLOCK: [2022-03-29 Tue 15:45]--[2022-03-29 Tue 16:15] =>  0:30
+CLOCK: [2022-03-29 Tue 13:57]--[2022-03-29 Tue 15:02] =>  1:05
+CLOCK: [2022-03-29 Tue 13:16]--[2022-03-29 Tue 13:40] =>  0:24
+CLOCK: [2022-03-29 Tue 11:18]--[2022-03-29 Tue 11:29] =>  0:11
+CLOCK: [2022-03-29 Tue 10:48]--[2022-03-29 Tue 11:15] =>  0:27
+CLOCK: [2022-03-29 Tue 10:27]--[2022-03-29 Tue 10:46] =>  0:19
+CLOCK: [2022-03-29 Tue 09:54]--[2022-03-29 Tue 09:55] =>  0:01
+CLOCK: [2022-03-29 Tue 08:56]--[2022-03-29 Tue 09:54] =>  0:58
+:END:
+
+We found a mistake in the work of the project thesis.
+This must be investigated more carefully.
+
+** Compute the tilted case

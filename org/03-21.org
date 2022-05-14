@@ -1,0 +1,51 @@
+#+TITLE: 03 21
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-22 Tue 08:46]
+| Headline                                     |   Time |      |
+|----------------------------------------------+--------+------|
+| *Total time*                                 | *5:54* |      |
+|----------------------------------------------+--------+------|
+| Clean up                                     |   5:05 |      |
+| \_  Find explicit form of the eigenfunction  |        | 5:05 |
+| Meeting Alireza                              |   0:25 |      |
+| Div                                          |   0:24 |      |
+| \_  Mail                                     |        | 0:19 |
+| \_  Make Overleaf doc and share with Alireza |        | 0:05 |
+#+END:
+
+
+* Clean up
+
+** Find explicit form of the eigenfunction
+:LOGBOOK:
+CLOCK: [2022-03-21 Mon 17:23]--[2022-03-21 Mon 17:45] =>  0:22
+CLOCK: [2022-03-21 Mon 16:39]--[2022-03-21 Mon 16:55] =>  0:16
+CLOCK: [2022-03-21 Mon 15:37]--[2022-03-21 Mon 16:07] =>  0:30
+CLOCK: [2022-03-21 Mon 13:54]--[2022-03-21 Mon 14:44] =>  0:50
+CLOCK: [2022-03-21 Mon 13:04]--[2022-03-21 Mon 13:46] =>  0:42
+CLOCK: [2022-03-21 Mon 11:41]--[2022-03-21 Mon 12:03] =>  0:22
+CLOCK: [2022-03-21 Mon 10:46]--[2022-03-21 Mon 11:38] =>  0:52
+CLOCK: [2022-03-21 Mon 10:24]--[2022-03-21 Mon 10:43] =>  0:19
+CLOCK: [2022-03-21 Mon 10:06]--[2022-03-21 Mon 10:19] =>  0:13
+CLOCK: [2022-03-21 Mon 09:22]--[2022-03-21 Mon 10:01] =>  0:39
+:END:
+Keep extra track of the tilde vs non-tilde quantities
+Make sure the results in Yu and Shankar are self consistent
+
+* Meeting Alireza
+:LOGBOOK:
+CLOCK: [2022-03-21 Mon 15:11]--[2022-03-21 Mon 15:36] =>  0:25
+:END:
+
+* Div
+
+** Mail
+:LOGBOOK:
+CLOCK: [2022-03-21 Mon 16:55]--[2022-03-21 Mon 17:14] =>  0:19
+:END:
+
+** Make Overleaf doc and share with Alireza
+:LOGBOOK:
+CLOCK: [2022-03-21 Mon 17:14]--[2022-03-21 Mon 17:19] =>  0:05
+:END:

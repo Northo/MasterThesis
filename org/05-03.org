@@ -1,0 +1,14 @@
+#+title: 05 03
+
+* Try to fix the divergences
+
+Check the E0 E0 tz>0 transition once more
+
+** DONE Introduce disorder
+Let \( \eta \) be finite, and see if that helps.
+I am pretty sure that it is correct to set \( \omega \) to zero before doing the integral.
+
+** DONE Limit momenta
+Read the paper about the limitation of the linear model
+/Note/ According to that paper, the model should be good for low-angle situations.
+Check that we do not diverge for small t.

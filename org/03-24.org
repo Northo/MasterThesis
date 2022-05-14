@@ -1,0 +1,43 @@
+#+TITLE: 03 24
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-25 Fri 11:03]
+| Headline                             |   Time |      |
+|--------------------------------------+--------+------|
+| *Total time*                         | *2:46* |      |
+|--------------------------------------+--------+------|
+| Find combinations of Xi functions    |   2:20 |      |
+| \_  Double check for errors in T     |        | 0:26 |
+| \_  Find explicit expressions for Xi |        | 1:27 |
+| Read paper from Alireza              |   0:26 |      |
+#+END:
+
+
+* Find combinations of Xi functions
+:LOGBOOK:
+CLOCK: [2022-03-24 Thu 10:06]--[2022-03-24 Thu 10:21] =>  0:15
+CLOCK: [2022-03-24 Thu 09:09]--[2022-03-24 Thu 09:21] =>  0:12
+:END:
+We have found J and T expressed in Xi, so now we must find the combinations of them, and see when we get finite contributions.
+** Double check for errors in T
+:LOGBOOK:
+CLOCK: [2022-03-24 Thu 10:02]--[2022-03-24 Thu 10:06] =>  0:04
+CLOCK: [2022-03-24 Thu 09:21]--[2022-03-24 Thu 09:43] =>  0:22
+:END:
+** Find explicit expressions for Xi
+:LOGBOOK:
+CLOCK: [2022-03-24 Thu 13:59]--[2022-03-24 Thu 14:04] =>  0:05
+CLOCK: [2022-03-24 Thu 11:37]--[2022-03-24 Thu 12:04] =>  0:27
+CLOCK: [2022-03-24 Thu 11:14]--[2022-03-24 Thu 11:21] =>  0:07
+CLOCK: [2022-03-24 Thu 10:47]--[2022-03-24 Thu 11:11] =>  0:24
+CLOCK: [2022-03-24 Thu 10:21]--[2022-03-24 Thu 10:45] =>  0:24
+:END:
+
+* Read paper from Alireza
+:LOGBOOK:
+CLOCK: [2022-03-24 Thu 14:42]--[2022-03-24 Thu 15:08] =>  0:26
+:END:
+Take extra care on the discussion about the Hamiltonia
+
+Migth be nice to read /Magnetic description of the Fermi arc in type-I and type-II Weyl semimetals/
+Should try ty understand if they have calculated the same response that we are calculating.

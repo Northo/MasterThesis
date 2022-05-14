@@ -265,31 +265,37 @@ By insertion, and after some clean up, we get
   \label{eq:52}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0\\
   = v_F \begin{pmatrix}
-    k_z (1 + t_{\parallel} \gamma) - \frac{E \gamma}{v_{F}}   & -i k_{y} + k_{x} / \gamma  - \frac{E  \gamma \beta}{v_{F}}  + k_{z} t_{\parallel} \gamma \beta \\
-      i k_{y} + k_{x} / \gamma  - \frac{E  \gamma \beta}{v_{F}}  + k_{z} t_{\parallel} \gamma \beta
-    & -k_{z} (1 - t_{\parallel} \gamma) - \frac{E \gamma}{v_{F}}
-    \end{pmatrix}
+          k_z ( s + t_z \gamma ) - E / v_F \gamma & -s ( ik_y + k_z t_x t_z \gamma - k_x / \gamma - E /v_{F} \gamma t_x)\\
+          s ( i k_y - k_z t_x t_z \gamma + k_x / \gamma + E /v_F \gamma t_x) & - k_z (s - t_z \gamma) - E \gamma
+        \end{pmatrix}\\
     \ket{\psi}.
 \end{multline}
 In order to simplify this further, absorb \(\gamma \beta (k_{z} t_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
+  \label{eq:29}
   \begin{split}
-    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta (k_{z} t_{\parallel} - E /v_F),\\
+    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta ( E /v_F - k_{z} t_{\parallel}),\\
     \tilde{k}_{y} &=  k_{y},\\
     \tilde{k}_{z} &=  k_{z}.\\
   \end{split}
 \end{equation}
-This, of course, corresponds exactly with a Lorentz boost of the momenta
+
+These expressions warrant some explanation, as the Lorentz boost is of course
 \begin{equation}
-  \label{eq:22}
-  \tilde{q}_i =
+  \label{eq:23}
+  \tilde{k_x} = \gamma (k_x - \beta \frac{E}{v_{F}}),
 \end{equation}
+where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
+It can thus look like our expression in Eq. \eqref{eq:29} is wrong.
+The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
+\todo{Something smart here}
+
 The eigenvalue equation is simply
 \begin{equation}
   \label{eq:53}
   \left[  \gamma \left( t_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
-  \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
+  s \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
 If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
 This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e \tilde{y} \frac{v_{y} v_{x}}{v_{F}^2}  B_{z} /\gamma \), where the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
@@ -298,7 +304,7 @@ The Landau level equation thus reads
 \begin{equation}
   \label{eq:54}
   \left[
-  \sum\limits_{i} v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
+  \sum\limits_{i} s v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
 (E- t_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
@@ -410,17 +416,17 @@ The normalization factor \( \mathcal{N} \) is needed as the boost transformation
 
 Reinserting explicitly, in the boosted frame, that
 \[
-  \tilde{q}_{x} = \alpha q_{x} - \frac{\beta}{\alpha} \frac{E_{k_z m s}- k_{z} v_F t_{\parallel} }{v_{x}}
-  = \alpha q_x - \beta \frac{E^0_{m, \alpha B} }{v_{F}}
+  \tilde{k}_{x} = \alpha k_{x} + \frac{\beta}{\alpha} (E_{k_z m s} /v_F- k_{z} t_{\parallel})
+  = \alpha k_x + \beta \frac{E^0_{m, \alpha B} }{v_{F}}
 \]
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 \begin{equation}
   \label{eq:60}
   \chi =
-  \frac{y-\tilde{q}_{x} l_{B'}^2}{l_{B'}}
+  \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
-  \sqrt{\alpha } (y-q_{x} l_{B}^2) /l_{B}
-  + \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
+  \sqrt{\alpha } (y-k_{x} l_{B}^2) /l_{B}
+  - \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
 \end{equation}.
 \todo{ Clean up in \(\hbar \) }
 

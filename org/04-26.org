@@ -1,0 +1,43 @@
+#+title: 04 26
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-26 Tue 16:50]
+| Headline                        |   Time |
+|---------------------------------+--------|
+| *Total time*                    | *4:42* |
+|---------------------------------+--------|
+| DIV                             |   0:02 |
+| Find the correct form of the... |   4:40 |
+#+END:
+
+
+* DIV
+:LOGBOOK:
+CLOCK: [2022-04-26 Tue 08:53]--[2022-04-26 Tue 08:55] =>  0:02
+:END:
+
+* Find the correct form of the energy-momentum tensor in the tilted case
+:LOGBOOK:
+CLOCK: [2022-04-26 Tue 16:21]--[2022-04-26 Tue 16:50] =>  0:29
+CLOCK: [2022-04-26 Tue 16:06]--[2022-04-26 Tue 16:18] =>  0:12
+CLOCK: [2022-04-26 Tue 14:29]--[2022-04-26 Tue 15:30] =>  1:01
+CLOCK: [2022-04-26 Tue 13:04]--[2022-04-26 Tue 13:58] =>  0:54
+CLOCK: [2022-04-26 Tue 10:52]--[2022-04-26 Tue 11:30] =>  0:38
+CLOCK: [2022-04-26 Tue 09:20]--[2022-04-26 Tue 10:33] =>  1:13
+CLOCK: [2022-04-26 Tue 08:55]--[2022-04-26 Tue 09:08] =>  0:13
+:END:
+Look at the different forms found in different papers
+
+Arjona thesis usees the symmetrized version of the energy-momentum tensor.
+DT-ch10-fin seem to use an unsymmetrized version
+
+See around (B21) in Thermal transport, geometry, and anomalies.
+
+// Important //
+Why use the symmetrized version of T?
+If the symmetrization only adds a new equal term, we get simpler calculations if we only use one of the terms.
+Check if the two terms are always equal also for tilt!
+
+For the untilted case, the two contributions are the same.
+However, for the tilted case the contributions differ, at least based on the stress energy tensor given in vanderwurffMagnetovorticalThermoelectricTransport2019.
+It might be possible that the correct procedure is to use only the canonical part of the stress energy tensor, i.e. not symmetrizing.

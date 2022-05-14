@@ -1,0 +1,52 @@
+#+TITLE: 04 04
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-04 Mon 16:18]
+| Headline                              |   Time |      |
+|---------------------------------------+--------+------|
+| *Total time*                          | *4:45* |      |
+|---------------------------------------+--------+------|
+| Work on the matrix elements in the... |   3:50 |      |
+| Div                                   |   0:55 |      |
+| \_  Meeting with Alireza + prepare    |        | 0:45 |
+#+END:
+
+
+* Prepare for meeting with Alireza
+Conclusion on q->0
+Found some references about DoS in type II, but have not looked too much at it yet.
+
+Found more straight-forward solution in the untilted case.
+
+Should at some point decide for how long to try and find the final solution, and when to start writing down what I have found already
+Important distinction with tilt into the B field and perpendicular
+
+Velocity operator in tilted case
+
+Transport coefficient
+L = Xi - M see fingerprints
+
+PRB 105 125131
+
+* Work on the matrix elements in the tilted case
+:LOGBOOK:
+CLOCK: [2022-04-04 Mon 16:12]--[2022-04-04 Mon 16:18] =>  0:06
+CLOCK: [2022-04-04 Mon 14:25]--[2022-04-04 Mon 14:51] =>  0:01
+CLOCK: [2022-04-04 Mon 13:19]--[2022-04-04 Mon 13:55] =>  0:36
+CLOCK: [2022-04-04 Mon 13:01]--[2022-04-04 Mon 13:18] =>  0:17
+CLOCK: [2022-04-04 Mon 11:13]--[2022-04-04 Mon 11:55] =>  0:42
+CLOCK: [2022-04-04 Mon 10:11]--[2022-04-04 Mon 11:05] =>  0:54
+CLOCK: [2022-04-04 Mon 09:12]--[2022-04-04 Mon 10:01] =>  0:49
+:END:
+Probably smart to focus first on the current operator, as this is the one that has been discussed the most in other papers.
+Seem to be important in optical response
+
+* Div
+:LOGBOOK:
+CLOCK: [2022-04-04 Mon 09:02]--[2022-04-04 Mon 09:12] =>  0:10
+:END:
+
+** Meeting with Alireza + prepare
+:LOGBOOK:
+CLOCK: [2022-04-04 Mon 15:09]--[2022-04-04 Mon 15:54] =>  0:45
+:END:

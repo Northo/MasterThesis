@@ -1,0 +1,53 @@
+#+TITLE: 03 23
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-23 Wed 16:24]
+| Headline                           |   Time |
+|------------------------------------+--------|
+| *Total time*                       | *4:16* |
+|------------------------------------+--------|
+| Find relation between the two...   |   0:57 |
+| Decide on a paramterization to use |   1:24 |
+| Write out the derivation of the... |   0:07 |
+| Read through and plan              |   0:10 |
+| Fint third component of T          |   1:38 |
+#+END:
+
+
+* Find relation between the two parametrisations of the eigenstate
+:LOGBOOK:
+CLOCK: [2022-03-23 Wed 09:55]--[2022-03-23 Wed 10:05] =>  0:10
+CLOCK: [2022-03-23 Wed 08:45]--[2022-03-23 Wed 09:32] =>  0:47
+:END:
+If the cos/sin version is easier, that would be nice
+
+* Decide on a paramterization to use
+:LOGBOOK:
+CLOCK: [2022-03-23 Wed 11:37]--[2022-03-23 Wed 12:01] =>  0:24
+CLOCK: [2022-03-23 Wed 10:57]--[2022-03-23 Wed 11:26] =>  0:29
+CLOCK: [2022-03-23 Wed 10:19]--[2022-03-23 Wed 10:50] =>  0:31
+:END:
+
+Results in Yu seems correct. Verify that we have used the same states as starting point.
+
+The cos/sin paramterization is nice, but only replaces the alpha normalization factor, and not the numerical prefactors associated with the harmonic oscillator eigenfunctions.
+Thus, we keep the alpha prefactors for now.
+
+* Write out the derivation of the untilted case in full
+
+* Write out the derivation of the tiltded case in full
+:LOGBOOK:
+CLOCK: [2022-03-23 Wed 13:13]--[2022-03-23 Wed 13:20] =>  0:07
+:END:
+
+* Read through and plan
+:LOGBOOK:
+CLOCK: [2022-03-23 Wed 13:20]--[2022-03-23 Wed 13:30] =>  0:10
+:END:
+
+* Fint third component of T
+:LOGBOOK:
+CLOCK: [2022-03-23 Wed 15:50]--[2022-03-23 Wed 16:18] =>  0:28
+CLOCK: [2022-03-23 Wed 15:05]--[2022-03-23 Wed 15:29] =>  0:24
+CLOCK: [2022-03-23 Wed 13:33]--[2022-03-23 Wed 14:19] =>  0:46
+:END:

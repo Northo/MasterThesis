@@ -1,0 +1,76 @@
+#+TITLE: Test
+
+#+begin_src elisp
+(defun this-dir ()
+  (file-expand-wildcards "*.org"))
+#+end_src
+
+#+RESULTS:
+: this-dir
+
+#+BEGIN: clocktable :scope this-dir :fileskip0 t :block thisweek
+#+CAPTION: Clock summary at [2022-03-30 Wed 13:14], for week 2022-W13.
+| File      | Headline                       |   Time |      |
+|-----------+--------------------------------+--------+------|
+|           | ALL *Total time*               | *8:50* |      |
+|-----------+--------------------------------+--------+------|
+| 03-28.org | *File time*                    | *2:21* |      |
+|           | Read paper from Alireza        |   1:28 |      |
+|           | Continue with calculation      |   0:39 |      |
+|           | Mail and div                   |   0:14 |      |
+|-----------+--------------------------------+--------+------|
+| 03-29.org | *File time*                    | *3:55* |      |
+|           | Compute the result numerically |   3:55 |      |
+|           | \_  Compute the untilted case  |        | 3:55 |
+|-----------+--------------------------------+--------+------|
+| 03-30.org | *File time*                    | *2:34* |      |
+|           | Correct mistake found          |   2:34 |      |
+#+END: clocktable
+
+#+BEGIN: clocktable :scope this-dir :fileskip0 t :compact t :block thisweek-1
+#+CAPTION: Clock summary at [2022-03-30 Wed 13:14], for week 2022-W12.
+| File      | Headline                                     |    Time |
+|-----------+----------------------------------------------+---------|
+|           | ALL *Total time*                             | *18:17* |
+|-----------+----------------------------------------------+---------|
+| 03-21.org | *File time*                                  |  *5:54* |
+|           | Clean up                                     |    5:05 |
+|           | \_  Find explicit form of the eigenfunction  |    5:05 |
+|           | Meeting Alireza                              |    0:25 |
+|           | Div                                          |    0:24 |
+|           | \_  Mail                                     |    0:19 |
+|           | \_  Make Overleaf doc and share with Alireza |    0:05 |
+|-----------+----------------------------------------------+---------|
+| 03-22.org | *File time*                                  |  *4:54* |
+|           | Clean up thesis                              |    4:52 |
+|           | \_  Write down the explicit form of the...   |    4:52 |
+|           | Div                                          |    0:02 |
+|           | \_  Mail                                     |    0:02 |
+|-----------+----------------------------------------------+---------|
+| 03-23.org | *File time*                                  |  *4:16* |
+|           | Find relation between the two...             |    0:57 |
+|           | Decide on a paramterization to use           |    1:24 |
+|           | Write out the derivation of the...           |    0:07 |
+|           | Read through and plan                        |    0:10 |
+|           | Fint third component of T                    |    1:38 |
+|-----------+----------------------------------------------+---------|
+| 03-24.org | *File time*                                  |  *2:46* |
+|           | Find combinations of Xi functions            |    2:20 |
+|           | \_  Double check for errors in T             |    0:26 |
+|           | \_  Find explicit expressions for Xi         |    1:27 |
+|           | Read paper from Alireza                      |    0:26 |
+|-----------+----------------------------------------------+---------|
+| 03-25.org | *File time*                                  |  *0:27* |
+|           | Read paper from Alireza                      |    0:27 |
+#+END:
+
+#+BEGIN: clocktable :scope this-dir :fileskip0 t :block thisweek-2 :maxlevel 0
+#+CAPTION: Clock summary at [2022-03-28 Mon 12:32], for week 2022-W11.
+| File      | Headline         | Time   |
+|-----------+------------------+--------|
+|           | ALL *Total time* | *6:52* |
+|-----------+------------------+--------|
+| 03-15.org | *File time*      | *3:17* |
+|-----------+------------------+--------|
+| 03-16.org | *File time*      | *3:35* |
+#+END: clocktable

@@ -1,0 +1,34 @@
+#+title: 04 30
+
+* Analytically find first term tz > 1 contrib
+
+Let's focus on the M->M+1 contribution
+Possibly not correct to simply drop the alpha[m]^2 terms
+
+| Transition | Term  | Region            | Symmetry                             | Contrib                                     | Notes                                                                            |
+| 0->+-1     | E+E   | \( t_z > 1 \)     | P sym broken  \( t_z^{\chi} = t_z \) | \( s( t_z \ArcCsch(\sqrt{t_z^2 -1}) -1 ) \) |                                                                                  |
+| 0->+-1     | E+E   | \( t_z > 1 \)     | P sym \( t_z^{\chi} = s t_z \)       | \(  t_z \ArcCsch(\sqrt{t_z^2 -1}) -1 \)     |                                                                                  |
+| 0->+-1     | E+E   | \( 0 < t_z < 1 \) | P sym broken  \( t_z^{\chi} = t_z \) | 1/2 (each)                                  | Each chirality diverges, but they cancel.                                        |
+| 0->+-1     | E+E   | \( 0 < t_z < 1 \) | P sym  \( t_z^{\chi} = s t_z \)      | N/A                                         | Neither the chiralitites nor the +- cancel.                                      |
+| 0->+-1     | E0+E0 | \( t_z > 1 \)     | P sym broken                         | \( \frac{1 + s t_z}{s(t_z^2 - 1)} \)        | alpha_n^2 part                                                                   |
+| 0->+-1     | E0+E0 | \( t_z > 1 \)     | P sym                                | \( \frac{1}{t_z - 1} \)                     | alpha_n^2 part. Looks like it is more well behaved when we add finite \( \eta \) |
+
+** TODO Get an overview and plan next step
+Have now done quite a lot of exploring and computation, let's now take a step
+back, analyze, and figure out what i the best next step.
+
+Physically, we expect the response to never diverge.
+However, firstly, we may have made some assumption somewhere, which make our model unphysical.
+However, I doubt this.
+As a matter of fact, no! I do not doubt this.
+It may be that the linear model simply breaks down as we introduce too much tilt, see ferreirosAnomalousNernstThermal2017.
+Secondly, one chirality may diverge, but together they must cancel.
+Lastly, I suppose contributions from one transition may diverge, as long as that is canceled by other transitions.
+
+Could it also be that we have to calculate in scattering or something when we go to Type-II?
+We then suddenly get lots of available charge carriers, as opposed to before when the transport is particle hole pairs.
+Can't remember where, but some paper writes something about this.
+
+Is there something about breaking /both/ time and inversion at the same time that is problemtatic?
+
+How do we unify the inversion symmetry definition in the miniaml model paper with the one in the Magnetovertical and Thermoelectric ....?

@@ -1,0 +1,37 @@
+#+TITLE: 03 30
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-30 Wed 16:32]
+| Headline               |   Time |
+|------------------------+--------|
+| *Total time*           | *4:19* |
+|------------------------+--------|
+| Correct mistake found  |   2:40 |
+| Make Mathematica solve |   1:09 |
+| Meeting Alireza        |   0:30 |
+#+END:
+
+
+* Correct mistake found
+:LOGBOOK:
+CLOCK: [2022-03-30 Wed 15:15]--[2022-03-30 Wed 15:21] =>  0:06
+CLOCK: [2022-03-30 Wed 11:22]--[2022-03-30 Wed 12:06] =>  0:44
+CLOCK: [2022-03-30 Wed 11:07]--[2022-03-30 Wed 11:20] =>  0:13
+CLOCK: [2022-03-30 Wed 09:58]--[2022-03-30 Wed 10:46] =>  0:48
+CLOCK: [2022-03-30 Wed 09:01]--[2022-03-30 Wed 09:50] =>  0:49
+:END:
+
+* Make Mathematica solve
+:LOGBOOK:
+CLOCK: [2022-03-30 Wed 16:18]--[2022-03-30 Wed 16:32] =>  0:14
+CLOCK: [2022-03-30 Wed 15:21]--[2022-03-30 Wed 16:16] =>  0:55
+:END:
+The focus should maybe be the edge cases of m=1, m=0, etc.
+
+Also possibly useful to check what limit to use in the tilted case.
+If it is q', then maybe all this work is for naught, and everything is quite simple.
+
+* Meeting Alireza
+:LOGBOOK:
+CLOCK: [2022-03-30 Wed 13:00]--[2022-03-30 Wed 13:30] =>  0:30
+:END:

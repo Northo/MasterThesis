@@ -1,0 +1,13 @@
+#+title: 05 04
+
+* Iron out the tz tilt
+Check that we are well behaved when including eta and momenta cutoff
+Make sure it makes sense to have mometna cutoff even for Type-I
+
+* Go over the derivation of the x-tilt
+
+** DONE Check the normalization factor \( \mathcal{N} \)
+
+** TODO Make it clear what is the total contribution from T and J
+
+** TODO Go carefully through the final expression, especially careful with the \alpha factors

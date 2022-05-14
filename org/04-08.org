@@ -1,0 +1,42 @@
+#+TITLE: 04 08
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-08 Fri 14:06]
+| Headline                                |   Time |
+|-----------------------------------------+--------|
+| *Total time*                            | *3:19* |
+|-----------------------------------------+--------|
+| Run numerically over entire quadrant    |   0:47 |
+| Clean up derivation, write down results |   1:47 |
+| Div                                     |   0:45 |
+#+END:
+
+
+* Run numerically over entire quadrant
+:LOGBOOK:
+CLOCK: [2022-04-08 Fri 10:12]--[2022-04-08 Fri 10:19] =>  0:07
+CLOCK: [2022-04-08 Fri 09:09]--[2022-04-08 Fri 09:27] =>  0:18
+CLOCK: [2022-04-08 Fri 08:42]--[2022-04-08 Fri 09:04] =>  0:22
+:END:
+Now, the numerical integration works, nicely.
+The next step is to make the derivation clear enough to include all factors of \( \alpha \) etc.
+
+* Clean up derivation, write down results
+:LOGBOOK:
+CLOCK: [2022-04-08 Fri 14:47]--[2022-04-08 Fri 15:53] =>  1:06
+CLOCK: [2022-04-08 Fri 13:01]--[2022-04-08 Fri 14:06] =>  1:05
+CLOCK: [2022-04-08 Fri 11:23]--[2022-04-08 Fri 12:01] =>  0:38
+CLOCK: [2022-04-08 Fri 10:26]--[2022-04-08 Fri 10:30] =>  0:04
+:END:
+We should clean up the derivation, having a clear final expression.
+Then, do the numerical calculation, and register the results.
+
+* Figure out if there are selection rules
+There is no (simple) selection rules beyond what we have found
+Is possibly nice to consider above and below the symmetry line for analytical solution, as the flavors of Xi are separated by that line
+
+* Div
+:LOGBOOK:
+CLOCK: [2022-04-08 Fri 10:30]--[2022-04-08 Fri 11:02] =>  0:32
+CLOCK: [2022-04-08 Fri 09:37]--[2022-04-08 Fri 09:50] =>  0:13
+:END:

@@ -1,0 +1,35 @@
+#+title: 04 27
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-27 Wed 17:19]
+| Headline                                 |   Time |
+|------------------------------------------+--------|
+| *Total time*                             | *5:27* |
+|------------------------------------------+--------|
+| Continue on the stress-energy tensor...  |   1:49 |
+| Compute and store orderly the results... |   3:38 |
+#+END:
+
+
+* Continue on the stress-energy tensor work
+:LOGBOOK:
+CLOCK: [2022-04-27 Wed 12:53]--[2022-04-27 Wed 12:54] =>  0:01
+CLOCK: [2022-04-27 Wed 10:27]--[2022-04-27 Wed 11:23] =>  0:56
+CLOCK: [2022-04-27 Wed 09:51]--[2022-04-27 Wed 10:15] =>  0:24
+CLOCK: [2022-04-27 Wed 09:18]--[2022-04-27 Wed 09:46] =>  0:28
+:END:
+See [[file:04-26.org::*Find the correct form of the energy-momentum tensor in the tilted case][Find the correct form of the energy-momentum tensor in the tilted case]]
+
+* Compute and store orderly the results for symm and canonical
+:LOGBOOK:
+CLOCK: [2022-04-27 Wed 16:26]--[2022-04-27 Wed 17:19] =>  0:53
+CLOCK: [2022-04-27 Wed 15:05]--[2022-04-27 Wed 15:56] =>  0:51
+CLOCK: [2022-04-27 Wed 12:54]--[2022-04-27 Wed 14:48] =>  1:54
+:END:
+
+Should find out definitely if we should use \( T^{0y} \) or \( T^{y0} \).
+
+There are some issues with the alpha (normalization factor) that we must take care of
+
+** TODO Maybe we can write something about the different definitions of the stress-energy tensor
+[[https://en.wikipedia.org/wiki/Stress%E2%80%93energy_tensor#Variant_definitions_of_stress%E2%80%93energy][WIKIPEDIA]]

@@ -1,0 +1,34 @@
+#+title: 04 21
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-25 Mon 09:30]
+| Headline                           | Time   |
+|------------------------------------+--------|
+| *Total time*                       | *5:34* |
+|------------------------------------+--------|
+| Begin to finalize the numerical... | 5:34   |
+#+END:
+
+
+* Begin to finalize the numerical computations
+:LOGBOOK:
+CLOCK: [2022-04-21 Thu 15:30]--[2022-04-21 Thu 17:15] =>  1:45
+CLOCK: [2022-04-21 Thu 14:30]--[2022-04-21 Thu 15:01] =>  0:31
+CLOCK: [2022-04-21 Thu 13:47]--[2022-04-21 Thu 14:23] =>  0:36
+CLOCK: [2022-04-21 Thu 13:05]--[2022-04-21 Thu 13:34] =>  0:29
+CLOCK: [2022-04-21 Thu 10:38]--[2022-04-21 Thu 11:46] =>  1:08
+CLOCK: [2022-04-21 Thu 10:04]--[2022-04-21 Thu 10:26] =>  0:22
+CLOCK: [2022-04-21 Thu 09:30]--[2022-04-21 Thu 09:38] =>  0:08
+CLOCK: [2022-04-21 Thu 08:45]--[2022-04-21 Thu 09:20] =>  0:35
+:END:
+Fix/correct what need fixing in the PDF, update the Mathematica file, and begin to get the result into LaTeX.
+
+Should not the contributions be equal??
+
+Must also remember to correct for the normalization term
+
+/Tilt terms in the Stress tensor operator!!!!/
+
+
+* Show symmetry between second and fourth quadrant for all terms
+Be extra careful with how kappa changes, and if this somehow affects the selection rule from the step functions.

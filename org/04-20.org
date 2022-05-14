@@ -1,0 +1,22 @@
+#+title: 04 20
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-20 Wed 13:57]
+| Headline                          | Time   |
+|-----------------------------------+--------|
+| *Total time*                      | *2:48* |
+|-----------------------------------+--------|
+| Work on the numerical computation | 2:48   |
+#+END:
+
+
+* Work on the numerical computation
+:LOGBOOK:
+CLOCK: [2022-04-20 Wed 14:00]--[2022-04-20 Wed 14:10] =>  0:10
+CLOCK: [2022-04-20 Wed 13:07]--[2022-04-20 Wed 13:57] =>  0:50
+CLOCK: [2022-04-20 Wed 12:52]--[2022-04-20 Wed 12:57] =>  0:05
+CLOCK: [2022-04-20 Wed 11:02]--[2022-04-20 Wed 11:37] =>  0:35
+CLOCK: [2022-04-20 Wed 10:22]--[2022-04-20 Wed 10:40] =>  0:18
+CLOCK: [2022-04-20 Wed 09:58]--[2022-04-20 Wed 10:10] =>  0:12
+CLOCK: [2022-04-20 Wed 08:46]--[2022-04-20 Wed 09:34] =>  0:48
+:END:

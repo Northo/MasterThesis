@@ -1,0 +1,16 @@
+#+title: 05 02
+
+* How to unify the two definitions of parity inversion breaking?
+Two and two of the nodes tilt the same way
+* Breaking down of model for t ~ 1
+See ferreirosAnomalousNernstThermal2017
+* Divergence as t->1
+Alireza noted that the terms \( 1/(\epsilon_m - \epsilon_n) \) looks like a Greens function.
+I.e.
+\[
+\frac{1}{(\epsilon_m - \epsilon_n) (\epsilon_m - \epsilon_n - \eta)} ~ G^0 G^\eta.
+\]
+By taking \(\eta\) to be finite, we introduce scattering, which may solve this.
+
+Also, Thorvald wants to look further into the breaking down of the linear model.
+It might be that in the very region of the transition, the results behave strangely.

@@ -1,0 +1,42 @@
+#+TITLE: 04 07
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-07 Thu 17:40]
+| Headline                               |   Time |
+|----------------------------------------+--------|
+| *Total time*                           | *4:59* |
+|----------------------------------------+--------|
+| Make the numerical integration cleaner |   0:32 |
+| Clean up in report                     |   0:56 |
+| Figure out exactly what to sum over    |   3:11 |
+| Talk to Ragnvald                       |   0:20 |
+#+END:
+
+
+* Make the numerical integration cleaner
+:LOGBOOK:
+CLOCK: [2022-04-07 Thu 10:29]--[2022-04-07 Thu 10:40] =>  0:11
+CLOCK: [2022-04-07 Thu 09:32]--[2022-04-07 Thu 09:53] =>  0:21
+:END:
+
+* Clean up in report
+:LOGBOOK:
+CLOCK: [2022-04-07 Thu 11:17]--[2022-04-07 Thu 11:45] =>  0:28
+CLOCK: [2022-04-07 Thu 10:40]--[2022-04-07 Thu 11:08] =>  0:28
+:END:
+
+* Figure out exactly what to sum over
+:LOGBOOK:
+CLOCK: [2022-04-07 Thu 16:59]--[2022-04-07 Thu 17:40] =>  0:41
+CLOCK: [2022-04-07 Thu 16:00]--[2022-04-07 Thu 16:54] =>  0:54
+CLOCK: [2022-04-07 Thu 15:15]--[2022-04-07 Thu 15:46] =>  0:31
+CLOCK: [2022-04-07 Thu 13:13]--[2022-04-07 Thu 13:56] =>  0:43
+CLOCK: [2022-04-07 Thu 11:45]--[2022-04-07 Thu 12:07] =>  0:22
+:END:
+We may save some time by not doing twice equivalent sums
+
+
+* Talk to Ragnvald
+:LOGBOOK:
+CLOCK: [2022-04-07 Thu 10:00]--[2022-04-07 Thu 10:20] =>  0:20
+:END:

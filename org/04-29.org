@@ -1,0 +1,48 @@
+#+title: 04 29
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-04-29 Fri 17:04]
+| Headline                                 |   Time |
+|------------------------------------------+--------|
+| *Total time*                             | *4:50* |
+|------------------------------------------+--------|
+| Figure out the energy coming from the... |   0:06 |
+| Do some calc                             |   4:44 |
+#+END:
+
+
+* Figure out the energy coming from the exponent in the creation
+:LOGBOOK:
+CLOCK: [2022-04-29 Fri 10:59]--[2022-04-29 Fri 11:05] =>  0:06
+:END:
+Should it be E or E^0?
+Annoyingly, I think it is actually supposed to be E
+
+* Do some calc
+:LOGBOOK:
+CLOCK: [2022-04-29 Fri 16:08]--[2022-04-29 Fri 17:04] =>  0:56
+CLOCK: [2022-04-29 Fri 15:36]--[2022-04-29 Fri 15:58] =>  0:22
+CLOCK: [2022-04-29 Fri 14:40]--[2022-04-29 Fri 15:36] =>  0:56
+CLOCK: [2022-04-29 Fri 13:45]--[2022-04-29 Fri 14:01] =>  0:16
+CLOCK: [2022-04-29 Fri 12:53]--[2022-04-29 Fri 12:54] =>  0:01
+CLOCK: [2022-04-29 Fri 11:40]--[2022-04-29 Fri 12:53] =>  1:10
+CLOCK: [2022-04-29 Fri 11:25]--[2022-04-29 Fri 12:25] =>  1:00
+:END:
+
+Broken inversion symmetry, second term (E0 + E0) gives very high contrib for the 0->+-1 transition when tz>1
+These contrib come from the s=+1 cone. The contribs from s=-1 decrease rapidly
+Behaviour the same for N=M+1 and M=N+1 transitions.
+
+Broken inversion symmetry, first term (E + E) behaves very well for tz >= 0.
+The s=+1 and s=-1 cones give contributions that cancel quite well, so that for 0<=tz<1 we have the exact same result as for tz=0, while for tz>1 the effect "collapse" and we get only a small negative (as opposed to the usual positive) result.
+The same is true for negative tz
+In the inversion symmetric case, the terms seem to not blow up, but NIntegrate is having a hard time, so difficult to tell.
+In the case of inversion symmetry, the 0->+-1 term blows up for (E+E) term
+
+For the Type II contributions, the first term (E+E) seem to also behave well in the case of broken inversion symmetry, with both chiralities included.
+The s=-1 causes NIntegrate to have some issues
+
+For the Type II contributions, the second term (E0 + E0) gives very high contributions.
+They seem to not follow any clear pattern, and there are lots of warnings, so we should check if there are some numerical instabilities.
+
+** TODO In particular, we can analytically find the limits of integration and do the integral for one of the trouble-terms ( for example the one with contrib 31 )

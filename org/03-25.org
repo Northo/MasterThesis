@@ -1,0 +1,11 @@
+#+TITLE: 03 25
+
+* Read paper from Alireza
+:LOGBOOK:
+CLOCK: [2022-03-25 Fri 12:06]--[2022-03-25 Fri 12:08] =>  0:02
+CLOCK: [2022-03-25 Fri 11:41]--[2022-03-25 Fri 12:00] =>  0:19
+CLOCK: [2022-03-25 Fri 11:04]--[2022-03-25 Fri 11:10] =>  0:06
+:END:
+Can at the very least be a nice source to cite for "this has previously been done for X, Y, Z using a similar approach, however, our results is a novel effect..."
+
+Very concise description of Luttinger's method

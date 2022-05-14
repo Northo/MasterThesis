@@ -1,0 +1,15 @@
+#+title: 04 28
+
+* Write down the correct expressions
+:LOGBOOK:
+CLOCK: [2022-04-28 Thu 09:22]--[2022-04-28 Thu 09:34] =>  0:12
+:END:
+
+* Comptue tz with correct alpha
+:LOGBOOK:
+CLOCK: [2022-04-28 Thu 09:46]--[2022-04-28 Thu 10:13] =>  0:27
+:END:
+Actually pay attention to the warnings. Looks like there might be some numerical instability
+
+** TODO Look very carefully at the alpha normalization factor
+Possibly cange to using the factor used in Tchoumakov

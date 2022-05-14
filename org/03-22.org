@@ -1,0 +1,46 @@
+#+TITLE: 22 03
+
+#+BEGIN: clocktable :scope file :maxlevel 2
+#+CAPTION: Clock summary at [2022-03-22 Tue 16:12]
+| Headline                                   |   Time |      |
+|--------------------------------------------+--------+------|
+| *Total time*                               | *4:54* |      |
+|--------------------------------------------+--------+------|
+| Clean up thesis                            |   4:52 |      |
+| \_  Write down the explicit form of the... |        | 4:52 |
+| Div                                        |   0:02 |      |
+| \_  Mail                                   |        | 0:02 |
+#+END:
+
+
+* Clean up thesis
+
+** Write down the explicit form of the eigenfuctions
+:LOGBOOK:
+CLOCK: [2022-03-22 Tue 14:49]--[2022-03-22 Tue 16:12] =>  1:23
+CLOCK: [2022-03-22 Tue 13:50]--[2022-03-22 Tue 14:16] =>  0:26
+CLOCK: [2022-03-22 Tue 13:00]--[2022-03-22 Tue 13:30] =>  0:30
+CLOCK: [2022-03-22 Tue 11:24]--[2022-03-22 Tue 12:04] =>  0:40
+CLOCK: [2022-03-22 Tue 11:00]--[2022-03-22 Tue 11:10] =>  0:10
+CLOCK: [2022-03-22 Tue 10:50]--[2022-03-22 Tue 10:58] =>  0:08
+CLOCK: [2022-03-22 Tue 09:51]--[2022-03-22 Tue 10:31] =>  0:40
+CLOCK: [2022-03-22 Tue 08:45]--[2022-03-22 Tue 09:40] =>  0:55
+:END:
+Assume that our previous calculation is correct.
+Can also take inspiration from the papers Yu and Whatever, if those expressions are neater/easier to work with.
+
+- Maybe better to adopt the notation \( p_i -> \Pi_i = p_i + i e A_i \) to avoid confusion with p, q, ptilde etc
+- PRB 81, 195431 (2010), Koshino and Anduo:
+  #+begin_quote
+  we shall completely neglect the spin Zeeman energy because
+  the spin splitting is much smaller than Landau-level separa-
+  tions
+  #+end_quote
+  Alireza often asks about the Zeeman, so maybe this is a good reference on why to drop the effect.
+
+* Div
+
+** Mail
+:LOGBOOK:
+CLOCK: [2022-03-22 Tue 10:58]--[2022-03-22 Tue 11:00] =>  0:02
+:END:

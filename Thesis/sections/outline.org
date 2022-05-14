@@ -1,0 +1,39 @@
+#+title: Outline
+
+* Outline
+
+** Topological materials
+
+*** From high energy phsyics to condensed matter Dirac materials
+Start from the Dirac Lagrangian, and show the Weyl decomposition
+We exactly recover the Hamiltonian of a dirac cone
+See chernodubThermalTransportGeometry2021 eq.~(2)
+
+** The response
+
+*** Discussion about the stress energy tensor
+Derive the stress energy tensor, comment on symmetric vs non-symmetric
+Refer to Stoof
+
+
+*** Magnetization currents
+In time reversal broken systems, we may have local circulating magnetization currents.
+These do not contribute to the transport, but do show up in our result from the kubo formula.
+Thus, to find the measurable transport current, these must be subtracted.
+See chernodubThermalTransportGeometry2021
+
+*** Brief discussion on Tatara vs Luttinger
+
+*** Show some widemann-franz, mottt, etc relations?
+
+* Ideas
+** Divergence in tz
+From Stoof it seems like the magnetization goes to zero as T and mu goes to zero, however, there are two important questions.
+Is the result valid for the limit that we are considering.
+They say something about T=0 \omega whatever vs T whatever \omega = 0.
+Also, does it matter that we have a background magnetic field, when calculating the magnetization?
+One hope is that the magnetization will cancel our divergence.
+
+** Extend to finite potential
+Having a non-zero potential is very interesting, as this drastically changes the Fermi surface, particualrly for tilted systems
+"The anomalous hall and nernst effect has beens shown to have interesting chemical potential dependence for tilted system..." (see ferreirosAnomalousNernstThermal2017)
