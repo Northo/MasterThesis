@@ -636,17 +636,11 @@ With
   \left[ 2^{N+M-1} (N-1)! M! \pi l_B^2 \right]^{-\frac{1}{2}}.
 \end{align}
 we find explicitly
-\begin{multline}
+\begin{equation}
   J_{\vec{k} m s, \vec{k} n s} = J_{k_z m n s} =
-  \frac{s v_F e}{\sqrt{\alpha _{k_z m s}^2 + 1} \sqrt{\alpha _{k_z n s}^2 + 1}}\\
-  \left(
-    \alpha _{k_z m s}
-    \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
-    +
-    \alpha _{k_z n s}
-    \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
-  \right).
-\end{multline}
+  s v_F e
+  \frac{\alpha_{k_z m s} \delta_{M-1, N} + \alpha_{k_z n s} \delta_{M, N-1}}{\sqrt{\alpha _{k_z m s}^2 + 1} \sqrt{\alpha _{k_z n s}^2 + 1}}.
+\end{equation}
 
 
 \subsubsection{The stress-energy tensor operator}
@@ -731,48 +725,44 @@ The terms in the integrand are exactly the same as in the current matrix element
 By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
 \begin{equation}
   \label{eq:26}
-  \begin{split}
-    T^{0y \;(1)}_{\vec{k} ns, \vec{k}ms} (\vec{q})
-    &= \frac{i s}{4}
-      \frac{
-      (E_{k_z m s} + E_{k_z n s}- 2\mu )
-      }{
-      \sqrt{\alpha _{k_zms}^2 +1}
-      \sqrt{\alpha _{k_zns}^2 + 1}
-      }\\
-    &\left(
-      \alpha _{k_z m s}
-      \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
-      -
-      \alpha _{k_z n s}
-      \sqrt{\frac{2^{M} M!}{2^{N-1} (N-1)!}} \delta_{M, N-1}
-      \right).
-  \end{split}
+  T^{0y \;(1)}_{\vec{k} ns, \vec{k}ms} (\vec{q})
+  = \frac{i s}{4}
+  \frac{
+    (E_{k_z m s} + E_{k_z n s}- 2\mu )
+  }{
+    \sqrt{\alpha _{k_zms}^2 +1}
+    \sqrt{\alpha _{k_zns}^2 + 1}
+  }
+  \left(
+    \alpha _{k_z m s}
+    \delta_{M-1, N}
+    -
+    \alpha _{k_z n s}
+    \delta_{M, N-1}
+  \right).
 \end{equation}
 where $\bar{\vec{q}} = (q_x, -q_y, q_z)$.
 
 \begin{summary}
   For a untilted case, in the local limit \( q\to 0 \), we have the matrix elements
-\begin{align}
-  J_{\vec{k} ms; \vec{k} ns}&=
-                                                   \Gamma_{k_z m n s}
-                                                   sv_F e
-                                                    \left(
-                                                    \alpha_{\vec{k} m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta _{M-1, N}
-                                                    + m\leftrightarrow n
-                                                    \right),\\
-                                                   %% 
-  T^{0y\; (1)}_{\vec{k} ns, \vec{k}ms} &=
-                                                         \begin{multlined}[t]
-                                                           \frac{is \Gamma_{k_z m n s}}{4}
-                                                           \left(E_{k_z m s} + E_{k_z n s}- 2\mu \right)\\
-                                                           \left(
-                                                             \alpha_{k_z m s} \sqrt{\frac{2^{N} N!}{2^{M-1} (M-1)!}} \delta_{M-1, N}
-                                                             -
-                                                             m\leftrightarrow n
-                                                           \right)
-                                                         \end{multlined}
-\end{align}
+  \begin{align}
+    J_{\vec{k} ms; \vec{k} ns}&=
+                                \Gamma_{k_z m n s}
+                                sv_F e
+                                \left(
+                                \alpha_{\vec{k} m s} \delta _{M-1, N}
+                                + m\leftrightarrow n
+                                \right),\\
+                                %%
+    T^{0y\; (1)}_{\vec{k} ns, \vec{k}ms} &=
+                                           \frac{is \Gamma_{k_z m n s}}{4}
+                                           \left(E_{k_z m s} + E_{k_z n s}- 2\mu \right)
+                                           \left(
+                                           \alpha_{k_z m s} \delta_{M-1, N}
+                                           -
+                                           m\leftrightarrow n
+                                           \right).
+  \end{align}
 where \( m \leftrightarrow n \) represent the preceding term under the interchange of \( m, n \) and where we have defined
 $
 \Gamma_{k_z m n s} =
@@ -874,6 +864,7 @@ This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B /\hbar $, 
                                                                                             \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B /\hbar } \mathrm{d}k_x \int\mathrm{d}k_z \\
   &= \frac{\mathcal{V} e B}{(2 \pi)^2 \hbar } \int \mathrm{d}k_{z}.
 \end{align}
+
 Recall the response function
 \begin{equation}
   \chi ^{xy} (\omega , \vec{q}) =
@@ -891,6 +882,26 @@ Recall the response function
   }
   .
 \end{equation}
+Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
+Collecting dimensionfull quantites, the response function reads
+\begin{multline}
+  \label{eq:114}
+\lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
+  -\frac{e v_F \sqrt{2 e B} }{8 (2 \pi)^2}
+  \sum\limits_{m n}^{}
+  \int \mathrm{d} \kappa_z
+  [n_{\kappa_z m s} - n_{\kappa_z n s}] \\
+  \times
+  \frac{
+    (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+    (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M})
+  }{
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta)
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta + \frac{\omega}{v_{F} \sqrt{2 e B} })
+  }.
+\end{multline}
+
+
 Splitting up the stress-energy tensor, and considering each part of the response function by itself, as explained above, gives
 
 \begin{equation}
