@@ -1,13 +1,13 @@
-\usepackage{amsmath}
 \usepackage{mathtools}
-\usepackage{pdfpages}
+\usepackage[final]{pdfpages}
 \usepackage{amsfonts}
-\usepackage[style=alphabetic]{biblatex}
+\usepackage{biblatex}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{braket}
 \usepackage{amsthm}
+\usepackage{microtype}
 \usepackage{thmtools}
 \usepackage{tikz}
 \usepackage{pgfplots}
@@ -16,15 +16,17 @@
 \usepackage{float}
 \usepackage{comment}
 \usepackage{slashed}  % Gives the /slashed{A} macro. Consider in the future to switch with manually greated macro /slashed made from /not operator, as read in forum (supposedly looks better)
-\usepackage{glossaries}
+\usepackage[acronym]{glossaries}
 \usepackage{hyperref}
 \hypersetup{
-hidelinks=true,
+hidelinks,
 final=true,
 }
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots}
+
+\setacronymstyle{short-long}
 
 \addbibresource{Master.bib}
 \addbibresource{manual.bib}
