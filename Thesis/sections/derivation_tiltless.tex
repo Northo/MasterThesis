@@ -602,7 +602,7 @@ Taking the limit we find the simple form
 \begin{equation}
   \label{eq:41}
   J_{\vec{k} m s; \vec{k} n s} = J_{k_z m n s} =
-  s v_F e \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
+  s v_F e l_B \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
   \left[
     a_{k_zms} b_{k_z n s} H_{M-1}(\tilde{y} )H_N(\tilde{y} )
     + m \leftrightarrow n
@@ -618,7 +618,7 @@ to write
 \begin{equation}
   \label{eq:62}
   J_{\vec{k} m s, \vec{k} n s} = J_{k_z m n s}
-  = s v_F e \sqrt{\pi} (a_{k_z ms} b_{k_z n s} \delta_{M-1, N} 2^N N! + m \leftrightarrow n).
+  = s v_F e l_B \sqrt{\pi} (a_{k_z ms} b_{k_z n s} \delta_{M-1, N} 2^N N! + m \leftrightarrow n).
 \end{equation}
 With
 \begin{align}
@@ -886,221 +886,90 @@ Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \
 Collecting dimensionfull quantites, the response function reads
 \begin{multline}
   \label{eq:114}
-\lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
-  -\frac{e v_F \sqrt{2 e B} }{8 (2 \pi)^2}
+\lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  -\frac{e^2 v_F B }{4 (2 \pi)^2}
   \sum\limits_{m n}^{}
   \int \mathrm{d} \kappa_z
-  [n_{\kappa_z m s} - n_{\kappa_z n s}] \\
+  [n_{\kappa_z m s} - n_{\kappa_z n s}]
+  [(\alpha_{\kappa_z m s}^2 + 1) (\alpha_{k_z n s}^2 + 1)]^{-1}\\
   \times
   \frac{
     (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
     (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M})
   }{
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta)
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta + \frac{\omega}{v_{F} \sqrt{2 e B} })
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta)^2
   }.
 \end{multline}
 
-
-Splitting up the stress-energy tensor, and considering each part of the response function by itself, as explained above, gives
-
-\begin{equation}
-  \begin{split}
-    \chi ^{xy \; (i)}(\omega , \vec{q}) &=
-    \begin{multlined}[t]
-      \lim_{\eta \to 0}
-      \frac{eB i v_F \hbar  }{\hbar (2\pi)^2 }
-      \sum\limits_{mn}^{} 
-      \int \mathrm{d}k_z
-      [n_{\vec{k} ms} - n_{\vec{k}+\qvec{q} ns}]\\
-      \frac{
-        J^x_{\vec{k}ms, \vec{k}+\qvec{q} ns}(\vec{q})
-        T^{0y\; (i)}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
-      }{
-        (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + i \hbar  \eta )
-        (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + \hbar \omega + i \hbar  \eta )
-      }
-    \end{multlined}\\
-    &=
-    \begin{multlined}[t]
-      \lim_{\eta \to 0}
-      \frac{ -e^2 B v_F^2 s
-        \Gamma ^-_{\vec{k} \qvec{q} m n s}
-        \Gamma ^+_{\vec{k} \qvec{q} m n s}
-      }{4 (2\pi )^2}
-      \sum\limits_{mn}^{}  
-      \int \mathrm{d}k_z\\
-      \frac{
-        (\Xi _1 + \Xi _2)
-        \left( \dots  \right)^i
-        [n_{\vec{k} ms} - n_{\vec{k}+\qvec{q} ns}]
-      }{
-        (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + i \hbar  \eta )
-        (E_{\vec{k} m s} - E_{\vec{k} + \qvec{q} ns} + \hbar \omega + i \hbar  \eta )
-      },
-    \end{multlined}
-  \end{split}
-\end{equation}
-where
-
-\begin{align}
-  (\dots )^1 &= s(E_{\vec{k} m s} + E_{\vec{k} + \qvec{q} ns} - 2\mu ) (\Xi _{1} (\bar{\vec{q}}, m, n, s) - \Xi _2(\bar{\vec{q}}, m, n, s)),\\
-  (\dots)^2 &= \frac{\hbar v_F}{l_B}
-                                                           \left\{
-                                                             \frac{\sqrt{2M}}{\alpha _{\vec{k} m s} }
-                                                             \Xi_1(\bar{\vec{q}}, m, n, s)
-                                                             \right.
-                                                             \left.+
-                                                             \sqrt{2(M-1)}
-                                                             \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\alpha _{\vec{k} m-1 s}}
-                                                             \Xi_1(\bar{\vec{q}}, m-1, n -1, s)
-                                                           \right\},\\
-  (\dots )^3 &= \frac{\hbar  v_F}{l_B}
-                                                           \left\{
-                                                             \frac{\sqrt{2 N} }{\alpha _{\vec{k} + \qvec{q} n s}}
-                                                             \Xi _2(\bar{\vec{q}}, m, n, s)
-                                                             \right.
-                                                             \left.+
-                                                             \sqrt{2(N-1)}
-                                                             \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\alpha _{\vec{k} + \qvec{q} n-1 s}}
-                                                             \Xi _2(\bar{\vec{q}}, m-1, n-1, s)
-                                                           \right\}.
-\end{align}
-In the interest of facilitating for the integration over $k_z$, make a change of variables in the integration, by introducing the dimensionless quantity $\kappa_z = \hbar  k_z /\sqrt{2 e B \hbar }$, which also normalizes the energy to $E_{\vec{k} m s} = v_F \sqrt{2 e B \hbar } \mathcal{\epsilon}_{\kappa _z m s}$, which is seen directly from the expression of the energy eigenvalues.
-After some cleaning up, among other taking the product $\Gamma ^-_{\vec{k}\qvec{q} m n s} \Gamma ^+_{\vec{k}\qvec{q} m n s}$ and using $l_B = \sqrt{\hbar /(e B)}$,
-\begin{equation}
-  \chi ^{xy\; (i)} (\omega , \vec{q}) =
-  \lim_{\eta \to 0}
-  \frac{-1}{4(2\pi )^2}
-  \frac{e^2 B s v_F}{\hbar }
-  e^{-\frac{l_B^2}{2} q^2}
-  \sum\limits_{mn}^{}
-  \int \mathrm{d} \kappa _z
-  \xi(\kappa_z)
-  \left( \Xi _1  + \Xi _2 \right)
-  \Delta ^i,
-\end{equation}
-where we defined
+Let us now define
 \begin{equation}
   \xi(\kappa_z) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
   \left[ (\alpha _{\kappa ms}^2 + 1) (\alpha _{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{\hbar \omega }{v_F \sqrt{2 e B \hbar }} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
-  }
+  },
 \end{equation}
-and
-\begin{align}
-  \Delta ^1 &= s (\epsilon _{\vec{\kappa} + m + s} + \epsilon _{\vec{\kappa} + \qvec{\vec{q}} ns} - 2 \frac{\hbar \mu }{v_F \sqrt{2eB\hbar }}) (\Xi _1(\bar{\vec{q}}, m, n, s) - \Xi _2 (\bar{\vec{q}}, m, n, s)),\\
-  \Delta ^2 &= 
-              \frac{\sqrt{M}}{\alpha _{\vec{k} m s} }
-              \Xi_1(\bar{\vec{q}}, m, n, s)
-              +
-              \sqrt{(M-1)}
-              \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\alpha _{\vec{k} m-1 s}}
-              \Xi_1(\bar{\vec{q}}, m-1, n -1, s),\\
-  \Delta^3 &= 
-             \frac{\sqrt{ N} }{\alpha _{\vec{k} + \qvec{q} n s}}
-             \Xi _2(\bar{\vec{q}}, m, n, s)
-             +
-             \sqrt{(N-1)}
-             \frac{\alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s}}{\alpha _{\vec{k} + \qvec{q} n-1 s}}
-             \Xi _2(\bar{\vec{q}}, m-1, n-1, s).
-\end{align}
-Considering now the local limit $q\to 0$, and using the previously found selection rules for products of the $\Xi _i$-functions.
-Using that the Laguerre polynomials are unity at the origin and writing out the $\Xi $-functions with the selection rules
-\begin{align}
-  \label{eq:32}
-  \lim_{\vec{q}\to 0} \chi ^{xy\; (1)} (\omega , \vec{q}) &=
-                                        \lim_{\eta \to 0} \frac{1}{4(2\pi )^2}
-                                        \frac{e^2 B v_F}{\hbar }
-                                        \sum\limits_{mn}
-                                        \int \mathrm{d}\kappa _z
-  \xi(\kappa _z)
-  (\epsilon _{\vec{\kappa}  m  s} + \epsilon _{\vec{\kappa} ns} - 2 \frac{\hbar \mu }{v_F \sqrt{2eB\hbar }})
- (\alpha _{\kappa n s}^2 \delta _{N, M+1} - a_{\kappa m s}^2 \delta _{N, M-1}) ,\\
-  \label{eq:33}
-  \lim_{\vec{q}\to 0} \chi ^{xy\; (2)} (\omega , \vec{q}) &=
-                                        \lim_{\eta \to 0} \frac{1}{4(2\pi )^2}
-                                        \frac{e^2 B s v_F}{\hbar }
-                                        \sum\limits_{\substack{mn\\ \mathclap{N= M-1}}}
-                                        \int \mathrm{d}\kappa _z
-                                        \xi(\kappa_z)
-                                        \left\{
-                                          \sqrt{M} \alpha _{\vec{\kappa } m s}
-                                          +
-                                          \sqrt{M-1} \alpha _{\vec{\kappa } n s} \alpha _{\vec{\kappa } ms}^2
-                                        \right\},\\
-  \label{eq:34}
-  \lim_{\vec{q}\to 0} \chi ^{xy\; (3)} (\omega , \vec{q}) &=
-                                        \lim_{\eta \to 0} \frac{-1}{4(2\pi )^2}
-                                        \frac{e^2 B s v_F}{\hbar }
-                                        \sum\limits_{\substack{mn\\ \mathclap{N= M+1}}}
-                                        \int \mathrm{d}\kappa _z
-                                        \xi(\kappa_z)
-                                        \left\{
-                                          \sqrt{N} \alpha _{\vec{\kappa } n s}
-                                          +
-                                          \sqrt{N-1} \alpha _{\vec{\kappa } m s} \alpha _{\vec{\kappa } ns}^2
-                                        \right\}.
-\end{align}
-The function \( \xi \) is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \).
+which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
-Firstly, in the second term of Eq. \eqref{eq:32}, we may relabel \( m \leftrightarrow n \), and using that \( \xi  \) is odd to get twice the first term.
-Doing a similar trick for Eq. \eqref{eq:33} renders it identical to Eq. \eqref{eq:34}.
-In total, we get
-\begin{align}
-  \lim_{\vec{q}\to 0} \chi ^{xy\; (1)} (\omega , \vec{q}) &=
-                                        \lim_{\eta \to 0} \frac{1}{4(2\pi )^2}
-                                        \frac{e^2 B v_F}{\hbar }
-                                        \sum\limits_{\substack{mn\\ \mathclap{N=M+1}}}
-                                        \int \mathrm{d}\kappa _z
-  2 \xi(\kappa _z)
-  (\epsilon _{\vec{\kappa}  m  s} + \epsilon _{\vec{\kappa} ns} - 2 \frac{\hbar \mu }{v_F \sqrt{2eB\hbar }})
- \alpha _{\kappa n s}^2 ,\\
-  \lim_{\vec{q}\to 0} \chi ^{xy\; (2,3)} (\omega , \vec{q}) &=
-                                        \lim_{\eta \to 0} \frac{-1}{4(2\pi )^2}
-                                        \frac{e^2 B s v_F}{\hbar }
-                                        \sum\limits_{\substack{mn\\ \mathclap{N= M+1}}}
-                                        \int \mathrm{d}\kappa _z
-                                        2 \xi(\kappa_z)
-                                        \left\{
-                                          \sqrt{N} \alpha _{\vec{\kappa } n s}
-                                          +
-                                          \sqrt{N-1} \alpha _{\vec{\kappa } m s} \alpha _{\vec{\kappa } ns}^2
-                                        \right\}.
-\end{align}
-Here, \( \chi ^{xy\; (2,3)} = \chi ^{xy\; (2)} + \chi ^{xy\; (3)} \).
-
-Note the $\alpha _{\kappa ns}$ factors coming from the $\Xi $ functions;
-it is also important to note that the latter term involves the chirality $s$, which is of concern as this could make pairs of nodes cancel, however, we will see that the term ends up not being dependent on $s$.
-In the static limit $\lim_{\omega \to 0}$ and with the potential $\mu =0$ the integral may be solved.
-Including only the lowest Landau level contribution, that is, the sum restricted to $m=0, n=\pm 1$, the contributions were found to be
-\begin{align}
-  \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
-  \chi ^{xy \; (1)}
-  &= \frac{1}{2} \frac{e^2B v_F}{4 (2\pi )^2 \hbar },\\
-  \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
-  \chi ^{xy \; (3)}
-  &= \frac{1}{2} \frac{e^2B s^2 v_F}{4 (2\pi )^2 \hbar }.
-\end{align}
-For clarity $s^2$ was included explicitly, showing that the aforementioned $s$-dependence is not an issue.
-The total transverse response function with only first level contributions is therefore
+In the last term of Eq. \eqref{eq:114}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
+This renders the two terms equal, and we may consider
+\[
+\alpha_{\kappa_z m s}^2 \delta_{M-1,N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \to 2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
+\]
+The final expression is then
 \begin{equation}
-  \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
-  \chi ^{xy}
-  = \frac{e^2B v_F}{4 (2\pi )^2 \hbar }.
+  \label{eq:32}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  -\frac{e^2 v_F B}{2 (2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
+  \int \mathrm{d}\kappa_z \xi(\kappa_z)
+  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} - 2 \mu) \alpha_{\kappa_z m s}^2.
 \end{equation}
-Including higher order contributions, only gives additional numerical prefactors,
-\begin{equation}
- \label{eq:35} 
-  \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
-  \chi ^{xy}
-  = \gamma_M \frac{e^2B v_F}{4 (2\pi )^2 \hbar },
-\end{equation}
-with $\gamma _0 = 1, \gamma _{20} \approx 2$, and where $\gamma _M$ goes as $\log M$.
-The first 300 contributions were calculated, shown in Figure \ref{fig:convergence_chi}.
 
+Before solving the integral, we note that in addition to the \todo{say the word diatomic?} \( N=M-1 \) selection rule of the sum, the factor with the distributions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) impose further restrictions on which transitions are energetically allowed.
+We consider the limit \( T \to 0 \) \todo{something about the Luttinger in this limit? I.e. the fact we get finite result in T-> 0 is the interesting thing about this result}, where the distributions take the form of step functions, \( n_{\kappa_z m s} \to \theta(-\epsilon_{\kappa_z m s}) \).
+As the sign of energy level \( m \), for \( m \neq 0 \), is given by the sign of \( m \) itself, this gives a rather simple restriction on the sum.
+For the zeroth energy level, the sign of the energy is given by \( \sign(-s\kappa_z) \).
+The distribution factor is
+\begin{equation}
+  n_{\vec{k} m s} - n_{\vec{k} n s} =
+  \begin{cases}
+    \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0,\\
+    - \sign(m) & m,n \neq 0,\\
+    -\sign(m) \theta\left[\sign(m) s \kappa_z\right] & n = 0.
+  \end{cases}
+\end{equation}
+Combining this with the selection rule \( N=M-1 \), we see that the only allowed transitions are
+\[ M \to -N = -(M-1), -M \to N = (M-1). \]
+
+The last simplification we will make, is to note that the step function is odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), and likewise with \( \epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} \).
+In the case of zero chemical potential, the expression may be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
+
+For zero chemical potential, the response function is
+\begin{equation}
+  \label{eq:33}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  -\frac{e^2 v_F B}{(2 \pi)^2}
+  \sum\limits_{N=0} \int \mathrm{d}\kappa_z
+  \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+  \alpha_{\kappa_z m s}^2
+  \big|_{\underset{n=-N}{m=N+1}},
+\end{equation}
+where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( (-\infty, 0) \) for \( N = 0, s=-1 \), and \( (0, \infty) \) for \( N=0, s=1 \).
+
+Including only the first term of the sum, we find
+\begin{equation}
+  \label{eq:34}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2}.
+\end{equation}
+Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
+\begin{equation}
+  \label{eq:117}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2},
+\end{equation}
+where the factor by analytical integration was found to be \( g_0 = 1, \gamma_{20} \approx 2 \).
+Furthermore, \( \gamma_N \) goes like \( \log N \).
+The first 300 contributions are shown in Figure \ref{fig:contributions}.
 
 % \todo{Make sure have notes that consider zero T for the distribution}
 % In the static limit $\omega \to 0$, with potential $\mu =0$ \todo{explain}, the integral was solved in a CAS \todo{how to formulate this?}, and found to be $\frac{1}{2}$.
@@ -1149,7 +1018,7 @@ with $\gamma _N$ a prefactor dependent on how many landau levels are included in
 The response function is independent of the chirality $s$ of the Dirac point.
 It was found that $\gamma _0 = 1, \gamma _{20} \approx 2$ and that the prefactor goes like $\log N$.
 
-Firstly, the result differ slightly from that found by~\citeauthor{arjonaFingerprintsConformalAnomaly2019} ~\cite{arjonaFingerprintsConformalAnomaly2019}
+Firstly, the result differ slightly from that found by~\textcite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
   \lim_{\omega \to 0} \lim_{\vec{q}\to 0}
   \chi ^{xy}
