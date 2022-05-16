@@ -36,12 +36,12 @@ We call these hole and electron pockets, respectively.
 
 Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac cone
 \begin{equation}
-  \label{eq:37}
+  \label{eq:32}
   H(\vec{K} ^{'\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \quad k_{x}, k_{y}, k_{z} \ll 1.
 \end{equation}
 When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian of around the cone, is
 \begin{equation}
-  \label{eq:38}
+  \label{eq:33}
   H'(\vec{k}) = \mp 2 t k_{x} \sigma_{x} - 2t k_{y} \sigma_{y} - 2 t k_{z} \sigma_{z} \mp \gamma k_{x}.
   % h'(\vec{v}) = -2t \vec{k} \vec{\sigma} - \gamma k_{x}.
 \end{equation}
@@ -50,7 +50,7 @@ The expression may be made even more clear by moving the sign \(\pm\)-sign into 
 The Hamiltonian is invariant under a sign change of the first term, as the isotropic Dirac Hamiltonian is invariant under inversion.
 In the tilt-term, we move the sign dependence into \(\gamma \), and the linearized model is
 \begin{equation}
-  \label{eq:39}
+  \label{eq:34}
   H'(\vec{k}) = - 2t \vec{k} \vec{\sigma} - \gamma^{\pm} k_{x},
 \end{equation}
 where \(\gamma ^{\pm} = \pm \gamma \) with the upper sign corresponding to the node at \(k_{x} = + k_{0}\) and the lower sign corresponds to the node at \(k_{x} = - k_{0}\).
@@ -102,7 +102,7 @@ We will in this section derive and elucidate the Landau levels and their regions
 
 Consider the Hamiltonian
 \begin{equation}
-  \label{eq:40}
+  \label{eq:35}
   H = v_{F} \vec{t} \vec{k} + s v_{F} \vec{k} \vec{\sigma},
 \end{equation}
 where \(\vec{t}\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
@@ -115,12 +115,12 @@ We take the field to be in the \( z \)-direction, and use the Landau gague \(\ve
 
 The Landau level equation is
 \begin{equation}
-  \label{eq:42}
+  \label{eq:36}
   \left(H_{B} - E\right) \ket{\psi } = 0,
 \end{equation}
 with
 \begin{equation}
-  \label{eq:44}
+  \label{eq:37}
   H_{B} = v_F \left(t _{\perp} k^B_{x} + t _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
@@ -130,10 +130,10 @@ In order to use the ladder operator method used for the untilted cone, we must g
   \todo{Verify this}
 }
 To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
-Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:42}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
+Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:36}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
 \begin{equation}
-  \label{eq:43}
+  \label{eq:38}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0.
 \end{equation}
 
@@ -151,7 +151,7 @@ The problematic part of the Hamiltonian with regards to finding the Landau level
 We will now find the boost parameter that eliminates \(k_{x}\) from the diagonal.
 We have
 \begin{equation}
-  \label{eq:45}
+  \label{eq:39}
   R^{2} = e^{\Theta \sigma _{x} } =
   \begin{pmatrix}
     \cosh \theta & \sinh \theta \\
@@ -160,7 +160,7 @@ We have
 \end{equation}
 and as $[R, \sigma_{x}] = 0$,
 \begin{equation}
-  \label{eq:46}
+  \label{eq:40}
   R \sigma _{x} R =  R^{2} \sigma _{x} =
   \begin{pmatrix}
     \sinh \theta & \cosh \theta \\
@@ -170,12 +170,12 @@ and as $[R, \sigma_{x}] = 0$,
 as the effect of \(\sigma _{x}\) is to transpose the rows.
 The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
-  \label{eq:47}
+  \label{eq:41}
   t_{\perp} \cosh \theta + s \sinh \theta = 0.
 \end{equation}
 Solving for \(\theta \) we get
 \begin{equation}
-  \label{eq:48}
+  \label{eq:42}
   \theta = \log (
   \pm \frac{\sqrt{s - t_{\perp}}}{\sqrt{s + t_{\perp}}}
   ).
@@ -183,7 +183,7 @@ Solving for \(\theta \) we get
 \todo{NB: depending of choice of sign in log, we get different signs in answer}
 Alternatively, written in a slightly suggestive form,
 \begin{equation}
-  \label{eq:49}
+  \label{eq:43}
   \tanh \theta =
   - s t_{\perp}.
 \end{equation}
@@ -195,7 +195,7 @@ Before we proceed any further, we will put the above into a more solid context, 
 
 With no magnetic field, the eigenvalues of the system are
 \begin{equation}
-  \label{eq:50}
+  \label{eq:44}
   E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
 \end{equation}
 where in the literature the first term is sometimes referred to as the \emph{kinetick} term while the latter is the \emph{potential} term.
@@ -207,11 +207,11 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
 \end{proof}
 
 
-Expressed in the parameter \(t\), the result in Eq. \eqref{eq:49} has an intuitive, and quite visual, interpretation.
+Expressed in the parameter \(t\), the result in Eq. \eqref{eq:43} has an intuitive, and quite visual, interpretation.
 As described above, we have rotated our frame such that the tilt is confined to the \(x,z\)-plane, i.e. no tilt in the \(y\)-direction.
 The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
 \begin{equation}
-  \label{eq:51}
+  \label{eq:45}
   \theta = - s \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - s \tanh^{-1} t_{x}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
@@ -258,11 +258,11 @@ As the \(t\)-vector gets larger, the region of valid directions is reduced to an
   \caption{\label{fig:tiltSphere} TODO}
 \end{figure}
 
-We now return to solving Eq. \eqref{eq:43}, using the solution angle we just found.
+We now return to solving Eq. \eqref{eq:38}, using the solution angle we just found.
 By insertion, and after some clean up, we get
 \emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
 \begin{multline}
-  \label{eq:52}
+  \label{eq:46}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0\\
   = v_F \begin{pmatrix}
           k_z ( s + t_z \gamma ) - E / v_F \gamma & -s ( ik_y + k_z t_x t_z \gamma - k_x / \gamma - E /v_{F} \gamma t_x)\\
@@ -273,7 +273,7 @@ By insertion, and after some clean up, we get
 In order to simplify this further, absorb \(\gamma \beta (k_{z} t_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
-  \label{eq:29}
+  \label{eq:47}
   \begin{split}
     \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta ( E /v_F - k_{z} t_{\parallel}),\\
     \tilde{k}_{y} &=  k_{y},\\
@@ -283,17 +283,17 @@ Thus, let
 
 These expressions warrant some explanation, as the Lorentz boost is of course
 \begin{equation}
-  \label{eq:23}
+  \label{eq:48}
   \tilde{k_x} = \gamma (k_x - \beta \frac{E}{v_{F}}),
 \end{equation}
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
-It can thus look like our expression in Eq. \eqref{eq:29} is wrong.
+It can thus look like our expression in Eq. \eqref{eq:47} is wrong.
 The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
 \todo{Something smart here}
 
 The eigenvalue equation is simply
 \begin{equation}
-  \label{eq:53}
+  \label{eq:49}
   \left[  \gamma \left( t_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
   s \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
@@ -302,7 +302,7 @@ This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e \tilde{y} \frac{v_{y} v_{
 
 The Landau level equation thus reads
 \begin{equation}
-  \label{eq:54}
+  \label{eq:50}
   \left[
   \sum\limits_{i} s v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
@@ -311,13 +311,13 @@ The Landau level equation thus reads
 where \(\vec{\tilde{A}}=-B_{z}/ \gamma  \tilde{y} \hat{x}\).
 We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
 \begin{align}
-  \label{eq:55}
+  \label{eq:51}
   \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
   \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
 \end{align}
 Cleaning up, we get
 \begin{align}
-  \label{eq:56}
+  \label{eq:52}
   E &= t_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
   E &= \tilde{k}_{z} v_{F} \left( t_{\parallel}  - s \hbar / \gamma  \right), & m=0.
 \end{align}
@@ -325,7 +325,7 @@ Cleaning up, we get
 As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
-  \label{eq:57}
+  \label{eq:53}
   E = t_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}
 \end{equation}
 As the tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
@@ -372,7 +372,7 @@ where capital letters indicate absolute value of corresponding quantity, $M=|m|,
 \end{equation}
 Taking care to keep track of boosted and rescaled quantites, the eigenstate in the boosted frame is
 \begin{equation}
-  \label{eq:58}
+  \label{eq:54}
   \tilde{\psi}(\tilde{\vec{r}}) =
   \frac{1}{\sqrt{L_xL_z}}
   \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha _{\tilde{k}_z m s}^2 + 1}}
@@ -399,7 +399,7 @@ For \( m\neq 0 \)
 \]
 and thus
 \begin{equation}
-  \label{eq:59}
+  \label{eq:55}
   \alpha_{k_z m s} =
   \frac{-\sqrt{ \alpha M }}{\sign(m) s \sqrt{\alpha M + \kappa^2} - \kappa}
 \end{equation}
@@ -421,7 +421,7 @@ Reinserting explicitly, in the boosted frame, that
 \]
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 \begin{equation}
-  \label{eq:60}
+  \label{eq:56}
   \chi =
   \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
@@ -432,7 +432,7 @@ and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 
 
 \begin{equation}
-  \label{eq:61}
+  \label{eq:57}
   \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}})
   =
   \frac{1}{\sqrt{L_xL_z}}
@@ -446,7 +446,7 @@ and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 \end{equation}
 For later convenience, let us explicitly define
 \begin{equation}
-  \label{eq:62}
+  \label{eq:58}
   \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}}) =
   \frac{e^{i \tilde{k}_{x} \tilde{x} + i k_{z} z}}{\sqrt{L_{x} L_{z}} }
   \underbrace{
@@ -462,7 +462,7 @@ For later convenience, let us explicitly define
 \end{equation}
 and thus
 \begin{equation}
-  \label{eq:63}
+  \label{eq:59}
   \tilde{\phi}_{\vec{k} m s} (y) =
   e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
@@ -472,7 +472,7 @@ and thus
 \end{equation}
 with
 \begin{align}
- \label{eq:64}
+ \label{eq:60}
   a_{\vec{k} m s} &=
                     \frac{
                     \alpha _{\tilde{k}_z m s} \sqrt[4]{\alpha }
@@ -505,7 +505,7 @@ e^{\theta \sigma _x} =
 \]
 The upper and lower part of the spinor are orthogonal, thus we have
 \begin{equation}
-  \label{eq:65}
+  \label{eq:61}
   \braket{\psi  | \psi } = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \frac{1}{\alpha } \braket{\tilde{\psi}  | \tilde{\psi} } = 1 \implies \mathcal{N}^{*}\mathcal{N} = \frac{1}{\alpha }.
 \end{equation}
 We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
@@ -540,13 +540,13 @@ We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
         b_{k_z m s} H_M (\chi)
       \end{pmatrix},
     \]
-    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{\beta l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:64}.
+    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{\beta l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:60}.
 \end{Proposition}
 
 \subsection{The energy momentum tensor}
 The \emph{canonical} energy-momentum tensor is generally defined by
 \begin{equation}
-  \label{eq:19}
+  \label{eq:62}
   T^{\mu \nu} =  \frac{\delta \mathcal{L}}{\delta(\partial_{\mu} \phi_{i})} \partial_{\nu} \phi_i - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
 where the index \( i \) runs over the types of fields.
@@ -555,7 +555,7 @@ This is often overlooked in many textbooks and papers, so we will here elucidate
 While a proper derivation requires the use of Grassman variables and defining left and right derivation, which we will not do here, some simple considerations help in understanding the issue.
 In the standard text book derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
 \begin{equation}
-  \label{eq:30}
+  \label{eq:63}
   \frac{\mathrm{d} \mathcal{L}(\psi_{i}, \partial \psi_i)}{\mathrm{d} x_{\nu }} \equiv \mathrm{d}^{\nu } \mathcal{L}
   = \frac{\partial \mathcal{L}}{\partial (\partial_{\mu } \phi_i)} \frac{\partial(\partial _{\mu } \psi_i)}{\partial x_{\nu }}
   + \frac{\partial \mathcal{L}}{\partial \psi _{i}} \frac{\partial \psi_i}{\partial x_{\nu }}.
@@ -563,13 +563,13 @@ In the standard text book derivation of then canonical energy-momentum tensor, o
 This expansion, however, ignores the non-commutative nature of the fields.
 For concreteness, consider \( \psi _i = \bar{\psi} \).
 Heuristically, the correct expression would be obtained by reordering the factors in the two terms.
-By naively employing Eq. \eqref{eq:19}, the resulting canonical energy-momentum tensor of the Dirac theory would be
+By naively employing Eq. \eqref{eq:62}, the resulting canonical energy-momentum tensor of the Dirac theory would be
 \begin{equation}
   T^{\mu \nu} = \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} \partial^{\nu} \bar{\psi}  + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
 while the correct form is \cite[Eq.~3-153]{itzyksonQuantumFieldTheory1980}
 \begin{equation}
-  \label{eq:21}
+  \label{eq:64}
   T^{\mu \nu} = \partial^{\nu} \bar{\psi} \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L}.
 \end{equation}
 
@@ -589,7 +589,7 @@ H_s = s \sigma^i k_i
 can be considered the Hamiltonian of one part of a Weyl decomposition of a Dirac system.
 The Weyl field has the Lagrangian density \cite{kachelriessQuantumFieldsHubble2018}
 \begin{equation}
-  \label{eq:18}
+  \label{eq:65}
   \mathcal{L} = i \phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi,
 \end{equation}
 which may be seen directly from the Dirac Lagrangian \( i \bar{\psi} \slashed{\partial } \psi  \) by taking \( \psi = (\phi_L, \phi_R)^T \) and set, for example, \( \phi _R = 0 \).
@@ -600,9 +600,9 @@ Symmetrizing in daggered and undaggered fields
   \mathcal{L} = \frac{i}{2} \left(\phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma^{\mu} \phi \right),
 \]
 which will prove to be more convenient to work with.
-Adapting the definition Eq. \eqref{eq:21} the energy-momentum tensor for the untilted Dirac cone is thus
+Adapting the definition Eq. \eqref{eq:64} the energy-momentum tensor for the untilted Dirac cone is thus
 \begin{equation}
-  \label{eq:20}
+  \label{eq:66}
   T^{\mu \nu} =
   \frac{i}{2} (
   \phi^{\dagger} \sigma^{\mu} \partial_{\nu} \phi
@@ -614,12 +614,12 @@ Adapting the definition Eq. \eqref{eq:21} the energy-momentum tensor for the unt
 Moving now to the tilted case, the 4x4 Lagrangian becomes \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}
 \todo{check sign compared to action in stoof}
 \begin{equation}
-  \label{eq:31}
+  \label{eq:67}
   \mathcal{L}_{\text{tilt}} = i \bar{\psi} \Gamma ^{\mu }\partial_{\mu } \psi ,
 \end{equation}
 where we have introduced modified gamma matrices
 \begin{equation}
-  \label{eq:107}
+  \label{eq:68}
   \Gamma ^{\mu } =
   \begin{cases}
     \gamma ^{\mu } + t^{\mu} \gamma ^0& \text{ inversion symmetry broken },\\
@@ -628,7 +628,7 @@ where we have introduced modified gamma matrices
 \end{equation}
 with \( t^{\mu } = (0, \vec{t}) \).
 \begin{equation}
-  \label{eq:108}
+  \label{eq:69}
   T^{\mu \nu} =
   \frac{i}{2} (
   \phi^{\dagger} \tilde{\sigma} ^{\mu} \partial_{\nu} \phi
@@ -638,7 +638,7 @@ with \( t^{\mu } = (0, \vec{t}) \).
 \end{equation}
 where we defined the modified Pauli matrices
 \begin{equation}
-  \label{eq:109}
+  \label{eq:70}
   \tilde{\sigma}^{\mu} =
   \begin{cases}
     \sigma^{\mu} + t^{\mu} & \text{ inversion symmetry broken },\\
@@ -651,7 +651,7 @@ where we defined the modified Pauli matrices
 \section{The response of a tilted cone}
 
 Repeating the calculation of the response function is now straightforward, but rather tedious.
-Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:58}, mix.
+Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:54}, mix.
 We thus have twice as many terms to keep track of.
 
 Consider the expression for the current operator, Eq. 4.39, which we derived form the time evolution relation
@@ -661,7 +661,7 @@ Consider the expression for the current operator, Eq. 4.39, which we derived for
 by considering \(\vec{v} = \vec\dot{r}\), as \(\vec{J} = e \vec{v}\).
 In the tilted Hamiltonian, the tilt term thus causes another term in the current operator.
 \begin{equation}
-  \label{eq:66}
+  \label{eq:71}
   \begin{split}
     \vec{v} = \vec\dot{r} &= \frac{1}{i \hbar } [\vec{r}, H] \\
     &= \frac{s v_{F} \sigma ^{ i}}{i \hbar } [\vec{r}, p_{i} + e A_{i}] + \frac{1}{i\hbar } [\vec{r}, \omega_{0} \vec{k}]\\
@@ -690,7 +690,7 @@ With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the 
   \frac{1}{\sqrt{1-t_{x}^2}}.
 \]
 With
-\begin{equation}\label{eq:67}
+\begin{equation}\label{eq:72}
   \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
     a_{\vec{k} m s} H_{M-1} (\chi)\\
@@ -700,7 +700,7 @@ With
 we see how the expressions change when \(t_{x}\) become non-zero.
 Where we previoulsy had
 \begin{equation}
-  \label{eq:68}
+  \label{eq:73}
   \phi ^{*}_{\vec{k} m s} \sigma _{x} \phi _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots) \left[ b_{\vec{k}+\qvec{q} n s} H_{N}(\dots) \right]
@@ -708,7 +708,7 @@ Where we previoulsy had
 \end{equation}
 the contents of the square brackets must now include also the other element of the spinor:
 \begin{equation}
-  \label{eq:69}
+  \label{eq:74}
   \phi ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \phi _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots)
@@ -724,12 +724,12 @@ First of all, let us consider the exponent of the product.
 Due to the extra term in \(\chi\), this becomes more elaborate.
 The exponent is of course
 \begin{equation}
-  \label{eq:70}
+  \label{eq:75}
   \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}
 \end{equation}
 A straightforward but tedious calculation shows that the argument of the exponent can be written as
 \begin{equation}
-  \label{eq:71}
+  \label{eq:76}
   -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (q'_x + 2 k'_x))\right)^2
   -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (q'_x + 2 k'_x) q_{y} + ( q' _{x} )^2 ),
 \end{equation}
@@ -740,7 +740,7 @@ where we have defined
   k' _x &= k_x\alpha - \frac{\beta}{v_F } E^0_{m, \alpha B}.
 \end{align}
 These must not be confused with the transformed momenta \( \tilde{k} \), which are similar in form.
-Eq. \eqref{eq:71} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
+Eq. \eqref{eq:76} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
 \tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - 2 k' _x - q' _x )\right),
@@ -804,7 +804,7 @@ where we used \( \mathcal{N}^{*}\mathcal{N} \alpha = 1 \)
 
 We here used definitions of \( \Xi \) similar to that in the project thesis, but modified to the tilted case.
 \begin{equation}
-  \label{eq:72}
+  \label{eq:77}
   \frac{ \sqrt{\alpha } \alpha _{\vec{k} m s} \Xi_1 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
@@ -818,7 +818,7 @@ We here used definitions of \( \Xi \) similar to that in the project thesis, but
   H_N ( \chi _{\vec{k} + \qvec{q}} )
 \end{equation}
 \begin{equation}
-  \label{eq:73}
+  \label{eq:78}
   \frac{ \sqrt{\alpha } \alpha _{\vec{k} + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha _{\vec{k} m s}^2 + 1}
     \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
@@ -907,7 +907,7 @@ Here, \( \qvec{q}_y = (q'_x, q_y) \).
 
 Now we will consider the second term of the current operator.
 \begin{equation}
-  \label{eq:74}
+  \label{eq:79}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \int \mathrm{d} y
   e^{-iq_{y} y} e
@@ -915,7 +915,7 @@ Now we will consider the second term of the current operator.
 \end{equation}
 Thus
 \begin{multline}
-  \label{eq:75}
+  \label{eq:80}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N}}
   \int \mathrm{d} y
@@ -924,7 +924,7 @@ Thus
 \end{multline}
 Using the same substitution and completion of the square as above, this is
 \begin{multline}
-  \label{eq:76}
+  \label{eq:81}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \frac{e v_F t_x l_{B}}{\sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
@@ -976,7 +976,7 @@ We used here that \( 1 - t_x^2 = \alpha^2 \).
 \subsubsection{Stress-energy tensor}
 Consider now
 \begin{equation}
-  \label{eq:77}
+  \label{eq:82}
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y(1)} (\vec{q}) =
   \frac{1}{4}
   \int \mathrm{d} y
@@ -987,17 +987,17 @@ Consider now
 \end{equation}
 As
 \begin{equation}
-  \label{eq:78}
+  \label{eq:83}
   % e^{\theta /2 \sigma _{x}} \sigma _{y} e^{\theta /2 \sigma _{x}} = 1
   \sigma _{y} e^{\theta /2 \sigma _{x}} = e^{-\theta /2 \sigma _{x}} \sigma _{y}
 \end{equation}
 we get the very fortunate result
 \begin{equation}
-  \label{eq:79}
+  \label{eq:84}
   \phi^{*} \sigma _{y} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
 The first term of the stress-energy tensor thus has the exact same form as the untilted case.
-Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:67},
+Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:72},
 \[
   \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
@@ -1011,7 +1011,7 @@ where
 \]
 We thus get
 \begin{multline}
-  \label{eq:80}
+  \label{eq:85}
   T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y (1)} (\vec{q}) =
   \frac{is}{4 \mathcal{N}^{*}\mathcal{N}} (E_{k\mu  s} + E_{\lambda \nu s} - 2 \mu)
   \int \mathrm{d} y
@@ -1023,10 +1023,10 @@ We thus get
   ].
 \end{multline}
 We will perform once again the completion of the square and substituion of \(y\).
-The exponent is the same as that which we found for the current operator case, Eq. \eqref{eq:71}, with the change \(q_{y} \to - q_{y}\).
+The exponent is the same as that which we found for the current operator case, Eq. \eqref{eq:76}, with the change \(q_{y} \to - q_{y}\).
 We thus make the change of variables
 \begin{equation}
-  \label{eq:81}
+  \label{eq:86}
   \tilde{y} = \frac{\sqrt{\alpha}}{l_{B}} \left(y  - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (2k' _x + q' _x) )\right),
 \end{equation}
 giving
@@ -1036,7 +1036,7 @@ giving
 \end{align}
 Thus, analogous to Eq. (4.79), we get
 \begin{multline}
-  \label{eq:82}
+  \label{eq:87}
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) =\\
   \frac{is}{4 \mathcal{N}^{*}\mathcal{N} \sqrt{\alpha} }
   (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu)
@@ -1205,7 +1205,7 @@ Let \( M^{(2)}_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
 \end{align}
 We want to evaluate
 \begin{equation}
-  \label{eq:83}
+  \label{eq:88}
   F^{(2)}_{ij} =
   \left[(\alpha_{\vec{k} m s}^2 + 1) ( \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 )\right]^{\frac{1}{2}}
   \int \mathrm{d} \tilde{y}
@@ -1222,7 +1222,7 @@ Notice that
 \end{equation}
 and
 \begin{equation}
-  \label{eq:84}
+  \label{eq:89}
   F^{(2)}_{21}
   =
   -t_{x} \sqrt{\alpha} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}^2}{l_B a_{\vec{k} m \mp 1 s}}
@@ -1230,13 +1230,13 @@ and
 \end{equation}
 \( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
 \begin{equation}
-  \label{eq:85}
+  \label{eq:90}
   F^{(2)}_{11} = \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
   \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),
 \end{equation}
 and
 \begin{equation}
-  \label{eq:86}
+  \label{eq:91}
   F^{(2)}_{22} =
   \sqrt{\alpha }
   \frac{\sqrt{M} }{l_B \sqrt{2} }
@@ -1244,7 +1244,7 @@ and
 \end{equation}
 In summary we have
 \begin{align}
-  \label{eq:87}
+  \label{eq:92}
   T^{0y~(2)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q}) &= + \frac{v_F}{4} \int \mathrm{d} y
   e^{i q_y q} \phi _{\vec{k} + \qvec{q} ns}^{*} (y) p_{y} \phi _{\vec{k} ms} (y)\\
 &= -\frac{ i \hbar v_{F} }{2}
@@ -1315,7 +1315,7 @@ Denote the terms of the integrand by
 \end{align}
 We must evaluate
 \begin{equation}
-  \label{eq:88}
+  \label{eq:93}
   F^{(3)}_{ij} = \left[(\alpha_{\vec{k} m s}^2  + 1) ( \alpha _{\vec{k} + \qvec{q} ns}^2 + 1 )\right]^{\frac{1}{2}} \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
 \end{equation}
 From the untilted case we know
@@ -1339,7 +1339,7 @@ Furthermore,
 \end{align}
 We thus have
 \begin{align}
-  \label{eq:89}
+  \label{eq:94}
   T^{0y~(3)}_{\vec{k} + \qvec{q} ns, \vec{k} ms} (\vec{q})
   &= - \frac{v_F}{4}
     \int \mathrm{d} y
@@ -1371,7 +1371,7 @@ Add pretty figures describing the situation.
 
 In summary we have
 \begin{align}
-  \label{eq:90}
+  \label{eq:95}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) &=
     v_{F} e s \alpha^2
     \Gamma ^-_{\vec{k} \qvec{q} m n s}
@@ -1512,11 +1512,11 @@ Writing out the matrix products we have
   }{
     (\alpha_{\vec{k} m s}^2 + 1)(\alpha_{\vec{k}+\qvec{q} n s}^2 + 1)
   }
-  \label{eq:91}
+  \label{eq:96}
 \end{multline}
 
 \begin{multline}
-  \label{eq:92}
+  \label{eq:97}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{- e \alpha^3 v_F \sqrt{e B} }{4 (2 \pi)^2 \sqrt{2} }
   \sum\limits_{mn}^{}
@@ -1548,7 +1548,7 @@ In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as 
 Our sum is thus restricted to the second and fourth quadrant.
 We have
 \begin{equation}
-  \label{eq:93}
+  \label{eq:98}
   n_{\vec{k} m s} - n_{\vec{k} + \qvec{q} n s} =
   \begin{cases}
     \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0\\
@@ -1649,7 +1649,7 @@ We may thus restrict the sum to the fourth quadrant, by simply introducing a fac
 \subsection{Tilt parallell to the magnetic field}
 We consider here a tilt parallel to the magnetic field, \( \vec{t} \parallel \vec{B} \). We will consider only the canonical part of the energy-momentum tensor, and not the full symmetrized form, as described \citeauthor{vanderwurffMagnetovorticalThermoelectricTransport2019} \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
 \begin{equation}
-  \label{eq:94}
+  \label{eq:99}
   T^{\mu 0} = \frac{i}{2}
   [
   \partial_j \bar{\psi} \Gamma ^j \gamma ^0 \Gamma ^{\mu } \psi - \bar{\psi} \Gamma ^{\mu } \gamma ^0 \Gamma ^j \partial _j \psi
@@ -1661,7 +1661,7 @@ We have, with \( \vec{t}^{\chi } = \vec{t} \) in the inversion symmetric case, a
 The expression is exactly the same as for the untilted case, only with different energies.
 The dimensionless quantities are
 \begin{equation}
-  \label{eq:95}
+  \label{eq:100}
   \epsilon_{\kappa m s} =
   \begin{cases}
     t_z^{\chi } \kappa + \sign{m} \sqrt{M + \kappa ^2} & m \neq 0\\
@@ -1670,19 +1670,19 @@ The dimensionless quantities are
 \end{equation}
 The normalization factor \( \alpha _{\vec{k} m s} \) is, expressed in dimensionless quantities,
 \begin{equation}
-  \label{eq:96}
+  \label{eq:101}
   \alpha _{\kappa m s} =
   -\sqrt{\frac{M}{(\epsilon_{\kappa  m s} - t_{z}^{\chi })s - \kappa }}.
 \end{equation}
 The integrand is
 \begin{equation}
-  \label{eq:97}
+  \label{eq:102}
   \sum\limits_{mn}^{}
   (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) (\alpha_{\kappa n s}^2 \delta _{N, M+1}- \alpha_{\kappa m s}^2 \delta_{M, N+1}).
 \end{equation}
 As described above, the contributions from the \( \alpha _{\kappa n s}^2  \) and \( \alpha _{\kappa m s}^2 \) terms are identical, and we may simply take
 \begin{equation}
-  \label{eq:98}
+  \label{eq:103}
   \sum\limits_{\underset{N=M+1}{mn}}^{}
   (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) \alpha_{\kappa n s}^2.
 \end{equation}
@@ -1716,7 +1716,7 @@ H \psi = E \psi,
 \]
 we may solve for \(b\), which gives
 \begin{equation}
-  \label{eq:99}
+  \label{eq:104}
   b = -\frac{k_{z} \pm k}{k_{x} - i k_{y}}.
 \end{equation}
 Requiring normalization of the state \(\braket{\psi | \psi } = 1\) gives the normalization
@@ -1726,13 +1726,13 @@ Requiring normalization of the state \(\braket{\psi | \psi } = 1\) gives the nor
 
 Having found the states, we find the spin expectation value
 \begin{equation}
-  \label{eq:100}
+  \label{eq:105}
   \vec{S} = \braket{\psi | \hat{S} | \psi },
 \end{equation}
 where \(\vec{S}\) is the spin expectation value and \(\hat{S} = \frac{\vec{\sigma}}{2} \) is the spin operator, where \(\hbar \) was set to 1.
-Simply evaluating Eq. \eqref{eq:100}, yields
+Simply evaluating Eq. \eqref{eq:105}, yields
 \begin{equation}
-  \label{eq:101}
+  \label{eq:106}
   \vec{S} = \pm \frac{\vec{k}}{2 k}.
 \end{equation}
 
@@ -1786,7 +1786,7 @@ The effect of parity \(\mathcal{P}\) and time reversal \(\mathcal{T}\) is
   \end{tabular}
 \end{table}
 \begin{equation}
-  \label{eq:102}
+  \label{eq:107}
   \begin{aligned}
     \mathcal{P} \tau \mathcal{P}^{\dagger} &= -\tau, & \mathcal{T} \tau \mathcal{T}^{\dagger} &= +\tau\\
     \mathcal{P} \sigma  \mathcal{P}^{\dagger} &= + \sigma,  & \mathcal{T} \sigma  \mathcal{T}^{\dagger} &= -\sigma \\
@@ -1834,17 +1834,17 @@ H = \pm v_{F} \vec{\sigma} \vec{p},
 we may easily show the Lorentz invariance of the system.
 The time independent Schrodinger equation is
 \begin{equation}
-  \label{eq:103}
+  \label{eq:108}
   H \ket{\psi } = E \ket{\psi } \implies (H^2 - E^2) \ket{\psi } = 0.
 \end{equation}
 As
 \[
 p^{\mu } = \left(\frac{E}{c}, \vec{p}\right),
 \]
-the operator in Eq. \eqref{eq:103} is nothing more than
+the operator in Eq. \eqref{eq:108} is nothing more than
 \todo{ Make clear the matrix strucute here. There is an implicit identity matrix of size 2 }
 \begin{equation}
-  \label{eq:104}
+  \label{eq:109}
   H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2 \left(p^0\right)^2 ,
 \end{equation}
 where we used the anticommutation relation
@@ -1852,16 +1852,16 @@ where we used the anticommutation relation
 \{\sigma_{i}, \sigma_{j}\} =  2 \delta _{ij}
 \]
 of the Pauli matrices.
-Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:104} is
+Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:109} is
 \begin{equation}
-  \label{eq:105}
+  \label{eq:110}
   - v_F^2 p_{\mu } p^{\mu }.
 \end{equation}
 The invariance of \( x^{\mu} x_{\nu} \) is the very definition of the Lorentz group, and so is obviously Lorentz invariant.
 
 Consider now a \emph{tilted} Dirac cone
 \begin{equation}
-  \label{eq:106}
+  \label{eq:111}
   H = \pm v_F \vec{\sigma} \vec{p} + \omega_x k_x,
 \end{equation}
 where we, without loss of generality, chose the tilt to be in the \( x \)-direction.
@@ -1871,7 +1871,7 @@ By the same argumentation as above, the eigenequation
 \]
 leads to the equation
 \begin{equation}
-  \label{eq:116}
+  \label{eq:112}
   -v_F^2 p^{\mu} p_{\mu} + \omega_{x} k_x (2 E - \omega_x k_x) = 0.
 \end{equation}
 This is \emph{not} invariant under a Lorentz transformation, as can be seen by, for example, a rotation around the \( z \)-axis.

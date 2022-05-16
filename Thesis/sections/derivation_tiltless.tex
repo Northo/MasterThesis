@@ -1,9 +1,9 @@
 We will find the current response of a single Dirac cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
 The current response of interest in the given geometry is thus in the $x$-direction,
-\begin{equation}\label{eq:1}
+\begin{equation}\label{eq:3}
   J^x = \chi ^{xy} \frac{- \nabla _yT}{T},
 \end{equation}
-with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:1}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
+with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:3}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
 This geometry is shown in Figure \ref{fig:setup}.
 \begin{figure}[ht]
   \centering
@@ -21,9 +21,9 @@ The above result is what is meant, to the best of our understanding.}
   \chi ^{xy} = \frac{e^2 v_F B}{4 \pi ^2 \hbar }.
 \end{equation}
 
-Recall the linear response from the Kubo formalism in Eq. (\ref{eq:99current-luttinger-gravity-final}), found through Luttinger's approach.
+Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-luttinger-gravity-final}), found through Luttinger's approach.
 \begin{equation}
-  \label{eq:2}
+  \label{eq:4}
   \braket{J^i}(t, \vec{r}) =
   \int\limits_{-\infty }^{\infty } \mathrm{d}t' \mathrm{d}\vec{r}'
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
@@ -36,8 +36,8 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:99current-lut
   \partial _j' \psi (t', \vec{r}').
 \end{equation}
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
-As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:2}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
-Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:2}) is
+As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:4}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
+Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:4}) is
 \[
   \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \partial _j' \psi  (\vec{r}'),
 \]
@@ -90,7 +90,7 @@ In frequency space
                    \Theta (t) \Braket{\left[ J(t), T(t'') \right]}.
 \end{align}
 In frequency and momentum space the response function is thus
-\begin{equation}\label{eq:3}
+\begin{equation}\label{eq:5}
   \chi ^{ij} (w, \vec{q}) =
   \frac{-iv_F}{\mathcal{V} \hbar } 
   \int \mathrm{d}t e^{i\omega t}
@@ -106,7 +106,7 @@ To evaluate the correlator of the response function, the matrix elements of the 
 In order to do this, we find eigenstates in the Landau basis of the system.
 The Weyl Hamiltonian
 \begin{equation}
-  \label{eq:99weyl-hamil}
+  \label{eq:weyl-hamil}
   H_s = s v_F \sigma^i \left( p_i + e A_i \right),
 \end{equation}
 with $s$ being the chirality, $p_i$ the momentum operator, and $e = |e|$ the coupling constant to the electromagnetic field $\vec{A}$.
@@ -120,7 +120,7 @@ where $\tilde{H}$ is the result of replacing $p_z \to \hbar k_z, p_x\to \hbar  k
 Absorb the chirality $s$ as a sign in the velocity $v_F$, for more concise notation. 
 Thus, writing everything explicitly, the spectrum is given by
 \begin{equation}
-  \label{eq:4}
+  \label{eq:6}
   -\hbar  v_F
   \begin{pmatrix}
     - k_z & \partial _y + e y B_{z} / \hbar  - k_x\\
@@ -131,7 +131,7 @@ Thus, writing everything explicitly, the spectrum is given by
 We will now find the spectrum $E$ of the Hamiltonian.
 
 Inspired by the derivation for the spectrum of the 2D Dirac Hamiltonian in~\cite{wehlingDiracMaterials2014}, we introduce the length scale $l_B = \sqrt{\hbar / eB}$, and the dimensionless quantity $\chi = y /l_{B} - k_x l_{B}$.
-In dimensionless quantities Eq. (\ref{eq:4}) becomes
+In dimensionless quantities Eq. (\ref{eq:6}) becomes
 \begin{equation}
   -\frac{{\hbar v_F}}{l_{B}}
   \begin{pmatrix}
@@ -315,7 +315,7 @@ which further simplifies the expression.
 \begin{comment}
   The stress-energy tensor of the massless QED
   \begin{equation}
-    \label{eq:5}
+    \label{eq:7}
     \mathcal{L} = -\frac{1}{4} F^{\mu \nu }F_{\mu \nu } + \overline{\psi} i \slashed{D} \psi
   \end{equation}
   is given by~\cite{chernodubGenerationNernstCurrent2018}
@@ -328,12 +328,12 @@ which further simplifies the expression.
   Thus, the stress-energy tensor is given by
   \begin{equation}
     T^{\mu \nu } = \frac{i}{2} \psi ^{\dagger} \left( \sigma ^{\mu } D^{\nu } + \sigma ^{\nu } D^{\mu } \right) \psi  - \eta ^{\mu \nu } \psi ^{\dagger} i \sigma ^{\mu } D_{\mu } \psi ,
-    \label{eq:6}
+    \label{eq:8}
   \end{equation}
   where $\psi $ is to be understood as the solutions found above, $D_{\mu }=\partial _{\mu }  - i e A_{\mu }$ is the covariant derivative, and $\sigma ^{\mu } = (I, \sigma ^i)$
   In our calculations we will require the $T^{0y}$ component, which we will now find.
 
-  By using Eq. (\ref{eq:6}) directly
+  By using Eq. (\ref{eq:8}) directly
   \begin{align}
     T^{0y} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
            &= \frac{i}{2} \psi ^{\dagger} \left( \partial ^{y} + \sigma ^{y} \partial ^{0} \right)\psi \\
@@ -356,7 +356,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:5}) to our system.
+  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:7}) to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\hbar\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -374,12 +374,12 @@ which further simplifies the expression.
 
 Fourier transforming the position gives
 \begin{align}
-  \label{eq:7}
+  \label{eq:9}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}
                     J^x_{\vec{k}ms, \vec{l}ns}(\vec{q})
                     a^{\dagger}_{\vec{k}ms}(t)
                     a_{\vec{l} ns}(t),\\
-  \label{eq:8}
+  \label{eq:10}
   T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}^{}
                     T^{0y}_{\vec{k}m s, \vec{l}n s}(\vec{q})
                     a^{\dagger}_{\vec{k}m s}(t)
@@ -389,7 +389,7 @@ where the matrix elements in momentum space are given by
 \begin{align}
   J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) \sigma ^x \phi _{\vec{l}ns}(\vec{r}),\\
   %%
-  \label{eq:9}
+  \label{eq:11}
   T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{4} \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}} \left[
                                                   v_F \phi ^{*}_{\vec{k} m s}(\vec{r})  p_y \phi _{\vec{l} ns} (\vec{r})
                                                   - v_F (p_y \phi ^{*}_{\vec{k}m s}) \phi _{\vec{l} ns }(\vec{r})
@@ -399,11 +399,11 @@ where the matrix elements in momentum space are given by
                                                 \phi ^{*}_{\vec{k}m s}(\vec{r}) s \sigma ^y
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
-Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:9}).
+Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:11}).
 
 As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
-The sum over $\vec{l}$ in Eq. (\ref{eq:7}) can be replaced by an integration, as it is a good quantum number.
+The sum over $\vec{l}$ in Eq. (\ref{eq:9}) can be replaced by an integration, as it is a good quantum number.
 As usual, the measure in the integration is given by the density of states in momentum space, the well known $L_{i} /2\pi $, with $L_i$ being the length of the system in the $i$-direction.
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, n}^{} \int \mathrm{d}l_x \mathrm{d}l_z \frac{L_xL_z}{4 \pi ^2}
@@ -413,7 +413,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
-The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:8}).
+The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:10}).
 Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
@@ -446,9 +446,9 @@ the correlation function is given by
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right].
 \end{multline}
 
-We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:3})
+We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:5})
 \begin{equation}
-  \label{eq:10}
+  \label{eq:12}
   \chi ^{xy}(\omega, \vec{q}) =
   \frac{-i v_F}{\mathcal{V} \hbar } 
   \int \mathrm{d}t e^{i \omega t} \int\limits_{-\infty }^0 \mathrm{d}t'
@@ -458,7 +458,7 @@ J^x(t, \vec{q}), T^{0y}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
-The integral part of Eq. (\ref{eq:10}), ignoring everything without time dependence for clarity, is then
+The integral part of Eq. (\ref{eq:12}), ignoring everything without time dependence for clarity, is then
 \begin{multline}
   \lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
@@ -485,12 +485,12 @@ The response function then reads
   \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1},
 \end{multline}
 where the matrix elements are
-\begin{align}\label{eq:11}
+\begin{align}\label{eq:13}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q}) &= \int \mathrm{d}y
                                                 e^{-i q_y y}
                                                 s v_F e\phi ^{*}_{\vec{k}m s}(y) \sigma^x
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:12}
+  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:14}
                                                            \int \mathrm{d}y
                                                            e^{iq_y y}
                                                            \left[
@@ -521,7 +521,7 @@ We may use the property of the limit of a product of functions \( \lim A\cdot B 
     (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
   },
 \end{equation}
-where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:11} and \eqref{eq:12} taken in the limit.
+where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:13} and \eqref{eq:14} taken in the limit.
 
 
 \subsection{Finding numerical values for the matrix elements}
@@ -529,7 +529,7 @@ Compared to the procedure used by \citeauthor{arjonaFingerprintsConformalAnomaly
 
 Let
 \begin{equation}
-  \label{eq:13}
+  \label{eq:15}
   \phi _{\vec{k}ms}(y)
   = e^{-\frac{(y-k_xl_B^2)^2}{2 l_{B}^2}}
   \begin{pmatrix}
@@ -579,7 +579,7 @@ where we completed the square in the exponent, to get the form $e^{-a(y + b)^2}$
 Also, $\qvec{q}_y=(q_x, q_y)$, was introduced, not to be confused with $\qvec{q} = (q_x, q_z)$.
 By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the matrix element may be rewritten
 \begin{equation}
-  \label{eq:14}
+  \label{eq:16}
   \begin{split}
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
@@ -600,7 +600,7 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
 \end{equation}
 Taking the limit we find the simple form
 \begin{equation}
-  \label{eq:41}
+  \label{eq:17}
   J_{\vec{k} m s; \vec{k} n s} = J_{k_z m n s} =
   s v_F e l_B \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
   \left[
@@ -645,7 +645,7 @@ we find explicitly
 \subsubsection{The stress-energy tensor operator}
 Consider the first part of the stress-energy matrix element
 \begin{equation}
-\label{eq:24}
+\label{eq:18}
 T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
 \frac{1}{4}
@@ -694,10 +694,10 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
   \end{split}
 \end{equation}
 The arguments of the Hermite polynomials have been dropped for brevity of notation.
-As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:99hermite-shift-ortho}).
+As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:hermite-shift-ortho}).
 Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
 \begin{equation}
-  \label{eq:25}
+  \label{eq:19}
   \begin{split}
     T^{0y \;(1)}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
@@ -721,9 +721,9 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
   \end{split}
 \end{equation}
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
-By Eqs.~(\ref{eq:20}) and (\ref{eq:21})
+By Eqs.~(\ref{eq:7720}) and (\ref{eq:7721})
 \begin{equation}
-  \label{eq:26}
+  \label{eq:20}
   T^{0y \;(1)}_{\vec{k} ns, \vec{k}ms} (\vec{q})
   = \frac{i s}{4}
   \frac{
@@ -792,7 +792,7 @@ Denote by \( T^{\mu \nu } \) the \emph{canonical} tensor, and let the symmetrize
 
 In the case of our untilted system, the Weyl Lagrangian, the components of interest are
 \begin{align}
-  \label{eq:112}
+  \label{eq:21}
   T^{0 y} &= \frac{v_F}{4}
   \left[
   \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
@@ -811,7 +811,7 @@ In the tilted case, however, the contributions differ.
 The first other contribution is
 \todo{take care of prefactors}
 \begin{equation}
-  \label{eq:15}
+  \label{eq:22}
   \left(\frac{\sqrt{M}}{\alpha_{\vec{k} m s}} + \sqrt{(M-1)} \alpha_{\vec{k} n s}\right) \alpha_{\vec{k} m s} \delta_{M-1, N}.
 \end{equation}
 The normalization factor, given in dimensionless quantities is,
@@ -824,20 +824,20 @@ Inserting this, and using the explicit form of the energy for \( m \neq 0 \)
 \]
 for the case \( N > 0 \) the contribution can be shown to be
 \begin{equation}
-  \label{eq:16}
+  \label{eq:23}
   -s (\epsilon_m + \epsilon_n)\alpha_{\vec{k} m s} \delta_{M-1, N}.
 \end{equation}
-For \( n = 0 \), the second term of Eq. \eqref{eq:15} is zero, and we have
+For \( n = 0 \), the second term of Eq. \eqref{eq:22} is zero, and we have
 \todo{mising s?}
 \begin{equation}
-  \label{eq:17}
+  \label{eq:24}
   -(\epsilon_m - s \kappa) \alpha_{k m s} \delta_{M-1, N},
 \end{equation}
-and by identifying \( \epsilon_0 = - s \kappa \) this has the same form as Eq. \eqref{eq:16}.
+and by identifying \( \epsilon_0 = - s \kappa \) this has the same form as Eq. \eqref{eq:23}.
 
 In the case of tilt, however, the contribution can be shown to be
 \begin{equation}
-  \label{eq:22}
+  \label{eq:25}
   -\frac{s}{\sqrt{\alpha}} (\epsilon_{m, \alpha B}^0 + \epsilon_{n, \alpha B}^0),
 \end{equation}
 where \( \epsilon_{m, \alpha B}^0 = \sign(m) \sqrt{\alpha M + \kappa^2}  \) and we used
@@ -884,7 +884,7 @@ Recall the response function
 Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
 Collecting dimensionfull quantites, the response function reads
 \begin{multline}
-  \label{eq:114}
+  \label{eq:26}
 \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B }{4 (2 \pi)^2}
   \sum\limits_{m n}^{}
@@ -911,14 +911,14 @@ Let us now define
 \end{equation}
 which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
-In the last term of Eq. \eqref{eq:114}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
+In the last term of Eq. \eqref{eq:26}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
 \[
 \alpha_{\kappa_z m s}^2 \delta_{M-1,N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \to 2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
 \]
 The final expression is then
 \begin{equation}
-  \label{eq:32}
+  \label{eq:27}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B}{2 (2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
   \int \mathrm{d}\kappa_z \xi(\kappa_z)
@@ -946,7 +946,7 @@ In the case of zero chemical potential, the expression may be simplified further
 
 For zero chemical potential, the response function is
 \begin{equation}
-  \label{eq:33}
+  \label{eq:28}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B}{(2 \pi)^2}
   \sum\limits_{N=0} \int \mathrm{d}\kappa_z
@@ -958,12 +958,12 @@ where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( 
 
 Including only the first term of the sum, we find
 \begin{equation}
-  \label{eq:34}
+  \label{eq:29}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2}.
 \end{equation}
 Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
-  \label{eq:117}
+  \label{eq:30}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2},
 \end{equation}
 where the factor by analytical integration was found to be \( g_0 = 1, \gamma_{20} \approx 2 \).
@@ -1002,7 +1002,7 @@ The first 300 contributions are shown in Figure \ref{fig:contributions}.
 
 \section{Discussion of results}
 In the static and local limit $\lim_{\omega \to 0} \lim_{\vec{q}\to 0}$ the  transverse response function $\chi^{xy}$ of the charge current to a temperature perturbation
-\begin{equation}\label{eq:36}
+\begin{equation}\label{eq:31}
   J^x = \chi ^{xy} \frac{- \nabla^y T}{T}
 \end{equation}
 from a single Dirac point was found  to be
