@@ -721,7 +721,6 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
   \end{split}
 \end{equation}
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
-By Eqs.~(\ref{eq:7720}) and (\ref{eq:7721})
 \begin{equation}
   \label{eq:20}
   T^{0y \;(1)}_{\vec{k} ns, \vec{k}ms} (\vec{q})
@@ -740,7 +739,6 @@ By Eqs.~(\ref{eq:7720}) and (\ref{eq:7721})
     \delta_{M, N-1}
   \right).
 \end{equation}
-where $\bar{\vec{q}} = (q_x, -q_y, q_z)$.
 
 \begin{summary}
   For a untilted case, in the local limit \( q\to 0 \), we have the matrix elements
@@ -966,9 +964,34 @@ Including contributions from the \( N \) lowest landau levels, one acquire addit
   \label{eq:30}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2},
 \end{equation}
-where the factor by analytical integration was found to be \( g_0 = 1, \gamma_{20} \approx 2 \).
+where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
 Furthermore, \( \gamma_N \) goes like \( \log N \).
 The first 300 contributions are shown in Figure \ref{fig:contributions}.
+
+Solving the integral analytically, we obtained the contribution from each term
+\[
+  \gamma_N - \gamma_{N-1} = \frac{1}{4} \left[
+  1 + 2 N \left\{1 - (1+N) \log(1 + \frac{1}{N}) \right\} 
+\right], \quad N > 0.
+\]
+The sum can be shown to equal the rather nasty expression
+\begin{equation}
+  \label{eq:3}
+  \begin{split}
+  \gamma_N = \gamma_0 + \frac{1}{12} &\Big(
+    6 \zeta ^{(1,0)}(-2,N+1)
+    -6 \zeta ^{(1,0)}(-2,N+2)
+    +6 \zeta^{(1,0)}(-1,N+1)\\
+    &\hphantom{\Big(} \mathllap{+} 6 \zeta^{(1,0)}(-1,N+2)
+    +12 \log (\xi)
+    +3 N^2
+    +6 N
+    -1
+  \Big),
+  \end{split}
+\end{equation}
+where \( \xi \approx  1.28243 \) is Glaisher's constant.
+This expression goes like \( \log N \).
 
 % \todo{Make sure have notes that consider zero T for the distribution}
 % In the static limit $\omega \to 0$, with potential $\mu =0$ \todo{explain}, the integral was solved in a CAS \todo{how to formulate this?}, and found to be $\frac{1}{2}$.
