@@ -63,13 +63,31 @@ The linearized model are accurate in describing low energy interactions around t
 For higher energies their validity falls apart, and more complex models are warranted.
 In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
 
+For tilted Dirac cones we will consider the Hamiltonian
+\begin{equation}
+  \label{eq:124}
+  H =  s v_F \vec{k} \vec{\sigma} + v_F \vec{t}^s \vec{k},
+\end{equation}
+where \( s \) denotes the chirality of the Dirac cone, \( v_F \) is the Fermi velocity, and \( \vec{t} \) is the \emph{tilt vector}.
+\todo{note about anisotropic Fermi velocity}
+The tilt vector will in general depend on the chirality of the Dirac cone.
+As the Dirac cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry.
+In the case of broken inversion symmetry, we will consider the case of a tilt equal in direction and magnitude between the two cones, \( \vec{t}^s = \vec{t} \).
+In short, we define
+\[
+  \vec{t}^s =
+  \begin{cases}
+    \vec{t} & \text{broken inversion symmetry},\\
+    s \vec{t} & \text{inversion symmetry}.
+  \end{cases}
+\]
 
 With no magnetic field, the eigenvalues of the system are
 \begin{equation}
   \label{eq:44}
   E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
 \end{equation}
-where in the literature the first term is sometimes referred to as the \emph{kinetick} term while the latter is the \emph{potential} term.
+where in the literature the first term is sometimes referred to as the \emph{kinetic} term while the latter is the \emph{potential} term.
 The definition for the system to be Type-II is that there exists a direction in momentum space for which the kinetic term dominates over the potential term \cite{soluyanovTypeIIWeylSemimetals2015}.
 The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
 \begin{proof}

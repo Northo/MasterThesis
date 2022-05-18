@@ -20,6 +20,11 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 *** Derive Landau Levels
 
+**** No tilt
+
+**** With tilt
+Show the transformation and use the no tilt result.
+
 *** Discussion about the stress energy tensor
 Derive the stress energy tensor, comment on symmetric vs non-symmetric
 Refer to Stoof
