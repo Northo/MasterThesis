@@ -1,0 +1,22 @@
+#+title: Meeting Vozmediano
+
+* Questions
+** Why use the symmetric energy-momentum tensor?
+
+** The contribution from higher LL
+"The contribution to the numerical coefficient coming from higher-energy transitions decrease very rapidly with the Landau level N"
+When I do the calculation, I get that the contribution goes like ~1/N, so that the sum goes like logN.
+Might be naive reading from me, but what do you mean by very rapidly? (As it is not rapidly enough for the sum over the contributions to converge)
+
+* Current results
+
+** Tilt perp. to B-field
+The effect is gradually suppressed as the tilt goes towards Type-II.
+For Type-II, the LL description collapse.
+
+** Tilt paral. to B-field
+Struggling a bit.
+For Type-I, each cone diverge.
+For broken inversion symmetry, the divergences cancel, but for inversion symmetry, the divergences do not cancel.
+We think maybe the physical explanation is that we require a momentum-cutoff in the linear model.
+The divergence is logarithmic in the momentum cutoff.

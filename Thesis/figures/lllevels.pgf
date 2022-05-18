@@ -1,0 +1,34 @@
+\newcommand{\LLplot}[2]{
+  %% #1 is alpha, #2 is tz
+  \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
+  \addplot[dashed, forget plot, gray] {0};
+  \pgfplotsforeachungrouped \n in {1,...,5} {
+    \addplot+[red, forget plot] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+  }
+}
+\def\myPlots{}
+\pgfplotsforeachungrouped \vartz in {0, 0.5, 1.2}{%
+  \pgfplotsforeachungrouped \varalpha in {1, 0.6}{%
+    \eappto\myPlots{%
+      \noexpand\nextgroupplot
+      \noexpand\LLplot{\varalpha}{\vartz}
+    }
+  }
+}
+\begin{tikzpicture}
+  \begin{groupplot} [%
+    cycle list name=linestyles,
+    samples=100,
+    ymin=-2.5,ymax=2.5,
+    xmin=-3.9, xmax=3.9,
+    group style={
+      x descriptions at=edge bottom,
+      y descriptions at=edge left,
+      horizontal sep=4pt, vertical sep=4pt,
+      group size=2 by 3,
+    },
+    ]
+    \myPlots
+  \end{groupplot}
+\end{tikzpicture}

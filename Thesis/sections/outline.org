@@ -26,6 +26,14 @@ See chernodubThermalTransportGeometry2021
 
 *** Show some widemann-franz, mottt, etc relations?
 
+*** Derivation
+Find out how to best unify the tilted and untilted case.
+Nice to not have too much "double", while at the same time showing the derivation for no tilt in its entirety.
+
+**** Without tilt
+
+**** With tilt
+
 * Ideas
 ** Divergence in tz
 From Stoof it seems like the magnetization goes to zero as T and mu goes to zero, however, there are two important questions.

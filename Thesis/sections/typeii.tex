@@ -335,6 +335,13 @@ The effect of the tilt on the Landau levels is to squeeze the Landau levels toge
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
 
+\begin{figure}[h]
+  \centering
+  % \input{figures/lllevels.pgf}
+  \includegraphics[width=\textwidth]{example-image}
+  \caption{}
+\end{figure}
+
 Consider now isotropic velocities \( v_i = v_F \).
 Even for anisotripic systems, we may rescale the momenta to arrive at such a description.
 We may rewrite the energy as
@@ -1879,42 +1886,3 @@ This is \emph{not} invariant under a Lorentz transformation, as can be seen by, 
 
 
 
-\newcommand{\LLplot}[2]{
-  %% #1 is alpha, #2 is tz
-  \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
-  \addplot[dashed, forget plot, gray] {0};
-  \pgfplotsforeachungrouped \n in {1,...,5} {
-    \addplot+[red, forget plot] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
-    \addplot+[blue] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
-  }
-}
-\def\myPlots{}
-\pgfplotsforeachungrouped \vartz in {0, 0.5, 1.2}{%
-  \pgfplotsforeachungrouped \varalpha in {1, 0.6}{%
-    \eappto\myPlots{%
-      \noexpand\nextgroupplot
-      \noexpand\LLplot{\varalpha}{\vartz}
-    }
-  }
-}
-
-\begin{figure}[h]
-  \centering
-  \begin{tikzpicture}
-    \begin{groupplot} [%
-      cycle list name=linestyles,
-      samples=100,
-      ymin=-2.5,ymax=2.5,
-      xmin=-3.9, xmax=3.9,
-      group style={
-        x descriptions at=edge bottom,
-        y descriptions at=edge left,
-        horizontal sep=4pt, vertical sep=4pt,
-        group size=2 by 3,
-      },
-      ]
-      \myPlots
-    \end{groupplot}
-  \end{tikzpicture}
-  \caption{}
-\end{figure}
