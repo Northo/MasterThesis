@@ -9,12 +9,20 @@ Start from the Dirac Lagrangian, and show the Weyl decomposition
 We exactly recover the Hamiltonian of a dirac cone
 See chernodubThermalTransportGeometry2021 eq.~(2)
 
+** Type-II materials
+- Introduction
+- From tight binding model to linear model
+- Tilting term
+  - Inversion symmetry vs no inversion symmetry
+
+
 ** The response
+
+*** Derive Landau Levels
 
 *** Discussion about the stress energy tensor
 Derive the stress energy tensor, comment on symmetric vs non-symmetric
 Refer to Stoof
-
 
 *** Magnetization currents
 In time reversal broken systems, we may have local circulating magnetization currents.
@@ -33,6 +41,7 @@ Nice to not have too much "double", while at the same time showing the derivatio
 **** Without tilt
 
 **** With tilt
+
 
 * Ideas
 ** Divergence in tz
