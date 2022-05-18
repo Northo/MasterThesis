@@ -1397,8 +1397,8 @@ with
   \frac{
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
-  \right  ]
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )
+  \right]
 }{
   \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
 }
@@ -1417,7 +1417,7 @@ Consider firstly the exponent in the \( \Gamma ^{\pm } \) factor,
 \[
   \exp
   \left[
-    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
+    - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )
   \right].
 \]
 Recall the definition Eq. \eqref{eq:qkprime},
@@ -1879,50 +1879,42 @@ This is \emph{not} invariant under a Lorentz transformation, as can be seen by, 
 
 
 
+\newcommand{\LLplot}[2]{
+  %% #1 is alpha, #2 is tz
+  \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
+  \addplot[dashed, forget plot, gray] {0};
+  \pgfplotsforeachungrouped \n in {1,...,5} {
+    \addplot+[red, forget plot] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+  }
+}
+\def\myPlots{}
+\pgfplotsforeachungrouped \vartz in {0, 0.5, 1.2}{%
+  \pgfplotsforeachungrouped \varalpha in {1, 0.6}{%
+    \eappto\myPlots{%
+      \noexpand\nextgroupplot
+      \noexpand\LLplot{\varalpha}{\vartz}
+    }
+  }
+}
+
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \begin{groupplot}[
-      group style={group size=1 by 4},
+    \begin{groupplot} [%
       cycle list name=linestyles,
-      ymin=-3, ymax=3,
-      xmin=-3, xmax=3,
+      samples=100,
+      ymin=-2.5,ymax=2.5,
+      xmin=-3.9, xmax=3.9,
+      group style={
+        x descriptions at=edge bottom,
+        y descriptions at=edge left,
+        horizontal sep=4pt, vertical sep=4pt,
+        group size=2 by 3,
+      },
       ]
-      % \foreach \paramwpp in {0,0.2,0.5,1} {
-      % \foreach \paramalpha in {1, 0.8, 0.5, 0.2} {
-      \pgfplotsinvokeforeach{1,2,3,4} {
-        \nextgroupplot
-        \newcommand{\paramwpp}{0}
-        \newcommand{\paramalpha}{#1}
-        % \newcommand{\paramalpha}{0.5}
-        % \begin{axis}[
-        %   cycle list name=linestyles,
-        %   ymin=-3, ymax=3,
-        %   ]
-        \addplot {(\paramwpp - \paramalpha)  * x};
-        % \foreach \n in {1,2,3,4} {
-        %   \addplot {
-        %     \paramwpp * x + sqrt(2 * \n * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
-        %   };
-        %   \pgfplotsset{cycle list shift=-1}
-        %   \addplot {
-        %     \paramwpp * x - sqrt(2 * \n * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
-        %   };
-        % }
-
-        \pgfplotsinvokeforeach{1,2,3,4} {
-          \addplot {
-            \paramwpp * x + sqrt(2 * ##1 * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
-          };
-          \pgfplotsset{cycle list shift=-1}
-          \addplot {
-            \paramwpp * x - sqrt(2 * ##1 * \paramalpha ^ 3 + x^2 * \paramalpha ^ 2)
-          };
-        }
-        % \end{axis}
-      }
+      \myPlots
     \end{groupplot}
   \end{tikzpicture}
-
   \caption{}
 \end{figure}
