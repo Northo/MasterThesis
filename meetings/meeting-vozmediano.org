@@ -20,3 +20,26 @@ For Type-I, each cone diverge.
 For broken inversion symmetry, the divergences cancel, but for inversion symmetry, the divergences do not cancel.
 We think maybe the physical explanation is that we require a momentum-cutoff in the linear model.
 The divergence is logarithmic in the momentum cutoff.
+
+* Summary / notes
+
+** Cutoff
+Important to separate  a cutoff which is essentially a mathematical trick, like in QFT normalization, and a cutoff which represents something physical about your model, like the linear model.
+In the former, it is important that the cutoff does not enter our results, as it is purely a mathemtaical construct, while in the latter, it says something about the model at hand.
+
+** Conformal group
+Be careful with the terms conformal vs. scale invariance in literature.
+Conformal often refers to the conformal group of 1+1 dimensions.
+
+** Funny
+"They[condensed matter physicists] are like children. Don't explain your worries in your paper, present the simple nice results"
+
+** Orign of conformal anomaly
+She had a nice way to consider the anomaly.
+I (thorvald) remember to at some time have read that the conformal anomaly is somehow related to the vaccum, and this explanation fits in well with that.
+
+Consider a charge in a vaccum in QED.
+Around the charge, we get fluctuations (particle/hole?), which are diminishing by the distance from the charge, thus introcuing some length scale to the otherwise scale-invariant system.
+
+** Madrid 2022
+They have lots of money, so if we want to come visit, please do so.
