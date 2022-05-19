@@ -1,0 +1,14 @@
+% Assumes \datafile is set
+\begin{tikzpicture}
+  \begin{axis}[
+    title=\ifthenelse{\equal{\plottitle}{}}{Convergence Plot}{\plottitle},
+    xlabel={Number of terms $N$},
+    ylabel={Prefactor $\gamma_N$},
+    grid=major,
+    width=14cm,
+    height=8cm,
+    % ymode=log,
+    ]
+    \addplot[mark=o] table[col sep=comma] {\datafile};
+  \end{axis}
+\end{tikzpicture}
