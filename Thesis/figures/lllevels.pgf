@@ -6,7 +6,24 @@
     \addplot+[red, forget plot] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
     \addplot+[blue] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
   }
+  \pgfmathsetmacro\x{1}
+  \pgfmathsetmacro\hfirst{(#2-#1)*\x}
+  \pgfmathsetmacro\hsecond{#2 * \x + #1 * sqrt(#1 + \x^2)}
+  % \show\hfirst
+  % \show\hsecond
+  \draw[->] (axis cs:\x,\hfirst)--(axis cs:\x, \hsecond);
+  \newcommand\tz{#2}
+  % ifdim is hack as if only integer
+  \ifdim#2pt>1pt
+  \pgfextra
+  \pgfmathsetmacro\xx{-sqrt(#1^2/(#2^2-#1^2))-0.1}
+  \pgfmathsetmacro\gsecond{#2 * \xx + #1 * sqrt(#1 + (\xx)^2)}
+  \pgfmathsetmacro\gthird{#2 * \xx + #1 * sqrt(2 * #1 + (\xx)^2)}
+  \draw[->] (axis cs:\xx,\gsecond)--(axis cs:\xx, \gthird);
+  \else \fi
 }
+
+
 \def\myPlots{}
 \pgfplotsforeachungrouped \vartz in {0, 0.5, 1.2}{%
   \pgfplotsforeachungrouped \varalpha in {1, 0.6}{%
