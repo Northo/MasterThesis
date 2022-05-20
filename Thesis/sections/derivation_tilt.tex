@@ -29,16 +29,18 @@ Take for example the matrix element of the current operator
 We must find the matrix product \(\phi \sigma_{x} \phi \).
 Recall that \(\phi = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
 \[
-  \phi ^{*} \sigma _{x} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi} =  \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}.
+  \phi ^{*} \sigma _{x} \phi
+  = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi}
+  =  \alpha \tilde{\phi}^{*} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}.
 \]
-With the previously found solution \(\theta = - \tanh ^{-1} t_{x}\), we get the rather simple form
+With the previously found solution \(\theta = - \tanh ^{-1} t^s_{x}\), we get the rather simple form
 \[
   e^{\theta \sigma _{x}} =
   \begin{pmatrix}
-    1 & - s t_{x}\\
-    -s t_{x} & 1
+    1 & - s t^s_{x}\\
+    -s t^s_{x} & 1
   \end{pmatrix}
-  \frac{1}{\sqrt{1-t_{x}^2}}.
+  \frac{1}{\sqrt{1-t_{x}}}.
 \]
 With
 \begin{equation}\label{eq:76}
@@ -48,11 +50,11 @@ With
     b_{\vec{k} m s} H_{M} (\chi)
   \end{pmatrix}
 \end{equation}
-we see how the expressions change when \(t_{x}\) become non-zero.
+we see how the expressions change when \(t^s_{x}\) become non-zero.
 Where we previoulsy had
 \begin{equation}
   \label{eq:77}
-  \phi ^{*}_{\vec{k} m s} \sigma _{x} \phi _{\vec{k} + \qvec{q} n s}
+  \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots) \left[ b_{\vec{k}+\qvec{q} n s} H_{N}(\dots) \right]
   + \dots
@@ -60,14 +62,13 @@ Where we previoulsy had
 the contents of the square brackets must now include also the other element of the spinor:
 \begin{equation}
   \label{eq:78}
-  \phi ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \phi _{\vec{k} + \qvec{q} n s}
+  \alpha \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots)
   \left[
     b_{\vec{k}+\qvec{q} n s} H_{N}(\dots)
-    - s t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
+    - s t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
   \right]
-  \frac{1}{\sqrt{1-t_{x}^2}}
   + \dots .
 \end{equation}
 
@@ -90,6 +91,7 @@ where we have defined
   q' _x &= q_x \alpha  - \frac{\beta}{v_{F} }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ),\\
   k' _x &= k_x\alpha - \frac{\beta}{v_F } E^0_{m, \alpha B}.
 \end{align}
+\todo{check sign of E above}
 These must not be confused with the transformed momenta \( \tilde{k} \), which are similar in form.
 Eq. \eqref{eq:80} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
@@ -100,10 +102,9 @@ Make a change of variable
 to get the exponent on the form \(e^{-\tilde{y}^2}\).
 With this substitution,
 \begin{align}
-  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(q' _x - i q_{y}\right)\\
-  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(- q' _x - i q_{y}\right)
+  \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(q' _x - i q_{y}\right),\\
+  \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(- q' _x - i q_{y}\right).
 \end{align}
-
 Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
 \begin{equation}
   \begin{split}
@@ -129,61 +130,11 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
     b_{\vec{k}ms} b_{\vec{k} + \qvec{q} ns}
     H_M \left( \chi_{\vec{k}} \right)
     H_{N} \left(  \chi_{\vec{k} + \qvec{q}}\right)
-    \right],
+    \right].
   \end{split}
 \end{equation}
-where we used \( \mathcal{N}^{*}\mathcal{N} \alpha = 1 \)
 
-\begin{multline}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
-  s v_{F} e
-  \frac{
-    \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (q'_x)^2 )
-    \right]
-  }{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
-  } \\
-  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-  \Big[
-   \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-    + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-    -s t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
-    -s t_x \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big].
-\end{multline}
-
-We here used definitions of \( \Xi \) similar to that in the project thesis, but modified to the tilted case.
-\begin{equation}
-  \label{eq:81}
-  \frac{ \sqrt{\alpha } \alpha _{\vec{k} m s} \Xi_1 ( \vec{q}, m, n, s )}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
-  }
-  =
-  \int \mathrm{d} \tilde{y}
-  ~e^{-\tilde{y}^2}
-  l_{B}
-  a_{\vec{k} m s} b_{\vec{k} + \qvec{q} ns}
-  H_{M-1} (\chi_{\vec{k}})
-  H_N ( \chi _{\vec{k} + \qvec{q}} )
-\end{equation}
-\begin{equation}
-  \label{eq:82}
-  \frac{ \sqrt{\alpha } \alpha _{\vec{k} + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
-  }
-  =
-  \int \mathrm{d} \tilde{y}
-  ~e^{-\tilde{y}^2}
-  l_{B}
-  b_{\vec{k} m s} a_{\vec{k} + \qvec{q} ns}
-  H_{M} (\chi_{\vec{k}})
-  H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )
-\end{equation}
-
-Recall the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
+To perform the integration, we use the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
   \label{eq:hermite-shift-ortho}
   \int\limits_{-\infty }^{\infty } \mathrm{d}x
@@ -220,10 +171,36 @@ Using that
     }
     \left[
     2^{N+M} M! N! \pi l_{B}^2
-    \right  ]^{-\frac{1}{2}}\\
+    \right  ]^{-\frac{1}{2}}
 \end{align}
-\todo{NB!! definition changed compared to project thesis. Here, we have dropped the \( \alpha  \) factor}
-\todo{Verify if we need to add some factors due to the tilt.}
+we define \( \Xi_1, \Xi_2 \) by
+\begin{align}
+  \label{eq:81}
+  \frac{ \sqrt{\alpha } \alpha _{\vec{k} m s} \Xi_1 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  }
+  &=
+  \int \mathrm{d} \tilde{y}
+  ~e^{-\tilde{y}^2}
+  l_{B}
+  a_{\vec{k} m s} b_{\vec{k} + \qvec{q} ns}
+  H_{M-1} (\chi_{\vec{k}})
+  H_N ( \chi _{\vec{k} + \qvec{q}} ),\\
+  \label{eq:82}
+  \frac{ \sqrt{\alpha } \alpha _{\vec{k} + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
+    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  }
+  &=
+  \int \mathrm{d} \tilde{y}
+  ~e^{-\tilde{y}^2}
+  l_{B}
+  b_{\vec{k} m s} a_{\vec{k} + \qvec{q} ns}
+  H_{M} (\chi_{\vec{k}})
+  H_{N-1} ( \chi _{\vec{k} + \qvec{q}} ).
+\end{align}
+Evaluating, we find
 \begin{align}
   \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
                                    \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
@@ -253,6 +230,26 @@ Using that
           \end{cases},
 \end{align}
 Here, \( \qvec{q}_y = (q'_x, q_y) \).
+
+This gives the first part of the current matrix element
+\begin{multline}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
+  s v_{F} e
+  \frac{
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (q'_x)^2 )
+    \right]
+  }{
+    \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
+  } \\
+  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
+  \Big[
+   \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
+    + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
+    -s t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
+    -s t_x \Xi _2(\vec{q}, m, n\pm 1, s)
+  \Big].
+\end{multline}
 \todo{In the future, might be nice to go over to having only one function, Xi1, and simply mix around the arguments}
 
 
@@ -260,39 +257,40 @@ Now we will consider the second term of the current operator.
 \begin{equation}
   \label{eq:83}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  e v_{F} t^s_{x}
   \int \mathrm{d} y
-  e^{-iq_{y} y} e
-  \phi ^{*}_{\vec{k} m s}(y) \omega _{0 x} \phi _{\vec{k} + \qvec{q} n s}(y).
+  e^{-iq_{y} y}
+  \phi ^{*}_{\vec{k} m s}(y)  \phi _{\vec{k} + \qvec{q} n s}(y).
 \end{equation}
-Thus
-\begin{multline}
+Using the results of Summary \ref{summary:llevels} we find
+\begin{equation}
   \label{eq:84}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N}}
   \int \mathrm{d} y
-  \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\} \\
+  e^{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2}
   \tilde{\phi} ^{*}_{\vec{k} m s}(y) e^{\theta \sigma _{x}} \tilde{\phi} _{\vec{k} + \qvec{q} n s}(y).
-\end{multline}
+\end{equation}
 Using the same substitution and completion of the square as above, this is
 \begin{multline}
   \label{eq:85}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e v_F t_x l_{B}}{\sqrt{\alpha}}
+  \frac{e v_F t^s_x l_{B}}{\sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
     \right]\\
   e^{-\tilde{y}^2} \big[
-    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - s t_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
+    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - s t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
    +
-    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- s t_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
+    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- s t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
     \big].
 \end{multline}
 Thus
 \footnote{Note to self: note that we dropped the \( \frac{1}{\sqrt{\alpha } } \) for the \( \sqrt{\alpha }  \) coming from the \( \Xi  \) definition.}
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  e v_F t_x
+  e v_F t^s_x
   \frac{
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
@@ -301,12 +299,11 @@ Thus
     \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
   }\\
   \Big[
-  -s t_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
+  -s t^s_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
   + \alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
   + \Xi_2(\vec{q}, m, n \pm 1) \Big].
 \end{multline}
 We notice that this part has the same form as \( J^{(1)} \), with only a change of the prefactors of the \( \Xi  \)-functions.
-\emph{Note to self: } I believe it is here important to consider if we have an inversion symmetric or inversion unsymmetric case. In the former, this makes everything easier, as the nasty terms are dropped.
 
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
