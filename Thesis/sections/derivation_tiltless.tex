@@ -24,6 +24,109 @@ and thus
   a_{\vec{k}ms}^{\dagger}(t)
   a_{\vec{l}ns}(t).
 \end{equation}
+
+\subsection{The energy momentum tensor}
+The \emph{canonical} energy-momentum tensor is generally defined by
+\begin{equation}
+  \label{eq:66}
+  T^{\mu \nu} =  \frac{\delta \mathcal{L}}{\delta(\partial_{\mu} \phi_{i})} \partial_{\nu} \phi_i - \eta^{\mu \nu} \mathcal{L},
+\end{equation}
+where the index \( i \) runs over the types of fields.
+This definition is correct for commuting fields, however, for non-commuting fields like ours, this formula is slightly wrong.
+This is often overlooked in many textbooks and papers, so we will here elucidate the issue to some degree.
+While a proper derivation requires the use of Grassman variables and defining left and right derivation, which we will not do here, some simple considerations help in understanding the issue.
+In the standard text book derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
+\begin{equation}
+  \label{eq:67}
+  \frac{\mathrm{d} \mathcal{L}(\psi_{i}, \partial \psi_i)}{\mathrm{d} x_{\nu }} \equiv \mathrm{d}^{\nu } \mathcal{L}
+  = \frac{\partial \mathcal{L}}{\partial (\partial_{\mu } \phi_i)} \frac{\partial(\partial _{\mu } \psi_i)}{\partial x_{\nu }}
+  + \frac{\partial \mathcal{L}}{\partial \psi _{i}} \frac{\partial \psi_i}{\partial x_{\nu }}.
+\end{equation}
+This expansion, however, ignores the non-commutative nature of the fields.
+For concreteness, consider \( \psi _i = \bar{\psi} \).
+Heuristically, the correct expression would be obtained by reordering the factors in the two terms.
+By naively employing Eq. \eqref{eq:66}, the resulting canonical energy-momentum tensor of the Dirac theory would be
+\begin{equation}
+  T^{\mu \nu} = \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} \partial^{\nu} \bar{\psi}  + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L},
+\end{equation}
+while the correct form is \cite[Eq.~3-153]{itzyksonQuantumFieldTheory1980}
+\begin{equation}
+  \label{eq:68}
+  T^{\mu \nu} = \partial^{\nu} \bar{\psi} \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L}.
+\end{equation}
+
+Our Hamiltonian
+\[
+H_s = s \sigma^i k_i
+\]
+may of course be considered as a Weyl decomposition of a full massless Dirac equation.
+
+\todo{Why do we have to consider 4x4? Is the definitions not also valid for 2x2?}
+\todo{Regarding the non-symmetry of the stress tensor, see keichelriess eq 5.16 with discussion}
+
+The Hamiltonian
+\[
+H_s = s \sigma^i k_i
+\]
+can be considered the Hamiltonian of one part of a Weyl decomposition of a Dirac system.
+The Weyl field has the Lagrangian density \cite{kachelriessQuantumFieldsHubble2018}
+\begin{equation}
+  \label{eq:69}
+  \mathcal{L} = i \phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi,
+\end{equation}
+which may be seen directly from the Dirac Lagrangian \( i \bar{\psi} \slashed{\partial } \psi  \) by taking \( \psi = (\phi_L, \phi_R)^T \) and set, for example, \( \phi _R = 0 \).
+Symmetrizing in daggered and undaggered fields
+\footnote{The Lagrangian itself is unphysical, and we may transform it in any way that leaves the action \( \int \mathcal{L} \) invariant.}
+\todo{Alternatively argue by directly showning that this does not affect the action by doing an integration by parts}
+\[
+  \mathcal{L} = \frac{i}{2} \left(\phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma^{\mu} \phi \right),
+\]
+which will prove to be more convenient to work with.
+Adapting the definition Eq. \eqref{eq:68} the energy-momentum tensor for the untilted Dirac cone is thus
+\begin{equation}
+  \label{eq:70}
+  T^{\mu \nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \sigma^{\mu} \partial_{\nu} \phi
+  - \sigma^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \eta^{\mu \nu} \mathcal{L}
+  ).
+\end{equation}
+
+Moving now to the tilted case, the 4x4 Lagrangian becomes \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}
+\todo{check sign compared to action in stoof}
+\begin{equation}
+  \label{eq:71}
+  \mathcal{L}_{\text{tilt}} = i \bar{\psi} \Gamma ^{\mu }\partial_{\mu } \psi ,
+\end{equation}
+where we have introduced modified gamma matrices
+\begin{equation}
+  \label{eq:72}
+  \Gamma ^{\mu } =
+  \begin{cases}
+    \gamma ^{\mu } + t^{\mu} \gamma ^0& \text{ inversion symmetry broken },\\
+    \gamma^{\mu} + t^{\mu} \gamma^0 \gamma^5 & \text{ inversion symmetric },
+  \end{cases}
+\end{equation}
+with \( t^{\mu } = (0, \vec{t}) \).
+\begin{equation}
+  \label{eq:73}
+  T^{\mu \nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \tilde{\sigma} ^{\mu} \partial_{\nu} \phi
+  - \tilde{\sigma} ^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \eta^{\mu \nu} \mathcal{L}
+  ),
+\end{equation}
+where we defined the modified Pauli matrices
+\begin{equation}
+  \label{eq:74}
+  \tilde{\sigma}^{\mu} =
+  \begin{cases}
+    \sigma^{\mu} + t^{\mu} & \text{ inversion symmetry broken },\\
+    \sigma^{\mu} + s t^{\mu} & \text{ inversion symmetric }.
+  \end{cases}
+\end{equation}
 Similarly, the $T^{0y}$ component of the stress-energy tensor of the theory is given by~\cite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
   \begin{split}
