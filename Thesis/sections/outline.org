@@ -18,17 +18,6 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 ** The response
 
-*** Derive Landau Levels
-
-**** No tilt
-
-**** With tilt
-Show the transformation and use the no tilt result.
-
-*** Discussion about the stress energy tensor
-Derive the stress energy tensor, comment on symmetric vs non-symmetric
-Refer to Stoof
-
 *** Magnetization currents
 In time reversal broken systems, we may have local circulating magnetization currents.
 These do not contribute to the transport, but do show up in our result from the kubo formula.
@@ -37,16 +26,42 @@ See chernodubThermalTransportGeometry2021
 
 *** Brief discussion on Tatara vs Luttinger
 
-*** Show some widemann-franz, mottt, etc relations?
+*** Discussion about the stress energy tensor
+Derive the stress energy tensor, comment on symmetric vs non-symmetric
+Refer to Stoof
 
-*** Derivation
-Find out how to best unify the tilted and untilted case.
-Nice to not have too much "double", while at the same time showing the derivation for no tilt in its entirety.
+*** Derive Landau Levels
 
-**** Without tilt
+**** No tilt
 
 **** With tilt
+Show the transformation and use the no tilt result.
 
+*** Analytical expressions for the operators
+Do the general case
+Discussion about the T tensor, etc.
+Degeneracy factor from k sum:
+- Write something like, "we will see that J and T are indep of kx, and we may extract a degeneracy factor"
+- Cleaner than having it at the end?
+
+*** Explicit form and total response
+
+**** No tilt
+Show the exact form of the matrix elements
+Show how to simplify
+Do the integral and write down resutl
+
+**** Tilt
+Find explicit forms of the matrix elements
+How to separate in tx vs tz?
+
+*** Discussion of results
+
+**** Momentum cutoff in the tz case
+
+****
+
+**** Show some widemann-franz, mottt, etc relations?
 
 * Ideas
 ** Divergence in tz
