@@ -318,12 +318,12 @@ By insertion, and after some clean up, we get
         \end{pmatrix}\\
     \ket{\psi}.
 \end{multline}
-In order to simplify this further, absorb \(\gamma \beta (k_{z} t_{\parallel} - E /v_{F}) \) into \(k_{x}\).
+In order to simplify this further, absorb \(\gamma t^s_x (k_{z} t^s_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
   \label{eq:27}
   \begin{split}
-    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta ( E /v_F - k_{z} t^s_{\parallel}),\\
+    \tilde{k}_{x} &= k_{x} / \gamma + \gamma t^s_x ( E /v_F - k_{z} t^s_{\parallel}),\\
     \tilde{k}_{y} &=  k_{y},\\
     \tilde{k}_{z} &=  k_{z}.\\
   \end{split}
@@ -334,6 +334,7 @@ These expressions warrant some explanation, as the Lorentz boost is of course
   \label{eq:28}
   \tilde{k}_x = \gamma (k_x - \beta \frac{E}{v_{F}}),
 \end{equation}
+\todo{comment on beta = tx, or change to tx}
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
 It can thus look like our expression in Eq. \eqref{eq:27} is wrong.
 The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
@@ -471,8 +472,8 @@ The normalization factor \( \mathcal{N} \) is needed as the boost transformation
 
 Reinserting explicitly, in the boosted frame, that
 \[
-  \tilde{k}_{x} = \alpha k_{x} + \frac{\beta}{\alpha} (E_{k_z m s} /v_F- k_{z} t^s_{\parallel})
-  = \alpha k_x + \beta \frac{E^0_{m, \alpha B} }{v_{F}}
+  \tilde{k}_{x} = \alpha k_{x} + \frac{t^s_x}{\alpha} (E_{k_z m s} /v_F- k_{z} t^s_{\parallel})
+  = \alpha k_x + t^s_x \frac{E^0_{m, \alpha B} }{v_{F}}
 \]
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 \begin{equation}
@@ -481,7 +482,7 @@ and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
   \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
   \sqrt{\alpha } (y-k_{x} l_{B}^2) /l_{B}
-  + \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
+  + \frac{ t^s_x l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
 \end{equation}.
 \todo{ Clean up in \(\hbar \) }
 
@@ -595,5 +596,5 @@ We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
         b_{k_z m s} H_M (\chi)
       \end{pmatrix},
     \]
-    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{\beta l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:40}.
+    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t^s_x l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:40}.
 \end{Proposition}
