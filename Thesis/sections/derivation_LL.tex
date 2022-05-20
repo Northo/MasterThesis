@@ -169,9 +169,9 @@ We will in this section derive and elucidate the Landau levels and their regions
 Consider the Hamiltonian
 \begin{equation}
   \label{eq:16}
-  H = v_{F} \vec{t} \vec{k} + s v_{F} \vec{k} \vec{\sigma},
+  H = v_{F} \vec{t}^s  \vec{k} + s v_{F} \vec{k} \vec{\sigma},
 \end{equation}
-where \(\vec{t}\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
+where \(\vec{t}^s\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
 \footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}.
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 Firstly, assume that the tilt vector \(\vec{ t }\) is in the \(x,z\)-plane, \(\vec{t} = (t_{\perp}, 0, t_{\parallel})\), which we can always achieve by a rotation around \(z\).
@@ -187,7 +187,7 @@ The Landau level equation is
 with
 \begin{equation}
   \label{eq:18}
-  H_{B} = v_F \left(t _{\perp} k^B_{x} + t _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} k^B_{i} \sigma _{i},
+  H_{B} = v_F \left(t^s _{\perp} k^B_{x} + t^s _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian.
@@ -212,7 +212,7 @@ We may thus rotate the \(x\) and \(z\) in and out of the diagonal elements, with
 
 The problematic part of the Hamiltonian with regards to finding the Landau levels, are the terms containing \(k^B_{x}\) on the diagonal, i.e.
 \[
-  v_F t_{\perp} k^B_{x} \mathcal{I}_{2} + s v_{F} k^B_{x} \sigma _{x}.
+  v_F t^s_{\perp} k^B_{x} \mathcal{I}_{2} + s v_{F} k^B_{x} \sigma _{x}.
 \]
 We will now find the boost parameter that eliminates \(k_{x}\) from the diagonal.
 We have
@@ -237,13 +237,13 @@ as the effect of \(\sigma _{x}\) is to transpose the rows.
 The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
   \label{eq:22}
-  t_{\perp} \cosh \theta + s \sinh \theta = 0.
+  t^s_{\perp} \cosh \theta + s \sinh \theta = 0.
 \end{equation}
 Solving for \(\theta \) we get
 \begin{equation}
   \label{eq:23}
   \theta = \log (
-  \pm \frac{\sqrt{s - t_{\perp}}}{\sqrt{s + t_{\perp}}}
+  \pm \frac{\sqrt{s - t^s_{\perp}}}{\sqrt{s + t^s_{\perp}}}
   ).
 \end{equation}
 \todo{NB: depending of choice of sign in log, we get different signs in answer}
@@ -251,33 +251,16 @@ Alternatively, written in a slightly suggestive form,
 \begin{equation}
   \label{eq:24}
   \tanh \theta =
-  - s t_{\perp}.
+  - s t^s_{\perp}.
 \end{equation}
 \todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
-
-Before we proceed any further, we will put the above into a more solid context, defining some useful quantities and more carefully investigte what is going on, which will be of help later when considering for the regions of validity, and the physical reason behind it.
-
-\todo{nice plot of the landau levels acutally being squeezed}
-
-With no magnetic field, the eigenvalues of the system are
-\begin{equation}
-  E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
-\end{equation}
-where in the literature the first term is sometimes referred to as the \emph{kinetick} term while the latter is the \emph{potential} term.
-The definition for the system to be Type-II is that there exists a direction in momentum space for which the kinetic term dominates over the potential term \cite{soluyanovTypeIIWeylSemimetals2015}.
-The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
-\begin{proof}
-  We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
-  In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
-\end{proof}
-
 
 Expressed in the parameter \(t\), the result in Eq. \eqref{eq:24} has an intuitive, and quite visual, interpretation.
 As described above, we have rotated our frame such that the tilt is confined to the \(x,z\)-plane, i.e. no tilt in the \(y\)-direction.
 The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
 \begin{equation}
   \label{eq:25}
-  \theta = - s \tanh^{-1} \frac{\omega_{\perp}}{v_{x}} = - s \tanh^{-1} t_{x}.
+  \theta = - s \tanh^{-1} t^s_{x}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
 \begin{figure}[ht]
@@ -304,9 +287,9 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
   \end{tikzpicture}
   \caption{\label{fig:arctanh} Plot of \(\tanh^{-1}\), which diverges as the argument goes to \(\pm 1\).}
 \end{figure}
-For \(t_{x} < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
-For \(t_{x} \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
-More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( t_x \to 1 \), the level separation \( \Delta E \to 0 \).
+For \(|t_{x}| < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
+For \(|t_{x}| \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
+More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( |t_x| \to 1 \), the level separation \( \Delta E \to 0 \).
 
 \todo{ Discuss magnetic vs electric regime }
 
@@ -323,15 +306,15 @@ As the \(t\)-vector gets larger, the region of valid directions is reduced to an
   \caption{\label{fig:tiltSphere} TODO}
 \end{figure}
 
-We now return to solving Eq. \eqref{eq:19}, using the solution angle we just found.
+We now return to solving Eq.~\eqref{eq:19}, using the solution angle we just found.
 By insertion, and after some clean up, we get
 \emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
 \begin{multline}
   \label{eq:26}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0\\
   = v_F \begin{pmatrix}
-          k_z ( s + t_z \gamma ) - E / v_F \gamma & -s ( ik_y + k_z t_x t_z \gamma - k_x / \gamma - E /v_{F} \gamma t_x)\\
-          s ( i k_y - k_z t_x t_z \gamma + k_x / \gamma + E /v_F \gamma t_x) & - k_z (s - t_z \gamma) - E \gamma
+          k_z ( s + t^s_z \gamma ) - E / v_F \gamma & -s ( ik_y + k_z t^s_x t^s_z \gamma - k_x / \gamma - E /v_{F} \gamma t^s_x)\\
+          s ( i k_y - k_z t^s_x t^s_z \gamma + k_x / \gamma + E /v_F \gamma t^s_x) & - k_z (s - t^s_z \gamma) - E \gamma
         \end{pmatrix}\\
     \ket{\psi}.
 \end{multline}
@@ -340,7 +323,7 @@ Thus, let
 \begin{equation}
   \label{eq:27}
   \begin{split}
-    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta ( E /v_F - k_{z} t_{\parallel}),\\
+    \tilde{k}_{x} &= k_{x} / \gamma + \gamma \beta ( E /v_F - k_{z} t^s_{\parallel}),\\
     \tilde{k}_{y} &=  k_{y},\\
     \tilde{k}_{z} &=  k_{z}.\\
   \end{split}
@@ -349,7 +332,7 @@ Thus, let
 These expressions warrant some explanation, as the Lorentz boost is of course
 \begin{equation}
   \label{eq:28}
-  \tilde{k_x} = \gamma (k_x - \beta \frac{E}{v_{F}}),
+  \tilde{k}_x = \gamma (k_x - \beta \frac{E}{v_{F}}),
 \end{equation}
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
 It can thus look like our expression in Eq. \eqref{eq:27} is wrong.
@@ -359,11 +342,11 @@ The solution to this seeming inconsitency is that the proper energy is not \( \f
 The eigenvalue equation is simply
 \begin{equation}
   \label{eq:29}
-  \left[  \gamma \left( t_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
+  \left[  \gamma \left( t^s_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
   s \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
-If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \frac{v_{x} v_{y}}{v_{F}^2} / \gamma \) in the new quantities.
-This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e \tilde{y} \frac{v_{y} v_{x}}{v_{F}^2}  B_{z} /\gamma \), where the rescaled \(\tilde{y} = \frac{v_{F}}{v_{y}} y\).
+If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \gamma \) in the new quantities.
+This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e y B_{z} /\gamma \).
 
 The Landau level equation thus reads
 \begin{equation}
@@ -371,27 +354,27 @@ The Landau level equation thus reads
   \left[
   \sum\limits_{i} s v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
-(E- t_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
+(E- t^s_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
-where \(\vec{\tilde{A}}=-B_{z}/ \gamma  \tilde{y} \hat{x}\).
+where \(\vec{\tilde{A}}=-B_{z}/ \gamma y \hat{x}\).
 We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
 \begin{align}
   \label{eq:31}
-  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
-  \left(E - t_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
+  \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
+  \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
 \end{align}
 Cleaning up, we get
 \begin{align}
   \label{eq:32}
-  E &= t_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
-  E &= \tilde{k}_{z} v_{F} \left( t_{\parallel}  - s \hbar / \gamma  \right), & m=0.
+  E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
+  E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s \hbar / \gamma  \right), & m=0.
 \end{align}
 
 As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:33}
-  E = t_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}
+  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}
 \end{equation}
 As the tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
 \todo{Note that \( \tilde{k}\to 0 \) as we overtilt as well, so all the levels go to zero.}
@@ -413,14 +396,14 @@ We may rewrite the energy as
 \[
   E =
   \begin{cases}
-    t_{\parallel} v_F k_z + \operatorname{sign}(m) v_F \alpha \sqrt{2 |m| e B \alpha + k_z^2} & m\neq 0\\
-    t_{\parallel} v_F k_z - s \alpha v_F k_z & m=0,
+    t^s_{\parallel} v_F k_z + \operatorname{sign}(m) v_F \alpha \sqrt{2 |m| e B \alpha + k_z^2} & m\neq 0\\
+    t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m=0,
   \end{cases}
 \]
 where \( \hbar = 1 \).
 Notice that this is exactly
 \[
-E = t_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
+E = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
 \]
 where \( E^0_{m, B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
 
@@ -456,7 +439,7 @@ Taking care to keep track of boosted and rescaled quantites, the eigenstate in t
 \end{equation}
 with
 \begin{equation}
-  \alpha _{\tilde{k}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} - \hbar  \tilde{k}_z},
+  \alpha _{\tilde{k}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t^s_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} - \hbar  \tilde{k}_z},
 \end{equation}
 where
 \[
@@ -466,7 +449,7 @@ We note that \( \alpha_{k_z 0 s} = 0 \), so using the explicit form of the energ
 For \( m\neq 0 \)
 \[
   \frac{
-    E_{k_z m s} - t_{\parallel} v_F k_z
+    E_{k_z m s} - t^s_{\parallel} v_F k_z
   }{s v_{F}} = \sign(m) s \alpha \sqrt{2 M e B \alpha + k_{z}^2}
 \]
 and thus
@@ -488,7 +471,7 @@ The normalization factor \( \mathcal{N} \) is needed as the boost transformation
 
 Reinserting explicitly, in the boosted frame, that
 \[
-  \tilde{k}_{x} = \alpha k_{x} + \frac{\beta}{\alpha} (E_{k_z m s} /v_F- k_{z} t_{\parallel})
+  \tilde{k}_{x} = \alpha k_{x} + \frac{\beta}{\alpha} (E_{k_z m s} /v_F- k_{z} t^s_{\parallel})
   = \alpha k_x + \beta \frac{E^0_{m, \alpha B} }{v_{F}}
 \]
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
@@ -498,7 +481,7 @@ and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
   \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
   \sqrt{\alpha } (y-k_{x} l_{B}^2) /l_{B}
-  - \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
+  + \frac{ \beta l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
 \end{equation}.
 \todo{ Clean up in \(\hbar \) }
 
@@ -571,8 +554,8 @@ and
 e^{\theta \sigma _x} =
 \frac{1}{\alpha }
 \begin{pmatrix}
-  1 & -s t_x\\
-  -s t_x & 1
+  1 & -s t^s_x\\
+  -s t^s_x & 1
 \end{pmatrix}.
 \]
 The upper and lower part of the spinor are orthogonal, thus we have
@@ -585,14 +568,14 @@ We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
 \begin{Proposition}
   The tilted Hamiltonian
   \[
-    H = v_F \vec{t} \vec{k} + s v_F \vec{k} \vec{\sigma}
+    H = v_F \vec{t}^s \vec{k} + s v_F \vec{k} \vec{\sigma}
   \]
   in a magnetic field \( \vec{B} \) has the Landau levels
   \[
     E =
     \begin{cases}
-      t_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0\\
-      t_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0
+      t^s_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0\\
+      t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0
     \end{cases}.
   \]
   The associated eigenstates in the position basis are
