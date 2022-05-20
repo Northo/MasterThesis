@@ -1,9 +1,9 @@
 We will find the current response of a single Dirac cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
 The current response of interest in the given geometry is thus in the $x$-direction,
-\begin{equation}\label{eq:3}
+\begin{equation}\label{eq:10}
   J^x = \chi ^{xy} \frac{- \nabla _yT}{T},
 \end{equation}
-with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:3}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
+with $\chi^{xy}$  being the response\footnote{The sign in Eq. (\ref{eq:10}) depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
 This geometry is shown in Figure \ref{fig:setup}.
 \begin{figure}[ht]
   \centering
@@ -23,7 +23,7 @@ The above result is what is meant, to the best of our understanding.}
 
 Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-luttinger-gravity-final}), found through Luttinger's approach.
 \begin{equation}
-  \label{eq:4}
+  \label{eq:11}
   \braket{J^i}(t, \vec{r}) =
   \int\limits_{-\infty }^{\infty } \mathrm{d}t' \mathrm{d}\vec{r}'
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
@@ -36,8 +36,8 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
   \partial _j' \psi (t', \vec{r}').
 \end{equation}
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
-As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:4}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
-Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:4}) is
+As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:11}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
+Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:11}) is
 \[
   \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \partial _j' \psi  (\vec{r}'),
 \]
@@ -90,7 +90,7 @@ In frequency space
                    \Theta (t) \Braket{\left[ J(t), T(t'') \right]}.
 \end{align}
 In frequency and momentum space the response function is thus
-\begin{equation}\label{eq:5}
+\begin{equation}\label{eq:12}
   \chi ^{ij} (w, \vec{q}) =
   \frac{-iv_F}{\mathcal{V} \hbar }
   \int \mathrm{d}t e^{i\omega t}
@@ -113,14 +113,14 @@ In such systems, unobservable, circulating \emph{magnetization} currents arise.
 These currents do not contribute to transport, but the Kubo treatment derives the local current, which in general also includes non-transporting currents.
 Let
 \begin{equation}
-  \label{eq:1}
+  \label{eq:13}
   \vec{J} = \vec{J}_{\text{tr}} + \vec{J}_M,
 \end{equation}
 where \( \vec{J} \) is the total local current, \( \vec{J}_{\text{tr}} \) is the transport current, and \( \vec{J}_M \) is the circulating magnetization current.
 While our response \( \chi \) relates to the total current, we are more interested in the experimentally measurable transport resonse \( L^{ij}_{12} \), related to our Kubo result as \cite{arjonaFingerprintsConformalAnomaly2019}
 \todo{this might not be a first-hand source. See thermal transport...geometry chernodub eq. 62}
 \begin{equation}
-  \label{eq:2}
+  \label{eq:14}
   L_{12}^{ij} = \chi^{12} - \epsilon^{ijl} M_l,
 \end{equation}
 with \( M_l \) the magnetization.

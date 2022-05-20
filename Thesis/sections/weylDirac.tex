@@ -12,7 +12,7 @@ Instead of obeying the Schrödinger equation as most materials, they obey a Dira
 As in the high energy case, the Dirac equation may be decomposed into chiral Weyl equations in the massless case.
 Setting $v_F = 1$ for simplicity one gets the Hamiltonian
 \begin{equation}
-  \label{eq:27}
+  \label{eq:1}
 H_D = s v_{F} \vec{\sigma} \vec{p},
 \end{equation}
 where $\vec{\sigma}$ are the Pauli matricies, $v_F$ the Fermi velocity, $\vec{p}$ the momentum, and $s=\pm 1$ denotes the chirality.
@@ -20,7 +20,7 @@ where $\vec{\sigma}$ are the Pauli matricies, $v_F$ the Fermi velocity, $\vec{p}
 It is here important to note that the Pauli matrices represent either real spin degree of freedom or some pseudo spin degree of freedom.
 Examples of pseudo spin is that of bipartite lattices, such as Graphene, in which case one must be careful when for example applying time reversal, as only real spin is odd under this operation, and not pseudo spin.
 
-The dispersion of the Hamiltonian (\ref{eq:27}) has a band crossing at  $\vec{p} = 0$.
+The dispersion of the Hamiltonian (\ref{eq:1}) has a band crossing at  $\vec{p} = 0$.
 For the two-dimensional case, a perturbation on the form $m \sigma_z$, with $m$ some parameter, can open up a gap in the dispersion relation.
 This is easily verified by writing out the Hamiltonian and solving the eigenproblem
 \begin{align}
@@ -49,10 +49,10 @@ The crossing is \emph{topologically protected}.
 A more formal approach to topological materials, is that of topological invariants -- numbers related to the topology of the material.
 Having a non-trivial topological invariant number, is the very definition of topological materials, and we will in subsection \ref{sec:chern-number-weyl} show that Dirac cones makes the Chern number of these materials non-trivial.
 
-The Hamiltonian in Eq. (\ref{eq:27}) is not the most general, if we allow for anisotropy in the system.
+The Hamiltonian in Eq. (\ref{eq:1}) is not the most general, if we allow for anisotropy in the system.
 In three dimensions we have more generally the Hamiltonian
 \begin{equation}
-  \label{eq:38}
+  \label{eq:2}
   H(\vec{k}) = \vec{v}_0 \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma} ,
 \end{equation}
 where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{k})_i = v_i k_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
@@ -64,7 +64,7 @@ Consider an isotropic tilt-less system;
 introduce to the system a pseudospin degree of freedom, thus extending the system to $4\times 4$-matricies.
 The Hamiltonian of the system~\cite{armitageWeylDiracSemimetals2018a}
 \begin{equation}
-  \label{eq:29}
+  \label{eq:3}
   H = v_F \tau _x \otimes \vec{\sigma} \vec{k} + m \tau _z \otimes I_2 + b I_2 \otimes \sigma _z + b' \tau _z \otimes \sigma _x,
 \end{equation}
 with $\vec{\tau}$ the Pauli matricies related to the pseudospin, and $I_2$ the identity matrix of dimension 2.
@@ -89,8 +89,8 @@ In fact, this is simply a shift in $k_z$ of the Dirac cone, as  is seen by rewri
 \end{equation}
 This still has Weyl node solutions at $k_z^2 = (b^2-m^2) /v_F^2$, where the dispersion is linear in the vicinity of the nodal solutions.
 This thus separates two Dirac nodes in momentum space, giving  a \emph{Weyl} semimetal.
-This also illustrates that the decomposition in Eq. (\ref{eq:27}) is valid around either of the shifted nodes.
-Expanding around one of the Dirac points of the Weyl semimetal, the Hamiltonian is exactly Eq. (\ref{eq:27}), after decomposing the $4 \times 4$ Hamiltonian into its two chiral  $2\times 2$ Weyl constituents.
+This also illustrates that the decomposition in Eq. (\ref{eq:1}) is valid around either of the shifted nodes.
+Expanding around one of the Dirac points of the Weyl semimetal, the Hamiltonian is exactly Eq. (\ref{eq:1}), after decomposing the $4 \times 4$ Hamiltonian into its two chiral  $2\times 2$ Weyl constituents.
 
 If one instead perturbs the system with a Zeeman field in the $x$-direction, i.e. having a $b' > 0$, the splitting is instead in energy, giving nodal loop where the two cones intersect.
 We will not go into any depth on these types of materials.
@@ -99,7 +99,7 @@ The three cases described here: unperturbed, where the two cones are superimpose
 Notice that in the two latter cases, the Dirac points, i.e. crossings, are not superimposed.
 As will be discussed in section \ref{sec:weyl-dirac-cones}, this makes the crossings very robust, as the two nodes must merge before a gap may be opened.
 
-The second case to consider, is a finite tilting vector $\vec{v}_0$, where we will consider only real spin, thus reducing the system back to the two-dimensional case in Eq. (\ref{eq:38}).
+The second case to consider, is a finite tilting vector $\vec{v}_0$, where we will consider only real spin, thus reducing the system back to the two-dimensional case in Eq. (\ref{eq:2}).
 For the isotropic case, $\vec{v}_i = v_F \hat{x}_i$, the energy bands are~\cite{ottesenOpticalConductivityDirac2021}
 \begin{equation}
   E_s(\vec{k}) = \vec{v}_0 \vec{k} + s v_F |k|.
@@ -132,13 +132,13 @@ Tehse types of systems, which are the systems of interest for this thesis, are c
 \end{figure}
 
 \subsection{Chern number of the Weyl point}\label{sec:chern-number-weyl}
-In order to more explicitly demonstrate the topological nature of the state in Eq. (\ref{eq:27}), we will find a non-zero topological invariant associated with that state.
+In order to more explicitly demonstrate the topological nature of the state in Eq. (\ref{eq:1}), we will find a non-zero topological invariant associated with that state.
 Thereby showing that the material is a topological material.
 The topological number we will calculate is the Chern number, related to the Berry curvature of the bands in some enclosed surface.
 In order to calculate the Chern number, we must first find an expression for the Berry curvature of our system.
 This derivation will follow closely Berry's original derivation~\cite{berryQuantalPhaseFactors1984} of the Berry phase of a two-level system with the Hamiltonian
 \begin{equation}
-  \label{eq:30}
+  \label{eq:4}
   H(\vec{R}) = \frac12 \vec\sigma \vec{R}.
 \end{equation}
 Some notation has been modernized with inspiration from the treatment of the Berry phase of the spin-$1 /2$ particle in an external magnetic field in~\citeauthor{holsteinAdiabaticTheoremBerry1989}~\cite{holsteinAdiabaticTheoremBerry1989}.
@@ -245,12 +245,12 @@ This divergence is zero everywhere except in the monopole source, giving
 \end{equation}
 where $\delta$ is the Dirac delta distribution.
 By virtue of the divergence theorem the Chern number is then found to be
-\begin{equation}\label{eq:chern}
+\begin{equation}\label{eq:444chern}
   C = \frac{1}{2\pi} \int_C \nabla \cdot \vec{B_+} \mathrm{d} C = -1,
 \end{equation}
 where the property of integrals over Dirac delta distributions was used.
 
-Note that some literature will have a Chern number differing from \eqref{eq:chern} by the sign of the Fermi velocity,
+Note that some literature will have a Chern number differing from \eqref{eq:444chern} by the sign of the Fermi velocity,
 \begin{equation}
   C = - \operatorname{sign}(v_F).
 \end{equation}
@@ -259,7 +259,7 @@ We have put the sign dependence in the state, making the $E_+$ state always have
 In literature that instead defines $E_+ = v_F |R|$ the state's energy will depend on the sign of the Fermi velocity, and as a consequence, the sign dependence will end up in the Chern number instead.
 
 The overall divergence of Berry curvature must be zero, or equivalently, the sum of the Chern numbers must be zero.
-The Hamiltonian Eq. (\ref{eq:30}) chosen with the opposite chirality,
+The Hamiltonian Eq. (\ref{eq:4}) chosen with the opposite chirality,
 \begin{equation}
   H(\vec{R}) = -\frac{1}{2} \vec{\sigma} \vec{R},
 \end{equation}
@@ -307,7 +307,6 @@ the  monopole has been moved outside the dimensionality of freedom.
 %     \end{scope}
 %   \end{tikzpicture}
 %   \caption{todo}
-%   \label{fig:curvature_plane}
 % \end{figure}
 
 \begin{comment}
