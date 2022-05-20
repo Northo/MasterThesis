@@ -1,4 +1,4 @@
-% Assumes \datafile is set
+% Assumes \datafiles is set
 \begin{tikzpicture}
   \begin{axis}[
     title=\ifthenelse{\equal{\plottitle}{}}{Convergence Plot}{\plottitle},
@@ -8,7 +8,10 @@
     width=14cm,
     height=8cm,
     % ymode=log,
+    legend entries={\legendentries},
     ]
-    \addplot[mark=o] table[col sep=comma] {\datafile};
+    \foreach \datafile in \datafiles {
+      \addplot+[mark=o] table[col sep=comma] {\datafile};
+    }
   \end{axis}
 \end{tikzpicture}

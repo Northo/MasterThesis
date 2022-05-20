@@ -19,7 +19,7 @@
   \pgfmathsetmacro\xx{-sqrt(#1^2/(#2^2-#1^2))-0.1}
   \pgfmathsetmacro\gsecond{#2 * \xx + #1 * sqrt(#1 + (\xx)^2)}
   \pgfmathsetmacro\gthird{#2 * \xx + #1 * sqrt(2 * #1 + (\xx)^2)}
-  \draw[->] (axis cs:\xx,\gsecond)--(axis cs:\xx, \gthird);
+  \draw[->] (axis cs:\expandafter\xx,\gsecond)--(axis cs:\expandafter\xx, \gthird);
   \else \fi
 }
 
