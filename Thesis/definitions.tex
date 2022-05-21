@@ -1,5 +1,8 @@
 \renewcommand{\vec}{\bm}
-\newcommand{\todo}[1]{{\bfseries\colorbox{orange}{#1}}}
+\newcommand{\cbox}[2][yellow]{%
+  \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
+}
+\newcommand{\todo}[2][orange]{\hfill\break{\bfseries\cbox[#1]{#2}}\break}
 \newcommand{\pe}{\phantom{=}}
 \newcommand{\sign}{\operatorname{sign}}
 \newcommand{\qvec}[1]{\mathfrak{#1}} % Used for two-dim vec

@@ -530,16 +530,16 @@ In the static limit, the \( \Xi \) functions thus take the form
 We have the response function
 \todo{comment limits (q->0, omega ->0)}
 \todo{Make shure there are no alphas in the prefactor}
-\[
+\begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{e B i v_F}{(2 \pi)^2}
-  \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]
-  \frac{
+  \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]\\
+  \times \frac{
     J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y~(i)}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
   }{
     (E_{\vec{k} m s} - E_{\vec{k}+\qvec{q} ns} + i \eta)(E_{\vec{k}ms}-E_{\vec{k}+\qvec{q} ns} + i \eta)
   }.
-\]
+\end{multline*}
 Writing out the matrix products we have
 \begin{multline}
   J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y~(i)}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
