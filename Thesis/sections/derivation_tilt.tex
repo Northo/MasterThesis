@@ -528,8 +528,6 @@ In the static limit, the \( \Xi \) functions thus take the form
 
 \subsection{Solving the kx integral -- draft}
 We have the response function
-\todo{comment limits (q->0, omega ->0)}
-\todo{Make shure there are no alphas in the prefactor}
 \begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{e B i v_F}{(2 \pi)^2}
@@ -551,10 +549,10 @@ Writing out the matrix products we have
     (\alpha_{\vec{k} m s}^2 \Xi_1(m,n)^2 - \alpha_{\vec{k} + \qvec{q} n s}^2 \Xi_2(m,n)^2)
   }{
     (\alpha_{\vec{k} m s}^2 + 1)(\alpha_{\vec{k}+\qvec{q} n s}^2 + 1)
-  }
+  }.
   \label{eq:100}
 \end{multline}
-
+And so, inserting into the response function
 \begin{multline}
   \label{eq:101}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
@@ -572,9 +570,9 @@ Writing out the matrix products we have
   }
 \end{multline}
 
-We make the observation that \( \Xi _1(M, N) = \Xi _2(N, M) \).
+We make the observation that \( \Xi _1(m, n) = \Xi _2(n, m) \), where it is important to note that \( P \) changes sign under interchange of \( m,n \).
 The rest of the factors are invariant under the interchange \( m \leftrightarrow n \), except for the step functions, which gives an overall sign change.
-Thus, using \( \Xi _1(M, N) = \Xi _2(N, M) \) and relabelling the summation indices we may consider
+Thus, using \( \Xi _1(m, n) = \Xi _2(n, m) \) and relabelling the summation indices we may consider
 \[
   \alpha_{\kappa_z m s}^2 \Xi_1^2 - \alpha_{\kappa_z n s}^2 \to 2 \alpha_{\kappa_z m s}^2 \Xi_1^2.
 \]
@@ -598,23 +596,23 @@ We have
   \end{cases}.
 \end{equation}
 
-\newpage
 Furthermore, the contributions from those quadrants are equal, which we will now show.
-
-The mapping \( (m,n) \mapsto (-m, -n) \), i.e. a \( \pi \) rotation, transforms points in the second quadrant to the fourth quadrant.
+The mapping \( (m,n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), i.e. a \( \pi \) rotation, transforms points in the second quadrant to the fourth quadrant.
 We want to consider how the integrand in question transforms under such a mapping.
-First of all, recall that
-\[
-\alpha _{\kappa _z m} = \frac{-\sqrt{M} }{ \epsilon_{\kappa_z m} /s - \kappa _z},
-\]
-and thus \( \alpha _{\kappa _z m} = -\alpha _{-\kappa _z -m} \).
-We consider this factor squared, so no overall sign is introduced.
-The sign of \( \kappa_z  \) is however flipped, but no issue as we integrate over \( (-\infty, \infty) \).
-\todo{Be careful with this argument. It also requires the rest of the integrand to be symmetric under \( \kappa \to -\kappa  \), which I believe might be the case only for \( t_{z} = 0 \).}
-By Eq. \eqref{eq:qprimelimit}, \( \Xi _2 \) acquires an extra factor \( (-1)^{N-M-1} \) when \( N-1 > M \), however this gives no overall change as we consider \( (\Xi_2) ^2 \).
-Lastly, \( (\epsilon_{\kappa _z m} + \epsilon_{\kappa _z n}) \) acquires a negative sign change, which cancels with the negative sign from the step function factor.
-Every term of the sum from the second quadrant may thus be mapped to a term from the fourth quadrant.
-We may thus restrict the sum to the fourth quadrant, by simply introducing a factor 2.
+Recall
+\begin{align*}
+  \alpha_{\kappa_z m s} &= - \frac{\sqrt{\alpha M} }{s \epsilon_{m, \alpha B}^0 - \kappa_z},\\
+  \epsilon_{m, \alpha B}^0 &= \sign(m) \sqrt{\alpha M + \kappa_z^2}.
+\end{align*}
+Under the above mapping, we have the following relations
+\begin{align}
+  \label{eq:92}
+  \epsilon_{m, \alpha B}^0 &\mapsto -\epsilon_{m, \alpha B}^0,\\
+  \alpha_{\kappa_z m s} &\mapsto -\alpha_{\kappa_z m s},\\
+  P &\mapsto -P.
+\end{align}
+The \( \Xi \) functions also acquries a sign for some values of \( m,n \), however, we only consdier \( \Xi^2 \).
+The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
 
 \begin{figure}[h]
   \centering
