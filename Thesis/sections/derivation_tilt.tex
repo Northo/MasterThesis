@@ -213,7 +213,7 @@ Evaluating, we find
           \begin{cases}
             \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
             \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases},
+          \end{cases} \text{ for } M>0, N \geq 0,
 \end{align}
 \begin{align}
   \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
@@ -227,7 +227,7 @@ Evaluating, we find
           \begin{cases}
             \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
             \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases},
+          \end{cases} \text{ for } M\geq 0, N > 0,
 \end{align}
 Here, \( \qvec{q}_y = (q'_x, q_y) \).
 
@@ -509,7 +509,7 @@ In the static limit, the \( \Xi \) functions thus take the form
           \begin{cases}
             \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
             \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases},
+          \end{cases} \text{ for } M>0, N \geq 0,
 \end{align}
 \begin{align}
   \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
@@ -523,7 +523,7 @@ In the static limit, the \( \Xi \) functions thus take the form
           \begin{cases}
             \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
             \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases}.
+          \end{cases} \text{ for } M \geq 0, N > 0.
 \end{align}
 
 \subsection{Solving the kx integral -- draft}
@@ -614,24 +614,28 @@ Under the above mapping, we have the following relations
 The \( \Xi \) functions also acquries a sign for some values of \( m,n \), however, we only consdier \( \Xi^2 \).
 The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
 
+
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \draw[step=1cm,gray,very thin] (-1.9,1.9) grid (5.9,-5.9);
-    \draw[thick,->] (0,0) -- (4.5,0) node[anchor=north west] {\( m \)};
-    \draw[thick,->] (0,-5.3) -- (0,0.5) node[anchor=south east] {\( n \)};
-    \foreach \x in {0,1,2,3,4}
+    \draw[step=1cm,gray,very thin] (-0.9,0.9) grid (5.9,-4.9);
+    \draw[thick,->] (0,0) -- (5.5,0) node[anchor=north west] {\( m \)};
+    \draw[thick,->] (0,-4.3) -- (0,0.5) node[anchor=south east] {\( n \)};
+    \foreach \x in {0,1,2,3,4,5}
     \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=south] {$\x$};
-    \foreach \y in {0,-1,-2,-3,-4,-5}
+    \foreach \y in {0,-1,-2,-3,-4}
     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
     % \fill[blue!20, opacity=0.4] (-0.5, 0) -- (4, -4.5) -- (-0.5, -4.5) -- (-0.5, 0);
     % \fill[red!20, opacity=0.4] (0, -0.5) -- (4.5, -5) -- (4.5, -0.5) -- (0, -0.5);
-    \fill[blue!20, opacity=0.4] (0, -1) -- (4, -5) -- (0, -5) -- (-0, 0);
-    \fill[red!20, opacity=0.4] (0,-1) -- (4, -5) -- (4, -1) -- (1,-1);
-    \draw (0, -1) -- (4, -5);
+    \fill[blue!20, opacity=0.4] (1, 0) -- (5, -4) -- (5, 0) -- (1, 0);
+    \fill[red!20, opacity=0.4] (1,0) -- (5, -4) -- (1, -4) -- (1,-1);
+    \draw (1, 0) -- (5, -4);
   \end{tikzpicture}
 
-  \caption{TODO}
+  \caption{The region of \( (m,n) \) to sum over for a Type-I tilted cone.
+    The black line represents the combinations that give a finite contribution also in the untilted case.
+    As the cone is tilted, this sharp line ``diffuse'' into the red and blue regions as well.
+    Note that, as \( \Xi_1 \) defined only for \( M>0\), the region with \( m=0 \) gives no contribution.}
   \label{fig:nmregion}
 \end{figure}
 
@@ -639,50 +643,57 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
   \centering
   \pgfplotsset{
     % colormap={X}{ gray(0cm)=(1); gray(1cm)=(0);},
-    colormap={mycool}{ rgb255(0)=(255,0,255); rgb255(8)=(0,128,255); rgb255(10)=(255,255,255);},
+    % colormap={mycool}{ rgb255(0)=(255,0,255); rgb255(8)=(0,128,255); rgb255(10)=(255,255,255);},
+    colormap={temp}{rgb255=(36,0,217) rgb255=(25,29,247) rgb255=(41,87,255)
+      rgb255=(61,135,255) rgb255=(87,176,255) rgb255=(117,211,255) rgb255=(153,235,255)
+      rgb255=(255,255,255)
+      rgb255=(255,214,153) rgb255=(255,172,117) rgb255=(255,120,87) rgb255=(255,61,61)
+      rgb255=(247,40,54) rgb255=(217,22,48) rgb255=(166,0,33)},
+    % colormap={mycool}{ rgb255(-1)=(255,0,255); rgb255(-0.1)=(255,0,255); rgb255(0)=(255,255,255); rgb255(1)=(0,128,255)},
+    % colormap={violet}{rgb255=(25,25,122) color=(white) rgb255=(238,140,238)},
+    point meta min=-0.1,
+    point meta max=0.1,
+    xlabel=\( m \),
+    ylabel=\( n \),
   }
   \begin{tikzpicture}
-    \begin{axis}[
+    \begin{groupplot}[
+      width=0.4\textwidth,
       axis equal,
-      xmin=0, xmax=12,
-      ymin=-12, ymax=0,
+      xmin=-6, xmax=6,
+      ymin=-6, ymax=6,
+      % title={\( t_x= \title \)},
+      title style={ at={(0.7, 0.7)} },
+      enlargelimits=false,
+      group style={
+        group size=2 by 2,
+        x descriptions at=edge bottom,
+        y descriptions at=edge left,
+        horizontal sep=8pt,
+        vertical sep=8pt,
+      },
       ]
-      \addplot [
-      matrix plot*,
-      mesh/cols=12,
-      point meta=explicit,
-      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \begin{tikzpicture}
-    \begin{axis}[
-      axis equal,
-      xmin=0, xmax=12,
-      ymin=-12, ymax=0,
-      ]
-      \addplot [
-      matrix plot*,
-      mesh/cols=12,
-      point meta=explicit,
-      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.1.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \begin{tikzpicture}
-    \begin{axis}[
-      axis equal,
-      xmin=0, xmax=12,
-      ymin=-12, ymax=0,
-      colorbar
-      ]
-      \addplot [
-      matrix plot*,
-      mesh/cols=12,
-      point meta=explicit,
-      ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/tx0.4.csv};
-    \end{axis}
+      \pgfplotsforeachungrouped \datafile/\title in {
+        contribTilttx0.PbrokenFalse.csv/0,
+        contribTilttx0.5PbrokenFalse.csv/0.5,
+        contribTilttx0.25PbrokenFalse.csv/0.25,
+        contribTilttx0.125PbrokenFalse.csv/0.16
+      }{
+        \edef\tmp{
+          \noexpand\nextgroupplot[title={$t_x = \title$}]
+          \noexpand\node at (axis cs: -5,\title) {\title};
+          \noexpand\addplot [
+          matrix plot*,
+          mesh/cols=13,
+          point meta=explicit,
+          ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
+        }
+        \tmp
+      }
+    \end{groupplot}
   \end{tikzpicture}
   \caption{TODO}
-\end{figure}
+  \end{figure}
 
 \subsection{Tilt parallell to the magnetic field}
 We consider here a tilt parallel to the magnetic field, \( \vec{t} \parallel \vec{B} \). We will consider only the canonical part of the energy-momentum tensor, and not the full symmetrized form, as described \citeauthor{vanderwurffMagnetovorticalThermoelectricTransport2019} \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
