@@ -8,10 +8,12 @@
     width=14cm,
     height=8cm,
     % ymode=log,
-    legend entries={\legendentries},
     ]
-    \foreach \datafile in \datafiles {
-      \addplot+[mark=o] table[col sep=comma] {\datafile};
+    \ifthenelse{\isundefined\prefix}{\newcommand\prefix{t_x=}}{}
+    \foreach \datafile/\entry in \datafiles {
+      \addplot+[mark=o] table[col sep=comma] {data/\datafile};
+      \edef\tmp{\noexpand\addlegendentry{$ \prefix \entry $}}
+      \tmp
     }
   \end{axis}
 \end{tikzpicture}

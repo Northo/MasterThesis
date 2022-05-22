@@ -838,9 +838,10 @@ This expression goes like \( \log N \).
 
 \begin{figure}[ht]
   \centering
-  \newcommand\datafiles{data/notilt_contrib2.csv, data/notilt_contrib.csv}
-  \newcommand\legendentries{\( \vec{t} = 0 \), \( t_x = 0.1 \)}
+  % \newcommand\datafiles{data/notilt_contrib2.csv, data/notilt_contrib.csv}
+  \newcommand\datafiles{notilt_contrib2.csv/0.0, notilt_contrib.csv/0.1}
   \newcommand\plottitle{Yupp}  % Leave empty to get default
+  \newcommand\prefix{t_x = }
   \input{figures/total_prefactor.pgf}
   \caption{Prefactor \( \gamma_N \) as a function of the number of inlcuded terms \( N \).}
 \end{figure}
