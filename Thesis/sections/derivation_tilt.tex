@@ -618,13 +618,19 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
 \begin{figure}[h]
   \centering
   \begin{tikzpicture}
-    \draw[step=1cm,gray,very thin] (-0.9,0.9) grid (5.9,-4.9);
+    \draw[step=1cm,gray,very thin, xshift=0.5cm, yshift=-0.5cm] (-0.9,0.9) grid (4.9,-3.9);
     \draw[thick,->] (0,0) -- (5.5,0) node[anchor=north west] {\( m \)};
     \draw[thick,->] (0,-4.3) -- (0,0.5) node[anchor=south east] {\( n \)};
     \foreach \x in {0,1,2,3,4,5}
     \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=south] {$\x$};
     \foreach \y in {0,-1,-2,-3,-4}
     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+
+    \foreach\x in {0,...,5} {
+      \foreach \y in {0,-1,-2,-3,-4} {
+        \fill (\x, \y) circle[radius=1pt];
+      }
+    }
     % \fill[blue!20, opacity=0.4] (-0.5, 0) -- (4, -4.5) -- (-0.5, -4.5) -- (-0.5, 0);
     % \fill[red!20, opacity=0.4] (0, -0.5) -- (4.5, -5) -- (4.5, -0.5) -- (0, -0.5);
     \fill[blue!20, opacity=0.4] (1, 0) -- (5, -4) -- (5, 0) -- (1, 0);
@@ -681,7 +687,6 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
       }{
         \edef\tmp{
           \noexpand\nextgroupplot[title={$t_x = \title$}]
-          \noexpand\node at (axis cs: -5,\title) {\title};
           \noexpand\addplot [
           matrix plot*,
           mesh/cols=13,
