@@ -759,7 +759,28 @@ For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
-\todo{Include a figure}
+See figure \ref{fig:llevelstilt}.
+
+In order to find explicitly the limits of integration for the Type-II case, we must find the roots of the energy levels.
+The zeroth Landau level always has only one root, which is in the origin.
+For the higher order Landau levels, we solve
+\begin{equation}
+  \label{eq:93}
+  \epsilon_{\kappa_z m s } = t_z^s \kappa_z = \sign(m) \sqrt{M + \kappa_{z} ^2} = 0,
+\end{equation}
+whose solution is
+\[
+\kappa_z^2 = \frac{M}{t_{z}^2 - 1}.
+\]
+The actual roots of the energies are
+\begin{equation}
+  \label{eq:94}
+  \kappa_z = -\sign(m t^s_x) \sqrt{\frac{M}{t_{z}^2 - 1}}.
+\end{equation}
+The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
+The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so fourth.
+
+
 
 
 \section{Notes}
