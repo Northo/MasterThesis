@@ -670,15 +670,16 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
       ymin=-6, ymax=6,
       % title={\( t_x= \title \)},
       title style={ at={(0.7, 0.7)} },
-      enlargelimits=false,
       group style={
         group size=2 by 2,
+        group name=contribs,
         x descriptions at=edge bottom,
         y descriptions at=edge left,
         horizontal sep=8pt,
         vertical sep=8pt,
       },
       ]
+      \newcounter{plotnum}
       \pgfplotsforeachungrouped \datafile/\title in {
         contribTilttx0.PbrokenFalse.csv/0,
         contribTilttx0.5PbrokenFalse.csv/0.5,
@@ -686,7 +687,17 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
         contribTilttx0.125PbrokenFalse.csv/0.16
       }{
         \edef\tmp{
-          \noexpand\nextgroupplot[title={$t_x = \title$}]
+          \noexpand\ifthenelse{\theplotnum=1}{
+            \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
+            every colorbar/.append style={height=
+              2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
+            colorbar to name={mycolorbar}
+            ]
+            % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
+          }{
+            \noexpand\nextgroupplot[title={$t_x = \title$}]
+          }
+          % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
           \noexpand\addplot [
           matrix plot*,
           mesh/cols=13,
@@ -694,8 +705,11 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
           ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
         }
         \tmp
+        \stepcounter{plotnum}
       }
     \end{groupplot}
+    %% Shfit half vertical sep
+    \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
   \end{tikzpicture}
   \caption{TODO}
   \end{figure}
