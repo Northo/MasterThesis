@@ -901,7 +901,37 @@ The total contribution \( \gamma_N \) as a function of \( N \) is shown in figur
 
 
 \subsection{Parallel tilt}
-
+In the case of parallell tilt, there are some complications.
+The dimensionless part of the response function is
+\[
+  \sum\limits_{N=0}^{} \int \mathrm{d} \kappa_z
+  \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s}) \alpha_{\kappa_z m s}^2 |_{\overset{m=N+1}{n=-N}},
+\]
+with
+\[
+  \xi(\kappa_z) =
+  \left[
+    (\alpha_{\kappa_z m s}^2 + 1)
+    (\alpha_{\kappa_z n s}^2 + 1)
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s})^2
+  \right]^{-1}.
+\]
+The sum \( \epsilon_{\kappa_z m s } + \epsilon_{\kappa_z n s} \) is the only \( t_z \) dependent part of the expression, with the rest the same as the untilted case.
+As, for \( t_x = 0 \) we have
+\[
+\epsilon_{\kappa_z m s} = t_z^s \kappa_z + \epsilon^0_{\kappa_z m s},
+\]
+the effect of \( t_z \) is a contribution
+\begin{equation}
+  \label{eq:95}
+  \sum\limits_{N=0}^{} \int \mathrm{d} \kappa_z
+  \xi(\kappa_z) 2 \kappa_z t_z^s \alpha_{\kappa_z m s}^2 |_{\overset{m=N+1}{n=-N}}.
+\end{equation}
+This factor breaks an argument we made for the untilted cone.
+In the inversion symmetric case, \( t^s_z = s t_z \), and the argument for the two cones contributing equal, that the expression is invariant under \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), is still valid.
+For the case of broken inversion symmetry, howver, \( t_z^s = t_z \), and the term Eq. \eqref{eq:95} is \emph{not} invariant under inversion of \( \kappa_z, s \).
+The term is thus opposite for the two cones, and cancel.
+As we will see, this causes there to be a divergence in the inversion symmetric case, which is not present in the case of broken inversion symmetry.
 
 
 \section{Notes}
