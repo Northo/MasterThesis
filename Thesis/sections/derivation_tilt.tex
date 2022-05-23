@@ -527,6 +527,7 @@ In the static limit, the \( \Xi \) functions thus take the form
 \end{align}
 
 \subsection{Solving the kx integral -- draft}
+\label{sec:perptiltsum}
 We have the response function
 \begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
@@ -614,6 +615,10 @@ Under the above mapping, we have the following relations
 The \( \Xi \) functions also acquries a sign for some values of \( m,n \), however, we only consdier \( \Xi^2 \).
 The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
 
+\todo{Make a note about \( M = N\) always giving zero contributinos.
+Maybe also show in figure.
+This is important wrt. saying that \( \gamma_0 \) is all contributison withtin square etc.}
+
 
 \begin{figure}[h]
   \centering
@@ -645,7 +650,7 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
   \label{fig:nmregion}
 \end{figure}
 
-\begin{figure}[H]
+\begin{figure}[ht]
   \centering
   \pgfplotsset{
     % colormap={X}{ gray(0cm)=(1); gray(1cm)=(0);},
@@ -662,57 +667,121 @@ The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation f
     xlabel=\( m \),
     ylabel=\( n \),
   }
-  \begin{tikzpicture}
-    \begin{groupplot}[
-      width=0.4\textwidth,
-      axis equal,
-      xmin=-6, xmax=6,
-      ymin=-6, ymax=6,
-      % title={\( t_x= \title \)},
-      title style={ at={(0.7, 0.7)} },
-      group style={
-        group size=2 by 2,
-        group name=contribs,
-        x descriptions at=edge bottom,
-        y descriptions at=edge left,
-        horizontal sep=8pt,
-        vertical sep=8pt,
-      },
-      ]
-      \newcounter{plotnum}
-      \pgfplotsforeachungrouped \datafile/\title in {
-        contribTilttx0.PbrokenFalse.csv/0,
-        contribTilttx0.5PbrokenFalse.csv/0.5,
-        contribTilttx0.25PbrokenFalse.csv/0.25,
-        contribTilttx0.125PbrokenFalse.csv/0.16
-      }{
-        \edef\tmp{
-          \noexpand\ifthenelse{\theplotnum=1}{
-            \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
-            every colorbar/.append style={height=
-              2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
-            colorbar to name={mycolorbar}
-            ]
-            % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
-          }{
-            \noexpand\nextgroupplot[title={$t_x = \title$}]
+  \newcounter{plotnum}
+  \subcaptionbox{Inversion symmetric case.\label{fig:contribs:P}}{
+    \begin{tikzpicture}
+      \begin{groupplot}[
+        width=0.4\textwidth,
+        axis equal,
+        xmin=-6, xmax=6,
+        ymin=-6, ymax=6,
+        % title={\( t_x= \title \)},
+        title style={ at={(0.7, 0.7)} },
+        group style={
+          group size=2 by 2,
+          group name=contribs,
+          x descriptions at=edge bottom,
+          y descriptions at=edge left,
+          horizontal sep=8pt,
+          vertical sep=8pt,
+        },
+        ]
+        \pgfplotsforeachungrouped \datafile/\title in {
+          contribTilttx0.PbrokenFalse.csv/0,
+          contribTilttx0.125PbrokenFalse.csv/0.16,
+          contribTilttx0.25PbrokenFalse.csv/0.25,
+          contribTilttx0.5PbrokenFalse.csv/0.5
+        }{
+          \edef\tmp{
+            \noexpand\ifthenelse{\theplotnum=1}{
+              \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
+              every colorbar/.append style={height=
+                2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
+              colorbar to name={mycolorbar}
+              ]
+              % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
+            }{
+              \noexpand\nextgroupplot[title={$t_x = \title$}]
+            }
+            % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
+            \noexpand\addplot [
+            matrix plot*,
+            mesh/cols=13,
+            point meta=explicit,
+            ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
           }
-          % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
-          \noexpand\addplot [
-          matrix plot*,
-          mesh/cols=13,
-          point meta=explicit,
-          ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
+          \tmp
+          \stepcounter{plotnum}
         }
-        \tmp
-        \stepcounter{plotnum}
-      }
-    \end{groupplot}
-    %% Shfit half vertical sep
-    \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
-  \end{tikzpicture}
-  \caption{TODO}
-  \end{figure}
+      \end{groupplot}
+      %% Shfit half vertical sep
+      \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
+    \end{tikzpicture}
+  } %% Subcaptionbox end
+
+  \subcaptionbox{Inversion symmetry broken case.\label{fig:contribs:Pbroken}}{
+    \begin{tikzpicture}
+      \begin{groupplot}[
+        width=0.4\textwidth,
+        axis equal,
+        xmin=-6, xmax=6,
+        ymin=-6, ymax=6,
+        % title={\( t_x= \title \)},
+        title style={ at={(0.7, 0.7)} },
+        group style={
+          group size=2 by 2,
+          group name=contribs,
+          x descriptions at=edge bottom,
+          y descriptions at=edge left,
+          horizontal sep=8pt,
+          vertical sep=8pt,
+        },
+        ]
+        \setcounter{plotnum}{0}
+        \pgfplotsforeachungrouped \datafile/\title in {
+          contribTilttx0.PbrokenTrue.csv/0,
+          contribTilttx0.125PbrokenTrue.csv/0.16,
+          contribTilttx0.25PbrokenTrue.csv/0.25,
+          contribTilttx0.5PbrokenTrue.csv/0.5
+        }{
+          \edef\tmp{
+            \noexpand\ifthenelse{\theplotnum=1}{
+              \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
+              every colorbar/.append style={height=
+                2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
+              colorbar to name={mycolorbar}
+              ]
+              % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
+              %
+            }{
+              \noexpand\nextgroupplot[title={$t_x = \title$}]
+            }
+
+            % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
+            \noexpand\addplot [
+            matrix plot*,
+            mesh/cols=13,
+            point meta=explicit,
+            ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
+          }
+          \tmp
+
+          \ifthenelse{\theplotnum=0}{
+            \draw[dotted, gray] (axis cs:-1.5,-1.5) rectangle (axis cs:1.5,1.5) node[pos=0, pin={[pin edge={solid}]-180:\( \gamma_0 \)}] {};
+            \draw[dotted, gray] (axis cs:-2.5,-2.5) rectangle (axis cs:2.5,2.5) node[pos=0, pin={[pin edge={solid}]-110:\( \gamma_1 \)}] {};
+          }{}
+          \stepcounter{plotnum}
+        }
+      \end{groupplot}
+      %% Shfit half vertical sep
+      \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
+    \end{tikzpicture}
+  }
+  \caption{Contributions to \( \gamma_N \) from \( m\to n \) transitions for different values of \( t_x \).
+    TODO: Update caption
+    \label{fig:contribs}
+    }
+\end{figure}
 
 \subsection{Tilt parallell to the magnetic field}
 We consider here a tilt parallel to the magnetic field, \( \vec{t} \parallel \vec{B} \). We will consider only the canonical part of the energy-momentum tensor, and not the full symmetrized form, as described \citeauthor{vanderwurffMagnetovorticalThermoelectricTransport2019} \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
@@ -780,6 +849,58 @@ The actual roots of the energies are
 The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
 The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so fourth.
 
+\section{Results}
+We will here consider parallel and perpendicular tilt separately.
+
+\subsection{Perpendicular tilt}
+In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.
+As explained in section \ref{sec:perptiltsum}, the \( m,n \) summation is restricted to the fourth quadrant in the \( m,n \) plane.
+In the case of no tilt, only contributions from \( M = N + 1 \) where non-zero;
+we named the contribution from the \( 0\to 1 \) transition \( \gamma_0 \), the \( -1\to 2 \) transition \( \gamma_1 \) and so fourth.
+Here, as there are contributions also away from the \( M=N + 1 \) line, we denote by \( \gamma_0 \) the contributions from inside the square of length 1 centered at the origin.
+The \( \gamma_1 \) contributions are those inside the square of length 2, and so fourth.
+This definition effectively sets a roof to which Landau levels we consider.
+
+\todo{Correct which values }
+The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), shown in figure \ref{fig:contribs}.
+The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure \ref{fig:total_contribs}.
+
+\begin{figure}[ht]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      legend columns=-1,
+      legend to name=contribs,
+      xlabel=Number of Landau levels,
+      ylabel=\( \gamma_N \),
+      width=12cm,
+      height=8cm,
+      name=myaxis,
+      ]
+      \newcommand\plotContrib[1]{
+        \addplot table[col sep=comma] {data/contribSumTilttx#1PbrokenTrue.csv};
+        % \addlegendentry{\( t_x = \num[minimum-decimal-digits=3]{#1} \)}  %% Make all same length
+        \addlegendentry{\( t_x = \num[minimum-decimal-digits=1]{#1} \)}
+      }
+      \plotContrib{0.}
+      \plotContrib{0.125}
+      \plotContrib{0.25}
+      \plotContrib{0.375}
+      \plotContrib{0.5}
+      % \addplot table[col sep=comma] {data/contribSumTilttx0.PbrokenTrue.csv};
+      % \addplot table[col sep=comma] {data/contribSumTilttx-0.PbrokenTrue.csv};
+      % \addplot table[col sep=comma] {data/contribSumTilttx-0.125PbrokenTrue.csv};
+      % \addplot table[col sep=comma] {data/contribSumTilttx-0.25PbrokenTrue.csv};
+      % \addplot table[col sep=comma] {data/contribSumTilttx-0.375PbrokenTrue.csv};
+      % \addplot table[col sep=comma] {data/contribSumTilttx-0.5PbrokenTrue.csv};
+    \end{axis}
+    \node[anchor=south] at (myaxis.north) {\ref{contribs}};
+  \end{tikzpicture}
+  \caption{\label{fig:total_contribs} }
+\end{figure}
+
+
+\subsection{Parallel tilt}
 
 
 

@@ -55,6 +55,21 @@ Do the integral and write down resutl
 Find explicit forms of the matrix elements
 How to separate in tx vs tz?
 
+*** Results
+
+**** Tiltless
+
+**** Tilt
+
+***** Perp
+- m,n plane contributions for different tx
+- gamma_n total contribtion for different tx
+- Differences between P and broken P
+
+***** Parallell
+-
+-
+
 *** Discussion of results
 
 **** Momentum cutoff in the tz case
