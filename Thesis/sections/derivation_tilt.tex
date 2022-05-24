@@ -626,9 +626,9 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
     \draw[step=1cm,gray,very thin, xshift=0.5cm, yshift=-0.5cm] (-0.9,0.9) grid (4.9,-3.9);
     \draw[thick,->] (0,0) -- (5.5,0) node[anchor=north west] {\( m \)};
     \draw[thick,->] (0,-4.3) -- (0,0.5) node[anchor=south east] {\( n \)};
-    \foreach \x in {0,1,2,3,4,5}
+    \foreach \x in {1,2,3,4,5}
     \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=south] {$\x$};
-    \foreach \y in {0,-1,-2,-3,-4}
+    \foreach \y in {0, -1,-2,-3,-4}
     \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
 
     \foreach\x in {0,...,5} {
@@ -834,10 +834,62 @@ In the case of broken inversion symmetry, however, \( \vec{t}^s = \vec{t} \), an
 Thus, in the case of broken inversion symmetry, the terms cancel between the chiralities, and the response is the same as for the untilted system.
 For inversion symmetric systems, however, there is an additional contribution from the \( 2 \kappa_z t_z^s \) term, which we will see is of great importance.
 
+The integral
+\begin{equation}
+  \label{eq:97}
+  \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t_z \alpha_{\kappa_z m s}^2
+\end{equation}
+diverges.
+Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result
+\begin{multline}
+  \frac{t_z}{4}
+  \Bigg\{
+    \Lambda\left(\sqrt{1 + \Lambda^2 + m} - \sqrt{\Lambda^2 + m}  \right)\\
+    + m \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} } \right]
+    - (m+1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{1 + \Lambda^2 + m }}\right]
+    \Bigg\},
+    \label{eq:98}
+\end{multline}
+where we used the selection rule of the sum \( N=M+1 \) and \( m>0, n<0 \).
+This contribution is shown in figure \ref{fig:divergent-factor}.
 
 \todo{Recheck the order and specify clearly if we consider Type-I or Type-II for the different arguments}
 
-For Type-I semimetals, the sign energy of state \( m \neq 0 \) is given by the sign of \( m \) itself.
+% % Computing this in PGF was no good.
+% % Import from a file instead
+% \begin{tikzpicture}
+%   \pgfkeys{/pgf/declare function={arctanh(\x)=0.5*(ln((1+\x)/(1-\x)));}}
+%   \pgfkeys{/pgf/declare function={divLim(\x,\z,\m)=-0.25 * \z * (
+%       \x (sqrt(1 + \x^2 + \m) - sqrt(\x^2 + \m)) +
+%       \m * arctanh(\x/sqrt(\x^2 + \m)) - (\m+1)*arctanh(\x/sqrt(1 + \x^2 + \m))
+%       );}}
+%   \begin{axis}[
+%     domain=0:100,
+%     samples=50,
+%     ]
+%     \addplot[mark=none] {divLim(x, 0.1,1)};
+%   \end{axis}
+% \end{tikzpicture}
+
+\begin{figure}[hp]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=\( \Lambda \),
+      ylabel=Contribution,
+      legend pos=south east,
+      ]
+      \foreach \i in {1,...,3} {
+        \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
+        \addlegendentryexpanded{\( m = \i \)};
+      }
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The divergent factor for parallel tilt for \( t_z =0.2 \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
+    TODO: fix m to be m-1}
+  \label{fig:divergent-factor}
+\end{figure}
+For Type-I semimetals, the sign of energy state \( m \neq 0 \) is given by the sign of \( m \) itself.
 For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
@@ -861,10 +913,11 @@ The actual roots of the energies are
   \kappa_z = -\sign(m t^s_x) \sqrt{\frac{M}{t_{z}^2 - 1}}.
 \end{equation}
 The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
-The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so fourth.
+The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so forth.
 
 \section{Results}
 We will here consider parallel and perpendicular tilt separately.
+\todo{Make sure the argumentation and computations are valid also for \( t_z < 0 \)}
 
 \subsection{Perpendicular tilt}
 In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.

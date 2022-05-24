@@ -749,9 +749,10 @@ Let us now define
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{\hbar \omega }{v_F \sqrt{2 e B \hbar }} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
-  },
+  }.
 \end{equation}
-which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
+As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is invariant under interchagne of \( m,n \) and inversion of \( \kappa_z \).
+% which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
 In the last term of Eq. \eqref{eq:61}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
@@ -766,6 +767,17 @@ The final expression is then
   \int \mathrm{d}\kappa_z \xi(\kappa_z)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} - 2 \mu) \alpha_{\kappa_z m s}^2.
 \end{equation}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l r r r}
+    Transformation & \( \xi(\kappa_z) \) & \( \epsilon_{\kappa_z m s} \) & \( \alpha_{\kappa_z m s} \)\\
+    \hline
+    \( (m, n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \) & -1 & -1 & -1\\
+    \( \hphantom{(m, n, \kappa_z)}\mathllap{(\kappa_z, s)} \mapsto (-\kappa_z, -s) \) & +1 & +1 & -1
+  \end{tabular}
+  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \eta\to 0 \). \label{tab:transform-sign}}
+\end{table}
 
 Before solving the integral, we note that in addition to the \todo{say the word diatomic?} \( N=M-1 \) selection rule of the sum, the factor with the distributions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) impose further restrictions on which transitions are energetically allowed.
 We consider the limit \( T \to 0 \) \todo{something about the Luttinger in this limit? I.e. the fact we get finite result in T-> 0 is the interesting thing about this result}, where the distributions take the form of step functions, \( n_{\kappa_z m s} \to \theta(-\epsilon_{\kappa_z m s}) \).

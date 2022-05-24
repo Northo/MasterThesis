@@ -1,0 +1,9 @@
+#+title: 05 23
+
+* Tatara
+Tatara and Luttinger are often the same when T->0??
+Look at J = ... p - ... A (on the first page).
+The A term, I understood, gives rise to the magnetization currents, which makes us not have to subtract them by hand
+
+* QFT book
+Alireza had something about T taken from Shifman

@@ -1,0 +1,41 @@
+\documentclass{article}
+
+\usepackage{braket}
+\usepackage{bm}
+\usepackage{amsmath}
+\renewcommand\vec\bm
+
+\title{Problem with the energy-momentum tensor}
+\date\empty
+\begin{document}
+\maketitle
+\vspace{-1cm}
+We have a response function
+\begin{equation}
+  \label{eq:1}
+  \chi(t, \vec{r}) = \int \mathrm{d}t' \mathrm{d} \vec{r}'
+  \left\{
+  \Braket{\left[\vec{J}(t, \vec{r}, T^{00}(t', \vec{r}')\right] } \psi(t', \vec{r}')
+\right\},
+\end{equation}
+where \( \vec{J} \) is a charge current, \( T^{\mu\nu} \) is the energy-momentum tensor, and \( \psi \) is a gravitational potential \footnote{Yes, condensed matter physisists have a hack where they use gravitational potential to ``simulate'' temperature.}.
+Using the continuity relation of the energy-momentum tensor
+\[
+\partial_0 T^{00} + \partial_i T^{0i} = 0 \implies T^{00}(t, \vec{r}) = -\int_{-\infty}^t \mathrm{d}t' \partial_iT^{0i}(t', \vec{r}),
+\]
+and integration by parts
+\[
+\int u v' = uv - \int u' v
+\]
+we get
+\begin{equation}
+  \chi = \int \mathrm{d}t' \mathrm{d} \vec{r}'
+  \int \mathrm{d}t''
+  \left\{
+  \Braket{\left[\vec{J}(t, \vec{r}, T^{0j}(t'', \vec{r}')\right] } \partial_j'\psi(t', \vec{r}')
+\right\}.
+\end{equation}
+
+Now, our response function, an observable, depends on the value of \( T^{0j} \) itself, not the divergence.
+
+\end{document}

@@ -55,6 +55,14 @@ Do the integral and write down resutl
 Find explicit forms of the matrix elements
 How to separate in tx vs tz?
 
+***** Tz tilt
+In the case of only tz-tilt, the expression is easy to find, as only the energies are the only quantity that change.
+
+In the case of inversion symmetry, we get divergences in the tz-integral.
+We solve this by a momentum cutoff
+
+For Type-II, we must restrict the limits of integration
+
 *** Results
 
 **** Tiltless

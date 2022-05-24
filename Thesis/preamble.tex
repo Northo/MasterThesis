@@ -32,7 +32,7 @@ final=true,
 \tikzexternalize
 \tikzsetexternalprefix{figures/external/}
 % \pgfkeys{/pgf/images/include external/.code={\href{file:#1}{\pgfimage{#1}}}} %% for draft mode. See pgf manual
-\pgfkeys{/pgf/images/include external/.code={\href{file:#1}{\includegraphics{#1}}}} %% for draft mode. See pgf manual
+\pgfkeys{/pgf/images/include external/.code={\href{file:#1}{\includegraphics[draft=false]{#1}}}} %% for draft mode. See pgf manual
 
 \setacronymstyle{short-long}
 
