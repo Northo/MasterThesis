@@ -773,6 +773,7 @@ As the sign of energy level \( m \), for \( m \neq 0 \), is given by the sign of
 For the zeroth energy level, the sign of the energy is given by \( \sign(-s\kappa_z) \).
 The distribution factor is
 \begin{equation}
+  \label{eq:96}
   n_{\vec{k} m s} - n_{\vec{k} n s} =
   \begin{cases}
     \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0,\\
@@ -781,18 +782,29 @@ The distribution factor is
   \end{cases}
 \end{equation}
 Combining this with the selection rule \( N=M-1 \), we see that the only allowed transitions are
-\[ M \to -N = -(M-1), -M \to N = (M-1). \]
+\[ M \to -N = -(M-1), \; -M \to N = (M-1). \]
 
 The last simplification we will make, is to note that the step function is odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), and likewise with \( \epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} \).
 \todo{is it supposed to be \( \epsilon + \epsilon \)?}
 In the case of zero chemical potential, the expression may be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
-\todo{The reason the response is the same for the two cones, is that the expression is invariant under \( (\kappa, s) \to (-\kappa, -s)\), i.e. \( \kappa s  \) constant (i think).
-This should be commented upon, as it is very important for \( t_z \) tilt
-}
 
-\todo{this argument i think is not waterthight, as we should maybe also require that kappa does not enter on its own?}
-Lastly, we notice that, as the expression depends on \( s \) only in factors like \( \kappa_z s \), under the transformation \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), the result is invariant.
-The contributions from the two cones are therefore equal.
+Lastly, we now show that the contributions from cones of opposite chirality \( s \) are the same.
+Under the transformation \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), the product \( \kappa_z s \) is obviously invariant.
+Note that \( \epsilon_{\kappa_z m s} \) only depends on \( s \) and \( \kappa_z \) through the product \( \kappa_z s \).
+While it is not the case for \( \alpha_{\kappa_z m s} \), it is the case for its square.
+Consequently, the integrand is invariant under \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \).
+Similarly to the argumentation used above, as the integral goes over all \( \kappa_z \), the integral is invariant under \( s \mapsto -s \).
+
+\begin{Proposition}
+  We have shown the following simplifications of Eq. \eqref{eq:61}:
+  \begin{itemize}
+    \item The contributions from the terms \( \alpha_{\kappa_z m s}^2 \delta_{M-1, N} \) and \( - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \) are equal, and we consider therefore only one of them, adding a degeneracy factor 2.
+    \item The difference of the step functions takes the form Eq. \eqref{eq:96}, which limits the transitions to states with energies of opposite sign.
+          For each value of \( M,N \), this means the only valid transitions are \( m=M, n=-N \) and \( m=-M, n=N \).
+    \item As the integrand is invariant under \( (m,n,\kappa_z) \mapsto (-m, -n, -\kappa_z) \), we may consider only one of the transitions mentioned in the previous point, adding once again a degeneracy factor of 2.
+    \item We lastly showed that the contribution is independent of the chirality \( s \).
+  \end{itemize}
+\end{Proposition}
 
 For zero chemical potential, the response function is
 \begin{equation}
