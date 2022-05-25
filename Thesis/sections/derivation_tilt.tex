@@ -815,15 +815,36 @@ The integrand is
 \begin{equation}
   \label{eq:106}
   \sum\limits_{mn}^{}
-  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) (\alpha_{\kappa n s}^2 \delta _{N, M+1}- \alpha_{\kappa m s}^2 \delta_{M, N+1}).
+  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) (\alpha_{\kappa m s}^2 \delta_{M, N+1} - \alpha_{\kappa n s}^2 \delta _{N, M+1}).
 \end{equation}
+\todo{Make sure to use the same conventions (choice of quadrants etc) as in untilted case}
 As described above, the contributions from the \( \alpha _{\kappa n s}^2  \) and \( \alpha _{\kappa m s}^2 \) terms are identical, and we may simply take
 \begin{equation}
   \label{eq:107}
-  \sum\limits_{\underset{N=M+1}{mn}}^{}
-  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) \alpha_{\kappa n s}^2.
+  \sum\limits_{\underset{N=M-1}{mn}}^{}
+  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) \alpha_{\kappa m s}^2.
 \end{equation}
 As was the case in the untilted system, the integrand is also now invariant under \( (m, n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), and we may consider only half the \( m,n \) plane, adding a degeneracy factor 2.
+
+Even though the treatment above for a general tilt is valid for parallel tilt, the response can be found more directly from the untilted case.
+For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{0y} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
+We may thus immediately use the result from the untilted case
+\begin{equation}
+  \label{eq:129}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  - \frac{e^2 v_F B}{4(2\pi)^2}
+  \sum\limits_{mn} \int \mathrm{d} \kappa_z
+  \xi(\kappa_z)
+  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}).
+\end{equation}
+In the untilted case we made several simplifications to this expression, especially with regards to limiting the summation domain.
+We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
+
+Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), \( \xi(\kappa_z), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.
+As the integral is over all \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
+However, in the untilted case the sum was in fact restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energy of opposite sign.
+In the case of Type-II systems, this requirement does not restrict the sum to one quadrant.
 
 In the untitled system, the contributions from the two chiralities where the same, as \( \kappa_z \) and \( s \) always appeared in conjunction, \( \kappa_z s \).
 In the case of \( t_z \) tilt, this is not the case.
@@ -854,6 +875,7 @@ where we used the selection rule of the sum \( N=M+1 \) and \( m>0, n<0 \).
 This contribution is shown in figure \ref{fig:divergent-factor}.
 
 \todo{Recheck the order and specify clearly if we consider Type-I or Type-II for the different arguments}
+\todo{There should be some argument along the lines of the result being the same for s -> -s and tz -> -tz, so we may consider s=1, tz>0 for defiteness (if that is indeed the case)}
 
 % % Computing this in PGF was no good.
 % % Import from a file instead
@@ -914,6 +936,16 @@ The actual roots of the energies are
 \end{equation}
 The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
 The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so forth.
+
+The \( 0\to m \) transitions where computed analytically, and found to be
+\begin{equation}
+  \label{eq:117}
+  \frac{1}{2}
+  \left(
+  t_z \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
+\right  ),
+\end{equation}
+interestingly independent of \( m \).
 
 \section{Results}
 We will here consider parallel and perpendicular tilt separately.
