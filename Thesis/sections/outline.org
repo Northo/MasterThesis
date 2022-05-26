@@ -63,6 +63,10 @@ We solve this by a momentum cutoff
 
 For Type-II, we must restrict the limits of integration
 
+Have computed the contrib form interband -N -> N + 1, must also find intraband
+
+The goal: put on a solid foundation when the contributions from chiralitites cancel
+
 *** Results
 
 **** Tiltless

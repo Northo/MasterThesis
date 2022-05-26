@@ -845,16 +845,23 @@ Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), \( \
 As the integral is over all \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
 However, in the untilted case the sum was in fact restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energy of opposite sign.
 In the case of Type-II systems, this requirement does not restrict the sum to one quadrant.
+It is thus convenient to consider Type-I and Type-II separately.
 
 In the untitled system, the contributions from the two chiralities where the same, as \( \kappa_z \) and \( s \) always appeared in conjunction, \( \kappa_z s \).
 In the case of \( t_z \) tilt, this is not the case.
-The integrand in the response is the same as the untitled case, with the exception of the factor \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon_{\kappa_z m s}^0 + \epsilon_{\kappa_z n s}^0 + 2\kappa_z t_z^s \).
-The interesting behavior thus comes from the \( 2 \kappa_z t_z^s \) term;
-in the inversion symmetric case, \( \vec{t}^s = s \vec{t} \), and the contributions from the two chiralitites are the same as we once again have \( \kappa_z s \).
-In the case of broken inversion symmetry, however, \( \vec{t}^s = \vec{t} \), and \( \kappa_z \) appears without the \( s \) factor, meaning that under \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), the term changes sign.
-Thus, in the case of broken inversion symmetry, the terms cancel between the chiralities, and the response is the same as for the untilted system.
-For inversion symmetric systems, however, there is an additional contribution from the \( 2 \kappa_z t_z^s \) term, which we will see is of great importance.
+The tilt parameter enters the expression only through \( \epsilon_{\kappa_z m s} = \epsilon_{\kappa_z m s}^0 + \kappa_z t^s_z \).
+The proof for the response from the two chiralities being the same in the untilted case was that \( s \) and \( \kappa_z \) appeared only through the product \( s \kappa_z \), and so the expression was invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
+As our integration spans all \( \kappa_z \), the total response is invariant under \( s \to -s \).
+In the inversion symmetric case, \( t^s_z = s t_z \), this argument still holds.
+In the case of broken inversion symmetry, however, where \( t^s_z = t_z \), the argument fails.
+A similar argument may, however, be made for the transformation \( (s, \kappa_z, t_z) \mapsto (-s, -\kappa_z, -t_z) \), for which the (inversion broken) system is invariant.
+The response of a cone with chirality \( s = -1 \) is thus equal the response with \( s = +1 \) and \( t_z \to -t_z \).
+We therefore compute all responses for \( s=+1 \);
+for symmetric systems the response is equal for \( s=-1 \), while for broken inversion symmetry, the response is given at \( t_z \to -t_z \).
 
+\subsubsection{Type-I}
+In Type-I systems, the selection rules from the step functions are independent of \( t_z \), and the only difference from the untilted case is the term \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z n s} + 2 \kappa_z t^s_z \).
+We compute therefore only the term that differ, for \( s=+1 \).
 The integral
 \begin{equation}
   \label{eq:97}
@@ -873,7 +880,11 @@ Introduce the momentum cutoff \( \Lambda \), in which case the integral can be s
 \end{multline}
 where we used the selection rule of the sum \( N=M+1 \) and \( m>0, n<0 \).
 This contribution is shown in figure \ref{fig:divergent-factor}.
+\todo{is it ok to write 'the contribution \eqref{eq:98}', or must it always be 'the contribution Eq. \eqref{eq:98}'?}
+The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
 
+
+\subsubsection{Type-II}
 \todo{Recheck the order and specify clearly if we consider Type-I or Type-II for the different arguments}
 \todo{There should be some argument along the lines of the result being the same for s -> -s and tz -> -tz, so we may consider s=1, tz>0 for defiteness (if that is indeed the case)}
 
@@ -918,12 +929,19 @@ In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
 See figure \ref{fig:llevelstilt}.
 
+% Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
+% For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
+% As the energies change between the chiralities, so does the step function, giving other selection rules.
+% For inversion symmetric systems, we may thus simply choose a value of \( s \), for example \( s=1 \), and compute all results for that value.
+% For broken inversion symmetry, however, the results must be computed separately for the two chiralities.
+% \todo{Or maybe it is easier to do all calculations with \( t_x^s \) (and its sign) in focus, and then later apply inversion (broken) symmetry?}
+
 In order to find explicitly the limits of integration for the Type-II case, we must find the roots of the energy levels.
 The zeroth Landau level always has only one root, which is in the origin.
 For the higher order Landau levels, we solve
 \begin{equation}
   \label{eq:93}
-  \epsilon_{\kappa_z m s } = t_z^s \kappa_z = \sign(m) \sqrt{M + \kappa_{z} ^2} = 0,
+  \epsilon_{\kappa_z m s } = t_z^s \kappa_z + \sign(m) \sqrt{M + \kappa_{z} ^2} = 0,
 \end{equation}
 whose solution is
 \[
@@ -937,16 +955,119 @@ The actual roots of the energies are
 The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
 The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so forth.
 
-The \( 0\to m \) transitions where computed analytically, and found to be
+The \( 0\to 1 \) transitions where computed analytically, and found to be
 \begin{equation}
   \label{eq:117}
-  \frac{1}{2}
+  \frac{\sign(t_z)}{2}
   \left(
-  t_z \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
-\right  ),
+  |t_z| \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
+\right  ).
 \end{equation}
-interestingly independent of \( m \).
+For a general \( -N \to N+1, \; N>0 \) transition, the contribution was found to be the very lengthy expression
+\todo{Must also do \( t_z < -1 \)}
+\todo{Be careful with tz < -1. This does not only change sing of tz, but also the integration limits}
+\begin{multline}
+  \frac{1}{8 \sqrt{(n-1) n} \left(t_z^2-1\right)}
+  \Bigg\{
+    -n t_z F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-t_z^2},-\frac{n}{(n-1)
+        \left(t_z^2-1\right)}\right)\\
+    %%
+    +(n-1) t_z
+    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
+        \left(t_z^2-1\right)},\frac{1}{1-t_z^2}\right)\\
+    %%
+    +\left(t_z^2-1\right)
+    \Bigg[
+      \sqrt{(n-1) n} \Big\{-4 n^2 \log \left(\frac{-\sqrt{(n-1) \left(n
+                t_z^2-1\right)}+n-1}{n \sqrt{\frac{(n-1) t_z^2+1}{n}}+n}\right)\\
+        %%
+        +n (t_z+2)
+        \left(2 \log \left(\frac{\sqrt{1-n t_z^2}+\sqrt{1-n}}{\sqrt{-n
+                t_z^2+t_z^2-1}+\sqrt{-n}}\right)+\log (n-1)-\log (n)\right)\\
+        %%
+        -2 t_z \log
+        \left(\frac{n (-t_z)+n+t_z-1}{\sqrt{(n-1)^2 t_z^2+n-1}+\sqrt{(n-1)
+              n}}\right)\Big\}\\
+        %%
+      +2 \Big(n \left(-2 n \sqrt{(n-1)^2 t_z^2+n-1}+2 n \sqrt{n \left(n
+              t_z^2-1\right)}+\sqrt{(n-1)^2 t_z^2+n-1}-3 \sqrt{n \left(n
+              t_z^2-1\right)}\right)\\
+        %%
+        +\sqrt{n \left(n t_z^2-1\right)}-\sqrt{(n-1)
+          n}\Big)
+      \Bigg]
+    \Bigg\}.
+  \label{eq:130}
+\end{multline}
+where \( F_1 \) is the Appell hypergeometric function of two variables.
 
+
+% \fbox{
+%   The unsimplified \( n\to m, n<0, m>0 \) transition
+%   $$
+%   \frac{1}{4} m \left(\frac{-\frac{\text{tz}
+%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-\text{tz}^2},\frac{m}{n
+%    \left(\text{tz}^2-1\right)}\right)}{\text{tz}^2-1}-\frac{m \sqrt{-m n} (n (\text{tz}-2)+m
+%    \text{tz}) \log (m)+n \sqrt{-m n} (n \text{tz}+m (\text{tz}+2)) \log (-n)-2 \left(-n m^2+n
+%    \text{tz} m^2-\sqrt{-m n} m^2+\sqrt{-m n \left(-n \text{tz}^2+m+n\right)} m^{3/2}-n^2 m-n^2
+%    \text{tz} m+\sqrt{-m n} (n (\text{tz}-2)+m \text{tz}) \log \left((\text{tz}+1)
+%    \sqrt{\frac{m}{\text{tz}^2-1}}\right) m-n \sqrt{-n \left(-n \text{tz}^2+m+n\right)} m+(-m
+%    n)^{3/2}+n \sqrt{-m n} (n \text{tz}+m (\text{tz}+2)) \log \left(\frac{\sqrt{m}+\sqrt{-n
+%    \text{tz}^2+m+n}}{\sqrt{\text{tz}^2-1}}\right)\right)}{m (m+n)^2}}{2 \sqrt{-m n}}+\frac{\sqrt{-n}
+%    \text{tz} F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{n}{m
+%    \left(\text{tz}^2-1\right)},\frac{1}{1-\text{tz}^2}\right) (m+n)^2+\sqrt{m} \left(-m (n
+%    (\text{tz}-2)+m \text{tz}) \left(\text{tz}^2-1\right) \log (m)-n \left(\text{tz}^2-1\right) (n
+%    \text{tz}+m (\text{tz}+2)) \log (-n)+2 \left(-\frac{n^2 \text{tz}^4}{\text{tz}^2-1}-\frac{m n
+%    \text{tz}^4}{\text{tz}^2-1}+m \sqrt{-m n} \text{tz}^3-n \sqrt{-m n} \text{tz}^3-\frac{m \sqrt{-n
+%    \left(m \text{tz}^2-m-n\right)} \text{tz}^3}{\text{tz}^2-1}-\frac{n \sqrt{-n \left(m
+%    \text{tz}^2-m-n\right)} \text{tz}^3}{\text{tz}^2-1}-\frac{n^2 \text{tz}^3}{\text{tz}^2-1}+\frac{m
+%    n \text{tz}^3}{\text{tz}^2-1}-m \sqrt{-m n} \text{tz}^2-n \sqrt{-m n} \text{tz}^2-m \sqrt{n
+%    \left(-m \text{tz}^2+m+n\right)} \text{tz}^2+n \sqrt{n \left(-m \text{tz}^2+m+n\right)}
+%    \text{tz}^2+\frac{m \sqrt{-n \left(m \text{tz}^2-m-n\right)} \text{tz}^2}{\text{tz}^2-1}-\frac{n
+%    \sqrt{-n \left(m \text{tz}^2-m-n\right)} \text{tz}^2}{\text{tz}^2-1}+\frac{n^2
+%    \text{tz}^2}{\text{tz}^2-1}+\frac{m n \text{tz}^2}{\text{tz}^2-1}+n^2 \text{tz}-m n \text{tz}-m
+%    \sqrt{-m n} \text{tz}+n \sqrt{-m n} \text{tz}+m \sqrt{n \left(-m \text{tz}^2+m+n\right)}
+%    \text{tz}+n \sqrt{n \left(-m \text{tz}^2+m+n\right)} \text{tz}+\frac{m \sqrt{-n \left(m
+%    \text{tz}^2-m-n\right)} \text{tz}}{\text{tz}^2-1}+\frac{n \sqrt{-n \left(m
+%    \text{tz}^2-m-n\right)} \text{tz}}{\text{tz}^2-1}+\frac{n^2 \text{tz}}{\text{tz}^2-1}-\frac{m n
+%    \text{tz}}{\text{tz}^2-1}+n^2+m n+n \left(\text{tz}^2-1\right) (n \text{tz}+m (\text{tz}+2)) \log
+%    \left((\text{tz}+1) \sqrt{-\frac{n}{\text{tz}^2-1}}\right)+m (n (\text{tz}-2)+m \text{tz})
+%    \left(\text{tz}^2-1\right) \log
+%    \left(\sqrt{-\frac{n}{\text{tz}^2-1}}+\sqrt{m+\frac{n}{1-\text{tz}^2}}\right)+m \sqrt{-m n}+n
+%    \sqrt{-m n}-\frac{m \sqrt{-n \left(m \text{tz}^2-m-n\right)}}{\text{tz}^2-1}+\frac{n \sqrt{-n
+%    \left(m \text{tz}^2-m-n\right)}}{\text{tz}^2-1}\right)\right)}{2 m^{3/2} (m+n)^2
+%    \left(\text{tz}^2-1\right)}\right)
+% $$
+% } %% fbox
+
+% \fbox{
+%   The simplified transition
+%   $$
+% \frac{-m^{3/2} \text{tz} (m+n)^2
+%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-\text{tz}^2},\frac{m}{n
+%    \left(\text{tz}^2-1\right)}\right)-\sqrt{m} n \text{tz} (m+n)^2
+%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{n}{m
+%    \left(\text{tz}^2-1\right)},\frac{1}{1-\text{tz}^2}\right)+2 \left(\text{tz}^2-1\right)
+%    \left(\sqrt{-m^5 n \left(m-n \text{tz}^2+n\right)}-n \sqrt{-m^3 n \left(m-n
+%    \text{tz}^2+n\right)}+m^3 \sqrt{-n} \text{tz} \log \left((\text{tz}+1)
+%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+m^3 \sqrt{-n} \text{tz} \log
+%    \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)-m^3 \sqrt{-n}+m^2 n
+%    \sqrt{m \left(\text{tz}^2-1\right)-n}+2 m^2 \sqrt{-n} n \log \left((\text{tz}+1)
+%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+m^2 \sqrt{-n} n \text{tz} \log \left((\text{tz}+1)
+%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+2 m^2 (-n)^{3/2} \log \left((\text{tz}+1)
+%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+m^2 \sqrt{-n} n \text{tz} \log \left((\text{tz}+1)
+%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+2 m^2 \sqrt{-n} n \log \left(\frac{\sqrt{m-n
+%    \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+m^2 \sqrt{-n} n \text{tz} \log
+%    \left(\frac{\sqrt{m-n \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+2 m^2 (-n)^{3/2} \log
+%    \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)+m^2 \sqrt{-n} n
+%    \text{tz} \log \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)-m^2
+%    \sqrt{-n} \log (m) (m \text{tz}+n (\text{tz}-2))+2 m^2 (-n)^{3/2}-m n^2 \sqrt{m
+%    \left(\text{tz}^2-1\right)-n}+m (-n)^{5/2} \text{tz} \log \left((\text{tz}+1)
+%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+m (-n)^{5/2} \text{tz} \log \left(\frac{\sqrt{m-n
+%    \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+m (-n)^{3/2} \log (-n) (m (\text{tz}+2)+n
+%    \text{tz})+m (-n)^{3/2} n\right)}{8 m \sqrt{-n} \left(\text{tz}^2-1\right) (m+n)^2}
+% $$
+% } %% fbox
 \section{Results}
 We will here consider parallel and perpendicular tilt separately.
 \todo{Make sure the argumentation and computations are valid also for \( t_z < 0 \)}
