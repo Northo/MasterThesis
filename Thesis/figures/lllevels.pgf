@@ -1,10 +1,16 @@
 \newcommand{\LLplot}[2]{
   %% #1 is alpha, #2 is tz
   \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
+  \addplot[forget plot, dotted]{(-#2+#1) * x};  % Zeroth level, s=-1
+  \addplot[forget plot, dashed]{(#2+#1) * x};  % Zeroth level, s=-1, P broken
   \addplot[dashed, forget plot, gray] {0};
   \pgfplotsforeachungrouped \n in {1,...,5} {
-    \addplot+[red, forget plot] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
-    \addplot+[blue] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+    \addplot+[red, forget plot, solid] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue, solid] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+  }
+  \pgfplotsforeachungrouped \n in {1,...,5} {
+    \addplot+[red, forget plot, dotted] {-#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue, dotted] {-#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
   }
   \pgfmathsetmacro\x{1}
   \pgfmathsetmacro\hfirst{(#2-#1)*\x}
