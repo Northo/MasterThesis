@@ -622,6 +622,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
 
 \begin{figure}[h]
   \centering
+  \tikzsetnextfilename{mnregiontx}
   \begin{tikzpicture}
     \draw[step=1cm,gray,very thin, xshift=0.5cm, yshift=-0.5cm] (-0.9,0.9) grid (4.9,-3.9);
     \draw[thick,->] (0,0) -- (5.5,0) node[anchor=north west] {\( m \)};
@@ -906,6 +907,7 @@ The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with brok
 
 \begin{figure}[hp]
   \centering
+  \tikzsetnextfilename{divergentContribCutoff}
   \begin{tikzpicture}
     \begin{axis}[
       xlabel=\( \Lambda \),
@@ -995,14 +997,14 @@ For a general \( -N \to N+1, \; N>0 \) transition, the contribution was found to
     t_z^2\right)}+2 (1-n) \left(t_z^2-1\right) \sqrt{-n \left(1-n t_z^2\right)}\\
 %%
 -2
-\sqrt{(n-1) n} (t_z^2-1) \Biggg[
+\sqrt{(n-1) n} (t_z^2-1) \Bigg[
 -t_z \log \left(-\left((t_z-1)
          \sqrt{\frac{1-n}{t_z^2-1}}\right)\right)\\
      %%
      -t_z \log \left(\frac{\sqrt{-n
    t_z^2+t_z^2-1}+\sqrt{-n}}{\sqrt{t_z^2-1}}\right)+t_z \log
 (1-n)-1
-\Biggg]\\
+\Bigg]\\
 %%
 +2 \sqrt{(n-1) n} n \left(-t_z^3-2 t_z^2+t_z+2\right) \log
    \left(\frac{\sqrt{\frac{n}{n-1}} \left(\sqrt{-n
@@ -1111,7 +1113,7 @@ The total contribution will therefore be the sum of the contribution for \( t_z 
         \left(t_z^2-1\right)}\right)
   \Bigg)\\
   %%
-  +2 \left(t_z^2-1\right) \left(-2 n^2 \sqrt{(n-1)
+  +2 \left(t_z^2-1\right) \Bigg(-2 n^2 \sqrt{(n-1)
       \left((n-1) t_z^2+1\right)}+2 n^2 \sqrt{n \left(n t_z^2-1\right)}\\
     %%
     -\sqrt{(n-1) n} n^2
@@ -1127,7 +1129,7 @@ The total contribution will therefore be the sum of the contribution for \( t_z 
     %%
     -2 \sqrt{(n-1) n} n \log \left(\frac{\sqrt{\frac{n}{n-1}}
         \left(\sqrt{-n t_z^2+t_z^2-1}+\sqrt{-n}\right)}{\sqrt{1-n
-          t_z^2}+\sqrt{1-n}}\right)\right)
+          t_z^2}+\sqrt{1-n}}\right)\Bigg)
   \Bigg\}
 \end{multline}
 
@@ -1217,6 +1219,7 @@ The total contribution \( \gamma_N \) as a function of \( N \) is shown in figur
 
 \begin{figure}[ht]
   \centering
+  \tikzsetnextfilename{contribtx}
   \begin{tikzpicture}
     \begin{axis}[
       legend columns=-1,
@@ -1283,6 +1286,39 @@ For the case of broken inversion symmetry, howver, \( t_z^s = t_z \), and the te
 The term is thus opposite for the two cones, and cancel.
 As we will see, this causes there to be a divergence in the inversion symmetric case, which is not present in the case of broken inversion symmetry.
 
+
+\todo{Should we also compute the momentum cutoff for nontilted terms?}
+In the Type-I regime, the contributions differ from that of the untitled system by Eq. \eqref{eq:98}, dependent on a momentum cutoff \( \Lambda \).
+The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities the two cones cancel, and the response is equal to the untilted case.
+In case of inversion symmetry, the contributions from the two chiralities are equal and add up.
+
+In the Type-II regime, the contributions have more complicated form.
+Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:117}.
+Also this contribution is odd in \( t_z \), so the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
+As \( |t_z| -> 1 \) from above, the contribution blows up.
+This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.
+\footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
+See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
+\todo{put this on more solid footing}
+The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:01contribtzII}.
+\begin{figure}[ht]
+  \centering
+  \tikzsetnextfilename{01tzcontribtypeii}
+  \begin{tikzpicture}
+    \pgfkeys{/pgf/declare function={arcsinh(\x) = ln(x + sqrt(x^2+1));}}
+    \begin{axis}[
+      domain=1:2,
+      xlabel=\( t_z \),
+      ylabel=Contribution,
+      samples=100,
+      ]
+      % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
+      \addplot+[mark=none] {0.5 * (-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The contribution from the \(0 \to 1\) transition in a Type-II \(t_z\) tilted system.}
+  \label{fig:01contribtzII}
+\end{figure}
 
 \section{Notes}
 \subsection{Spin states for Dirac cone}
@@ -1390,6 +1426,7 @@ This is due to the two cones of opposite chirality tilting in opposite direction
 
 \begin{figure}[h]
   \centering
+  \tikzsetnextfilename{symmetryspin}
   \begin{tikzpicture}
     \draw[->] (-4, 0) -- (4, 0) node[right] {\(k\)};
     \draw[->] (0, 0) -- (0, 4) node[right] {\(E\)};

@@ -40,6 +40,7 @@
     }
   }
 }
+\tikzsetnextfilename{lllevels}
 \begin{tikzpicture}
   \begin{groupplot} [%
     cycle list name=linestyles,

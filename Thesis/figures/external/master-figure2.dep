@@ -1,2 +1,0 @@
-figures/external/master-figure2.pdf: data/notilt_contrib2.csv
-figures/external/master-figure2.pdf: data/notilt_contrib.csv

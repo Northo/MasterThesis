@@ -267,8 +267,8 @@ The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal 
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
 \begin{figure}[ht]
+  \tikzsetnextfilename{arctanh}
   \centering
-  % \includegraphics[options]{figures/path.pdf}
   \begin{tikzpicture}
     \pgfkeys{/pgf/declare function={arctanh(\x) = 0.5*(ln((1+\x)/(1-\x)));}}
     \begin{axis}[
@@ -283,9 +283,9 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
       ylabel=\(\tanh^{-1} x\),
       % ytick=none,
       ]
-      \addplot +[thick,domain=-0.999:0.999] {arctanh(x)};
-      \draw [thick,dashed,domain=-0.99:0.99] (1,-4) -- (1,4);
-      \draw [thick,dashed,domain=-0.99:0.99] (-1,-4) -- (-1,4);
+      % \addplot +[thick,domain=-0.999:0.999] {arctanh(x)};
+      % \draw [thick,dashed,domain=-0.99:0.99] (1,-4) -- (1,4);
+      % \draw [thick,dashed,domain=-0.99:0.99] (-1,-4) -- (-1,4);
     \end{axis}
   \end{tikzpicture}
   \caption{\label{fig:arctanh} Plot of \(\tanh^{-1}\), which diverges as the argument goes to \(\pm 1\).}
