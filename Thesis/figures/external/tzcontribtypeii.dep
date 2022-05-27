@@ -1,4 +1,6 @@
 figures/external/tzcontribtypeii.pdf: data/contribtypeii.csv
 figures/external/tzcontribtypeii.pdf: data/contribtypeii.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_diffsigntz.csv
 figures/external/tzcontribtypeii.pdf: data/contribtypeii_diffsigntz.csv
 figures/external/tzcontribtypeii.pdf: data/contribtypeii_diffsigntz.csv
