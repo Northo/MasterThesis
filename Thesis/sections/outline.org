@@ -55,6 +55,10 @@ Do the integral and write down resutl
 Find explicit forms of the matrix elements
 How to separate in tx vs tz?
 
+
+***** Tx tilt
+Specialize to tz = 0
+
 ***** Tz tilt
 In the case of only tz-tilt, the expression is easy to find, as only the energies are the only quantity that change.
 
@@ -68,6 +72,7 @@ Have computed the contrib form interband -N -> N + 1, must also find intraband
 The goal: put on a solid foundation when the contributions from chiralitites cancel
 
 *** Results
+/Move the results into the previous section??/
 
 **** Tiltless
 

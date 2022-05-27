@@ -526,15 +526,16 @@ In the static limit, the \( \Xi \) functions thus take the form
           \end{cases} \text{ for } M \geq 0, N > 0.
 \end{align}
 
-\subsection{Solving the kx integral -- draft}
+\subsection{Perpendicular tilt}
 \label{sec:perptiltsum}
-We have the response function
+We consider here the specialized situation where \( \vec{t} = t_x \hat{x} \), i.e. only tilt perpendicular to the magnetic field.
+The response function
 \begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{e B i v_F}{(2 \pi)^2}
   \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]\\
   \times \frac{
-    J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y~(i)}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
+    J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
   }{
     (E_{\vec{k} m s} - E_{\vec{k}+\qvec{q} ns} + i \eta)(E_{\vec{k}ms}-E_{\vec{k}+\qvec{q} ns} + i \eta)
   }.
@@ -579,31 +580,31 @@ Thus, using \( \Xi _1(m, n) = \Xi _2(n, m) \) and relabelling the summation indi
 \]
 
 We may also simplify the step function expression.
-Physically, the step function term corresponds to only considering overlap between states with energies of opposite sign.
-Restricting ourselves to Type-I for now, the energy of the state with quantum number \( n \) has the same sign as \( n \) itself, excluding of course the zeroth state.
+Physically, the step function term corresponds to only considering transitions between states with energies of opposite sign.
+For Type-I systems, which we are restricted to here as we consider currently only perpendicular tilt, the energy of the state with quantum number \( n \) has the same sign as \( n \) itself, excluding of course the zeroth state.
 For the zeroth state, the sign of the energy is \( \sign(-s \kappa_z) \).
 Using these considerations, we may make certain seletion rules for the sum.
 In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as there \( m n > 0 \), i.e. they have the same sign.
 Our sum is thus restricted to the second and fourth quadrant.
-We have
+It is easy to show that
 \begin{equation}
   \label{eq:102}
   n_{\vec{k} m s} - n_{\vec{k} + \qvec{q} n s} =
   \begin{cases}
-    \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0\\
-    - \sign(m) & m,n \neq 0\\
-    \phantom{-} \sign(n) \theta(\sign(n) s \kappa) & m = 0\\
-    -\sign(m) \theta(\sign(m) s \kappa) & n = 0
-  \end{cases}.
+    \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0,\\
+    - \sign(m) & m,n \neq 0,\\
+    \phantom{-} \sign(n) \theta(\sign(n) s \kappa) & m = 0,\\
+    -\sign(m) \theta(\sign(m) s \kappa) & n = 0.
+  \end{cases}
 \end{equation}
 
-Furthermore, the contributions from those quadrants are equal, which we will now show.
-The mapping \( (m,n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), i.e. a \( \pi \) rotation, transforms points in the second quadrant to the fourth quadrant.
+Furthermore, the contributions from the second and fourth quadrant are equal, which we will now show.
+The mapping \( (m,n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), i.e. a \( \pi \) rotation, transforms points from the \( m < 0 \) half plane to the \( m > 0 \) half plane, including mapping the second quadrant to the fourth quadrant.
 We want to consider how the integrand in question transforms under such a mapping.
 Recall
 \begin{align*}
   \alpha_{\kappa_z m s} &= - \frac{\sqrt{\alpha M} }{s \epsilon_{m, \alpha B}^0 - \kappa_z},\\
-  \epsilon_{m, \alpha B}^0 &= \sign(m) \sqrt{\alpha M + \kappa_z^2}.
+  \epsilon_{m, \alpha B}^0 &= \sign(m) \sqrt{\alpha M + \kappa_z^2}, \quad m \neq 0.
 \end{align*}
 Under the above mapping, we have the following relations
 \begin{align}
@@ -615,12 +616,15 @@ Under the above mapping, we have the following relations
 The \( \Xi \) functions also acquries a sign for some values of \( m,n \), however, we only consdier \( \Xi^2 \).
 The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
 
+Lastly, completely analogous to the untilted case, the integrand only depend on \( s \) and \( \kappa_z \) through their product \( s \kappa_z \), and thus is invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
+As the integral spans all of \( \kappa_z \), the contribution is independent of the chirality \( s \), and may be calcluated for a specific choice, which is here taken to be \( s=+1 \).
+
 \todo{Make a note about \( M = N\) always giving zero contributinos.
 Maybe also show in figure.
 This is important wrt. saying that \( \gamma_0 \) is all contributison withtin square etc.}
 
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \centering
   \tikzsetnextfilename{mnregiontx}
   \begin{tikzpicture}
@@ -643,8 +647,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
     \fill[red!20, opacity=0.4] (1,0) -- (5, -4) -- (1, -4) -- (1,-1);
     \draw (1, 0) -- (5, -4);
   \end{tikzpicture}
-
-  \caption{The region of \( (m,n) \) to sum over for a Type-I tilted cone.
+  \caption{The region of \( (m,n) \) to sum over for a Type-I perpendicularly tilted cone.
     The black line represents the combinations that give a finite contribution also in the untilted case.
     As the cone is tilted, this sharp line ``diffuse'' into the red and blue regions as well.
     Note that, as \( \Xi_1 \) defined only for \( M>0\), the region with \( m=0 \) gives no contribution.}
@@ -866,7 +869,7 @@ We compute therefore only the term that differ, for \( s=+1 \).
 The integral
 \begin{equation}
   \label{eq:97}
-  \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t_z \alpha_{\kappa_z m s}^2
+  \frac{\gamma_{\text{div}, N}}{2} = \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t_z \alpha_{\kappa_z m s}^2
 \end{equation}
 diverges.
 Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result
@@ -914,14 +917,14 @@ The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with brok
       ylabel=Contribution,
       legend pos=south east,
       ]
-      \foreach \i in {1,...,3} {
+      \foreach \i in {1,...,5} {
         \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
         \addlegendentryexpanded{\( m = \i \)};
       }
     \end{axis}
   \end{tikzpicture}
-  \caption{The divergent factor for parallel tilt for \( t_z =0.2 \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
-    TODO: fix m to be m-1}
+  \caption{The divergent factor \( \gamma_{\text{div}, N} / t_{z} \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
+    TODO: fix m to be m-1. Alternatively use N}
   \label{fig:divergent-factor}
 \end{figure}
 For Type-I semimetals, the sign of energy state \( m \neq 0 \) is given by the sign of \( m \) itself.
@@ -1206,12 +1209,16 @@ We will here consider parallel and perpendicular tilt separately.
 
 \subsection{Perpendicular tilt}
 In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.
+Importantly, this does not generally mean that the effect is not present for Type-II systems, but simply that the Linear model Landau level description is not a good basis for the system.
+The collapse of the Landau levels caused \textcite{soluyanovTypeIIWeylSemimetals2015} to errenously predict the collapse of the chiral anomaly in their now famous paper first describing Type-II Weyl semimetals.
+
 As explained in section \ref{sec:perptiltsum}, the \( m,n \) summation is restricted to the fourth quadrant in the \( m,n \) plane.
-In the case of no tilt, only contributions from \( M = N + 1 \) where non-zero;
+In the case of no tilt, only contributions from \( M = N + 1 \) were non-zero;
 we named the contribution from the \( 0\to 1 \) transition \( \gamma_0 \), the \( -1\to 2 \) transition \( \gamma_1 \) and so fourth.
 Here, as there are contributions also away from the \( M=N + 1 \) line, we denote by \( \gamma_0 \) the contributions from inside the square of length 1 centered at the origin.
 The \( \gamma_1 \) contributions are those inside the square of length 2, and so fourth.
 This definition effectively sets a roof to which Landau levels we consider.
+This is indicated in figure \ref{fig:contribs}.
 
 \todo{Correct which values }
 The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), shown in figure \ref{fig:contribs}.
@@ -1255,42 +1262,9 @@ The total contribution \( \gamma_N \) as a function of \( N \) is shown in figur
 
 
 \subsection{Parallel tilt}
-In the case of parallell tilt, there are some complications.
-The dimensionless part of the response function is
-\[
-  \sum\limits_{N=0}^{} \int \mathrm{d} \kappa_z
-  \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s}) \alpha_{\kappa_z m s}^2 |_{\overset{m=N+1}{n=-N}},
-\]
-with
-\[
-  \xi(\kappa_z) =
-  \left[
-    (\alpha_{\kappa_z m s}^2 + 1)
-    (\alpha_{\kappa_z n s}^2 + 1)
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s})^2
-  \right]^{-1}.
-\]
-The sum \( \epsilon_{\kappa_z m s } + \epsilon_{\kappa_z n s} \) is the only \( t_z \) dependent part of the expression, with the rest the same as the untilted case.
-As, for \( t_x = 0 \) we have
-\[
-\epsilon_{\kappa_z m s} = t_z^s \kappa_z + \epsilon^0_{\kappa_z m s},
-\]
-the effect of \( t_z \) is a contribution
-\begin{equation}
-  \label{eq:95}
-  \sum\limits_{N=0}^{} \int \mathrm{d} \kappa_z
-  \xi(\kappa_z) 2 \kappa_z t_z^s \alpha_{\kappa_z m s}^2 |_{\overset{m=N+1}{n=-N}}.
-\end{equation}
-This factor breaks an argument we made for the untilted cone.
-In the inversion symmetric case, \( t^s_z = s t_z \), and the argument for the two cones contributing equal, that the expression is invariant under \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), is still valid.
-For the case of broken inversion symmetry, howver, \( t_z^s = t_z \), and the term Eq. \eqref{eq:95} is \emph{not} invariant under inversion of \( \kappa_z, s \).
-The term is thus opposite for the two cones, and cancel.
-As we will see, this causes there to be a divergence in the inversion symmetric case, which is not present in the case of broken inversion symmetry.
-
-
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
 In the Type-I regime, the contributions differ from that of the untitled system by Eq. \eqref{eq:98}, dependent on a momentum cutoff \( \Lambda \).
-The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities the two cones cancel, and the response is equal to the untilted case.
+The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In case of inversion symmetry, the contributions from the two chiralities are equal and add up.
 
 In the Type-II regime, the contributions have more complicated form.
@@ -1301,7 +1275,15 @@ This is to be expected as we move towards the Lifshitz transition, where we expe
 \footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
 See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
 \todo{put this on more solid footing}
-The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:01contribtzII}.
+The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:contribtzII}.
+
+Considering also higher Landau level contributions, both interband and intraband transitions must be included,
+\footnote{By band we here refer to the ``conduction'' band and ``valence'' band}
+meaning the summation is no longer restricted to a quadrant in the \( m,n \) plane, but rather to half the plane.
+These contributions are not odd in \( t_z \) -- they have a finite even component.
+Due to this, the contribution does not cancel for inversion broken systems, however the contribution is small in magnitude compared to the other contributions.
+
+
 \begin{figure}[ht]
   \centering
   \subcaptionbox{Intraband contributions, \( -N \to N + 1 \).}{
@@ -1318,16 +1300,21 @@ The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:
         \( \hphantom{-}0\rightarrow 1\),
         \( -1 \rightarrow 2\),
         \( -2\rightarrow 3 \),
+        \( -3\rightarrow 4 \),
       }, %% There is a bug with \to
+      % cycle list={[samples of colormap={4} of colormap/autumn]},
+      % cycle list={[of colormap=colormap/autumn]},
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       \addplot+[mark=none] {0.5 * (-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
       \addplot+[mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
       \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii.csv};
+      \addplot+[mark=none] table[col sep=comma, y=-3] {data/contribtypeii.csv};
 
       \pgfplotsset{cycle list shift=-2}
       \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
       \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_diffsigntz.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=-3] {data/contribtypeii_diffsigntz.csv};
     \end{axis}
   \end{tikzpicture}
   } %% Subcaptionbox
@@ -1358,7 +1345,7 @@ The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:
     % Shown in dashed line is the difference between the contribution at \( t_z \) positive and negative.
     Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( \text{contrib}(|t_z|) + \text{contrib}(-|t_z|) \).
   }
-  \label{fig:01contribtzII}
+  \label{fig:contribtzII}
 \end{figure}
 
 \section{Notes}
