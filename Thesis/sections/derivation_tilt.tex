@@ -1295,7 +1295,7 @@ In case of inversion symmetry, the contributions from the two chiralities are eq
 In the Type-II regime, the contributions have more complicated form.
 Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:117}.
 Also this contribution is odd in \( t_z \), so the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
-As \( |t_z| -> 1 \) from above, the contribution blows up.
+As \( |t_z| \to 1 \) from above, the contribution blows up.
 This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.
 \footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
 See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
@@ -1303,7 +1303,7 @@ See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
 The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:01contribtzII}.
 \begin{figure}[ht]
   \centering
-  \tikzsetnextfilename{01tzcontribtypeii}
+  \tikzsetnextfilename{tzcontribtypeii}
   \begin{tikzpicture}
     \pgfkeys{/pgf/declare function={arcsinh(\x) = ln(x + sqrt(x^2+1));}}
     \begin{axis}[
@@ -1311,12 +1311,26 @@ The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:
       xlabel=\( t_z \),
       ylabel=Contribution,
       samples=100,
+      legend entries={%
+        \( \hphantom{-}0\rightarrow 1\),
+        \( -1 \rightarrow 2\),
+        \( -2\rightarrow 3 \),
+      }, %% There is a bug with \to
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       \addplot+[mark=none] {0.5 * (-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
+      \addplot+[mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
+      \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii.csv};
+
+      \pgfplotsset{cycle list shift=-2}
+      \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_diffsigntz.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{The contribution from the \(0 \to 1\) transition in a Type-II \(t_z\) tilted system.}
+  \caption{The contribution from the \(-N \to N+1\) transitions in a Type-II \(t_z\) tilted system.
+    % Shown in dashed line is the difference between the contribution at \( t_z \) positive and negative.
+    Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( \text{contrib}(|t_z|) + \text{contrib}(-|t_z|) \).
+  }
   \label{fig:01contribtzII}
 \end{figure}
 
