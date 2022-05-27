@@ -1,0 +1,4 @@
+figures/external/tzcontribtypeii_intraband.pdf: data/contribtypeii_intraband.csv
+figures/external/tzcontribtypeii_intraband.pdf: data/contribtypeii_intraband.csv
+figures/external/tzcontribtypeii_intraband.pdf: data/contribtypeii_intraband_diffsigntz.csv
+figures/external/tzcontribtypeii_intraband.pdf: data/contribtypeii_intraband_diffsigntz.csv

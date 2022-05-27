@@ -1229,6 +1229,7 @@ The total contribution \( \gamma_N \) as a function of \( N \) is shown in figur
       width=12cm,
       height=8cm,
       name=myaxis,
+      xtick distance=1,
       ]
       \newcommand\plotContrib[1]{
         \addplot table[col sep=comma] {data/contribSumTilttx#1PbrokenTrue.csv};
@@ -1303,10 +1304,12 @@ See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
 The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:01contribtzII}.
 \begin{figure}[ht]
   \centering
+  \subcaptionbox{Intraband contributions, \( -N \to N + 1 \).}{
   \tikzsetnextfilename{tzcontribtypeii}
   \begin{tikzpicture}
     \pgfkeys{/pgf/declare function={arcsinh(\x) = ln(x + sqrt(x^2+1));}}
     \begin{axis}[
+      width=0.49\textwidth,
       domain=1:2,
       xlabel=\( t_z \),
       ylabel=Contribution,
@@ -1327,7 +1330,31 @@ The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:
       \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_diffsigntz.csv};
     \end{axis}
   \end{tikzpicture}
-  \caption{The contribution from the \(-N \to N+1\) transitions in a Type-II \(t_z\) tilted system.
+  } %% Subcaptionbox
+  \subcaptionbox{Interband contributions, \( N \to N + 1 \).}{
+  \tikzsetnextfilename{tzcontribtypeii_intraband}
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=0.49\textwidth,
+      domain=1:2,
+      xlabel=\( t_z \),
+      % ylabel=Contribution,  %% Enough with one
+      legend entries={%
+        \( 1 \rightarrow 2\),
+        \( 2\rightarrow 3 \),
+      }, %% There is a bug with \to
+      ]
+      % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
+      \addplot+[mark=none] table[col sep=comma, y=-1] {data/contribtypeii_intraband.csv};
+      \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii_intraband.csv};
+
+      \pgfplotsset{cycle list shift=-2}
+      \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_intraband_diffsigntz.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_intraband_diffsigntz.csv};
+    \end{axis}
+  \end{tikzpicture}
+  } %% subcaptionbox
+  \caption{The contribution from \( n\to m \) transitions in a Type-II \(t_z\) tilted system.
     % Shown in dashed line is the difference between the contribution at \( t_z \) positive and negative.
     Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( \text{contrib}(|t_z|) + \text{contrib}(-|t_z|) \).
   }
