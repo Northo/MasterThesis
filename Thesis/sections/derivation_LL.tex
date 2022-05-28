@@ -120,8 +120,9 @@ Thus,
   \begin{pmatrix}
     \frac{\beta }{\sqrt{2^{n-1}(n-1)!\sqrt{\pi }}} H_{n-1} \left( \chi \right)\\
     \frac{\alpha }{\sqrt{2^{n}n!\sqrt{\pi }}} H_n \left(\chi \right)\\
-  \end{pmatrix}
+  \end{pmatrix},
 \end{equation}
+where we defined \( H_{-1} = 0 \) in order to get a more general expression.
 Choosing
 \begin{equation}
   \alpha  = \sqrt{\frac{\gamma^2}{n}} \implies \beta = \frac{1}{1 \pm \sqrt{1 + \frac{n}{\gamma ^2}}} = \pm \frac{\gamma ^2}{n} \left( \sqrt{1 + \frac{n}{\gamma ^2}} - 1 \right),
@@ -179,6 +180,7 @@ where \(\vec{t}^s\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocit
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 Firstly, assume that the tilt vector \(\vec{ t }\) is in the \(x,z\)-plane, \(\vec{t} = (t_{\perp}, 0, t_{\parallel})\), which we can always achieve by a rotation around \(z\).
 \todo{Proof by figure}
+\todo{Is this correct? I think maybe it is not correct, as we have made a choice of \( \nabla T \) which renders the system no longer \( z \) rotation invariant. }
 Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\).
 We take the field to be in the \( z \)-direction, and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
 

@@ -98,6 +98,13 @@ The goal: put on a solid foundation when the contributions from chiralitites can
 **** Show some widemann-franz, mottt, etc relations?
 
 * Ideas and Problems
+** Directions
+We have made certain choices of which directions we consider.
+Specifically, we have chosen to specifically consider the perpendicular tilt to be parallell to the charge current.
+It could also be perpendicular to the charge current, and parallell to the temperature gradient.
+In that case (I think), we would get a more complicated form of the energy momentum tensor (as t_y) would appear.
+It warrants a comment
+
 ** The energy-momentum tensor
 We have chosen to use the canonical energy momentum tensor.
 This warrants some discussion, and also we may include our calculation for the symmetric choice
