@@ -296,7 +296,7 @@ We want to evaluate
 \begin{equation}
   \label{eq:121}
   F^{(2)}_{ij} =
-  \left[(\alpha_{\vec{k} m s}^2 + 1) ( \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 )\right]^{\frac{1}{2}}
+  \left[(\alpha_{k_z m s}^2 + 1) ( \alpha_{k_z + \qvec{q}_z n s}^2 + 1 )\right]^{\frac{1}{2}}
   \int \mathrm{d} \tilde{y}
   e^{-\tilde{y}^2}
   M^{(2)}_{ij},
@@ -307,7 +307,7 @@ Notice that
 \todo{Verify \( l_B \) in this section}
 \begin{equation}
   F^{(2)}_{12}
-  = -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha _{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n).
+  = -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha_{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n).
 \end{equation}
 and
 \begin{equation}
@@ -320,7 +320,7 @@ and
 \( F^{(2)}_{11} \) and \( F^{(2)}_{22} \) are the same as for the untilted case:
 \begin{equation}
   \label{eq:123}
-  F^{(2)}_{11} = \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
+  F^{(2)}_{11} = \sqrt{\alpha}  \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z ns} \sqrt{M-1} }{ l_B \sqrt{2} }
   \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),
 \end{equation}
 and
@@ -349,7 +349,7 @@ where
     - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]
 }{
-  \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+  \left[(\alpha_{k_z m s}^2 +1) (\alpha_{k_z + \qvec{q}_z ns} ^2 + 1)\right]^{\frac{1}{2}}
   \sqrt{1 - t_x^2 }}
 \]
 
@@ -405,25 +405,25 @@ Denote the terms of the integrand by
 We must evaluate
 \begin{equation}
   \label{eq:126}
-  F^{(3)}_{ij} = \left[(\alpha_{\vec{k} m s}^2  + 1) ( \alpha _{\vec{k} + \qvec{q} ns}^2 + 1 )\right]^{\frac{1}{2}} \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
+  F^{(3)}_{ij} = \left[(\alpha_{k_z m s}^2  + 1) ( \alpha_{k_z + \qvec{q}_z ns}^2 + 1 )\right]^{\frac{1}{2}} \int \mathrm{d} \tilde{y} e^{-\tilde{y}^2} M^{(3)}_{ij}.
 \end{equation}
 From the untilted case we know
 \begin{align}
   F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
-                 \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
+                 \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s}}{l_{B} \alpha_{k_z + \qvec{q}_z n \mp 1 s}}
                  \Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s ),\\
   F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
-                 \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
+                 \frac{1}{l_{B} \alpha_{k_z + \qvec{q}_z n s}}
                  \Xi_{2} (\bar{\vec{q}}, m, n, s).
 \end{align}
 Furthermore,
 \begin{align}
-  F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
+  F^{(3)}_{12} &= -t_x \frac{\alpha_{k_z + \qvec{q}_z n}}{\alpha_{k_z + \qvec{q}_z n \mp 1} l_{B}}
                  \sqrt{\frac{N-1}{2}}
                  \Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s),\\
   F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
                  \sqrt{\frac{N}{2}}
-                 \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
+                 \frac{\alpha_{k_z m}}{\alpha_{k_z + \qvec{q}_z n}}
                  \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
 \end{align}
 We thus have
@@ -460,35 +460,35 @@ The non-canonical part of the energy-momentum tensor \( T_F^{\mu \nu} = T^{\nu \
         - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
       \right  ]
     }{
-      \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+      \left[(\alpha_{k_z m s}^2 +1) (\alpha_{k_z + \qvec{q}_z ns} ^2 + 1)\right]^{\frac{1}{2}}
     }
   \]
   and where the factors \( F_{ij}^{(n)} \) where found to be
   \begin{align}
     F^{(2)}_{12}
-    &= -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha _{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n),\\
+    &= -t_x \sqrt{\alpha}  \sqrt{\frac{M}{2}} \alpha_{k+q, n} \Xi_2(\bar{\vec{q}}, m\mp 1, n),\\
     F^{(2)}_{21}
     &=
       -t_{x} \sqrt{\alpha} \sqrt{\frac{M-1}{2}} \frac{a_{\vec{k} m s}^2}{l_B a_{\vec{k} m \mp 1 s}}
       \Xi_{1} (\bar{\vec{q}}, m \mp 1, n, s),\\
-    F^{(2)}_{11} &= \sqrt{\alpha}  \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \sqrt{M-1} }{ l_B \sqrt{2} }
+    F^{(2)}_{11} &= \sqrt{\alpha}  \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z ns} \sqrt{M-1} }{ l_B \sqrt{2} }
                    \Xi_{1} (\bar{\vec{q}}, m\mp 1, n\mp 1, s),\\
     F^{(2)}_{22} &=
                    \sqrt{\alpha }
                    \frac{\sqrt{M} }{l_B \sqrt{2} }
                    \Xi_{1} ( \bar{\vec{q}}, m, n, s ),\\
     F^{(3)}_{11} &= \sqrt{\frac{N-1}{2}}
-                   \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k}+\qvec{q} n s}}{l_{B} \alpha _{\vec{k} + \qvec{q} n \mp 1 s}}
+                   \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s}}{l_{B} \alpha_{k_z + \qvec{q}_z n \mp 1 s}}
                    \Xi_2( \bar{\vec{q}}, m\mp 1, n\mp 1, s ),\\
     F^{(3)}_{22} &= \sqrt{\frac{N}{2}}
-                   \frac{1}{l_{B} \alpha _{\vec{k} + \qvec{q} n s}}
+                   \frac{1}{l_{B} \alpha_{k_z + \qvec{q}_z n s}}
                    \Xi_{2} (\bar{\vec{q}}, m, n, s),\\
-    F^{(3)}_{12} &= -t_x \frac{\alpha _{\vec{k} + \qvec{q} n}}{\alpha _{\vec{k}+\qvec{q} n \mp 1} l_{B}}
+    F^{(3)}_{12} &= -t_x \frac{\alpha_{k_z + \qvec{q}_z n}}{\alpha_{k_z + \qvec{q}_z n \mp 1} l_{B}}
                    \sqrt{\frac{N-1}{2}}
                    \Xi_{2} (\bar{\vec{q}}, m, n \mp 1, s),\\
     F^{(3)}_{21} &= -\frac{t_x}{l_{B}}
                    \sqrt{\frac{N}{2}}
-                 \frac{\alpha_{\vec{k} m}}{\alpha _{\vec{k} + \qvec{q} n}}
+                 \frac{\alpha_{k_z m}}{\alpha_{k_z + \qvec{q}_z n}}
                  \Xi_2 ( \bar{\vec{q}}, m \mp 1, n, s ).
 \end{align}
 \end{summary}

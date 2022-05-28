@@ -146,20 +146,20 @@ Using that
 \begin{align}
   a_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
   &=
-    \sqrt{\alpha } \frac{\alpha_{\vec{k} m s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
+    \sqrt{\alpha } \frac{\alpha_{k_z m s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
     \left[
     2^{N+M-1} (M-1)! N! \pi l_{B}^2
     \right  ]^{-\frac{1}{2}}\\
   b_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
   &=
-    \sqrt{\alpha } \frac{\alpha_{\vec{k} + \qvec{q} n s}}{\sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}  }
+    \sqrt{\alpha } \frac{\alpha_{k_z + \qvec{q}_z n s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
     \left[
     2^{N+M-1} (N-1)! M! \pi l_{B}^2
     \right  ]^{-\frac{1}{2}}\\
   a_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
   &=
-    \sqrt{\alpha } \frac{\alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} n s}}{
-    \sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}
+    \sqrt{\alpha } \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s}}{
+    \sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}
     }
     \left[
     2^{N+M-2} (M-1)! (N-1)! \pi l_{B}^2
@@ -167,7 +167,7 @@ Using that
   b_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
   &=
     \sqrt{\alpha } \frac{1}{
-    \sqrt{\alpha _{\vec{k} m s} ^2 + 1} \sqrt{\alpha _{\vec{k} + \qvec{q} ns} ^2  + 1}
+    \sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}
     }
     \left[
     2^{N+M} M! N! \pi l_{B}^2
@@ -176,9 +176,9 @@ Using that
 we define \( \Xi_1, \Xi_2 \) by
 \begin{align}
   \label{eq:81}
-  \frac{ \sqrt{\alpha } \alpha _{\vec{k} m s} \Xi_1 ( \vec{q}, m, n, s )}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  \frac{ \sqrt{\alpha } \alpha_{k_z m s} \Xi_1 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha_{k_z m s}^2 + 1}
+    \sqrt{\alpha_{k_z + \qvec{q}_z n s} ^2 + 1}
   }
   &=
   \int \mathrm{d} \tilde{y}
@@ -188,9 +188,9 @@ we define \( \Xi_1, \Xi_2 \) by
   H_{M-1} (\chi_{\vec{k}})
   H_N ( \chi _{\vec{k} + \qvec{q}} ),\\
   \label{eq:82}
-  \frac{ \sqrt{\alpha } \alpha _{\vec{k} + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s} ^2 + 1}
+  \frac{ \sqrt{\alpha } \alpha_{k_z + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
+    \sqrt{\alpha_{k_z m s}^2 + 1}
+    \sqrt{\alpha_{k_z + \qvec{q}_z n s} ^2 + 1}
   }
   &=
   \int \mathrm{d} \tilde{y}
@@ -240,13 +240,13 @@ This gives the first part of the current matrix element
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (q'_x)^2 )
     \right]
   }{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1} \sqrt{ \alpha _{\vec{k} + \qvec{q} n s}^2 + 1 }
+    \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{ \alpha_{k_z + \qvec{q}_z n s}^2 + 1 }
   } \\
   % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
   \Big[
-   \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-    + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s)\\
-    -s t_x \alpha _{\vec{k} m s} \alpha _{\vec{k} + \qvec{q} n s} \Xi _1(\vec{q}, m, n\mp 1, s)
+   \alpha_{k_z m s} \Xi_{1} (\vec{q}, m, n, s)
+    + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s)\\
+    -s t_x \alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s} \Xi _1(\vec{q}, m, n\mp 1, s)
     -s t_x \Xi _2(\vec{q}, m, n\pm 1, s)
   \Big].
 \end{multline}
@@ -296,11 +296,11 @@ Thus
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
     \right]
   }{
-    \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
+    \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
   }\\
   \Big[
-  -s t^s_x [ \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n) ]\\
-  + \alpha_{\vec{k} m s} \alpha_{\vec{k} + \qvec{q} ns} \Xi_1(\vec{q}, m, n\mp 1)
+  -s t^s_x [ \alpha_{k_z m s} \Xi_1(\vec{q}, m, n) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n) ]\\
+  + \alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z ns} \Xi_1(\vec{q}, m, n\mp 1)
   + \Xi_2(\vec{q}, m, n \pm 1) \Big].
 \end{multline}
 We notice that this part has the same form as \( J^{(1)} \), with only a change of the prefactors of the \( \Xi  \)-functions.
@@ -313,10 +313,10 @@ We notice that this part has the same form as \( J^{(1)} \), with only a change 
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
     \right]
   }{
-    \sqrt{\alpha_{\vec{k} m s}^2 + 1} \sqrt{\alpha _{\vec{k}+\qvec{q} n s}^2 + 1}
+    \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
   }\\
   \left[
-     \alpha_{\vec{k} m s} \Xi_1(\vec{q}, m, n) + \alpha_{\vec{k} + \qvec{q} n s} \Xi_2(\vec{q}, m, n)
+     \alpha_{k_z m s} \Xi_1(\vec{q}, m, n) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n)
   \right].
 \end{multline}
 We used here that \( 1 - t_x^2 = \alpha^2 \).
@@ -406,13 +406,13 @@ And thus we have
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
   \frac{is \alpha }{4  }
   \frac{E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu}{
-    \sqrt{\alpha _{\vec{k} m s}^2 + 1}
-    \sqrt{\alpha _{\vec{k} + \qvec{q} n s}^2 + 1}
+    \sqrt{\alpha_{k_z m s}^2 + 1}
+    \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
   }\\
   &\pe \exp \left[
     -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2i ( 2k' _x + q' _x ) q_{y} + (q' _x)^2)
   \right  ]\\
-  &\pe (-\alpha_{\vec{k}+\qvec{q} n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{\vec{k} m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
+  &\pe (-\alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
 \end{align}
 where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
 
@@ -424,12 +424,12 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                         v_{F} e s \alpha^2
                                                         \Gamma ^-_{\vec{k} \qvec{q} m n s}
                                                         % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-                                                        \left[ \alpha _{\vec{k} m s} \Xi_{1} (\vec{q}, m, n, s)
-                                                        + \alpha _{\vec{k} + \qvec{q} n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
+                                                        \left[ \alpha_{k_z m s} \Xi_{1} (\vec{q}, m, n, s)
+                                                        + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
     T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
                                                                  \frac{is \alpha}{4  }
                                                                  (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
-                                                      &\pe (- \alpha_{\vec{k}+ \qvec{q} n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{\vec{k} m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
+                                                      &\pe (- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
   \end{align}
   with
   \[
@@ -440,7 +440,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
         - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )
       \right]
     }{
-      \left[(\alpha_{\vec{k} m s}^2 +1) (\alpha_{\vec{k} + \qvec{q} ns} ^2 + 1)\right]^{\frac{1}{2}}
+      \left[(\alpha_{k_z m s}^2 +1) (\alpha_{k_z + \qvec{q}_z ns} ^2 + 1)\right]^{\frac{1}{2}}
     }
   \]
 \end{summary}
@@ -483,10 +483,10 @@ Expressed in the dimensionless energies \( \epsilon = \frac{E}{v_{F} \sqrt{2 e B
   \right].
 \]
 
-The normalization factor \( \alpha _{k_z m s} \) is independent on \( \vec{q} \), and already dimensionless.
+The normalization factor \( \alpha_{k_z m s} \) is independent on \( \vec{q} \), and already dimensionless.
 Explicity, it is given in dimensionless quantities as
 \begin{equation}
-  \alpha _{k_z m s} =
+  \alpha_{k_z m s} =
   -\frac{\sqrt{2 e \alpha B M}}{ \frac{E_{k_{z} m s} - t_{\parallel} v_F k_z}{v_{F} s \alpha } - k_z}
   = -\frac{\sqrt{\alpha M}}{s \epsilon ^{0}_{m, \alpha B} - \kappa }.
 \end{equation}
@@ -548,9 +548,9 @@ Writing out the matrix products we have
   e^{-P^2}\\
   \frac{
     (E_{\vec{k} m s} + E_{\vec{k}+\qvec{q} n s})
-    (\alpha_{\vec{k} m s}^2 \Xi_1(m,n)^2 - \alpha_{\vec{k} + \qvec{q} n s}^2 \Xi_2(m,n)^2)
+    (\alpha_{k_z m s}^2 \Xi_1(m,n)^2 - \alpha_{k_z + \qvec{q}_z n s}^2 \Xi_2(m,n)^2)
   }{
-    (\alpha_{\vec{k} m s}^2 + 1)(\alpha_{\vec{k}+\qvec{q} n s}^2 + 1)
+    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z + \qvec{q}_z n s}^2 + 1)
   }.
   \label{eq:100}
 \end{multline}
@@ -565,9 +565,9 @@ And so, inserting into the response function
   \frac{
     [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]
     (\epsilon_{\vec{k} m s} + \epsilon_{\vec{k}+\qvec{q} n s})
-    (\alpha_{\vec{k} m s}^2 \Xi_1(m,n)^2 - \alpha_{\vec{k} + \qvec{q} n s}^2 \Xi_2(m,n)^2)
+    (\alpha_{k_z m s}^2 \Xi_1(m,n)^2 - \alpha_{k_z + \qvec{q}_z n s}^2 \Xi_2(m,n)^2)
   }{
-    (\alpha_{\vec{k} m s}^2 + 1)(\alpha_{\vec{k}+\qvec{q} n s}^2 + 1)
+    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z + \qvec{q}_z n s}^2 + 1)
     (\epsilon_{\vec{k} m s} - \epsilon_{\vec{k}+\qvec{q} ns} + i \eta)^2
   }
 \end{multline}
@@ -803,12 +803,12 @@ We may thus immediately use the result from the untilted case
 with
 \begin{align}
   \label{eq:95}
-  \epsilon_{\kappa m s} &=
+  \epsilon_{\kappa_z m s} &=
                           \begin{cases}
-                            t_z^s \kappa + \sign{m} \sqrt{M + \kappa ^2} & m \neq 0\\
-                            (t_z^s - s) \kappa & m = 0
+                            t_z^s \kappa_z + \sign{m} \sqrt{M + \kappa_z^2} & m \neq 0\\
+                            (t_z^s - s) \kappa_z & m = 0
                           \end{cases},\\
-  \alpha _{\kappa_z m s} &=
+  \alpha_{\kappa_z m s} &=
                          -\frac{\sqrt{M}}{s \epsilon_{\kappa_z  m s}^0 - \kappa_z }.
 \end{align}
 In the untilted case we made several simplifications to this expression, especially with regards to limiting the summation domain.

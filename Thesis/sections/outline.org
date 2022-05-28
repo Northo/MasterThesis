@@ -55,6 +55,8 @@ Do the integral and write down resutl
 Find explicit forms of the matrix elements
 How to separate in tx vs tz?
 
+***** TODO Show how to get the degeneracy factor form kx, as was done in beginning of 2.3.3
+
 
 ***** Tx tilt
 Specialize to tz = 0
@@ -96,6 +98,18 @@ The goal: put on a solid foundation when the contributions from chiralitites can
 **** Show some widemann-franz, mottt, etc relations?
 
 * Ideas and Problems
+** The energy-momentum tensor
+We have chosen to use the canonical energy momentum tensor.
+This warrants some discussion, and also we may include our calculation for the symmetric choice
+
+In the beginning, we should compute, for a generally tilted system, the current and energy-momentum tensor.
+A more in depth discussion on the choice is maybe more fitting in the results and discussion section
+
+Quick notes and ideas
+- Ignore the concept of the energy-momentum tensor entirely.
+  The gravitational potential couple to the energy density, and we use the conservation of energy to include instead the energy flux.
+  We should therefore find an expression of the energy flux (and hope that it coincides with the energy-momentum tensor).
+  I believe maybe the argumentation in Stoof is along these lines.
 
 ** [#A] Response not odd
 Is it a problem that the tz typeii reponse is not odd in tz?

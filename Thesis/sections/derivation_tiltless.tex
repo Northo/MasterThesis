@@ -12,15 +12,15 @@ Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / \hbar) a_{\lambda }^{\
 The current operator $\hat{\vec{J}} = e \hat{\vec{v}}$, where $\hat{\vec{v}}$ is the velocity operator.
 Using the relation of Heisenberg operators $\dot{A} = [A, H] / i\hbar $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, the operator
 \begin{align}
-  \vec{v} = \dot{\vec{r}} &= \frac{1}{i \hbar } \left[ \vec{\vec{r}}, H \right]\\
-              &= \frac{sv_F \sigma ^i}{i \hbar } \left[ \vec{r}, p_i + e A_i \right]\\
-              &= \frac{s v_F \sigma^i }{i \hbar } \left( i\hbar + e[\vec{r}, A_i] \right)\\
-              &=s v_F \sigma ^i,
+  \vec{v} = \dot{\vec{r}} &= \frac{1}{i \hbar } \left[ \vec{r}, H \right]\\
+              &= \frac{sv_F \sigma ^i}{i \hbar } \left[ \vec{r}, p_i + e A_i \right] + \frac{v_F}{i \hbar} [\vec{r}, \vec{t}^s \vec{k}]\\
+              &= \frac{s v_F \sigma^i }{i \hbar } \left( i\hbar \hat{\vec{x}}_i + e[\vec{r}, A_i] \right) + v_F \vec{t}^s\\
+              &=s v_F \sigma ^i \hat{\vec{x}}_i + v_F \vec{t}^s,
 \end{align}
 and thus
 \begin{equation}
   J^x = \psi ^{\dagger} \hat{J}^x \psi = sv_F e \sum\limits_{\vec{k}m, \vec{l}n}^{}
-  \phi _{\vec{k}ms}^{*}(\vec{r}) \sigma ^x \phi _{\vec{l}ns}(\vec{r})
+  \phi _{\vec{k}ms}^{*}(\vec{r}) \left(\sigma^x + s t^s_x\right) \phi _{\vec{l}ns}(\vec{r})
   a_{\vec{k}ms}^{\dagger}(t)
   a_{\vec{l}ns}(t).
 \end{equation}
@@ -104,11 +104,12 @@ where we have introduced modified gamma matrices
   \label{eq:72}
   \Gamma ^{\mu } =
   \begin{cases}
-    \gamma ^{\mu } + t^{\mu} \gamma ^0& \text{ inversion symmetry broken },\\
-    \gamma^{\mu} + t^{\mu} \gamma^0 \gamma^5 & \text{ inversion symmetric },
+    \gamma ^{\mu } + t^{\mu} \gamma ^0& \text{ inversion symmetry broken},\\
+    \gamma^{\mu} + t^{\mu} \gamma^0 \gamma^5 & \text{ inversion symmetric},
   \end{cases}
 \end{equation}
 with \( t^{\mu } = (0, \vec{t}) \).
+Decomposing to \( 2\times 2 \), this yields
 \begin{equation}
   \label{eq:73}
   T^{\mu \nu} =
@@ -123,8 +124,8 @@ where we defined the modified Pauli matrices
   \label{eq:74}
   \tilde{\sigma}^{\mu} =
   \begin{cases}
-    \sigma^{\mu} + t^{\mu} & \text{ inversion symmetry broken },\\
-    \sigma^{\mu} + s t^{\mu} & \text{ inversion symmetric }.
+    \sigma^{\mu} + t^{\mu} & \text{ inversion symmetry broken},\\
+    \sigma^{\mu} + s t^{\mu} & \text{ inversion symmetric}.
   \end{cases}
 \end{equation}
 Similarly, the $T^{0y}$ component of the stress-energy tensor of the theory is given by~\cite{arjonaFingerprintsConformalAnomaly2019}
@@ -216,7 +217,6 @@ which further simplifies the expression.
     \right].
   \end{equation}
 \end{comment}
-\todo{If time, derive T}
 
 Fourier transforming the position gives
 \begin{align}
@@ -470,14 +470,14 @@ With
 \begin{align}
   a_{\vec{k}ms}b_{\vec{k}ns} &= 
   \frac{\alpha_{k_z ms} }{
-    \sqrt{\alpha _{k_z ms}^2 +1}
-    \sqrt{\alpha _{k_z ns}^2 + 1}
+    \sqrt{\alpha_{k_z ms}^2 +1}
+    \sqrt{\alpha_{k_z ns}^2 + 1}
   }
   \left[ 2^{N+M-1} (M-1)! N! \pi l_B^2 \right]^{-\frac{1}{2}},\\
   b_{\vec{k}ms}a_{\vec{k} ns} &= 
   \frac{\alpha_{k_z ns} }{
-    \sqrt{\alpha _{k_z ms}^2 +1}
-    \sqrt{\alpha _{k_z ns}^2 + 1}
+    \sqrt{\alpha_{k_z ms}^2 +1}
+    \sqrt{\alpha_{k_z ns}^2 + 1}
   }
   \left[ 2^{N+M-1} (N-1)! M! \pi l_B^2 \right]^{-\frac{1}{2}}.
 \end{align}
@@ -485,7 +485,7 @@ we find explicitly
 \begin{equation}
   J_{\vec{k} m s, \vec{k} n s} = J_{k_z m n s} =
   s v_F e
-  \frac{\alpha_{k_z m s} \delta_{M-1, N} + \alpha_{k_z n s} \delta_{M, N-1}}{\sqrt{\alpha _{k_z m s}^2 + 1} \sqrt{\alpha _{k_z n s}^2 + 1}}.
+  \frac{\alpha_{k_z m s} \delta_{M-1, N} + \alpha_{k_z n s} \delta_{M, N-1}}{\sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z n s}^2 + 1}}.
 \end{equation}
 
 
@@ -575,14 +575,14 @@ The terms in the integrand are exactly the same as in the current matrix element
   \frac{
     (E_{k_z m s} + E_{k_z n s}- 2\mu )
   }{
-    \sqrt{\alpha _{k_zms}^2 +1}
-    \sqrt{\alpha _{k_zns}^2 + 1}
+    \sqrt{\alpha_{k_zms}^2 +1}
+    \sqrt{\alpha_{k_zns}^2 + 1}
   }
   \left(
-    \alpha _{k_z m s}
+    \alpha_{k_z m s}
     \delta_{M-1, N}
     -
-    \alpha _{k_z n s}
+    \alpha_{k_z n s}
     \delta_{M, N-1}
   \right).
 \end{equation}
@@ -594,7 +594,7 @@ The terms in the integrand are exactly the same as in the current matrix element
                                 \Gamma_{k_z m n s}
                                 sv_F e
                                 \left(
-                                \alpha_{\vec{k} m s} \delta _{M-1, N}
+                                \alpha_{k_z m s} \delta _{M-1, N}
                                 + m\leftrightarrow n
                                 \right),\\
                                 %%
@@ -610,7 +610,7 @@ The terms in the integrand are exactly the same as in the current matrix element
 where \( m \leftrightarrow n \) represent the preceding term under the interchange of \( m, n \) and where we have defined
 $
 \Gamma_{k_z m n s} =
-\left[(\alpha _{k_zm s}^2 + 1) (\alpha _{k_z n s}^2 + 1) \right]^{-\frac{1}{2}}
+\left[(\alpha_{k_zm s}^2 + 1) (\alpha_{k_z n s}^2 + 1) \right]^{-\frac{1}{2}}
 $.
 \end{summary}
 
@@ -657,7 +657,7 @@ The first other contribution is
 \todo{take care of prefactors}
 \begin{equation}
   \label{eq:57}
-  \left(\frac{\sqrt{M}}{\alpha_{\vec{k} m s}} + \sqrt{(M-1)} \alpha_{\vec{k} n s}\right) \alpha_{\vec{k} m s} \delta_{M-1, N}.
+  \left(\frac{\sqrt{M}}{\alpha_{k_z m s}} + \sqrt{(M-1)} \alpha_{k_z n s}\right) \alpha_{k_z m s} \delta_{M-1, N}.
 \end{equation}
 The normalization factor, given in dimensionless quantities is,
 \[
@@ -670,7 +670,7 @@ Inserting this, and using the explicit form of the energy for \( m \neq 0 \)
 for the case \( N > 0 \) the contribution can be shown to be
 \begin{equation}
   \label{eq:58}
-  -s (\epsilon_m + \epsilon_n)\alpha_{\vec{k} m s} \delta_{M-1, N}.
+  -s (\epsilon_m + \epsilon_n)\alpha_{k_z m s} \delta_{M-1, N}.
 \end{equation}
 For \( n = 0 \), the second term of Eq. \eqref{eq:57} is zero, and we have
 \todo{mising s?}
@@ -687,7 +687,7 @@ In the case of tilt, however, the contribution can be shown to be
 \end{equation}
 where \( \epsilon_{m, \alpha B}^0 = \sign(m) \sqrt{\alpha M + \kappa^2}  \) and we used
 \[
-\alpha_{\vec{k} m s} = - \frac{\sqrt{\alpha M}}{s \epsilon^{0}_{m, \alpha B} - \kappa}
+\alpha_{k_z m s} = - \frac{\sqrt{\alpha M}}{s \epsilon^{0}_{m, \alpha B} - \kappa}
 \]
 in the tilted case.
 Thus, we see that in the case of tilt perpendicular to the \( B \)-field, the contribution is scaled compared to the non-symmetric term.
@@ -732,7 +732,7 @@ Collecting dimensionfull quantites, the response function reads
   \sum\limits_{m n}^{}
   \int \mathrm{d} \kappa_z
   [n_{\kappa_z m s} - n_{\kappa_z n s}]
-  [(\alpha_{\kappa_z m s}^2 + 1) (\alpha_{k_z n s}^2 + 1)]^{-1}\\
+  [(\alpha_{\kappa_z m s}^2 + 1) (\alpha_{\kappa_z n s}^2 + 1)]^{-1}\\
   \times
   \frac{
     (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
@@ -745,7 +745,7 @@ Collecting dimensionfull quantites, the response function reads
 Let us now define
 \begin{equation}
   \xi(\kappa_z) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
-  \left[ (\alpha _{\kappa ms}^2 + 1) (\alpha _{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
+  \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{\hbar \omega }{v_F \sqrt{2 e B \hbar }} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
