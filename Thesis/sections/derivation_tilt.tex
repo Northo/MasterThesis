@@ -788,48 +788,6 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
 \end{figure}
 
 \subsection{Tilt parallell to the magnetic field}
-We consider here a tilt parallel to the magnetic field, \( \vec{t} \parallel \vec{B} \). We will consider only the canonical part of the energy-momentum tensor, and not the full symmetrized form, as described \citeauthor{vanderwurffMagnetovorticalThermoelectricTransport2019} \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
-\begin{equation}
-  \label{eq:103}
-  T^{\mu 0} = \frac{i}{2}
-  [
-  \partial_j \bar{\psi} \Gamma ^j \gamma ^0 \Gamma ^{\mu } \psi - \bar{\psi} \Gamma ^{\mu } \gamma ^0 \Gamma ^j \partial _j \psi
-  ],
-\end{equation}
-where \( \Gamma ^{\mu } = \gamma ^{\mu } + \gamma ^0 t^{\mu } \) with \( t^{\mu } = (0, \vec{t}) \) when inversion symmetry is broken and \( \Gamma ^{\mu }= \gamma ^{\mu } = \gamma ^0 \gamma ^5 t^{\mu } \) in the inversion symmetric case.
-
-We have, with \( \vec{t}^{\chi } = \vec{t} \) in the inversion symmetric case, and \( \vec{t}^{\chi } = \vec{t} \) in the symmetry broken case.
-The expression is exactly the same as for the untilted case, only with different energies.
-The dimensionless quantities are
-\begin{equation}
-  \label{eq:104}
-  \epsilon_{\kappa m s} =
-  \begin{cases}
-    t_z^{\chi } \kappa + \sign{m} \sqrt{M + \kappa ^2} & m \neq 0\\
-    (t_z^{\chi } - s) \kappa & m = 0
-  \end{cases}.
-\end{equation}
-The normalization factor \( \alpha _{\vec{k} m s} \) is, expressed in dimensionless quantities,
-\begin{equation}
-  \label{eq:105}
-  \alpha _{\kappa m s} =
-  -\sqrt{\frac{M}{(\epsilon_{\kappa  m s} - t_{z}^{\chi })s - \kappa }}.
-\end{equation}
-The integrand is
-\begin{equation}
-  \label{eq:106}
-  \sum\limits_{mn}^{}
-  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) (\alpha_{\kappa m s}^2 \delta_{M, N+1} - \alpha_{\kappa n s}^2 \delta _{N, M+1}).
-\end{equation}
-\todo{Make sure to use the same conventions (choice of quadrants etc) as in untilted case}
-As described above, the contributions from the \( \alpha _{\kappa n s}^2  \) and \( \alpha _{\kappa m s}^2 \) terms are identical, and we may simply take
-\begin{equation}
-  \label{eq:107}
-  \sum\limits_{\underset{N=M-1}{mn}}^{}
-  (\epsilon_{\kappa m s} + \epsilon_{\kappa n s}) \alpha_{\kappa m s}^2.
-\end{equation}
-As was the case in the untilted system, the integrand is also now invariant under \( (m, n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), and we may consider only half the \( m,n \) plane, adding a degeneracy factor 2.
-
 Even though the treatment above for a general tilt is valid for parallel tilt, the response can be found more directly from the untilted case.
 For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{0y} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
 We may thus immediately use the result from the untilted case
@@ -840,8 +798,19 @@ We may thus immediately use the result from the untilted case
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
   \xi(\kappa_z)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}).
+  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
 \end{equation}
+with
+\begin{align}
+  \label{eq:95}
+  \epsilon_{\kappa m s} &=
+                          \begin{cases}
+                            t_z^s \kappa + \sign{m} \sqrt{M + \kappa ^2} & m \neq 0\\
+                            (t_z^s - s) \kappa & m = 0
+                          \end{cases},\\
+  \alpha _{\kappa_z m s} &=
+                         -\frac{\sqrt{M}}{s \epsilon_{\kappa_z  m s}^0 - \kappa_z }.
+\end{align}
 In the untilted case we made several simplifications to this expression, especially with regards to limiting the summation domain.
 We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
 

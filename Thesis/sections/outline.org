@@ -95,7 +95,13 @@ The goal: put on a solid foundation when the contributions from chiralitites can
 
 **** Show some widemann-franz, mottt, etc relations?
 
-* Ideas
+* Ideas and Problems
+
+** [#A] Response not odd
+Is it a problem that the tz typeii reponse is not odd in tz?
+It measn that, for a symmetric system, there is a difference between having the positive chirality in positive direction and the negative chirality in positive direciton.
+I.e., is the chiralitites something absolute, or should be the same after a redefinition of the chiralities?
+
 ** Divergence in tz
 From Stoof it seems like the magnetization goes to zero as T and mu goes to zero, however, there are two important questions.
 Is the result valid for the limit that we are considering.

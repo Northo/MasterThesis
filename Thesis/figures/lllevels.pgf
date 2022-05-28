@@ -1,9 +1,9 @@
 \newcommand{\LLplot}[2]{
   %% #1 is alpha, #2 is tz
   \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
-  \addplot[forget plot, dotted]{(-#2+#1) * x};  % Zeroth level, s=-1
+  \addplot[forget plot, black!60, dash pattern={on 3pt off 2pt on 1pt off 2pt on 1pt off 2pt on 1pt off 2pt}]{(-#2+#1) * x};  % Zeroth level, s=-1
   \addplot[forget plot, dashed]{(#2+#1) * x};  % Zeroth level, s=-1, P broken
-  \addplot[forget plot, dash pattern={on 3pt off 2pt on 1pt off 2pt on 1pt off 2pt on 1pt off 2pt}]{(-#2-#1) * x};  % Zeroth level, s=1, tz<1
+  \addplot[forget plot, dotted]{(-#2-#1) * x};  % Zeroth level, s=1, tz<1
   \addplot[dashed, forget plot, gray] {0};
   \pgfplotsforeachungrouped \n in {1,...,5} {
     \addplot+[red, forget plot, solid] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
