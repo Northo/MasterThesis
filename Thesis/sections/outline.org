@@ -55,7 +55,7 @@ Do the integral and write down resutl
 Find explicit forms of the matrix elements
 How to separate in tx vs tz?
 
-***** TODO Show how to get the degeneracy factor form kx, as was done in beginning of 2.3.3
+***** DONE Show how to get the degeneracy factor form kx, as was done in beginning of 2.3.3
 
 
 ***** Tx tilt

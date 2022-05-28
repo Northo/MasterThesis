@@ -4,24 +4,7 @@ Repeating the calculation of the response function is now straightforward, but r
 Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:34}, mix.
 We thus have twice as many terms to keep track of.
 \subsection{Explicit form of the matrix elements}
-
-Consider the expression for the current operator, Eq. 4.39, which we derived form the time evolution relation
-\[
-  \dot{A} = [A, H]/i\hbar,
-\]
-by considering \(\vec{v} = \vec\dot{r}\), as \(\vec{J} = e \vec{v}\).
-In the tilted Hamiltonian, the tilt term thus causes another term in the current operator.
-\begin{equation}
-  \label{eq:75}
-  \begin{split}
-    \vec{v} = \vec\dot{r} &= \frac{1}{i \hbar } [\vec{r}, H] \\
-    &= \frac{s v_{F} \sigma ^{ i}}{i \hbar } [\vec{r}, p_{i} + e A_{i}] + \frac{1}{i\hbar } [\vec{r}, \omega_{0} \vec{k}]\\
-    &= \frac{s v_{F} \sigma ^{ i}}{i \hbar } (i\hbar + e[\vec{r}, A_{i}]) + \vec{\omega}_{0}\\
-    &= s v_{F} \sigma ^{i} + \vec{\omega} _{0}.
-  \end{split}
-\end{equation}
-
-Take for example the matrix element of the current operator
+We will here find an explicit form of the matrix elements, starting with the charge current
 \[
   J_{\vec{k} m s; \vec{k}+\qvec{q} n s } (\vec{q}) = \int \mathrm{d}y e^{-i q_{y} y}
   s v_{F} e \phi ^{*}_{\vec{k} m s} (y) \sigma ^{x} \phi _{\vec{k} + \qvec{q} n s}(y).
@@ -428,7 +411,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                         + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
     T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
                                                                  \frac{is \alpha}{4  }
-                                                                 (E_{k\mu s} + E_{\lambda  \nu  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
+                                                                 (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
                                                       &\pe (- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
   \end{align}
   with
@@ -525,6 +508,13 @@ In the static limit, the \( \Xi \) functions thus take the form
             \Xi _2 ^{(2)} & \text{if } N-1 \leq M
           \end{cases} \text{ for } M \geq 0, N > 0.
 \end{align}
+
+Lastly, notice that in the static limit, the dependence on \( k_z \) disappears, and so the same procedure as was done for the untilted cone in section \ref{sec:response_notilt} is valid for the tilted cone, replacing the \( \vec{k} \) sum with an integral over \( k_z \) and a degeneracy factor
+\begin{equation}
+  \label{eq:103}
+  \sum\limits_{\vec{k}}^{} \to \frac{\mathcal{V} e B}{(2\pi)^2 \hbar} \int \mathrm{d} k_z.
+\end{equation}
+Importantly, the degeneracy factor does \emph{not} depend on the renormalized magnetic field \( \alpha B \), but rather \( B \) itself.
 
 \subsection{Perpendicular tilt}
 \label{sec:perptiltsum}

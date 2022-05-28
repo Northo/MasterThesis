@@ -694,12 +694,12 @@ Thus, we see that in the case of tilt perpendicular to the \( B \)-field, the co
 In the case of tilt parallel to the \( B \)-field, one gets an additional term proportional to \( t_{\parallel} \kappa \).
 
 \subsection{Computing the reponse function}
+\label{sec:response_notilt}
 It is now finally possible to write out the entire response function.
-The response function will be split into three parts, $\chi ^{xy\; (i)},\: i = 1,2,3$ corresponding to the three parts of the stress-energy tensor.
-Also, the sum over the $\vec{k}$ values will be replaced by an integral.
+We begin by replacing the sum over \( \vec{k} \) by an integral.
 Firstly, we will show that the sum over $k_x$ is restricted;
 recall that the eigenfunctions are exponentially centered around $y_0 = k_x l_B^2$, which for a finite sample we expect to be restricted to $0 \leq y_0 \leq L_y$.
-This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B /\hbar $, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}.
+This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B /\hbar $, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}, as the integrand is independent of \( k_x \).
 \begin{align}
   \sum\limits_{\vec{k}}^{} = \sum\limits_{k_x = 0}^{L_y eB / \hbar } \sum\limits_{k_z}^{} &\to 
                                                                                             \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B /\hbar } \mathrm{d}k_x \int\mathrm{d}k_z \\
