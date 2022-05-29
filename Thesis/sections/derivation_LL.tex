@@ -178,11 +178,14 @@ Consider the Hamiltonian
 where \(\vec{t}^s\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
 \footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}.
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
-Firstly, assume that the tilt vector \(\vec{ t }\) is in the \(x,z\)-plane, \(\vec{t} = (t_{\perp}, 0, t_{\parallel})\), which we can always achieve by a rotation around \(z\).
-\todo{Proof by figure}
-\todo{Is this correct? I think maybe it is not correct, as we have made a choice of \( \nabla T \) which renders the system no longer \( z \) rotation invariant. }
+
+Generally, consider \( \vec{t} \) to consist of two components, \( \vec{t}_{\parallel} \) which is parallel to the magnetic field, and \( \vec{t}_{\perp} \) perpendicular to the magnetic field.
+In this work, we restrict ourselves to the case where the perpendicular component is parallel to the charge current, i.e. the \( x \) direction in the chosen geometry.
+The \( \vec{t}_{\perp} \) vector may of course also have a component parallel to the temperature gradient \( \nabla T \), in this geometry the \( y \) direction, which, although interesting, is not considered here.
+Thus, let \( \vec{t} = (t_{\perp}, 0, t_{\parallel}) \).
 Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{k} \to \vec{k}^B = \vec{k} + e \vec{A}\).
 We take the field to be in the \( z \)-direction, and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
+\todo{Before applying the temperature gradient, when we still only consider finding the LLs, we may in fact say that we have generally \( t_{\perp} \) only in x, and hen later rotate into coordinates where \( \nabla T \) is in y. Maybe that is interesting after all...?}
 
 The Landau level equation is
 \begin{equation}

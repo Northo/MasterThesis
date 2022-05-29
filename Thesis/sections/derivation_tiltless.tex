@@ -752,6 +752,7 @@ Let us now define
   }.
 \end{equation}
 As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under interchagne of \( m,n \) and inversion of \( \kappa_z \).
+\todo{Clean up. Is it inversion or sign flip or what?}
 % which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
 In the last term of Eq. \eqref{eq:61}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
@@ -774,9 +775,10 @@ The final expression is then
     Transformation & \( \xi(\kappa_z) \) & \( \epsilon_{\kappa_z m s} \) & \( \alpha_{\kappa_z m s} \)\\
     \hline
     \( (m, n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \) & -1 & -1 & -1\\
-    \( \hphantom{(m, n, \kappa_z)}\mathllap{(\kappa_z, s)} \mapsto (-\kappa_z, -s) \) & +1 & +1 & -1
+    \( \hphantom{(m, n, \kappa_z)}\mathllap{(\kappa_z, s)} \mapsto (-\kappa_z, -s) \) & +1 & +1 & -1\\
+    \(  \hphantom{(m, n, \kappa_z)}\mathllap{ (m, n)} \mapsto (n, m)\) & -1 &&
   \end{tabular}
-  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \eta\to 0 \). \label{tab:transform-sign}}
+  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \vec{q}\to 0, \eta\to 0 \). \label{tab:transform-sign}}
 \end{table}
 
 Before solving the integral, we note that in addition to the \todo{say the word diatomic?} \( N=M-1 \) selection rule of the sum, the factor with the distributions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) impose further restrictions on which transitions are energetically allowed.

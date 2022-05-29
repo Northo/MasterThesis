@@ -799,7 +799,12 @@ with
                             (t_z^s - s) \kappa_z & m = 0
                           \end{cases},\\
   \alpha_{\kappa_z m s} &=
-                         -\frac{\sqrt{M}}{s \epsilon_{\kappa_z  m s}^0 - \kappa_z }.
+                          -s \frac{\sqrt{M}}{\epsilon_{\kappa_z  m s}^0 - s \kappa_z },\\
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0}\xi(\kappa_z) &= \frac{[n_{\kappa ms} - n_{\kappa ns}]
+  \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa ns}^2 + 1) \right]^{-1}
+  }{
+    (\epsilon _{\kappa m s} - \epsilon _{\kappa n s})^2
+  }.
 \end{align}
 In the untilted case we made several simplifications to this expression, especially with regards to limiting the summation domain.
 We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
@@ -812,10 +817,9 @@ It is thus convenient to consider Type-I and Type-II separately.
 
 In the untitled system, the contributions from the two chiralities where the same, as \( \kappa_z \) and \( s \) always appeared in conjunction, \( \kappa_z s \).
 In the case of \( t_z \) tilt, this is not the case.
-The tilt parameter enters the expression only through \( \epsilon_{\kappa_z m s} = \epsilon_{\kappa_z m s}^0 + \kappa_z t^s_z \).
 The proof for the response from the two chiralities being the same in the untilted case was that \( s \) and \( \kappa_z \) appeared only through the product \( s \kappa_z \), and so the expression was invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 As our integration spans all \( \kappa_z \), the total response is invariant under \( s \to -s \).
-In the inversion symmetric case, \( t^s_z = s t_z \), this argument still holds.
+The tilt parameter enters the expression only through \( \epsilon_{\kappa_z m s} = \epsilon_{\kappa_z m s}^0 + \kappa_z t^s_z \), and in the inversion symmetric case, \( t^s_z = s t_z \), the argument still holds.
 In the case of broken inversion symmetry, however, where \( t^s_z = t_z \), the argument fails.
 A similar argument may, however, be made for the transformation \( (s, \kappa_z, t_z) \mapsto (-s, -\kappa_z, -t_z) \), for which the (inversion broken) system is invariant.
 The response of a cone with chirality \( s = -1 \) is thus equal the response with \( s = +1 \) and \( t_z \to -t_z \).
@@ -1270,7 +1274,7 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
       \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii.csv};
       \addplot+[mark=none] table[col sep=comma, y=-3] {data/contribtypeii.csv};
 
-      \pgfplotsset{cycle list shift=-2}
+      \pgfplotsset{cycle list shift=-3}  %% Change shift to number of transitions > 0
       \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
       \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_diffsigntz.csv};
       \addplot+[mark=none, dashed] table[col sep=comma, y=-3] {data/contribtypeii_diffsigntz.csv};
