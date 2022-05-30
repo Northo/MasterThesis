@@ -5,11 +5,12 @@ The conic section problem with the intersecting plane restricted to pass through
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \citeauthor{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
 \todo{add some concrete examples or cites}
+\todo{Is this correct? Is a tilt at all possible in HEP?}
 
 In the case of massless fermions, the particle physics equivalent of the Weyl semimetal, such a tilt is not possible, due to the requirement of Lorentz invariance \todo{add cite or explain}.
 In condensed matter physics, however, this is not an issue, and it is indeed a real class of materials \todo{cite examples}.
 We denote these types of materials Type-II Weyl semimetals, as opposed to Type-I.
-The transition between Type-I and Type-II is abrubt -- the Fermi surface goes form a single point to two intersecting lines, in other words going from a zero dimensional to a one dimensional surface.
+The transition between Type-I and Type-II is abrupt -- the Fermi surface goes from a single point to two intersecting lines, in other words going from a zero dimensional to a one dimensional surface.
 \todo{Make sure this is indeed a one dimensional surface. It is kind of 1DxZ(2)}
 \todo{Make sure it is one dim also for the 3D case, quadric surface, not conic intersection}
 Type-II also has electron and particle pockets at the Fermi level.
@@ -21,7 +22,7 @@ We will firstly consider a slightly more realistic toy model for a Weyl semimeta
 This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to see how two Dirac cones in the same Brillouin zone tilt in relation to each other.
 We will then continue by linearizing the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
 
-Using the general time-reversal breaking model described by \citeauthor{mccormickMinimalModelsTopological2017} we have
+Using the general time-reversal breaking model described by \textcite{mccormickMinimalModelsTopological2017}
 \begin{equation}
   \begin{split}
     H(\vec{k}) &= \left[ ( \cos k_x + \cos k_z - 2 )m + 2 t (\cos k_x - \cos k_0) \right] \sigma_1\\
@@ -49,6 +50,7 @@ When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), 
 However, as the two noes are brought closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
 The expression may be made even more clear by moving the sign \(\pm\)-sign into the tilt parameter \(\gamma\).
 The Hamiltonian is invariant under a sign change of the first term, as the isotropic Dirac Hamiltonian is invariant under inversion.
+\todo{Is this not quite jalla?}
 In the tilt-term, we move the sign dependence into \(\gamma \), and the linearized model is
 \begin{equation}
   \label{eq:7}
@@ -69,18 +71,21 @@ For tilted Dirac cones we will consider the Hamiltonian
   H =  s v_F \vec{k} \vec{\sigma} + v_F \vec{t}^s \vec{k},
 \end{equation}
 where \( s \) denotes the chirality of the Dirac cone, \( v_F \) is the Fermi velocity, and \( \vec{t} \) is the \emph{tilt vector}.
-\todo{note about anisotropic Fermi velocity}
+In general the Fermi velocity is anisotropic, as was the case in the general Dirac Hamiltonian given in Eq. \eqref{eq:2}.
+By an anisotropic scaling of the momenta \( \vec{k} \), the system may always be mapped to an isotropic case, which we will consider here.
+
 The tilt vector will in general depend on the chirality of the Dirac cone.
 As the Dirac cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry.
 In the case of broken inversion symmetry, we will consider the case of a tilt equal in direction and magnitude between the two cones, \( \vec{t}^s = \vec{t} \).
 In short, we define
-\[
+\begin{equation}
   \vec{t}^s =
   \begin{cases}
     \vec{t} & \text{broken inversion symmetry},\\
     s \vec{t} & \text{inversion symmetry}.
-  \end{cases}
-\]
+  \end{cases}\label{eq:75}
+\end{equation}
+This convention is used in most literature \cite{vanderwurffMagnetovorticalThermoelectricTransport2019,ferreirosAnomalousNernstThermal2017}.
 
 With no magnetic field, the eigenvalues of the system are
 \begin{equation}
@@ -90,10 +95,12 @@ With no magnetic field, the eigenvalues of the system are
 where in the literature the first term is sometimes referred to as the \emph{kinetic} term while the latter is the \emph{potential} term.
 The definition for the system to be Type-II is that there exists a direction in momentum space for which the kinetic term dominates over the potential term \cite{soluyanovTypeIIWeylSemimetals2015}.
 The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
-\begin{proof}
+
+
+\begin{Proof}
   We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
   In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
-\end{proof}
+\end{Proof}
 
 \begin{itemize}
   \item gives rise to cones tilting opposite direction

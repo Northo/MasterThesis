@@ -93,11 +93,15 @@ For $n = 0$ the annihilation operator $a$ destroys the vacuum state $\ket{0}$, a
 The excited energy states are doubly degenerate;
 we choose to denote the energy levels by $m \in \mathbb{Z}$, where the sign from $\pm s$ is taken care of by the sign of this quantum number, and the harmonic oscillator levels $n$ are given by its absolute value $|m|$.
 The energy levels are
-\begin{align}
-  E_{k_z m s} &= \operatorname{sign}(m) v_F \sqrt{2 |m| e B \hbar  + k_z^2 \hbar ^2} & \text{ for } m \neq 0,\\
-E_{k_z 0 s} &= -s \hbar k_z v_F & \text{ for } m = 0.
-\end{align}
-
+\begin{subequations}
+  \label{eq:106}
+  \begin{align}
+    \label{eq:104}
+    E_{k_z m s} &= \operatorname{sign}(m) v_F \sqrt{2 |m| e B \hbar  + k_z^2 \hbar ^2} & \text{ for } m \neq 0,\\
+    \label{eq:105}
+    E_{k_z 0 s} &= -s \hbar k_z v_F & \text{ for } m = 0.
+  \end{align}
+\end{subequations}
 We now find the corresponding eigenvectors of the system.
 The solution to the one dimensional harmonic oscillator in position space is, in dimensionless coordinates $\xi$,~\cite[Eq.~18.39.5]{NIST:DLMF}
 \begin{equation}
@@ -160,7 +164,7 @@ where capital letters indicate absolute value of corresponding quantity, $M=|m|,
 \todo{Consider which formalism to use for this section. Should we already here use the geometry, or keep it with parallell, perpendicular?}
 \todo{I think it is better to use perp, parallell here, and then transition to using the explicit geometry later}
 
-The eigenvalues of Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
+The eigenvalues of a Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
 We will also consider the Landau levels of these materials, which importantly are very different from Type-I.
 In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field \cite{soluyanovTypeIIWeylSemimetals2015}\cite{sharmaChiralAnomalyLongitudinal2017}.
 
@@ -170,13 +174,21 @@ The issue with the Landau level description is that for certain directions of th
 For Type-I materials, the description is valid for all directions of the \(B\)-field, but as the cone tip into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt increases, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
 We will in this section derive and elucidate the Landau levels and their regions of validity.
 
-Consider the Hamiltonian
+Consider again the Hamiltonian
+\footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}
 \begin{equation}
   \label{eq:16}
   H = v_{F} \vec{t}^s  \vec{k} + s v_{F} \vec{k} \vec{\sigma},
 \end{equation}
-where \(\vec{t}^s\) is the \emph{tilt vector} and \( v_F \) is the Fermi velocity
-\footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}.
+with the \emph{tilt vector} as defined in Eq.~\eqref{eq:75}
+\[
+  \vec{t}^s
+  =
+  \begin{cases}
+    \vec{t} & \text{ broken inversion symmetry},\\
+    s \vec{t} & \text{ inversion symmetry}.
+  \end{cases}
+\]
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 
 Generally, consider \( \vec{t} \) to consist of two components, \( \vec{t}_{\parallel} \) which is parallel to the magnetic field, and \( \vec{t}_{\perp} \) perpendicular to the magnetic field.
@@ -263,9 +275,7 @@ Alternatively, written in a slightly suggestive form,
 \end{equation}
 \todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
 
-Expressed in the parameter \(t\), the result in Eq. \eqref{eq:24} has an intuitive, and quite visual, interpretation.
-As described above, we have rotated our frame such that the tilt is confined to the \(x,z\)-plane, i.e. no tilt in the \(y\)-direction.
-The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, was
+The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, is thus
 \begin{equation}
   \label{eq:25}
   \theta = - s \tanh^{-1} t^s_{x}.
@@ -306,8 +316,9 @@ Interestingly, there are no restrictions in the perpendicual tilt, \( t_z \).
 The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plottin the \( t \)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
+When the projection is on the unit disc, the system is in the \emph{magnetic} regime, otherwise we denote it by the \emph{electric} regime.
 All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of the \(t\)-vector.
-As the \(t\)-vector gets larger, the region of valid directions is reduced to an ever smaller cone around \(z\).
+As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller angles between \( \vec{t} \) and \( \vec{B} \).
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground.png}
@@ -316,15 +327,16 @@ As the \(t\)-vector gets larger, the region of valid directions is reduced to an
 
 We now return to solving Eq.~\eqref{eq:19}, using the solution angle we just found.
 By insertion, and after some clean up, we get
-\emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
+% \emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
 \begin{multline}
   \label{eq:26}
-  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0\\
-  = v_F \begin{pmatrix}
+  (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0
+  = v_F \\
+  \times \begin{pmatrix}
           k_z ( s + t^s_z \gamma ) - E / v_F \gamma & -s ( ik_y + k_z t^s_x t^s_z \gamma - k_x / \gamma - E /v_{F} \gamma t^s_x)\\
           s ( i k_y - k_z t^s_x t^s_z \gamma + k_x / \gamma + E /v_F \gamma t^s_x) & - k_z (s - t^s_z \gamma) - E \gamma
-        \end{pmatrix}\\
-    \ket{\psi}.
+        \end{pmatrix}
+    \ket{\tilde{\psi}}.
 \end{multline}
 In order to simplify this further, absorb \(\gamma t^s_x (k_{z} t^s_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
@@ -366,33 +378,45 @@ The Landau level equation thus reads
 (E- t^s_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
 where \(\vec{\tilde{A}}=-B_{z}/ \gamma y \hat{x}\).
-We may thus use directly the result for the untilted cone, \todo{eq ref}, giving
-\begin{align}
+We may thus use directly the result for the untilted cone, Eq.~\eqref{eq:106}, giving
+\begin{subequations}
   \label{eq:31}
-  \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
-  \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
-\end{align}
+  \begin{align}
+    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
+    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
+  \end{align}
+\end{subequations}
 Cleaning up, we get
-\begin{align}
+\begin{subequations}
   \label{eq:32}
-  E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
-  E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s \hbar / \gamma  \right), & m=0.
-\end{align}
+  \begin{align}
+    E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
+    E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s \hbar / \gamma  \right), & m=0.
+  \end{align}
+\end{subequations}
 
-As the tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
+As the perpendicular tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:33}
-  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}
+  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}.
 \end{equation}
-As the tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
-\todo{Note that \( \tilde{k}\to 0 \) as we overtilt as well, so all the levels go to zero.}
+As the perpendicular tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
 In particular, the separation between Landau levels \(m\) \todo{maybe use the word cyclotron frequency} is reduced by a factor \(\alpha ^{\frac{3}{2}}\).
-The effect of the tilt on the Landau levels is to squeeze the Landau levels together, and we will call the \(\alpha ^{\frac{3}{2}}\) the \emph{squeezing factor}.
+The effect of the tilt on the Landau levels is to squeeze the Landau levels together, and we will call the \(\alpha \) the \emph{squeezing factor}.
 We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
+Note also that the energy levels
+\[
+E = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
+\]
+where \( E^0_{m, \alpha B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
+Tilting of the Landau levels is induced by the parallel tilt component, \( t_\parallel \).
+In fact, the Landau levels cross the Fermi surface at the transition from Type-I to Type-II as well.
+The Landau levels are shown in Figure~\ref{fig:llevelstilt}.
 
-\begin{figure}[h]
+
+\begin{figure}[p!]
   \centering
   \input{figures/lllevels.pgf}
   % \includegraphics[width=0.8\textwidth]{example-image-10x16}
@@ -403,23 +427,6 @@ As the tilt exceeds this limit, the squeezing factor is imaginary.
     The dotted lines show the Landau levels with opposite sign of \( t_z \).
   }
 \end{figure}
-
-Consider now isotropic velocities \( v_i = v_F \).
-Even for anisotripic systems, we may rescale the momenta to arrive at such a description.
-We may rewrite the energy as
-\[
-  E =
-  \begin{cases}
-    t^s_{\parallel} v_F k_z + \operatorname{sign}(m) v_F \alpha \sqrt{2 |m| e B \alpha + k_z^2} & m\neq 0\\
-    t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m=0,
-  \end{cases}
-\]
-where \( \hbar = 1 \).
-Notice that this is exactly
-\[
-E = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
-\]
-where \( E^0_{m, B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
 
 The eigenstate of
 \[
@@ -474,45 +481,23 @@ and thus
 \end{equation}
 where we defined the dimensionless \( \kappa_z = \sqrt{2 e B} k_z  \).
 
-
-Note that
-
-
-And thus the original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
-The normalization factor \( \mathcal{N} \) is needed as the boost transformation is not unitary.
-
-\todo{ Write down the full form of \( \phi _{\vec{k} m s} (\vec{r}) \), taking care to use the original momenta, and not the rescaled. }
-
+The original eigenstate \(\ket{\psi } = 1 /\mathcal{N} e^{\theta /2 \sigma _{x}} \ket{\tilde{\psi} }\) of the tilted system is easily found.
 Reinserting explicitly, in the boosted frame, that
 \[
   \tilde{k}_{x} = \alpha k_{x} + \frac{t^s_x}{\alpha} (E_{k_z m s} /v_F- k_{z} t^s_{\parallel})
   = \alpha k_x + t^s_x \frac{E^0_{m, \alpha B} }{v_{F}}
 \]
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
+we define
 \begin{equation}
   \label{eq:36}
   \chi =
   \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
   \sqrt{\alpha } (y-k_{x} l_{B}^2) /l_{B}
-  + \frac{ t^s_x l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B}.
-\end{equation}.
-\todo{ Clean up in \(\hbar \) }
-
-
-\begin{equation}
-  \label{eq:37}
-  \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}})
-  =
-  \frac{1}{\sqrt{L_xL_z}}
-  \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha_{\tilde{k}_z m s}^2 + 1}}
-  e^{-\frac{1}{2} \chi ^2}
-  \sqrt[4]{\alpha }
-  \begin{pmatrix}
-    \frac{\alpha_{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B}}} H_{M-1}\left( \chi  \right)\\
-    \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B}}} H_M \left( \chi \right)
-  \end{pmatrix}.
+  + \frac{ t^s_x l_B }{ \sqrt{\alpha} v_F} E^{0}_{m, \alpha B},
 \end{equation}
+which is the argument of the Hermite polynomials.
 For later convenience, let us explicitly define
 \begin{equation}
   \label{eq:38}
@@ -549,13 +534,14 @@ with
                     \sqrt{\alpha^2 _{\tilde{k}_z m s} + 1}
                     \sqrt{2^{M-1} (M-1)! \sqrt{\pi} l_B}
                     },\\
+  \label{eq:107}
   b_{\vec{k} m s} &=
                     \frac{
                      \sqrt[4]{\alpha }
                     }{
                     \sqrt{\alpha^2 _{\tilde{k}_z m s} + 1}
                     \sqrt{2^{M} M! \sqrt{\pi} l_B}
-                    }.\\
+                    }.
 \end{align}
 
 We proceed now to find the normalization factor \( \mathcal{N} \), as it will become necessary in later steps.
@@ -579,9 +565,8 @@ The upper and lower part of the spinor are orthogonal, thus we have
 \end{equation}
 We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
 
-\begin{summary}
-  \label{summary:llevels}
-  The tilted Hamiltonian
+\begin{summary}\label{summary:llevels}
+The tilted Hamiltonian
   \[
     H = v_F \vec{t}^s \vec{k} + s v_F \vec{k} \vec{\sigma}
   \]
@@ -589,13 +574,13 @@ We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
   \[
     E =
     \begin{cases}
-      t^s_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0\\
-      t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0
-    \end{cases}.
+      t^s_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0,\\
+      t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0.
+    \end{cases}
   \]
   The associated eigenstates in the position basis are
   \[
-    \tilde{\psi}(\vec{r}) = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma_x}
+    \psi(\vec{r}) = \sqrt{\alpha} e^{\theta /2 \sigma_x}
     \frac{
       e^{ik_{x} x + ik_{z} z}
     }{
@@ -610,5 +595,5 @@ We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
         b_{k_z m s} H_M (\chi)
       \end{pmatrix},
     \]
-    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t^s_x l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~\eqref{eq:40}.
+    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t^s_x l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~(\ref{eq:40}, \ref{eq:107}).
 \end{summary}

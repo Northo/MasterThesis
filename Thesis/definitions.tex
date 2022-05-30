@@ -11,6 +11,15 @@
 
 \declaretheorem[thmbox=S]{Proposition}
 \declaretheorem[thmbox=M, style=remark]{summary}
+\declaretheoremstyle[
+    spaceabove=6pt,
+    spacebelow=6pt,
+    headfont=\normalfont\itshape,
+    bodyfont = \normalfont,
+    postheadspace=1em,
+    qed=\( \square \),
+    headpunct={:}]{myproofstyle}
+\declaretheorem[style=myproofstyle, unnumbered]{Proof}
 
 
 % \newcommand{\gls}[1]{#1}  % Hack until glossaries work
