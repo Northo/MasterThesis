@@ -850,6 +850,15 @@ This contribution is shown in figure \ref{fig:divergent-factor}.
 \todo{is it ok to write 'the contribution \eqref{eq:98}', or must it always be 'the contribution Eq. \eqref{eq:98}'?}
 The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
 
+Assuming \( \Lambda \gg 1 \) the expression is approximated by
+\begin{equation}
+  \label{eq:37}
+  \frac{t_z}{8}
+  \left(
+  1 + m \log \left(1+\frac{1}{m}\right) + \log \left(\frac{1+m}{4}\right) - 2 \log (\Lambda)
+\right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
+\end{equation}
+
 
 \subsubsection{Type-II}
 \todo{Recheck the order and specify clearly if we consider Type-I or Type-II for the different arguments}
@@ -1171,6 +1180,7 @@ We will here consider parallel and perpendicular tilt separately.
 \todo{Make sure the argumentation and computations are valid also for \( t_z < 0 \)}
 
 \subsection{Perpendicular tilt}
+\todo{Make sure to include negative tilt also}
 In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.
 Importantly, this does not generally mean that the effect is not present for Type-II systems, but simply that the Linear model Landau level description is not a good basis for the system.
 The collapse of the Landau levels caused \textcite{soluyanovTypeIIWeylSemimetals2015} to errenously predict the collapse of the chiral anomaly in their now famous paper first describing Type-II Weyl semimetals.
@@ -1309,6 +1319,35 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
     Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( \text{contrib}(|t_z|) + \text{contrib}(-|t_z|) \).
   }
   \label{fig:contribtzII}
+\end{figure}
+
+\begin{figure}[p]
+  \centering
+  \tikzsetnextfilename{schematic_tz}
+  \begin{tikzpicture}
+    \begin{axis}[
+      ymax=1,
+      xmin=0, xmax=2,
+      width=13cm, height=10cm,
+      legend entries={Even,Odd},
+      xtick={0,1,2},
+      ytick=\empty,
+      xlabel=\( t_z \),
+      ]
+      \draw[thin, gray, dashed](axis cs:1,-1)--(axis cs:1,1.2);
+      \addplot[forget plot, thin] {0};
+
+      \addplot[mark=none, domain=0:1] {0.5} node[midway, pin=above:Untilted contribution] {};
+      \addplot[mark=none, dashed, domain=0:1] {0.2 * x} node[midway, pin={[pin edge=solid]above:\( \propto \log\Lambda \)}] {};
+      \addplot[mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
+      \addplot[dashed, mark=none] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{
+    Schematic summary of the contribution for perpendicular tilt \( t_z \).
+    Shown is the even (solid line) and odd (dashed line) parts as a function of \( t_z \).
+    As explained in the main text, the total contribution for a pair of cones is given by the sum of the even and odd part in inversion symmetric systems, and by the odd part for broken inversion symmetry.
+  }
 \end{figure}
 
 \section{Notes}
