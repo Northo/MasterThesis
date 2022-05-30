@@ -174,20 +174,20 @@ This may now be applied to for example the Weyl semimetal, both in the interest 
 
 The Hamiltonian around the Weyl point is
 \begin{equation}
-  H = v_F \vec\sigma \cdot \vec{p},
+  H = v_F (\vec{\sigma} + \vec{t}) \cdot \vec{p},
 \end{equation}
 with $v_F$ the Fermi velocity, $\vec{\sigma}$ the Pauli matrices, and $\vec{p}$ the momentum operator.
 % \todo{Now suddenly R is not dependent  on t??}
 By letting $\vec{R} = v_F \vec{p}$, the Berry curvature of the Hamiltonian can be found.
 The eigenvalues of this system are
 \begin{equation}
-    E_+ = -E_-
+    E_+  - \vec{R} \cdot \vec{t} = -E_- - \vec{R} \cdot \vec{t}
     = |R|.
 \end{equation}
 The aforementioned degeneracy is here of course the Weyl point, where $E_+ = E_- = 0$.
 Noting that
 \begin{equation}
-  \nabla_{\vec{R}} H = \vec\sigma,
+  \nabla_{\vec{R}} H = \vec\sigma + v_F \vec{t},
 \end{equation}
 we can calculate the Berry curvature easily.
 Denote by $\ket{+}$ the state with the eigenvalue $E_+$ and $\ket{-}$ the state with the eigenvalue $E_-$.
@@ -196,14 +196,15 @@ This gives
 \begin{equation}
   \vec{B}_+ = -\Im
   \frac{
-    \braket{+ | \vec\sigma | -}
+    \braket{+ | \vec\sigma + v_F \vec{t}| -}
     \times
-    \braket{- | \vec\sigma | +}
+    \braket{- | \vec\sigma + v_F \vec{t} | +}
   }{
     4 R^2
   }.
 \end{equation}
 As $\ket{+}$ and $\ket{-}$ are eigenstates of $\sigma_z$ and orthogonal to each other, only the $z$-component of the cross product may contain non-zero contributions.
+Again, as the states are orthogonal, the \( \vec{t} \) terms obviously disappears.
 \begin{equation}
   \begin{split}
     \vec{B}_+ &= - \frac{\hat{z}}{4 R^2}
@@ -224,8 +225,9 @@ Here, the effect of the Pauli matrices on the eigenvectors was used, according t
 \end{align}
 Returning to general axis orientations, one has
 \begin{equation}
-  B_+ = - \hat{R} / 2\vec{R}^2 = - \vec{R} / 2 \vec{R}^3.
+  B_+ = - \hat{R} / 2\vec{R}^2 = - \vec{R} / 2 \vec{R}^3,
 \end{equation}
+independent of \( \vec{t} \).
 For the $\ket{+}$-band, the Weyl point thus takes the form of a negative monopole in $R$-space;
 this motivates the requirement that Weyl points must always appear in pairs of opposite chirality, as the divergence of the Berry curvature must always be zero over the entire sample.
 \todo{There should probably be some care taken here with the sign of $v_F$.}
