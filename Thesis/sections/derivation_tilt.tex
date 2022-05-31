@@ -858,24 +858,36 @@ for symmetric systems the response is equal for \( s=-1 \), while for broken inv
 
 \subsubsection{Type-I}
 In Type-I systems, the selection rules from the step functions are independent of \( t_z \), and the only difference from the untilted case is the term \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z n s} + 2 \kappa_z t^s_z \).
-We compute therefore only the term that differ, for \( s=+1 \).
-The integral
+The response is therefore
+\begin{equation}
+  \label{eq:138}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = -\frac{e^2v_F B}{(2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
+\end{equation}
+where \( \gamma_N^0 \) is the prefactor of the untilted case, and
 \begin{equation}
   \label{eq:97}
-  \frac{\gamma_{\text{div}, N}}{2} = \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t_z \alpha_{\kappa_z m s}^2
+  \gamma_{\text{div}, N} = \frac{1}{2} \sum\limits_{N=0}^{} \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=N+1}{n=-N}},
 \end{equation}
-diverges.
+which has a UV divergence.
 Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result
+
+\begin{equation}
+  \label{eq:139}
+  \gamma_{\text{div}, 0} = -\frac{t_z}{4} \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
+   )\right)
+\end{equation}
+and the contribution from each term of the sum
 \begin{multline}
-  \frac{t_z}{4}
+  \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
+  - \frac{t_z}{4}
   \Bigg\{
-    \Lambda\left(\sqrt{1 + \Lambda^2 + m} - \sqrt{\Lambda^2 + m}  \right)\\
+    \Lambda\left(\sqrt{\Lambda^2 + m - 1} - \sqrt{\Lambda^2 + m}  \right)\\
     + m \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} } \right]
-    - (m+1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{1 + \Lambda^2 + m }}\right]
+    - (m - 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m - 1}}\right]
     \Bigg\},
     \label{eq:98}
 \end{multline}
-where we used the selection rule of the sum \( N=M+1 \) and \( m>0, n<0 \).
+where we used the selection rule of the sum \( N = M - 1 \) and \( m>0, n<0 \).
 This contribution is shown in figure \ref{fig:divergent-factor}.
 \todo{is it ok to write 'the contribution \eqref{eq:98}', or must it always be 'the contribution Eq. \eqref{eq:98}'?}
 The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
