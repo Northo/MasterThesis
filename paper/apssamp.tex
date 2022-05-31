@@ -20,6 +20,7 @@
 %
 \documentclass[%
  reprint,
+% draft,
 %superscriptaddress,
 %groupedaddress,
 %unsortedaddress,
@@ -41,8 +42,14 @@
 ]{revtex4-2}
 
 \usepackage{graphicx}% Include figure files
+\usepackage{mathtools}
 \usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{todonotes}
 \usepackage{bm}% bold math
+\renewcommand\vec\bm  % Bold vector instead of arrow
+\DeclareMathOperator\sign{sign}
+\usepackage{braket}
+\usepackage{subcaption}
 %\usepackage{hyperref}% add hypertext capabilities
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
@@ -54,6 +61,7 @@
 %%total={6.5in,8.75in}, top=1.2in, left=0.9in, includefoot,
 %%height=10in,a5paper,hmargin={3cm,0.8in},
 %]{geometry}
+
 
 \begin{document}
 
@@ -110,6 +118,185 @@ use the optional argument of the \verb+\item+ command to give the category of ea
 \maketitle
 
 %\tableofcontents
+\section{Calculation\label{sec:calculation}}
+\subsection{Setup and response}
+Consider the Hamiltonian
+\begin{equation}
+  \label{eq:hamiltonian}
+  H^s = s v_F \vec{\sigma} \cdot \vec{p} + v_F \vec{t}^s \vec{p},
+\end{equation}
+with \( s = \pm 1 \) the chirality of the cone, \( v_F \) the Fermi velocity, \( \vec{\sigma} \) the Pauli matrix vector, \( \vec{p} \) the momentum operator and \( \vec{t}^s \) the \emph{tilt vector}.
+For inversion symmetric systems, \( \vec{t}^s = s \vec{t} \), while broken inversion symmetry we consider \( \vec{t}^s = \vec{t} \)
+\footnote{We here chose the ``antisymmetric'' version for the broken inversion symmetry, where the cones tilt in the same direction with the same magnitude.
+Of course, many other choices also break inversion symmetry.}.
+
+...
+The response from the Kubo formalism is thus
+\begin{equation}
+  \label{eq:kubo-response}
+  \begin{multlined}
+    \chi^{ij}(\omega, \vec{q}) = \frac{-i v_F}{\mathcal{V}}
+    \int \mathrm{d} t
+    e^{i \omega t}
+    \int\limits_{-\infty}^0 \mathrm{d} t'
+    \Theta(t)\\
+    \times
+    \Braket{\left[J^i(t, \vec{q}), T^{j0}(t', -\vec{q})\right]},
+  \end{multlined}
+\end{equation}
+where \( \hbar = 1 \).
+The charge current operator
+\begin{equation}
+  \label{eq:current-op}
+  \vec{J} = e v_F (s \vec{\sigma} + \vec{t}^s).
+\end{equation}
+For the energy-momentum tensor choose
+\footnote{TODO: add some discussion here or in appendix}
+\begin{equation}
+  \label{eq:energy-momentum-tensor}
+  T^{\mu\nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \tilde{\sigma}^{\mu} \partial_{\nu} \phi
+  -\tilde{\sigma} ^{\mu} \phi^{\dagger} \partial_{\nu} \phi
+  -\eta^{\mu \nu} \mathcal{L}
+  ),
+\end{equation}
+where we have defined the modified Pauli matrices \( \tilde{\sigma} ^{\mu} = \sigma^{\mu} + (t^s)^{\mu} \) with \( (t^s)^{\mu} = (0, \vec{t}^s) \).
+
+\subsection{Landau levels}
+The Landau levels can be shown to be
+\begin{equation}
+  \label{eq:eigenlevels}
+  E_{k_z m s} =
+  \begin{cases}
+    t_z^s v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_z^2} & m \neq 0,\\
+    t_z^s v_F k_z - s \alpha v_F k_z & m = 0,
+  \end{cases}
+\end{equation}
+where we have defined the \emph{squeezing factor} \( \alpha = \sqrt{1 + tx^2} \).
+The eigenstates in the position basis are
+\begin{equation}
+  \label{eq:eigenstates}
+  \phi(\vec{r}) = \sqrt{\alpha} e^{\theta / 2 \sigma_x} \frac{e^{i k_x x + ik_z z }}{\sqrt{L_{x} L_{z}}} e^{- \frac{1}{2} \chi^2}
+  \begin{pmatrix}
+    a_{k_z m s} H_{M-1} (\chi)\\
+    b_{k_z m s} H_M (\chi)
+  \end{pmatrix},
+\end{equation}
+where we defiend the dimesionless quantity \( \chi = \sqrt{\alpha} \frac{y-k_{x}l_B^2}{l_{B}} + \frac{t_x^s l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \).
+
+In the local limit \( \vec{q} \to 0 \) we find
+\begin{equation}
+  \label{eq:3}
+  J_{k_z m n s} = s v_F e \frac{\alpha_{k_z m s} \delta_{M-1, N} + \alpha_{k_z n s} \delta_{M, N-1}}{
+    \sqrt{\alpha_{k_{z} m s}^2 + 1}
+    \sqrt{\alpha_{k_{z} n s}^2 + 1}
+  }.
+\end{equation}
+
+\begin{align}
+  \label{eq:1}
+  J_{k_z m n s} &= \Gamma_{k_z m n s} s v_F e ( \alpha_{k_z m s } \delta_{M-1, N} + m \leftrightarrow n),\\
+  T_{k_z m n s}^{0y} &=
+                       \begin{multlined}[t]
+                         \frac{i s \Gamma_{k_z m n s}}{4} (E_{k_z m s} + E_{k_z n s} - 2 \mu )\\
+                         \times (\alpha_{k_z m s} \delta_{M-1, N} - m \leftrightarrow n),
+                       \end{multlined}
+\end{align}
+where \( m \leftrightarrow n  \) represents the preceding term under the interchange of \( m,n \), and we have defined \( \Gamma_{\kappa_z m n s} = \left[(\alpha_{k_z m s}^2 + 1) (\alpha{k_z n s}^2 + 1)\right]^{-\frac{1}{2}} \).
+
+\section{Results\label{sec:results}}
+We find the response
+\begin{equation}
+  \label{eq:response-w-dimensions}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0}
+  \chi^{xy} =
+  \gamma_{N} \frac{e^2 v_F B}{(2\pi)^2},
+\end{equation}
+where \( \gamma_N \) is a term generally depending on the number of Landau levels included in the sum and the tilting vector \( \vec{t} \).
+
+The case of no tilt was first solved by \textcite{arjonaFingerprintsConformalAnomaly2019}.
+We have simplified their computation and found an analytical expression for the prefactor, with the iterative expression
+\begin{equation}
+  \label{eq:2}
+  \gamma_{N} - \gamma_{N-1} = \frac{1}{4} \left[ 1 + 2 N \left\{ 1 - (1+N) \log \left(1 + \frac{1}{N}\right) \right\} \right],
+\end{equation}
+for \( N>0 \), and \( \gamma_0 = \frac{1}{4} \).
+It can be shown that
+\begin{multline}
+  \label{eq:4}
+  \gamma_N = \gamma_0 + \frac{1}{12} \Big(
+    6 \zeta ^{(1,0)}(-2,N+1)
+    -6 \zeta ^{(1,0)}(-2,N+2)\\
+    +6 \zeta^{(1,0)}(-1,N+1)
+    + 6 \zeta^{(1,0)}(-1,N+2)\\
+    +12 \log (\xi)
+    +3 N^2
+    +6 N
+    -1
+  \Big),
+\end{multline}
+where \( \xi \approx  1.28243 \) is Glaisher's constant.
+
+\subsection{Perpendicular tilt}
+
+\subsection{Parallel tilt}
+In the Type-I regime, the response has an extra term compared to the untilted case,
+\begin{equation}
+  \label{eq:5}
+  \frac{\gamma_{\text{div}, N}}{2} = \int \mathrm{d} \kappa_z \chi(\kappa_z) \kappa_z t_z \alpha_{\kappa_z m s}^2,
+\end{equation}
+where \( \kappa_z = \sqrt{2 e B} k_{z} \).
+This contribution has a UV divergence, and we introduce the momentum cutoff \( \Lambda \).
+\todo{Add discussion about linear model and cutoff}
+The contribution is
+\begin{multline}
+  \label{eq:6}
+  \frac{t_z}{4}
+  \Bigg\{
+  \Lambda \left(\sqrt{1 + \Lambda^2 + m} - \sqrt{\Lambda^2 + m} \right)\\
+  + m \tanh^{-1} \left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} }\right]\\
+  - (m+1) \tanh^{-1} \left[ \frac{\Lambda}{\sqrt{1 + \Lambda^2 + m }} \right]
+  \Bigg\}.
+\end{multline}
+
+In the case of Type-II systems, the calculation is more involved, because of the Landau levels crossing the Fermi surface.
+This gives both intraband and interband transitions.
+The zeroth transition \( 0 \to 1 \) was found to be
+\begin{equation}
+  \label{eq:7}
+  \frac{\sign(t_z)}{2}
+  \left( |t_z| \sinh^{-1} \left(\frac{1}{\sqrt{t_{z}^2 -1} }\right) -1 \right).
+\end{equation}
+The higher order contributions were also computed analytically, but their expressions are too complicated to show here.
+
+
+\begin{figure}
+\subcaptionbox{Type-I}{
+    \includegraphics[width=.3\columnwidth]{figures/divergentContribCutoff}
+}
+\subcaptionbox{Type-II inter band}{
+    \includegraphics[width=.3\columnwidth]{figures/tzcontribtypeii}
+}
+\subcaptionbox{Type-II intraband}{
+    \includegraphics[width=.3\columnwidth]{figures/tzcontribtypeii_intraband}
+}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=.8\columnwidth]{figures/schematic_tz}
+  \caption{Schematic summary of the contributions for perpendicular tilt \(t_z \). Shown is the even (solid) and odd (dashed) parts as functions of \(t_z\).}
+  \label{fig:schematic_tz}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=.7\columnwidth]{figures/contribtx}
+  \caption{Contribution as a function of number of Landau levels N for various values of \(t_x\).}
+\end{figure}
+
+
 
 \section{\label{sec:level1}First-level heading:\protect\\ The line
 break was forced \lowercase{via} \textbackslash\textbackslash}
@@ -746,7 +933,8 @@ They turn out to be Eqs.~(\ref{appa}), (\ref{appb}), and (\ref{appc}).
 % most likely will not want to use it.
 \nocite{*}
 
-\bibliography{apssamp}% Produces the bibliography via BibTeX.
+% \bibliography{apssamp}% Produces the bibliography via BibTeX.
+\bibliography{Master.bib}% Produces the bibliography via BibTeX.
 
 \end{document}
 %
