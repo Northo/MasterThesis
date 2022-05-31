@@ -548,19 +548,20 @@ And so, inserting into the response function
 \begin{multline}
   \label{eq:101}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
-  \frac{- e \alpha^3 v_F \sqrt{e B} }{4 (2 \pi)^2 \sqrt{2} }
+  \frac{- e^2 \alpha^3 v_F B }{4 (2 \pi)^2 }
   \sum\limits_{mn}^{}
-  \int \mathrm{d}k_z
+  \int \mathrm{d}\kappa_z
   e^{-P^2}\\
   \frac{
-    [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]
-    (\epsilon_{\vec{k} m s} + \epsilon_{\vec{k}+\qvec{q} n s})
-    (\alpha_{k_z m s}^2 \Xi_1(m,n)^2 - \alpha_{k_z + \qvec{q}_z n s}^2 \Xi_2(m,n)^2)
+    [n_{\kappa_z m s} - n_{\kappa_z n s}]
+    (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+    (\alpha_{\kappa_z m s}^2 \Xi_1(m,n)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(m,n)^2)
   }{
-    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z + \qvec{q}_z n s}^2 + 1)
-    (\epsilon_{\vec{k} m s} - \epsilon_{\vec{k}+\qvec{q} ns} + i \eta)^2
-  }
+    (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns} + i \eta)^2
+  },
 \end{multline}
+where we also made a change of variables \( k_z = \sqrt{2 e B} \kappa_z \).
 
 We make the observation that \( \Xi _1(m, n) = \Xi _2(n, m) \), where it is important to note that \( P \) changes sign under interchange of \( m,n \).
 The rest of the factors are invariant under the interchange \( m \leftrightarrow n \), except for the step functions, which gives an overall sign change.
@@ -612,6 +613,35 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
 \todo{Make a note about \( M = N\) always giving zero contributinos.
 Maybe also show in figure.
 This is important wrt. saying that \( \gamma_0 \) is all contributison withtin square etc.}
+
+\begin{summary}
+  The response of a perpendicularly tilted cone is given by
+  \begin{equation}
+    \label{eq:136}
+    \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
+    \frac{e^2v_F B }{(2 \pi)^2 }
+    \gamma^{\text{tx}}_N,
+  \end{equation}
+  with
+  \begin{equation}
+    \label{eq:137}
+    \gamma^{\text{tx}}_N =
+    \frac{\alpha^3}{2}
+    \sum\limits_{mn}^{N}
+    \int \mathrm{d}\kappa_z
+    e^{-P^2}
+    \frac{
+      (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+      \alpha_{\kappa_z m s}^2 \Xi_1(m,n)^2
+    }{
+      (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
+      (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
+    },
+  \end{equation}
+  \footnote{note to self. \( \eta \) was taken to zero}
+  where the summation goes over \( m > 0, n \leq 0 \), capped at the Landau level \( N \).
+  The integration limits are \( (-\infty, \infty) \), except for \( n = 0 \), where they are \( [0, \infty) \)\footnote{Where we have used \( s=+1 \).}.
+\end{summary}
 
 
 \begin{figure}[ht]
@@ -795,9 +825,9 @@ with
   \label{eq:95}
   \epsilon_{\kappa_z m s} &=
                           \begin{cases}
-                            t_z^s \kappa_z + \sign{m} \sqrt{M + \kappa_z^2} & m \neq 0\\
-                            (t_z^s - s) \kappa_z & m = 0
-                          \end{cases},\\
+                            t_z^s \kappa_z + \sign{m} \sqrt{M + \kappa_z^2} & m \neq 0,\\
+                            (t_z^s - s) \kappa_z & m = 0,
+                          \end{cases}\\
   \alpha_{\kappa_z m s} &=
                           -s \frac{\sqrt{M}}{\epsilon_{\kappa_z  m s}^0 - s \kappa_z },\\
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0}\xi(\kappa_z) &= \frac{[n_{\kappa ms} - n_{\kappa ns}]
@@ -1196,6 +1226,7 @@ This is indicated in figure \ref{fig:contribs}.
 \todo{Correct which values }
 The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), shown in figure \ref{fig:contribs}.
 The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure \ref{fig:total_contribs}.
+The contribution is even in \( t_z \), and the two cones have the same contribution.
 
 \begin{figure}[ht]
   \centering
@@ -1339,14 +1370,14 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
 
       \addplot[mark=none, domain=0:1] {0.5} node[midway, pin=above:Untilted contribution] {};
       \addplot[mark=none, dashed, domain=0:1] {0.2 * x} node[midway, pin={[pin edge=solid]above:\( \propto \log\Lambda \)}] {};
-      \addplot[mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
-      \addplot[dashed, mark=none] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
+      \addplot[dashed, mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
+      \addplot[mark=none] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
     \end{axis}
   \end{tikzpicture}
   \caption{
     Schematic summary of the contribution for perpendicular tilt \( t_z \).
     Shown is the even (solid line) and odd (dashed line) parts as a function of \( t_z \).
-    As explained in the main text, the total contribution for a pair of cones is given by the sum of the even and odd part in inversion symmetric systems, and by the odd part for broken inversion symmetry.
+    As explained in the main text, the total contribution for a pair of cones is given by the sum of the even and even part in inversion symmetric systems, and by the odd part for broken inversion symmetry.
   }
 \end{figure}
 
@@ -1534,5 +1565,49 @@ leads to the equation
 This is \emph{not} invariant under a Lorentz transformation, as can be seen by, for example, a rotation around the \( z \)-axis.
 \todo{Clean up p vs k}
 
+In literature, however, it is sometimes written that Type-II break Lorentz symmetry,
+\todo{cite}
+however we showed that any finite tilt breaks Lorentz invariance.
+What is meant is the following:
+the energy of an untilted cone is
+\[
+E = \pm v_F |k|.
+\]
+Under a Lorentz boost, which we will take to be in the \( x \) direction without loss of generality, the  energy transforms as
+\[
+\tilde{E} = \gamma (E - \beta v_F k_x) = \gamma v_F (\pm |k| - \beta k_x).
+\]
+Rescaling the energy by \( \gamma \), this is a tilted cone.
+Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \), exactly restricting us to a Type-I system.
 
 
+
+% However, consider again
+% \begin{equation}
+%   \label{eq:130}
+%   v_F \vec{\sigma} \vec{p} \ket{\psi} = E \ket{\psi}.
+% \end{equation}
+% Lorentz boosting in the \( x \)-direction
+% \begin{equation*}
+%   \begin{split}
+%     \tilde{p}_x &= \gamma (p_x - \beta E),\\
+%     \tilde{E} &= \gamma (E - \betae p_x).
+%   \end{split}
+% \end{equation*}
+% Eq. \eqref{eq:130} thus reads
+% \begin{equation}
+%   \label{eq:131}
+%   v_F (\sigma^x \gamma (p_x - \beta E) + \sigma^yp_y \sigma^zp_z) = \gamma (E - \beta p_x).
+% \end{equation}
+% If we now rescale
+% \[
+%   \begin{split}
+%     \hat{p}_x &= \gamma p_x,\\
+%     \hat{E} &= \gamma E,
+%   \end{split}
+% \]
+% one has
+% \begin{equation}
+%   \label{eq:135}
+%   v_F \vec{\sigma} \vec{\hat{p}}
+% \end{equation}

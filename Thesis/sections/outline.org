@@ -117,13 +117,17 @@ Quick notes and ideas
   The gravitational potential couple to the energy density, and we use the conservation of energy to include instead the energy flux.
   We should therefore find an expression of the energy flux (and hope that it coincides with the energy-momentum tensor).
   I believe maybe the argumentation in Stoof is along these lines.
+- Currents and the Energy-Momentum Tensor in Classical Field Theory: A Fresh Look at an Old Problem
+  Has some quite funny formulations on how the question of defining the T has puzzled physicists
+  In Table 1. it looks like they use the symemtric T
 
-** [#A] Response not odd
+
+** DONE [#A] Response not odd
 Is it a problem that the tz typeii reponse is not odd in tz?
 It measn that, for a symmetric system, there is a difference between having the positive chirality in positive direction and the negative chirality in positive direciton.
 I.e., is the chiralitites something absolute, or should be the same after a redefinition of the chiralities?
 
-*** TODO Check that the treatment of the sign in tz is consitent
+*** DONE Check that the treatment of the sign in tz is consitent
 Specifically, identify what makes the answer differ for different sign
 
 ** Divergence in tz
