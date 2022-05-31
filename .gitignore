@@ -88,3 +88,8 @@ flycheck_*.el
 
 
 *.auxlock
+
+# Glossareis
+*.acn
+*.glo
+*.ist
