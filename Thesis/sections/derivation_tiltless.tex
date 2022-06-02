@@ -35,7 +35,7 @@ where the index \( i \) runs over the types of fields.
 This definition is correct for commuting fields, however, for non-commuting fields like ours, this formula is slightly wrong.
 This is often overlooked in many textbooks and papers, so we will here elucidate the issue to some degree.
 While a proper derivation requires the use of Grassman variables and defining left and right derivation, which we will not do here, some simple considerations help in understanding the issue.
-In the standard text book derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
+In the standard textbook derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
 \begin{equation}
   \label{eq:67}
   \frac{\mathrm{d} \mathcal{L}(\psi_{i}, \partial \psi_i)}{\mathrm{d} x_{\nu }} \equiv \mathrm{d}^{\nu } \mathcal{L}
@@ -616,25 +616,72 @@ $.
 \end{summary}
 
 \subsection{Comment on the energy-momentum tensor}
-There is some ambiguity with regards to the definition of th energy-momentum tensor \todo{cite}.
+There is some ambiguity with regards to the definition of the energy-momentum tensor\cites{kachelriessQuantumFieldsHubble2018}{chernodubThermalTransportGeometry2021}{vanderwurffMagnetovorticalThermoelectricTransport2019}{forgerCurrentsEnergyMomentumTensor2004}.
 The \emph{canonical} energy-momentum tensor, derived from Lagrangian mechanics, is defined as
 \begin{equation}
 	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
 \end{equation}
-On the other hand, from general relativity, the (\emph{dynamical}?) energy-momentum tensor is defined by the variation of the action with respsect to the metric
+On the other hand, from general relativity, the \emph{dynamical} energy-momentum tensor is defined by the variation of the (matter) action with respect to the metric\cite{kachelriessQuantumFieldsHubble2018}
+\todo{Signs depend on choice of g}
 \begin{equation}
-	T^{\mu \nu} = something something \frac{\delta S}{\delta g_{\mu \nu}}.
+	T^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
 \end{equation}
 Immediately, we see that the first definition is in general not symmetric, while the latter is, as the metric is always symmetric \footnote{something with torsion never}.
-...
-Something about the non-defitness of the tensor, we may add some total derivative or something.
+As the energy-momentum tensor is an observable, this presents a problem:
+how should the tensor be defined?
+This issue is not trivial, and has puzzled physicists for decades\cite{forgerCurrentsEnergyMomentumTensor2004}.
 
-We may of course symmetrize the energy-momentum tensor.
-Denote by \( T^{\mu \nu } \) the \emph{canonical} tensor, and let the symmetrized tensor
+Superficially, we make the following observations.
+The \emph{defining} property of the energy-momentum tensor is its conservation law
 \begin{equation}
-  \label{eq:symstress}
-  T_S^{\mu \nu} = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}.
+  \label{eq:134}
+  \partial_{\mu} T^{\mu \nu} = 0,
 \end{equation}
+on a flat manifold.
+This, of course, only defines the tensor up to a total divergence.
+Denote by \( \hat{T}^{\mu \nu} \) the \emph{canonical} energy-momentum tensor.
+We can then define another tensor
+\begin{equation}
+  \label{eq:140}
+  T^{\mu\nu} = \hat{T}^{\mu \nu} + \partial_{\alpha} S^{\alpha \mu \nu}.
+\end{equation}
+By letting the additional term be anti-symmetric \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), it is divergence free.
+This is easily shown as follows:
+\begin{align}
+  \label{eq:141}
+  \partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu} &= - \partial_{\mu} \partial_{\alpha} S^{\mu \alpha \nu}\\
+                                                        &= - \partial_{\alpha} \partial_{\mu} S^{\mu \alpha \nu}\\
+  &= -\partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu},
+\end{align}
+where we used the commutation of partial derivatives and relabelling of the dummy indices \( \mu, \lambda \).
+By an appropriate choice of \( S^{\alpha \mu \nu} \) the canonical energy-momentum tensor may be symmetrized, importantly while still abiding the conservation law.
+The correction that symmetrizes the energy-momentum tensor is known as the ``Belifnante tensor'', which for the Dirac Lagrangian is\cite{chernodubThermalTransportGeometry2021}
+\begin{equation}
+  \label{eq:142}
+  S^{\alpha \mu \nu} = \frac{1}{8} \bar{\Psi}\left[ \gamma^{\alpha}, \sigma^{\mu\nu} \right] \Psi,
+\end{equation}
+which gives
+\begin{equation}
+  \label{eq:143}
+  T^{\mu \nu} = \frac{1}{4} \bar{\Psi} (\gamma^{\mu} D^{\nu} + \gamma^{\nu} D^{\mu}) \Psi.
+\end{equation}
+Which, in the case of the Dirac Lagrangian, so happens to correspond to the naive symmetrization
+\begin{equation}
+  \label{eq:144}
+  T^{\mu\nu}_s = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}.
+\end{equation}
+
+It is also instructive for our work to consider a more naive line of reasoning.
+The energy-momentum tensor is used in this work through its conservation law Eq.~\eqref{eq:134}, whose first component gives the conservation of energy.
+Writing it out explicitly
+\begin{equation}
+  \label{eq:145}
+  \partial_0T^{00} + \partial_i T^{i0} = \partial_0 \epsilon + \partial_i j^i_{\epsilon} = 0,
+\end{equation}
+with \( \epsilon \) the energy density and \( \vec{j}_{\epsilon} \) the energy density current, the question is really seen to be finding the energy density current, ignoring all formal arguments about the energy-momentum tensor in a general context.
+Using such a line of reasoning \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems, is the unsymmetrized canonical tensor.
+In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by \textcite{arjonaFingerprintsConformalAnomaly2019}.
+In the untilted case, the two definitions give the same contribution, while for a titled cone, the response from the two definitions differ.
 
 In the case of our untilted system, the Weyl Lagrangian, the components of interest are
 \begin{align}
@@ -648,9 +695,7 @@ In the case of our untilted system, the Weyl Lagrangian, the components of inter
   \phi^{\dagger} \sigma_y \partial_{0} \phi - \partial_0 \phi^{\dagger} \sigma_y \phi
   \right].\\
 \end{align}
-
-
-The symmetric form of the energy-momentum tensor, used by \citeauthor{arjonaFingerprintsConformalAnomaly2019}, gives additional contributions to the energy-momentum matrix element.
+The symmetric form of the energy-momentum tensor, used by \textcite{arjonaFingerprintsConformalAnomaly2019}, gives additional contributions to the energy-momentum matrix element.
 We will here show that in the case of no tilt, these contributions are identical to those of the non-symmetric tensor.
 In the tilted case, however, the contributions differ.
 
