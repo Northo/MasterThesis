@@ -1,0 +1,9 @@
+#+title: Master Presentation
+
+* First
+Are the greens functions phenomenological or derived analytically?
+
+* stin kaare
+Isotropic system?
+
+PHse of eigenstate

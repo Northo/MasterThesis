@@ -1,0 +1,25 @@
+#+title: 05 26
+
+* Transitions for Type-II
+
+We must calc the transitions for type ii
+
+NB! Changing the sign of tz is not trivial as also the integration limits change. Probably better to do different signs separately
+
+** 0 -> 1 [3/3]
+
+*** DONE tz > 1
+
+*** DONE tz < -1
+Must be verified
+
+*** DONE Verify
+Yup, they are correct
+
+** -N -> N+1 [2/3]
+
+*** DONE tz > 1
+
+*** DONE tz < -1
+
+*** TODO Verify and unify expressions

@@ -3,14 +3,17 @@
 \usepackage{slashed}
 \usepackage{braket}
 \usepackage{subcaption}
+\usepackage[url=false, doi=false]{biblatex}
 \usepackage{bm}
 \renewcommand\vec\bm
 
 \usetheme[block=fill]{metropolis}
+\addbibresource{Master.bib}
 
 \author{Thorvald M. Ballestad}
 \title{Master thesis presentation}
-\date{03. June 2022}
+\subtitle{Transport current from conformal anomaly in topological semimetals}
+\date{01. June 2022}
 \titlegraphic{
   \vspace{5cm}
   \flushright
@@ -44,13 +47,13 @@
   % \end{center}
 \end{frame}
 
-\section{Our work}
 \begin{frame}{Linear response and Luttinger's method}
   Temperature pertupation \( \nabla T \) and gravitational potential \( \psi \)
   \begin{equation}
     \label{eq:3}
     \nabla \psi + \frac{\nabla T}{T} = 0.
   \end{equation}
+
 
   Linear response (Kubo)
   \begin{multline}
@@ -67,8 +70,20 @@
 \frac{\partial_j' T(t', \vec{r}')}{T(t', \vec{r}'}
   \end{multline}
 \end{frame}
+
+\begin{frame}
+  \begin{itemize}
+  \item\fullcite{chernodubAnomalousTransportDue2016}.
+  \item\fullcite{chernodubGenerationNernstCurrent2018}.
+  \item\fullcite{arjonaFingerprintsConformalAnomaly2019}.
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Type-I and Type-II}
   \centering
+  \[
+H = \underbrace{s v_F \vec{\sigma} \cdot \vec{p}}_{H^0} + v_F \vec{t} \cdot \vec{p}.
+\]
   \includegraphics[width=.7\textwidth]{cones-tilt-color1}
 \end{frame}
 \begin{frame}{Landau levels}
@@ -85,6 +100,8 @@
     Collapse of LLs for perpendicular tilt.
   \end{block}
 \end{frame}
+
+\section{Our work}
 \begin{frame}[standout]
   \metroset{background=dark}
   \begin{block}{Result}
@@ -122,7 +139,23 @@
 \end{frame}
 
 \appendix
-\begin{frame}
+\begin{frame}{Energy-momentum tensor}
+  \begin{equation}
+    \label{eq:6}
+    \partial_{\mu} T^{\mu \nu} = 0.
+  \end{equation}
 
+  Canonical
+\begin{equation}
+  T^{\mu \nu} = \partial^{\nu} \bar{\psi} \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L}.
+\end{equation}
+
+  and dynamical
+  \begin{equation}
+    T^{\mu\nu } \propto \frac{\partial S}{\partial g^{\mu\nu}}
+  \end{equation}
+\end{frame}
+\begin{frame}
+\printbibliography
 \end{frame}
 \end{document}

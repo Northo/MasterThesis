@@ -1,0 +1,118 @@
+\chapter{Long expressions not included in the main text\label{cha:long_expression}}
+\begin{lstlisting}[breaklines=true, caption={Expression for Type-II interband transition with \( t_z > 1 \), given in Mathematica format.\label{lst:typeii-interband-tzpos}},language=Mathematica]
+(m/(-1 + tz^2) - (2*m*tz)/(-1 + tz^2) - (4*(-1 + m)*m*tz)/(-1 + tz^2) + (m*tz^2)/(-1 + tz^2) +
+  tz*Sqrt[(m*tz^2*(1 + (-1 + m)*tz^2))/(-1 + tz^2)^2] + 2*(-1 + m)*tz*Sqrt[(m*tz^2*(1 + (-1 + m)*tz^2))/(-1 + tz^2)^2] -
+  Sqrt[m + (-1 + m)*m*tz^2]/(-1 + tz^2) - (2*(-1 + m)*Sqrt[m + (-1 + m)*m*tz^2])/(-1 + tz^2) +
+  (2*tz*Sqrt[m + (-1 + m)*m*tz^2])/(-1 + tz^2) + 2*(-1 + m)*Log[(1 - Sqrt[(1 + (-1 + m)*tz^2)/m])/(1 + tz)] +
+  (-1 + m)*tz*Log[(1 - Sqrt[(1 + (-1 + m)*tz^2)/m])/(1 + tz)] -
+  2*(-1 + m)^2*Log[((1 + tz)*Sqrt[m/(-1 + tz^2)])/(Sqrt[m/(-1 + tz^2)] - Sqrt[(1 + (-1 + m)*tz^2)/(-1 + tz^2)])] -
+  (-2*(-1 + m)^(3/2)*Sqrt[-1 + m*tz^2] + (-1 + tz)*Sqrt[(-1 + m)*(-1 + m*tz^2)] -
+    tz*(2*m^2 - (1 + tz)*(-1 + Sqrt[(-1 + m)*(-1 + m*tz^2)]) + m*(-3 + tz*(-1 + 2*Sqrt[(-1 + m)*(-1 + m*tz^2)]))) -
+    (1 - m)*(-1 + tz)*(-1 + (1 + tz)*(2 + tz)*Log[-((-1 + tz)*Sqrt[(-1 + m)/(-1 + tz^2)])]) -
+    (-1 + tz^2)*(-2 + m*(2 + tz))*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] +
+    tz*Log[(-(Sqrt[-1 + m]*tz) + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    tz^3*Log[(-(Sqrt[-1 + m]*tz) + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    2*(-1 + m)^2*(tz + (-1 + tz^2)*Log[(-1 + m + Sqrt[(-1 + m)*(-1 + m*tz^2)])/(-1 + m + tz - m*tz)]))/(-1 + tz^2) -
+  tz*Log[(m*tz - Sqrt[m + (-1 + m)*m*tz^2])/(-1 + tz)])/4
+\end{lstlisting}
+
+
+\begin{lstlisting}[breaklines=true, caption={Expression for Type-II interband transition with \( t_z < -1 \), given in Mathematica format.\label{lst:typeii-interband-tzneg}},language=Mathematica]
+(1 + Sqrt[(-1 + m)*(-1 + m*tz^2)] - 2*m*Sqrt[(-1 + m)*(-1 + m*tz^2)] - Sqrt[m + (-1 + m)*m*tz^2] +
+  2*m*Sqrt[m + (-1 + m)*m*tz^2] + (-1 + m)*(2 + tz)*Log[-((1 + tz)*Sqrt[(-1 + m)/(-1 + tz^2)])] +
+  (-2 + m*(2 + tz))*Log[-((-1 + tz)*Sqrt[m/(-1 + tz^2)])] + 2*Log[(Sqrt[m]*(1 - tz))/(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])] -
+  4*m*Log[(Sqrt[m]*(1 - tz))/(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])] +
+  2*m^2*Log[(Sqrt[m]*(1 - tz))/(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])] +
+  2*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] - 2*m*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+  tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] - m*tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+  tz*Log[(-(Sqrt[m]*tz) + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] -
+  tz*Log[(-(Sqrt[-1 + m]*tz) + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] - 2*Log[(1 - Sqrt[(-1 + m*tz^2)/(-1 + m)])/(1 + tz)] +
+  4*m*Log[(1 - Sqrt[(-1 + m*tz^2)/(-1 + m)])/(1 + tz)] - 2*m^2*Log[(1 - Sqrt[(-1 + m*tz^2)/(-1 + m)])/(1 + tz)] +
+  2*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]] -
+  2*m*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]] -
+  m*tz*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]])/4
+\end{lstlisting}
+
+\begin{lstlisting}[breaklines=true, caption={Expression for Type-II intraband transition with \( t_z > 1 \), given in Mathematica format.\label{lst:typeii-intraband-tzpos}},language=Mathematica]
+(-((-1 + m)*m*tz*AppellF1[1, 1/2, 1/2, 2, (1 - tz^2)^(-1), (1 - m)/(m*(-1 + tz^2))]) +
+  m^2*tz*AppellF1[1, 1/2, 1/2, 2, -(m/((-1 + m)*(-1 + tz^2))), (1 - tz^2)^(-1)] +
+  (-1 + tz^2)*(-2*Sqrt[(-1 + m)*m^3] + 2*m^2*Sqrt[(-1 + m)*(1 + (-1 + m)*tz^2)] - 4*m^3*Sqrt[(-1 + m)*(1 + (-1 + m)*tz^2)] +
+    2*Sqrt[m^3*(-1 + m*tz^2)] - 6*Sqrt[m^5*(-1 + m*tz^2)] + 4*Sqrt[m^7*(-1 + m*tz^2)] -
+    (-2*Sqrt[(-1 + m)*m^5] + 2*Sqrt[(-1 + m)*m^7] + (-Sqrt[(-1 + m)*m^3] + Sqrt[(-1 + m)*m^5])*tz)*Log[-1 + m] -
+    2*Sqrt[(-1 + m)*m^5]*Log[m] + 2*Sqrt[(-1 + m)*m^7]*Log[m] + Sqrt[(-1 + m)*m^5]*tz*Log[m] +
+    2*Sqrt[(-1 + m)*m^3]*tz*Log[1 + tz] - Sqrt[(-1 + m)*m^3]*tz*Log[-1 + tz^2] -
+    4*Sqrt[(-1 + m)*m^5]*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    4*Sqrt[(-1 + m)*m^7]*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] -
+    2*Sqrt[(-1 + m)*m^3]*tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    2*Sqrt[(-1 + m)*m^5]*tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    4*Sqrt[(-1 + m)*m^5]*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    4*Sqrt[(-1 + m)*m^7]*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    2*Sqrt[(-1 + m)*m^5]*tz*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]]))/(8*Sqrt[-1 + m]*m^(3/2)*(-1 + tz^2))
+\end{lstlisting}
+
+\begin{lstlisting}[breaklines=true, caption={Expression for Type-II intraband transition with \( t_z < - 1 \), given in Mathematica format.\label{lst:typeii-intraband-tzneg}},language=Mathematica]
+(4*m*(-1 + tz)*Sqrt[(-1 + m)*(1 + (-1 + m)*tz^2)]*(-1 + Abs[tz]) - 4*(-1 + m)*(-1 + tz)*Sqrt[m*(-1 + m*tz^2)]*(-1 + Abs[tz]) +
+  8*(-1 + m)^(3/2)*m*Sqrt[1 + (-1 + m)*tz^2]*(1 + tz*Abs[tz]) - 8*(-1 + m)^2*Sqrt[m*(-1 + m*tz^2)]*(1 + tz*Abs[tz]) +
+  2*(-1 + m)*tz*(AppellF1[1, 1/2, 1/2, 2, (1 - tz^2)^(-1), (1 - m)/(m*(-1 + tz^2))] -
+    AppellF1[1, 1/2, 1/2, 2, m/(-1 + m - (-1 + m)*tz^2), (1 - tz^2)^(-1)]) -
+  2*tz*AppellF1[1, 1/2, 1/2, 2, m/(-1 + m - (-1 + m)*tz^2), (1 - tz^2)^(-1)] -
+  4*(-1 + m)^(5/2)*Sqrt[m]*(-1 + tz^2)*(Log[(-1 + m)/m] - 2*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    2*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]]) - Sqrt[(-1 + m)*m]*(-1 + tz)*
+   (-4 + 4*Abs[tz] + tz*Log[m/(-1 + tz^2)] + 4*tz*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] +
+    4*tz^2*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] + 2*tz*Log[1 + Abs[tz]] -
+    6*tz*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] - 4*tz^2*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])]) +
+  (-1 + m)^(3/2)*Sqrt[m]*(8*tz + 8*Abs[tz] + Log[(-1 + m)/m] - tz^2*Log[(-1 + m)/(-1 + tz^2)] + tz^2*Log[m/(-1 + tz^2)] -
+    8*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] - 4*tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    8*tz^2*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    4*tz^3*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
+    8*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] + 4*tz*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    8*tz^2*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
+    4*tz^3*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] + 6*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] +
+    4*tz*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] - 6*tz^2*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] -
+    4*tz^3*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] - 6*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] -
+    4*tz*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] + 6*tz^2*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] +
+    4*tz^3*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])]))/(16*Sqrt[(-1 + m)*m]*(-1 + tz^2))
+\end{lstlisting}
+
+
+% \begin{multline}
+%   \label{eq:typeii-interband-tzpos}
+%   \frac{1}{4} \Bigg\{
+%   -\frac{1}{t_z^2-1}
+%   \Bigg[
+%   t_z \left(2 m^2+m \left(t_z \left(2 \sqrt{(m-1) \left(m t_z^2-1\right)}-1\right)-3\right)\\
+%     -(t_z+1) \left(\sqrt{(m-1) \left(m t_z^2-1\right)}-1\right)\right)-2 (m-1)^{3/2} \sqrt{m t_z^2-1}+(t_z-1) \sqrt{(m-1) \left(m
+%       t_z^2-1\right)}\\
+%   +t_z \log \left(t_z \sqrt{\frac{m-1}{t_z^2-1}}+\sqrt{\frac{m t_z^2-1}{t_z^2-1}}\right)-(1-m) (t_z-1) \left[\left(t_z^2+3 t_z+2\right) \log \left((t_z+1)
+%       \sqrt{\frac{m-1}{t_z^2-1}}\right)
+%     -1\right]\\
+%   -\left(t_z^2-1\right) (m (t_z+2)-2) \log \left(\frac{\sqrt{m t_z^2-1}+\sqrt{m-1}}{\sqrt{t_z^2-1}}\right)\\
+%   -2 (m-1)^2 \left(\left(t_z^2-1\right) \log \left(\frac{\sqrt{(m-1) \left(m
+%             t_z^2-1\right)}+m-1}{(m-1) (t_z+1)}\right)+t_z\right)\\
+%   +t_z^3 \left(-\log \left(t_z \sqrt{\frac{m-1}{t_z^2-1}}+\sqrt{\frac{m t_z^2-1}{t_z^2-1}}\right)\right)
+%   \Bigg]
+%   +\frac{2 (m-1) t_z^2 \sqrt{(m-1) m
+%       t_z^2+m}}{t_z^2-1}\\
+%   -\frac{2 (m-1) \sqrt{(m-1) m t_z^2+m}}{t_z^2-1}+\frac{t_z^2 \sqrt{(m-1) m t_z^2+m}}{t_z^2-1}-\frac{\sqrt{(m-1) m t_z^2+m}}{t_z^2-1}+\frac{m t_z^2}{1-t_z^2}\\
+%   +\frac{m}{t_z^2-1}-2 (m-1)^2 \log
+%   \left(-\frac{(t_z-1) \sqrt{\frac{m}{t_z^2-1}}}{\sqrt{\frac{m}{t_z^2-1}}-\sqrt{\frac{(m-1) t_z^2+1}{t_z^2-1}}}\right)-(m-1) t_z \log \left((t_z-1) \sqrt{\frac{m}{t_z^2-1}}\right)\\
+%   -2 (m-1) \log \left((t_z-1)
+%     \sqrt{\frac{m}{t_z^2-1}}\right)+(m-1) t_z \log \left(\sqrt{\frac{(m-1) t_z^2+1}{t_z^2-1}}-\sqrt{\frac{m}{t_z^2-1}}\right)\\
+%   +2 (m-1) \log \left(\sqrt{\frac{(m-1) t_z^2+1}{t_z^2-1}}-\sqrt{\frac{m}{t_z^2-1}}\right)-t_z \log
+%   \left((t_z-1) \sqrt{\frac{m}{t_z^2-1}}\right)\\
+%   -t_z \log \left(t_z \sqrt{\frac{m}{t_z^2-1}}+\sqrt{\frac{(m-1) t_z^2+1}{t_z^2-1}}\right)
+%   \Bigg\}
+% \end{multline}
+
+\begin{multline}
+  \label{eq:typeii-interband-tzneg}
+\end{multline}
+
+\begin{multline}
+  \label{eq:typeii-intraband-tzpos}
+\end{multline}
+
+
+\begin{multline}
+  \label{eq:typeii-intraband-tzneg}
+\end{multline}

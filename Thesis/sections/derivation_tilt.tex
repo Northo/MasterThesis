@@ -641,6 +641,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
   \footnote{note to self. \( \eta \) was taken to zero}
   where the summation goes over \( m > 0, n \leq 0 \), capped at the Landau level \( N \).
   The integration limits are \( (-\infty, \infty) \), except for \( n = 0 \), where they are \( [0, \infty) \)\footnote{Where we have used \( s=+1 \).}.
+  \todo{Make sure numerical prefactors are correct. In particular, have we included the 2 from restricting to half plane?}
 \end{summary}
 
 
@@ -861,25 +862,24 @@ In Type-I systems, the selection rules from the step functions are independent o
 The response is therefore
 \begin{equation}
   \label{eq:138}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = -\frac{e^2v_F B}{(2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{(2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
 \end{equation}
 where \( \gamma_N^0 \) is the prefactor of the untilted case, and
 \begin{equation}
   \label{eq:97}
-  \gamma_{\text{div}, N} = \frac{1}{2} \sum\limits_{N=0}^{} \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=N+1}{n=-N}},
+  \gamma_{\text{div}, N} = -2 \sum\limits_{i=0}^{N} \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
 \end{equation}
-which has a UV divergence.
-Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result
-
+which has an UV divergence.
+Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result\footnote{Note the minus sign introduced by the step function in \( \xi \).}
 \begin{equation}
   \label{eq:139}
-  \gamma_{\text{div}, 0} = -\frac{t_z}{4} \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
+  \gamma_{\text{div}, 0} = \frac{t_z}{2} \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
    )\right)
 \end{equation}
 and the contribution from each term of the sum
 \begin{multline}
   \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
-  - \frac{t_z}{4}
+  \frac{t_z}{2}
   \Bigg\{
     \Lambda\left(\sqrt{\Lambda^2 + m - 1} - \sqrt{\Lambda^2 + m}  \right)\\
     + m \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} } \right]
@@ -895,34 +895,17 @@ The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with brok
 Assuming \( \Lambda \gg 1 \) the expression is approximated by
 \begin{equation}
   \label{eq:37}
-  \frac{t_z}{8}
+  t_z
   \left(
-  1 + m \log \left(1+\frac{1}{m}\right) + \log \left(\frac{1+m}{4}\right) - 2 \log (\Lambda)
+    \frac{1}{4}\left[
+  -1 - m \log \left(1 - \frac{1}{m}\right) + \log \left(\frac{m - 1}{4}\right)
+  \right]
+ + \frac{\log(\Lambda)}{2}
 \right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
 \end{equation}
 
 
-\subsubsection{Type-II}
-\todo{Recheck the order and specify clearly if we consider Type-I or Type-II for the different arguments}
-\todo{There should be some argument along the lines of the result being the same for s -> -s and tz -> -tz, so we may consider s=1, tz>0 for defiteness (if that is indeed the case)}
-
-% % Computing this in PGF was no good.
-% % Import from a file instead
-% \begin{tikzpicture}
-%   \pgfkeys{/pgf/declare function={arctanh(\x)=0.5*(ln((1+\x)/(1-\x)));}}
-%   \pgfkeys{/pgf/declare function={divLim(\x,\z,\m)=-0.25 * \z * (
-%       \x (sqrt(1 + \x^2 + \m) - sqrt(\x^2 + \m)) +
-%       \m * arctanh(\x/sqrt(\x^2 + \m)) - (\m+1)*arctanh(\x/sqrt(1 + \x^2 + \m))
-%       );}}
-%   \begin{axis}[
-%     domain=0:100,
-%     samples=50,
-%     ]
-%     \addplot[mark=none] {divLim(x, 0.1,1)};
-%   \end{axis}
-% \end{tikzpicture}
-
-\begin{figure}[hp]
+\begin{figure}[htp]
   \centering
   \tikzsetnextfilename{divergentContribCutoff}
   \begin{tikzpicture}
@@ -930,6 +913,20 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
       xlabel=\( \Lambda \),
       ylabel=Contribution,
       legend pos=south east,
+      % cycle list name=exotic,
+      cycle list={
+        teal,every mark/.append style={fill=teal!80!black},mark=*\\
+        orange, dashed, every mark/.append style={fill=orange!80!black},mark=square*\\
+        cyan!60!black, densely dotted, every mark/.append style={fill=cyan!80!black},mark=otimes*\\
+        red!70!white, dashdotted, mark=star\\
+        lime!80!black, loosely  dashed, every mark/.append style={fill=lime},mark=diamond*\\
+        red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\
+        yellow!60!black,densely dashed,
+        every mark/.append style={solid,fill=yellow!80!black},mark=square*\\
+        black,every mark/.append style={solid,fill=gray},mark=otimes*\\
+        blue,densely dashed,mark=star,every mark/.append style=solid\\
+        red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
+      },  %% exotic with various line types
       ]
       \foreach \i in {1,...,5} {
         \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
@@ -938,15 +935,17 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
     \end{axis}
   \end{tikzpicture}
   \caption{The divergent factor \( \gamma_{\text{div}, N} / t_{z} \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
-    TODO: fix m to be m-1. Alternatively use N}
-  \label{fig:divergent-factor}
+  \label{fig:divergent-factor}}
 \end{figure}
+
+
+\subsubsection{Type-II}
 For Type-I semimetals, the sign of energy state \( m \neq 0 \) is given by the sign of \( m \) itself.
 For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
-See figure \ref{fig:llevelstilt}.
+See plot of the tilted Landau levels in figure \ref{fig:llevelstilt}.
 
 % Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 % For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
@@ -971,10 +970,14 @@ The actual roots of the energies are
   \label{eq:94}
   \kappa_z = -\sign(m t^s_x) \sqrt{\frac{M}{t_{z}^2 - 1}}.
 \end{equation}
-The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z^s > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
+The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
 The \( 1\to 2 \) transition is \( [-\sqrt{2} /\sqrt{t_z^2 - 1}, -\sqrt{t_z^2 - 1 }^{-1}] \), and so forth.
+The general \( n \to m \) transition has the integration limits
+\[
+  \left[-\sign(t_z) \sqrt{\frac{m}{t_{z}^2 - 1}}, -\sign(t_z n) \sqrt{\frac{-n}{t_{z}^2 -1}} \right].
+\]
 
-The \( 0\to 1 \) transitions where computed analytically, and found to be
+The \( 0\to 1 \) transitions was computed analytically, and found to be
 \begin{equation}
   \label{eq:117}
   \frac{\sign(t_z)}{2}
@@ -982,241 +985,52 @@ The \( 0\to 1 \) transitions where computed analytically, and found to be
   |t_z| \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
 \right  ).
 \end{equation}
-For a general \( -N \to N+1, \; N>0 \) transition, the contribution was found to be the very lengthy expression
-\todo{Must also do \( t_z < -1 \)}
-\todo{Be careful with tz < -1. This does not only change sing of tz, but also the integration limits}
-\begin{multline}
-  \label{eq:132}
-  \frac{(n-1) n }{8
-   ((n-1) n)^{3/2} (t_z^2-1)}
- \Bigg[
-   n t_z\\
-   \left(F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-t_z^2},-\frac{n}{(n-1)
-         (t_z^2-1)}\right)
-     -F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-   (t_z^2-1)},\frac{1}{1-t_z^2}\right)\right)\\
-%%
-+t_z
-   F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-       (t_z^2-1)},\frac{1}{1-t_z^2}\right)
-   +n^2 (4-4 t_z^2)
-   \sqrt{(n-1) ((n-1) t_z^2+1)}\\
-%%
-   -4 \sqrt{(n-1) n} n^2 (t_z^2-1)
-   \log \left(\frac{\sqrt{\frac{n-1}{n}} \left(\sqrt{1-n t_z^2}+\sqrt{1-n}\right)}{\sqrt{-n
-         t_z^2+t_z^2-1}+\sqrt{-n}}\right)\\
-   %%
-   -n (2-2 t_z) \sqrt{(1-n) \left(-((n-1)
-   t_z^2)-1\right)}+2 n (t_z-1) t_z \sqrt{(n-1) \left((n-1)
- t_z^2+1\right)}\\
-%%
-+(1-n) n \left(4-4 t_z^2\right) \sqrt{-n \left(1-n
-    t_z^2\right)}+2 (1-n) \left(t_z^2-1\right) \sqrt{-n \left(1-n t_z^2\right)}\\
-%%
--2
-\sqrt{(n-1) n} (t_z^2-1) \Bigg[
--t_z \log \left(-\left((t_z-1)
-         \sqrt{\frac{1-n}{t_z^2-1}}\right)\right)\\
-     %%
-     -t_z \log \left(\frac{\sqrt{-n
-   t_z^2+t_z^2-1}+\sqrt{-n}}{\sqrt{t_z^2-1}}\right)+t_z \log
-(1-n)-1
-\Bigg]\\
-%%
-+2 \sqrt{(n-1) n} n \left(-t_z^3-2 t_z^2+t_z+2\right) \log
-   \left(\frac{\sqrt{\frac{n}{n-1}} \left(\sqrt{-n
-           t_z^2+t_z^2-1}+\sqrt{-n}\right)}{\sqrt{1-n t_z^2}+\sqrt{1-n}}\right)\Bigg]
-, \text{ for  } t_z<-1
-\end{multline}
-and
-\begin{multline}
-  \label{eq:133}
-  \frac{1}{8
-   \sqrt{(n-1) n} \left(t_z^2-1\right)}
- \Bigg\{
- n t_z \Bigg(\\
-   %%
-   F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-       \left(t_z^2-1\right)},\frac{1}{1-t_z^2}\right)\\
-   %%
-   -F_1\left(1;\frac{1}{2},\frac{1}{2};2;
-     \frac{1}{1-t_z^2},-\frac{n}{(n-1) \left(t_z^2-1\right)}\right)
- \Bigg)\\
- %%
- -t_z
-   F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-       \left(t_z^2-1\right)},\frac{1}{1-t_z^2}\right)\\
-   %%
-   +n^2 (4-4 t_z^2)
-   \sqrt{(n-1) \left((n-1) t_z^2+1\right)}\\
-   %%
-   +4 n^2 (t_z^2-1) \sqrt{n \left(n
-       t_z^2-1\right)}\\
-   %%
-   -4 \sqrt{(n-1) n} n^2 \left(t_z^2-1\right) \log
-   \left(\frac{-\sqrt{(n-1) \left(n t_z^2-1\right)}+n-1}{n \sqrt{\frac{(n-1)
-           t_z^2+1}{n}}+n}\right)\\
-   %%
-   +2 n \left(t_z^2-1\right) \sqrt{(n-1) \left((n-1)
-       t_z^2+1\right)}\\
-   %%
-   +n \left(6-6 t_z^2\right) \sqrt{n \left(n t_z^2-1\right)}\\
-   %%
-   +2
-   \left(t_z^2-1\right) \sqrt{n \left(n t_z^2-1\right)}\\
-   %%
-   -2 \sqrt{(n-1) n}
-   \left(t_z^2-1\right) \Bigg(-t_z \log \left((t_z+1)
-     \sqrt{\frac{1-n}{t_z^2-1}}\right)\\
-   %%
-   -t_z \log \left(\frac{\sqrt{-n
-         t_z^2+t_z^2-1}+\sqrt{-n}}{\sqrt{t_z^2-1}}\right)\\
-   %%
-   +t_z \log
-   (1-n)+1
-   \Bigg)\\
-   %%
-   +2 \sqrt{(n-1) n} n \left(-t_z^3-2 t_z^2+t_z+2\right) \log
-   \left(\frac{\sqrt{\frac{n}{n-1}} \left(\sqrt{-n
-           t_z^2+t_z^2-1}+\sqrt{-n}\right)}{\sqrt{1-n t_z^2}+\sqrt{1-n}}\right)
-   \Bigg\}, \text{ for } t_z > 1.
-\end{multline}
+For a general \( n \to m, \; N>0, M=N+1 \) transition, the contribution was found to have very lengthy expressions.
+Consult Table~\ref{tab:typeii-expressions} to find the expressions for positive and negative tilt, and interband and intraband transitions.
 
-% \begin{multline}
-%   \frac{1}{8 \sqrt{(n-1) n} \left(t_z^2-1\right)}
-%   \Bigg\{
-%     -n t_z F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-t_z^2},-\frac{n}{(n-1)
-%         \left(t_z^2-1\right)}\right)\\
-%     %%
-%     +(n-1) t_z
-%     F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-%         \left(t_z^2-1\right)},\frac{1}{1-t_z^2}\right)\\
-%     %%
-%     +\left(t_z^2-1\right)
-%     \Bigg[
-%       \sqrt{(n-1) n} \Big\{-4 n^2 \log \left(\frac{-\sqrt{(n-1) \left(n
-%                 t_z^2-1\right)}+n-1}{n \sqrt{\frac{(n-1) t_z^2+1}{n}}+n}\right)\\
-%         %%
-%         +n (t_z+2)
-%         \left(2 \log \left(\frac{\sqrt{1-n t_z^2}+\sqrt{1-n}}{\sqrt{-n
-%                 t_z^2+t_z^2-1}+\sqrt{-n}}\right)+\log (n-1)-\log (n)\right)\\
-%         %%
-%         -2 t_z \log
-%         \left(\frac{n (-t_z)+n+t_z-1}{\sqrt{(n-1)^2 t_z^2+n-1}+\sqrt{(n-1)
-%               n}}\right)\Big\}\\
-%         %%
-%       +2 \Big(n \left(-2 n \sqrt{(n-1)^2 t_z^2+n-1}+2 n \sqrt{n \left(n
-%               t_z^2-1\right)}+\sqrt{(n-1)^2 t_z^2+n-1}-3 \sqrt{n \left(n
-%               t_z^2-1\right)}\right)\\
-%         %%
-%         +\sqrt{n \left(n t_z^2-1\right)}-\sqrt{(n-1)
-%           n}\Big)
-%       \Bigg]
-%     \Bigg\}.
-% \end{multline}
-where \( F_1 \) is the Appell hypergeometric function of two variables.
+\begin{table}[ht]
+  \centering
+  \renewcommand\arraystretch{2.5}
+  \begin{tabular}{ll | c | c |}
+    &\multicolumn{1}{c}{}&\multicolumn{2}{c}{\textbf{Tilt direction}}\\[-2ex]
+    &\multicolumn{1}{c}{}
+                         &\multicolumn{1}{c}{\( t_x > 1 \)}&\multicolumn{1}{c}{\( t_x < -1 \)}\\
+    \cline{3-4}
+    \multirow{2}{*}{\rotatebox{90}{\textbf{Band type}}}
+    &\( n < 0 \)& Lst.~\ref{lst:typeii-interband-tzpos} & Lst.~\ref{lst:typeii-interband-tzneg}\\
+    \cline{3-4}
+    &\( n > 0 \)& Lst.~\ref{lst:typeii-intraband-tzpos} & Lst.~\ref{lst:typeii-intraband-tzneg}\\
+    \cline{3-4}
+  \end{tabular}
 
-As described above, for broken inversion symmetry, the result of the chirality \( s=-1 \) is that of \( s=+1 \) at \( t_z \to -t_z \).
-The total contribution will therefore be the sum of the contribution for \( t_z > 1 \) an d\( t_z < -1 \), which is
-\begin{multline}
-  \label{eq:134}
-  \frac{1}{4 \sqrt{(n-1) n} \left(t_z^2-1\right)}
-  \Bigg\{
-  | t_z|  \Bigg((n-1) F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1-n}{n
-        \left(t_z^2-1\right)},\frac{1}{1-t_z^2}\right)\\
-    %%
-    -n
-    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-t_z^2},-\frac{n}{(n-1)
-        \left(t_z^2-1\right)}\right)
-  \Bigg)\\
-  %%
-  +2 \left(t_z^2-1\right) \Bigg(-2 n^2 \sqrt{(n-1)
-      \left((n-1) t_z^2+1\right)}+2 n^2 \sqrt{n \left(n t_z^2-1\right)}\\
-    %%
-    -\sqrt{(n-1) n} n^2
-    \log \left(\frac{\sqrt{\frac{n-1}{n}} \left(\sqrt{1-n t_z^2}+\sqrt{1-n}\right)}{\sqrt{-n
-          t_z^2+t_z^2-1}+\sqrt{-n}}\right)\\
-    %%
-    -\sqrt{(n-1) n} n^2 \log \left(\frac{-\sqrt{(n-1)
-          \left(n t_z^2-1\right)}+n-1}{n \sqrt{\frac{(n-1) t_z^2+1}{n}}+n}\right)\\
-    %%
-    +n
-    \sqrt{(n-1) \left((n-1) t_z^2+1\right)}-3 n \sqrt{n \left(n t_z^2-1\right)}+\sqrt{n
-      \left(n t_z^2-1\right)}\\
-    %%
-    -2 \sqrt{(n-1) n} n \log \left(\frac{\sqrt{\frac{n}{n-1}}
-        \left(\sqrt{-n t_z^2+t_z^2-1}+\sqrt{-n}\right)}{\sqrt{1-n
-          t_z^2}+\sqrt{1-n}}\right)\Bigg)
-  \Bigg\}
-\end{multline}
+  \begin{tabular}{l | c | c |}
+    \multicolumn{1}{c}{}
+                         &\multicolumn{1}{c}{\( t_x > 1 \)}&\multicolumn{1}{c}{\( t_x < -1 \)}\\
+    \cline{2-3}
+    \( n < 0 \)& Lst.~\ref{lst:typeii-interband-tzpos} & Lst.~\ref{lst:typeii-interband-tzneg}\\
+    \cline{2-3}
+    \( n > 0 \)& Lst.~\ref{lst:typeii-intraband-tzpos} & Lst.~\ref{lst:typeii-intraband-tzneg}\\
+    \cline{2-3}
+  \end{tabular}
 
+  \caption{
+    % The expression for the \( m\to n; N> 0, M=N+1 \) transition is given by the equation number at the various choices of \( t_z \) and \( \sign (n) \).
+    Decision matrix over different regions for the expression of the \( m \to n; N > 0, M =N+1 \) transition, given in code listing of the corresponding number.
+    Listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
+    See main text for details.
+    \todo{Make sure I am not hanged for having vertical lines}
+  }
+  \label{tab:typeii-expressions}
+\end{table}
 
-% \fbox{
-%   The unsimplified \( n\to m, n<0, m>0 \) transition
-%   $$
-%   \frac{1}{4} m \left(\frac{-\frac{\text{tz}
-%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-\text{tz}^2},\frac{m}{n
-%    \left(\text{tz}^2-1\right)}\right)}{\text{tz}^2-1}-\frac{m \sqrt{-m n} (n (\text{tz}-2)+m
-%    \text{tz}) \log (m)+n \sqrt{-m n} (n \text{tz}+m (\text{tz}+2)) \log (-n)-2 \left(-n m^2+n
-%    \text{tz} m^2-\sqrt{-m n} m^2+\sqrt{-m n \left(-n \text{tz}^2+m+n\right)} m^{3/2}-n^2 m-n^2
-%    \text{tz} m+\sqrt{-m n} (n (\text{tz}-2)+m \text{tz}) \log \left((\text{tz}+1)
-%    \sqrt{\frac{m}{\text{tz}^2-1}}\right) m-n \sqrt{-n \left(-n \text{tz}^2+m+n\right)} m+(-m
-%    n)^{3/2}+n \sqrt{-m n} (n \text{tz}+m (\text{tz}+2)) \log \left(\frac{\sqrt{m}+\sqrt{-n
-%    \text{tz}^2+m+n}}{\sqrt{\text{tz}^2-1}}\right)\right)}{m (m+n)^2}}{2 \sqrt{-m n}}+\frac{\sqrt{-n}
-%    \text{tz} F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{n}{m
-%    \left(\text{tz}^2-1\right)},\frac{1}{1-\text{tz}^2}\right) (m+n)^2+\sqrt{m} \left(-m (n
-%    (\text{tz}-2)+m \text{tz}) \left(\text{tz}^2-1\right) \log (m)-n \left(\text{tz}^2-1\right) (n
-%    \text{tz}+m (\text{tz}+2)) \log (-n)+2 \left(-\frac{n^2 \text{tz}^4}{\text{tz}^2-1}-\frac{m n
-%    \text{tz}^4}{\text{tz}^2-1}+m \sqrt{-m n} \text{tz}^3-n \sqrt{-m n} \text{tz}^3-\frac{m \sqrt{-n
-%    \left(m \text{tz}^2-m-n\right)} \text{tz}^3}{\text{tz}^2-1}-\frac{n \sqrt{-n \left(m
-%    \text{tz}^2-m-n\right)} \text{tz}^3}{\text{tz}^2-1}-\frac{n^2 \text{tz}^3}{\text{tz}^2-1}+\frac{m
-%    n \text{tz}^3}{\text{tz}^2-1}-m \sqrt{-m n} \text{tz}^2-n \sqrt{-m n} \text{tz}^2-m \sqrt{n
-%    \left(-m \text{tz}^2+m+n\right)} \text{tz}^2+n \sqrt{n \left(-m \text{tz}^2+m+n\right)}
-%    \text{tz}^2+\frac{m \sqrt{-n \left(m \text{tz}^2-m-n\right)} \text{tz}^2}{\text{tz}^2-1}-\frac{n
-%    \sqrt{-n \left(m \text{tz}^2-m-n\right)} \text{tz}^2}{\text{tz}^2-1}+\frac{n^2
-%    \text{tz}^2}{\text{tz}^2-1}+\frac{m n \text{tz}^2}{\text{tz}^2-1}+n^2 \text{tz}-m n \text{tz}-m
-%    \sqrt{-m n} \text{tz}+n \sqrt{-m n} \text{tz}+m \sqrt{n \left(-m \text{tz}^2+m+n\right)}
-%    \text{tz}+n \sqrt{n \left(-m \text{tz}^2+m+n\right)} \text{tz}+\frac{m \sqrt{-n \left(m
-%    \text{tz}^2-m-n\right)} \text{tz}}{\text{tz}^2-1}+\frac{n \sqrt{-n \left(m
-%    \text{tz}^2-m-n\right)} \text{tz}}{\text{tz}^2-1}+\frac{n^2 \text{tz}}{\text{tz}^2-1}-\frac{m n
-%    \text{tz}}{\text{tz}^2-1}+n^2+m n+n \left(\text{tz}^2-1\right) (n \text{tz}+m (\text{tz}+2)) \log
-%    \left((\text{tz}+1) \sqrt{-\frac{n}{\text{tz}^2-1}}\right)+m (n (\text{tz}-2)+m \text{tz})
-%    \left(\text{tz}^2-1\right) \log
-%    \left(\sqrt{-\frac{n}{\text{tz}^2-1}}+\sqrt{m+\frac{n}{1-\text{tz}^2}}\right)+m \sqrt{-m n}+n
-%    \sqrt{-m n}-\frac{m \sqrt{-n \left(m \text{tz}^2-m-n\right)}}{\text{tz}^2-1}+\frac{n \sqrt{-n
-%    \left(m \text{tz}^2-m-n\right)}}{\text{tz}^2-1}\right)\right)}{2 m^{3/2} (m+n)^2
-%    \left(\text{tz}^2-1\right)}\right)
-% $$
-% } %% fbox
+As described above, the contribution from the cone with chirality \( s=-1 \) is for inversion symmetric systems the same as that of \( s=+1 \) at opposite tilt \( t_z \to -t_z \).
+Therefore, it is useful to separate the contribution into even and odd components, for finding the total contribution from the two cones combined.
+For some contribution \( \gamma(t_z) \), we define
+\begin{align}
+  \gamma_{\text{even}}(t_z) &= \frac{\gamma(t_z) + \gamma(-t_z)}{2}\label{eq:132},\\
+  \gamma_{\text{odd}}(t_z) &= \frac{\gamma(t_z) - \gamma(-t_z)}{2}\label{eq:133}.\\
+\end{align}
 
-% \fbox{
-%   The simplified transition
-%   $$
-% \frac{-m^{3/2} \text{tz} (m+n)^2
-%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{1}{1-\text{tz}^2},\frac{m}{n
-%    \left(\text{tz}^2-1\right)}\right)-\sqrt{m} n \text{tz} (m+n)^2
-%    F_1\left(1;\frac{1}{2},\frac{1}{2};2;\frac{n}{m
-%    \left(\text{tz}^2-1\right)},\frac{1}{1-\text{tz}^2}\right)+2 \left(\text{tz}^2-1\right)
-%    \left(\sqrt{-m^5 n \left(m-n \text{tz}^2+n\right)}-n \sqrt{-m^3 n \left(m-n
-%    \text{tz}^2+n\right)}+m^3 \sqrt{-n} \text{tz} \log \left((\text{tz}+1)
-%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+m^3 \sqrt{-n} \text{tz} \log
-%    \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)-m^3 \sqrt{-n}+m^2 n
-%    \sqrt{m \left(\text{tz}^2-1\right)-n}+2 m^2 \sqrt{-n} n \log \left((\text{tz}+1)
-%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+m^2 \sqrt{-n} n \text{tz} \log \left((\text{tz}+1)
-%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+2 m^2 (-n)^{3/2} \log \left((\text{tz}+1)
-%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+m^2 \sqrt{-n} n \text{tz} \log \left((\text{tz}+1)
-%    \sqrt{\frac{m}{\text{tz}^2-1}}\right)+2 m^2 \sqrt{-n} n \log \left(\frac{\sqrt{m-n
-%    \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+m^2 \sqrt{-n} n \text{tz} \log
-%    \left(\frac{\sqrt{m-n \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+2 m^2 (-n)^{3/2} \log
-%    \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)+m^2 \sqrt{-n} n
-%    \text{tz} \log \left(\sqrt{m-\frac{n}{\text{tz}^2-1}}+\sqrt{\frac{n}{1-\text{tz}^2}}\right)-m^2
-%    \sqrt{-n} \log (m) (m \text{tz}+n (\text{tz}-2))+2 m^2 (-n)^{3/2}-m n^2 \sqrt{m
-%    \left(\text{tz}^2-1\right)-n}+m (-n)^{5/2} \text{tz} \log \left((\text{tz}+1)
-%    \sqrt{\frac{n}{1-\text{tz}^2}}\right)+m (-n)^{5/2} \text{tz} \log \left(\frac{\sqrt{m-n
-%    \text{tz}^2+n}+\sqrt{m}}{\sqrt{\text{tz}^2-1}}\right)+m (-n)^{3/2} \log (-n) (m (\text{tz}+2)+n
-%    \text{tz})+m (-n)^{3/2} n\right)}{8 m \sqrt{-n} \left(\text{tz}^2-1\right) (m+n)^2}
-% $$
-% } %% fbox
 \section{Results}
 We will here consider parallel and perpendicular tilt separately.
 \todo{Make sure the argumentation and computations are valid also for \( t_z < 0 \)}
@@ -1322,15 +1136,16 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
       % cycle list={[of colormap=colormap/autumn]},
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
-      \addplot+[mark=none] {0.5 * (-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
-      \addplot+[mark=none] table[col sep=comma, y=-1] {data/contribtypeii.csv};
-      \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii.csv};
-      \addplot+[mark=none] table[col sep=comma, y=-3] {data/contribtypeii.csv};
+      % \addplot+[mark=none] {(-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
+      \addplot+[mark=none] table[col sep=comma, y=1] {data/contribtypeii_intraband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_intraband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=3] {data/contribtypeii_intraband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=4] {data/contribtypeii_intraband_odd.csv};
 
       \pgfplotsset{cycle list shift=-3}  %% Change shift to number of transitions > 0
-      \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
-      \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_diffsigntz.csv};
-      \addplot+[mark=none, dashed] table[col sep=comma, y=-3] {data/contribtypeii_diffsigntz.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=2] {data/contribtypeii_intraband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=3] {data/contribtypeii_intraband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=4] {data/contribtypeii_intraband_even.csv};
     \end{axis}
   \end{tikzpicture}
   } %% Subcaptionbox
@@ -1348,18 +1163,18 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
       }, %% There is a bug with \to
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
-      \addplot+[mark=none] table[col sep=comma, y=-1] {data/contribtypeii_intraband.csv};
-      \addplot+[mark=none] table[col sep=comma, y=-2] {data/contribtypeii_intraband.csv};
+      \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_intraband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=3] {data/contribtypeii_intraband_odd.csv};
 
       \pgfplotsset{cycle list shift=-2}
-      \addplot+[mark=none, dashed] table[col sep=comma, y=-1] {data/contribtypeii_intraband_diffsigntz.csv};
-      \addplot+[mark=none, dashed] table[col sep=comma, y=-2] {data/contribtypeii_intraband_diffsigntz.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=2] {data/contribtypeii_intraband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=3] {data/contribtypeii_intraband_even.csv};
     \end{axis}
   \end{tikzpicture}
   } %% subcaptionbox
   \caption{The contribution from \( n\to m \) transitions in a Type-II \(t_z\) tilted system.
     % Shown in dashed line is the difference between the contribution at \( t_z \) positive and negative.
-    Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( \text{contrib}(|t_z|) + \text{contrib}(-|t_z|) \).
+    Shown in dashed line of corresponding color, is the even component of the contribution, i.e. \( [\text{contrib}(|t_z|) + \text{contrib}(-|t_z|)] /2 \).
   }
   \label{fig:contribtzII}
 \end{figure}

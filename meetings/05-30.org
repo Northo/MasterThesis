@@ -1,0 +1,46 @@
+#+title: 05 30
+
+* Inversion symmetric system type ii contrib
+
+* Mention material realizations in the thesis
+
+* Relation between non-symmetric T and torsion/angular momentum
+
+Is there something in thinking about the non-symmetric T and angular momentum in relation to torsion, as an explanation for the effect??
+
+* Effecitve fermi velocity from cutoff
+In other systems, like the Landau-Fermi liquid, one often takes terms depending on a cutoff to renormalize soem quantity, like effective mass and effecitve velocity (Landau factors)
+
+Could we somehow make an effetive velocity dependant on the momentum cutoff Lambda?
+See Asgari paper, among other Eq. (12)
+
+ps. looked like they somewhere wrote \( \Lambda = 2.7 E5 \)
+
+* TODO Make note about what we have done / preliminary draft of paper
+
+
+* YouTube videos of Maria
+
+** https://www.youtube.com/watch?v=Zu2Rzd6rkVQ&t=96s
+
+- Interesting thing about dirac materials (weyl, graphene, etc) is that they do /not/ comply with the standard model of condensed matter, the Landau Fermi liquid
+
+- Quasiparticles in condensed matter physics have compact dirac sea, while HEP have infinitely deep sea
+
+- Weyl fermion: single chirality 2x2 component of Dirac spinor
+  Weyl fermions only seen (in HEP) in Quark-glueon plasma in heavy ion collisions in early universe. Extreme energies.
+
+- Saying "Dirac Fermion" is a bit funny from a HEP point of view. All Fermions are Dirac fermions.
+  However, what is meant is linear
+
+- Scale + Lorentz = Conformal
+
+- Details on what is done for the finite potential mu at 53:00
+
+
+
+
+
+
+
+** https://www.youtube.com/watch?v=bb0-DWsue9g&t=14s
