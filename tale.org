@@ -84,6 +84,7 @@ Immball
 @NH
 
 * Tale
+#+LATEX_HEADER:\renewcommand\maketitle{}
 "I denne forsamlingen er det en kolossal spennvidde, ikke minst i faglig dyktighet",
 som vår kjære professor Iver Brevik sa i sin tale under Nablas 75-årsjubileum da vi gikk i førsteklasse.
 (vi lot oss ikke skremme vekk så lett, så her står vi)
