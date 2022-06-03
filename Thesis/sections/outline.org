@@ -9,8 +9,9 @@ Start from the Dirac Lagrangian, and show the Weyl decomposition
 We exactly recover the Hamiltonian of a dirac cone
 See chernodubThermalTransportGeometry2021 eq.~(2)
 
-** Type-II materials
+*** Type-II materials in depth
 - Introduction
+  + Material realizations
 - From tight binding model to linear model
 - Tilting term
   - Inversion symmetry vs no inversion symmetry
@@ -18,15 +19,16 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 ** The response
 
-*** Magnetization currents
+*** Important considerations and observations
+**** Magnetization currents
 In time reversal broken systems, we may have local circulating magnetization currents.
 These do not contribute to the transport, but do show up in our result from the kubo formula.
 Thus, to find the measurable transport current, these must be subtracted.
 See chernodubThermalTransportGeometry2021
 
-*** Brief discussion on Tatara vs Luttinger
+**** Brief discussion on Tatara vs Luttinger
 
-*** Discussion about the stress energy tensor
+**** Discussion about the stress energy tensor
 Derive the stress energy tensor, comment on symmetric vs non-symmetric
 Refer to Stoof
 
@@ -73,29 +75,37 @@ Have computed the contrib form interband -N -> N + 1, must also find intraband
 
 The goal: put on a solid foundation when the contributions from chiralitites cancel
 
-*** Results
-/Move the results into the previous section??/
 
-**** Tiltless
+*** Summary and discussion of results
 
-**** Tilt
+**** Summary of results
+Recap that all contributions were found for s=+1.
+To find the contrib from the other chirality, use .... depending on symmetry.
+Contributions separated into even and odd components in the figures.
 
-***** Perp
-- m,n plane contributions for different tx
-- gamma_n total contribtion for different tx
-- Differences between P and broken P
+For perp. tilt we get a scaled down contrib.
+Independent(?) of the whether inversion symmetry is broken
 
-***** Parallell
--
--
-
-*** Discussion of results
+For parallel. tilt, the situations is more complex.
+Refer to figure.
 
 **** Momentum cutoff in the tz case
 
 ****
 
 **** Show some widemann-franz, mottt, etc relations?
+
+** Further work
+
+*** Tilt parallel to the temperature gradient, i.e. ty
+
+*** Inclusion of finite chemical potential
+See [[file:~/Documents/NTNU/10semester/meetings/05-30.org::*https://www.youtube.com/watch?v=Zu2Rzd6rkVQ&t=96s][Notes from Vozmediano YouTube video]] on why the chemical potential is important
+In particular, something something only lowest landau level
+I think acually the computation is quite easy in the untilted case.
+I also suspect that this is quite interesting, as the fermi surface and region of only one LL drastically change with tilt.
+
+*** More research into the energy-momentum tensor
 
 * Ideas and Problems
 ** Directions

@@ -1024,20 +1024,24 @@ Consult Table~\ref{tab:typeii-expressions} to find the expressions for positive 
   \label{tab:typeii-expressions}
 \end{table}
 
-As described above, the contribution from the cone with chirality \( s=-1 \) is for inversion symmetric systems the same as that of \( s=+1 \) at opposite tilt \( t_z \to -t_z \).
-Therefore, it is useful to separate the contribution into even and odd components, for finding the total contribution from the two cones combined.
-For some contribution \( \gamma(t_z) \), we define
-\begin{align}
-  \gamma_{\text{even}}(t_z) &= \frac{\gamma(t_z) + \gamma(-t_z)}{2}\label{eq:132},\\
-  \gamma_{\text{odd}}(t_z) &= \frac{\gamma(t_z) - \gamma(-t_z)}{2}\label{eq:133}.\\
-\end{align}
 
 \section{Results}
+As described above, the contribution from the cone with chirality \( s = -1 \) can be found from the result of the positive chirality cone.
+In the case of perpendicular tilt, they are exactly the same.
+In the case of parallel tilt, it depends on the symmetry of the tilt.
+For systems with broken inversion symmetry, the response from the two cones are the same.
+On the other hand, for inversion symmeric systems, the contribution form the cone with chirality \( s=-1 \) is the same as that of the \( s=+1 \) cone at the opposite tilt \( t_z \to - t_z \).
+Therefore, it is useful to separate the contribution into even and odd components, for finding the total contribution from the two cones combined.
+For some contribution \( \gamma(t_{x /z}) \), we define
+\begin{align}
+  \gamma_{\text{even}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) + \gamma(-t_{x/z})}{2}\label{eq:132},\\
+  \gamma_{\text{odd}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) - \gamma(-t_{x/z})}{2}\label{eq:133}.\\
+\end{align}
+All results will be given in terms of these components, at \( t_{x /y} > 0 \).
+
 We will here consider parallel and perpendicular tilt separately.
-\todo{Make sure the argumentation and computations are valid also for \( t_z < 0 \)}
 
 \subsection{Perpendicular tilt}
-\todo{Make sure to include negative tilt also}
 In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.
 Importantly, this does not generally mean that the effect is not present for Type-II systems, but simply that the Linear model Landau level description is not a good basis for the system.
 The collapse of the Landau levels caused \textcite{soluyanovTypeIIWeylSemimetals2015} to errenously predict the collapse of the chiral anomaly in their now famous paper first describing Type-II Weyl semimetals.
@@ -1053,7 +1057,7 @@ This is indicated in figure \ref{fig:contribs}.
 \todo{Correct which values }
 The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), shown in figure \ref{fig:contribs}.
 The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure \ref{fig:total_contribs}.
-The contribution is even in \( t_z \), and the two cones have the same contribution.
+The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section \ref{sec:perptiltsum}.
 
 \begin{figure}[ht]
   \centering
@@ -1094,25 +1098,30 @@ The contribution is even in \( t_z \), and the two cones have the same contribut
 
 \subsection{Parallel tilt}
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
-In the Type-I regime, the contributions differ from that of the untitled system by Eq. \eqref{eq:98}, dependent on a momentum cutoff \( \Lambda \).
+In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), Eq. \eqref{eq:98}, dependent on a momentum cutoff \( \Lambda \).
 The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In case of inversion symmetry, the contributions from the two chiralities are equal and add up.
+In the large cutoff limit, the divergence goes like \( \log \Lambda \), where the dimensionfull cutoff \( k^{\text{cutoff}}_z = \sqrt{2 e B} \Lambda  \).
 
 In the Type-II regime, the contributions have more complicated form.
-Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:117}.
-Also this contribution is odd in \( t_z \), so the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
+Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:117},, which is odd in \( t_z \), the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
 As \( |t_z| \to 1 \) from above, the contribution blows up.
 This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.
 \footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
 See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
-\todo{put this on more solid footing}
+\todo{put this on more solid footing.
+  Discuss how the Fermi surface is massively wrong there
+}
 The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:contribtzII}.
 
 Considering also higher Landau level contributions, both interband and intraband transitions must be included,
 \footnote{By band we here refer to the ``conduction'' band and ``valence'' band}
 meaning the summation is no longer restricted to a quadrant in the \( m,n \) plane, but rather to half the plane.
+The contributions are shown in figure \ref{fig:contribtzII}.
 These contributions are not odd in \( t_z \) -- they have a finite even component.
 Due to this, the contribution does not cancel for inversion broken systems, however the contribution is small in magnitude compared to the other contributions.
+
+A schematic plot of all the contributions of a parallel tilt is shown in figure \ref{fig:scetch}.
 
 
 \begin{figure}[ht]
@@ -1206,6 +1215,7 @@ Due to this, the contribution does not cancel for inversion broken systems, howe
     Schematic summary of the contribution for perpendicular tilt \( t_z \).
     Shown is the even (solid line) and odd (dashed line) parts as a function of \( t_z \).
     As explained in the main text, the total contribution for a pair of cones is given by the sum of the even and even part in inversion symmetric systems, and by the odd part for broken inversion symmetry.
+    \label{fig:scetch}
   }
 \end{figure}
 
