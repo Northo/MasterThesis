@@ -16,24 +16,24 @@ It then follows
 \begin{equation}
   H_s \phi(\vec{r}) = E \phi(\vec{r}) \implies \tilde{H}_s \phi(y)  = E \phi(y),
 \end{equation}
-where $\tilde{H}$ is the result of replacing $p_z \to \hbar k_z, p_x\to \hbar  k_x$ in $H_s$, as the plane wave part of $\phi $ have these eigenvalues.
+where $\tilde{H}$ is the result of replacing $p_z \to  k_z, p_x\to   k_x$ in $H_s$, as the plane wave part of $\phi $ have these eigenvalues.
 Absorb the chirality $s$ as a sign in the velocity $v_F$, for more concise notation.
 Thus, writing everything explicitly, the spectrum is given by
 \begin{equation}
   \label{eq:25}
-  -\hbar  v_F
+  -  v_F
   \begin{pmatrix}
-    - k_z & \partial _y + e y B_{z} / \hbar  - k_x\\
-    -\partial _y + e y B_{z} / \hbar -k_x & k_z
+    - k_z & \partial _y + e y B_{z} /   - k_x\\
+    -\partial _y + e y B_{z} /  -k_x & k_z
   \end{pmatrix}
   \phi(y)  = E\phi(y).
 \end{equation}
 We will now find the spectrum $E$ of the Hamiltonian.
 
-Inspired by the derivation for the spectrum of the 2D Dirac Hamiltonian in~\cite{wehlingDiracMaterials2014}, we introduce the length scale $l_B = \sqrt{\hbar / eB}$, and the dimensionless quantity $\chi = y /l_{B} - k_x l_{B}$.
+Inspired by the derivation for the spectrum of the 2D Dirac Hamiltonian in~\cite{wehlingDiracMaterials2014}, we introduce the length scale $l_B = 1 /\sqrt{eB}$, and the dimensionless quantity $\chi = y /l_{B} - k_x l_{B}$.
 In dimensionless quantities Eq. (\ref{eq:25}) becomes
 \begin{equation}
-  -\frac{{\hbar v_F}}{l_{B}}
+  -\frac{{ v_F}}{l_{B}}
   \begin{pmatrix}
     -k_z l_B & \partial _{\chi } + \chi \\
     -\partial _{\chi } + \chi & k_z l_B
@@ -45,7 +45,7 @@ One may easily verify the commutation relation $[a, a^{\dagger}] = 1$;
 they are ladder operators of the harmonic oscillators, whose eigenstates are $\ket{n}$, and where $a\ket{n} = \sqrt{n}\ket{n-1}, a^{\dagger} \ket{n} = \sqrt{n+1} \ket{n+1}$.
 In terms of these operators, the system is
 \begin{equation}
-  -\frac{\sqrt{2} \hbar v_F}{l_B}
+  -\frac{\sqrt{2}  v_F}{l_B}
   \begin{pmatrix}
     -\frac{k_zl_B}{\sqrt{2}} & a\\
     a^{\dagger} & \frac{k_zl_B}{\sqrt{2}}
@@ -63,7 +63,7 @@ Take the ansatz
 which is the most general form of $\ket{\phi }$ with any hope of being an eigenstate.
 This leads to
 \begin{equation}
-  -\frac{\sqrt{2} \hbar v_F}{l_B}
+  -\frac{\sqrt{2}  v_F}{l_B}
   \begin{pmatrix}
     \left( -\gamma \beta + \alpha \sqrt{n} \right) \ket{n-1}\\
     \left( \beta \sqrt{n} + \gamma \alpha \right) \ket{n}
@@ -82,14 +82,14 @@ Solving for $\alpha /\beta $ this gives
 and thus
 \begin{equation}
   E = \pm v_F \sqrt{
-    \frac{2n \hbar ^2}{l_B^2} + k_z^2\hbar ^2
+    \frac{2n  ^2}{l_B^2} + k_z^2 ^2
   }
   = \pm s v_F \sqrt{
-    2n e B \hbar + k_z^2\hbar ^2
+    2n e B  + k_z^2 ^2
   },
 \end{equation}
 where we reintroduced the explicit $s$.
-For $n = 0$ the annihilation operator $a$ destroys the vacuum state $\ket{0}$, and the energy is instead $E_0 = -\hbar s k_z v_F$.
+For $n = 0$ the annihilation operator $a$ destroys the vacuum state $\ket{0}$, and the energy is instead $E_0 = - s k_z v_F$.
 The excited energy states are doubly degenerate;
 we choose to denote the energy levels by $m \in \mathbb{Z}$, where the sign from $\pm s$ is taken care of by the sign of this quantum number, and the harmonic oscillator levels $n$ are given by its absolute value $|m|$.
 The energy levels are
@@ -97,9 +97,9 @@ The energy levels are
   \label{eq:26}
   \begin{align}
     \label{eq:27}
-    E_{k_z m s} &= \operatorname{sign}(m) v_F \sqrt{2 |m| e B \hbar  + k_z^2 \hbar ^2} & \text{ for } m \neq 0,\\
+    E_{k_z m s} &= \operatorname{sign}(m) v_F \sqrt{2 |m| e B   + k_z^2 } & \text{ for } m \neq 0,\\
     \label{eq:28}
-    E_{k_z 0 s} &= -s \hbar k_z v_F & \text{ for } m = 0.
+    E_{k_z 0 s} &= -s  k_z v_F & \text{ for } m = 0.
   \end{align}
 \end{subequations}
 We now find the corresponding eigenvectors of the system.
@@ -108,8 +108,8 @@ The solution to the one dimensional harmonic oscillator in position space is, in
   \braket{\xi | n} = \phi _n (\xi)
   = \frac{1}{\sqrt{2^nn!}} \pi^{-\frac{1}{4}}
   e^{- \frac{\xi^2}{2}} H_n \left( \xi \right),
-  % = \frac{1}{\sqrt{2^nn!}} \left( m\frac{\omega}{\pi \hbar } \right)^{\frac{1}{4}}
-  % e^{- \frac{{m\omega x^2}}{2\hbar }} H_n \left( \sqrt{\frac{m\omega }{\hbar } x} \right),
+  % = \frac{1}{\sqrt{2^nn!}} \left( m\frac{\omega}{\pi  } \right)^{\frac{1}{4}}
+  % e^{- \frac{{m\omega x^2}}{2 }} H_n \left( \sqrt{\frac{m\omega }{ } x} \right),
 \end{equation}
 where $H_n$ are the Hermite polynomials.
 Thus,
@@ -157,7 +157,7 @@ Reintroducing $\chi = (y-k_xl_B^2) /l_B$ and normalizing
 \end{equation}
 where capital letters indicate absolute value of corresponding quantity, $M=|m|, \vec{k} = (k_x, k_z)$, and with the normalization factor
 \begin{equation}
-  \alpha_{k_z m s} = \frac{-\sqrt{2eB\hbar M}}{\frac{E_{k_z m s}}{s v_{F}} - \hbar  k_z}.
+  \alpha_{k_z m s} = \frac{-\sqrt{2eB M}}{\frac{E_{k_z m s}}{s v_{F}} -   k_z}.
 \end{equation}
 
 \subsection{The tilted Hamiltonian}
@@ -382,16 +382,16 @@ We may thus use directly the result for the untilted cone, Eq.~\eqref{eq:26}, gi
 \begin{subequations}
   \label{eq:44}
   \begin{align}
-    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
-    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
+    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma }  + \tilde{k}_{z}^2}, & m \neq 0,\\
+    \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s   \tilde{k}_{z} v_{F}, & m=0.
   \end{align}
 \end{subequations}
 Cleaning up, we get
 \begin{subequations}
   \label{eq:45}
   \begin{align}
-    E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
-    E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s \hbar / \gamma  \right), & m=0.
+    E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3}  + \tilde{k}_{z}^2 /\gamma ^2}, & m\neq 0,\\
+    E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s  / \gamma  \right), & m=0.
   \end{align}
 \end{subequations}
 
@@ -399,7 +399,7 @@ As the perpendicular tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) div
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
   \label{eq:46}
-  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}.
+  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha  + \tilde{k}_{z}^2}.
 \end{equation}
 As the perpendicular tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
 In particular, the separation between Landau levels \(m\) \todo{maybe use the word cyclotron frequency} is reduced by a factor \(\alpha ^{\frac{3}{2}}\).
@@ -444,7 +444,7 @@ with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis, is
 \end{equation}
 where capital letters indicate absolute value of corresponding quantity, $M=|m|, \vec{k} = (k_x, k_z)$, and with the normalization factor
 \begin{equation}
-  \alpha_{k_z m s} = \frac{-\sqrt{2eB\hbar M}}{\frac{E_{k_z m s}}{s v_{F}} - \hbar  k_z}.
+  \alpha_{k_z m s} = \frac{-\sqrt{2eB M}}{\frac{E_{k_z m s}}{s v_{F}} -   k_z}.
 \end{equation}
 Taking care to keep track of boosted and rescaled quantites, the eigenstate in the boosted frame is
 \begin{equation}
@@ -460,7 +460,7 @@ Taking care to keep track of boosted and rescaled quantites, the eigenstate in t
 \end{equation}
 with
 \begin{equation}
-  \alpha_{\tilde{k}_z m s} = \frac{-\sqrt{2e B' \hbar M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t^s_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} - \hbar  \tilde{k}_z},
+  \alpha_{\tilde{k}_z m s} = \frac{-\sqrt{2e B'  M}}{ \gamma \frac{E_{\tilde{k}_z m s} - t^s_{\parallel} v_{F} \tilde{k}_{z}}{s v_{F}} -   \tilde{k}_z},
 \end{equation}
 where
 \[

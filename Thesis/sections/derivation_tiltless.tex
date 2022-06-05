@@ -8,13 +8,14 @@ The fields are given, in the position basis, by
                    a^{\dagger}_{\vec{k}ns}(t)
                    =\sum\limits_{\vec{k}n}^{} \phi^{*}_{\vec{k} n s} (\vec{r}) a^{\dagger}_{\vec{k}n s}(t).
 \end{align}
-Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / \hbar) a_{\lambda }^{\dagger}$ and $a_{\lambda }^{\dagger}, a_{\lambda }$ are the creation and annihilation operators of the state with quantum numbers $\lambda $.
+Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / ) a_{\lambda }^{\dagger}$ and $a_{\lambda }^{\dagger}, a_{\lambda }$ are the creation and annihilation operators of the state with quantum numbers $\lambda $.
 The current operator $\hat{\vec{J}} = e \hat{\vec{v}}$, where $\hat{\vec{v}}$ is the velocity operator.
-Using the relation of Heisenberg operators $\dot{A} = [A, H] / i\hbar $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, the operator
+Using the relation of Heisenberg operators $\dot{A} = [A, H] / i $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, the operator
+\todo{\( \frac{1}{i} \) looks weird. Is like that since we removed \( \hbar \). Replace with \( -i \)}
 \begin{align}
-  \vec{v} = \dot{\vec{r}} &= \frac{1}{i \hbar } \left[ \vec{r}, H \right]\\
-              &= \frac{sv_F \sigma ^i}{i \hbar } \left[ \vec{r}, p_i + e A_i \right] + \frac{v_F}{i \hbar} [\vec{r}, \vec{t}^s \vec{k}]\\
-              &= \frac{s v_F \sigma^i }{i \hbar } \left( i\hbar \hat{\vec{x}}_i + e[\vec{r}, A_i] \right) + v_F \vec{t}^s\\
+  \vec{v} = \dot{\vec{r}} &= \frac{1}{i  } \left[ \vec{r}, H \right]\\
+              &= \frac{sv_F \sigma ^i}{i  } \left[ \vec{r}, p_i + e A_i \right] + \frac{v_F}{i } [\vec{r}, \vec{t}^s \vec{k}]\\
+              &= \frac{s v_F \sigma^i }{i  } \left( i \hat{\vec{x}}_i + e[\vec{r}, A_i] \right) + v_F \vec{t}^s\\
               &=s v_F \sigma ^i \hat{\vec{x}}_i + v_F \vec{t}^s,
 \end{align}
 and thus
@@ -141,9 +142,9 @@ Similarly, the $T^{0y}$ component of the stress-energy tensor of the theory is g
     \right] a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)\\
     &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) s \sigma ^y \phi _{\vec{l} n s }(\vec{r})
     \left[
-      a^{\dagger}_{\vec{k} m s}(t) i\hbar \partial _0  a_{\vec{l} n s}(t)
+      a^{\dagger}_{\vec{k} m s}(t) i \partial _0  a_{\vec{l} n s}(t)
       -
-      i\hbar \left(\partial _0 a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
+      i \left(\partial _0 a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
     \right]\\
     &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) s \sigma ^y (2\mu ) \phi _{\vec{l} n s}(\vec{r}) a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
     \bigg\}.
@@ -153,9 +154,9 @@ Here, also a non-zero potential $\mu $ is included.
 Our final result will be given at zero potential, however it is included in the calculations as it might be of interest to consider finite potential in later work.
 Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
 \[
-  i\hbar \partial _0 a_{\lambda }(t) = E_{\lambda }a_{\lambda },
+  i \partial _0 a_{\lambda }(t) = E_{\lambda }a_{\lambda },
   \quad
-  i\hbar \partial _0 a^{\dagger}_{\lambda }(t) = -E_{\lambda }a^{\dagger}_{\lambda },
+  i \partial _0 a^{\dagger}_{\lambda }(t) = -E_{\lambda }a^{\dagger}_{\lambda },
 \]
 which further simplifies the expression.
 
@@ -204,11 +205,11 @@ which further simplifies the expression.
     \right].
   \end{equation}
   Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:64}) to our system.
-  The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\hbar\frac{\partial_0}{v_{F}}, -p _i)$.
+  The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
     T^{0y} =  \frac{1}{4} \left[
-      \phi ^{*} \sigma ^y \phi \left( a^{\dagger} i\hbar \partial ^0 a - (i\hbar \partial ^0a)^{\dagger} a \right)
+      \phi ^{*} \sigma ^y \phi \left( a^{\dagger} i \partial ^0 a - (i \partial ^0a)^{\dagger} a \right)
       - v_{F}
       \left(
         \phi ^{*} p^y \phi  - \left( p^y \phi  \right)^{\dagger} \phi 
@@ -267,7 +268,7 @@ Eliminating $l$ by doing the integrals yields
   T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{\kappa}, \mu  \nu }^{} T^{0y}_{\vec{\kappa } \mu  s, \vec{\kappa } - \qvec{q}, \nu  s}(\vec{q}) a^{\dagger}_{\vec{\kappa } \mu   s}(t) a_{\vec{\kappa } - \qvec{q} \nu  s}(t),
 \end{align}
 where ${\qvec{q}} = (q_x, q_z)$.
-Keeping in mind that $a_{\lambda }^{\dagger} (t) = e^{i E_{\lambda } t / \hbar }a_{\lambda }^{\dagger}$, and that
+Keeping in mind that $a_{\lambda }^{\dagger} (t) = e^{i E_{\lambda } t /  }a_{\lambda }^{\dagger}$, and that
 \begin{equation}
   \Braket{\left[
 a^{\dagger}_{\vec{k}ms} a_{\vec{k}+\qvec{q} ns}, a^{\dagger}_{\vec{\kappa}\mu s} a_{\vec{\kappa}-\qvec{q} \nu  s}
@@ -284,8 +285,8 @@ the correlation function is given by
   \Braket{\left[ J^x(t, \vec{q}), T^{0y}(t', -\vec{q}) \right]}
   =
   \sum\limits_{\vec{k} mn}^{}
-  e^{\frac{i}{\hbar }( E_{k_zms} - E_{k_z+\qvec{q}_z ns} )t}
-  e^{\frac{i}{\hbar }( E_{k_z+\qvec{q}_z ns} - E_{k_z ms} ) t'}\\
+  e^{i( E_{k_zms} - E_{k_z+\qvec{q}_z ns} )t}
+  e^{i( E_{k_z+\qvec{q}_z ns} - E_{k_z ms} ) t'}\\
   \times
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
   T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
@@ -296,7 +297,7 @@ We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\re
 \begin{equation}
   \label{eq:69}
   \chi ^{xy}(\omega, \vec{q}) =
-  \frac{-i v_F}{\mathcal{V} \hbar } 
+  \frac{-i v_F}{\mathcal{V}  }
   \int \mathrm{d}t e^{i \omega t} \int\limits_{-\infty }^0 \mathrm{d}t'
   \Theta (t)
   \Braket{\left[
@@ -308,27 +309,27 @@ The integral part of Eq. (\ref{eq:69}), ignoring everything without time depende
 \begin{multline}
   \lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
-    \exp \left[ \frac{i}{\hbar } \left(
-        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i \eta \hbar
+    \exp \left[ i \left(
+        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + \omega   + i \eta
       \right) t \right]
-    \exp \left[ \frac{i}{\hbar } \left(
-        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar
+    \exp \left[ i \left(
+        E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + i \eta
       \right) t' \right]\\
   =
-  \lim_{\eta \to 0}\frac{\hbar}{i} \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
-\frac{\hbar}{i} \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1}.
+  \lim_{\eta \to 0} i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
+i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1}.
 \end{multline}
 The response function then reads
 \begin{multline}
   \chi ^{xy}(\omega , \vec{q}) =
-  \frac{i v_F \hbar }{\mathcal{V} }
+  \frac{i v_F  }{\mathcal{V} }
   \lim_{\eta \to 0}
   \sum\limits_{\vec{k}mn}^{}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
   T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right] \\
-  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega \hbar  + i\eta \hbar  \right]^{-1}
-  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1},
+  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
+  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1},
 \end{multline}
 where the matrix elements are
 \begin{align}\label{eq:70}
@@ -360,7 +361,7 @@ where the matrix elements are
 We will consider the response function in the static limit \( \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \).
 We may use the property of the limit of a product of functions \( \lim A\cdot B = \lim A \cdot \lim B \) to write
 \begin{equation}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F \hbar}{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F }{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
   \frac{
     J^x_{\vec{k} m s, \vec{k} n s} T^{0y}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
   }{
@@ -745,11 +746,11 @@ It is now finally possible to write out the entire response function.
 We begin by replacing the sum over \( \vec{k} \) by an integral.
 Firstly, we will show that the sum over $k_x$ is restricted;
 recall that the eigenfunctions are exponentially centered around $y_0 = k_x l_B^2$, which for a finite sample we expect to be restricted to $0 \leq y_0 \leq L_y$.
-This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B /\hbar $, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}, as the integrand is independent of \( k_x \).
+This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B / $, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}, as the integrand is independent of \( k_x \).
 \begin{align}
-  \sum\limits_{\vec{k}}^{} = \sum\limits_{k_x = 0}^{L_y eB / \hbar } \sum\limits_{k_z}^{} &\to 
-                                                                                            \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B /\hbar } \mathrm{d}k_x \int\mathrm{d}k_z \\
-  &= \frac{\mathcal{V} e B}{(2 \pi)^2 \hbar } \int \mathrm{d}k_{z}.
+  \sum\limits_{\vec{k}}^{} = \sum\limits_{k_x = 0}^{L_y eB /  } \sum\limits_{k_z}^{} &\to
+                                                                                            \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B / } \mathrm{d}k_x \int\mathrm{d}k_z \\
+  &= \frac{\mathcal{V} e B}{(2 \pi)^2  } \int \mathrm{d}k_{z}.
 \end{align}
 
 Recall the response function
@@ -759,13 +760,13 @@ Recall the response function
   \sum\limits_{\vec{k}, mn}^{}
   \frac{1}{\mathcal{V}}
   \frac{
-    i v_F \hbar J^x_{\vec{k} m s, \vec{k}+\qvec{q} n s}(\vec{q})
+    i v_F  J^x_{\vec{k} m s, \vec{k}+\qvec{q} n s}(\vec{q})
     T^{0y}_{\vec{k}+\qvec{q} ns, \vec{k}ms}(\vec{q})
     \;
     [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
   }{
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + i \hbar  \eta )
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + \hbar \omega + i \hbar  \eta )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + i   \eta )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} +  \omega + i   \eta )
   }
   .
 \end{equation}
@@ -793,8 +794,8 @@ Let us now define
   \xi(\kappa_z) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
   \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
-    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
-    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{\hbar \omega }{v_F \sqrt{2 e B \hbar }} + i \frac{\hbar  \eta }{v_F\sqrt{2 e B \hbar }})
+    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{  \eta }{v_F\sqrt{2 e B  }})
+    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{ \omega }{v_F \sqrt{2 e B  }} + i \frac{  \eta }{v_F\sqrt{2 e B  }})
   }.
 \end{equation}
 As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under interchagne of \( m,n \) and inversion of \( \kappa_z \).
@@ -883,12 +884,13 @@ where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( 
 Including only the first term of the sum, we find
 \begin{equation}
   \label{eq:94}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2}.
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2 \hbar},
 \end{equation}
+where we have reinserted the explicit \( \hbar \).
 Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
   \label{eq:95}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2},
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2 \hbar},
 \end{equation}
 where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
 Furthermore, \( \gamma_N \) goes like \( \log N \).
@@ -938,20 +940,20 @@ This expression goes like \( \log N \).
 % \begin{equation}
 %   \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
 %   \chi ^{xy}
-%   = \frac{e^2B v_F}{4 (2\pi )^2 \hbar }.
+%   = \frac{e^2B v_F}{4 (2\pi )^2  }.
 % \end{equation}
 % Once again, in  the limit the integral is evaluated and found to be $\mp \frac{1}{2}$ for $s=\pm 1$, or rather $- s \frac{1}{2}$.
 % Thus, summing over only the two main contributions
 % \begin{equation}
 %   \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
 %   \chi ^{xy}
-%   = \frac{e^2B s^2 v_F}{4 (2\pi )^2 \hbar }.
+%   = \frac{e^2B s^2 v_F}{4 (2\pi )^2  }.
 % \end{equation}
 % The total transverse response function is therefore
 % \begin{equation}
 %   \lim_{\omega \to  0} \lim_{\vec{q}\to 0}
 %   \chi ^{xy}
-%   = \frac{e^2B v_F}{2 (2\pi )^2 \hbar }.
+%   = \frac{e^2B v_F}{2 (2\pi )^2  }.
 % \end{equation}
 
 % \begin{figure}[h]
