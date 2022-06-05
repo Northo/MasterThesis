@@ -1,12 +1,15 @@
-\renewcommand{\vec}{\bm}
 \newcommand{\cbox}[2][yellow]{%
   \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
 }
 \newcommand{\todo}[2][orange]{\hfill\break{\bfseries\cbox[#1]{#2}}\break}
+
 \newcommand{\pe}{\phantom{=}}
 % \newcommand{\sign}{\operatorname{sign}}
 \DeclareMathOperator\sign{sign}
 \DeclareMathOperator\arctanh{arctanh}
+\renewcommand{\vec}{\bm}
+\renewcommand{\Im}{Im}
+\DeclareMathOperator{\Tr}{Tr}
 \newcommand{\qvec}[1]{\mathfrak{#1}} % Used for two-dim vec
 
 \declaretheorem[thmbox=S]{Proposition}
@@ -20,7 +23,7 @@
     qed=\( \square \),
     headpunct={:}]{myproofstyle}
 \declaretheorem[style=myproofstyle, unnumbered]{Proof}
-
+\declaretheorem[name=Theorem]{theorem}
 
 % \newcommand{\gls}[1]{#1}  % Hack until glossaries work
 \newacronym{qed}{QED}{quantum electrodynamics}

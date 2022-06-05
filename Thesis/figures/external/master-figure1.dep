@@ -1,4 +1,0 @@
-figures/external/master-figure1.pdf: data/contribTilttx0.PbrokenTrue.csv
-figures/external/master-figure1.pdf: data/contribTilttx0.125PbrokenTrue.csv
-figures/external/master-figure1.pdf: data/contribTilttx0.25PbrokenTrue.csv
-figures/external/master-figure1.pdf: data/contribTilttx0.5PbrokenTrue.csv
