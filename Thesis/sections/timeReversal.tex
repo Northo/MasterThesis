@@ -1,0 +1,255 @@
+\section{Time reversal}
+%% Much of this is taken from
+%% Verneveig's Topological insulator ....
+We will now consider the time reversal operator $\Theta $.
+Firstly we will show that it must be antiunitary, then we will show $\Theta^2 = \pm 1$, and find a more specific form of $\Theta$ for half-integer spin systems.
+
+
+The time reversal operator by definition will invert the value of the time
+$$
+\Theta: t \rightarrow -t
+$$
+while leaving space unchanged.
+The invariance of space is summaries by the operator relation,
+\begin{equation}
+  \label{eq:TRdef}
+  \Theta x \Theta^{-1} = x,
+\end{equation}
+where $x$ is understood as the position operator.
+The momentum operator, however, is flipped due to its time dependence
+\begin{equation}
+  \label{eq:Pdef}
+  \Theta p \Theta^{-1} = - p.
+\end{equation}
+A schematic representation of inversion symmetry and time reversal symmetry is given in Figure \ref{fig:symmetry_considerations}.
+
+\begin{figure}[h]
+  \centering
+  \ref{leg_pos}
+  \begin{tikzpicture}
+    [
+    every axis/.style={
+      ytick=\empty,
+      xtick={-3.14159, 3.14159},
+      xticklabels={$-\pi$, $\pi$},
+      every tick/.style={draw=none},
+      xshift=0.2cm,
+      anchor=left of south west,
+      width=0.38\textwidth,
+      xmin=-3.15, xmax=3.15,
+      samples=201,
+      cycle list name=linestyles,
+      % legend to name=leg_pos,
+      axis x line=bottom,
+      xlabel=$k$,
+    },
+    every axis plot/.style={
+      mark=none,
+    }
+    ]
+    \begin{axis}[
+      name=both,
+      legend columns=2,
+      axis y line=left,
+      axis y line shift=10pt,
+      ylabel=$E$,
+      legend to name=leg_pos,
+      ]
+      \addplot {-cos(deg(x))}
+      node[left]{$\uparrow$};
+      
+      \addplot {-cos(deg(x))}
+      node[left]{$\downarrow$};
+      \legend{$\uparrow$, $\downarrow$}
+
+      \draw[<->] (-1, -0.540302306) node[below left]{$\downarrow, \uparrow$} -- (1, -0.540302306) node[below right]{$\downarrow, \uparrow$};
+      \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
+    \end{axis}
+    \begin{axis}[
+      name=inversion,
+      at=(both.right of south east),
+      axis y line=none,
+      ]
+      \addplot {-cos(deg(x-1))}
+      node[left]{$\uparrow$};
+      
+      \addplot {-cos(deg(x+1))}
+      node[left]{$\downarrow$};
+      
+      \draw[<->] (-2.2, -0.362357754) node[above]{$\downarrow$} -- (2.2, -0.362357754) node[above] {$\uparrow$};
+      \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
+    \end{axis}
+    % \end{tikzpicture}
+    % \begin{tikzpicture}
+    \begin{axis}[
+      name=time,
+      at=(inversion.right of south east), 
+      axis y line=none,
+      ]
+      \addplot {-cos(deg(x))}
+      node[left]{$\uparrow$};
+      
+      \addplot {-cos(deg(x))+0.3}
+      node[left]{$\downarrow$};
+      
+      \draw[<->] (-1, -0.24) node[above]{$\downarrow$} -- (1, -0.24) node[above]{$\downarrow$};
+      \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
+    \end{axis}
+    % \end{tikzpicture}
+    % \begin{tikzpicture}
+  \end{tikzpicture}
+  \caption{Schematic illustration of time and inversion breaking of degenerate energy bands of a two-level system.
+    The  two levels are denoted $\uparrow$ and $\downarrow$.
+    \textbf{(Left:)} Both time-reversal and inversion symmetry present, with the two energy bands being degenerate at all momenta.
+    \textbf{(Center:)} Inversion symmetry is broken. Notice how at the \gls{trim} points, $-\pi, 0, \pi$, the two energy levels are degenerate, as, by definition, we have $\vec{k} = -\vec{k}$.
+    \textbf{(Right:)} Time reversal symmetry is broken.
+    Notice how in the time reversal symmetric case Kramer's doublet is present, as for any state at $k$, the state at $-k$ is degenerate  in energy and has opposite spin.
+    This is not the case in the case where time reversal is broken, as the spin at  $-k$ has the same spin.
+    Figure inspired by \citeauthor{ramazashviliZeemanSpinorbitCoupling2019}~\cite{ramazashviliZeemanSpinorbitCoupling2019}.
+  }
+  \label{fig:symmetry_considerations}
+\end{figure}
+
+We are now in a position to show that $\Theta$ must be antiunitary by requiring the invariance of the commutation relation between momentum and position, $[x, p] = i\hbar$.
+\begin{equation}
+  \Theta [x, p] \Theta^{-1} = \Theta i\hbar \Theta^{-1} = - [x, p] = -i\hbar.
+\end{equation}
+In the first equality, the commutation relation was used directly.
+In the second equality, Eqs. (\ref{eq:TRdef}) and (\ref{eq:Pdef}) were used to gain a minus sign.
+This all leads to the relation
+\begin{equation}
+  \Theta i \Theta^{-1} = -i.
+\end{equation}
+
+From this, we gather that the time reversal operator must be antiunitary.
+An antiunitary transformation is a transformation
+$$
+\ket{a} \rightarrow \ket{\tilde{a}} = \theta \ket{a}, \quad 
+\ket{b} \rightarrow \ket{\tilde{b}} = \theta \ket{b},
+$$
+such that
+\begin{align}
+  \braket{\tilde{b} | \tilde{a}} &= \braket{b | a}^*,\\
+  \theta\left(c_1 \ket{a} + c_2 \ket{b}\right) &= c_1^* \theta\ket{a} + c_2^* \theta\ket{b}.
+\end{align}
+\emph{A note of caution:} the Dirac bra-ket notation was originally designed to handle linear operators, where it excels.
+For anti-linear operators, which antiunitary operators are, the bra-ket notation can be deceiving.
+We will always take anti-linear operators to work on kets, never on bras from the right.
+So, for example,
+$$ \braket{a| O | b} $$
+should be understood as
+$$ \bra{a} \left(\ket{O |b}\right)$$
+and \emph{never}
+$$ \left(\bra{a|O}\right) \ket{b}.$$
+The left operation of an anti-linear operator on a bra, $\bra{a} O$, will not be defined.
+
+We will in general write
+\begin{equation}
+  \label{eq:time-rev-def}
+  \Theta = U K
+\end{equation}
+where $U$ is a unitary transformation and $K$ is the complex conjugation.
+Now, we will show that $\Theta^2 = \pm 1$, by an elegant method inspired by~\citeauthor{bernevigTopologicalInsulatorsTopological2013}~\cite{bernevigTopologicalInsulatorsTopological2013}.
+Consider
+\begin{equation}
+  \label{eq:1}
+  \Theta^2 = UKUK = UU^* = U(U^T)^{-1} \equiv \phi,
+\end{equation}
+where we in the second last equality used the unitarity of $U$.
+As applying the time reversal operator twice must result in the original state, up to some phase, $\phi$ must surely be diagonal.
+From Eq. (\ref{eq:1}) it follows
+\begin{equation}
+  U = \phi U^T, \quad U^T = U \phi
+\end{equation}
+where the fact that $\phi^T = \phi$ for any diagonal matrix was used.
+From this follows that
+\begin{equation}
+  U = \phi U \phi \Rightarrow U \phi^{-1} = \phi U.
+\end{equation}
+This holds in general only for $\phi = \pm 1$, and thus $\Theta^2 = \pm 1$.
+Furthermore, we will later show that for integer spin particles $\Theta^2 = 1$ while for half-integer spin particles $\Theta^2 = -1$.
+
+\subsection{Time reversal operator on spinful particles}
+When considering spinful particles, we must enforce yet another property on the time reversal operator.
+As spin is odd under time reversal one must have
+\begin{equation}
+  \label{eq:2}
+  \Theta S \Theta^{-1} = -S.
+\end{equation}
+Consider now specifically a spin-$s$ state, with the basis $\ket{s, m}$, being an eigenstate of $S_z, \vec{S}^2$, with eigenvalues $m\hbar, s(s+1) \hbar^2$ respectively.
+By Eq. (\ref{eq:2}) it follows that $\Theta \ket{s, m}$ is also an  eigenstate of $S_z$, with eigenvalue $-m \hbar $, since
+\begin{equation}
+  S_z \Theta \ket{s, m} = -\Theta  S_z \ket{s, m} = -m \hbar \Theta \ket{s, m}.
+\end{equation}
+Let
+\[
+  \Theta \ket{s, m} = \eta \ket{s, -m},
+\]
+where $\eta $ is some phase.
+Consider now the commutation of the ladder operators $J_{\pm} = S_x \pm i S_y$ with the time reversal operator.
+\begin{equation}
+  \begin{split}
+    \underbrace{\left[ S_x \pm i S_y \right]}_{S_{\pm}} \Theta  &= -\Theta S_x \mp i \Theta S_y\\
+    &= -\Theta \underbrace{\left[ S_x \mp iS_y \right]}_{S_{\mp}},
+  \end{split}
+\end{equation}
+where the anti-linearity of $\Theta $ is emphasized.
+Thus, operating with $S_+$ on $\Theta \ket{s, m}$ gives
+\begin{align}
+  S_+ \Theta \ket{s, m} &= \eta_{sm} S_+ \ket{s, -m}\\
+  &= \eta_{sm} \hbar \sqrt{(s+m) (s-m+1)} \ket{s, -m +  1}.
+\end{align}
+On the other hand, commuting the two operators first gives
+\begin{align}
+  S_+ \Theta  \ket{s, m} &= - \Theta  S_- \ket{s, m}\\
+                         &= - \Theta \hbar \sqrt{(s+m)(s-m+1)} \ket{s, m-1}\\
+  &= -\hbar \sqrt{(s+m)(s-m+1)} \eta_{s, m-1} \ket{s, -m + 1}.
+\end{align}
+By comparison, $\eta _{sm}= - \eta _{s, m-1}$; $\eta _{sm}$ has a flip of its sign under increments of $m$.
+The $m$ dependence should therefore be $(-1)^m$.
+For later convenience, we will choose to also include an $s$-term in the exponent, so that the exponent is integer also for half-integer systems, resulting in
+\begin{equation}
+  \eta _{sm} = (-1)^{s-m} f(s),
+\end{equation}
+where  $f(s)$  is some phase that does not depend on $m$.
+We are now in a position where we may find $\Theta ^2$, by acting on a general spin $s$ system.
+\begin{align}
+  \Theta ^2 \sum\limits_{m = -s}^s a_m \ket{s, m} &= \Theta  \sum\limits_m^{} a^{*}_m f(s) (-1)^{s-m} \ket{s, -m}\\
+                                                  &= \sum\limits_m^{} a_m f^{*}(s) (-1)^{s-m} \Theta \ket{s, -m}\\
+  &= \sum\limits_m^{} a_m |f(s)|^2 (-1)^{2s} \ket{s, m}.
+\end{align}
+Note that it was important that $(-1)^{s-m}$ was real, which is taken care of by the $s$-term.
+As $f(s)$ is only a phase, this gives
+\begin{equation}
+  \Theta ^2 = (-1)^{2s},
+\end{equation}
+for any spin $s$ system.
+Thus, for half integer spin, $\frac{1}{2}, \frac{3}{2}, \dots $, $\Theta ^2 = -1$, while for integer spin $\Theta ^2= +1$.
+
+
+\begin{comment}
+  We implement this by letting the time reversal operator be a $\pi $ rotation of the spin, around some axis.
+  Following the convention of considering this as a rotation around the $y$-axis, the $\Theta = UK$ operator gets the form~\cite{bernevigTopologicalInsulatorsTopological2013}
+  $$
+  \Theta = \eta e^{-i\pi S_y} K,
+  $$
+  where $\eta$ is some arbitrary phase and $S_y$ is the spin operator in the $y$-direction.
+  Also, $\hbar = 1$ for ease of notation.
+  Taylor expanding the exponential, splitting the terms into the $\sin$ and $\cos$ terms, and noting that
+  \todo{TODO write something more legit here.}
+  $$
+  S_y^2 = \frac{1}{2}
+  $$
+  we can simplify the expression for $\Theta$.
+  \begin{equation}
+    \Theta = - i \eta \left(2 S_y\right) K.
+  \end{equation}
+  Thus, one gets
+  \begin{equation}
+    \Theta^2 =
+    4 i \eta^2 S_y K i  S_y K =
+    4 i \eta^2 S_y (-i S_y^*) =
+    4 i \eta^2 S_y S_y^* =
+    -4 i \eta^2 S_y^2.
+  \end{equation}
+\end{comment}

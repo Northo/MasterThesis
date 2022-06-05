@@ -28,7 +28,7 @@ and thus
 \subsection{The energy momentum tensor}
 The \emph{canonical} energy-momentum tensor is generally defined by
 \begin{equation}
-  \label{eq:66}
+  \label{eq:55}
   T^{\mu \nu} =  \frac{\delta \mathcal{L}}{\delta(\partial_{\mu} \phi_{i})} \partial_{\nu} \phi_i - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
 where the index \( i \) runs over the types of fields.
@@ -37,7 +37,7 @@ This is often overlooked in many textbooks and papers, so we will here elucidate
 While a proper derivation requires the use of Grassman variables and defining left and right derivation, which we will not do here, some simple considerations help in understanding the issue.
 In the standard textbook derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
 \begin{equation}
-  \label{eq:67}
+  \label{eq:56}
   \frac{\mathrm{d} \mathcal{L}(\psi_{i}, \partial \psi_i)}{\mathrm{d} x_{\nu }} \equiv \mathrm{d}^{\nu } \mathcal{L}
   = \frac{\partial \mathcal{L}}{\partial (\partial_{\mu } \phi_i)} \frac{\partial(\partial _{\mu } \psi_i)}{\partial x_{\nu }}
   + \frac{\partial \mathcal{L}}{\partial \psi _{i}} \frac{\partial \psi_i}{\partial x_{\nu }}.
@@ -45,13 +45,13 @@ In the standard textbook derivation of then canonical energy-momentum tensor, on
 This expansion, however, ignores the non-commutative nature of the fields.
 For concreteness, consider \( \psi _i = \bar{\psi} \).
 Heuristically, the correct expression would be obtained by reordering the factors in the two terms.
-By naively employing Eq. \eqref{eq:66}, the resulting canonical energy-momentum tensor of the Dirac theory would be
+By naively employing Eq. \eqref{eq:55}, the resulting canonical energy-momentum tensor of the Dirac theory would be
 \begin{equation}
   T^{\mu \nu} = \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} \partial^{\nu} \bar{\psi}  + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
 while the correct form is \cite[Eq.~3-153]{itzyksonQuantumFieldTheory1980}
 \begin{equation}
-  \label{eq:68}
+  \label{eq:57}
   T^{\mu \nu} = \partial^{\nu} \bar{\psi} \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L}.
 \end{equation}
 
@@ -71,7 +71,7 @@ H_s = s \sigma^i k_i
 can be considered the Hamiltonian of one part of a Weyl decomposition of a Dirac system.
 The Weyl field has the Lagrangian density \cite{kachelriessQuantumFieldsHubble2018}
 \begin{equation}
-  \label{eq:69}
+  \label{eq:58}
   \mathcal{L} = i \phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi,
 \end{equation}
 which may be seen directly from the Dirac Lagrangian \( i \bar{\psi} \slashed{\partial } \psi  \) by taking \( \psi = (\phi_L, \phi_R)^T \) and set, for example, \( \phi _R = 0 \).
@@ -82,9 +82,9 @@ Symmetrizing in daggered and undaggered fields
   \mathcal{L} = \frac{i}{2} \left(\phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma^{\mu} \phi \right),
 \]
 which will prove to be more convenient to work with.
-Adapting the definition Eq. \eqref{eq:68} the energy-momentum tensor for the untilted Dirac cone is thus
+Adapting the definition Eq. \eqref{eq:57} the energy-momentum tensor for the untilted Dirac cone is thus
 \begin{equation}
-  \label{eq:70}
+  \label{eq:59}
   T^{\mu \nu} =
   \frac{i}{2} (
   \phi^{\dagger} \sigma^{\mu} \partial_{\nu} \phi
@@ -96,12 +96,12 @@ Adapting the definition Eq. \eqref{eq:68} the energy-momentum tensor for the unt
 Moving now to the tilted case, the 4x4 Lagrangian becomes \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}
 \todo{check sign compared to action in stoof}
 \begin{equation}
-  \label{eq:71}
+  \label{eq:60}
   \mathcal{L}_{\text{tilt}} = i \bar{\psi} \Gamma ^{\mu }\partial_{\mu } \psi ,
 \end{equation}
 where we have introduced modified gamma matrices
 \begin{equation}
-  \label{eq:72}
+  \label{eq:61}
   \Gamma ^{\mu } =
   \begin{cases}
     \gamma ^{\mu } + t^{\mu} \gamma ^0& \text{ inversion symmetry broken},\\
@@ -111,7 +111,7 @@ where we have introduced modified gamma matrices
 with \( t^{\mu } = (0, \vec{t}) \).
 Decomposing to \( 2\times 2 \), this yields
 \begin{equation}
-  \label{eq:73}
+  \label{eq:62}
   T^{\mu \nu} =
   \frac{i}{2} (
   \phi^{\dagger} \tilde{\sigma} ^{\mu} \partial_{\nu} \phi
@@ -121,7 +121,7 @@ Decomposing to \( 2\times 2 \), this yields
 \end{equation}
 where we defined the modified Pauli matrices
 \begin{equation}
-  \label{eq:74}
+  \label{eq:63}
   \tilde{\sigma}^{\mu} =
   \begin{cases}
     \sigma^{\mu} + t^{\mu} & \text{ inversion symmetry broken},\\
@@ -162,7 +162,7 @@ which further simplifies the expression.
 \begin{comment}
   The stress-energy tensor of the massless QED
   \begin{equation}
-    \label{eq:42}
+    \label{eq:64}
     \mathcal{L} = -\frac{1}{4} F^{\mu \nu }F_{\mu \nu } + \overline{\psi} i \slashed{D} \psi
   \end{equation}
   is given by~\cite{chernodubGenerationNernstCurrent2018}
@@ -175,12 +175,12 @@ which further simplifies the expression.
   Thus, the stress-energy tensor is given by
   \begin{equation}
     T^{\mu \nu } = \frac{i}{2} \psi ^{\dagger} \left( \sigma ^{\mu } D^{\nu } + \sigma ^{\nu } D^{\mu } \right) \psi  - \eta ^{\mu \nu } \psi ^{\dagger} i \sigma ^{\mu } D_{\mu } \psi ,
-    \label{eq:43}
+    \label{eq:65}
   \end{equation}
   where $\psi $ is to be understood as the solutions found above, $D_{\mu }=\partial _{\mu }  - i e A_{\mu }$ is the covariant derivative, and $\sigma ^{\mu } = (I, \sigma ^i)$
   In our calculations we will require the $T^{0y}$ component, which we will now find.
 
-  By using Eq. (\ref{eq:43}) directly
+  By using Eq. (\ref{eq:65}) directly
   \begin{align}
     T^{0y} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
            &= \frac{i}{2} \psi ^{\dagger} \left( \partial ^{y} + \sigma ^{y} \partial ^{0} \right)\psi \\
@@ -203,7 +203,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:42}) to our system.
+  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:64}) to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\hbar\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -220,12 +220,12 @@ which further simplifies the expression.
 
 Fourier transforming the position gives
 \begin{align}
-  \label{eq:44}
+  \label{eq:66}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}
                     J^x_{\vec{k}ms, \vec{l}ns}(\vec{q})
                     a^{\dagger}_{\vec{k}ms}(t)
                     a_{\vec{l} ns}(t),\\
-  \label{eq:45}
+  \label{eq:67}
   T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}^{}
                     T^{0y}_{\vec{k}m s, \vec{l}n s}(\vec{q})
                     a^{\dagger}_{\vec{k}m s}(t)
@@ -235,7 +235,7 @@ where the matrix elements in momentum space are given by
 \begin{align}
   J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) \sigma ^x \phi _{\vec{l}ns}(\vec{r}),\\
   %%
-  \label{eq:46}
+  \label{eq:68}
   T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{4} \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}} \left[
                                                   v_F \phi ^{*}_{\vec{k} m s}(\vec{r})  p_y \phi _{\vec{l} ns} (\vec{r})
                                                   - v_F (p_y \phi ^{*}_{\vec{k}m s}) \phi _{\vec{l} ns }(\vec{r})
@@ -245,11 +245,11 @@ where the matrix elements in momentum space are given by
                                                 \phi ^{*}_{\vec{k}m s}(\vec{r}) s \sigma ^y
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
-Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:46}).
+Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:68}).
 
 As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
-The sum over $\vec{l}$ in Eq. (\ref{eq:44}) can be replaced by an integration, as it is a good quantum number.
+The sum over $\vec{l}$ in Eq. (\ref{eq:66}) can be replaced by an integration, as it is a good quantum number.
 As usual, the measure in the integration is given by the density of states in momentum space, the well known $L_{i} /2\pi $, with $L_i$ being the length of the system in the $i$-direction.
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, n}^{} \int \mathrm{d}l_x \mathrm{d}l_z \frac{L_xL_z}{4 \pi ^2}
@@ -259,7 +259,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
-The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:45}).
+The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:67}).
 Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
@@ -292,9 +292,9 @@ the correlation function is given by
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right].
 \end{multline}
 
-We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:12})
+We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:22})
 \begin{equation}
-  \label{eq:47}
+  \label{eq:69}
   \chi ^{xy}(\omega, \vec{q}) =
   \frac{-i v_F}{\mathcal{V} \hbar } 
   \int \mathrm{d}t e^{i \omega t} \int\limits_{-\infty }^0 \mathrm{d}t'
@@ -304,7 +304,7 @@ J^x(t, \vec{q}), T^{0y}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
-The integral part of Eq. (\ref{eq:47}), ignoring everything without time dependence for clarity, is then
+The integral part of Eq. (\ref{eq:69}), ignoring everything without time dependence for clarity, is then
 \begin{multline}
   \lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
@@ -331,12 +331,12 @@ The response function then reads
   \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta \hbar  \right]^{-1},
 \end{multline}
 where the matrix elements are
-\begin{align}\label{eq:48}
+\begin{align}\label{eq:70}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q}) &= \int \mathrm{d}y
                                                 e^{-i q_y y}
                                                 s v_F e\phi ^{*}_{\vec{k}m s}(y) \sigma^x
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:49}
+  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:71}
                                                            \int \mathrm{d}y
                                                            e^{iq_y y}
                                                            \left[
@@ -367,7 +367,7 @@ We may use the property of the limit of a product of functions \( \lim A\cdot B 
     (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
   },
 \end{equation}
-where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:48} and \eqref{eq:49} taken in the limit.
+where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:70} and \eqref{eq:71} taken in the limit.
 
 
 \section{Response of an untilted cone}
@@ -376,7 +376,7 @@ Compared to the procedure used by \citeauthor{arjonaFingerprintsConformalAnomaly
 
 Let
 \begin{equation}
-  \label{eq:50}
+  \label{eq:72}
   \phi _{\vec{k}ms}(y)
   = e^{-\frac{(y-k_xl_B^2)^2}{2 l_{B}^2}}
   \begin{pmatrix}
@@ -427,7 +427,7 @@ where we completed the square in the exponent, to get the form $e^{-a(y + b)^2}$
 Also, $\qvec{q}_y=(q_x, q_y)$, was introduced, not to be confused with $\qvec{q} = (q_x, q_z)$.
 By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the matrix element may be rewritten
 \begin{equation}
-  \label{eq:51}
+  \label{eq:73}
   \begin{split}
     J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
@@ -448,7 +448,7 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
 \end{equation}
 Taking the limit we find the simple form
 \begin{equation}
-  \label{eq:52}
+  \label{eq:74}
   J_{\vec{k} m s; \vec{k} n s} = J_{k_z m n s} =
   s v_F e l_B \int \mathrm{d}\tilde{y} e^{-\tilde{y} }
   \left[
@@ -493,7 +493,7 @@ we find explicitly
 \subsubsection{The stress-energy tensor operator}
 Consider the first part of the stress-energy matrix element
 \begin{equation}
-\label{eq:53}
+\label{eq:75}
 T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
 \frac{1}{4}
@@ -545,7 +545,7 @@ The arguments of the Hermite polynomials have been dropped for brevity of notati
 As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:hermite-shift-ortho}).
 Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
 \begin{equation}
-  \label{eq:54}
+  \label{eq:76}
   \begin{split}
     T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{4}
@@ -570,7 +570,7 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
 \end{equation}
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
 \begin{equation}
-  \label{eq:55}
+  \label{eq:77}
   T^{0y}_{\vec{k} ns, \vec{k}ms} (\vec{q})
   = \frac{i s}{4}
   \frac{
@@ -634,7 +634,7 @@ This issue is not trivial, and has puzzled physicists for decades\cite{forgerCur
 Superficially, we make the following observations.
 The \emph{defining} property of the energy-momentum tensor is its conservation law
 \begin{equation}
-  \label{eq:134}
+  \label{eq:78}
   \partial_{\mu} T^{\mu \nu} = 0,
 \end{equation}
 on a flat manifold.
@@ -642,13 +642,13 @@ This, of course, only defines the tensor up to a total divergence.
 Denote by \( \hat{T}^{\mu \nu} \) the \emph{canonical} energy-momentum tensor.
 We can then define another tensor
 \begin{equation}
-  \label{eq:140}
+  \label{eq:79}
   T^{\mu\nu} = \hat{T}^{\mu \nu} + \partial_{\alpha} S^{\alpha \mu \nu}.
 \end{equation}
 By letting the additional term be anti-symmetric \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), it is divergence free.
 This is easily shown as follows:
 \begin{align}
-  \label{eq:141}
+  \label{eq:80}
   \partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu} &= - \partial_{\mu} \partial_{\alpha} S^{\mu \alpha \nu}\\
                                                         &= - \partial_{\alpha} \partial_{\mu} S^{\mu \alpha \nu}\\
   &= -\partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu},
@@ -657,25 +657,25 @@ where we used the commutation of partial derivatives and relabelling of the dumm
 By an appropriate choice of \( S^{\alpha \mu \nu} \) the canonical energy-momentum tensor may be symmetrized, importantly while still abiding the conservation law.
 The correction that symmetrizes the energy-momentum tensor is known as the ``Belifnante tensor'', which for the Dirac Lagrangian is\cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
-  \label{eq:142}
+  \label{eq:81}
   S^{\alpha \mu \nu} = \frac{1}{8} \bar{\Psi}\left[ \gamma^{\alpha}, \sigma^{\mu\nu} \right] \Psi,
 \end{equation}
 which gives
 \begin{equation}
-  \label{eq:143}
+  \label{eq:82}
   T^{\mu \nu} = \frac{1}{4} \bar{\Psi} (\gamma^{\mu} D^{\nu} + \gamma^{\nu} D^{\mu}) \Psi.
 \end{equation}
 Which, in the case of the Dirac Lagrangian, so happens to correspond to the naive symmetrization
 \begin{equation}
-  \label{eq:144}
+  \label{eq:83}
   T^{\mu\nu}_s = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}.
 \end{equation}
 
 It is also instructive for our work to consider a more naive line of reasoning.
-The energy-momentum tensor is used in this work through its conservation law Eq.~\eqref{eq:134}, whose first component gives the conservation of energy.
+The energy-momentum tensor is used in this work through its conservation law Eq.~\eqref{eq:78}, whose first component gives the conservation of energy.
 Writing it out explicitly
 \begin{equation}
-  \label{eq:145}
+  \label{eq:84}
   \partial_0T^{00} + \partial_i T^{i0} = \partial_0 \epsilon + \partial_i j^i_{\epsilon} = 0,
 \end{equation}
 with \( \epsilon \) the energy density and \( \vec{j}_{\epsilon} \) the energy density current, the question is really seen to be finding the energy density current, ignoring all formal arguments about the energy-momentum tensor in a general context.
@@ -685,7 +685,7 @@ In the untilted case, the two definitions give the same contribution, while for 
 
 In the case of our untilted system, the Weyl Lagrangian, the components of interest are
 \begin{align}
-  \label{eq:56}
+  \label{eq:85}
   T^{0 y} &= \frac{v_F}{4}
   \left[
   \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
@@ -702,7 +702,7 @@ In the tilted case, however, the contributions differ.
 The first other contribution is
 \todo{take care of prefactors}
 \begin{equation}
-  \label{eq:57}
+  \label{eq:86}
   \left(\frac{\sqrt{M}}{\alpha_{k_z m s}} + \sqrt{(M-1)} \alpha_{k_z n s}\right) \alpha_{k_z m s} \delta_{M-1, N}.
 \end{equation}
 The normalization factor, given in dimensionless quantities is,
@@ -715,20 +715,20 @@ Inserting this, and using the explicit form of the energy for \( m \neq 0 \)
 \]
 for the case \( N > 0 \) the contribution can be shown to be
 \begin{equation}
-  \label{eq:58}
+  \label{eq:87}
   -s (\epsilon_m + \epsilon_n)\alpha_{k_z m s} \delta_{M-1, N}.
 \end{equation}
-For \( n = 0 \), the second term of Eq. \eqref{eq:57} is zero, and we have
+For \( n = 0 \), the second term of Eq. \eqref{eq:86} is zero, and we have
 \todo{mising s?}
 \begin{equation}
-  \label{eq:59}
+  \label{eq:88}
   -(\epsilon_m - s \kappa) \alpha_{k m s} \delta_{M-1, N},
 \end{equation}
-and by identifying \( \epsilon_0 = - s \kappa \) this has the same form as Eq. \eqref{eq:58}.
+and by identifying \( \epsilon_0 = - s \kappa \) this has the same form as Eq. \eqref{eq:87}.
 
 In the case of tilt, however, the contribution can be shown to be
 \begin{equation}
-  \label{eq:60}
+  \label{eq:89}
   -\frac{s}{\sqrt{\alpha}} (\epsilon_{m, \alpha B}^0 + \epsilon_{n, \alpha B}^0),
 \end{equation}
 where \( \epsilon_{m, \alpha B}^0 = \sign(m) \sqrt{\alpha M + \kappa^2}  \) and we used
@@ -772,7 +772,7 @@ Recall the response function
 Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
 Collecting dimensionfull quantites, the response function reads
 \begin{multline}
-  \label{eq:61}
+  \label{eq:90}
 \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B }{4 (2 \pi)^2}
   \sum\limits_{m n}^{}
@@ -801,14 +801,14 @@ As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under 
 \todo{Clean up. Is it inversion or sign flip or what?}
 % which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
-In the last term of Eq. \eqref{eq:61}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
+In the last term of Eq. \eqref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
 \[
 \alpha_{\kappa_z m s}^2 \delta_{M-1,N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \to 2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
 \]
 The final expression is then
 \begin{equation}
-  \label{eq:62}
+  \label{eq:91}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B}{2 (2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
   \int \mathrm{d}\kappa_z \xi(\kappa_z)
@@ -835,7 +835,7 @@ As the sign of energy level \( m \), for \( m \neq 0 \), is given by the sign of
 For the zeroth energy level, the sign of the energy is given by \( \sign(-s\kappa_z) \).
 The distribution factor is
 \begin{equation}
-  \label{eq:96}
+  \label{eq:92}
   n_{\vec{k} m s} - n_{\vec{k} n s} =
   \begin{cases}
     \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0,\\
@@ -858,10 +858,10 @@ Consequently, the integrand is invariant under \( (\kappa_z, s) \mapsto (-\kappa
 Similarly to the argumentation used above, as the integral goes over all \( \kappa_z \), the integral is invariant under \( s \mapsto -s \).
 
 \begin{Proposition}
-  We have shown the following simplifications of Eq. \eqref{eq:61}:
+  We have shown the following simplifications of Eq. \eqref{eq:90}:
   \begin{itemize}
     \item The contributions from the terms \( \alpha_{\kappa_z m s}^2 \delta_{M-1, N} \) and \( - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \) are equal, and we consider therefore only one of them, adding a degeneracy factor 2.
-    \item The difference of the step functions takes the form Eq. \eqref{eq:96}, which limits the transitions to states with energies of opposite sign.
+    \item The difference of the step functions takes the form Eq. \eqref{eq:92}, which limits the transitions to states with energies of opposite sign.
           For each value of \( M,N \), this means the only valid transitions are \( m=M, n=-N \) and \( m=-M, n=N \).
     \item As the integrand is invariant under \( (m,n,\kappa_z) \mapsto (-m, -n, -\kappa_z) \), we may consider only one of the transitions mentioned in the previous point, adding once again a degeneracy factor of 2.
     \item We lastly showed that the contribution is independent of the chirality \( s \).
@@ -870,7 +870,7 @@ Similarly to the argumentation used above, as the integral goes over all \( \kap
 
 For zero chemical potential, the response function is
 \begin{equation}
-  \label{eq:63}
+  \label{eq:93}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B}{(2 \pi)^2}
   \sum\limits_{N=0} \int \mathrm{d}\kappa_z
@@ -882,12 +882,12 @@ where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( 
 
 Including only the first term of the sum, we find
 \begin{equation}
-  \label{eq:64}
+  \label{eq:94}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2}.
 \end{equation}
 Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
-  \label{eq:65}
+  \label{eq:95}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2},
 \end{equation}
 where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).

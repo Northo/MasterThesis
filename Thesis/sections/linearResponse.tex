@@ -47,7 +47,7 @@ Firstly, by taking advantage of the time translation invariance of the uncoupled
 \end{equation}
 Inserting this back to Eq. (\ref{eq:lin-response-1}), and performing a change of variable $\tau = t  - t'$ we have
 \begin{equation}
-\label{eq:11}
+\label{eq:13}
 \delta {A} = -\frac{i}{\hbar} \int\limits_{0}^{t-t_0}
 \Braket{\left[
     {A}(\tau), {B}(0)
@@ -73,7 +73,7 @@ In this form the retardedness of the coupling is apparent -- no observable can b
 \end{figure}
 For future convenience, and convention, we will in this last step introduce the \emph{response function}
 \begin{equation}
-\label{eq:12}
+\label{eq:14}
 \chi_{AB}(\tau) = -\frac{i}{\hbar} \Theta(\tau)
 \Braket{\left[
 {A}(\tau), {B}(0)
@@ -112,7 +112,7 @@ Note that this assumption is \emph{not} valid on an atomic scale;
 it is here used under the assumption that currents are averaged over multiple unit cells, a common practice in electromagnetism of solids.
 Let $\sigma_{ij}(\vec{r} - \vec{x}, t-s) \equiv \sigma_{ij}(\vec{r}, t, \vec{x}, s)$ and introduce the Fourier transform
 \begin{equation}
-  \label{eq:13}
+  \label{eq:15}
   A(\vec{q}, \omega ) =
   \iint \mathrm{d}t \mathrm{d} \vec{r}
   e^{i(\omega  t - \vec{q} \vec{r} )}
@@ -125,7 +125,7 @@ Let $\sigma_{ij}(\vec{r} - \vec{x}, t-s) \equiv \sigma_{ij}(\vec{r}, t, \vec{x},
   A(\vec{q}, \omega).
 \end{equation}
 % \begin{equation}
-% \label{eq:14}
+% \label{eq:16}
 % \sigma_{ij}(\vec{q}, \omega) = \iint \mathrm{d}t \mathrm{d}\vec{r}
 % e^{i(\omega t -\vec{r}\vec{q})} \sigma_{ij}(\vec{r}, t),
 % \end{equation}
@@ -143,7 +143,7 @@ as a convolution, we can write Eq. (\ref{eq:ohm}) as
   \vec{E}_j(\vec{q}, \omega),
 \end{equation}
 by using the well known result that the Fourier transform of a convolution is the product of the transformed functions of the convolution~\cite{rottmannMatematiskFormelsamling1995}.
-Alternatively, the same result is found by simply inserting the definition Eq. (\ref{eq:13}) for both $\vec{E}$ and $\sigma $ in Eq. (\ref{eq:ohm}), and use
+Alternatively, the same result is found by simply inserting the definition Eq. (\ref{eq:15}) for both $\vec{E}$ and $\sigma $ in Eq. (\ref{eq:ohm}), and use
 \[
 \int \mathrm{d} x e^{-i x a} = 2\pi \delta (a).
   \]
@@ -196,7 +196,7 @@ With $\tau = t-s$ and $\vec{x'} = \vec{r} - \vec{x}$,
   \chi(\vec{x'}, \tau)
   \vec{A}(\vec{r} - \vec{x'}, t-\tau).
 \end{equation}
-By the Fourier transformation introduced in Eq. (\ref{eq:13})
+By the Fourier transformation introduced in Eq. (\ref{eq:15})
 \[
   A(\vec{q}, \omega ) =
   \iint \mathrm{d}t \mathrm{d} \vec{r}
@@ -305,7 +305,7 @@ The situation is depicted in Figure \ref{fig:luttinger-idea}, where the temperat
 
 A temperature gradient, together with external electric potential $\phi$ and chemical potential $\mu$, gives a response in the electrical current $\vec{j}$ and energy current $\vec{j}_E$~\cite{mahanManyparticlePhysics2000} 
 \begin{align}
-\label{eq:15}
+\label{eq:17}
   j_{\alpha} &= -M_{\alpha\beta}^{(11)} \left[
   \frac{e}{T} \nabla_{\beta} \phi + \nabla_{\beta} \left( \frac{\mu}{T} \right)
   \right]
@@ -362,11 +362,11 @@ Note first that in the flat system the conservation law of the  energy and momen
 where $v_F$ is the Fermi velocity.
 By the fundamental theorem of calculus this obviously gives for the zero-zero component of the stress-energy tensor
 \begin{equation}
-  \label{eq:16}
+  \label{eq:18}
   T^{00}(t, \vec{r}) = - \int\limits_{-\infty }^t \mathrm{d}t'
   v_F \partial _i T^{0i}(t', \vec{r}).
 \end{equation}
-Introduce Eq. (\ref{eq:16}) in the response relation (\ref{eq:current-from-gravity}), and use integration by parts
+Introduce Eq. (\ref{eq:18}) in the response relation (\ref{eq:current-from-gravity}), and use integration by parts
 \begin{equation}
   \int u v' = uv - \int u' v,
 \end{equation}

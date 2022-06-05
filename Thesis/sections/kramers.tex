@@ -1,0 +1,67 @@
+\section{Kramer's degeneracy}
+
+%% Some of the material is inspired from
+%% Sakurai and Napolitano
+
+Kramer's degeneracy states that for any half-integer system that is time-reversal symmetric, energy levels are at least two-fold degenerate.
+The proof of this is simple, and uses the fact that for any half-integer spin system, $\Theta^2 = -1$.
+A heuristic way to see this is the fact that spin is odd under time-reversal, and for half-integer systems there is no zero-spin state, so reversing the spin cannot result in the same state.
+\begin{proof}
+  Assume
+  $$ [H, \Theta] = 0 $$
+  and that $\ket{n}$ is an eigenstate of the system
+  $$ H \ket{n} = E_n \ket{n}.$$\\
+  Then
+  $$
+  H \Theta \ket{n} = \Theta H \ket{n} = \Theta E_n \ket{n} = E_n \Theta \ket{n}
+  $$
+  and so $\Theta \ket{n}$ is also an eigenstate with the eigenvalue $E_n$.
+  To assert that the eigenvalue is in fact degenerate, one must also show that the two states are not the same ray.
+  That is $\Theta \ket{n} \neq e^{i \delta} \ket{n}$, where $\delta$ is some phase.
+  Suppose that the above is \emph{not} true, $\Theta \ket{n} = e^{i \delta} \ket{n}$.
+  Then,
+  $$
+  \Theta^2 \ket{n} = \Theta e^{i\delta} \ket{n} = e^{-i\delta} \Theta \ket{n} = + \ket{n}.
+  $$
+  However, as was stated above, $\Theta^2 = -1$ for all half-integer systems.
+  The assumption must therefore be wrong, and the eigenvalue is degenerate.
+\end{proof}
+The two states, $\ket{n}$ and $\Theta \ket{n}$, are often referred to as Kramer's doublet.
+Note that the two states have opposite spin.
+
+\subsection{Generalization to the $P \Theta$ operator}
+Consider now a time reversal and parity symmetric system, $[H, P \Theta] = 0$.
+This will, similarly to the case for time reversal, make the energy levels at least two-fold degenerate.
+\begin{proof}
+  Assume
+  $$
+  [H,P \Theta] = 0
+  $$
+  and that $\ket{n}$ is an eigenstate of the system
+  $$
+  H\ket{n} = E_n\ket{n}.
+  $$
+  Then
+  $$
+  H P \Theta\ket{n} =
+  P\Theta H \ket{n} =
+  P \Theta E_n \ket{n} =
+  E_n P\Theta \ket{n}.
+  $$
+
+  Assume now that $P\Theta \ket{n} = e^{i\delta} \ket{n}$, which we will prove to be false.
+  That would lead to
+  $$
+  (P\Theta)^2 \ket{n} = P\Theta e^{i\delta} \ket{n}
+  = \ket{n}.
+  $$
+  However, as $[P, \Theta] = 0$, we have
+  $$
+  (P\Theta)^2 =
+  P\Theta P \Theta=
+  P\Theta^2 P=
+  -1
+  $$
+  as $P^2 = 1$.
+  As above, the states are thus different, and the eigenvalue is degenerate.
+\end{proof}

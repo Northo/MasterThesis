@@ -20,7 +20,7 @@ where $\tilde{H}$ is the result of replacing $p_z \to \hbar k_z, p_x\to \hbar  k
 Absorb the chirality $s$ as a sign in the velocity $v_F$, for more concise notation.
 Thus, writing everything explicitly, the spectrum is given by
 \begin{equation}
-  \label{eq:15}
+  \label{eq:25}
   -\hbar  v_F
   \begin{pmatrix}
     - k_z & \partial _y + e y B_{z} / \hbar  - k_x\\
@@ -31,7 +31,7 @@ Thus, writing everything explicitly, the spectrum is given by
 We will now find the spectrum $E$ of the Hamiltonian.
 
 Inspired by the derivation for the spectrum of the 2D Dirac Hamiltonian in~\cite{wehlingDiracMaterials2014}, we introduce the length scale $l_B = \sqrt{\hbar / eB}$, and the dimensionless quantity $\chi = y /l_{B} - k_x l_{B}$.
-In dimensionless quantities Eq. (\ref{eq:15}) becomes
+In dimensionless quantities Eq. (\ref{eq:25}) becomes
 \begin{equation}
   -\frac{{\hbar v_F}}{l_{B}}
   \begin{pmatrix}
@@ -94,11 +94,11 @@ The excited energy states are doubly degenerate;
 we choose to denote the energy levels by $m \in \mathbb{Z}$, where the sign from $\pm s$ is taken care of by the sign of this quantum number, and the harmonic oscillator levels $n$ are given by its absolute value $|m|$.
 The energy levels are
 \begin{subequations}
-  \label{eq:106}
+  \label{eq:26}
   \begin{align}
-    \label{eq:104}
+    \label{eq:27}
     E_{k_z m s} &= \operatorname{sign}(m) v_F \sqrt{2 |m| e B \hbar  + k_z^2 \hbar ^2} & \text{ for } m \neq 0,\\
-    \label{eq:105}
+    \label{eq:28}
     E_{k_z 0 s} &= -s \hbar k_z v_F & \text{ for } m = 0.
   \end{align}
 \end{subequations}
@@ -177,10 +177,10 @@ We will in this section derive and elucidate the Landau levels and their regions
 Consider again the Hamiltonian
 \footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}
 \begin{equation}
-  \label{eq:16}
+  \label{eq:29}
   H = v_{F} \vec{t}^s  \vec{k} + s v_{F} \vec{k} \vec{\sigma},
 \end{equation}
-with the \emph{tilt vector} as defined in Eq.~\eqref{eq:75}
+with the \emph{tilt vector} as defined in Eq.~\eqref{eq:11}
 \[
   \vec{t}^s
   =
@@ -201,12 +201,12 @@ We take the field to be in the \( z \)-direction, and use the Landau gague \(\ve
 
 The Landau level equation is
 \begin{equation}
-  \label{eq:17}
+  \label{eq:30}
   \left(H_{B} - E\right) \ket{\psi } = 0,
 \end{equation}
 with
 \begin{equation}
-  \label{eq:18}
+  \label{eq:31}
   H_{B} = v_F \left(t^s _{\perp} k^B_{x} + t^s _{\parallel} k^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} k^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
@@ -216,10 +216,10 @@ In order to use the ladder operator method used for the untilted cone, we must g
   \todo{Verify this}
 }
 To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
-Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:17}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
+Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:30}, and insert identity on the form \(\exp[\Theta /2 \sigma_{x}]\exp[-\Theta /2 \sigma_{x}]\) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = \exp[- \Theta /2 \sigma_{x}] \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
 \begin{equation}
-  \label{eq:19}
+  \label{eq:32}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0.
 \end{equation}
 
@@ -237,7 +237,7 @@ The problematic part of the Hamiltonian with regards to finding the Landau level
 We will now find the boost parameter that eliminates \(k_{x}\) from the diagonal.
 We have
 \begin{equation}
-  \label{eq:20}
+  \label{eq:33}
   R^{2} = e^{\Theta \sigma _{x} } =
   \begin{pmatrix}
     \cosh \theta & \sinh \theta \\
@@ -246,7 +246,7 @@ We have
 \end{equation}
 and as $[R, \sigma_{x}] = 0$,
 \begin{equation}
-  \label{eq:21}
+  \label{eq:34}
   R \sigma _{x} R =  R^{2} \sigma _{x} =
   \begin{pmatrix}
     \sinh \theta & \cosh \theta \\
@@ -256,12 +256,12 @@ and as $[R, \sigma_{x}] = 0$,
 as the effect of \(\sigma _{x}\) is to transpose the rows.
 The requirement for \(k^B_{x}\) to be rotated out of the diagonal is thus
 \begin{equation}
-  \label{eq:22}
+  \label{eq:35}
   t^s_{\perp} \cosh \theta + s \sinh \theta = 0.
 \end{equation}
 Solving for \(\theta \) we get
 \begin{equation}
-  \label{eq:23}
+  \label{eq:36}
   \theta = \log (
   \pm \frac{\sqrt{s - t^s_{\perp}}}{\sqrt{s + t^s_{\perp}}}
   ).
@@ -269,7 +269,7 @@ Solving for \(\theta \) we get
 \todo{NB: depending of choice of sign in log, we get different signs in answer}
 Alternatively, written in a slightly suggestive form,
 \begin{equation}
-  \label{eq:24}
+  \label{eq:37}
   \tanh \theta =
   - s t^s_{\perp}.
 \end{equation}
@@ -277,7 +277,7 @@ Alternatively, written in a slightly suggestive form,
 
 The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, is thus
 \begin{equation}
-  \label{eq:25}
+  \label{eq:38}
   \theta = - s \tanh^{-1} t^s_{x}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in Figure \ref{fig:arctanh}.
@@ -325,11 +325,11 @@ As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller an
   \caption{\label{fig:tiltSphere} TODO}
 \end{figure}
 
-We now return to solving Eq.~\eqref{eq:19}, using the solution angle we just found.
+We now return to solving Eq.~\eqref{eq:32}, using the solution angle we just found.
 By insertion, and after some clean up, we get
 % \emph{note to thorvald: we chose \(\theta = Log \left(+ \dots\right) \)}
 \begin{multline}
-  \label{eq:26}
+  \label{eq:39}
   (\exp[\Theta /2 \sigma_{x}] H_{B}\exp[\Theta /2 \sigma_{x}] - E \exp[\Theta \sigma_{x}]) \ket{\tilde{\psi}} = 0
   = v_F \\
   \times \begin{pmatrix}
@@ -341,7 +341,7 @@ By insertion, and after some clean up, we get
 In order to simplify this further, absorb \(\gamma t^s_x (k_{z} t^s_{\parallel} - E /v_{F}) \) into \(k_{x}\).
 Thus, let
 \begin{equation}
-  \label{eq:27}
+  \label{eq:40}
   \begin{split}
     \tilde{k}_{x} &= k_{x} / \gamma + \gamma t^s_x ( E /v_F - k_{z} t^s_{\parallel}),\\
     \tilde{k}_{y} &=  k_{y},\\
@@ -351,18 +351,18 @@ Thus, let
 
 These expressions warrant some explanation, as the Lorentz boost is of course
 \begin{equation}
-  \label{eq:28}
+  \label{eq:41}
   \tilde{k}_x = \gamma (k_x - \beta \frac{E}{v_{F}}),
 \end{equation}
 \todo{comment on beta = tx, or change to tx}
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
-It can thus look like our expression in Eq. \eqref{eq:27} is wrong.
+It can thus look like our expression in Eq. \eqref{eq:40} is wrong.
 The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
 \todo{Something smart here}
 
 The eigenvalue equation is simply
 \begin{equation}
-  \label{eq:29}
+  \label{eq:42}
   \left[  \gamma \left( t^s_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
   s \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
@@ -371,16 +371,16 @@ This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e y B_{z} /\gamma \).
 
 The Landau level equation thus reads
 \begin{equation}
-  \label{eq:30}
+  \label{eq:43}
   \left[
   \sum\limits_{i} s v_{F} \left(\tilde{k}_{i} + e \tilde{A}_{i} \right) \sigma _{i}
 \right  ] \ket{\tilde{\psi}} =
 (E- t^s_{\parallel} v_{F} \tilde{k}_{z}) \gamma \ket{\tilde{\psi}},
 \end{equation}
 where \(\vec{\tilde{A}}=-B_{z}/ \gamma y \hat{x}\).
-We may thus use directly the result for the untilted cone, Eq.~\eqref{eq:106}, giving
+We may thus use directly the result for the untilted cone, Eq.~\eqref{eq:26}, giving
 \begin{subequations}
-  \label{eq:31}
+  \label{eq:44}
   \begin{align}
     \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= \sign (m) v_{F} \sqrt{2 |m| e \frac{B}{ \gamma } \hbar + \tilde{k}_{z}^2 \hbar ^2}, & m \neq 0,\\
     \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s \hbar  \tilde{k}_{z} v_{F}, & m=0.
@@ -388,7 +388,7 @@ We may thus use directly the result for the untilted cone, Eq.~\eqref{eq:106}, g
 \end{subequations}
 Cleaning up, we get
 \begin{subequations}
-  \label{eq:32}
+  \label{eq:45}
   \begin{align}
     E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3} \hbar + \tilde{k}_{z}^2\hbar ^2 /\gamma ^2}, & m\neq 0,\\
     E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s \hbar / \gamma  \right), & m=0.
@@ -398,7 +398,7 @@ Cleaning up, we get
 As the perpendicular tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
 With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
 \begin{equation}
-  \label{eq:33}
+  \label{eq:46}
   E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha \hbar + \tilde{k}_{z}^2\hbar ^2}.
 \end{equation}
 As the perpendicular tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
@@ -448,7 +448,7 @@ where capital letters indicate absolute value of corresponding quantity, $M=|m|,
 \end{equation}
 Taking care to keep track of boosted and rescaled quantites, the eigenstate in the boosted frame is
 \begin{equation}
-  \label{eq:34}
+  \label{eq:47}
   \tilde{\psi}(\tilde{\vec{r}}) =
   \frac{1}{\sqrt{L_xL_z}}
   \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha_{\tilde{k}_z m s}^2 + 1}}
@@ -475,7 +475,7 @@ For \( m\neq 0 \)
 \]
 and thus
 \begin{equation}
-  \label{eq:35}
+  \label{eq:48}
   \alpha_{k_z m s} =
   \frac{-\sqrt{ \alpha M }}{\sign(m) s \sqrt{\alpha M + \kappa^2} - \kappa}
 \end{equation}
@@ -490,7 +490,7 @@ Reinserting explicitly, in the boosted frame, that
 and \(l_{B'}=\frac{l_{B}}{\sqrt{\alpha} }\)
 we define
 \begin{equation}
-  \label{eq:36}
+  \label{eq:49}
   \chi =
   \frac{y-\tilde{k}_{x} l_{B'}^2}{l_{B'}}
   =
@@ -500,7 +500,7 @@ we define
 which is the argument of the Hermite polynomials.
 For later convenience, let us explicitly define
 \begin{equation}
-  \label{eq:38}
+  \label{eq:50}
   \tilde{\phi} _{\vec{k} m s} (\vec{\tilde{r}}) =
   \frac{e^{i \tilde{k}_{x} \tilde{x} + i k_{z} z}}{\sqrt{L_{x} L_{z}} }
   \underbrace{
@@ -516,7 +516,7 @@ For later convenience, let us explicitly define
 \end{equation}
 and thus
 \begin{equation}
-  \label{eq:39}
+  \label{eq:51}
   \tilde{\phi}_{\vec{k} m s} (y) =
   e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
@@ -526,7 +526,7 @@ and thus
 \end{equation}
 with
 \begin{align}
- \label{eq:40}
+ \label{eq:52}
   a_{\vec{k} m s} &=
                     \frac{
                     \alpha_{\tilde{k}_z m s} \sqrt[4]{\alpha }
@@ -534,7 +534,7 @@ with
                     \sqrt{\alpha^2 _{\tilde{k}_z m s} + 1}
                     \sqrt{2^{M-1} (M-1)! \sqrt{\pi} l_B}
                     },\\
-  \label{eq:107}
+  \label{eq:53}
   b_{\vec{k} m s} &=
                     \frac{
                      \sqrt[4]{\alpha }
@@ -560,7 +560,7 @@ e^{\theta \sigma _x} =
 \]
 The upper and lower part of the spinor are orthogonal, thus we have
 \begin{equation}
-  \label{eq:41}
+  \label{eq:54}
   \braket{\psi  | \psi } = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \frac{1}{\alpha } \braket{\tilde{\psi}  | \tilde{\psi} } = 1 \implies \mathcal{N}^{*}\mathcal{N} = \frac{1}{\alpha }.
 \end{equation}
 We choose \( \mathcal{N} = \alpha^{-\frac{1}{2}} \).
@@ -595,5 +595,5 @@ The tilted Hamiltonian
         b_{k_z m s} H_M (\chi)
       \end{pmatrix},
     \]
-    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t^s_x l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~(\ref{eq:40}, \ref{eq:107}).
+    where we have defined \( \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t^s_x l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B} \) and \( a_{k_z m s}, b_{k_z m s} \) are given in Eqs.~(\ref{eq:52}, \ref{eq:53}).
 \end{summary}

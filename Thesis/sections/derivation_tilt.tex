@@ -1,7 +1,7 @@
 \section{The response of a tilted cone}
 
 Repeating the calculation of the response function is now straightforward, but rather tedious.
-Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:34}, mix.
+Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:47}, mix.
 We thus have twice as many terms to keep track of.
 \subsection{Explicit form of the matrix elements}
 We will here find an explicit form of the matrix elements, starting with the charge current
@@ -26,7 +26,7 @@ With the previously found solution \(\theta = - \tanh ^{-1} t^s_{x}\), we get th
   \frac{1}{\sqrt{1-t_{x}}}.
 \]
 With
-\begin{equation}\label{eq:76}
+\begin{equation}\label{eq:96}
   \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
     a_{\vec{k} m s} H_{M-1} (\chi)\\
@@ -36,7 +36,7 @@ With
 we see how the expressions change when \(t^s_{x}\) become non-zero.
 Where we previoulsy had
 \begin{equation}
-  \label{eq:77}
+  \label{eq:97}
   \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots) \left[ b_{\vec{k}+\qvec{q} n s} H_{N}(\dots) \right]
@@ -44,7 +44,7 @@ Where we previoulsy had
 \end{equation}
 the contents of the square brackets must now include also the other element of the spinor:
 \begin{equation}
-  \label{eq:78}
+  \label{eq:98}
   \alpha \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
   =
   a_{\vec{k} m s} H_{M-1}(\dots)
@@ -59,12 +59,12 @@ First of all, let us consider the exponent of the product.
 Due to the extra term in \(\chi\), this becomes more elaborate.
 The exponent is of course
 \begin{equation}
-  \label{eq:79}
+  \label{eq:99}
   \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}
 \end{equation}
 A straightforward but tedious calculation shows that the argument of the exponent can be written as
 \begin{equation}
-  \label{eq:80}
+  \label{eq:100}
   -\frac{\alpha}{l_{B}^2} \left(y + \frac{l_{B}^2}{2 \alpha } (i q_{y} - (q'_x + 2 k'_x))\right)^2
   -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (q'_x + 2 k'_x) q_{y} + ( q' _{x} )^2 ),
 \end{equation}
@@ -76,7 +76,7 @@ where we have defined
 \end{align}
 \todo{check sign of E above}
 These must not be confused with the transformed momenta \( \tilde{k} \), which are similar in form.
-Eq. \eqref{eq:80} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
+Eq. \eqref{eq:100} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
 \tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - 2 k' _x - q' _x )\right),
@@ -158,7 +158,7 @@ Using that
 \end{align}
 we define \( \Xi_1, \Xi_2 \) by
 \begin{align}
-  \label{eq:81}
+  \label{eq:101}
   \frac{ \sqrt{\alpha } \alpha_{k_z m s} \Xi_1 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha_{k_z m s}^2 + 1}
     \sqrt{\alpha_{k_z + \qvec{q}_z n s} ^2 + 1}
@@ -170,7 +170,7 @@ we define \( \Xi_1, \Xi_2 \) by
   a_{\vec{k} m s} b_{\vec{k} + \qvec{q} ns}
   H_{M-1} (\chi_{\vec{k}})
   H_N ( \chi _{\vec{k} + \qvec{q}} ),\\
-  \label{eq:82}
+  \label{eq:102}
   \frac{ \sqrt{\alpha } \alpha_{k_z + \vec{q} n s} \Xi_2 ( \vec{q}, m, n, s )}{
     \sqrt{\alpha_{k_z m s}^2 + 1}
     \sqrt{\alpha_{k_z + \qvec{q}_z n s} ^2 + 1}
@@ -238,7 +238,7 @@ This gives the first part of the current matrix element
 
 Now we will consider the second term of the current operator.
 \begin{equation}
-  \label{eq:83}
+  \label{eq:103}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   e v_{F} t^s_{x}
   \int \mathrm{d} y
@@ -247,7 +247,7 @@ Now we will consider the second term of the current operator.
 \end{equation}
 Using the results of Summary \ref{summary:llevels} we find
 \begin{equation}
-  \label{eq:84}
+  \label{eq:104}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N}}
   \int \mathrm{d} y
@@ -256,7 +256,7 @@ Using the results of Summary \ref{summary:llevels} we find
 \end{equation}
 Using the same substitution and completion of the square as above, this is
 \begin{multline}
-  \label{eq:85}
+  \label{eq:105}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
   \frac{e v_F t^s_x l_{B}}{\sqrt{\alpha}}
   \int \mathrm{d} \tilde{y}
@@ -307,7 +307,7 @@ We used here that \( 1 - t_x^2 = \alpha^2 \).
 \subsubsection{Stress-energy tensor}
 Consider now
 \begin{equation}
-  \label{eq:86}
+  \label{eq:106}
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y(1)} (\vec{q}) =
   \frac{1}{4}
   \int \mathrm{d} y
@@ -318,17 +318,17 @@ Consider now
 \end{equation}
 As
 \begin{equation}
-  \label{eq:87}
+  \label{eq:107}
   % e^{\theta /2 \sigma _{x}} \sigma _{y} e^{\theta /2 \sigma _{x}} = 1
   \sigma _{y} e^{\theta /2 \sigma _{x}} = e^{-\theta /2 \sigma _{x}} \sigma _{y}
 \end{equation}
 we get the very fortunate result
 \begin{equation}
-  \label{eq:88}
+  \label{eq:108}
   \phi^{*} \sigma _{y} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
 The first term of the stress-energy tensor thus has the exact same form as the untilted case.
-Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:39},
+Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:51},
 \[
   \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
   \begin{pmatrix}
@@ -342,7 +342,7 @@ where
 \]
 We thus get
 \begin{multline}
-  \label{eq:89}
+  \label{eq:109}
   T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y (1)} (\vec{q}) =
   \frac{is \alpha}{4} (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
   \int \mathrm{d} y
@@ -354,10 +354,10 @@ We thus get
   ].
 \end{multline}
 We will perform once again the completion of the square and substituion of \(y\).
-The exponent is the same as that which we found for the current operator case, Eq. \eqref{eq:80}, with the change \(q_{y} \to - q_{y}\).
+The exponent is the same as that which we found for the current operator case, Eq. \eqref{eq:100}, with the change \(q_{y} \to - q_{y}\).
 We thus make the change of variables
 \begin{equation}
-  \label{eq:90}
+  \label{eq:110}
   \tilde{y} = \frac{\sqrt{\alpha}}{l_{B}} \left(y  - \frac{l_{B}^2}{2 \alpha } (i q_{y} + (2k' _x + q' _x) )\right),
 \end{equation}
 giving
@@ -367,7 +367,7 @@ giving
 \end{align}
 Thus, analogous to Eq. (4.79), we get
 \begin{multline}
-  \label{eq:91}
+  \label{eq:111}
   T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) =\\
   \frac{is \sqrt{\alpha }}{4}
   (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
@@ -402,7 +402,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
 \begin{summary}
   In summary we have
   \begin{align}
-    \label{eq:99}
+    \label{eq:112}
     J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) &=
                                                         v_{F} e s \alpha^2
                                                         \Gamma ^-_{\vec{k} \qvec{q} m n s}
@@ -511,7 +511,7 @@ In the static limit, the \( \Xi \) functions thus take the form
 
 Lastly, notice that in the static limit, the dependence on \( k_z \) disappears, and so the same procedure as was done for the untilted cone in section \ref{sec:response_notilt} is valid for the tilted cone, replacing the \( \vec{k} \) sum with an integral over \( k_z \) and a degeneracy factor
 \begin{equation}
-  \label{eq:103}
+  \label{eq:113}
   \sum\limits_{\vec{k}}^{} \to \frac{\mathcal{V} e B}{(2\pi)^2 \hbar} \int \mathrm{d} k_z.
 \end{equation}
 Importantly, the degeneracy factor does \emph{not} depend on the renormalized magnetic field \( \alpha B \), but rather \( B \) itself.
@@ -542,11 +542,11 @@ Writing out the matrix products we have
   }{
     (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z + \qvec{q}_z n s}^2 + 1)
   }.
-  \label{eq:100}
+  \label{eq:114}
 \end{multline}
 And so, inserting into the response function
 \begin{multline}
-  \label{eq:101}
+  \label{eq:115}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{- e^2 \alpha^3 v_F B }{4 (2 \pi)^2 }
   \sum\limits_{mn}^{}
@@ -579,7 +579,7 @@ In the \( (m,n) \)-plane, the first and third quadrant give no contribution, as 
 Our sum is thus restricted to the second and fourth quadrant.
 It is easy to show that
 \begin{equation}
-  \label{eq:102}
+  \label{eq:116}
   n_{\vec{k} m s} - n_{\vec{k} + \qvec{q} n s} =
   \begin{cases}
     \phantom{-} 0 & m n > 0 \text{ or  } m,n = 0,\\
@@ -599,13 +599,13 @@ Recall
 \end{align*}
 Under the above mapping, we have the following relations
 \begin{align}
-  \label{eq:92}
+  \label{eq:117}
   \epsilon_{m, \alpha B}^0 &\mapsto -\epsilon_{m, \alpha B}^0,\\
   \alpha_{\kappa_z m s} &\mapsto -\alpha_{\kappa_z m s},\\
   P &\mapsto -P.
 \end{align}
 The \( \Xi \) functions also acquries a sign for some values of \( m,n \), however, we only consdier \( \Xi^2 \).
-The integrand in Eq.~\eqref{eq:101} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
+The integrand in Eq.~\eqref{eq:115} is thus invariant under the transformation from the second to the fourth quadrant, and so we may consider only the fourth quadrant, adding a degeneracy factor 2.
 
 Lastly, completely analogous to the untilted case, the integrand only depend on \( s \) and \( \kappa_z \) through their product \( s \kappa_z \), and thus is invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 As the integral spans all of \( \kappa_z \), the contribution is independent of the chirality \( s \), and may be calcluated for a specific choice, which is here taken to be \( s=+1 \).
@@ -617,14 +617,14 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
 \begin{summary}
   The response of a perpendicularly tilted cone is given by
   \begin{equation}
-    \label{eq:136}
+    \label{eq:118}
     \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
     \frac{e^2v_F B }{(2 \pi)^2 }
     \gamma^{\text{tx}}_N,
   \end{equation}
   with
   \begin{equation}
-    \label{eq:137}
+    \label{eq:119}
     \gamma^{\text{tx}}_N =
     \frac{\alpha^3}{2}
     \sum\limits_{mn}^{N}
@@ -693,6 +693,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
     ylabel=\( n \),
   }
   \newcounter{plotnum}
+  \tikzsetnextfilename{contribmn-P}
   \subcaptionbox{Inversion symmetric case.\label{fig:contribs:P}}{
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -744,6 +745,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
     \end{tikzpicture}
   } %% Subcaptionbox end
 
+  \tikzsetnextfilename{contribmn-Pbroken}
   \subcaptionbox{Inversion symmetry broken case.\label{fig:contribs:Pbroken}}{
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -813,7 +815,7 @@ Even though the treatment above for a general tilt is valid for parallel tilt, t
 For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{0y} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
 We may thus immediately use the result from the untilted case
 \begin{equation}
-  \label{eq:129}
+  \label{eq:120}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   - \frac{e^2 v_F B}{4(2\pi)^2}
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
@@ -823,7 +825,7 @@ We may thus immediately use the result from the untilted case
 \end{equation}
 with
 \begin{align}
-  \label{eq:95}
+  \label{eq:121}
   \epsilon_{\kappa_z m s} &=
                           \begin{cases}
                             t_z^s \kappa_z + \sign{m} \sqrt{M + \kappa_z^2} & m \neq 0,\\
@@ -861,18 +863,18 @@ for symmetric systems the response is equal for \( s=-1 \), while for broken inv
 In Type-I systems, the selection rules from the step functions are independent of \( t_z \), and the only difference from the untilted case is the term \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z n s} + 2 \kappa_z t^s_z \).
 The response is therefore
 \begin{equation}
-  \label{eq:138}
+  \label{eq:122}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{(2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
 \end{equation}
 where \( \gamma_N^0 \) is the prefactor of the untilted case, and
 \begin{equation}
-  \label{eq:97}
+  \label{eq:123}
   \gamma_{\text{div}, N} = -2 \sum\limits_{i=0}^{N} \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
 \end{equation}
 which has an UV divergence.
 Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result\footnote{Note the minus sign introduced by the step function in \( \xi \).}
 \begin{equation}
-  \label{eq:139}
+  \label{eq:124}
   \gamma_{\text{div}, 0} = \frac{t_z}{2} \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
    )\right)
 \end{equation}
@@ -885,16 +887,16 @@ and the contribution from each term of the sum
     + m \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} } \right]
     - (m - 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m - 1}}\right]
     \Bigg\},
-    \label{eq:98}
+    \label{eq:125}
 \end{multline}
 where we used the selection rule of the sum \( N = M - 1 \) and \( m>0, n<0 \).
 This contribution is shown in figure \ref{fig:divergent-factor}.
-\todo{is it ok to write 'the contribution \eqref{eq:98}', or must it always be 'the contribution Eq. \eqref{eq:98}'?}
-The contribution \eqref{eq:98} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
+\todo{is it ok to write 'the contribution \eqref{eq:125}', or must it always be 'the contribution Eq. \eqref{eq:125}'?}
+The contribution \eqref{eq:125} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
 
 Assuming \( \Lambda \gg 1 \) the expression is approximated by
 \begin{equation}
-  \label{eq:37}
+  \label{eq:126}
   t_z
   \left(
     \frac{1}{4}\left[
@@ -958,7 +960,7 @@ In order to find explicitly the limits of integration for the Type-II case, we m
 The zeroth Landau level always has only one root, which is in the origin.
 For the higher order Landau levels, we solve
 \begin{equation}
-  \label{eq:93}
+  \label{eq:127}
   \epsilon_{\kappa_z m s } = t_z^s \kappa_z + \sign(m) \sqrt{M + \kappa_{z} ^2} = 0,
 \end{equation}
 whose solution is
@@ -967,7 +969,7 @@ whose solution is
 \]
 The actual roots of the energies are
 \begin{equation}
-  \label{eq:94}
+  \label{eq:128}
   \kappa_z = -\sign(m t^s_x) \sqrt{\frac{M}{t_{z}^2 - 1}}.
 \end{equation}
 The integration limit for the \( 0 \to 1 \) transition is thus, for \( t_z > 1 \), \( [-\sqrt{t_z^2 - 1 }^{-1}, 0] \).
@@ -979,7 +981,7 @@ The general \( n \to m \) transition has the integration limits
 
 The \( 0\to 1 \) transitions was computed analytically, and found to be
 \begin{equation}
-  \label{eq:117}
+  \label{eq:129}
   \gamma_0 =
   \frac{\sign(t_z)}{2}
   \left(
@@ -1034,8 +1036,8 @@ On the other hand, for inversion symmeric systems, the contribution form the con
 Therefore, it is useful to separate the contribution into even and odd components, for finding the total contribution from the two cones combined.
 For some contribution \( \gamma(t_{x /z}) \), we define
 \begin{align}
-  \gamma_{\text{even}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) + \gamma(-t_{x/z})}{2}\label{eq:132},\\
-  \gamma_{\text{odd}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) - \gamma(-t_{x/z})}{2}\label{eq:133}.\\
+  \gamma_{\text{even}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) + \gamma(-t_{x/z})}{2}\label{eq:130},\\
+  \gamma_{\text{odd}}(t_{x/z}) &= \frac{\gamma(t_{x/z}) - \gamma(-t_{x/z})}{2}\label{eq:131}.\\
 \end{align}
 All results will be given in terms of these components, at \( t_{x /y} > 0 \).
 
@@ -1098,13 +1100,13 @@ The contribution is even in \( t_x \), and the two cones have the same contribut
 
 \subsection{Parallel tilt}
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
-In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), Eq. \eqref{eq:98}, dependent on a momentum cutoff \( \Lambda \).
+In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), Eq. \eqref{eq:125}, dependent on a momentum cutoff \( \Lambda \).
 The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In case of inversion symmetry, the contributions from the two chiralities are equal and add up.
 In the large cutoff limit, the divergence goes like \( \log \Lambda \), where the dimensionfull cutoff \( k^{\text{cutoff}}_z = \sqrt{2 e B} \Lambda  \).
 
 In the Type-II regime, the contributions have more complicated form.
-Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:117},, which is odd in \( t_z \), the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
+Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:129},, which is odd in \( t_z \), the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
 As \( |t_z| \to 1 \) from above, the contribution blows up.
 This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.
 \footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
@@ -1241,7 +1243,7 @@ H \psi = E \psi,
 \]
 we may solve for \(b\), which gives
 \begin{equation}
-  \label{eq:108}
+  \label{eq:132}
   b = -\frac{k_{z} \pm k}{k_{x} - i k_{y}}.
 \end{equation}
 Requiring normalization of the state \(\braket{\psi | \psi } = 1\) gives the normalization
@@ -1251,13 +1253,13 @@ Requiring normalization of the state \(\braket{\psi | \psi } = 1\) gives the nor
 
 Having found the states, we find the spin expectation value
 \begin{equation}
-  \label{eq:109}
+  \label{eq:133}
   \vec{S} = \braket{\psi | \hat{S} | \psi },
 \end{equation}
 where \(\vec{S}\) is the spin expectation value and \(\hat{S} = \frac{\vec{\sigma}}{2} \) is the spin operator, where \(\hbar \) was set to 1.
-Simply evaluating Eq. \eqref{eq:109}, yields
+Simply evaluating Eq. \eqref{eq:133}, yields
 \begin{equation}
-  \label{eq:110}
+  \label{eq:134}
   \vec{S} = \pm \frac{\vec{k}}{2 k}.
 \end{equation}
 
@@ -1311,7 +1313,7 @@ The effect of parity \(\mathcal{P}\) and time reversal \(\mathcal{T}\) is
   \end{tabular}
 \end{table}
 \begin{equation}
-  \label{eq:111}
+  \label{eq:135}
   \begin{aligned}
     \mathcal{P} \tau \mathcal{P}^{\dagger} &= -\tau, & \mathcal{T} \tau \mathcal{T}^{\dagger} &= +\tau\\
     \mathcal{P} \sigma  \mathcal{P}^{\dagger} &= + \sigma,  & \mathcal{T} \sigma  \mathcal{T}^{\dagger} &= -\sigma \\
@@ -1360,17 +1362,17 @@ H = \pm v_{F} \vec{\sigma} \vec{p},
 we may easily show the Lorentz invariance of the system.
 The time independent Schrodinger equation is
 \begin{equation}
-  \label{eq:112}
+  \label{eq:136}
   H \ket{\psi } = E \ket{\psi } \implies (H^2 - E^2) \ket{\psi } = 0.
 \end{equation}
 As
 \[
 p^{\mu } = \left(\frac{E}{c}, \vec{p}\right),
 \]
-the operator in Eq. \eqref{eq:112} is nothing more than
+the operator in Eq. \eqref{eq:136} is nothing more than
 \todo{ Make clear the matrix strucute here. There is an implicit identity matrix of size 2 }
 \begin{equation}
-  \label{eq:113}
+  \label{eq:137}
   H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2 \left(p^0\right)^2 ,
 \end{equation}
 where we used the anticommutation relation
@@ -1378,16 +1380,16 @@ where we used the anticommutation relation
 \{\sigma_{i}, \sigma_{j}\} =  2 \delta _{ij}
 \]
 of the Pauli matrices.
-Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:113} is
+Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:137} is
 \begin{equation}
-  \label{eq:114}
+  \label{eq:138}
   - v_F^2 p_{\mu } p^{\mu }.
 \end{equation}
 The invariance of \( x^{\mu} x_{\nu} \) is the very definition of the Lorentz group, and so is obviously Lorentz invariant.
 
 Consider now a \emph{tilted} Dirac cone
 \begin{equation}
-  \label{eq:115}
+  \label{eq:139}
   H = \pm v_F \vec{\sigma} \vec{p} + \omega_x k_x,
 \end{equation}
 where we, without loss of generality, chose the tilt to be in the \( x \)-direction.
@@ -1397,7 +1399,7 @@ By the same argumentation as above, the eigenequation
 \]
 leads to the equation
 \begin{equation}
-  \label{eq:116}
+  \label{eq:140}
   -v_F^2 p^{\mu} p_{\mu} + \omega_{x} k_x (2 E - \omega_x k_x) = 0.
 \end{equation}
 This is \emph{not} invariant under a Lorentz transformation, as can be seen by, for example, a rotation around the \( z \)-axis.
@@ -1422,7 +1424,7 @@ Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \),
 
 % However, consider again
 % \begin{equation}
-%   \label{eq:130}
+%   \label{eq:141}
 %   v_F \vec{\sigma} \vec{p} \ket{\psi} = E \ket{\psi}.
 % \end{equation}
 % Lorentz boosting in the \( x \)-direction
@@ -1432,9 +1434,9 @@ Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \),
 %     \tilde{E} &= \gamma (E - \betae p_x).
 %   \end{split}
 % \end{equation*}
-% Eq. \eqref{eq:130} thus reads
+% Eq. \eqref{eq:141} thus reads
 % \begin{equation}
-%   \label{eq:131}
+%   \label{eq:142}
 %   v_F (\sigma^x \gamma (p_x - \beta E) + \sigma^yp_y \sigma^zp_z) = \gamma (E - \beta p_x).
 % \end{equation}
 % If we now rescale
@@ -1446,6 +1448,6 @@ Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \),
 % \]
 % one has
 % \begin{equation}
-%   \label{eq:135}
+%   \label{eq:143}
 %   v_F \vec{\sigma} \vec{\hat{p}}
 % \end{equation}
