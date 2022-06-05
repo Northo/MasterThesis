@@ -41,8 +41,10 @@
   }
 }
 \tikzsetnextfilename{lllevels}
+\hspace{-1.6cm}
 \begin{tikzpicture}
   \begin{groupplot} [%
+    width=0.64\textwidth, %% Width of each window... Can be set more elegantly, but here just trial and error
     cycle list name=linestyles,
     samples=100,
     ymin=-2.5,ymax=2.5,

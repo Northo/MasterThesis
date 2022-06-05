@@ -112,11 +112,12 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
         legend columns = 3,
         legend entries = {Filled right movers, Filled left movers},
         legend to name = leg,
+        domain=-4:4,
         ]
-        \addplot [domain=-4:0, samples=10, mark=none, very thick, blue] {x};
-        \addplot [domain=0:4, samples=10, mark=none, very thick, red] {-x};
-        \addplot[domain=0:4, samples=2, mark=none] {x};
-        \addplot[domain=-4:0, samples=2, mark=none] {-x};
+        \addplot [domain=-4:0, samples=8, mark=*, only marks, very thick, blue] {x};
+        \addplot [domain=0:4, samples=8,  mark=*, only marks, very thick, red] {-x};
+        \addplot[samples=2, mark=none] {x};
+        \addplot[samples=2, mark=none] {-x};
       \end{axis}
     \end{tikzpicture}
     % }
@@ -136,8 +137,8 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
         ]
         \addplot[samples=2, mark=none] {x};
         \addplot[samples=2, mark=none] {-x};
-        \addplot [domain=-4:1, samples=10, mark=none, very thick, blue] {x};
-        \addplot [domain=1:4, samples=10, mark=none, very thick, red] {-x};
+        \addplot [domain=-4:1, samples=10, mark=*, only marks, very thick, blue] {x};
+        \addplot [domain=1:4, samples=6, mark=*, only marks, very thick, red] {-x};
       \end{axis}
     \end{tikzpicture}\\
 
@@ -147,6 +148,7 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
       \textbf{(Left)} No electric field applied, Fermi level at the crossing.
       \textbf{(Right)} Electric field in the positive direction applied, shifting the filled states.
       See main text for details.
+      \todo{Consider changing for solid lines (not marks). In that case, have thiccc lines.}
     \label{fig:chiral-dispersion}}
 \end{figure}
 
@@ -187,13 +189,15 @@ We will calculate the triangle diagram
 % \begin{figure}[h]
   % \centering
 \begin{center}
+  \tikzsetnextfilename{feynman-triangle}
+  %% NB! tikz-feynman must be compiled with lualatexx
   \feynmandiagram [vertical'=t2 to t3, spring electrical layout]{
     t1[label=left:\(\gamma ^{\lambda }\gamma ^5 \)]
     -- [fermion, edge label=\(p\)] t2 [label=above:\(\gamma ^{\mu }\)]
     -- [fermion, edge label=\(p-k_1\)] t3 [label=below:\(\gamma ^{\nu }\)]
     --  [fermion, edge label=\(p-q\)] t1,
-    t2 -- [photon] p1 ,
-    t3 -- [photon] p2 ,
+    t2 -- [photon] p1,
+    t3 -- [photon] p2,
     p1 -- [opacity=0] p2, %% Helper line to make photons parallell
   };
 \end{center}
