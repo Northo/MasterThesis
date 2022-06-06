@@ -1,8 +1,15 @@
 % \section{Type II Weyl semimetals}
-\section{Tilted Dirac semimetals -- Type-I and Type-II}
+\subsection{Tilted Dirac semimetals -- Type-I and Type-II}
 \label{sec:typeii}
 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/conicSection}
+  \caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}
+\end{figure}
+
 The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines.
+See figure~\ref{fig:conic-section-sketch}.
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \citeauthor{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
 \todo{add some concrete examples or cites}
@@ -18,7 +25,7 @@ Type-II also has electron and particle pockets at the Fermi level.
 While the density of states for a Type-I semimetal goes to zero as one approaches the Fermi level, this causes Type-II to have a finite density of states at the Fermi level.
 \todo{End with something like: all in all this gives type ii weyl semimetal manifestly different properties from tyep i, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective}
 
-\subsection{Hamiltonian}
+\subsubsection{Linear Dirac equation from tight binding model}
 We will firstly consider a slightly more realistic toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
 This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to see how two Dirac cones in the same Brillouin zone tilt in relation to each other.
 We will then continue by linearizing the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
@@ -66,6 +73,7 @@ The linearized model are accurate in describing low energy interactions around t
 For higher energies their validity falls apart, and more complex models are warranted.
 In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
 
+\subsubsection{The tilt term -- symmetries and Type-I vs. Type-II}
 For tilted Dirac cones we will consider the Hamiltonian
 \begin{equation}
   \label{eq:10}
@@ -108,12 +116,6 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
   \item Linearized model valid for low energy interaction. For higher energy, the perfect cone model is not valid, as the cones does in fact touch.
   \item In this model, the hole pocket is ``shared'' between the two cones. There are also models with individual pockets (see \cite{mccormickMinimalModelsTopological2017})
 \end{itemize}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.4\textwidth]{figures/conicSection}
-  \caption{\label{fig:conic-section-sketch} }
-\end{figure}
 
 
 \begin{figure}[ht]

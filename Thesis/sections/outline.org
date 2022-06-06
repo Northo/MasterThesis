@@ -34,16 +34,12 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 - Add tilt
 
-
-
-
-
-*** Type-II materials in depth
-- Introduction
-  + Material realizations
-- From tight binding model to linear model
-- Tilting term
-  - Inversion symmetry vs no inversion symmetry
+**** Tilted dirac cones
+***** Introduction
+****** Material realizations
+***** From tight binding model to linear model
+***** Tilting term
+****** Inversion symmetry vs no inversion symmetry
 
 
 ** The response
