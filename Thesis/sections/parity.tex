@@ -57,18 +57,18 @@ R = e^{-i \epsilon J\cdot n} \approx 1 - i \epsilon J \cdot n
 $$
 where we expanded the operator under the assumption of a small angle, $\epsilon \ll 1$.
 As rotations are invariant during space inversion,
-\begin{align*}
+\begin{align}
   P^\dagger R P &= R\\
-  P^\dagger J \cdot n P &= J\cdot n\\
-\end{align*}
+ \mathllap{\implies\;} P^\dagger J \cdot n P &= J\cdot n
+\end{align}
 from which it follows that
-$$
+\begin{equation}
 P^\dagger J P = J,
-$$
+\end{equation}
 as the parity operator obviously does not act on the normal vector $n$.
 Thus, the angular momentum operator, unlike the linear momentum operator, is even under parity.
 
-For a general vector-like quantity $V$, we will consider how it transforms during space inversion.
+For a general vector-like\footnote{We use the term \emph{vector-like} instead of vector, as the term vector is defined as something that is odd under parity, as opposed to for example a pseudo vector, even though they naively ``look'' like vectors. This can be compared to tensors. The definition of a tensor is something that transforms like a tensor under a Lorentz transformation, so we may have matrix objects that ``look'' like tensors, but transforms differently.} quantity $V$, we will consider how it transforms during space inversion.
 If the quantity ``flips'' during space inversion, $P^\dagger V P = -V$, we say simply that it is a vector, also sometimes known as a polar vector.
 Quantities that do not ``flip'', so that they turn into their opposites in the flipped image, we denote pseudo vectors.
 Thus, depending on whether the eigenvalue of an operator under space inversion is $+1$ or $-1$ we say that it is either a pseudo-vector or vector, respectively.
@@ -81,8 +81,8 @@ The former takes a right-handed system to a left-handed system~\cite{sakuraiMode
 In odd dimensions this is the same, while in even dimensions they differ.
 In even dimensions, inversion corresponds to a rotation, while a parity transform is different from any rotation.
 In more formal terms, inversion is part of the group of proper  rotations $SO(n)$ for even dimensions, as the determinant is $+1$, the definition of a proper rotation.
-Parity should in general be taken to be the operation $P$ such that the group of all rotatinos $O(n) = SO(n) \times \{E, P\}$, with $E$ the identity transformation.
-This will not be of importance here, but it is an important detail to note.
+Parity should in general be taken to be the operation $P$ such that the group of all rotations $O(n) = SO(n) \times \{E, P\}$, with $E$ the identity transformation.
+This will not be of direct importance here, but it is an important detail to note.
 
 \begin{figure}[h]
   \centering

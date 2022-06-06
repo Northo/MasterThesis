@@ -7,10 +7,44 @@ Firstly, we will consider the so-called band crossing, and how the opening of a 
 Then, various perturbations that do not open a gap will be considered, giving interesting effects in the dispersion relations.
 Lastly, a consideration of these materials in light of Berry curvature and the topological quantity of Chern numbers will be given.
 
-While the nearly free quasi-particle model performs very well for most metals, with the Hamiltonian $p^2 / (2m^*)$, with $m^{*}$ some effective mass, this model fails for the Dirac-materials.
-Instead of obeying the Schrödinger equation as most materials, they obey a Dirac equation, with the speed of light being replaced by the Fermi velocity $v_F$.
-As in the high energy case, the Dirac equation may be decomposed into chiral Weyl equations in the massless case.
-Setting $v_F = 1$ for simplicity one gets the Hamiltonian
+The standard model for metals in condensed matter physics is the Landau Fermi liquid \cites{landauTheoryFermiLiquid1956,chernodubThermalTransportGeometry2021}, where electrons are described by the Hamiltonian \( p^2 /2 m* \), with \( m* \) some effective mass.
+This model, however, fails for Dirac materials, where the electrons behave as ``Dirac fermions''.
+The notion of a ``Dirac fermion'' is almost comical from a high energy point of view\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
+A fermion is by its very definition a Dirac spinor.
+In condensed matter language, however, we mean by fermion that it obeys the Pauli exclusion principle and follows the Fermi-Dirac distribution function.
+By Dirac fermion in condensed matter we mean fermions whose effective Hamiltonian is linear in momenta, they obey an effective Dirac equation.
+
+This field unifies concepts from high and low energy physics;
+a ``new era of grand unification of low and high energy phiscs'' as \textcite{chernodubThermalTransportGeometry2021} puts it.
+The emergent Dirac and Weyl cones in condensed matter physics follow in beautiful analogy their high energy counterparts.
+Thus, the theory and results form high energy physics may be applied in these emergent Dirac systems.
+Likewise, these materials offer the opportunity to probe the fundamental theories of our universe, and beyond, at much lower energy and cost scales.
+Unfortunately, some concepts of QFT and high energy physics are somewhat inaccessible for condensed matter physicists.
+At the same time, the condensed matter description have been difficult to relate back to the QFT formalism.
+So while the intersection of the two fields offer the possibility of great new insight, it also comes with some misunderstandings.
+Some phenomena are known under different names, while different phenomena may be mistaken for the same.
+The recent and excellent review paper by \textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, whose ``main purpose [...] is to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
+
+We wish here to briefly illuminate the connection between the high energy Dirac theory and the Dirac and Weyl semimetals of condensed matter physics, assuming the reader to be an expert in neither.
+The (massive) Dirac equation reads
+\begin{equation}
+  (i \slashed{\partial} - m ) \psi = 0,
+\end{equation}
+where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) the gamma matrices \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
+The systems is \( 4\times 4 \).
+The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
+It may of course be written as the Schrodinger equation\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
+Shortly after Dirac published his theory, Weyl commented that for a massless particle, the equation could be decomposed into two \( 2 \times 2 \) equations -- a Weyl decomposition.
+This yields two independent subsystems, themselves also linear in momentum,
+\begin{equation}
+  \label{eq:156}
+  H_{\pm} = \pm \vec{\sigma} \cdot \vec{p},
+\end{equation}
+with the \( \pm \) defining the \emph{chirality}.
+
+Interestingly, massless Dirac fermions may appear in condensed matter as low energy effective descriptions of electronic systems near a two-band crossing.
+Instead of obeying the Landau Fermi liquid theory, as most materials, they obey a Dirac equation, with the speed of light being replaced by the Fermi velocity $v_F$.
+As in the high energy case, the Dirac equation may be decomposed into chiral Weyl equations
 \begin{equation}
   \label{eq:3}
 H_D = s v_{F} \vec{\sigma} \vec{p},
@@ -20,6 +54,12 @@ where $\vec{\sigma}$ are the Pauli matricies, $v_F$ the Fermi velocity, $\vec{p}
 It is here important to note that the Pauli matrices represent either real spin degree of freedom or some pseudo spin degree of freedom.
 Examples of pseudo spin is that of bipartite lattices, such as Graphene, in which case one must be careful when for example applying time reversal, as only real spin is odd under this operation, and not pseudo spin.
 
+These linear low energy emergent systems may appear in both 2D and 3D.
+There are, however, important differences depending on the dimensionality.
+When we here refer to Dirac and Weyl materials, we always mean 3D systems, which has become the norm in the literature.
+In some older literature, the term might also be applied to 2D systems, sucha as Graphene.
+
+\label{sec:stability-of-gap}
 The dispersion of the Hamiltonian (\ref{eq:3}) has a band crossing at  $\vec{p} = 0$.
 For the two-dimensional case, a perturbation on the form $m \sigma_z$, with $m$ some parameter, can open up a gap in the dispersion relation.
 This is easily verified by writing out the Hamiltonian and solving the eigenproblem
@@ -49,19 +89,9 @@ The crossing is \emph{topologically protected}.
 A more formal approach to topological materials, is that of topological invariants -- numbers related to the topology of the material.
 Having a non-trivial topological invariant number, is the very definition of topological materials, and we will in subsection \ref{sec:chern-number-weyl} show that Dirac cones makes the Chern number of these materials non-trivial.
 
-The Hamiltonian in Eq. (\ref{eq:3}) is not the most general, if we allow for anisotropy in the system.
-In three dimensions we have more generally the Hamiltonian
-\begin{equation}
-  \label{eq:4}
-  H(\vec{k}) = \vec{v}_0 \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma} ,
-\end{equation}
-where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{k})_i = v_i k_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
-Here we will consider two interesting cases.
-Firstly, we will consider perturbations in the tilt-less isotropic case, $\vec{v}_0 = 0,  \vec{v}_i = v_F \hat{x}_i$.
-Then, a tilted system without perturbations is considered.
-
-Consider an isotropic tilt-less system;
-introduce to the system a pseudospin degree of freedom, thus extending the system to $4\times 4$-matricies.
+Opposed to high energy physics, the emergent Dirac equation in condensed matter physics need of course not be Lorentz invariant.
+We may therefore introduce terms that break Lorentz invariance.
+Introduce to the system a pseudospin degree of freedom, thus extending the system to $4\times 4$-matricies.
 The Hamiltonian of the system~\cite{armitageWeylDiracSemimetals2018a}
 \begin{equation}
   \label{eq:5}
@@ -99,12 +129,24 @@ The three cases described here: unperturbed, where the two cones are superimpose
 Notice that in the two latter cases, the Dirac points, i.e. crossings, are not superimposed.
 As will be discussed in section \ref{sec:weyl-dirac-cones}, this makes the crossings very robust, as the two nodes must merge before a gap may be opened.
 
-The second case to consider, is a finite tilting vector $\vec{v}_0$, where we will consider only real spin, thus reducing the system back to the two-dimensional case in Eq. (\ref{eq:4}).
-For the isotropic case, $\vec{v}_i = v_F \hat{x}_i$, the energy bands are~\cite{ottesenOpticalConductivityDirac2021}
+
+The Hamiltonian in Eq. (\ref{eq:3}) is not the most general, if we allow for anisotropy in the system.
+In three dimensions we have more generally the Hamiltonian
 \begin{equation}
-  E_s(\vec{k}) = \vec{v}_0 \vec{k} + s v_F |k|.
+  \label{eq:4}
+  H(\vec{k}) = \vec{v}_0 \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma} ,
 \end{equation}
-Tehse types of systems, which are the systems of interest for this thesis, are considered in detail in section \ref{sec:typeii}.
+where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{k})_i = v_i k_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
+By a simple rescaling of the momenta, we may in general consider a system with isotropic Fermi velocity \( v_F \), giving
+\begin{equation}
+  H(\vec{k}) = v_F \vec{t} \vec{k} + v_F \vec{k} \vec{\sigma},
+\end{equation}
+where \( \vec{t} \) is now the (dimensionless) tilt vector.
+The energy bands are~\cite{ottesenOpticalConductivityDirac2021}
+\begin{equation}
+  E_s(\vec{k}) = v_F \vec{t} \vec{k} \pm s v_F |k|.
+\end{equation}
+These types of systems, which are the systems of interest for this thesis, are considered in detail in section \ref{sec:typeii}.
 
 \begin{figure}[p!]
   \centering
@@ -132,7 +174,7 @@ Tehse types of systems, which are the systems of interest for this thesis, are c
 \end{figure}
 
 \subsection{Chern number of the Weyl point}\label{sec:chern-number-weyl}
-In order to more explicitly demonstrate the topological nature of the state in Eq. (\ref{eq:3}), we will find a non-zero topological invariant associated with that state.
+In order to more explicitly demonstrate the topological nature of the state in Eq.~(\ref{eq:3}), we will find a non-zero topological invariant associated with that state.
 Thereby showing that the material is a topological material.
 The topological number we will calculate is the Chern number, related to the Berry curvature of the bands in some enclosed surface.
 In order to calculate the Chern number, we must first find an expression for the Berry curvature of our system.
@@ -172,22 +214,23 @@ Notice that for a degeneracy $E_n = E_m$ there will be an infinity in $\vec{B_n}
 Considering the Berry curvature as a field in $\vec{R}$-space, this resembles a source, as will become relevant later.
 This may now be applied to for example the Weyl semimetal, both in the interest of solidifying the above theory, and as it will be useful in future  consideration.
 
-The Hamiltonian around the Weyl point is
+The Hamiltonian around the (untilted) Weyl point is
 \begin{equation}
-  H = v_F (\vec{\sigma} + \vec{t}) \cdot \vec{p},
+  H = v_F \vec{\sigma} \cdot \vec{p},
 \end{equation}
 with $v_F$ the Fermi velocity, $\vec{\sigma}$ the Pauli matrices, and $\vec{p}$ the momentum operator.
 % \todo{Now suddenly R is not dependent  on t??}
 By letting $\vec{R} = v_F \vec{p}$, the Berry curvature of the Hamiltonian can be found.
 The eigenvalues of this system are
 \begin{equation}
-    E_+  - \vec{R} \cdot \vec{t} = -E_- - \vec{R} \cdot \vec{t}
+    E_+ = -E_-
     = |R|.
 \end{equation}
 The aforementioned degeneracy is here of course the Weyl point, where $E_+ = E_- = 0$.
 Noting that
 \begin{equation}
-  \nabla_{\vec{R}} H = \vec\sigma + v_F \vec{t},
+  \label{eq:gradHamil}
+  \nabla_{\vec{R}} H = \vec\sigma,
 \end{equation}
 we can calculate the Berry curvature easily.
 Denote by $\ket{+}$ the state with the eigenvalue $E_+$ and $\ket{-}$ the state with the eigenvalue $E_-$.
@@ -204,7 +247,6 @@ This gives
   }.
 \end{equation}
 As $\ket{+}$ and $\ket{-}$ are eigenstates of $\sigma_z$ and orthogonal to each other, only the $z$-component of the cross product may contain non-zero contributions.
-Again, as the states are orthogonal, the \( \vec{t} \) terms obviously disappears.
 \begin{equation}
   \begin{split}
     \vec{B}_+ &= - \frac{\hat{z}}{4 R^2}
@@ -225,12 +267,23 @@ Here, the effect of the Pauli matrices on the eigenvectors was used, according t
 \end{align}
 Returning to general axis orientations, one has
 \begin{equation}
-  B_+ = - \hat{R} / 2\vec{R}^2 = - \vec{R} / 2 \vec{R}^3,
+  B_+ = - \hat{R} / 2\vec{R}^2 = - \vec{R} / 2 \vec{R}^3.
 \end{equation}
-independent of \( \vec{t} \).
 For the $\ket{+}$-band, the Weyl point thus takes the form of a negative monopole in $R$-space;
 this motivates the requirement that Weyl points must always appear in pairs of opposite chirality, as the divergence of the Berry curvature must always be zero over the entire sample.
 \todo{There should probably be some care taken here with the sign of $v_F$.}
+
+Extending the calculation to a tilted Weyl cone
+\begin{equation}
+  H = v_F \vec{\sigma} \cdot \vec{p} + v_F \vec{t} \cdot \vec{p},
+\end{equation}
+is trivial.
+The energies gain a factor \( v_F \vec{t}\cdot \vec{p} = \vec{t} \cdot \vec{R}\), however, this does not change the difference between the energies of the states.
+Furthermore, the gradient of the Hamiltonian, Eq.~\eqref{eq:gradHamil}, gains a factor
+\begin{equation}
+  \nabla_{\vec{R}} H = \vec\sigma + \vec{t},
+\end{equation}
+which does not affect the result, as \( \braket{\pm | \vec{t} | \mp} = 0 \).
 
 As mentioned, the Chern number is one of several numbers that is used to classify topological materials.
 The Chern number is defined as
@@ -269,10 +322,10 @@ has the opposite Berry curvature, and also the opposite Chern number.
 Thus, Dirac cones must appear in pairs of opposite chirality, either superimposed as the Dirac semimetal case or separated in momentum space, as the Weyl semimetal.
 \todo{Make sure there is no discrepancy between 2D/3D materials above}
 
-In light of the interpretation of the Dirac point as a monopole of Berry curvature, the discussion at the beginning of section \ref{sec:weyl-dirac-cones} on the stability of the band crossing in two and three dimensions gets an intuitive and geometric interpretation.
+In light of the interpretation of the Dirac point as a monopole of Berry curvature, the discussion in section~\ref{sec:weyl-dirac-cones}, on page \pageref{sec:stability-of-gap}, on the stability of the band crossing in two and three dimensions gets an intuitive and geometric interpretation.
 In Figure~\ref{fig:curvature_plane} the Berry curvature pole is shown in $p$-space, together with a plane parallel to the $xy$-plane, which we will denote the \emph{state plane}.
 In the two-dimensional case, the state is confined to the state plane, with the $z$-position of the plane given by any mass terms $m \sigma _z$.
-In the three-dimensional case, the state not confined to this plane, as the parameter $p_z$ is a free variable, or alternatively it may be considered as a freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
+In the three-dimensional case, the state is not confined to this plane, as the parameter $p_z$ is a free variable, or alternatively it may be considered as a freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
 It is thus obvious that one may never reach the monopole in the two-dimensional case, and thus for no $\vec{k}$ is there a band crossing.
 Importantly, the Berry curvature is indeed non-zero, however any closed  curve of integration will give a Chern number of zero;
 the  monopole has been moved outside the dimensionality of freedom.

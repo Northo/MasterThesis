@@ -9,6 +9,35 @@ Start from the Dirac Lagrangian, and show the Weyl decomposition
 We exactly recover the Hamiltonian of a dirac cone
 See chernodubThermalTransportGeometry2021 eq.~(2)
 
+- Analagous theories in HEP and condensed matter
+- Thermal transport, geometry, and anomalies bridge gap
+
+- Introduction
+- Dirac fermions haha
+  Liquid (top page 5 in review)
+- This is a field of some unification of low and high energy physics.
+  The emergent Dirac and Weyl cones in condensed matter physics follow in beautiful analogy to their high energy counterparts.
+  Problematic that some of the concepts of QFT and high energy physics is soemwhat inacceccible for condensed matter physisists.
+  At the same time, condensed matter descriptions have been difficult to relate back to the QFT formalism.
+  This crossing point offers rich insight both for high and low energy phsyics.
+  Unfortunately, the different languages can cause some misunderstanding.
+  Some phenomena have different names, while different pheomenta sometimes are mistaken for the same.
+  See (reveiw paper) which attempts to unify the language of the two fields, highlight where subtle differences are imporant, and elucidate which assumptions are made.
+- Dirac equation, massless may be decomposed to weyl equations
+  - Dirac ... linear momenta ... lorentz invariance ....
+  - Interestingly, ..., emergent phenomena in condensed matter ... linear momenta
+
+*** Weyl and Dirac cones in condenset amtter phyiscs
+- Basic equation, 2D gapped 3D not gapped.
+
+- Extend to 4x4 by some other spin degree of freedom
+
+- Add tilt
+
+
+
+
+
 *** Type-II materials in depth
 - Introduction
   + Material realizations
