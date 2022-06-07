@@ -36,10 +36,15 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 **** Tilted dirac cones
 ***** Introduction
-****** Material realizations
+- Material realizations
 ***** From tight binding model to linear model
+Clean up so that the symbol convention is consistent.
+Make sure argument about the sign of this and that is legit
 ***** Tilting term
 ****** Inversion symmetry vs no inversion symmetry
+****** Fermi surface when tilting
+See ferreirosAnomalousNernstThermal2017 for discussion
+Limitation of linear model
 
 
 ** The response

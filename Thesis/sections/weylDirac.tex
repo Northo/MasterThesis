@@ -1,13 +1,13 @@
 \section[Weyl and Dirac cones]{Weyl and Dirac cones in condensed matter physics}
 \label{sec:weyl-dirac-cones}
 %% Much is taken from https://www.tandfonline.com/doi/pdf/10.1080/00018732.2014.927109?needAccess=true
-Dirac and Weyl cones are the emergence of non-gapped linear energy bands in condensed matter physics, in effect exhibiting relativistic behavior at non-relativistic speeds.
+\todo{Dirac and Weyl cones are the emergence of non-gapped linear energy bands in condensed matter physics, in effect exhibiting relativistic behavior at non-relativistic speeds.
 We here give a very brief introduction to these materials.
 Firstly, we will consider the so-called band crossing, and how the opening of a gap at the band crossing behaves differently in two and three dimensions.
 Then, various perturbations that do not open a gap will be considered, giving interesting effects in the dispersion relations.
-Lastly, a consideration of these materials in light of Berry curvature and the topological quantity of Chern numbers will be given.
+Lastly, a consideration of these materials in light of Berry curvature and the topological quantity of Chern numbers will be given.}
 
-The standard model for metals in condensed matter physics is the Landau Fermi liquid \cites{landauTheoryFermiLiquid1956,chernodubThermalTransportGeometry2021}, where electrons are described by the Hamiltonian \( p^2 /2 m* \), with \( m* \) some effective mass.
+The standard model for metals in condensed matter physics is the Landau Fermi liquid \cites{landauTheoryFermiLiquid1956,chernodubThermalTransportGeometry2021}, where electrons are described by the Hamiltonian \( p^2 /2 m^* \), with \( m^* \) some effective mass.
 This model, however, fails for Dirac materials, where the electrons behave as ``Dirac fermions''.
 The notion of a ``Dirac fermion'' is almost comical from a high energy point of view\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
 A fermion is by its very definition a Dirac spinor.
@@ -32,8 +32,9 @@ The (massive) Dirac equation reads
 \end{equation}
 where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) the gamma matrices \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
 The systems is \( 4\times 4 \).
-The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
 It may of course be written as the Schrodinger equation\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
+The great insight of Dirac, was that due to the requirement of Lorentz invariance, the momentum and time operators had to appear at the same order, as opposed to the standard free particle \( H = p^2 /2m \).
+% The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
 Shortly after Dirac published his theory, Weyl commented that for a massless particle, the equation could be decomposed into two \( 2 \times 2 \) equations -- a Weyl decomposition.
 This yields two independent subsystems, themselves also linear in momentum,
 \begin{equation}
@@ -75,6 +76,7 @@ E = \pm v_F \hbar \sqrt{k_x^2 + k_y^2 + \frac{m^2}{\hbar ^2 v_{F}^2}}.
 \end{equation}
 There are no solutions $k_x, k_y$ making the energy levels degenerate.
 The crossing is thus only protected by symmetry considerations, and is not \emph{topologically protected}.
+\todo{Is this usage of topologically protected correct?}
 
 In three dimensions the situation is somewhat different, with the Hamiltonian  
 \begin{equation}
@@ -84,7 +86,7 @@ In this case, no perturbing term may open a gap at the crossing.
 There is no $2\times 2$ matrix $\sigma_4$ that anticommutes with the Pauli matricies and also is linearly independent, i.e. there is no ``fourth'' Pauli matrix, and thus no perturbative term will open the gap.
 Say for example we add a term like $m \sigma_z$, where the $z$-direction was chosen arbitrarily.
 The only effect this will have on the crossing is to translate it in $p_z$.
-Tying this back to the accidental degeneracy, we see that no matter the perturbation, the three-dimensional momentum space will always have a point of degeneracy, i.e., a crossing.
+Tying this back to the accidental degeneracy of section \ref{sec:accidental-degeneracy}, we see that no matter the perturbation, the three-dimensional momentum space will always have a point of degeneracy, i.e., a crossing.
 The crossing is \emph{topologically protected}.
 A more formal approach to topological materials, is that of topological invariants -- numbers related to the topology of the material.
 Having a non-trivial topological invariant number, is the very definition of topological materials, and we will in subsection \ref{sec:chern-number-weyl} show that Dirac cones makes the Chern number of these materials non-trivial.
@@ -97,6 +99,7 @@ The Hamiltonian of the system~\cite{armitageWeylDiracSemimetals2018a}
   \label{eq:5}
   H = v_F \tau _x \otimes \vec{\sigma} \vec{k} + m \tau _z \otimes I_2 + b I_2 \otimes \sigma _z + b' \tau _z \otimes \sigma _x,
 \end{equation}
+\todo{Could we comment that this corresponds to re-constructing the Dirac equation from the two chiral Weyl equations, and \emph{then} addihng the lorentz breaking terms?}
 with $\vec{\tau}$ the Pauli matricies related to the pseudospin, and $I_2$ the identity matrix of dimension 2.
 The perturbing parameters $m, b, b'$ are a mass parameter, and Zeeman fields in the $z$ and $x$ direction, respectively.
 Ignore for now $b'$, i.e. $b' = 0$, which is related to a state known as the line node semimetal.
@@ -122,7 +125,7 @@ This thus separates two Dirac nodes in momentum space, giving  a \emph{Weyl} sem
 This also illustrates that the decomposition in Eq. (\ref{eq:3}) is valid around either of the shifted nodes.
 Expanding around one of the Dirac points of the Weyl semimetal, the Hamiltonian is exactly Eq. (\ref{eq:3}), after decomposing the $4 \times 4$ Hamiltonian into its two chiral  $2\times 2$ Weyl constituents.
 
-If one instead perturbs the system with a Zeeman field in the $x$-direction, i.e. having a $b' > 0$, the splitting is instead in energy, giving nodal loop where the two cones intersect.
+If one instead perturbs the system with a Zeeman field in the $x$-direction, i.e. having a $b' > 0$, the separation is instead in energy, giving nodal loop where the two cones intersect.
 We will not go into any depth on these types of materials.
 \todo{Possibly rewrite the following sentence}
 The three cases described here: unperturbed, where the two cones are superimposed; perturbed by $b$, where the cones are separated in momentum; and perturbed by $b'$, where the cones are separated in energy, are shown in Figure \ref{fig:conetypes}.
@@ -152,7 +155,8 @@ These types of systems, which are the systems of interest for this thesis, are c
   \centering
   % \includegraphics[width=\textwidth]{figures/cone}
   % \includegraphics[width=\textwidth]{figures/cones_types-verysmall}
-  \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque.png}
+  % \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque.png}
+  \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque-small.png}
   \caption{Dispersion curves in the $k_z, k_x$-plane. \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, givng a nodal loop.}
   \label{fig:conetypes}
 \end{figure}
@@ -161,7 +165,8 @@ These types of systems, which are the systems of interest for this thesis, are c
   \centering
   % \includegraphics[width=0.75\textwidth]{figures/tilt_cone}
   % \includegraphics[width=0.75\textwidth]{figures/conesTransparent-verysmall.png}
-  \includegraphics[width=\textwidth]{figures/cones-tilt-color1.png}
+  % \includegraphics[width=\textwidth]{figures/cones-tilt-color1.png}
+  \includegraphics[width=\textwidth]{figures/cones-tilt-color1-small.png}
   \caption{Tilted Dirac cones.
     From left to right the tilt increases, from no tilt in the first cone to overtilt in the last.
     The three first are Type-I Weyl semimetals, the last is a Type-II semimetal.
@@ -239,9 +244,9 @@ This gives
 \begin{equation}
   \vec{B}_+ = -\Im
   \frac{
-    \braket{+ | \vec\sigma + v_F \vec{t}| -}
+    \braket{+ | \vec\sigma | -}
     \times
-    \braket{- | \vec\sigma + v_F \vec{t} | +}
+    \braket{- | \vec\sigma | +}
   }{
     4 R^2
   }.
@@ -331,7 +336,8 @@ Importantly, the Berry curvature is indeed non-zero, however any closed  curve o
 the  monopole has been moved outside the dimensionality of freedom.
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath.png}
+  % \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath.png}
+  \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath-small.png}
   \caption{The state plane, transparent yellow, parallel to the $xy$-plane and a Berry curvature monopole at the origin.
   An integration contour is shown in blue dashed.
   See main text for details.}
