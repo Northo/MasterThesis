@@ -1,0 +1,24 @@
+#+title: 06 07
+
+* Talk with Maria et al next week
+
+** How exotic is this?
+Which papers are relevant?
+
+** Energy-momentum tensor
+
+** Discussion similar to generation paper
+
+** Tilt in y-direction
+
+** Log \(\Lambda\)
+Looked in Asgari paper (see [[file:05-30.org::*Effecitve fermi velocity from cutoff][Effecitve fermi velocity from cutoff]] )
+Alireza seemed happy wiht \(\Lambda = \frac{k_c}{\sqrt{2 e B}} \) where \( k_c \propto 1 / a \).
+
+* Physica print
+
+** TODO Find out what the prices are and send to Alireza
+
+* Draft
+Did not really get a clear answer.
+Should probably be more firm and ask for feedback on draft before some date.
