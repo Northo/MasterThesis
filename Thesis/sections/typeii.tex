@@ -27,20 +27,24 @@ While the density of states for a Type-I semimetal goes to zero as one approache
 
 \subsubsection{Linear Dirac equation from tight binding model}
 We will firstly consider a slightly more realistic toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
-This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to see how two Dirac cones in the same Brillouin zone tilt in relation to each other.
-We will then continue by linearizing the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
+This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to discuss the validity of the linear model in different contexts.
+We will linearize the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
 
 Using the general time-reversal breaking model described by \textcite{mccormickMinimalModelsTopological2017}
 \begin{equation}
   \begin{split}
-    H(\vec{k}) &= \left[ ( \cos k_x + \cos k_z - 2 )m + 2 t (\cos k_x - \cos k_0) \right] \sigma_1\\
+    H(\vec{k}) &= \left[ ( \cos k_y + \cos k_z - 2 )m - 2 t (\cos k_x - \cos k_0) \right] \sigma_1\\
     &\pe - 2 t \sin k_y \sigma_2 - 2t \sin k_z \sigma_3
     + \gamma (\cos k_x - \cos k_0).
   \end{split}
 \end{equation}
+\todo{Write what all the different parameters are. Having another t here is somewhat confusing}
 The model has Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
-Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
+For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion, while as \( k_0 \) is reduced, bringing the cones closer together, the cones are also made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction.
+This is shown in figure \ref{fig:typeii:move-nodes}, where two cones are moved unitl they meet at the origin.
+% Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
+Figure \ref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to 0.15.
 The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
 We call these hole and electron pockets, respectively.
 
@@ -67,13 +71,96 @@ In the tilt-term, we move the sign dependence into \(\gamma \), and the lineariz
 where \(\gamma ^{\pm} = \pm \gamma \) with the upper sign corresponding to the node at \(k_{x} = + k_{0}\) and the lower sign corresponds to the node at \(k_{x} = - k_{0}\).
 As expected, we get two Dirac cones, tilting in opposite direction, but with the same amount.
 \todo{How does this affect the Berry curvature and chern number?}
-\todo{Maybe prettier/more correct to invert ky and kz, as that would also give the opposite chirality of the dirac points}
+\todo{Maybe prettier/more correct to invert ky and kz, as that would also give the opposite chirality of the Dirac points}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/typeIIridgeline}
+  \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline}\todo{Write this}}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \tikzsetnextfilename{ridgeline}
+  \begin{tikzpicture}
+    \pgfplotscreateplotcyclelist{myexotic}{
+      teal,fill=teal!80!black\\
+      orange,fill=orange!80!black\\
+      cyan!60!black,fill=cyan!80!black\\
+      lime!80!black,fill=lime\\
+      red,fill=red!80!black\\
+      yellow!60!black,fill=yellow!80!black\\
+      black,fill=gray\\
+      red,fill=red!80!black\\
+    }
+    \begin{axis}[
+      area plot/.style={
+        fill opacity=0.75,
+        % draw=#1!80!black,thick,
+        % fill=#1,
+        mark=none,
+      },
+      cycle list name={myexotic},
+      plot box ratio=3 5 1,
+      view={-40}{20},
+      zmin=-0.2, zmax=0.2,
+      xlabel=\( k_x \),
+      ylabel=\( \gamma \),
+      zlabel=Energy,
+      xtick={-3.1415,-1.5708,0,1.5708,3.1415},
+      xticklabels={\( -\pi \), \( -\frac{\pi}{2} \), 0, \( \frac{\pi}{2} \), \( \pi \)},
+      ytick={1,2,3,4},
+      yticklabels={0,0.05,0.1,0.15},
+      ]
+
+      % \addplot3[area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+      % \addplot3[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      % \addplot3[area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+      % \addplot3[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      % \addplot3[area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+      % \addplot3[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      % \addplot3[area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+      % \addplot3[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+
+      \addplot3+[forget plot, area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+      \addplot3+[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      \addplot3+[forget plot, area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+      \addplot3+[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      \addplot3+[forget plot, area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+      \addplot3+[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+
+      \addplot3+[forget plot, area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+      \addplot3+[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline2}\todo{Write this}}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  % \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
+  \includegraphics[width=0.7\textwidth]{figures/typeIImoveTransition}
+  \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
+    See main text for details about the model.}
+\end{figure}
+
+\begin{figure}[ht]
+  \centering
+  \includegraphics[width=0.7\textwidth]{figures/bendingTransition.png}
+  \caption{\label{fig:typeii:bendbands}Tight binding model of tilted Dirac cones, with the parameter \( \gamma \) increased from left to right, transitioning the system from Type-I to Type-II. See main text for details about the model.}
+\end{figure}
 
 The linearized model are accurate in describing low energy interactions around the Fermi level.
 For higher energies their validity falls apart, and more complex models are warranted.
 In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
 
-\subsubsection{The tilt term -- symmetries and Type-I vs. Type-II}
+\subsubsection{The tilt term -- symmetries and Type-I vs.\! Type-II}
 For tilted Dirac cones we will consider the Hamiltonian
 \begin{equation}
   \label{eq:10}
@@ -83,8 +170,8 @@ where \( s \) denotes the chirality of the Dirac cone, \( v_F \) is the Fermi ve
 In general the Fermi velocity is anisotropic, as was the case in the general Dirac Hamiltonian given in Eq. \eqref{eq:4}.
 By an anisotropic scaling of the momenta \( \vec{k} \), the system may always be mapped to an isotropic case, which we will consider here.
 
-The tilt vector will in general depend on the chirality of the Dirac cone.
-As the Dirac cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry.
+The tilt vector will in general depend on the chirality of the cone.
+As the cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry.
 In the case of broken inversion symmetry, we will consider the case of a tilt equal in direction and magnitude between the two cones, \( \vec{t}^s = \vec{t} \).
 In short, we define
 \begin{equation}
@@ -118,15 +205,3 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
 \end{itemize}
 
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/typeIIridgeline}
-  \caption{\label{fig:ridgeline} \todo{Write this} The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
-  \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
-    See main text for details about the model.}
-\end{figure}
