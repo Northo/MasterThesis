@@ -9,21 +9,45 @@
 \end{figure}
 
 The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines.
-See figure~\ref{fig:conic-section-sketch}.
-Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \citeauthor{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
+See schematic representation in figure~\ref{fig:conic-section-sketch}.
+Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \textcite{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
 \todo{add some concrete examples or cites}
 \todo{Is this correct? Is a tilt at all possible in HEP?}
 
-In the case of massless fermions, the particle physics equivalent of the Weyl semimetal, such a tilt is not possible, due to the requirement of Lorentz invariance \todo{add cite or explain}.
-In condensed matter physics, however, this is not an issue, and it is indeed a real class of materials \todo{cite examples}.
-We denote these types of materials Type-II Weyl semimetals, as opposed to Type-I.
-The transition between Type-I and Type-II is abrupt -- the Fermi surface goes from a single point to two intersecting lines, in other words going from a zero dimensional to a one dimensional surface.
-\todo{Make sure this is indeed a one dimensional surface. It is kind of 1DxZ(2)}
-\todo{Make sure it is one dim also for the 3D case, quadric surface, not conic intersection}
-Type-II also has electron and particle pockets at the Fermi level.
-While the density of states for a Type-I semimetal goes to zero as one approaches the Fermi level, this causes Type-II to have a finite density of states at the Fermi level.
-\todo{End with something like: all in all this gives type ii weyl semimetal manifestly different properties from tyep i, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective}
+In this section, we investigate in more detail the tilted Weyl cones, the star of this thesis.
+The tilted Hamiltonian was introduced in Eq.~\eqref{eq:hamil-tilt-isotropic}
+\[
+H = v_F \vec{t} \vec{k} + v_F \vec{k} \vec{\sigma},
+\]
+where we chose isotropic Fermi velocity.
+As discussed earlier, the proper Dirac equation of particle physics cannot include such a tilting term, as it obviously breaks Lorentz invariance
+\footnote{Some references states that it is Type-II is problematic and breaks Lorentz invariance.
+  something something boost looks like tilt.
+  Not possible to boost into type ii
+todo}.
+The emergent Dirac equation of condensed matter physics, however, need not respect the Lorentz invariance and such a tilting term is no problem.
+\todo{I am pretty sure there is some neat analogy here that should be included. Light cone etc.}
+
+As was eluded to in the introduction to the section, the Weyl has two distinct phases: Type-I and
+Type-II.
+Tilting the Weyl cone, the upper and lower badns will at some tilt angle touch the Fermi level, a \emph{critical} tilt.
+Going beyond this, the upper (lower) band dips below (above) the Fermi level, and we have what is known as a Type-II Weyl semimetal.
+Altough the two states are similar in many ways, they also have hugely important differenes separating them from one another.
+In the Type-I regime, the density of states goes to zero at the Fermi level.
+In the Type-II regime, however, particle and hole pockets appear -- the intersection of the cone and the Fermi level goes from a singular point to two infinite lines (shown in figure~\ref{fig:tilted-cones} on page \pageref{fig:tilted-cones}).
+This abrupt change of the topology of the Fermi surface, from closed to open, is known as a Lifshitz transition \cite{volovikTopologicalLifshitzTransitions2017}.
+This gives Type-II Weyl semimetals manifestly different properties from Type-I, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective.
+
+% In the case of massless fermions, the particle physics equivalent of the Weyl semimetal, such a tilt is not possible, due to the requirement of Lorentz invariance \todo{add cite or explain}.
+% In condensed matter physics, however, this is not an issue, and it is indeed a real class of materials \todo{cite examples}.
+% We denote these types of materials Type-II Weyl semimetals, as opposed to Type-I.
+% The transition between Type-I and Type-II is abrupt -- the Fermi surface goes from a single point to two intersecting lines, in other words going from a zero dimensional to a one dimensional surface.
+% \todo{Make sure this is indeed a one dimensional surface. It is kind of 1DxZ(2)}
+% \todo{Make sure it is one dim also for the 3D case, quadric surface, not conic intersection}
+% Type-II also has electron and particle pockets at the Fermi level.
+% While the density of states for a Type-I semimetal goes to zero as one approaches the Fermi level, this causes Type-II to have a finite density of states at the Fermi level.
+% \todo{End with something like: all in all this gives type ii weyl semimetal manifestly different properties from tyep i, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective}
 
 \subsubsection{Linear Dirac equation from tight binding model}
 \label{sec:tilt:tightbindingmodel}
@@ -168,6 +192,60 @@ The linearized model are accurate in describing low energy interactions around t
 For higher energies their validity falls apart, and more complex models are warranted.
 For our calculations, we will take the linear model to be sufficient.
 It is much easier to work with, and sufficient in most cases.
+
+One of the most obvious differences between the tight binding model and the linear model is the finiteness of the former.
+This is particularly important with regards to two aspects: the Dirac sea and the topology of the Fermi surface.
+In high energy physics, the Dirac sea is infinitely deep \cite{vozmedianoTheoreticalPhysicsColloquium2021}, whereas in condensed matter physics, it is not.
+As is seen from the tight binding model, the Dirac sea of the two cones, is really connected;
+this has consequences among other for the interpretation of the chiral anomaly.
+In our context, also the topology of the Fermi surface is of importance.
+As mentioned, in the Lifshitz transition from Type-I to Type-II, the Fermi surface goes from being closed to open in the linear model.
+This is not the case in the tight binding model, whose Fermi surface is shown in figure \ref{fig:fermiSurfaceTight}.
+Note that in this model, the pockets are shared between the two noedes.
+One may also construct tight binding models with isolated pockets \cite{mccormickMinimalModelsTopological2017}, however, they are still closed.
+
+A priori, it is not obvious when and how the linear model falls short, and a critical interpretation and evaluation of results derived from it is always warrented.
+It is, however, a very useful and interesting model.
+One of the more obvious remedies one might consider, is a momentum cutoff, restricting the model to the region where it is the most correct, as is common in for example graphene calculations.
+\todo{cite graphene}
+\todo{discussion a la second order contrib ... deep in tilt see ferreirosAnomalousNernstThermal2017}
+
+\begin{figure}[htb]
+  \centering
+  \tikzsetnextfilename{fermiSurfaceTight}
+  \begin{tikzpicture}
+    \begin{axis}[
+      every axis plot post/.append style={mark=none},
+      ymin=-pi, ymax=pi,
+      xmin=-pi, xmax=pi,
+      xlabel=\( k_x \), ylabel=\( k_y \),
+      ]
+      % \addplot[samples=100] {atan(sqrt(10)*cos(x)*sqrt(1/(27+32*cos(x)-5*cos(2*x))))};
+      % CSV has a strange format
+      % outer only given for positve
+      % Upper
+      \addplot[red] table[col sep=comma] {data/fermiLevelTightInner.csv};
+      \addplot[blue] table[col sep=comma] {data/fermiLevelTightOuter.csv};
+      \addplot[blue] table[col sep=comma, x expr=-\thisrowno{0}] {data/fermiLevelTightOuter.csv};
+
+      % Lower
+      \addplot[red] table[col sep=comma, y expr=-\thisrowno{1}] {data/fermiLevelTightInner.csv};
+      \addplot[blue] table[col sep=comma, y expr=-\thisrowno{1}] {data/fermiLevelTightOuter.csv};
+      \addplot[blue] table[col sep=comma, x expr=-\thisrowno{0}, y expr=-\thisrowno{1}] {data/fermiLevelTightOuter.csv};
+
+      \addplot[domain=0.2:pi-0.2,gray] {-pi/2 + x};
+      \addplot[domain=0.2:pi-0.2,gray] {pi/2 - x};
+      \addplot[domain=-pi+0.2:-0.2,gray] {pi/2 + x};
+      \addplot[domain=-pi+0.2:-0.2,gray] {-pi/2 - x};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{The Fermi surface of the tight binding model in the Type-II phase, with the Fermi surface of the linear model superimposed (gray).
+    The Figure shows the \( k_x, k_y \) plane, with \( k_z = 0 \).
+    Electron pockets are shown in red, hole pockets shown in blue.
+    Note that the Fermi surface of the linear model is infinite, and here truncated for clarity.
+  Figure inspired by \textcite{mccormickMinimalModelsTopological2017}.}
+  \label{fig:fermiSurfaceTight}
+\end{figure}
 
 % In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
 \todo{Fermi surface when tilt, cutoff, finite sea ....}

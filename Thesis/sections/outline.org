@@ -36,6 +36,24 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 
 **** Tilted dirac cones
 ***** TODO Introduction
+- Conic section problem
+
+- We here consider more in detail the tilted dirac cone, the system of interest for this thesis.
+  Back ref to first mention of hamiltonina in other section.
+
+- HEP Dirac equation cannot have a tilt term, which would break Lorentz invarince, as discussed earlier.
+  (Something something a boost might be remeniscent of tilt)
+
+- The tilted dirac cone has two distinct phases, Type-I and Type-II.
+  Tilting the dirac cone, the upper and lower bands will at some tilt angle touch the fermi surface, a critical tilt.
+  Going beyond this, with the upper band dipping below the fermi level and the lower band above, we have what is called a type-II Weyl semimetal.
+  Altough the two states are similar in many ways, they also have hugely important differneces separating them.
+  In the type-I regime, the denisty of states goes to zero at the fermi level.
+  In th tyep ii regime, we have the emergence of particle and hole pockets -- the intersection of the cone and the fermi surface goes from a singular point to two infinite lines.
+  The topology of the fermi surface is abruptly altered, a Lifshitz transition ref volovik
+  (the surface goes from being closed to open)
+
+
 - Material realizations
 ***** From tight binding model to linear model
 Clean up so that the symbol convention is consistent.
@@ -46,6 +64,8 @@ Make sure argument about the sign of this and that is legit
 - Infinite dirac sea
 - May need momentum cutoff
 - Maybe tie in with graphene or other model?
+- Ref lifshitz transition: the linear model has a lifshitz transition from type i to type ii, going form closed to open fermi surface.
+  In the tight binding model, the surface is indeed closed also for type ii
 
 ***** Tilting term
 ****** Inversion symmetry vs no inversion symmetry
