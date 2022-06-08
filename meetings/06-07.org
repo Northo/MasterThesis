@@ -22,3 +22,8 @@ Alireza seemed happy wiht \(\Lambda = \frac{k_c}{\sqrt{2 e B}} \) where \( k_c \
 * Draft
 Did not really get a clear answer.
 Should probably be more firm and ask for feedback on draft before some date.
+
+* Issue of magnetization current
+Alireza wanted to know what happens with magnetization curent for Type-II
+Stoof seems to conclude that the magnetization current is zero for zero chemical potential and temperature, however, this calculation might be only for type i.
+Eq.(64) in stoof seems to depend on the denisty of states at the some energy level. Maybe this is greatly changed by the fact the density of states is changed at the fermi level for type II?
