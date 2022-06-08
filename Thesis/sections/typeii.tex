@@ -26,6 +26,7 @@ While the density of states for a Type-I semimetal goes to zero as one approache
 \todo{End with something like: all in all this gives type ii weyl semimetal manifestly different properties from tyep i, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective}
 
 \subsubsection{Linear Dirac equation from tight binding model}
+\label{sec:tilt:tightbindingmodel}
 We will firstly consider a slightly more realistic toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
 This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to discuss the validity of the linear model in different contexts.
 We will linearize the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
@@ -41,43 +42,63 @@ Using the general time-reversal breaking model described by \textcite{mccormickM
 \todo{Write what all the different parameters are. Having another t here is somewhat confusing}
 The model has Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
-For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion, while as \( k_0 \) is reduced, bringing the cones closer together, the cones are also made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction.
-This is shown in figure \ref{fig:typeii:move-nodes}, where two cones are moved unitl they meet at the origin.
+For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion.
+As \( k_0 \) is reduced, the cones are brought closer together and made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction, as shown in figure \ref{fig:typeii:move-nodes}, where two cones are moved unitl they meet at the origin.
 % Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
-Figure \ref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to 0.15.
+Figure \ref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to \( 3t \).
 The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
 We call these hole and electron pockets, respectively.
+
+\begin{figure}[htb]
+  \centering
+  \begin{subcaptionblock}[t]{0.49\textwidth}
+    % \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
+    \includegraphics[width=\textwidth]{figures/typeIImoveTransition}
+    \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
+      See main text for details about the model.}
+  \end{subcaptionblock}
+% \end{figure}
+% \begin{figure}[!htb]
+  \begin{subcaptionblock}[t]{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{figures/bendingTransition.png}
+    \caption{\label{fig:typeii:bendbands}Tight binding model of tilted Dirac cones, with the parameter \( \gamma \) increased from left to right, transitioning the system from Type-I to Type-II. See main text for details about the model.}
+  \end{subcaptionblock}
+\end{figure}
 
 Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac cone
 \begin{equation}
   \label{eq:7}
-  H(\vec{K} ^{'\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \quad k_{x}, k_{y}, k_{z} \ll 1.
+  H(\vec{K} ^{'\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \: k_{x}, k_{y}, k_{z} \ll 1.
 \end{equation}
-When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian of around the cone, is
+When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian around the cone is
 \begin{equation}
   \label{eq:8}
   H'(\vec{k}) = \mp 2 t k_{x} \sigma_{x} - 2t k_{y} \sigma_{y} - 2 t k_{z} \sigma_{z} \mp \gamma k_{x}.
   % h'(\vec{v}) = -2t \vec{k} \vec{\sigma} - \gamma k_{x}.
 \end{equation}
-However, as the two noes are brought closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
-The expression may be made even more clear by moving the sign \(\pm\)-sign into the tilt parameter \(\gamma\).
-The Hamiltonian is invariant under a sign change of the first term, as the isotropic Dirac Hamiltonian is invariant under inversion.
-\todo{Is this not quite jalla?}
-In the tilt-term, we move the sign dependence into \(\gamma \), and the linearized model is
+For a system
 \begin{equation}
-  \label{eq:9}
-  H'(\vec{k}) = - 2t \vec{k} \vec{\sigma} - \gamma^{\pm} k_{x},
+  \label{eq:155}
+  H = \gamma_i k_i + k_i A_{ij} \sigma_j,
 \end{equation}
-where \(\gamma ^{\pm} = \pm \gamma \) with the upper sign corresponding to the node at \(k_{x} = + k_{0}\) and the lower sign corresponds to the node at \(k_{x} = - k_{0}\).
-As expected, we get two Dirac cones, tilting in opposite direction, but with the same amount.
-\todo{How does this affect the Berry curvature and chern number?}
-\todo{Maybe prettier/more correct to invert ky and kz, as that would also give the opposite chirality of the Dirac points}
+the chirality of the node \( s = \det(A_{ij}) \) \cite{mccormickMinimalModelsTopological2017}, and we see this gives a negative cone at \( k_0 = \pi /2 \) and positive at \( k_0 = -\pi /2 \).
+We could arrive at a more familiar form of the expression by letting \( 2 t \to v_F, \gamma \to v_F t \), and do a \( \pi \) rotation around \( x \) at the positive cone, giving
+\begin{equation}
+  \label{eq:158}
+  H'(\vec{k}) = s v_F \vec{k} \cdot \vec{\sigma} + s v_F t k_x.
+\end{equation}
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/typeIIridgeline}
-  \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline}\todo{Write this}}
-\end{figure}
+Moving the two nodes closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
+As discussed earlier, this may be mitigated by a rescaling of \( k_x \).
+\todo{make sure this is discussed earlier}
+The model thus gives rise to a pair of Weyl cones, with an inversion symmetric tilt, i.e. they tilt with equal magnitude in the opposite direction.
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.7\textwidth]{figures/typeIIridgeline}
+%   \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline}\todo{Write this}}
+% \end{figure}
 
 \begin{figure}[ht]
   \centering
@@ -142,23 +163,14 @@ As expected, we get two Dirac cones, tilting in opposite direction, but with the
   \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline2}\todo{Write this}}
 \end{figure}
 
-\begin{figure}[ht]
-  \centering
-  % \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
-  \includegraphics[width=0.7\textwidth]{figures/typeIImoveTransition}
-  \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
-    See main text for details about the model.}
-\end{figure}
-
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.7\textwidth]{figures/bendingTransition.png}
-  \caption{\label{fig:typeii:bendbands}Tight binding model of tilted Dirac cones, with the parameter \( \gamma \) increased from left to right, transitioning the system from Type-I to Type-II. See main text for details about the model.}
-\end{figure}
 
 The linearized model are accurate in describing low energy interactions around the Fermi level.
 For higher energies their validity falls apart, and more complex models are warranted.
-In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
+For our calculations, we will take the linear model to be sufficient.
+It is much easier to work with, and sufficient in most cases.
+
+% In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
+\todo{Fermi surface when tilt, cutoff, finite sea ....}
 
 \subsubsection{The tilt term -- symmetries and Type-I vs.\! Type-II}
 For tilted Dirac cones we will consider the Hamiltonian
@@ -171,7 +183,7 @@ In general the Fermi velocity is anisotropic, as was the case in the general Dir
 By an anisotropic scaling of the momenta \( \vec{k} \), the system may always be mapped to an isotropic case, which we will consider here.
 
 The tilt vector will in general depend on the chirality of the cone.
-As the cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry.
+As the cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry, as was the result from the tight binding model in the subsection on \emph{\nameref{sec:tilt:tightbindingmodel}}.
 In the case of broken inversion symmetry, we will consider the case of a tilt equal in direction and magnitude between the two cones, \( \vec{t}^s = \vec{t} \).
 In short, we define
 \begin{equation}
@@ -199,8 +211,6 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
 \end{Proof}
 
 \begin{itemize}
-  \item gives rise to cones tilting opposite direction
-  \item Linearized model valid for low energy interaction. For higher energy, the perfect cone model is not valid, as the cones does in fact touch.
   \item In this model, the hole pocket is ``shared'' between the two cones. There are also models with individual pockets (see \cite{mccormickMinimalModelsTopological2017})
 \end{itemize}
 

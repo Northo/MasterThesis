@@ -35,11 +35,18 @@ See chernodubThermalTransportGeometry2021 eq.~(2)
 - Add tilt
 
 **** Tilted dirac cones
-***** Introduction
+***** TODO Introduction
 - Material realizations
 ***** From tight binding model to linear model
 Clean up so that the symbol convention is consistent.
 Make sure argument about the sign of this and that is legit
+
+****** Validity of the linear model
+- In particular, discuss something about the fermi surface
+- Infinite dirac sea
+- May need momentum cutoff
+- Maybe tie in with graphene or other model?
+
 ***** Tilting term
 ****** Inversion symmetry vs no inversion symmetry
 ****** Fermi surface when tilting
