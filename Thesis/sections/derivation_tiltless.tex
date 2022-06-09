@@ -10,15 +10,14 @@ The fields are given, in the position basis, by
 \end{align}
 Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / ) a_{\lambda }^{\dagger}$ and $a_{\lambda }^{\dagger}, a_{\lambda }$ are the creation and annihilation operators of the state with quantum numbers $\lambda $.
 The current operator $\hat{\vec{J}} = e \hat{\vec{v}}$, where $\hat{\vec{v}}$ is the velocity operator.
-Using the relation of Heisenberg operators $\dot{A} = [A, H] / i $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, the operator
-\todo{\( \frac{1}{i} \) looks weird. Is like that since we removed \( \hbar \). Replace with \( -i \)}
+Using the relation of Heisenberg operators $\dot{A} = -i [A, H] $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, and with the minimal coupling \( \vec{p}^B = \vec{p} + e \vec{A} \),
 \begin{align}
-  \vec{v} = \dot{\vec{r}} &= \frac{1}{i  } \left[ \vec{r}, H \right]\\
-              &= \frac{sv_F \sigma ^i}{i  } \left[ \vec{r}, p_i + e A_i \right] + \frac{v_F}{i } [\vec{r}, \vec{t}^s \vec{k}]\\
-              &= \frac{s v_F \sigma^i }{i  } \left( i \hat{\vec{x}}_i + e[\vec{r}, A_i] \right) + v_F \vec{t}^s\\
-              &=s v_F \sigma ^i \hat{\vec{x}}_i + v_F \vec{t}^s,
+  \vec{v} = \dot{\vec{r}} &= -i \left[ \vec{r}, H \right]\\
+  &= -i v_F (s \sigma^i + (t^s)^i) \left[\vec{r}, p^B_i\right]\\
+  &= v_F (s \vec{\sigma} + \vec{t}^s),
 \end{align}
-and thus
+where we used the canonical commutation relation \( [r_i, p_j] = i \delta_{ij} \) and the commutation between the position operator and magnetic potential \( \vec{A} \).
+We thus get
 \begin{equation}
   J^x = \psi ^{\dagger} \hat{J}^x \psi = sv_F e \sum\limits_{\vec{k}m, \vec{l}n}^{}
   \phi _{\vec{k}ms}^{*}(\vec{r}) \left(\sigma^x + s t^s_x\right) \phi _{\vec{l}ns}(\vec{r})
@@ -36,7 +35,7 @@ where the index \( i \) runs over the types of fields.
 This definition is correct for commuting fields, however, for non-commuting fields like ours, this formula is slightly wrong.
 This is often overlooked in many textbooks and papers, so we will here elucidate the issue to some degree.
 While a proper derivation requires the use of Grassman variables and defining left and right derivation, which we will not do here, some simple considerations help in understanding the issue.
-In the standard textbook derivation of then canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields
+In the standard textbook derivation of the canonical energy-momentum tensor, one expands the total derivative of the Lagrangian \( \mathcal{L}(\psi_i, \partial \psi_i)\) in terms of the fields,
 \begin{equation}
   \label{eq:56}
   \frac{\mathrm{d} \mathcal{L}(\psi_{i}, \partial \psi_i)}{\mathrm{d} x_{\nu }} \equiv \mathrm{d}^{\nu } \mathcal{L}
@@ -46,7 +45,7 @@ In the standard textbook derivation of then canonical energy-momentum tensor, on
 This expansion, however, ignores the non-commutative nature of the fields.
 For concreteness, consider \( \psi _i = \bar{\psi} \).
 Heuristically, the correct expression would be obtained by reordering the factors in the two terms.
-By naively employing Eq. \eqref{eq:55}, the resulting canonical energy-momentum tensor of the Dirac theory would be
+By naively employing Eq.~\eqref{eq:55}, the resulting canonical energy-momentum tensor of the Dirac theory would be
 \begin{equation}
   T^{\mu \nu} = \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} \partial^{\nu} \bar{\psi}  + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
@@ -56,16 +55,62 @@ while the correct form is \cite[Eq.~3-153]{itzyksonQuantumFieldTheory1980}
   T^{\mu \nu} = \partial^{\nu} \bar{\psi} \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L}.
 \end{equation}
 
-Our Hamiltonian
+The untilted Weyl Hamiltonian
+\begin{equation}
+  H_s = s \sigma^i k_i,
+\end{equation}
+has the Lagrange density \cite{kachelriessQuantumFieldsHubble2018}
+\begin{equation}
+  \mathcal{L}_s = i \phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi,
+\end{equation}
+with \( \sigma_s^{\mu} = (I_2, s \vec{\sigma}) \), i.e. \( \sigma_{s=1}^{\mu} = \sigma^{\mu}, \sigma_{s=-1}^{\mu} = \bar{\sigma}^{\mu} \) known from the Dirac solutions.
+This is seen directly from the Dirac Lagrangian \( i \bar{\psi} \slashed{\partial} \psi \) by taking \( \psi = (\phi_L, \phi_R)^T \) and setting, for example, \( \phi_R = 0 \).
+Symmetrize in daggered and undaggered fields
+\footnote{The Lagrangian itself is unphysical, and we may transform it in any way that leaves the action \( \int \mathcal{L} \) invariant.}
+\begin{equation}
+  \mathcal{L}_s = \frac{i}{2} (\phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma_s^{\mu} \phi),
+\end{equation}
+which will prove more convenient to work with.
+From the definition of the canonical energy-momentum tensor for Dirac fields Eq.~\eqref{eq:57}, one gets
+\begin{equation}
+  T^{\mu \nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \sigma_s^{\mu} \partial_{\nu} \phi
+  - \sigma_s^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \eta^{\mu \nu} \mathcal{L}
+  ).
+\end{equation}
+Consider now the tilted Weyl Hamiltonian
+\begin{equation}
+  H_s = s \sigma^ik_i + (t^s)^i k_i.
+\end{equation}
+Exactly analogous to the treatment of \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} for the full \( 4 \times 4 \) tilted Dirac Lagrangian, absorb the tilt term into the Pauli matrices, giving the Lagrangian density
+\begin{equation}
+  \mathcal{L}_s = i \phi^{\dagger} \tilde{\sigma}_s^{\mu} \partial_{\mu} \phi,
+\end{equation}
+where \( \tilde{\sigma}_s^{\mu} = \sigma_s^{\mu} + (t^s)^{\mu}, \; (t^s)^{\mu} = (0, \vec{t^s}) \).
+The corresponding energy-momentum tensor, after again symmetrizing in the fields,
+\begin{equation}
+  T^{\mu\nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \partial_{\nu} \phi
+  - \tilde{\sigma}_s ^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \eta^{\mu \nu} \mathcal{L}
+  ).
+\end{equation}
+\todo{Find missing v_F}
+
+\begin{comment}
+The untilted Weyl Hamiltonian
 \[
 H_s = s \sigma^i k_i
 \]
-may of course be considered as a Weyl decomposition of a full massless Dirac equation.
+may of course be considered a Weyl decomposition of a full massless Dirac equation.
 
 \todo{Why do we have to consider 4x4? Is the definitions not also valid for 2x2?}
 \todo{Regarding the non-symmetry of the stress tensor, see keichelriess eq 5.16 with discussion}
 
-The Hamiltonian
+The untilted Weyl Hamiltonian
 \[
 H_s = s \sigma^i k_i
 \]
@@ -83,7 +128,7 @@ Symmetrizing in daggered and undaggered fields
   \mathcal{L} = \frac{i}{2} \left(\phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma^{\mu} \phi \right),
 \]
 which will prove to be more convenient to work with.
-Adapting the definition Eq. \eqref{eq:57} the energy-momentum tensor for the untilted Dirac cone is thus
+Adapting the definition Eq.~\eqref{eq:57} the energy-momentum tensor for the untilted Dirac cone is thus
 \begin{equation}
   \label{eq:59}
   T^{\mu \nu} =
@@ -129,24 +174,20 @@ where we defined the modified Pauli matrices
     \sigma^{\mu} + s t^{\mu} & \text{ inversion symmetric}.
   \end{cases}
 \end{equation}
-Similarly, the $T^{0y}$ component of the stress-energy tensor of the theory is given by~\cite{arjonaFingerprintsConformalAnomaly2019}
+\end{comment}
 \begin{equation}
   \begin{split}
-    T^{0y}(t, \vec{r}) &=
+    T^{y_0}(t, \vec{r}) &=
     \sum\limits_{\vec{k} m, \vec{l} n}^{}
-    \frac{1}{4}
+    \frac{1}{2}
     \bigg\{
-    \left[
-      v_F \phi ^{*}_{\vec{k} m s}(\vec{r}) p_y \phi _{\vec{l} n s}(\vec{r})
-      -v_F \left( p_y \phi ^{*}_{\vec{k} m s} \right) \phi _{\vec{l} ns}
-    \right] a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)\\
-    &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) s \sigma ^y \phi _{\vec{l} n s }(\vec{r})
-    \left[
+    \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
+    & \times \left[
       a^{\dagger}_{\vec{k} m s}(t) i \partial _0  a_{\vec{l} n s}(t)
       -
       i \left(\partial _0 a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
     \right]\\
-    &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) s \sigma ^y (2\mu ) \phi _{\vec{l} n s}(\vec{r}) a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
+      &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) 2\mu \phi _{\vec{l} n s}(\vec{r}) a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
     \bigg\}.
   \end{split}
 \end{equation}

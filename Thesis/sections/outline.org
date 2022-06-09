@@ -130,6 +130,15 @@ Degeneracy factor from k sum:
 - Write something like, "we will see that J and T are indep of kx, and we may extract a degeneracy factor"
 - Cleaner than having it at the end?
 
+**** Energy-momentum tensor
+- Version with only 2x2
+The Weyl Hamiltonian has the corresponding Weyl Lagrangian
+Symmetrize in fields
+gives the canonical energy momentum tensor ....
+May absorb the tilt term in the pauli matrices, similar to what stoof did for the full Dirac equation, to get a modified weyl lagrangian
+The corresponding energy momentum tensor is then
+TODO: consider where and how we include the s and vF
+
 *** Explicit form and total response
 
 **** No tilt
