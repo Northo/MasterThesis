@@ -89,6 +89,22 @@ See chernodubThermalTransportGeometry2021
 Derive the stress energy tensor, comment on symmetric vs non-symmetric
 Refer to Stoof
 
+- The canonical energy momentum tensor reads
+  ...
+  With the symmetrized tensor
+  ...
+  used by ajona et al.
+  In untilted case resposne function shown to be
+  chi= int .... F
+  where F has two contributions, one from T0y and one form Ty0.
+  Shown to be
+  Em + En
+  and
+  alhpa^2 sqrt....
+
+  Show second is equal to
+  E0m + E0n
+
 *** Derive Landau Levels
 
 **** No tilt
@@ -159,7 +175,10 @@ Refer to figure.
 
 **** Momentum cutoff in the tz case
 
-****
+**** "Conformalness" of Type-II
+See notes from second vozmediano meeting, [[file:~/Documents/NTNU/10semester/meetings/meeting-vozmediano2.org::*Type-II][Type-II]].
+It seems like it is less trivial to conclude that the origin of the transport in type ii has its origin in conformal anomaly.
+Anyways a very good discussion point about the results
 
 **** Show some widemann-franz, mottt, etc relations?
 
@@ -174,6 +193,8 @@ I think acually the computation is quite easy in the untilted case.
 I also suspect that this is quite interesting, as the fermi surface and region of only one LL drastically change with tilt.
 
 *** More research into the energy-momentum tensor
+*** Fully covariant calculation
+Place the tilt in the metric
 
 * Ideas and Problems
 ** Directions
