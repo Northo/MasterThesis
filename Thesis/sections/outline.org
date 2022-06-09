@@ -92,9 +92,20 @@ Refer to Stoof
 *** Derive Landau Levels
 
 **** No tilt
+"Minimal coupling"
 
 **** With tilt
 Show the transformation and use the no tilt result.
+
+- Before introducing temperature graident etc, i.e. when just finding the Landau levels, we may always take the perp tilt to be in the x-direction, as we can rotate around z.
+  When later making the system non-rotational invariant, we have to specialize.
+
+- Partly due to the discussion above, might be neater to keep tx=t_perp
+
+- \vec{t} vs t
+
+- beta vs tx
+
 
 *** Analytical expressions for the operators
 Do the general case

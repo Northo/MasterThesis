@@ -5,7 +5,7 @@ We will first consider the untilted Hamiltonian, which we will then use to find 
 
 \subsection{The untilted Hamiltonian}
 \label{sec:ll-notilt}
-Cuple the Weyl Hamiltonian to the magnetic field through minimal coupling
+Couple the Weyl Hamiltonian to the magnetic field through minimal coupling
 \begin{equation}
   \label{eq:weyl-hamil}
   H_s = s v_F \sigma^i \left( p_i + e A_i \right),
@@ -178,15 +178,12 @@ Reintroducing $\chi = (y-k_xl_B^2) /l_B$ and normalizing we get:
   \end{equation}
 \end{summary}
 \subsection{The tilted Hamiltonian}
-\todo{Consider which formalism to use for this section. Should we already here use the geometry, or keep it with parallell, perpendicular?}
-\todo{I think it is better to use perp, parallell here, and then transition to using the explicit geometry later}
-
 As we have seen, the eigenvalues of a Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
 We will also consider the Landau levels of these materials, which importantly are very different from Type-I.
 In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field \cites{soluyanovTypeIIWeylSemimetals2015,sharmaChiralAnomalyLongitudinal2017}.
 
 The issue with the Landau level description is that for certain directions of the \(B\)-field, the Landau levels break down.
-For Type-I materials, the description is valid for all directions of the \(B\)-field, but as the cone tip into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt increases, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
+For Type-I materials, the description is valid for all directions of the \(B\)-field, but as the cone tilts into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular \cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt increases, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
 We will in this section derive and elucidate the Landau levels and their regions of validity.
 
 Consider again the Hamiltonian
@@ -207,13 +204,14 @@ with the \emph{tilt vector} as defined in Eq.~\eqref{eq:11}
 To find the Landau levels in a magnetic field \(\vec{B} = B_{z}\hat{z} \), we will ``Lorentz boost'' the system to a frame where the cone is not tilted, where we may use the usual approach for finding the Landau levels.
 
 \todo{Make sure this is not a repetition}
-Generally, consider \( \vec{t} \) to consist of two components, \( \vec{t}_{\parallel} \) which is parallel to the magnetic field, and \( \vec{t}_{\perp} \) perpendicular to the magnetic field.
-In this work, we restrict ourselves to the case where the perpendicular component is parallel to the charge current, i.e. the \( x \) direction in the chosen geometry.
-The \( \vec{t}_{\perp} \) vector may of course also have a component parallel to the temperature gradient \( \nabla T \), in this geometry the \( y \) direction, which, although interesting, is not considered here.
-Thus, let \( \vec{t} = (t_{\perp}, 0, t_{\parallel}) \).
-Introduce the \(\vec{B}\)-field by the minimal coupling \(\vec{p} \to \vec{p}^B = \vec{p} + e \vec{A}\).
-We take the field to be in the \( z \)-direction, and use the Landau gague \(\vec{A} = -B_{z}y \hat{x}\).
-\todo{Before applying the temperature gradient, when we still only consider finding the LLs, we may in fact say that we have generally \( t_{\perp} \) only in x, and hen later rotate into coordinates where \( \nabla T \) is in y. Maybe that is interesting after all...?}
+Generally, consider \( \vec{t} \) to  consist of two components: \( \vec{t}_{\parallel} \) which is parallel to the magnetic field, and \( \vec{t}_{\perp} \) perpendicular to the magnetic field.
+Without loss of generality, we take the magnetic field to be in the \( z \)-direction, with the Landau gauge \( \vec{A} = - B_z y \hat{x} \).
+By a rotation around \( z \), we may also in general take \( \vec{t}_{\perp} \parallel \hat{x} \).~%
+\footnote{
+  The setup considered in the response calculation does not have \( U(1) \) symmetry around the \( \vec{B} \)-field, due to the temperature gradient \( \nabla T \).
+  However, the Landau levels are here computed generally, and when later introducing the symmetry breaking components like the temperature gradient, we simply rotate to an appropriate frame.
+}
+Thus, let \( \vec{t} = (t_{\perp}, 0, t_{\parallel}) \), and introduce the magnetic field through the minimal coupling \( \vec{p} \to \vec{p}^B = \vec{p} + e \vec{A} \).
 
 The Landau level equation is
 \begin{equation}
@@ -226,13 +224,13 @@ with
   H_{B} = v_F \left(t^s _{\perp} p^B_{x} + t^s _{\parallel} p^B_{z} \right) \mathcal{I}_2 + \sum_i s v_{F} p^B_{i} \sigma _{i},
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
-We may again make the plane wave ansatz \( \phi(\vec{r}) = e^{i k_x x + i k_z z} \phi(y) \), similar to what was done for the untilted Hamiltonian in section \ref{sec:ll-notilt}, to replace \( p_{(x /y)} \to k_{(x /y)} \).
+We may again make the plane wave ansatz \( \phi(\vec{r}) = e^{i k_x x + i k_z z} \phi(y) \), similar to what was done for the untilted Hamiltonian in section \ref{sec:ll-notilt}, to replace \( p_{(x /z)} \to k_{(x /z)} \).
 In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian, as we must reformulate the equation in terms of the ladder operators.
 \footnote{It would also be possible to choose the frame such that the tilt was both in \(x\) and \(y\) direction, in which case we would get ladder operators also on the diagonal.
   This system, albeight tedious, could also have been solved directly.
   \todo{Verify this}
 }
-To achieve this, we will use a ``Lorentz transformation'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
+To achieve this, we will use a ``Lorentz boost'', which as we will show only leave \(k_{z}\) and \(E\) in the diagonal.
 Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on Eq. \eqref{eq:30} from the left, and insert identity on the form \( R R^{-1} \) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = R^{-1} \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
 \begin{equation}
@@ -284,14 +282,18 @@ Solving for \(\theta \) we get
   \pm \frac{\sqrt{s - t^s_{\perp}}}{\sqrt{s + t^s_{\perp}}}
   ).
 \end{equation}
-\todo{NB: depending of choice of sign in log, we get different signs in answer}
 Alternatively, written in a slightly suggestive form,
 \begin{equation}
   \label{eq:37}
   \tanh \theta =
-  - s t^s_{\perp}.
+  - s t^s_{\perp},
 \end{equation}
-\todo{For pedagogic reasons, include arctanh, which is only valid for -1 < x < 1, explicitly showing the collapse?}
+which is of course on the form of the \emph{rapiditiy} known from Lorentz transformations, with \( -s t^{s}_{\perp} \) taking the place of the \( \beta = v / c \) factor.
+From this observation, we also find it instructive to introduce the Lorentz factor
+\begin{equation}
+  \label{eq:gamma-lorentz}
+  \gamma = \frac{1}{\sqrt{1 - \beta^2} } = \frac{1}{\sqrt{ 1 - t_{\perp}^2 }}.
+\end{equation}
 
 The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal elements of the Hamiltonian, originating from the tilt, is thus
 \begin{equation}
@@ -328,11 +330,11 @@ For \(|t_{\perp}| \geq 1\), however, no (real) solution of \(\theta \) exits, an
 More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( |t_\perp| \to 1 \), the level separation \( \Delta E \to 0 \).
 
 Interestingly, there are no restrictions in the perpendicual tilt, \( t_\parallel \).
-The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plottin the \( t \)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
+The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plotting the \( t \)-vector inside a unit sphere, shown in Figure \ref{fig:tiltSphere}.
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
 When the projection is on the unit disc, the system is in the \emph{magnetic} regime, otherwise we denote it by the \emph{electric} regime.
-All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of the \(t\)-vector.
+All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of \(\vec{t}\).
 As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller angles between \( \vec{t} \) and \( \vec{B} \).
 \begin{figure}[ht]
   \centering
@@ -379,9 +381,8 @@ Thus, let
 These expressions warrant some explanation, as the Lorentz boost is of course
 \begin{equation}
   \label{eq:41}
-  \tilde{k}_x = \gamma (k_x - \beta \frac{E}{v_{F}}),
+  \tilde{k}_x = \gamma (k_x - t_{\perp} \frac{E}{v_{F}}),
 \end{equation}
-\todo{comment on beta = tx, or change to tx}
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
 It can thus look like our expression in Eq. \eqref{eq:40} is wrong.
 The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
@@ -393,9 +394,8 @@ The eigenvalue equation is simply
   \left[  \gamma \left( t^s_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
   s \tilde{k}_{i} \sigma _{i} \right] \ket{\tilde{\psi}}= 0.
 \end{equation}
-If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} \gamma \) in the new quantities.
+If we now again introduce the magnetic field using minimal coupling, \(k_{x} \to  k_{x} - ey B_{z} \), this corresponds to an effective field \(B_{z} /\gamma \) in the new quantities.
 This is because \(\tilde{k}_{x} \to  \tilde{k}_{x} - e y B_{z} /\gamma \).
-
 The Landau level equation thus reads
 \begin{equation}
   \label{eq:43}
@@ -422,24 +422,22 @@ Cleaning up, we get
   \end{align}
 \end{subequations}
 
-As the perpendicular tilt is increased, \(\gamma = 1 / \sqrt{1-\beta ^{2}}\) diverges to infinity.
-With the trivial substitution \(\alpha = \frac{1}{\gamma }\), which goes to zero, this gets an intuitive interpretation.
-\begin{equation}
-  \label{eq:46}
-  E = t^s_{\parallel} v_{F} \tilde{k}_{z} + \sign(m) v_F \alpha \sqrt{2 |m| e B \alpha  + \tilde{k}_{z}^2}.
-\end{equation}
+As the perpendicular tilt is increased, \(\gamma = 1 / \sqrt{1-t_{\perp} ^{2}}\) diverges to infinity.
+With the trivial substitution \(\alpha = 1 /\gamma \), which goes to zero, this gets an intuitive interpretation.
 As the perpendicular tilt increases, the Landau levels converge towards \(t_{\parallel} v_{F} \tilde{k}_{z}\).
-In particular, the separation between Landau levels \(m\) \todo{maybe use the word cyclotron frequency} is reduced by a factor \(\alpha ^{\frac{3}{2}}\).
+In particular, the separation between Landau levels is reduced by a factor \(\alpha ^{3 /2}\).
 The effect of the tilt on the Landau levels is to squeeze the Landau levels together, and we will call the \(\alpha \) the \emph{squeezing factor}.
-We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \(\beta \to 1\), the squeezing factor goes to zero.
+We note that when approaching the degree of tilt where we are no longer able to find a boost which enables us to solve for the Landau levels, i.e. when \( |t_{\perp}| \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
-Note also that the energy levels
+The Landau level description is only valid for \( |t_{\perp}| < 1 \).
+
+The energy levels of the tilted cone expressed in terms of the energy levels of the untilted cone
 \[
 E = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
 \]
 where \( E^0_{m, \alpha B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
 Tilting of the Landau levels is induced by the parallel tilt component, \( t_\parallel \).
-In fact, the Landau levels cross the Fermi surface at the transition from Type-I to Type-II as well.
+In fact, the Landau levels cross the Fermi level at the transition from Type-I to Type-II as well.
 The Landau levels are shown in Figure~\ref{fig:llevelstilt}.
 
 
@@ -602,9 +600,10 @@ The tilted Hamiltonian
     E =
     \begin{cases}
       t^s_{\parallel} v_F k_z + \sign(m) v_F \alpha \sqrt{2 e B \alpha M + k_{z} ^2} & m \neq 0,\\
-      t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0.
+      t^s_{\parallel} v_F k_z - s \alpha v_F k_z & m = 0,
     \end{cases}
   \]
+  with the the \emph{squeezing factor} \( \alpha = \sqrt{1 - t_{\perp} ^2}  \).
   The associated eigenstates in the position basis are
   \[
     \psi(\vec{r}) = \sqrt{\alpha} e^{\theta /2 \sigma_x}
