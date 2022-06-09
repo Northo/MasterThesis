@@ -1,0 +1,41 @@
+#+title: Meeting Vozmediano2
+
+* Reformulate modified pauli/gamma matrices as curved metric
+- Reformulate the expressions with modified metric instead of introducing the tilt directly in the Lagrangian.
+- Similar to how one mgiht absorb the Fermi velocity in the Minkowski metric to regain familiar form \( diag (-1, v_F, v_F, v_F) \).
+
+  Specifially, consider the metric of tilted Weyl cone, so called, Painleve metric.
+  See Volovik, G.E., 2016. Black hole and hawking radiation by type-II Weyl fermions. Jetp Lett. 104, 645–648. https://doi.org/10.1134/S0021364016210050
+
+  The advantage of absorbing the tilt in the metric, is that we then may reuse the general results from GR.
+  Is interesting to compare with what we got.
+
+  /Thorvalds notes:/ For our computation in particular, I don't really think there is an intrinsic advantage in it, at least not for us less familiar with covariant calculations.
+  However, it is interesting to see how the computations differ.
+
+  Also: I think that, at least for the simple case, the calculations will be exactly the same, only a reformulation of where the t-vector lives.
+
+* The energy-momentum tensor
+The energy momentum tensor is the joker.
+One important observation, is that as the tilt term breaks rotational symmetry, it might be more explainable/acceptable to use the non-symmetric energy-momentum tensor
+
+Belinfante caputres /spin currents/.
+Might be that the discrepancy between the canonical and dynamical choice is due to spin currents.
+
+As opposed to ususal, where one in Luttinger considers fluctuations over minkowski, we must consider fluctuations over painleve
+
+/Thorvald:/ Something Maria mentioned made me think of the discussion in Stoof, on how one relates the results found for symmetric and non-symmetric energy-momentum tensor.
+
+* Type-II
+In Type-II we seem to have non-zero density of states.
+If it is finite, we have some length scale, and probably the response is not form conformal anomaly
+/thorvald:/ for linear model, is DOS infinite? In that case, maybe we don't have a length scale?
+
+In the same discussion:
+The 0th LL is the 'star' of the calculation.
+It is the only one which is truly scale independent, as the other LLs have dependence on the magnetic field strength.
+So, the zeroth LL transition we expect are the 'true' scale anomaly behaviour.
+(Ref fingerprints) the interval/gap where only the 0th LL exists, is where the true anomalous behaviour exists.
+When going to type ii, this interval is non-existent.
+Furthermore, the 0->+-1 transition interval, is finite, and so we have introduced some length scale
+Probably scary to say that type-ii is anomalous

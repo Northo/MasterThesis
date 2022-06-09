@@ -1,6 +1,8 @@
 #+title: 06 07
 
-* Talk with Maria et al next week
+* Talk with Maria et. al. next week
+
+See [[file:meeting-vozmediano2.org][file:~/Documents/NTNU/10semester/meetings/meeting-vozmediano2.org]] for notes
 
 ** How exotic is this?
 Which papers are relevant?
@@ -13,7 +15,7 @@ Which papers are relevant?
 
 ** Log \(\Lambda\)
 Looked in Asgari paper (see [[file:05-30.org::*Effecitve fermi velocity from cutoff][Effecitve fermi velocity from cutoff]] )
-Alireza seemed happy wiht \(\Lambda = \frac{k_c}{\sqrt{2 e B}} \) where \( k_c \propto 1 / a \).
+Alireza seemed happy with \(\Lambda = \frac{k_c}{\sqrt{2 e B}} \) where \( k_c \propto 1 / a \).
 
 ** Type-II break Lorentz invariance
 Some people say that type ii break lorentz invariance, but does not all tilt, even type i, break lorentz invariance, as it makes the system not rotationally invariant??
