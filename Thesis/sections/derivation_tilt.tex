@@ -1,20 +1,35 @@
 \section{The response of a tilted cone}
 
-Repeating the calculation of the response function is now straightforward, but rather tedious.
+\todo{Write this better
+
+  Repeating the calculation of the response function is now straightforward, but rather tedious.
 Due to the boost transformation, the elements of the spinor in the untilted system, Eq. \eqref{eq:47}, mix.
 We thus have twice as many terms to keep track of.
+}
+
 \subsection{Explicit form of the matrix elements}
 We will here find an explicit form of the matrix elements, starting with the charge current
-\[
+\begin{equation}
+  \label{eq:tilt:currentExpr}
   J_{\vec{k} m s; \vec{k}+\qvec{q} n s } (\vec{q}) = \int \mathrm{d}y e^{-i q_{y} y}
-  s v_{F} e \phi ^{*}_{\vec{k} m s} (y) \sigma ^{x} \phi _{\vec{k} + \qvec{q} n s}(y).
-\]
-We must find the matrix product \(\phi \sigma_{x} \phi \).
-Recall that \(\phi = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
+  s v_{F} e \phi ^{*}_{\vec{k} m s} (y) (\sigma^{x} + s t^s_x) \phi _{\vec{k} + \qvec{q} n s}(y),
+\end{equation}
+which we will split into two parts, \( J^{(1)}, J^{(2)} \), corresponding to the terms \( \sigma_x \) and \( s t^s_x \).
+For the first part, we must find the matrix product \(\phi \sigma_{x} \phi \).
+Recall from summary \ref{summary:llevels} that \(\phi = \sqrt{\alpha}  e^{\theta /2 \sigma _{x}} \tilde{\phi} \), and thus we must find
 \[
   \phi ^{*} \sigma _{x} \phi
-  = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi}
+  = \alpha \tilde{\phi}^{*} e^{\theta /2 \sigma _{x}} \sigma _{x} e^{\theta /2 \sigma _{x}} \tilde{\phi}
   =  \alpha \tilde{\phi}^{*} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}.
+\]
+As defined in summary \ref{summary:llevels}
+\[
+  \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
+  \begin{pmatrix}
+    a_{\vec{k} m s} H_{M-1} (\chi)\\
+    b_{\vec{k} m s} H_{M} (\chi)
+  \end{pmatrix},\quad
+  \chi = \sqrt{\alpha} \frac{ y - k_x l_B^2 }{l_{B}} + \frac{t_{\perp}^s l_B}{\sqrt{\alpha} v_{F}} E^0_{m, \alpha B}.
 \]
 With the previously found solution \(\theta = - \tanh ^{-1} t^s_{x}\), we get the rather simple form
 \[
@@ -25,42 +40,15 @@ With the previously found solution \(\theta = - \tanh ^{-1} t^s_{x}\), we get th
   \end{pmatrix}
   \frac{1}{\sqrt{1-t_{x}}}.
 \]
-With
-\begin{equation}\label{eq:96}
-  \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
-  \begin{pmatrix}
-    a_{\vec{k} m s} H_{M-1} (\chi)\\
-    b_{\vec{k} m s} H_{M} (\chi)
-  \end{pmatrix}
-\end{equation}
-we see how the expressions change when \(t^s_{x}\) become non-zero.
-Where we previoulsy had
-\begin{equation}
-  \label{eq:97}
-  \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
-  =
-  a_{\vec{k} m s} H_{M-1}(\dots) \left[ b_{\vec{k}+\qvec{q} n s} H_{N}(\dots) \right]
-  + \dots
-\end{equation}
-the contents of the square brackets must now include also the other element of the spinor:
-\begin{equation}
-  \label{eq:98}
-  \alpha \tilde{\phi}  ^{*}_{\vec{k} m s} \sigma _{x} e^{\theta \sigma _{x}} \tilde{\phi}  _{\vec{k} + \qvec{q} n s}
-  =
-  a_{\vec{k} m s} H_{M-1}(\dots)
-  \left[
-    b_{\vec{k}+\qvec{q} n s} H_{N}(\dots)
-    - s t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1} (\dots)
-  \right]
-  + \dots .
-\end{equation}
+Where we in the untilted case only have off-diagonal contributions from \( \sigma_x \), the hyperbolic rotation gives contributions on the diagonal as well.
 
 First of all, let us consider the exponent of the product.
+We want to complete the square similarly to what was done for the untilted cone in section \ref{sec:notilt:explicit}.
 Due to the extra term in \(\chi\), this becomes more elaborate.
-The exponent is of course
+The exponent in the current matrix element Eq.~\eqref{eq:tilt:currentExpr} is of course
 \begin{equation}
   \label{eq:99}
-  \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}
+  \exp\{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2\}.
 \end{equation}
 A straightforward but tedious calculation shows that the argument of the exponent can be written as
 \begin{equation}
@@ -88,10 +76,10 @@ With this substitution,
   \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(q' _x - i q_{y}\right),\\
   \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left(- q' _x - i q_{y}\right).
 \end{align}
-Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
+The first part of the current matrix element, Eq.~\eqref{eq:tilt:currentExpr}, is thus
 \begin{equation}
   \begin{split}
-    J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
+    J^{(1)}_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
     \frac{s v_F e}{\sqrt{\alpha }} \int \mathrm{d}\tilde{y} \: l_B
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
@@ -117,6 +105,51 @@ Doing this, Eq. (4.59) \todo{fix ref} in the project thesis, becomes
   \end{split}
 \end{equation}
 
+Next consider the second term of the current operator,
+\begin{equation}
+  \label{eq:103}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  e v_{F} t^s_{x}
+  \int \mathrm{d} y
+  e^{-iq_{y} y}
+  \phi ^{*}_{\vec{k} m s}(y)  \phi _{\vec{k} + \qvec{q} n s}(y).
+\end{equation}
+With a procedure similar to above, with the same substituion and completion of the square
+\begin{multline}
+  \label{eq:105}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+  \frac{s v_F e t^s_x}{\sqrt{\alpha}}
+  \int \mathrm{d} \tilde{y} l_B
+    \exp \left[
+      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
+    \right]\\
+  e^{-\tilde{y}^2} \big[
+    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(s a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
+   +
+    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + s b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
+    \big].
+\end{multline}
+By inspection,  recalling \( \sqrt{1 - t_x^2} = \alpha \), we see
+\begin{multline}
+\hspace{-0.9em}  J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
+  s v_F e \sqrt{\alpha} \int \mathrm{d}\tilde{y} \: l_B
+  \exp \left[
+    -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
+  \right]
+  e^{-\tilde{y}^2}
+  \\
+  \times
+  \Big[
+  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
+  H_{M-1} \left(  \chi_{\vec{k}} \right)
+  H_N\left( \chi_{\vec{k} + \qvec{q}} \right)
+  +
+  b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+  H_M \left( \chi_{\vec{k}} \right)
+  H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)
+  \Big].
+\end{multline}
+
 To perform the integration, we use the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
   \label{eq:hermite-shift-ortho}
@@ -124,39 +157,8 @@ To perform the integration, we use the \emph{shifted orthogonality} relation for
   e^{-x^2} H_m(x+y) H_n(x+z)
   = 2^n \pi^{\frac{1}{2}} m! y^{n-m} L^{n-m}_m(-2yz), \quad m\leq n,
 \end{equation}
-where \(L^{a}_{b}\) is the \emph{generalized Laguerre polynomial} of order \(b\) and type \(a\).
-Using that
-\begin{align}
-  a_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
-  &=
-    \sqrt{\alpha } \frac{\alpha_{k_z m s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
-    \left[
-    2^{N+M-1} (M-1)! N! \pi l_{B}^2
-    \right  ]^{-\frac{1}{2}}\\
-  b_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
-  &=
-    \sqrt{\alpha } \frac{\alpha_{k_z + \qvec{q}_z n s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
-    \left[
-    2^{N+M-1} (N-1)! M! \pi l_{B}^2
-    \right  ]^{-\frac{1}{2}}\\
-  a_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
-  &=
-    \sqrt{\alpha } \frac{\alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s}}{
-    \sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}
-    }
-    \left[
-    2^{N+M-2} (M-1)! (N-1)! \pi l_{B}^2
-    \right  ]^{-\frac{1}{2}}\\
-  b_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
-  &=
-    \sqrt{\alpha } \frac{1}{
-    \sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}
-    }
-    \left[
-    2^{N+M} M! N! \pi l_{B}^2
-    \right  ]^{-\frac{1}{2}}
-\end{align}
-we define \( \Xi_1, \Xi_2 \) by
+where \(L^{a}_{b}\) are the \emph{generalized Laguerre polynomial} of order \(b\) and type \(a\).
+Define the functions \( \Xi_1, \Xi_2 \) by
 \begin{align}
   \label{eq:101}
   \frac{ \sqrt{\alpha } \alpha_{k_z m s} \Xi_1 ( \vec{q}, m, n, s )}{
@@ -183,7 +185,22 @@ we define \( \Xi_1, \Xi_2 \) by
   H_{M} (\chi_{\vec{k}})
   H_{N-1} ( \chi _{\vec{k} + \qvec{q}} ).
 \end{align}
-Evaluating, we find
+Using that
+\begin{align}
+  a_{\vec{k} m s} b_{\vec{k} +\qvec{q} ns}
+  &=
+    \frac{ \sqrt{\alpha} \alpha_{k_z m s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
+    \left[
+    2^{N+M-1} (M-1)! N! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}},\\
+  b_{\vec{k} m s} a_{\vec{k} +\qvec{q} ns}
+  &=
+    \frac{\sqrt{\alpha} \alpha_{k_z + \qvec{q}_z n s}}{\sqrt{\alpha_{k_z m s} ^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z ns} ^2  + 1}  }
+    \left[
+    2^{N+M-1} (N-1)! M! \pi l_{B}^2
+    \right  ]^{-\frac{1}{2}},
+\end{align}
+we use Eq.~\eqref{eq:hermite-shift-ortho} to find explicit expressions
 \begin{align}
   \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
                                    \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
@@ -214,80 +231,7 @@ Evaluating, we find
 \end{align}
 Here, \( \qvec{q}_y = (q'_x, q_y) \).
 
-This gives the first part of the current matrix element
-\begin{multline}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
-  s v_{F} e
-  \frac{
-    \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q'_x) q_{y} + (q'_x)^2 )
-    \right]
-  }{
-    \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{ \alpha_{k_z + \qvec{q}_z n s}^2 + 1 }
-  } \\
-  % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
-  \Big[
-   \alpha_{k_z m s} \Xi_{1} (\vec{q}, m, n, s)
-    + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s)\\
-    -s t_x \alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z n s} \Xi _1(\vec{q}, m, n\mp 1, s)
-    -s t_x \Xi _2(\vec{q}, m, n\pm 1, s)
-  \Big].
-\end{multline}
-\todo{In the future, might be nice to go over to having only one function, Xi1, and simply mix around the arguments}
-
-
-Now we will consider the second term of the current operator.
-\begin{equation}
-  \label{eq:103}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  e v_{F} t^s_{x}
-  \int \mathrm{d} y
-  e^{-iq_{y} y}
-  \phi ^{*}_{\vec{k} m s}(y)  \phi _{\vec{k} + \qvec{q} n s}(y).
-\end{equation}
-Using the results of Summary \ref{summary:llevels} we find
-\begin{equation}
-  \label{eq:104}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e v_F t_x }{\mathcal{N}^{*} \mathcal{N}}
-  \int \mathrm{d} y
-  e^{-i q_{y} y - \frac{1}{2} \chi_{\vec{k}} ^2 - \frac{1}{2} \chi _{\vec{k} + \qvec{q}}^2}
-  \tilde{\phi} ^{*}_{\vec{k} m s}(y) e^{\theta \sigma _{x}} \tilde{\phi} _{\vec{k} + \qvec{q} n s}(y).
-\end{equation}
-Using the same substitution and completion of the square as above, this is
-\begin{multline}
-  \label{eq:105}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  \frac{e v_F t^s_x l_{B}}{\sqrt{\alpha}}
-  \int \mathrm{d} \tilde{y}
-    \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
-    \right]\\
-  e^{-\tilde{y}^2} \big[
-    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - s t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
-   +
-    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- s t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
-    \big].
-\end{multline}
-Thus
-\footnote{Note to self: note that we dropped the \( \frac{1}{\sqrt{\alpha } } \) for the \( \sqrt{\alpha }  \) coming from the \( \Xi  \) definition.}
-\begin{multline}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
-  e v_F t^s_x
-  \frac{
-    \exp \left[
-      -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 )
-    \right]
-  }{
-    \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
-  }\\
-  \Big[
-  -s t^s_x [ \alpha_{k_z m s} \Xi_1(\vec{q}, m, n) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n) ]\\
-  + \alpha_{k_z m s} \alpha_{k_z + \qvec{q}_z ns} \Xi_1(\vec{q}, m, n\mp 1)
-  + \Xi_2(\vec{q}, m, n \pm 1) \Big].
-\end{multline}
-We notice that this part has the same form as \( J^{(1)} \), with only a change of the prefactors of the \( \Xi  \)-functions.
-
+Thus, the current matrix element in terms of  the functions \( \Xi_i \) is
 \begin{multline}
   J_{\vec{k} m s; \vec{k} + \qvec{q} n s} (\vec{q}) =
   e v_F s \alpha^2
@@ -298,18 +242,17 @@ We notice that this part has the same form as \( J^{(1)} \), with only a change 
   }{
     \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
   }\\
-  \left[
+ \times \left[
      \alpha_{k_z m s} \Xi_1(\vec{q}, m, n) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n)
   \right].
 \end{multline}
-We used here that \( 1 - t_x^2 = \alpha^2 \).
 
-\subsubsection{Stress-energy tensor}
-Consider now
+\subsubsection{Energy-momentum tensor}
+Consider now the energy-momentum tensor matrix element
 \begin{equation}
   \label{eq:106}
-  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y(1)} (\vec{q}) =
-  \frac{1}{4}
+  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y} (\vec{q}) =
+  \frac{1}{2}
   \int \mathrm{d} y
   e^{i q_{y} y}
   \phi ^{*}_{\vec{k} + \qvec{q} n s}(y) s \sigma ^{y}
@@ -325,26 +268,16 @@ As
 we get the very fortunate result
 \begin{equation}
   \label{eq:108}
-  \phi^{*} \sigma _{y} \phi = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
+  \phi^{*} \sigma _{y} \phi
+  = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}
+  = \alpha \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
-The first term of the stress-energy tensor thus has the exact same form as the untilted case.
-Recalling the expression for \(\tilde{\phi}\) from Eq. \eqref{eq:51},
-\[
-  \tilde{\phi} = e^{-\frac{1}{2} \chi ^2}
-  \begin{pmatrix}
-    a_{\vec{k} m s} H_{M-1} (\chi)\\
-    b_{\vec{k} m s} H_{M} (\chi)
-  \end{pmatrix},
-\]
-where
-\[
-\chi = \sqrt{\alpha} (y - q_{x} l_{B}^2 ) /l_{B} + \sign(m) \beta \sqrt{2 |m| + \frac{k_{z}^2 l_{B}^2}{\alpha }}.
-\]
+The first term of the stress-energy tensor thus has the exact same form as the untilted case, however with a prefactor \( \alpha \) and using the transformed coordinates \( \chi \).
 We thus get
 \begin{multline}
   \label{eq:109}
   T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y (1)} (\vec{q}) =
-  \frac{is \alpha}{4} (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
+  \frac{is \alpha}{2} (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
   \int \mathrm{d} y
   e^{i q_{y} y}
   e^{-\frac{1}{2} (\chi_{\vec{k}+\qvec{q}}^2 + \chi_{\vec{k}} ^2) }\\
@@ -365,29 +298,10 @@ giving
   \chi _{\vec{k}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left( q'_x + i q_{y}\right),\\
   \chi _{\vec{k} + \qvec{q}} &= \tilde{y} + \frac{l_{B}}{2 \sqrt{\alpha }} \left( -q' _{x} + i q_{y}\right).
 \end{align}
-Thus, analogous to Eq. (4.79), we get
-\begin{multline}
-  \label{eq:111}
-  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) =\\
-  \frac{is \sqrt{\alpha }}{4}
-  (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
-  \exp \left[
-    -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2i (2 k' _x + q' _x) q_{y} + (q' _x)^2 )
-  \right  ]
-  \int \mathrm{d} \tilde{y} l_{B} e^{-\tilde{y}^2}\\
- \Big[
-  - a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s}
-  H_{N-1} ( \chi _{\vec{k}} )
-  H_{M} ( \chi _{\vec{k} + \qvec{q}} )
-  + b_{\vec{k} + \qvec{q} ns } a_{\vec{k} m s}
-  H_{N}( \chi _{\vec{k}} )
-  H_{M-1} ( \chi _{\vec{k} + \qvec{q}} )
-  \Big]
-\end{multline}
-And thus we have
+Thus, after inserting and employing the defining relations for the \( \Xi_i \) functions, the matrix element reads
 \begin{align}
-  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
-  \frac{is \alpha }{4  }
+  T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y} (\vec{q}) &=
+  \frac{is \alpha }{2 }
   \frac{E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu}{
     \sqrt{\alpha_{k_z m s}^2 + 1}
     \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
@@ -409,10 +323,10 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                         % \sum\limits_{i=1}^{4} \chi_{i} (\vec{q}, m, n, s)
                                                         \left[ \alpha_{k_z m s} \Xi_{1} (\vec{q}, m, n, s)
                                                         + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
-    T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y (1)} (\vec{q}) &=
-                                                                 \frac{is \alpha}{4  }
-                                                                 (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
-                                                      &\pe (- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)),
+    T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y} (\vec{q}) &=
+                                                             \frac{is \alpha}{2}
+                                                             (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
+    \nonumber &\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
   \end{align}
   with
   \[
@@ -424,7 +338,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
       \right]
     }{
       \left[(\alpha_{k_z m s}^2 +1) (\alpha_{k_z + \qvec{q}_z ns} ^2 + 1)\right]^{\frac{1}{2}}
-    }
+    }.
   \]
 \end{summary}
 \subsection{Static limit and dimensionless form}
@@ -534,7 +448,7 @@ Writing out the matrix products we have
 \begin{multline}
   J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
   =
-  \frac{v_F e i \alpha^{3}}{4}
+  \frac{v_F e i \alpha^{3}}{2}
   e^{-P^2}\\
   \frac{
     (E_{\vec{k} m s} + E_{\vec{k}+\qvec{q} n s})
@@ -548,7 +462,7 @@ And so, inserting into the response function
 \begin{multline}
   \label{eq:115}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
-  \frac{- e^2 \alpha^3 v_F B }{4 (2 \pi)^2 }
+  \frac{- e^2 \alpha^3 v_F B }{2 (2 \pi)^2 }
   \sum\limits_{mn}^{}
   \int \mathrm{d}\kappa_z
   e^{-P^2}\\
@@ -619,14 +533,14 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
   \begin{equation}
     \label{eq:118}
     \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
-    \frac{e^2v_F B }{(2 \pi)^2 }
-    \gamma^{\text{tx}}_N,
+    \frac{e^2v_F B }{2 (2 \pi)^2 }
+    \gamma^{t_x}_N,
   \end{equation}
   with
   \begin{equation}
     \label{eq:119}
-    \gamma^{\text{tx}}_N =
-    \frac{\alpha^3}{2}
+    \gamma^{t_x}_N =
+    2 \alpha^3
     \sum\limits_{mn}^{N}
     \int \mathrm{d}\kappa_z
     e^{-P^2}
@@ -817,7 +731,7 @@ We may thus immediately use the result from the untilted case
 \begin{equation}
   \label{eq:120}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
-  - \frac{e^2 v_F B}{4(2\pi)^2}
+  - \frac{e^2 v_F B}{2 (2\pi)^2}
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
   \xi(\kappa_z)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
@@ -864,32 +778,32 @@ In Type-I systems, the selection rules from the step functions are independent o
 The response is therefore
 \begin{equation}
   \label{eq:122}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{(2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{2 (2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
 \end{equation}
-where \( \gamma_N^0 \) is the prefactor of the untilted case, and
+where \( \gamma_N^0 \) is the prefactor of the untilted case, and according to Eq.~\eqref{eq:93}
 \begin{equation}
   \label{eq:123}
-  \gamma_{\text{div}, N} = -2 \sum\limits_{i=0}^{N} \int \mathrm{d}\kappa_z \xi(\kappa_z) \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
+  \gamma_{\text{div}, N} = -4 \sum\limits_{i=0}^{N} \int \mathrm{d} \kappa_z \xi(\kappa_z)
+  2 \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
 \end{equation}
 which has an UV divergence.
 Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result\footnote{Note the minus sign introduced by the step function in \( \xi \).}
 \begin{equation}
   \label{eq:124}
-  \gamma_{\text{div}, 0} = \frac{t_z}{2} \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
+  \gamma_{\text{div}, 0} = 2 t_z \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
    )\right)
 \end{equation}
 and the contribution from each term of the sum
 \begin{multline}
   \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
-  \frac{t_z}{2}
+  2 t_z
   \Bigg\{
-    \Lambda\left(\sqrt{\Lambda^2 + m - 1} - \sqrt{\Lambda^2 + m}  \right)\\
-    + m \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m} } \right]
-    - (m - 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + m - 1}}\right]
+    \Lambda\left(\sqrt{\Lambda^2 + N} - \sqrt{\Lambda^2 + N + 1}  \right)\\
+    + (N + 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + N + 1} } \right]
+    - N \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + N}}\right]
     \Bigg\},
     \label{eq:125}
 \end{multline}
-\todo{what i m here?}
 where we used the selection rule of the sum \( N = M - 1 \) and \( m>0, n<0 \).
 This contribution is shown in figure \ref{fig:divergent-factor}.
 \todo{is it ok to write 'the contribution \eqref{eq:125}', or must it always be 'the contribution Eq. \eqref{eq:125}'?}
@@ -900,10 +814,10 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
   \label{eq:126}
   t_z
   \left(
-    \frac{1}{4}\left[
-  -1 - m \log \left(1 - \frac{1}{m}\right) + \log \left(\frac{m - 1}{4}\right)
+    \left[
+  -1 + N \log\left(\frac{N}{N+1}\right) - \log \frac{N+1}{4}
   \right]
- + \frac{\log(\Lambda)}{2}
+ + 2 \log\Lambda
 \right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
 \end{equation}
 
@@ -948,7 +862,7 @@ For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
-See plot of the tilted Landau levels in figure \ref{fig:llevelstilt}.
+See plot of the tilted Landau levels in figure~\ref{fig:llevelstilt}.
 
 % Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 % For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
@@ -984,7 +898,7 @@ The \( 0\to 1 \) transitions was computed analytically, and found to be
 \begin{equation}
   \label{eq:129}
   \gamma_0 =
-  \frac{\sign(t_z)}{2}
+  2 \sign(t_z)
   \left(
   |t_z| \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
 \right  ).
@@ -1150,15 +1064,15 @@ A schematic plot of all the contributions of a parallel tilt is shown in figure 
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       % \addplot+[mark=none] {(-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
-      \addplot+[mark=none] table[col sep=comma, y=1] {data/contribtypeii_intraband_odd.csv};
-      \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_intraband_odd.csv};
-      \addplot+[mark=none] table[col sep=comma, y=3] {data/contribtypeii_intraband_odd.csv};
-      \addplot+[mark=none] table[col sep=comma, y=4] {data/contribtypeii_intraband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=1] {data/contribtypeii_interband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_interband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=3] {data/contribtypeii_interband_odd.csv};
+      \addplot+[mark=none] table[col sep=comma, y=4] {data/contribtypeii_interband_odd.csv};
 
       \pgfplotsset{cycle list shift=-3}  %% Change shift to number of transitions > 0
-      \addplot+[mark=none, dashed] table[col sep=comma, y=2] {data/contribtypeii_intraband_even.csv};
-      \addplot+[mark=none, dashed] table[col sep=comma, y=3] {data/contribtypeii_intraband_even.csv};
-      \addplot+[mark=none, dashed] table[col sep=comma, y=4] {data/contribtypeii_intraband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=2] {data/contribtypeii_interband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=3] {data/contribtypeii_interband_even.csv};
+      \addplot+[mark=none, dashed] table[col sep=comma, y=4] {data/contribtypeii_interband_even.csv};
     \end{axis}
   \end{tikzpicture}
   } %% Subcaptionbox

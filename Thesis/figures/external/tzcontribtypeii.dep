@@ -1,7 +1,7 @@
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_odd.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_odd.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_odd.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_odd.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_even.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_even.csv
-figures/external/tzcontribtypeii.pdf: data/contribtypeii_intraband_even.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_odd.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_odd.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_odd.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_odd.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_even.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_even.csv
+figures/external/tzcontribtypeii.pdf: data/contribtypeii_interband_even.csv

@@ -145,7 +145,7 @@ The corresponding energy momentum tensor is then
 ***** DONE \( \sigma^x \) vs \( \sigma_x \)
 \( \sigma^\mu = (I, \sigma_x, \sigma_y, \sigma_z) \quad \sigma_\mu = \eta_{\mu \nu} \sigma^\nu \)
 
-***** TODO Heading structure
+***** DONE Heading structure
 
 ***** TODO Clean up mess from previously using symmetrized
 
@@ -177,7 +177,6 @@ For Type-II, we must restrict the limits of integration
 Have computed the contrib form interband -N -> N + 1, must also find intraband
 
 The goal: put on a solid foundation when the contributions from chiralitites cancel
-
 
 *** Summary and discussion of results
 

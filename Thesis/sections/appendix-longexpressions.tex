@@ -13,7 +13,7 @@
     tz*Log[(-(Sqrt[-1 + m]*tz) + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
     tz^3*Log[(-(Sqrt[-1 + m]*tz) + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
     2*(-1 + m)^2*(tz + (-1 + tz^2)*Log[(-1 + m + Sqrt[(-1 + m)*(-1 + m*tz^2)])/(-1 + m + tz - m*tz)]))/(-1 + tz^2) -
-  tz*Log[(m*tz - Sqrt[m + (-1 + m)*m*tz^2])/(-1 + tz)])/4
+  tz*Log[(m*tz - Sqrt[m + (-1 + m)*m*tz^2])/(-1 + tz)])
 \end{lstlisting}
 
 
@@ -30,7 +30,7 @@
   4*m*Log[(1 - Sqrt[(-1 + m*tz^2)/(-1 + m)])/(1 + tz)] - 2*m^2*Log[(1 - Sqrt[(-1 + m*tz^2)/(-1 + m)])/(1 + tz)] +
   2*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]] -
   2*m*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]] -
-  m*tz*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]])/4
+  m*tz*Log[-Sqrt[(-1 + m)/(-1 + tz^2)] + Sqrt[(-1 + m*tz^2)/(-1 + tz^2)]])
 \end{lstlisting}
 
 \begin{lstlisting}[breaklines=true, caption={Expression for Type-II intraband transition with \( t_z > 1 \), given in Mathematica format.\label{lst:typeii-intraband-tzpos}},language=Mathematica]
@@ -47,7 +47,7 @@
     2*Sqrt[(-1 + m)*m^5]*tz*Log[(Sqrt[m] + Sqrt[1 + (-1 + m)*tz^2])/Sqrt[-1 + tz^2]] +
     4*Sqrt[(-1 + m)*m^5]*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
     4*Sqrt[(-1 + m)*m^7]*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]] -
-    2*Sqrt[(-1 + m)*m^5]*tz*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]]))/(8*Sqrt[-1 + m]*m^(3/2)*(-1 + tz^2))
+    2*Sqrt[(-1 + m)*m^5]*tz*Log[(Sqrt[-1 + m] + Sqrt[-1 + m*tz^2])/Sqrt[-1 + tz^2]]))/(2*Sqrt[-1 + m]*m^(3/2)*(-1 + tz^2))
 \end{lstlisting}
 
 \begin{lstlisting}[breaklines=true, caption={Expression for Type-II intraband transition with \( t_z < - 1 \), given in Mathematica format.\label{lst:typeii-intraband-tzneg}},language=Mathematica]
@@ -71,7 +71,7 @@
     4*tz*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] - 6*tz^2*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] -
     4*tz^3*Log[Sqrt[(-1 + m)/(-1 + tz^2)]*(1 + Abs[tz])] - 6*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] -
     4*tz*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] + 6*tz^2*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])] +
-    4*tz^3*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])]))/(16*Sqrt[(-1 + m)*m]*(-1 + tz^2))
+    4*tz^3*Log[Sqrt[m/(-1 + tz^2)]*(1 + Abs[tz])]))/(4*Sqrt[(-1 + m)*m]*(-1 + tz^2))
 \end{lstlisting}
 
 
@@ -104,15 +104,15 @@
 %   \Bigg\}
 % \end{multline}
 
-\begin{multline}
-  \label{eq:typeii-interband-tzneg}
-\end{multline}
+% \begin{multline}
+%   \label{eq:typeii-interband-tzneg}
+% \end{multline}
 
-\begin{multline}
-  \label{eq:typeii-intraband-tzpos}
-\end{multline}
+% \begin{multline}
+%   \label{eq:typeii-intraband-tzpos}
+% \end{multline}
 
 
-\begin{multline}
-  \label{eq:typeii-intraband-tzneg}
-\end{multline}
+% \begin{multline}
+%   \label{eq:typeii-intraband-tzneg}
+% \end{multline}

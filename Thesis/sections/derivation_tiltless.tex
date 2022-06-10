@@ -216,6 +216,26 @@ Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
 \]
 which further simplifies the expression.
 
+\begin{summary}
+  The current- and energy-momentum tensor operator are
+  \begin{align}
+    J^x &= sv_F e \sum\limits_{\vec{k}m, \vec{l}n}^{}
+          \phi _{\vec{k}ms}^{*}(\vec{r}) \left(\sigma^x + s t^s_x\right) \phi _{\vec{l}ns}(\vec{r})
+          a_{\vec{k}ms}^{\dagger}(t)
+          a_{\vec{l}ns}(t),\\
+    T^{y_0}(t, \vec{r}) &=
+                          \frac{1}{2}
+                          \sum\limits_{\vec{k} m, \vec{l} n}^{}
+                          \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
+\nonumber        &\times \left[
+          a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
+          -
+          i \left(\partial_t a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
+          +  2\mu  a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
+          \right].
+  \end{align}
+\end{summary}
+
 \begin{comment}
   The stress-energy tensor of the massless QED
   \begin{equation}
@@ -292,16 +312,13 @@ Fourier transforming the position gives
 \end{align}
 where the matrix elements in momentum space are given by
 \begin{align}
-  J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) \sigma ^x \phi _{\vec{l}ns}(\vec{r}),\\
+  J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) (\sigma^x + s t^s_x) \phi _{\vec{l}ns}(\vec{r}),\\
   %%
   \label{eq:68}
-  T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{4} \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}} \left[
-                                                  v_F \phi ^{*}_{\vec{k} m s}(\vec{r})  p_y \phi _{\vec{l} ns} (\vec{r})
-                                                  - v_F (p_y \phi ^{*}_{\vec{k}m s}) \phi _{\vec{l} ns }(\vec{r})
-                                                  \right]\\
-                                             \nonumber &+ \frac{1}{4}
+  T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{2}
                                                 \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}}
-                                                \phi ^{*}_{\vec{k}m s}(\vec{r}) s \sigma ^y
+                                              \phi ^{*}_{\vec{k}m s}(\vec{r})
+                                              (s \sigma ^y + (t^s)^y)
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
 Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:68}).
@@ -393,23 +410,14 @@ where the matrix elements are
 \begin{align}\label{eq:70}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q}) &= \int \mathrm{d}y
                                                 e^{-i q_y y}
-                                                s v_F e\phi ^{*}_{\vec{k}m s}(y) \sigma^x
+                                                 s v_F e\phi ^{*}_{\vec{k}m s}(y)
+                                                 (\sigma^x + s t^s_x)
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{4} \label{eq:71}
-                                                           \int \mathrm{d}y
-                                                           e^{iq_y y}
-                                                           \left[
-                                                           v_F \phi ^{*}_{\vec{k}m s}(y) p_y
-                                                           \phi _{\vec{k}-\qvec{q}n s}(y)
-                                                           -
-                                                           v_Fp_y \phi ^{*}_{\vec{k}m s}(y)
-                                                           \phi _{\vec{k}-\qvec{q}n s}(y)
-                                                           \right]\\
-  \nonumber &+ \frac{1}{4} 
+  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{2}
               \int \mathrm{d}y
               e^{iq_y y}
               \phi ^{*}_{\vec{k}m s}(y)
-              s\sigma ^y
+              (s\sigma^y + t^s_y )
               \left(
               E_{k_zm s} + E_{k_z+\qvec{q}_z n s} - 2 \mu
               \right)
@@ -430,7 +438,7 @@ where the current and energy-momentum tensor matrix elements are the expression 
 
 
 \section{Response of an untilted cone}
-\subsection{Explicit form of the matrix elements}
+\subsection{Explicit form of the matrix elements}\label{sec:notilt:explicit}
 Compared to the procedure used by \citeauthor{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, taking the limit of each matrix element by itself greatly simplifies the calculation.
 
 Let
@@ -550,12 +558,12 @@ we find explicitly
 
 
 \subsubsection{The stress-energy tensor operator}
-Consider the first part of the stress-energy matrix element
+Consider now the matrix element of the energy-momentum tesnor
 \begin{equation}
 \label{eq:75}
 T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
-\frac{1}{4}
+\frac{1}{2}
 \int \mathrm{d}y e^{iq_y y}
 \phi ^* _{\vec{k}+\qvec{q} ns}(y) s \sigma ^y (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
 \phi _{\vec{k} ms}(y).
@@ -572,7 +580,7 @@ Recall that
 The form of the integrand is very similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
 \begin{align}
 &T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
-  \nonumber &= \frac{i s}{4}
+  \nonumber &= \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \int \mathrm{d}y e^{iq_y y} e^{- \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}}\\
     \nonumber & \phantom{=} \left[
@@ -585,7 +593,7 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
   \begin{split}
     &T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
     &=
-    \frac{i s}{4}
+    \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \exp \left[
       -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\}
@@ -607,7 +615,7 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
   \label{eq:76}
   \begin{split}
     T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
-    &= \frac{i s}{4}
+    &= \frac{i s}{2}
     (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
     \exp \left[
       -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2- 2 i q_y (2 k_x + q_x) \right\}
@@ -631,7 +639,7 @@ The terms in the integrand are exactly the same as in the current matrix element
 \begin{equation}
   \label{eq:77}
   T^{0y}_{\vec{k} ns, \vec{k}ms} (\vec{q})
-  = \frac{i s}{4}
+  = \frac{i s}{2}
   \frac{
     (E_{k_z m s} + E_{k_z n s}- 2\mu )
   }{
@@ -659,7 +667,7 @@ The terms in the integrand are exactly the same as in the current matrix element
                                 \right),\\
                                 %%
     T^{0y}_{\vec{k} ns, \vec{k}ms} &=
-                                           \frac{is \Gamma_{k_z m n s}}{4}
+                                           \frac{is \Gamma_{k_z m n s}}{2}
                                            \left(E_{k_z m s} + E_{k_z n s}- 2\mu \right)
                                            \left(
                                            \alpha_{k_z m s} \delta_{M-1, N}
@@ -709,7 +717,7 @@ Collecting dimensionfull quantites, the response function reads
 \begin{multline}
   \label{eq:90}
 \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
-  -\frac{e^2 v_F B }{4 (2 \pi)^2}
+  -\frac{e^2 v_F B }{2 (2 \pi)^2}
   \sum\limits_{m n}^{}
   \int \mathrm{d} \kappa_z
   [n_{\kappa_z m s} - n_{\kappa_z n s}]
@@ -745,7 +753,7 @@ The final expression is then
 \begin{equation}
   \label{eq:91}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
-  -\frac{e^2 v_F B}{2 (2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
+  -\frac{e^2 v_F B}{(2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
   \int \mathrm{d}\kappa_z \xi(\kappa_z)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} - 2 \mu) \alpha_{\kappa_z m s}^2.
 \end{equation}
@@ -807,39 +815,38 @@ For zero chemical potential, the response function is
 \begin{equation}
   \label{eq:93}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
-  -\frac{e^2 v_F B}{(2 \pi)^2}
+  -\frac{2 e^2 v_F B}{(2 \pi)^2}
   \sum\limits_{N=0} \int \mathrm{d}\kappa_z
   \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
   \alpha_{\kappa_z m s}^2
   \big|_{\underset{n=-N}{m=N+1}},
 \end{equation}
+\todo{Consider change sum to sum over i to N}
 where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( (-\infty, 0) \) for \( N = 0, s=-1 \), and \( (0, \infty) \) for \( N=0, s=1 \).
 
 Including only the first term of the sum, we find
 \begin{equation}
   \label{eq:94}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{(2 \pi)^2 \hbar},
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
 \end{equation}
 where we have reinserted the explicit \( \hbar \).
 Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
   \label{eq:95}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{(2 \pi)^2 \hbar},
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
 \end{equation}
 where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
 Furthermore, \( \gamma_N \) goes like \( \log N \).
 The first 300 contributions are shown in Figure \ref{fig:contributions}.
 
 Solving the integral analytically, we obtained the contribution from each term
-\[
-  \gamma_N - \gamma_{N-1} = \frac{1}{4} \left[
-  1 + 2 N \left\{1 - (1+N) \log(1 + \frac{1}{N}) \right\} 
-\right], \quad N > 0.
-\]
+\begin{equation}
+  \gamma_N - \gamma_{N-1} = 1 + 2 N \left\{1 - (1+N) \log(1 + \frac{1}{N}) \right\} , \quad N > 0.
+\end{equation}
 The sum can be shown to equal the rather nasty expression
 \begin{equation}
   \begin{split}
-  \gamma_N = \gamma_0 + \frac{1}{12} &\Big(
+  \gamma_N = \gamma_0 + \frac{1}{3} &\Big(
     6 \zeta ^{(1,0)}(-2,N+1)
     -6 \zeta ^{(1,0)}(-2,N+2)
     +6 \zeta^{(1,0)}(-1,N+1)\\
