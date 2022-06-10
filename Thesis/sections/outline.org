@@ -137,7 +137,17 @@ Symmetrize in fields
 gives the canonical energy momentum tensor ....
 May absorb the tilt term in the pauli matrices, similar to what stoof did for the full Dirac equation, to get a modified weyl lagrangian
 The corresponding energy momentum tensor is then
-TODO: consider where and how we include the s and vF
+
+***** DONE consider where and how we include the s and vF
+
+***** DONE k -> p
+
+***** DONE \( \sigma^x \) vs \( \sigma_x \)
+\( \sigma^\mu = (I, \sigma_x, \sigma_y, \sigma_z) \quad \sigma_\mu = \eta_{\mu \nu} \sigma^\nu \)
+
+***** TODO Heading structure
+
+***** TODO Clean up mess from previously using symmetrized
 
 *** Explicit form and total response
 

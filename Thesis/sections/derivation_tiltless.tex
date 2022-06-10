@@ -1,4 +1,4 @@
-\section{Analytical expressions for the operators}
+\section{Analytical expression for the response function}
 We will here find analytical expressions for the current operator $J^i(\omega, \vec{q})$ and stress-energy tensor $T^{0j}(\omega, \vec{q})$, needed to calculate the correlation function.
 The fields are given, in the position basis, by
 \begin{align}
@@ -8,7 +8,10 @@ The fields are given, in the position basis, by
                    a^{\dagger}_{\vec{k}ns}(t)
                    =\sum\limits_{\vec{k}n}^{} \phi^{*}_{\vec{k} n s} (\vec{r}) a^{\dagger}_{\vec{k}n s}(t).
 \end{align}
+\todo{Is the asterisk supposed to be dagger? \( \phi^{*} \to \phi^{\dagger} \) as it must be transpose??}
 Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / ) a_{\lambda }^{\dagger}$ and $a_{\lambda }^{\dagger}, a_{\lambda }$ are the creation and annihilation operators of the state with quantum numbers $\lambda $.
+\subsection{Expressions for the operators}
+\subsubsection{The current operator}
 The current operator $\hat{\vec{J}} = e \hat{\vec{v}}$, where $\hat{\vec{v}}$ is the velocity operator.
 Using the relation of Heisenberg operators $\dot{A} = -i [A, H] $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, and with the minimal coupling \( \vec{p}^B = \vec{p} + e \vec{A} \),
 \begin{align}
@@ -25,7 +28,7 @@ We thus get
   a_{\vec{l}ns}(t).
 \end{equation}
 
-\subsection{The energy momentum tensor}
+\subsubsection{The energy-momentum tensor}
 The \emph{canonical} energy-momentum tensor is generally defined by
 \begin{equation}
   \label{eq:55}
@@ -57,9 +60,10 @@ while the correct form is \cite[Eq.~3-153]{itzyksonQuantumFieldTheory1980}
 
 The untilted Weyl Hamiltonian
 \begin{equation}
-  H_s = s \sigma^i k_i,
+  H_s = s \sigma^i p_i,
 \end{equation}
-has the Lagrange density \cite{kachelriessQuantumFieldsHubble2018}
+where natural units (\( c = v_F = 1 \)) are used, to have the expressions explicitly match those of \gls{qft} literature;
+the associated Lagrange density \cite{kachelriessQuantumFieldsHubble2018}
 \begin{equation}
   \mathcal{L}_s = i \phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi,
 \end{equation}
@@ -82,7 +86,7 @@ From the definition of the canonical energy-momentum tensor for Dirac fields Eq.
 \end{equation}
 Consider now the tilted Weyl Hamiltonian
 \begin{equation}
-  H_s = s \sigma^ik_i + (t^s)^i k_i.
+  H_s = s \sigma^ik_i + (t^s)^i p_i.
 \end{equation}
 Exactly analogous to the treatment of \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} for the full \( 4 \times 4 \) tilted Dirac Lagrangian, absorb the tilt term into the Pauli matrices, giving the Lagrangian density
 \begin{equation}
@@ -98,8 +102,7 @@ The corresponding energy-momentum tensor, after again symmetrizing in the fields
   - \eta^{\mu \nu} \mathcal{L}
   ).
 \end{equation}
-\todo{Find missing v_F}
-
+Reintroducing the explicit effective speed of light \( v_F \) and recalling \( \partial_0 = \partial_t / v_F \) this gives
 \begin{comment}
 The untilted Weyl Hamiltonian
 \[
@@ -175,29 +178,41 @@ where we defined the modified Pauli matrices
   \end{cases}
 \end{equation}
 \end{comment}
-\begin{equation}
-  \begin{split}
-    T^{y_0}(t, \vec{r}) &=
-    \sum\limits_{\vec{k} m, \vec{l} n}^{}
+% \begin{equation}
+%   \begin{split}
+%     T^{y_0}(t, \vec{r}) &=
+%     \sum\limits_{\vec{k} m, \vec{l} n}^{}
+%     \frac{1}{2}
+%     \bigg\{
+%     \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
+%     & \times \left[
+%       a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
+%       -
+%       i \left(\partial_t a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
+%     \right]\\
+%       &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) 2\mu \phi _{\vec{l} n s}(\vec{r}) a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
+%     \bigg\}.
+%   \end{split}
+% \end{equation}
+\begin{multline}
+    T^{y_0}(t, \vec{r}) =
     \frac{1}{2}
-    \bigg\{
+    \sum\limits_{\vec{k} m, \vec{l} n}^{}
     \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
-    & \times \left[
-      a^{\dagger}_{\vec{k} m s}(t) i \partial _0  a_{\vec{l} n s}(t)
+    \times \left[
+      a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
       -
-      i \left(\partial _0 a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
-    \right]\\
-      &+ \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) 2\mu \phi _{\vec{l} n s}(\vec{r}) a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
-    \bigg\}.
-  \end{split}
-\end{equation}
+      i \left(\partial_t a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
+      +  2\mu  a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
+        \right].
+\end{multline}
 Here, also a non-zero potential $\mu $ is included.
 Our final result will be given at zero potential, however it is included in the calculations as it might be of interest to consider finite potential in later work.
 Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
 \[
-  i \partial _0 a_{\lambda }(t) = E_{\lambda }a_{\lambda },
+  i \partial_t a_{\lambda }(t) = E_{\lambda }a_{\lambda },
   \quad
-  i \partial _0 a^{\dagger}_{\lambda }(t) = -E_{\lambda }a^{\dagger}_{\lambda },
+  i \partial_t a^{\dagger}_{\lambda }(t) = -E_{\lambda }a^{\dagger}_{\lambda },
 \]
 which further simplifies the expression.
 
@@ -260,6 +275,8 @@ which further simplifies the expression.
   \end{equation}
 \end{comment}
 
+
+\subsection{Response function in momentum space}
 Fourier transforming the position gives
 \begin{align}
   \label{eq:66}
