@@ -131,7 +131,7 @@ With a procedure similar to above, with the same substituion and completion of t
 \end{multline}
 By inspection,  recalling \( \sqrt{1 - t_x^2} = \alpha \), we see
 \begin{multline}
-\hspace{-0.9em}  J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
+J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
   s v_F e \sqrt{\alpha} \int \mathrm{d}\tilde{y} \: l_B
   \exp \left[
     -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
@@ -201,34 +201,38 @@ Using that
     \right  ]^{-\frac{1}{2}},
 \end{align}
 we use Eq.~\eqref{eq:hermite-shift-ortho} to find explicit expressions
-\begin{align}
-  \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
-                                   \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
-                                   L^{N-M+1}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
-                                   %%%
-  \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
-                                   \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{M-N - 1}
-                                   L^{M - N - 1}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
-  \Xi_1(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
-            \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases} \text{ for } M>0, N \geq 0,
-\end{align}
-\begin{align}
-  \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
-                                   \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-1 - M}
-                                   L^{N-1 -M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
-                                   %%%
-  \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
-                                   \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N + 1}
-                                   L^{M - N + 1}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
-  \Xi_2(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
-            \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases} \text{ for } M\geq 0, N > 0,
-\end{align}
+\begin{subequations}
+  \begin{align}
+    \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
+                                     \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
+                                     L^{N-M+1}_{M-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
+                                     %%%
+    \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
+                                     \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{M-N - 1}
+                                     L^{M - N - 1}_N \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
+    \Xi_1(\vec{q}, m, n, s) &=
+                              \begin{cases}
+                                \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
+                                \Xi _1 ^{(2)} & \text{if } N \leq M-1
+                              \end{cases} \text{ for } M>0, N \geq 0,
+  \end{align}
+\end{subequations}
+\begin{subequations}
+  \begin{align}
+    \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
+                                     \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-1 - M}
+                                     L^{N-1 -M}_{M} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
+                                     %%%
+    \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
+                                     \left( \frac{-q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{M-N + 1}
+                                     L^{M - N + 1}_{N-1} \left( \frac{\qvec{q}_y^2 l_B^2}{2 \alpha } \right),\\
+    \Xi_2(\vec{q}, m, n, s) &=
+                              \begin{cases}
+                                \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
+                                \Xi _2 ^{(2)} & \text{if } N-1 \leq M
+                              \end{cases} \text{ for } M\geq 0, N > 0,
+  \end{align}
+\end{subequations}
 Here, \( \qvec{q}_y = (q'_x, q_y) \).
 
 Thus, the current matrix element in terms of  the functions \( \Xi_i \) is
@@ -341,7 +345,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
     }.
   \]
 \end{summary}
-\subsection{Static limit and dimensionless form}
+\subsection{Static limit and dimensionless form of the matrix elements}
 We are interested in the response in the static limit \( \vec{q} \to  0 \).
 We may use the property of limits that
 \[
@@ -394,35 +398,39 @@ Define
 P = \lim_{\vec{q} \to 0} \frac{l_B q_x'}{\sqrt{2 \alpha } } = \frac{\beta}{\sqrt{\alpha}} (\epsilon^0_{n, \alpha B} - \epsilon^0_{m, \alpha B}).
 \]
 In the static limit, the \( \Xi \) functions thus take the form
-\begin{align}
-  \Xi_1 ^{(1)}(m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
-                                   \left( \frac{P}{\sqrt{2}} \right)^{N-M + 1}
-                                   L^{N-M+1}_{M-1} \left( P^2 \right),\\
-                                   %%%
-  \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
-                                   \left( -\frac{P}{\sqrt{2}} \right)^{M-N - 1}
-                                   L^{M - N - 1}_N \left( P^2 \right),\\
-  \Xi_1(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
-            \Xi _1 ^{(2)} & \text{if } N \leq M-1
-          \end{cases} \text{ for } M>0, N \geq 0,
-\end{align}
-\begin{align}
-  \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
-                                   \left( \frac{P}{\sqrt{2}} \right)^{N-1 - M}
-                                   L^{N-1 -M}_{M} \left( P^2 \right),\\
-                                   %%%
-  \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
-                                   \left( -\frac{P}{\sqrt{2}} \right)^{M-N + 1}
-                                   L^{M - N + 1}_{N-1} \left( P^2 \right),\\
-  \Xi_2(\vec{q}, m, n, s) &=
-          \begin{cases}
-            \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
-            \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-          \end{cases} \text{ for } M \geq 0, N > 0.
-\end{align}
-
+\begin{subequations}
+  \begin{align}
+    \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
+                                     \left( \frac{P}{\sqrt{2}} \right)^{N-M + 1}
+                                     L^{N-M+1}_{M-1} \left( P^2 \right),\\
+                                     %%%
+    \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
+                                     \left( -\frac{P}{\sqrt{2}} \right)^{M-N - 1}
+                                     L^{M - N - 1}_N \left( P^2 \right),\\
+    \Xi_1(\vec{q}, m, n, s) &=
+                              \begin{cases}
+                                \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
+                                \Xi _1 ^{(2)} & \text{if } N \leq M-1
+                              \end{cases} \text{ for } M>0, N \geq 0,
+  \end{align}
+\end{subequations}
+\begin{subequations}
+  \begin{align}
+    \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
+                                     \left( \frac{P}{\sqrt{2}} \right)^{N-1 - M}
+                                     L^{N-1 -M}_{M} \left( P^2 \right),\\
+                                     %%%
+    \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
+                                     \left( -\frac{P}{\sqrt{2}} \right)^{M-N + 1}
+                                     L^{M - N + 1}_{N-1} \left( P^2 \right),\\
+    \Xi_2(\vec{q}, m, n, s) &=
+                              \begin{cases}
+                                \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
+                                \Xi _2 ^{(2)} & \text{if } N-1 \leq M
+                              \end{cases} \text{ for } M \geq 0, N > 0.
+  \end{align}
+\end{subequations}
+\todo{Consider removing part c, as it is unchanged from definition}
 Lastly, notice that in the static limit, the dependence on \( k_z \) disappears, and so the same procedure as was done for the untilted cone in section \ref{sec:response_notilt} is valid for the tilted cone, replacing the \( \vec{k} \) sum with an integral over \( k_z \) and a degeneracy factor
 \begin{equation}
   \label{eq:113}
@@ -904,7 +912,7 @@ The \( 0\to 1 \) transitions was computed analytically, and found to be
 \right  ).
 \end{equation}
 For a general \( n \to m, \; N>0, M=N+1 \) transition, the contribution \( \gamma_N - \gamma_{N-1} \) was found to have very lengthy expressions.
-Consult Table~\ref{tab:typeii-expressions} to find the expressions for positive and negative tilt, and interband and intraband transitions.
+Consult Table~\ref{tab:typeii-expressions} to find the appropriate expressions for positive and negative tilt, and interband and intraband transitions.
 
 \begin{table}[ht]
   \centering
@@ -933,8 +941,9 @@ Consult Table~\ref{tab:typeii-expressions} to find the expressions for positive 
 
   \caption{
     % The expression for the \( m\to n; N> 0, M=N+1 \) transition is given by the equation number at the various choices of \( t_z \) and \( \sign (n) \).
-    Decision matrix over different regions for the expression of the \( m \to n; N > 0, M =N+1 \) transition, given in code listing of the corresponding number.
-    Listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
+    Decision matrix for the expression of the \( m \to n; N > 0, M =N+1 \) transition over different regions.
+    Expressions given in Mathematica code format.
+    Code listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
     See main text for details.
     \todo{Make sure I am not hanged for having vertical lines}
   }

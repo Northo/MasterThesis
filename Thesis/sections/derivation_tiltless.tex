@@ -335,7 +335,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
-The exact same procedure may be done for the stress-energy tensor in Eq. (\ref{eq:67}).
+The exact same procedure may be done for the stress-energy tensor in Eq.~(\ref{eq:67}).
 Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
@@ -413,15 +413,15 @@ where the matrix elements are
                                                  s v_F e\phi ^{*}_{\vec{k}m s}(y)
                                                  (\sigma^x + s t^s_x)
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k} m s, \vec{k}-\qvec{q} n s}(\vec{q}) &= \frac{1}{2}
+  T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k} m s}(\vec{q}) &= \frac{1}{2}
               \int \mathrm{d}y
               e^{iq_y y}
-              \phi ^{*}_{\vec{k}m s}(y)
+              \phi ^{*}_{\vec{k}+\qvec{q} n s}(y)
               (s\sigma^y + t^s_y )
               \left(
               E_{k_zm s} + E_{k_z+\qvec{q}_z n s} - 2 \mu
               \right)
-              \phi _{\vec{k}-\qvec{q} n s}(y).
+              \phi _{\vec{k} m s}(y).
 \end{align}
 
 We will consider the response function in the static limit \( \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \).
@@ -578,17 +578,17 @@ Recall that
   \end{pmatrix}.
 \end{equation}
 The form of the integrand is very similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
-\begin{align}
-&T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
-  \nonumber &= \frac{i s}{2}
+\begin{multline}
+T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
+  = \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \int \mathrm{d}y e^{iq_y y} e^{- \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}}\\
-    \nonumber & \phantom{=} \left[
+    \times \left[
     - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )
     + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
     \right].
-\end{align}
-Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done 
+\end{multline}
+Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done
 \begin{equation}
   \begin{split}
     &T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
@@ -865,12 +865,12 @@ This expression goes like \( \log N \).
 \begin{figure}[ht]
   \centering
   % \newcommand\datafiles{data/notilt_contrib2.csv, data/notilt_contrib.csv}
-  \newcommand\datafiles{notilt_contrib2.csv/0.0, notilt_contrib.csv/0.1}
-  \newcommand\plottitle{Yupp}  % Leave empty to get default
-  \newcommand\prefix{t_x = }
+  \newcommand\datafiles{notilt_contrib.csv/}
+  \newcommand\plottitle{Numerical prefactor \( \gamma_N \) for untilted system}  % Leave empty to get default
+  \newcommand\prefix{\gamma_N}
   \tikzsetnextfilename{notiltcontrib}
   \input{figures/total_prefactor.pgf}
-  \caption{Prefactor \( \gamma_N \) as a function of the number of inlcuded terms \( N \). TODO remove the tx other test function}
+  \caption{Prefactor \( \gamma_N \) as a function of the number of inlcuded Landau levels~\( N \).}
   \label{fig:contributions}
 \end{figure}
 
