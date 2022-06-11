@@ -31,7 +31,7 @@ tramp
 /sections/auto/
 /sections/_region_.tex
 _region_.tex
-Thesis/.auctex-auto/
+**/.auctex-auto/
 
 # cask packages
 .cask/
