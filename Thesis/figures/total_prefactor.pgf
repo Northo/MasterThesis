@@ -3,15 +3,18 @@
   \begin{axis}[
     title=\ifthenelse{\equal{\plottitle}{}}{Convergence Plot}{\plottitle},
     xlabel={Number of terms $N$},
-    ylabel={Prefactor $\gamma_N$},
+    ylabel={$\gamma_N$},
     grid=major,
-    width=14cm,
-    height=8cm,
+    width=\textwidth,
+    height=.62\textwidth,
+    % width=14cm,
+    % height=8cm,
     % ymode=log,
+    legend pos=south east,
     ]
     \ifthenelse{\isundefined\prefix}{\newcommand\prefix{t_x=}}{}
     \foreach \datafile/\entry in \datafiles {
-      \addplot+[mark=o] table[col sep=comma] {data/\datafile};
+      \addplot[mark=o] table[col sep=comma] {data/\datafile};
       \edef\tmp{\noexpand\addlegendentry{$ \prefix \entry $}}
       \tmp
     }
