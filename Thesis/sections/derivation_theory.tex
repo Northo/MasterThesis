@@ -93,14 +93,14 @@ The linear response still has the form of a convolution, as the response functio
 \todo{Add indices to energy-momentum tensor}
 \begin{equation}
   \chi (t-t') = \int\limits_{-\infty }^0 \mathrm{d} t'' \Theta (t - t')
-  \Braket{\left[ J(t-t'), T(t'') \right]},
+  \Braket{\left[ J^i(t-t'), T^{j0}(t'') \right]},
 \end{equation}
 where $t''$ was shifted by $t' $, and then the translational invariance of the correlator was used.
 In frequency space
 \begin{align}
   \chi (\omega ) &= \int \mathrm{d} t e^{i \omega  t} \chi (t)\\
                  &= \int \mathrm{d} t e^{i \omega  t} \int\limits_{-\infty  }^0 \mathrm{d} t''
-                   \Theta (t) \Braket{\left[ J(t), T(t'') \right]}.
+                   \Theta (t) \Braket{\left[ J^i(t), T^{j 0}(t'') \right]}.
 \end{align}
 In frequency and momentum space the response function is thus
 \begin{equation}\label{eq:22}
@@ -220,7 +220,7 @@ In the case of an untilted system, the components of interest of the canonical e
   \left[
   \phi^{\dagger} \sigma_y \partial_{0} \phi - \partial_0 \phi^{\dagger} \sigma_y \phi
   \right],\\
-  T^{y 0} &= \frac{v_F}{4}
+  T^{0 y} &= \frac{v_F}{4}
   \left[
   \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
   \right].
@@ -228,7 +228,7 @@ In the case of an untilted system, the components of interest of the canonical e
 \end{subequations}
 The symmetrized energy-momentum tensor used by \textcite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
-  T_s = \frac{T^{y 0} + T^{y0}}{2}.
+  T_s^{y 0} = \frac{T^{y 0} + T^{0 y}}{2}.
 \end{equation}
 The response was found to be
 \begin{equation}
