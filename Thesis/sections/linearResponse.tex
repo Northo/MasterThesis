@@ -355,10 +355,10 @@ By the response in Eq. (\ref{eq:lin-response-1}) the electric current generated 
 \end{equation}
 where the integration is taken over the entire spacetime.
 In order to express this as a response to the thermal gradient, we wish to get the gradient of the gravitational potential.
-To do this, firstly the $00$-element of the stress-energy tensor will be expressed in terms derivatives of $T^{0j}$, and then a partial integration will swap the derivative between the stress-energy tensor and gravitational potential.
+To do this, firstly the $00$-element of the stress-energy tensor will be expressed in terms derivatives of $T^{j0}$, and then a partial integration will swap the derivative between the stress-energy tensor and gravitational potential.
 Note first that in the flat system the conservation law of the  energy and momentum is simply
 \begin{equation}
-  \partial _0 T^{00}(t, \vec{r}) + v_F \partial _i T^{0i} (t, \vec{r}) = 0,
+  \partial _0 T^{00}(t, \vec{r}) + v_F \partial _i T^{i0} (t, \vec{r}) = 0,
 \end{equation}
 where $v_F$ is the Fermi velocity.
 By the fundamental theorem of calculus this obviously gives for the zero-zero component of the stress-energy tensor
@@ -378,7 +378,7 @@ giving
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
     \frac{-i v_{F}}{\hbar} \Theta(t-t') \Braket{\left[
-        \vec{J}^i(t, \vec{r}), T^{0j}(t'', \vec{r'})
+        \vec{J}^i(t, \vec{r}), T^{j0}(t'', \vec{r'})
       \right]}
   \right\} 
   \partial'_j \psi (t', \vec{r'}).
@@ -390,7 +390,7 @@ By Luttinger's relation
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
     \frac{i v_{F}}{\hbar} \Theta(t-t') \Braket{\left[
-        \vec{J}^i(t, \vec{r}), T^{0j}(t'', \vec{r'})
+        \vec{J}^i(t, \vec{r}), T^{j0}(t'', \vec{r'})
       \right]}
   \right\} 
   \frac{
@@ -398,7 +398,7 @@ By Luttinger's relation
     T(t', \vec{r'})
   },
 \end{equation}
-where care must be taken to distinguish the stress-energy tensor $T^{0j}$ and the temperature $T$, differentiated by the indices, or lack thereof.
+where care must be taken to distinguish the stress-energy tensor $T^{j0}$ and the temperature $T$, differentiated by the indices, or lack thereof.
 \todo{Check the sign here. Depending on how we understand Luttinger's method, it should be positive or negative.}
 
 

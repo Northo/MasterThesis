@@ -90,6 +90,7 @@ Thus,
 
 Considering now the temporal part, the procedure is simpler.
 The linear response still has the form of a convolution, as the response function is only dependent on the difference $t-t'$ by
+\todo{Add indices to energy-momentum tensor}
 \begin{equation}
   \chi (t-t') = \int\limits_{-\infty }^0 \mathrm{d} t'' \Theta (t - t')
   \Braket{\left[ J(t-t'), T(t'') \right]},
@@ -113,6 +114,11 @@ In frequency and momentum space the response function is thus
     \right]}.
 \end{equation}
 
+\section{Complications and considerations}
+\section{General remarks}
+Before beginning the computation, we here briefly mention some complications and considerations important to our result.
+Firstly we discuss how the charge current form a Kubo calculation relate to experimentally measurable currents, and secondly we discuss the ambiguity related to the energy-momentum tensor.
+
 \subsection{Transport and magnetization}
 Recall that we generally define the transport coeffieicents
 \[
@@ -129,14 +135,14 @@ Let
   \vec{J} = \vec{J}_{\text{tr}} + \vec{J}_M,
 \end{equation}
 where \( \vec{J} \) is the total local current, \( \vec{J}_{\text{tr}} \) is the transport current, and \( \vec{J}_M \) is the circulating magnetization current.
-While our response \( \chi \) relates to the total current, we are more interested in the experimentally measurable transport resonse \( L^{ij}_{12} \), related to our Kubo result as \cite{arjonaFingerprintsConformalAnomaly2019}
-\todo{this might not be a first-hand source. See thermal transport...geometry chernodub eq. 62}
+While our response \( \chi \) relates to the total current, we are more interested in the experimentally measurable transport resonse \( L^{ij}_{12} \), related to our Kubo result as
+\cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
   \label{eq:24}
   L_{12}^{ij} = \chi^{12} - \epsilon^{ijl} M_l,
 \end{equation}
 with \( M_l \) the magnetization.
-For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \).
+For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \) \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
 
 
 \subsection{Comment on the energy-momentum tensor}
