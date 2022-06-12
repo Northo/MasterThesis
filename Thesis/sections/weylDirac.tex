@@ -97,7 +97,7 @@ Introduce to the system a pseudospin degree of freedom, thus extending the syste
 The Hamiltonian of the system~\cite{armitageWeylDiracSemimetals2018a}
 \begin{equation}
   \label{eq:5}
-  H = v_F \tau _x \otimes \vec{\sigma} \vec{k} + m \tau _z \otimes I_2 + b I_2 \otimes \sigma _z + b' \tau _z \otimes \sigma _x,
+  H = v_F \tau _x \otimes \vec{\sigma} \vec{p} + m \tau _z \otimes I_2 + b I_2 \otimes \sigma _z + b' \tau _z \otimes \sigma _x,
 \end{equation}
 \todo{Could we comment that this corresponds to re-constructing the Dirac equation from the two chiral Weyl equations, and \emph{then} addihng the lorentz breaking terms?}
 with $\vec{\tau}$ the Pauli matricies related to the pseudospin, and $I_2$ the identity matrix of dimension 2.
@@ -137,13 +137,13 @@ The Hamiltonian in Eq. (\ref{eq:3}) is not the most general, if we allow for ani
 In three dimensions we have more generally the Hamiltonian
 \begin{equation}
   \label{eq:4}
-  H(\vec{k}) = \vec{v}_0 \vec{k} + (\vec{v} \odot \vec{k}) \vec{\sigma} ,
+  H = \vec{v}_0 \vec{p} + (\vec{v} \odot \vec{p}) \vec{\sigma} ,
 \end{equation}
-where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{k})_i = v_i k_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
+where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{p})_i = v_i p_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
 By a simple rescaling of the momenta, we may in general consider a system with isotropic Fermi velocity \( v_F \), giving
 \begin{equation}
   \label{eq:hamil-tilt-isotropic}
-  H(\vec{k}) = v_F \vec{t} \vec{k} + v_F \vec{k} \vec{\sigma},
+  H = v_F \vec{t} \vec{p} + v_F \vec{p} \vec{\sigma},
 \end{equation}
 where \( \vec{t} \) is now the (dimensionless) tilt vector.
 The energy bands are~\cite{ottesenOpticalConductivityDirac2021}
