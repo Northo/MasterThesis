@@ -593,135 +593,10 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
 
 \begin{figure}[ht]
   \centering
-  \pgfplotsset{
-    % colormap={X}{ gray(0cm)=(1); gray(1cm)=(0);},
-    % colormap={mycool}{ rgb255(0)=(255,0,255); rgb255(8)=(0,128,255); rgb255(10)=(255,255,255);},
-    colormap={temp}{rgb255=(36,0,217) rgb255=(25,29,247) rgb255=(41,87,255)
-      rgb255=(61,135,255) rgb255=(87,176,255) rgb255=(117,211,255) rgb255=(153,235,255)
-      rgb255=(255,255,255)
-      rgb255=(255,214,153) rgb255=(255,172,117) rgb255=(255,120,87) rgb255=(255,61,61)
-      rgb255=(247,40,54) rgb255=(217,22,48) rgb255=(166,0,33)},
-    % colormap={mycool}{ rgb255(-1)=(255,0,255); rgb255(-0.1)=(255,0,255); rgb255(0)=(255,255,255); rgb255(1)=(0,128,255)},
-    % colormap={violet}{rgb255=(25,25,122) color=(white) rgb255=(238,140,238)},
-    point meta min=-0.1,
-    point meta max=0.1,
-    xlabel=\( m \),
-    ylabel=\( n \),
-  }
-  \newcounter{plotnum}
-  \tikzsetnextfilename{contribmn-P}
-  \subcaptionbox{Inversion symmetric case.\label{fig:contribs:P}}{
-    \begin{tikzpicture}
-      \begin{groupplot}[
-        width=0.4\textwidth,
-        axis equal,
-        xmin=-6, xmax=6,
-        ymin=-6, ymax=6,
-        % title={\( t_x= \title \)},
-        title style={ at={(0.7, 0.7)} },
-        group style={
-          group size=2 by 2,
-          group name=contribs,
-          x descriptions at=edge bottom,
-          y descriptions at=edge left,
-          horizontal sep=8pt,
-          vertical sep=8pt,
-        },
-        ]
-        \pgfplotsforeachungrouped \datafile/\title in {
-          contribTilttx0.PbrokenFalse.csv/0,
-          contribTilttx0.125PbrokenFalse.csv/0.16,
-          contribTilttx0.25PbrokenFalse.csv/0.25,
-          contribTilttx0.5PbrokenFalse.csv/0.5
-        }{
-          \edef\tmp{
-            \noexpand\ifthenelse{\theplotnum=1}{
-              \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
-              every colorbar/.append style={height=
-                2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
-              colorbar to name={mycolorbar}
-              ]
-              % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
-            }{
-              \noexpand\nextgroupplot[title={$t_x = \title$}]
-            }
-            % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
-            \noexpand\addplot [
-            matrix plot*,
-            mesh/cols=13,
-            point meta=explicit,
-            ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
-          }
-          \tmp
-          \stepcounter{plotnum}
-        }
-      \end{groupplot}
-      %% Shfit half vertical sep
-      \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
-    \end{tikzpicture}
-  } %% Subcaptionbox end
-
-  \tikzsetnextfilename{contribmn-Pbroken}
-  \subcaptionbox{Inversion symmetry broken case.\label{fig:contribs:Pbroken}}{
-    \begin{tikzpicture}
-      \begin{groupplot}[
-        width=0.4\textwidth,
-        axis equal,
-        xmin=-6, xmax=6,
-        ymin=-6, ymax=6,
-        % title={\( t_x= \title \)},
-        title style={ at={(0.7, 0.7)} },
-        group style={
-          group size=2 by 2,
-          group name=contribs,
-          x descriptions at=edge bottom,
-          y descriptions at=edge left,
-          horizontal sep=8pt,
-          vertical sep=8pt,
-        },
-        ]
-        \setcounter{plotnum}{0}
-        \pgfplotsforeachungrouped \datafile/\title in {
-          contribTilttx0.PbrokenTrue.csv/0,
-          contribTilttx0.125PbrokenTrue.csv/0.16,
-          contribTilttx0.25PbrokenTrue.csv/0.25,
-          contribTilttx0.5PbrokenTrue.csv/0.5
-        }{
-          \edef\tmp{
-            \noexpand\ifthenelse{\theplotnum=1}{
-              \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar right,
-              every colorbar/.append style={height=
-                2*\noexpand\pgfkeysvalueof{/pgfplots/parent axis height}+8pt},
-              colorbar to name={mycolorbar}
-              ]
-              % See  https://tex.stackexchange.com/questions/126177/common-colorbar-for-groupplot
-              %
-            }{
-              \noexpand\nextgroupplot[title={$t_x = \title$}]
-            }
-
-            % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
-            \noexpand\addplot [
-            matrix plot*,
-            mesh/cols=13,
-            point meta=explicit,
-            ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
-          }
-          \tmp
-
-          \ifthenelse{\theplotnum=0}{
-            \draw[dotted, gray] (axis cs:-1.5,-1.5) rectangle (axis cs:1.5,1.5) node[pos=0, pin={[pin edge={solid}]-180:\( \gamma_0 \)}] {};
-            \draw[dotted, gray] (axis cs:-2.5,-2.5) rectangle (axis cs:2.5,2.5) node[pos=0, pin={[pin edge={solid}]-110:\( \gamma_1 \)}] {};
-          }{}
-          \stepcounter{plotnum}
-        }
-      \end{groupplot}
-      %% Shfit half vertical sep
-      \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
-    \end{tikzpicture}
-  }
+  \input{figures/txmnplane.pgf}
   \caption{Contributions to \( \gamma_N \) from \( m\to n \) transitions for different values of \( t_x \).
-    TODO: Update caption
+    In order to retain contrast, the color values are capped at \( 0.1 \), meaning that the \( \gamma_0 \) contributions are clipped.
+    Note that all quadrants of the \( m,n \)-plane is shown, although as proven in the main text, only the fourth quadrant needs to be computed, as the second quadrant contributions are equal.
     \label{fig:contribs}
     }
 \end{figure}
@@ -1013,6 +888,22 @@ The contribution is even in \( t_x \), and the two cones have the same contribut
     \node[anchor=south] at (myaxis.north) {\ref{contribs}};
   \end{tikzpicture}
   \caption{\label{fig:total_contribs} }
+\end{figure}
+
+\begin{figure}[htb]
+  \centering
+  \tikzsetnextfilename{contribtx-zerothll}
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel=\( t_x \),
+      ylabel=\( \gamma_0 \),
+      ]
+      \addplot[mark=o] table[col sep=comma] {data/contribTilttx-zerothll.csv};
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Numerically computed values of the prefactor \( \gamma_N \) with only the first Landau level included for perpendicular tilt \( t_x \).
+    The contribution is even in \( t_x \), and vanish as \( |t_x| \to 1 \).
+  }
 \end{figure}
 
 
