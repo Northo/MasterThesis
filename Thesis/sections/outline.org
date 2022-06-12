@@ -147,7 +147,7 @@ The corresponding energy momentum tensor is then
 
 ***** DONE Heading structure
 
-***** TODO Clean up mess from previously using symmetrized
+***** DONE Clean up mess from previously using symmetrized
 
 *** Explicit form and total response
 
@@ -199,6 +199,12 @@ It seems like it is less trivial to conclude that the origin of the transport in
 Anyways a very good discussion point about the results
 
 **** Show some widemann-franz, mottt, etc relations?
+
+**** Div:
+
+***** Applications
+The chiral anomaly may be used in chiral qbit, see Dmitri E. Kharzeev and Qiang Li, “The Chiral Qubit: quantum computing with chiral anomaly,” arXiv (2019), 1903.07133 [quant-ph].
+Maybe hope for conformal as well
 
 ** Further work
 

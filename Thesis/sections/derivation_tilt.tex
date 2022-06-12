@@ -202,6 +202,7 @@ Using that
 \end{align}
 we use Eq.~\eqref{eq:hermite-shift-ortho} to find explicit expressions
 \begin{subequations}
+  \label{eq:xi1def}
   \begin{align}
     \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
                                      \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha } } l_B \right)^{N-M + 1}
@@ -218,6 +219,7 @@ we use Eq.~\eqref{eq:hermite-shift-ortho} to find explicit expressions
   \end{align}
 \end{subequations}
 \begin{subequations}
+  \label{eq:xi2def}
   \begin{align}
     \Xi_2 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{N-1} M!}{2^M (N-1)!}}
                                      \left( \frac{q'_x - iq_y}{2 \sqrt{\alpha }} l_B \right)^{N-1 - M}
@@ -318,6 +320,7 @@ Thus, after inserting and employing the defining relations for the \( \Xi_i \) f
 where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
 
 \begin{summary}
+  \label{summary:tilt:matrixelements}
   In summary we have
   \begin{align}
     \label{eq:112}
@@ -351,38 +354,34 @@ We may use the property of limits that
 \[
   \lim_{n \to a} A \cdot  B = \lim_{n \to a} A \cdot \lim_{n \to a} B.
 \]
-We are thus interested in the current and energy-momentum matrix elements in the static limit.
-Furthermore, we will write them in dimensionless quantities.
+We may thus consider the limits of the current and energy-momentum matrix elements separately, which we will do here.
+Furthermore, to facilitate for more easily solving the integration later, we will introduce dimensionless quantities.
 
-Consider firstly the exponent in the \( \Gamma ^{\pm } \) factor,
+Let the dimensionless energy and momentum \( \epsilon_{\kappa_z m s} = v_F \sqrt{2 e B} E_{k_{z} m s}, \; \kappa_z = \sqrt{2 e B} k_{z}  \).
+Consider firstly the exponent in the \( \Gamma ^{\pm } \) factor from summary \ref{summary:tilt:matrixelements},
 \[
+  \Gamma^{\pm}_{\vec{k} \qvec{q} m n s} \propto
   \exp
   \left[
     - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )
   \right].
 \]
-Recall the definition Eq. \eqref{eq:qkprime},
+Define
+\begin{equation}
+P = \lim_{\vec{q} \to 0} \frac{l_B q_x'}{\sqrt{2 \alpha } } = \frac{\beta}{\sqrt{\alpha}} (\epsilon^0_{n, \alpha B} - \epsilon^0_{m, \alpha B}),
+\end{equation}
+where \( q'_x \) was defined in Eq.~\eqref{eq:qkprime},
 \begin{equation*}
   q' _x = q_x \alpha  - \frac{\beta}{v_{F} }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ).
 \end{equation*}
-In the static limit
-\[
-  \lim_{\vec{q} \to 0} q'_x = - \frac{\beta}{v_{F}}( E^0_{n,\alpha B} - E^0_{m, \alpha B} ),
-\]
-and thus the for the exponent one has in the limit
-\[
-  \exp
-  \left[
-    - \frac{l_{B}^2 \beta ^2}{4 \alpha v_F^2} ( E^0_{n,\alpha B} - E^0_{m, \alpha B} )^2
-  \right].
-\]
-Expressed in the dimensionless energies \( \epsilon = \frac{E}{v_{F} \sqrt{2 e B} } \)
-\[
+In the limit, the exponent is thus
+\begin{equation}
+  \lim_{\vec{q}\to 0} \Gamma_{\vec{k} \qvec{q} m n s} \propto
   \exp
   \left[
     - \frac{\beta ^2 }{2 \alpha} ( \epsilon ^0_{n,\alpha B} - \epsilon ^0_{m, \alpha B} )^2
   \right].
-\]
+\end{equation}
 
 The normalization factor \( \alpha_{k_z m s} \) is independent on \( \vec{q} \), and already dimensionless.
 Explicity, it is given in dimensionless quantities as
@@ -392,12 +391,8 @@ Explicity, it is given in dimensionless quantities as
   = -\frac{\sqrt{\alpha M}}{s \epsilon ^{0}_{m, \alpha B} - \kappa }.
 \end{equation}
 
-In the tilted case, the \( \Xi \) functions do not have a trivial form in the static limit, as was the case in the untilted case.
-Define
-\[
-P = \lim_{\vec{q} \to 0} \frac{l_B q_x'}{\sqrt{2 \alpha } } = \frac{\beta}{\sqrt{\alpha}} (\epsilon^0_{n, \alpha B} - \epsilon^0_{m, \alpha B}).
-\]
-In the static limit, the \( \Xi \) functions thus take the form
+In the tilted case, the \( \Xi_{i} \) functions, defined in Eqs.~(\ref{eq:xi1def}, \ref{eq:xi2def}), do not have a trivial form in the static limit, as was the case in the untilted case.
+Expressed in the quantities introduced here, they simplify to
 \begin{subequations}
   \begin{align}
     \Xi_1 ^{(1)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^N (M-1)!}{2^{M-1} N!}}
@@ -406,12 +401,12 @@ In the static limit, the \( \Xi \) functions thus take the form
                                      %%%
     \Xi_1 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^{M-1} N!}{2^N (M-1)!}}
                                      \left( -\frac{P}{\sqrt{2}} \right)^{M-N - 1}
-                                     L^{M - N - 1}_N \left( P^2 \right),\\
-    \Xi_1(\vec{q}, m, n, s) &=
-                              \begin{cases}
-                                \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
-                                \Xi _1 ^{(2)} & \text{if } N \leq M-1
-                              \end{cases} \text{ for } M>0, N \geq 0,
+                                     L^{M - N - 1}_N \left( P^2 \right),
+    % \Xi_1(\vec{q}, m, n, s) &=
+    %                           \begin{cases}
+    %                             \Xi _1 ^{(1)} & \text{if } N \geq M-1\\
+    %                             \Xi _1 ^{(2)} & \text{if } N \leq M-1
+    %                           \end{cases} \text{ for } M>0, N \geq 0,
   \end{align}
 \end{subequations}
 \begin{subequations}
@@ -422,16 +417,15 @@ In the static limit, the \( \Xi \) functions thus take the form
                                      %%%
     \Xi_2 ^{(2)}(\vec{q}, m, n, s) &= \sqrt{\frac{2^M (N-1)!}{2^{N-1} M!}}
                                      \left( -\frac{P}{\sqrt{2}} \right)^{M-N + 1}
-                                     L^{M - N + 1}_{N-1} \left( P^2 \right),\\
-    \Xi_2(\vec{q}, m, n, s) &=
-                              \begin{cases}
-                                \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
-                                \Xi _2 ^{(2)} & \text{if } N-1 \leq M
-                              \end{cases} \text{ for } M \geq 0, N > 0.
+                                     L^{M - N + 1}_{N-1} \left( P^2 \right),
+    % \Xi_2(\vec{q}, m, n, s) &=
+    %                           \begin{cases}
+    %                             \Xi _2 ^{(1)} & \text{if } N-1 \geq M\\
+    %                             \Xi _2 ^{(2)} & \text{if } N-1 \leq M
+    %                           \end{cases} \text{ for } M \geq 0, N > 0.
   \end{align}
 \end{subequations}
-\todo{Consider removing part c, as it is unchanged from definition}
-Lastly, notice that in the static limit, the dependence on \( k_z \) disappears, and so the same procedure as was done for the untilted cone in section \ref{sec:response_notilt} is valid for the tilted cone, replacing the \( \vec{k} \) sum with an integral over \( k_z \) and a degeneracy factor
+Lastly, notice that in the static limit, the entire expression of the response function is independen of \( k_x \), and so the same procedure as was done for the untilted cone in section \ref{sec:response_notilt} is valid for the tilted cone, replacing the \( \vec{k} \) sum with an integral over \( k_z \) and a degeneracy factor
 \begin{equation}
   \label{eq:113}
   \sum\limits_{\vec{k}}^{} \to \frac{\mathcal{V} e B}{(2\pi)^2 } \int \mathrm{d} k_z.
@@ -1143,6 +1137,32 @@ A schematic plot of all the contributions of a parallel tilt is shown in figure 
     As explained in the main text, the total contribution for a pair of cones is given by the sum of the even and even part in inversion symmetric systems, and by the odd part for broken inversion symmetry.
     \label{fig:scetch}
   }
+\end{figure}
+
+\FloatBarrier
+\subsection{Draft -- Platau}
+In real materials, the Fermi level is close to, but not exactly at, the Dirac point.
+\textcite{arjonaFingerprintsConformalAnomaly2019} investigated this, which is of great interest with regards to experimental observations, by extending the computation to finite chemical potential and temperature.
+For sufficiently large magnetic field, only the zeroth Landau level is filled \cite{arjonaFingerprintsConformalAnomaly2019,vozmedianoTheoreticalPhysicsColloquium2021}, and the only transitions are the \( 0 \to \pm 1 \) transitions.
+For a chemical potential \( \mu \) small enough to be contained between the \( \pm 1 \) Landau levels, i.e. \( |\mu| /(v_F \sqrt{2eB} ) < 1 \), the response function was found to be invariant.
+Furthermore, for a finite temperature, it was found that thermally activated carriers increased the magnitude of the effect, with a stable platau around \( \mu = 0 \).
+The width of the plateau is inversely proportional to the temperature.
+See figure \ref{fig:platau}.
+
+As tilt is introduced, the energy interval in which one only has the zeroth Landau level is reduced, and as \( t \to 1 \) the interval vanishes.
+So as the system is tilted, the width of the platau is reduced.
+\todo{Comment on we found this also for non-symmetric energy-momentum tensor?}
+\todo{Do the computation for tz? In that case, compute separately the even and odd component}
+
+\begin{figure}[htb]
+  \centering
+  \input{figures/llpotentialwinset.pgf}
+  \caption{The Landau level of an untilted Weyl cone.
+    The inset shows the prefactor \( \gamma_0 \) of the response function for a small finite potential \( \mu \), within the energy interval indicated with dashed lines.
+    In the inset, the solid line is computed at zero temperature, while the dashed line is computed at a small finite temperature.
+    Figure inspired by \textcite{arjonaFingerprintsConformalAnomaly2019}.
+    }
+    \label{fig:platau}
 \end{figure}
 
 \section{Notes}
