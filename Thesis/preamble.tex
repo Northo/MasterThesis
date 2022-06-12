@@ -6,6 +6,8 @@
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{braket}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsthm}
 \usepackage{microtype}
 \usepackage{thmtools}
@@ -92,3 +94,24 @@ final=true,
 % \fancyhead[LE,RO]{\helv \thepage}
 % \fancyhead[LO]{\helv \rightmark}
 % \fancyhead[RE]{\helv \leftmark}
+
+
+\renewcommand*\raggedchapter{\raggedleft}
+\renewcommand*\chapterlinesformat[3]{%
+    \parbox[b]{\textwidth}{\raggedchapter #3}%
+    \makebox[0pt][l]{%
+      \hspace{1ex}%
+      \smash{\rule[-15pt]{1pt}{10cm}}%
+      \hspace{1ex}
+      #2
+    }%
+}
+\renewcommand*\chapterformat{%
+  \fontsize{60pt}{60pt}\selectfont\thechapter%
+}
+
+\RedeclareSectionCommand[
+  beforeskip=0pt,
+  afterindent=false,
+  afterskip=2.5\baselineskip,
+]{chapter}
