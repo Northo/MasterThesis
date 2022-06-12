@@ -249,7 +249,7 @@ Thus, the current matrix element in terms of  the functions \( \Xi_i \) is
     \sqrt{\alpha_{k_z m s}^2 + 1} \sqrt{\alpha_{k_z + \qvec{q}_z n s}^2 + 1}
   }\\
  \times \left[
-     \alpha_{k_z m s} \Xi_1(\vec{q}, m, n) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n)
+     \alpha_{k_z m s} \Xi_1(\vec{q}, m, n, s) + \alpha_{k_z + \qvec{q}_z n s} \Xi_2(\vec{q}, m, n, s)
   \right].
 \end{multline}
 
@@ -335,7 +335,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                              (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
     \nonumber &\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
   \end{align}
-  with
+  with \( \bar{\vec{q}} = (q_x, -q_y, q_z) \) and
   \[
     \Gamma _{\vec{k} \qvec{q} m n s}^{\pm} =
     \frac{
@@ -439,24 +439,24 @@ The response function
 \begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
   \frac{e B i v_F}{(2 \pi)^2}
-  \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k}+\qvec{q} n s}]\\
+  \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k} n s}]\\
   \times \frac{
-    J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
+    J^x_{\vec{k} m s, \vec{k} ns} (\vec{q}\to 0) T^{0y}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
   }{
-    (E_{\vec{k} m s} - E_{\vec{k}+\qvec{q} ns} + i \eta)(E_{\vec{k}ms}-E_{\vec{k}+\qvec{q} ns} + i \eta)
+    (E_{k_z m s} - E_{k_z ns} + i \eta)(E_{k_z m s}-E_{k_z ns} + i \eta)
   }.
 \end{multline*}
 Writing out the matrix products we have
 \begin{multline}
-  J^x_{\vec{k} m s, \vec{k} + \qvec{q} ns} (\vec{q}) T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k}ms}(\vec{q})
+  J^x_{\vec{k} m s, \vec{k} ns} (\vec{q} \to 0) T^{0y}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
   =
   \frac{v_F e i \alpha^{3}}{2}
   e^{-P^2}\\
   \frac{
-    (E_{\vec{k} m s} + E_{\vec{k}+\qvec{q} n s})
-    (\alpha_{k_z m s}^2 \Xi_1(m,n)^2 - \alpha_{k_z + \qvec{q}_z n s}^2 \Xi_2(m,n)^2)
+    (E_{k_{z} m s} + E_{k_z n s})
+    (\alpha_{k_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{k_z n s}^2 \Xi_2(0, m,n, s)^2)
   }{
-    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z + \qvec{q}_z n s}^2 + 1)
+    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z n s}^2 + 1)
   }.
   \label{eq:114}
 \end{multline}
@@ -471,7 +471,7 @@ And so, inserting into the response function
   \frac{
     [n_{\kappa_z m s} - n_{\kappa_z n s}]
     (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-    (\alpha_{\kappa_z m s}^2 \Xi_1(m,n)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(m,n)^2)
+    (\alpha_{\kappa_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(0, m,n, s)^2)
   }{
     (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
     (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns} + i \eta)^2
@@ -548,7 +548,7 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
     e^{-P^2}
     \frac{
       (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-      \alpha_{\kappa_z m s}^2 \Xi_1(m,n)^2
+      \alpha_{\kappa_z m s}^2 \Xi_1(0, m,n, s)^2
     }{
       (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
       (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
