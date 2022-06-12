@@ -288,6 +288,147 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
   In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
 \end{Proof}
 
+To properly investigate the symmetry properties of the system, we must consider the 4x4, not 2x2 Hamiltonians.
+While the 2x2 system does a goood job at describing a single cone, much important phsycis is lost when reducing the 4x4 Hamiltonian.
+For example, the requirement that the total Berry curvature over the entire Briolluine zone is zero is not met for the 2x2 Hamiltonian, as it describes only one cone of a certain chirality.
+The 4x4, however, includes two cones, which may in general be superimposed, thus conserving the total zero-divergence of the Berry curvature.
+As a matter of fact, the inclusion of both cones is important also for symmetry considerations.
+
+When considering the symmetry properties of the system, we must consider the full \( 4\times 4 \) Dirac equation.
+The \( 2\times 2 \) Weyl equation describing one cone does not capture the symmetries of the full system, which involve both Weyl cones.
+Let
+\[
+  H = v_{F} \tau _{z} \otimes \vec{\sigma} \vec{p},
+\]
+where \(\tau \) is some pseudo spin degree of freedom, transforming like \(\vec{r}\).
+This system describes two superimposed cones at the origin, with opposite chirality.
+The effect of parity \(\mathcal{P}\) and time reversal \(\mathcal{T}\) is
+\begin{equation}
+  \label{eq:135}
+  \begin{aligned}
+    \mathcal{P} \tau \mathcal{P}^{\dagger} &= -\tau, & \mathcal{T} \tau \mathcal{T}^{\dagger} &= +\tau,\\
+    \mathcal{P} \sigma  \mathcal{P}^{\dagger} &= + \sigma,  & \mathcal{T} \sigma  \mathcal{T}^{\dagger} &= -\sigma, \\
+    \mathcal{P} k \mathcal{P}^{\dagger} &= -k, & \mathcal{T} k \mathcal{T}^{\dagger} &= -\vec{k},
+  \end{aligned}
+\end{equation}
+compactly summarized in Table~\ref{tab:sign-transform}.
+\begin{table}[h]
+  \centering
+  \begin{tabular}{lcc}
+    \toprule
+    & \(\mathcal{P}\) & \(\mathcal{T}\)\\
+    \cmidrule{2-3}
+    \(\tau \) & - & +\\
+    \(\sigma \) & + & -\\
+    \(p\) & - & -\\
+    \bottomrule
+  \end{tabular}
+  \caption{The transformation rules for \( \tau, \sigma, p \) under parity~\( \mathcal{P} \) and time reversal~\( \mathcal{T} \).
+   \label{tab:sign-transform}
+  }
+\end{table}
+Obviously then, the Hamiltonian is both time reversal and parity invariant, as \(\mathcal{P} \mathcal{P}^{\dagger} = \mathcal{T} \mathcal{T}^{\dagger} = 1\).
+Notice that as \( \mathcal{P} \tau \mathcal{P}^{\dagger} = - \tau \), the chiralities of the cones are interchanged under a parity transformation.
+
+The tilt term takes the form \(v_F \tau_z^i \otimes \mathcal{I}_{2} \, \vec{t} \cdot \vec{p} \), where \( i=1 \) for inversion symmetric systems (\( \vec{t}^s = s \vec{t} \)) and \( i=2 \) for broken inversion symmetry (\( \vec{t}^s = \vec{t} \)).
+We thus see explicitly, by applying the parity and time reversal operators, that the term breaks time reversal symmetry, and that we get self consistency for the parity transformation.
+
+\begin{figure}[h]
+  \centering
+  \tikzsetnextfilename{symmetryspin}
+  \begin{tikzpicture}
+    \draw[->] (-4, 0) -- (4, 0) node[right] {\(k\)};
+    \draw[->] (0, 0) -- (0, 4) node[right] {\(E\)};
+
+    % vf = 1, v0 = 0.8
+    \draw[blue] (-3.5, 0.7) -- (0, 0) -- (2, 3.6) node[right] {\(\ket{\uparrow}\)} coordinate[pos=0.7] (a);
+    \draw[red] (3.5, 0.7) node[right] {\(\ket{\downarrow }\)} -- (0, 0) -- (-2, 3.6)
+    coordinate[pos=0.7] (b);
+
+    \draw[->] (a) -- ++(1, 0);
+    \draw[->] (b) -- ++(1, 0);
+  \end{tikzpicture}
+  \caption{Time reversal breaking in tilted system.
+    Cross section in the tilt direction shown, with blue showing one cone and red the other.
+    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
+  }
+\end{figure}
+
+The unperturbed Dirac Hamiltonian is Lorentz invariant, given that we consider an ``effective speed of light'', namely the Fermi velocity, instead of the actual speed of light \( c \).
+Specifically, Lorentz invariance means invariance under the \emph{Lorentz group}.
+The Lorentz group is the \( O(1,3) \) Lie group that conserves
+\[
+x_{\mu } x^{\mu } = t^2 - x^2 - y^2 - z^2,
+\]
+i.e. all isometries of Minkowski space.
+More specifically, the group consists of all 3D rotations, \( O(3) \), and all \emph{boosts}.
+A boost is a hyperbolic rotation from a spactial dimension to the temporal dimension.
+If we now direct our focus at the Hamiltonian of the Dirac cone
+\[
+H = \pm v_{F} \vec{\sigma} \vec{p},
+\]
+we may easily show the Lorentz invariance of the system.
+The time independent Schrodinger equation is
+\begin{equation}
+  \label{eq:136}
+  H \ket{\psi } = E \ket{\psi } \implies (H^2 - E^2) = 0.
+\end{equation}
+As
+\[
+p^{\mu } = \left(\frac{E}{c}, \vec{p}\right),
+\]
+the operator in Eq. \eqref{eq:136} is nothing more than
+\todo{ Make clear the matrix strucute here. There is an implicit identity matrix of size 2 }
+\begin{equation}
+  \label{eq:137}
+  H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2 \left(p^0\right)^2 ,
+\end{equation}
+where we used the anticommutation relation
+\[
+\{\sigma_{i}, \sigma_{j}\} =  2 \delta _{ij}
+\]
+of the Pauli matrices.
+Using now the effective speed of light \( c=v_F \), Eq. \eqref{eq:136} is
+\begin{equation}
+  \label{eq:138}
+  - v_F^2 p_{\mu } p^{\mu } = 0.
+\end{equation}
+The invariance of \( x^{\mu} x_{\nu} \) is the very definition of the Lorentz group, and so is obviously Lorentz invariant.
+
+Consider now a \emph{tilted} Dirac cone
+\begin{equation}
+  \label{eq:139}
+  H = \pm v_F \vec{\sigma} \vec{p} + v_F t_x p_x,
+\end{equation}
+where we, without loss of generality, chose the tilt to be in the \( x \)-direction.
+By the same argumentation as above, the eigen-equation
+\[
+  H \ket{\psi} = E\ket{\psi} \implies (H^2 - E^2) = 0
+\]
+leads to the equation
+\begin{equation}
+  \label{eq:140}
+  -v_F^2 p^{\mu} p_{\mu} + v_{F} t_{x} p_x (2 E - v_F t_x p_x) = 0.
+\end{equation}
+This is \emph{not} invariant under a Lorentz transformation, as can be seen by, for example, a rotation around the \( z \)-axis.
+
+\todo{
+In literature, however, it is sometimes written that Type-II break Lorentz symmetry,
+\todo{cite}
+however we showed that any finite tilt breaks Lorentz invariance.
+What is meant is the following:
+the energy of an untilted cone is
+\[
+E = \pm v_F |k|.
+\]
+Under a Lorentz boost, which we will take to be in the \( x \) direction without loss of generality, the  energy transforms as
+\[
+\tilde{E} = \gamma (E - \beta v_F k_x) = \gamma v_F (\pm |k| - \beta k_x).
+\]
+Rescaling the energy by \( \gamma \), this is a tilted cone.
+Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \), exactly restricting us to a Type-I system.
+}
+
 \begin{itemize}
   \item In this model, the hole pocket is ``shared'' between the two cones. There are also models with individual pockets (see \cite{mccormickMinimalModelsTopological2017})
         \item \todo{remove all items}
