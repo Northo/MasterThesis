@@ -1,5 +1,5 @@
 \section{Analytical expression for the response function}
-We will here find analytical expressions for the current operator $J^i(\omega, \vec{q})$ and stress-energy tensor $T^{0j}(\omega, \vec{q})$, needed to calculate the correlation function.
+We will here find analytical expressions for the current operator $J^i(\omega, \vec{q})$ and stress-energy tensor $T^{j 0}(\omega, \vec{q})$, needed to calculate the correlation function.
 The fields are given, in the position basis, by
 \begin{align}
   \psi &= \sum\limits_{\vec{k}n}^{}\braket{\vec{r} | \vec{k} n s} a_{\vec{k}ns}(t) = \sum\limits_{\vec{k}n}^{} \phi_{\vec{k} n s} (\vec{r}) a_{\vec{k}n s}(t),\\
@@ -255,11 +255,11 @@ which further simplifies the expression.
     \label{eq:65}
   \end{equation}
   where $\psi $ is to be understood as the solutions found above, $D_{\mu }=\partial _{\mu }  - i e A_{\mu }$ is the covariant derivative, and $\sigma ^{\mu } = (I, \sigma ^i)$
-  In our calculations we will require the $T^{0y}$ component, which we will now find.
+  In our calculations we will require the $T^{y 0}$ component, which we will now find.
 
   By using Eq. (\ref{eq:65}) directly
   \begin{align}
-    T^{0y} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
+    T^{y 0} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
            &= \frac{i}{2} \psi ^{\dagger} \left( \partial ^{y} + \sigma ^{y} \partial ^{0} \right)\psi \\
            &= \frac{i}{2} \left[
              \phi ^{*} \sigma ^y \phi  a^{\dagger} \partial ^0 a + \phi ^{*} \left( \partial ^y\phi  \right) a^{\dagger}a
@@ -267,11 +267,11 @@ which further simplifies the expression.
   \end{align}
   The stress-energy tensor is obviously real, thus
   \[
-    T^{0y} = \frac{1}{2} \left( T^{0y} + \left(  T^{0y}\right)^{\dagger} \right),
+    T^{y 0} = \frac{1}{2} \left( T^{y 0} + \left(  T^{y 0}\right)^{\dagger} \right),
   \]
   which after evaluation gives
   \begin{equation}
-    T^{0y} =  \frac{i}{4} \left[
+    T^{y 0} =  \frac{i}{4} \left[
       \phi ^{*} \sigma ^y \phi \left( a^{\dagger} \partial ^0 a - (\partial ^0a)^{\dagger} a \right)
       +
       \left(
@@ -284,7 +284,7 @@ which further simplifies the expression.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
-    T^{0y} =  \frac{1}{4} \left[
+    T^{y 0} =  \frac{1}{4} \left[
       \phi ^{*} \sigma ^y \phi \left( a^{\dagger} i \partial ^0 a - (i \partial ^0a)^{\dagger} a \right)
       - v_{F}
       \left(
@@ -305,8 +305,8 @@ Fourier transforming the position gives
                     a^{\dagger}_{\vec{k}ms}(t)
                     a_{\vec{l} ns}(t),\\
   \label{eq:67}
-  T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}^{}
-                    T^{0y}_{\vec{k}m s, \vec{l}n s}(\vec{q})
+  T^{y 0}(t, -\vec{q}) &= \sum\limits_{\vec{k}m, \vec{l}n}^{}
+                    T^{y 0}_{\vec{k}m s, \vec{l}n s}(\vec{q})
                     a^{\dagger}_{\vec{k}m s}(t)
                     a_{\vec{l} n s}(t),
 \end{align}
@@ -315,13 +315,13 @@ where the matrix elements in momentum space are given by
   J^x_{\vec{k}ms, \vec{l}ns}(\vec{q}) &=  \int \mathrm{d} \vec{r} e^{-i \vec{q} \vec{r}} s v_F e \phi ^{*}_{\vec{k}ms} (\vec{r}) (\sigma^x + s t^s_x) \phi _{\vec{l}ns}(\vec{r}),\\
   %%
   \label{eq:68}
-  T^{0y}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{2}
+  T^{y 0}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{2}
                                                 \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}}
                                               \phi ^{*}_{\vec{k}m s}(\vec{r})
                                               (s \sigma ^y + (t^s)^y)
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
-Note that as $T^{0y}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{0y}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:68}).
+Note that as $T^{y 0}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{y 0}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:68}).
 
 As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
@@ -340,7 +340,7 @@ Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
                     J^x_{\vec{k}ms, \vec{k}+\qvec{q} ns}(\vec{q}) a^{\dagger}_{\vec{k} ms}(t) a_{\vec{k}+\qvec{q} ns}(t),\\
-  T^{0y}(t, -\vec{q}) &= \sum\limits_{\vec{\kappa}, \mu  \nu }^{} T^{0y}_{\vec{\kappa } \mu  s, \vec{\kappa } - \qvec{q}, \nu  s}(\vec{q}) a^{\dagger}_{\vec{\kappa } \mu   s}(t) a_{\vec{\kappa } - \qvec{q} \nu  s}(t),
+  T^{y 0}(t, -\vec{q}) &= \sum\limits_{\vec{\kappa}, \mu  \nu }^{} T^{y 0}_{\vec{\kappa } \mu  s, \vec{\kappa } - \qvec{q}, \nu  s}(\vec{q}) a^{\dagger}_{\vec{\kappa } \mu   s}(t) a_{\vec{\kappa } - \qvec{q} \nu  s}(t),
 \end{align}
 where ${\qvec{q}} = (q_x, q_z)$.
 Keeping in mind that $a_{\lambda }^{\dagger} (t) = e^{i E_{\lambda } t /  }a_{\lambda }^{\dagger}$, and that
@@ -357,14 +357,14 @@ a^{\dagger}_{\vec{k}ms} a_{\vec{k}+\qvec{q} ns}, a^{\dagger}_{\vec{\kappa}\mu s}
 \end{equation}
 the correlation function is given by
 \begin{multline}
-  \Braket{\left[ J^x(t, \vec{q}), T^{0y}(t', -\vec{q}) \right]}
+  \Braket{\left[ J^x(t, \vec{q}), T^{y 0}(t', -\vec{q}) \right]}
   =
   \sum\limits_{\vec{k} mn}^{}
   e^{i( E_{k_zms} - E_{k_z+\qvec{q}_z ns} )t}
   e^{i( E_{k_z+\qvec{q}_z ns} - E_{k_z ms} ) t'}\\
   \times
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
-  T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
+  T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right].
 \end{multline}
 
@@ -376,7 +376,7 @@ We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\re
   \int \mathrm{d}t e^{i \omega t} \int\limits_{-\infty }^0 \mathrm{d}t'
   \Theta (t)
   \Braket{\left[
-J^x(t, \vec{q}), T^{0y}(t', -\vec{q})
+J^x(t, \vec{q}), T^{y 0}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
@@ -401,7 +401,7 @@ The response function then reads
   \lim_{\eta \to 0}
   \sum\limits_{\vec{k}mn}^{}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
-  T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
+  T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right] \\
   \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
   \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1},
@@ -413,7 +413,7 @@ where the matrix elements are
                                                  s v_F e\phi ^{*}_{\vec{k}m s}(y)
                                                  (\sigma^x + s t^s_x)
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{0y}_{\vec{k}+\qvec{q} n s, \vec{k} m s}(\vec{q}) &= \frac{1}{2}
+  T^{y 0}_{\vec{k}+\qvec{q} n s, \vec{k} m s}(\vec{q}) &= \frac{1}{2}
               \int \mathrm{d}y
               e^{iq_y y}
               \phi ^{*}_{\vec{k}+\qvec{q} n s}(y)
@@ -429,7 +429,7 @@ We may use the property of the limit of a product of functions \( \lim A\cdot B 
 \begin{equation}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F }{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
   \frac{
-    J^x_{\vec{k} m s, \vec{k} n s} T^{0y}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
+    J^x_{\vec{k} m s, \vec{k} n s} T^{y 0}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
   }{
     (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
   },
@@ -561,7 +561,7 @@ we find explicitly
 Consider now the matrix element of the energy-momentum tesnor
 \begin{equation}
 \label{eq:75}
-T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
+T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 =
 \frac{1}{2}
 \int \mathrm{d}y e^{iq_y y}
@@ -579,7 +579,7 @@ Recall that
 \end{equation}
 The form of the integrand is very similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
 \begin{multline}
-T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
+T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
   = \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \int \mathrm{d}y e^{iq_y y} e^{- \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}}\\
@@ -591,7 +591,7 @@ T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done
 \begin{equation}
   \begin{split}
-    &T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
+    &T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
     &=
     \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
@@ -614,7 +614,7 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
 \begin{equation}
   \label{eq:76}
   \begin{split}
-    T^{0y}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
+    T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     &= \frac{i s}{2}
     (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
     \exp \left[
@@ -638,7 +638,7 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
 \begin{equation}
   \label{eq:77}
-  T^{0y}_{\vec{k} ns, \vec{k}ms} (\vec{q})
+  T^{y 0}_{\vec{k} ns, \vec{k}ms} (\vec{q})
   = \frac{i s}{2}
   \frac{
     (E_{k_z m s} + E_{k_z n s}- 2\mu )
@@ -666,7 +666,7 @@ The terms in the integrand are exactly the same as in the current matrix element
                                 + m\leftrightarrow n
                                 \right),\\
                                 %%
-    T^{0y}_{\vec{k} ns, \vec{k}ms} &=
+    T^{y 0}_{\vec{k} ns, \vec{k}ms} &=
                                            \frac{is \Gamma_{k_z m n s}}{2}
                                            \left(E_{k_z m s} + E_{k_z n s}- 2\mu \right)
                                            \left(
@@ -703,7 +703,7 @@ Recall the response function
   \frac{1}{\mathcal{V}}
   \frac{
     i v_F  J^x_{\vec{k} m s, \vec{k}+\qvec{q} n s}(\vec{q})
-    T^{0y}_{\vec{k}+\qvec{q} ns, \vec{k}ms}(\vec{q})
+    T^{y 0}_{\vec{k}+\qvec{q} ns, \vec{k}ms}(\vec{q})
     \;
     [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
   }{

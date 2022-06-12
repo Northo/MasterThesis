@@ -42,7 +42,7 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
   \left\{
     \frac{-i v_F}{\hbar } \Theta (t-t')
     \Braket{
-      [J^i(t, \vec{r}), T^{0j} (t'', \vec{r}')]
+      [J^i(t, \vec{r}), T^{j 0} (t'', \vec{r}')]
     }
   \right\}
   \partial _j' \psi (t', \vec{r}').
@@ -67,7 +67,7 @@ By definition, the Fourier transform of the response is, where the variable of i
   \chi (\vec{q}) &= \int \mathrm{d}(\vec{r} - \vec{r}') e^{-i\vec{q}(\vec{r}-\vec{r}')} \chi (\vec{r} - \vec{r}')\\
                  &= \int \mathrm{d}(\vec{r} - \vec{r}') e^{-i\vec{q}(\vec{r}-\vec{r}')} C \Braket{
                    \left[
-J^i (\vec{r}), T^{0j}(\vec{r}')
+J^i (\vec{r}), T^{j 0}(\vec{r}')
                    \right]},\\
 \end{align}
 where $C$ denotes $t$-dependent prefactors and integrals over time are omitted, again for clarity of notation.
@@ -82,9 +82,9 @@ Thus,
     \chi (\vec{q}) &= \frac{1}{\mathcal{V}} \int \mathrm{d}\vec{r} \mathrm{d}\vec{r}'
     e^{-i\vec{q}(\vec{r}-\vec{r}')}
     C \Braket{\left[
-        J^i(\vec{r}), T^{0j}(\vec{r}')
+        J^i(\vec{r}), T^{j 0}(\vec{r}')
       \right]}\\
-    &= \frac{C}{\mathcal{V}} \Braket{\left[ J^i(\vec{q}), T^{0j}(-\vec{q}) \right]}.
+    &= \frac{C}{\mathcal{V}} \Braket{\left[ J^i(\vec{q}), T^{j 0}(-\vec{q}) \right]}.
   \end{split}
 \end{equation}
 
@@ -110,7 +110,7 @@ In frequency and momentum space the response function is thus
   \int\limits_{-\infty }^{0} \mathrm{d}t'
   \Theta (t)
   \Braket{\left[
-      J^i(t, \vec{q}), T^{0j}(t', -\vec{q})
+      J^i(t, \vec{q}), T^{j 0}(t', -\vec{q})
     \right]}.
 \end{equation}
 
@@ -220,7 +220,7 @@ In the case of an untilted system, the components of interest of the canonical e
   \left[
   \phi^{\dagger} \sigma_y \partial_{0} \phi - \partial_0 \phi^{\dagger} \sigma_y \phi
   \right],\\
-  T^{0 y} &= \frac{v_F}{4}
+  T^{y 0} &= \frac{v_F}{4}
   \left[
   \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
   \right].
@@ -228,13 +228,13 @@ In the case of an untilted system, the components of interest of the canonical e
 \end{subequations}
 The symmetrized energy-momentum tensor used by \textcite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
-  T_s = \frac{T^{0y} + T^{y0}}{2}.
+  T_s = \frac{T^{y 0} + T^{y0}}{2}.
 \end{equation}
 The response was found to be
 \begin{equation}
   \chi = [\dots] \sum\limits_{\underset{N=M-1}{m,n}}^{} \int \mathrm{d} \kappa_z (F^{(1)} + F^{(2)}) \alpha_{\kappa_z m s}^2,
 \end{equation}
-with \( [\dots] \) prefactors not relevant here, and \( F^{(i)},\, i=1,2 \) the contribution from \( T^{y0} \) and \( T^{0y} \), respectively.
+with \( [\dots] \) prefactors not relevant here, and \( F^{(i)},\, i=1,2 \) the contribution from \( T^{y0} \) and \( T^{y 0} \), respectively.
 They are
 \begin{align}
   F^{(1)} &= \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s},\\
