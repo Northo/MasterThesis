@@ -98,6 +98,7 @@ final=true,
 
 \renewcommand*\raggedchapter{\raggedleft}
 \renewcommand*\chapterlinesformat[3]{%
+    % \parbox[b][0pt]{0pt}{\raisebox{2em}{\hspace{\textwidth}\small\llap{``In fact, we could invent one''}}}%
     \parbox[b]{\textwidth}{\raggedchapter #3}%
     \makebox[0pt][l]{%
       \hspace{1ex}%

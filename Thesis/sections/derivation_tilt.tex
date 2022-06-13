@@ -897,8 +897,18 @@ The contribution is even in \( t_x \), and the two cones have the same contribut
     \begin{axis}[
       xlabel=\( t_x \),
       ylabel=\( \gamma_0 \),
+      legend pos=south west,
+      cycle multiindex* list={
+        [samples of colormap=5 of viridis]\nextlist
+        mark=o\\mark=oplus\\mark=square\\
+      },
+      mark repeat={4},
       ]
-      \addplot[mark=o] table[col sep=comma] {data/contribTilttx-zerothll.csv};
+      \foreach \i in {1,3,5,7} {
+      \addplot table[y index=\i, col sep=comma] {data/contribTilttx-zerothll.csv};
+      \addlegendentryexpanded{\( N = \i \)};
+      % \addplot[mark=o] table[x expr=-\thisrowno{0}, y index=\i, col sep=comma] {data/contribTilttx-zerothll.csv};
+      }
     \end{axis}
   \end{tikzpicture}
   \caption{Numerically computed values of the prefactor \( \gamma_N \) with only the first Landau level included for perpendicular tilt \( t_x \).
