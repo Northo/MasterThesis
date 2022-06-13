@@ -304,32 +304,38 @@ The situation is depicted in Figure \ref{fig:luttinger-idea}, where the temperat
   \label{fig:luttinger-idea}
 \end{figure}
 
-A temperature gradient, together with external electric potential $\phi$ and chemical potential $\mu$, gives a response in the electrical current $\vec{j}$ and energy current $\vec{j}_E$~\cite{mahanManyparticlePhysics2000} 
+A temperature gradient, together with external electric field $\vec{E}$ and chemical potential $\mu$, gives a response in the electrical current $\vec{J}$ and energy current $\vec{J}_E$~\cite{mahanManyparticlePhysics2000}.
+One commonly defines the transport coefficient tensors \( L^{ab},\; a,b=1,2 \) containing the response functions such that
 \begin{align}
 \label{eq:17}
-  j_{\alpha} &= -M_{\alpha\beta}^{(11)} \left[
-  \frac{e}{T} \nabla_{\beta} \phi + \nabla_{\beta} \left( \frac{\mu}{T} \right)
+  J_{i} &= -e L^{11}_{ij} \left[
+          E_j - T \nabla_j \frac{\mu}{T}
   \right]
-  + M_{\alpha\beta}^{(12)} \nabla_{\beta} \left( \frac{1}{T} \right),\\
-  J_{E,\alpha} &= -M_{\alpha\beta}^{(21)} \left[
-\frac{e}{T}\nabla_{\beta}\phi + \nabla_{\beta} \left( \frac{\mu}{T} \right)
-  \right] 
-  + M_{\alpha\beta}^{(22)} \nabla_{\beta} \left( \frac{1}{T} \right).
+  - e L^{12}_{ij} T \nabla_j \frac{1}{T},\\
+  J_{E,i} &= L^{21}_{ij} \left[
+          E_j - T \nabla_j \frac{\mu}{T}
+  \right]
+  + L^{22}_{ij} T \nabla_j \frac{1}{T},
 \end{align}
-Or, more compactly, 
+with the electric charge \( e = |e| \).
+Or, more compactly,
 \begin{equation}
   \begin{pmatrix}
-    j_{\alpha } \\ j_{E,\alpha }
+    -J_{i} /e \\ J_{E,i }
   \end{pmatrix}
   =
-  -M_{\alpha \beta }
+  \vec{L}_{ij}
   \begin{pmatrix}
-    \frac{e}{T}\nabla _{\beta }\phi  + \nabla _{\beta }\left( \frac{\mu}{T} \right) \\
-    \nabla _{\beta }\left( \frac{1}{T} \right)
+    E_j - T \nabla_j \frac{\mu}{T}\\
+    T \nabla_j \frac{1}{T}
   \end{pmatrix}.
 \end{equation}
-The coefficients of transportation, $M_{\alpha \beta }^{(ij)}$ is a widely used convention.
-The success of Luttinger's method was that the transport coefficients $M_{\alpha \beta }^{(ij)}$ could now be calculated directly, and yielded the same results as had previously been found by less formal approaches.
+Importantly, note that these relations are valid when \( \vec{J}, \vec{J}_E \) are understood as the \emph{transport} currents, as opposed to the total currents containing also local non-transporting currents.
+This is discussed more with regards to the results of this thesis in section \ref{sec:transport-magnetization}.
+The coefficients of transportation, $\vec{L}_{ij}$ is a widely used convention, however, several slight variations are used, which at times may cause confusion.
+In particular these differences are on which factors of \( T \) and \( \mu \) are included explicitly;
+the reason for choosing other definitions might be to have more convenient expressions for the Onsager relation, Seebeck coefficient, thermal conductivity tensor, etc \cites{mahanManyparticlePhysics2000,chernodubThermalTransportGeometry2021,lundgrenThermoelectricPropertiesWeyl2014}.
+The success of Luttinger's method was that the transport coefficients could now be calculated directly, and yielded the same results as had previously been found by less formal approaches.
 
 By the introduction of the Hamiltonian perturbation $H_L$, the response may now be investigated in the Kubo formalism.
 By the response in Eq. (\ref{eq:lin-response-1}) the electric current generated from the gravitational perturbation is

@@ -33,10 +33,11 @@ The above result is what is meant, to the best of our understanding.}
   \chi ^{xy} = \frac{e^2 v_F B}{4 \pi ^2 \hbar }.
 \end{equation}
 
-Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-luttinger-gravity-final}), found through Luttinger's approach.
+Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-luttinger-final}), found through Luttinger's approach.
 \begin{equation}
   \label{eq:21}
   \braket{J^i}(t, \vec{r}) = \!\!
+  \underbrace{
   \int\limits_{-\infty }^{\infty } \mathrm{d}t' \mathrm{d}\vec{r}' \!\!
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
@@ -45,19 +46,20 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
       [J^i(t, \vec{r}), T^{j 0} (t'', \vec{r}')]
     }
   \right\}
-  \partial _j' \psi (t', \vec{r}').
+  }_{\chi^{ij}}
+  \frac{- \partial _j' T(t', \vec{r}')}{T}.
 \end{equation}
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
 As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:21}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
 Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:21}) is
 \[
-  \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \partial _j' \psi  (\vec{r}'),
+  \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') (-\partial _j' T(\vec{r}') /T),
 \]
 where the temporal parts were dropped for clarity.
 This is a convolution, and the Fourier transform is thus simply given by the product of the two factors~\cite{rottmannMatematiskFormelsamling1995}.
 \begin{equation}
-  \braket{J^i}(\vec{q}) =
-  \chi (\vec{q}) (iq_j) \psi (\vec{q}),
+  \braket{J^i}(\vec{q}) = -
+  \chi (\vec{q}) (iq_j) T(\vec{q}) /T,
 \end{equation}
 where it was also used that the Fourier transform of a derivative gives the component of the variable.
 Showing explicitly how to find the form of the response $\chi $ in momentum space is often overlooked in much literature, and as it does involve some finesse, we want to show it here.
@@ -121,12 +123,15 @@ Firstly we discuss how the charge current form a Kubo calculation relate to expe
 Secondly we discuss the ambiguity related to the energy-momentum tensor.
 
 \subsection{Transport and magnetization}
-Recall that we generally define the transport coeffieicents
+\label{sec:transport-magnetization}
+Recall that we generally define the transport coeffieicents (Eq.~\eqref{eq:17})
 \[
-J^i = e^2 L^{ij}_{11} E_j + e L_{12}^{ij} \nabla_jT,
+J^i = -e L_{ij}^{11} \left[
+          E_j - T \nabla_j \frac{\mu}{T}
+  \right] - e L^{12}_{ij} T \nabla_j \frac{1}{T},
 \]
 where \( J^i \) is the electrical current.
-In our work, we focus on the \( L_{12} \) coefficient, however the following discussion is valid also more generally.
+In our work, we focus on the \( L^{12} \) coefficient, however the following discussion is valid also more generally.
 The definition of transport currents becomes more subtle in systems with broken time-reversal symmetry\cite{vanderwurffMagnetovorticalThermoelectricTransport2019, chernodubThermalTransportGeometry2021}.
 In such systems, unobservable, circulating \emph{magnetization} currents arise.
 These currents do not contribute to transport, but the Kubo treatment derives the local current, which in general also includes non-transporting currents.
@@ -136,14 +141,16 @@ Let
   \vec{J} = \vec{J}_{\text{tr}} + \vec{J}_M,
 \end{equation}
 where \( \vec{J} \) is the total local current, \( \vec{J}_{\text{tr}} \) is the transport current, and \( \vec{J}_M \) is the circulating magnetization current.
-While our response \( \chi \) relates to the total current, we are more interested in the experimentally measurable transport resonse \( L^{ij}_{12} \), related to our Kubo result as
+The Kubo formalism generally gives the response to the total local current, \( \chi \);
+we are more interested in the experimentally measurable transport response \( L_{ij}^{12} \), related to our Kubo result as
 \cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
   \label{eq:24}
-  L_{12}^{ij} = \chi^{12} - \epsilon^{ijl} M_l,
+  L^{12}_{ij} = -\chi_{ij} /e + \epsilon^{ijl} M_l,
 \end{equation}
 with \( M_l \) the magnetization.
 For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \) \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
+The result from the Kubo calculation is therefore the actual transport current.
 
 
 \subsection{Comment on the energy-momentum tensor}
