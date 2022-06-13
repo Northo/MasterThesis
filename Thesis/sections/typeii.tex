@@ -13,25 +13,20 @@ See schematic representation in figure~\ref{fig:conic-section-sketch}.
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \textcite{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
 \todo{add some concrete examples or cites}
-\todo{Is this correct? Is a tilt at all possible in HEP?}
 
 In this section, we investigate in more detail the tilted Weyl cones, the star of this thesis.
 The tilted Hamiltonian was introduced in Eq.~\eqref{eq:hamil-tilt-isotropic}
 \[
-H = v_F \vec{t} \vec{p} + v_F \vec{p} \vec{\sigma},
+H = v_F \vec{t} \vec{p} + v_F \vec{\sigma} \vec{p},
 \]
 where we chose isotropic Fermi velocity.
-As discussed earlier, the proper Dirac equation of particle physics cannot include such a tilting term, as it obviously breaks Lorentz invariance
-\footnote{Some references states that it is Type-II is problematic and breaks Lorentz invariance.
-  something something boost looks like tilt.
-  Not possible to boost into type ii
-todo}.
+As discussed earlier, the proper Dirac equation of particle physics cannot include such a tilting term, as it obviously breaks Lorentz invariance.
 The emergent Dirac equation of condensed matter physics, however, need not respect the Lorentz invariance and such a tilting term is no problem.
 \todo{I am pretty sure there is some neat analogy here that should be included. Light cone etc.}
 
-As was eluded to in the introduction to the section, the Weyl has two distinct phases: Type-I and
+As was eluded to in the introduction to the section, the Weyl cone has two distinct phases: Type-I and
 Type-II.
-Tilting the Weyl cone, the upper and lower badns will at some tilt angle touch the Fermi level, a \emph{critical} tilt.
+Tilting the Weyl cone, the upper and lower bands will at some tilt angle touch the Fermi level, a \emph{critical} tilt.
 Going beyond this, the upper (lower) band dips below (above) the Fermi level, and we have what is known as a Type-II Weyl semimetal.
 Altough the two states are similar in many ways, they also have hugely important differenes separating them from one another.
 In the Type-I regime, the density of states goes to zero at the Fermi level.
@@ -51,19 +46,19 @@ This gives Type-II Weyl semimetals manifestly different properties from Type-I, 
 
 \subsubsection{Linear Dirac equation from tight binding model}
 \label{sec:tilt:tightbindingmodel}
-We will firstly consider a slightly more realistic toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
+We will firstly consider a slightly more realistic tight binding toy model for a Weyl semimetal, with a parameter taking the system from a Type-I to a Type-II.
 This is instructive both in order to more intuitively see the origin of the terms causing the tilting of the Dirac cone, and also to discuss the validity of the linear model in different contexts.
 We will linearize the model around the Weyl points, regaining the familiar form of a Dirac cone, with an additional anisotropy term causing the tilt.
 
-Using the general time-reversal breaking model described by \textcite{mccormickMinimalModelsTopological2017}
+We will use the general time-reversal breaking model described by \textcite{mccormickMinimalModelsTopological2017}
 \begin{equation}
   \begin{split}
     H(\vec{k}) &= \left[ ( \cos k_y + \cos k_z - 2 )m - 2 t (\cos k_x - \cos k_0) \right] \sigma_1\\
     &\pe - 2 t \sin k_y \sigma_2 - 2t \sin k_z \sigma_3
-    + \gamma (\cos k_x - \cos k_0).
+    + \gamma (\cos k_x - \cos k_0),
   \end{split}
 \end{equation}
-\todo{Write what all the different parameters are. Having another t here is somewhat confusing}
+where \( t \) must \emph{not} be confused with the tilt term of the linear model.
 The model has Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
 For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion.
@@ -71,7 +66,9 @@ As \( k_0 \) is reduced, the cones are brought closer together and made anisotro
 % Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
 Figure \ref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to \( 3t \).
 The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
-We call these hole and electron pockets, respectively.
+We call these electron and hole pockets, respectively.
+Note that in this model, the pockets are shared between the two noedes.
+One may also construct tight binding models with isolated pockets \cite{mccormickMinimalModelsTopological2017}.
 
 \begin{figure}[htb]
   \centering
@@ -90,7 +87,7 @@ We call these hole and electron pockets, respectively.
   \end{subcaptionblock}
 \end{figure}
 
-Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac cone
+Linearizing around the Weyl nodes the Hamiltonian reduces to the familiar expression of a Dirac cone
 \begin{equation}
   \label{eq:7}
   H(\vec{K} ^{'\pm} + \vec{k}) \approx \mp 2 t k_{x} \sin k_{0} \sigma_{1} - 2 t (k_{y} \sigma_{2} + k_{z} \sigma_{3}) \mp \gamma k_{x} \sin k_{0} \sigma_{0}, \: k_{x}, k_{y}, k_{z} \ll 1.
@@ -98,15 +95,16 @@ Linearizing around the Weyl nodes reduces to the familiar expression of a Dirac 
 When the separation between the two nodes is \(\pi\), i.e. \(k_{0} = \pi/ 2 \), the linearized Hamiltonian around the cone is
 \begin{equation}
   \label{eq:8}
-  H'(\vec{k}) = \mp 2 t k_{x} \sigma_{x} - 2t k_{y} \sigma_{y} - 2 t k_{z} \sigma_{z} \mp \gamma k_{x}.
+  H'(\vec{k}) = \mp 2 t k_{x} \sigma_{x} - 2t k_{y} \sigma_{y} - 2 t k_{z} \sigma_{z} \mp \gamma k_{x},
   % h'(\vec{v}) = -2t \vec{k} \vec{\sigma} - \gamma k_{x}.
 \end{equation}
+with \( \mp \) corresponding to the node at \( \vec{K}^{' \pm} \).
 For a system
 \begin{equation}
   \label{eq:155}
   H = \gamma_i k_i + k_i A_{ij} \sigma_j,
 \end{equation}
-the chirality of the node \( s = \det(A_{ij}) \) \cite{mccormickMinimalModelsTopological2017}, and we see this gives a negative cone at \( k_0 = \pi /2 \) and positive at \( k_0 = -\pi /2 \).
+the chirality of the node \( s = \det(A_{ij}) \) \cite{mccormickMinimalModelsTopological2017}, and we see this gives a negative cone at \( k_x = \pi /2 \) and positive at \( k_x = -\pi /2 \).
 We could arrive at a more familiar form of the expression by letting \( 2 t \to v_F, \gamma \to v_F t \), and do a \( \pi \) rotation around \( x \) at the positive cone, giving
 \begin{equation}
   \label{eq:158}
@@ -115,7 +113,6 @@ We could arrive at a more familiar form of the expression by letting \( 2 t \to 
 
 Moving the two nodes closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
 As discussed earlier, this may be mitigated by a rescaling of \( k_x \).
-\todo{make sure this is discussed earlier}
 The model thus gives rise to a pair of Weyl cones, with an inversion symmetric tilt, i.e. they tilt with equal magnitude in the opposite direction.
 
 % \begin{figure}[ht]
@@ -201,8 +198,11 @@ this has consequences among other for the interpretation of the chiral anomaly.
 In our context, also the topology of the Fermi surface is of importance.
 As mentioned, in the Lifshitz transition from Type-I to Type-II, the Fermi surface goes from being closed to open in the linear model.
 This is not the case in the tight binding model, whose Fermi surface is shown in figure \ref{fig:fermiSurfaceTight}.
-Note that in this model, the pockets are shared between the two noedes.
-One may also construct tight binding models with isolated pockets \cite{mccormickMinimalModelsTopological2017}, however, they are still closed.
+According to \textcite{ferreirosAnomalousNernstThermal2017} the linear model will be able to give qualitatively correct results in the deep tilt limit.
+We propose yet another argument for this claim here.
+Consider again the Fermi surface in figure \ref{fig:fermiSurfaceTight};
+as the tilt is increased the Fermi surface resemble more and more that of the linear model.
+Although this is in no way rigorous, it gives hope that the linear model may give qualitatively valid results for Type-II materials in the deep tilt limit.
 
 A priori, it is not obvious when and how the linear model falls short, and a critical interpretation and evaluation of results derived from it is always warrented.
 It is, however, a very useful and interesting model.
@@ -216,30 +216,45 @@ One of the more obvious remedies one might consider, is a momentum cutoff, restr
   \begin{tikzpicture}
     \begin{axis}[
       every axis plot post/.append style={mark=none},
-      ymin=-pi, ymax=pi,
+      ymin=-pi+0.01, ymax=pi-0.01, % Hide masked values
       xmin=-pi, xmax=pi,
       xlabel=\( k_x \), ylabel=\( k_y \),
+      legend style={at={(0.5,1.1)}, anchor=south},
+      legend columns=-1,
+      cycle list={{dotted},{dashed},{dashdotted},{solid}},
+      legend entries={
+        \( \gamma = 2.0 t\),
+        \( \gamma = 2.2 t\),
+        \( \gamma = 3.0 t\),
+        \( \gamma = 6.0 t\),
+      },
       ]
+      %% Critical tilt
+      \addplot+[domain=-pi:-pi/2, blue, forget plot] {0};
+      \addplot+[domain=pi/2:pi, blue, forget plot] {0};
+      \addplot+[domain=-pi/2:pi/2, red, legend image post style={black}] {0};
+
       % \addplot[samples=100] {atan(sqrt(10)*cos(x)*sqrt(1/(27+32*cos(x)-5*cos(2*x))))};
       % CSV has a strange format
       % outer only given for positve
-      % Upper
-      \addplot[red] table[col sep=comma] {data/fermiLevelTightInner.csv};
-      \addplot[blue] table[col sep=comma] {data/fermiLevelTightOuter.csv};
-      \addplot[blue] table[col sep=comma, x expr=-\thisrowno{0}] {data/fermiLevelTightOuter.csv};
+      \foreach \idx in {1,5,6}{
+        % Upper
+        \addplot+[red, forget plot] table[col sep=comma, y index=\idx] {data/fermiLevelTightInner.csv};
+        \addplot+[blue, forget plot] table[col sep=comma, y index=\idx] {data/fermiLevelTightOuter.csv};
+        \addplot+[blue, forget plot] table[col sep=comma, y index=\idx, x expr=-\thisrowno{0}] {data/fermiLevelTightOuter.csv};
 
-      % Lower
-      \addplot[red] table[col sep=comma, y expr=-\thisrowno{1}] {data/fermiLevelTightInner.csv};
-      \addplot[blue] table[col sep=comma, y expr=-\thisrowno{1}] {data/fermiLevelTightOuter.csv};
-      \addplot[blue] table[col sep=comma, x expr=-\thisrowno{0}, y expr=-\thisrowno{1}] {data/fermiLevelTightOuter.csv};
-
-      \addplot[domain=0.2:pi-0.2,gray] {-pi/2 + x};
-      \addplot[domain=0.2:pi-0.2,gray] {pi/2 - x};
-      \addplot[domain=-pi+0.2:-0.2,gray] {pi/2 + x};
-      \addplot[domain=-pi+0.2:-0.2,gray] {-pi/2 - x};
+        % Lower
+        \addplot+[red, forget plot] table[col sep=comma, y expr=-\thisrowno{\idx}] {data/fermiLevelTightInner.csv};
+        \addplot+[blue, forget plot] table[col sep=comma, y expr=-\thisrowno{\idx}] {data/fermiLevelTightOuter.csv};
+        \addplot+[blue, legend image post style={black}] table[col sep=comma, x expr=-\thisrowno{0}, y expr=-\thisrowno{\idx}] {data/fermiLevelTightOuter.csv};
+      }
+      \addplot[domain=0.7:pi-0.7,gray, forget plot] {-pi/2 + x};
+      \addplot[domain=0.7:pi-0.7,gray, forget plot] {pi/2 - x};
+      \addplot[domain=-pi+0.7:-0.7,gray, forget plot] {pi/2 + x};
+      \addplot[domain=-pi+0.7:-0.7,gray, forget plot] {-pi/2 - x};
     \end{axis}
   \end{tikzpicture}
-  \caption{The Fermi surface of the tight binding model in the Type-II phase, with the Fermi surface of the linear model superimposed (gray).
+  \caption{The Fermi surface of the tight binding model in the Type-II phase, with the Fermi surface of the linear model for \( \gamma=3t \) superimposed (gray).
     The Figure shows the \( k_x, k_y \) plane, with \( k_z = 0 \).
     Electron pockets are shown in red, hole pockets shown in blue.
     Note that the Fermi surface of the linear model is infinite, and here truncated for clarity.

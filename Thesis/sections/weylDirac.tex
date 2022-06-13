@@ -1,14 +1,19 @@
 \section[Weyl and Dirac cones]{Weyl and Dirac cones in condensed matter physics}
 \label{sec:weyl-dirac-cones}
 %% Much is taken from https://www.tandfonline.com/doi/pdf/10.1080/00018732.2014.927109?needAccess=true
-\todo{Dirac and Weyl cones are the emergence of non-gapped linear energy bands in condensed matter physics, in effect exhibiting relativistic behavior at non-relativistic speeds.
-We here give a very brief introduction to these materials.
-Firstly, we will consider the so-called band crossing, and how the opening of a gap at the band crossing behaves differently in two and three dimensions.
-Then, various perturbations that do not open a gap will be considered, giving interesting effects in the dispersion relations.
-Lastly, a consideration of these materials in light of Berry curvature and the topological quantity of Chern numbers will be given.}
+Dirac and Weyl cones are the emergence of non-gapped linear energy bands in condensed matter physics, in effect exhibiting relativistic behavior at non-relativistic speeds.
+We here give a brief introduction to these materials.
+The system and its relation to high energy physics is discussed first.
+Then, several perturbations of the system are introduced.
+The topological nature of the system is considered in the context of Chern numbers and Berry curvature.
+Lastly, we go into tilted Dirac cones in some more depth.
+
+% Firstly, we will consider the so-called band crossing, and how the opening of a gap at the band crossing behaves differently in two and three dimensions.
+% Then, various perturbations that do not open a gap will be considered, giving interesting effects in the dispersion relations.
+% Lastly, a consideration of these materials in light of Berry curvature and the topological quantity of Chern numbers will be given.
 
 The standard model for metals in condensed matter physics is the Landau Fermi liquid \cites{landauTheoryFermiLiquid1956,chernodubThermalTransportGeometry2021}, where electrons are described by the Hamiltonian \( p^2 /2 m^* \), with \( m^* \) some effective mass.
-This model, however, fails for Dirac materials, where the electrons behave as ``Dirac fermions''.
+The model works remarkably well for many systems, but fails for Dirac materials, where the electrons behave as ``Dirac fermions''.
 The notion of a ``Dirac fermion'' is almost comical from a high energy point of view\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
 A fermion is by its very definition a Dirac spinor.
 In condensed matter language, however, we mean by fermion that it obeys the Pauli exclusion principle and follows the Fermi-Dirac distribution function.
@@ -23,15 +28,15 @@ Unfortunately, some concepts of QFT and high energy physics are somewhat inacces
 At the same time, the condensed matter description have been difficult to relate back to the QFT formalism.
 So while the intersection of the two fields offer the possibility of great new insight, it also comes with some misunderstandings.
 Some phenomena are known under different names, while different phenomena may be mistaken for the same.
-The recent and excellent review paper by \textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, whose ``main purpose [...] is to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
+The recent and excellent review paper by \textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, with its ``main purpose [...] to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
 
 We wish here to briefly illuminate the connection between the high energy Dirac theory and the Dirac and Weyl semimetals of condensed matter physics, assuming the reader to be an expert in neither.
 The (massive) Dirac equation reads
 \begin{equation}
   (i \slashed{\partial} - m ) \psi = 0,
 \end{equation}
-where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) the gamma matrices \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
-The systems is \( 4\times 4 \).
+where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) are the so-called \emph{gamma matrices} \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
+Note also that natural units \( c = \hbar = 1 \), as usual, is used and that the systems is \( 4\times 4 \).
 It may of course be written as the Schrodinger equation\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
 The great insight of Dirac, was that due to the requirement of Lorentz invariance, the momentum and time operators had to appear at the same order, as opposed to the standard free particle \( H = p^2 /2m \).
 % The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
@@ -72,9 +77,9 @@ This is easily verified by writing out the Hamiltonian and solving the eigenprob
 \end{align}
 As the Hamiltonian commutes with the momentum operator, we replace the momentum operator with its eigenvalues
 \begin{equation}
-E = \pm v_F \hbar \sqrt{k_x^2 + k_y^2 + \frac{m^2}{\hbar ^2 v_{F}^2}}.
+E_{\pm} = \pm v_F \hbar \sqrt{k_x^2 + k_y^2 + \frac{m^2}{\hbar ^2 v_{F}^2}}.
 \end{equation}
-There are no solutions $k_x, k_y$ making the energy levels degenerate.
+For a finite \( m \), there are no solutions $k_x, k_y$ making the energy levels degenerate (i.e. \( E_{\pm} = 0 \)).
 The crossing is thus only protected by symmetry considerations, and is not \emph{topologically protected}.
 \todo{Is this usage of topologically protected correct?}
 
@@ -111,9 +116,8 @@ The eigenvalues of this system~\cite{armitageWeylDiracSemimetals2018a}
   \right]^{\frac{1}{2}},
 \end{equation}
 with $s=\pm 1, \mu = \pm 1$ encoding the degeneracies related to the spin and pseudospin degrees of freedom, respectively.
-There are still linear dispersions for $b > m$.
-For $b < m$, a gap opens, and the dispersion is non-linear.
-In fact, this is simply a shift in $k_z$ of the Dirac cone, as  is seen by rewriting
+There are still linear dispersions for $b > m$, for $b < m$, a gap opens, and the dispersion is non-linear.
+In fact, for \( b > m \), this is simply a shift in $k_z$ of the Dirac cone, as  is seen by rewriting
 \begin{equation}
   E_{s \mu }(\vec{k}) = s v_F
   \left[
@@ -130,22 +134,21 @@ We will not go into any depth on these types of materials.
 \todo{Possibly rewrite the following sentence}
 The three cases described here: unperturbed, where the two cones are superimposed; perturbed by $b$, where the cones are separated in momentum; and perturbed by $b'$, where the cones are separated in energy, are shown in Figure \ref{fig:conetypes}.
 Notice that in the two latter cases, the Dirac points, i.e. crossings, are not superimposed.
-As will be discussed in section \ref{sec:weyl-dirac-cones}, this makes the crossings very robust, as the two nodes must merge before a gap may be opened.
+As will be substantiated more in section \ref{sec:chern-number-weyl}, this makes the crossings very robust, as the two nodes must merge before a gap may be opened.
 
 
-The Hamiltonian in Eq. (\ref{eq:3}) is not the most general, if we allow for anisotropy in the system.
-In three dimensions we have more generally the Hamiltonian
+The Hamiltonian in Eq.~(\ref{eq:3}) is not the most general \( 2 \times 2 \) Weyl system, if we allow for anisotropy in the system.
+In three dimensions we have more generally the \emph{tilted} Weyl Hamiltonian
 \begin{equation}
   \label{eq:4}
-  H = \vec{v}_0 \vec{p} + (\vec{v} \odot \vec{p}) \vec{\sigma} ,
+  H = (\vec{t} + \vec{\sigma}) (\vec{v} \odot \vec{p}),
 \end{equation}
-where $\vec{v}_0$ is  the \emph{tilt vector}, $\vec{v}$ is some, anisotropic velocity, $(\vec{v} \odot \vec{p})_i = v_i p_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
+where $\vec{t}$ is  the \emph{tilt vector}, $\vec{v}$ is some anisotropic velocity, $(\vec{v} \odot \vec{p})_i = v_i p_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
 By a simple rescaling of the momenta, we may in general consider a system with isotropic Fermi velocity \( v_F \), giving
 \begin{equation}
   \label{eq:hamil-tilt-isotropic}
-  H = v_F \vec{t} \vec{p} + v_F \vec{p} \vec{\sigma},
+  H = v_F \vec{t} \vec{p} + v_F \vec{\sigma} \vec{p}.
 \end{equation}
-where \( \vec{t} \) is now the (dimensionless) tilt vector.
 The energy bands are~\cite{ottesenOpticalConductivityDirac2021}
 \begin{equation}
   E_s(\vec{k}) = v_F \vec{t} \vec{k} \pm s v_F |k|.
