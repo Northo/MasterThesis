@@ -6,8 +6,9 @@
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{braket}
+% \usepackage{lmodern}
+\usepackage{mlmodern}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage{amsthm}
 \usepackage{microtype}
 \usepackage{thmtools}
@@ -45,12 +46,14 @@ final=true,
 
 \setacronymstyle{short-long}
 
+\lstset{frame=tb}
+
 \addbibresource{Master.bib}
 \addbibresource{manual.bib}
 \renewcommand\multicitedelim{\addsemicolon\space}
 
 
-% \usepackage{fancyhdr}
+\usepackage{fancyhdr}
 
 %%% Header %%%%
 % Layout 0
@@ -68,17 +71,17 @@ final=true,
 % \renewcommand{\headrulewidth}{0pt} % and the line
 % }
 % Layout 1
-% \pagestyle{fancy}
-% % \addtolength{\headwidth}{\marginparsep}
-% \addtolength{\headwidth}{\marginparwidth}
-% \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
-% % \fancyhead[LE,RO]{\thepage}
-% \fancyhead{}
-% \fancyhead[RO]{\rightmark}
-% \fancyhead[LE]{\leftmark}
-% \fancyfoot{}
-% \fancyfoot[LE,RO]{\thepage}
+\pagestyle{fancy}
+% \addtolength{\headwidth}{\marginparsep}
+\addtolength{\headwidth}{\marginparwidth}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+% \fancyhead[LE,RO]{\thepage}
+\fancyhead{}
+\fancyhead[RO]{\rightmark}
+\fancyhead[LE]{\leftmark}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
 
 % % Layout 2 %%
 % \pagestyle{fancy}
@@ -108,7 +111,9 @@ final=true,
     }%
 }
 \renewcommand*\chapterformat{%
-  \fontsize{60pt}{60pt}\selectfont\thechapter%
+  % \fontsize{60pt}{60pt}\fontfamily{ugq}\selectfont\thechapter%
+  \fontsize{60pt}{60pt}\fontfamily{qbk}\selectfont\thechapter%
+  % \fontencoding{OT1}\fontsize{60pt}{60pt}\fontfamily{lmr}\selectfont\thechapter%
 }
 
 \RedeclareSectionCommand[
