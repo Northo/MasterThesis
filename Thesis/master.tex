@@ -1,5 +1,5 @@
 \documentclass[
-draft,
+% draft,
 % fontsize=12pt,
 % oneside,
 paper=B5,
@@ -15,6 +15,7 @@ paper=B5,
 \begin{document}
 % \includepdf{frontpagethesis.pdf}
 \frontmatter
+\input{conventionsAndSymbols}
 \tableofcontents
 
 \mainmatter
@@ -35,6 +36,7 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \input{sections/spinOrbit}
 \input{sections/weylDirac}
 \input{sections/typeii}
+\input{sections/spinOrbit}
 
 \chapter{Linear response theory}
 \input{sections/linearResponse}
@@ -43,7 +45,7 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \input{sections/anomalies}
 
 % \part{New work}
-\chapter{Charge current from the conformal anomaly}
+\chapter{Charge current from the conformal anomaly}\label{ch:charge-current}
 \input{sections/derivation_theory}
 \input{sections/derivation_LL}
 \input{sections/derivation_tiltless}
@@ -97,6 +99,7 @@ Comparing our result with the different procedure done by~\citeauthor{chernodubG
 \include{sections/appendix-longexpressions}
 \include{sections/appendix-stressotherterm}
 \include{sections/appendix-conformalsymmetry}
+\include{sections/appendix-spinstructureweyl}
 
 \backmatter
 \printglossaries

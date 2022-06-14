@@ -49,6 +49,8 @@
     samples=100,
     ymin=-2.5,ymax=2.5,
     xmin=-3.9, xmax=3.9,
+    xlabel=\( \kappa_z \),
+    ylabel=\( \epsilon_{\kappa_z m s} \),
     group style={
       x descriptions at=edge bottom,
       y descriptions at=edge left,

@@ -237,7 +237,7 @@ which further simplifies the expression.
 \end{summary}
 
 \begin{comment}
-  The stress-energy tensor of the massless QED
+  The stress-energy tensor of the masslessa \gls{qed}
   \begin{equation}
     \label{eq:64}
     \mathcal{L} = -\frac{1}{4} F^{\mu \nu }F_{\mu \nu } + \overline{\psi} i \slashed{D} \psi
@@ -280,7 +280,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the QED Lagrangian in Eq. (\ref{eq:64}) to our system.
+  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the \gls{qed} Lagrangian in Eq. (\ref{eq:64}) to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -355,7 +355,7 @@ a^{\dagger}_{\vec{k}ms} a_{\vec{k}+\qvec{q} ns}, a^{\dagger}_{\vec{\kappa}\mu s}
 \delta _{n, \mu }
 \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right],
 \end{equation}
-the correlation function is given by
+where \( n_{\vec{k} m s} \) is the Fermi-Dirac distribution, the correlation function is given by
 \begin{multline}
   \Braket{\left[ J^x(t, \vec{q}), T^{y 0}(t', -\vec{q}) \right]}
   =
@@ -413,7 +413,7 @@ where the matrix elements are
                                                  s v_F e\phi ^{*}_{\vec{k}m s}(y)
                                                  (\sigma^x + s t^s_x)
                                                 \phi _{\vec{k}+\qvec{q}n s}(y),\\
-  T^{y 0}_{\vec{k}+\qvec{q} n s, \vec{k} m s}(\vec{q}) &= \frac{1}{2}
+\label{eq:9} T^{y 0}_{\vec{k}+\qvec{q} n s, \vec{k} m s}(\vec{q}) &= \frac{1}{2}
               \int \mathrm{d}y
               e^{iq_y y}
               \phi ^{*}_{\vec{k}+\qvec{q} n s}(y)
@@ -434,7 +434,8 @@ We may use the property of the limit of a product of functions \( \lim A\cdot B 
     (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
   },
 \end{equation}
-where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:70} and \eqref{eq:71} taken in the limit.
+where the current and energy-momentum tensor matrix elements are the expression given in Eqs.~\eqref{eq:70} and \eqref{eq:9} taken in the limit.
+Furthermore, we will take the zero temperature limit \( T\to 0 \), where \( n_{\vec{k} m s} = \theta(\mu - E_{k_z m s}) \).
 
 
 \section{Response of an untilted cone}

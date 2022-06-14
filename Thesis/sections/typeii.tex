@@ -8,31 +8,30 @@
   \caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}
 \end{figure}
 
-The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines.
-See schematic representation in figure~\ref{fig:conic-section-sketch}.
+The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines, shown schematically in Figure~\ref{fig:conic-section-sketch}.
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \textcite{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
 This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
 \todo{add some concrete examples or cites}
 
-In this section, we investigate in more detail the tilted Weyl cones, the star of this thesis.
+In this section, we investigate in more detail the tilted Weyl cone, the star of this thesis.
 The tilted Hamiltonian was introduced in Eq.~\eqref{eq:hamil-tilt-isotropic}
 \[
-H = v_F \vec{t} \vec{p} + v_F \vec{\sigma} \vec{p},
+H_s = s v_F \vec{\sigma} \vec{p} + v_F \vec{t}^{s} \vec{p},
 \]
 where we chose isotropic Fermi velocity.
 As discussed earlier, the proper Dirac equation of particle physics cannot include such a tilting term, as it obviously breaks Lorentz invariance.
 The emergent Dirac equation of condensed matter physics, however, need not respect the Lorentz invariance and such a tilting term is no problem.
 \todo{I am pretty sure there is some neat analogy here that should be included. Light cone etc.}
 
-As was eluded to in the introduction to the section, the Weyl cone has two distinct phases: Type-I and
+As was alluded to in the introduction to the section, the Weyl cone has two distinct phases: Type-I and
 Type-II.
 Tilting the Weyl cone, the upper and lower bands will at some tilt angle touch the Fermi level, a \emph{critical} tilt.
 Going beyond this, the upper (lower) band dips below (above) the Fermi level, and we have what is known as a Type-II Weyl semimetal.
-Altough the two states are similar in many ways, they also have hugely important differenes separating them from one another.
+Although the two states are similar in many ways, they also have hugely important differences separating them from one another.
 In the Type-I regime, the density of states goes to zero at the Fermi level.
 In the Type-II regime, however, particle and hole pockets appear -- the intersection of the cone and the Fermi level goes from a singular point to two infinite lines (shown in figure~\ref{fig:tilted-cones} on page \pageref{fig:tilted-cones}).
 This abrupt change of the topology of the Fermi surface, from closed to open, is known as a Lifshitz transition \cite{volovikTopologicalLifshitzTransitions2017}.
-This gives Type-II Weyl semimetals manifestly different properties from Type-I, useful both in practical applications and as an interesting phenomena seen from a purely scientific perspective.
+This gives Type-II Weyl semimetals manifestly different properties from Type-I, useful both in practical applications and as an interesting phenomenon seen from a purely scientific perspective.
 
 % In the case of massless fermions, the particle physics equivalent of the Weyl semimetal, such a tilt is not possible, due to the requirement of Lorentz invariance \todo{add cite or explain}.
 % In condensed matter physics, however, this is not an issue, and it is indeed a real class of materials \todo{cite examples}.
@@ -58,13 +57,13 @@ We will use the general time-reversal breaking model described by \textcite{mcco
     + \gamma (\cos k_x - \cos k_0),
   \end{split}
 \end{equation}
-where \( t \) must \emph{not} be confused with the tilt term of the linear model.
-The model has Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
-A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
+where \( t \) must not be confused with the tilt term of the linear model.
+There are Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion.
 As \( k_0 \) is reduced, the cones are brought closer together and made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction, as shown in figure \ref{fig:typeii:move-nodes}, where two cones are moved unitl they meet at the origin.
 % Figure \ref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
 Figure \ref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to \( 3t \).
+A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
 The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
 We call these electron and hole pockets, respectively.
 Note that in this model, the pockets are shared between the two noedes.
@@ -108,12 +107,11 @@ the chirality of the node \( s = \det(A_{ij}) \) \cite{mccormickMinimalModelsTop
 We could arrive at a more familiar form of the expression by letting \( 2 t \to v_F, \gamma \to v_F t \), and do a \( \pi \) rotation around \( x \) at the positive cone, giving
 \begin{equation}
   \label{eq:158}
-  H'(\vec{k}) = s v_F \vec{k} \cdot \vec{\sigma} + s v_F t k_x.
+  H'^{s}(\vec{k}) = s v_F \vec{k} \cdot \vec{\sigma} + s v_F t k_x.
 \end{equation}
-
+The model thus gives rise to a pair of Weyl cones, with an inversion symmetric tilt, i.e. they tilt with equal magnitude in the opposite direction.
 Moving the two nodes closer together, the effective Fermi velocity in the \(x\)-direction is rescaled, and the system is anisotropic even for no tilt (\(\gamma=0\)).
 As discussed earlier, this may be mitigated by a rescaling of \( k_x \).
-The model thus gives rise to a pair of Weyl cones, with an inversion symmetric tilt, i.e. they tilt with equal magnitude in the opposite direction.
 
 % \begin{figure}[ht]
 %   \centering
@@ -185,20 +183,20 @@ The model thus gives rise to a pair of Weyl cones, with an inversion symmetric t
 \end{figure}
 
 
-The linearized model are accurate in describing low energy interactions around the Fermi level.
-For higher energies their validity falls apart, and more complex models are warranted.
+The linearized model is accurate in describing low energy interactions around the Fermi level.
+For higher energies its validity falls apart, and more complex models are warranted.
 For our calculations, we will take the linear model to be sufficient.
 It is much easier to work with, and sufficient in most cases.
 
 One of the most obvious differences between the tight binding model and the linear model is the finiteness of the former.
 This is particularly important with regards to two aspects: the Dirac sea and the topology of the Fermi surface.
-In high energy physics, the Dirac sea is infinitely deep \cite{vozmedianoTheoreticalPhysicsColloquium2021}, whereas in condensed matter physics, it is not.
+In high energy physics, the Dirac sea is infinitely deep \cites{burkovTopologicalSemimetals2016,vozmedianoTheoreticalPhysicsColloquium2021}, whereas in condensed matter physics, it is not.
 As is seen from the tight binding model, the Dirac sea of the two cones, is really connected;
 this has consequences among other for the interpretation of the chiral anomaly.
 In our context, also the topology of the Fermi surface is of importance.
 As mentioned, in the Lifshitz transition from Type-I to Type-II, the Fermi surface goes from being closed to open in the linear model.
 This is not the case in the tight binding model, whose Fermi surface is shown in figure \ref{fig:fermiSurfaceTight}.
-According to \textcite{ferreirosAnomalousNernstThermal2017} the linear model will be able to give qualitatively correct results in the deep tilt limit.
+According to \textcite{ferreirosAnomalousNernstThermal2017} the linear model will be able to give qualitatively correct results for Type-II in the deep tilt limit.
 We propose yet another argument for this claim here.
 Consider again the Fermi surface in figure \ref{fig:fermiSurfaceTight};
 as the tilt is increased the Fermi surface resemble more and more that of the linear model.
@@ -219,7 +217,7 @@ One of the more obvious remedies one might consider, is a momentum cutoff, restr
       ymin=-pi+0.01, ymax=pi-0.01, % Hide masked values
       xmin=-pi, xmax=pi,
       xlabel=\( k_x \), ylabel=\( k_y \),
-      legend style={at={(0.5,1.1)}, anchor=south},
+      legend style={at={(0.5,1.05)}, anchor=south},
       legend columns=-1,
       cycle list={{dotted},{dashed},{dashdotted},{solid}},
       legend entries={
@@ -259,7 +257,6 @@ One of the more obvious remedies one might consider, is a momentum cutoff, restr
     Electron pockets are shown in red, hole pockets shown in blue.
     Note that the Fermi surface of the linear model is infinite, and here truncated for clarity.
   Figure inspired by \textcite{mccormickMinimalModelsTopological2017}.}
-\todo{Add surface for different values of t (all type ii), thus showing that the linear and tight binding surface is more equal for more tilt}
   \label{fig:fermiSurfaceTight}
 \end{figure}
 
@@ -267,17 +264,20 @@ One of the more obvious remedies one might consider, is a momentum cutoff, restr
 \todo{Fermi surface when tilt, cutoff, finite sea ....}
 
 \subsubsection{The tilt term -- symmetries and Type-I vs.\! Type-II}
-For tilted Dirac cones we will consider the Hamiltonian
-\begin{equation}
-  \label{eq:10}
-  H =  s v_F \vec{p} \vec{\sigma} + v_F \vec{t}^s \vec{p},
-\end{equation}
-where \( s \) denotes the chirality of the Dirac cone, \( v_F \) is the Fermi velocity, and \( \vec{t} \) is the \emph{tilt vector}.
-In general the Fermi velocity is anisotropic, as was the case in the general Dirac Hamiltonian given in Eq. \eqref{eq:4}.
-By an anisotropic scaling of the momenta \( \vec{k} \), the system may always be mapped to an isotropic case, which we will consider here.
-
+% For tilted Dirac cones we will consider the Hamiltonian
+% \begin{equation}
+%   \label{eq:10}
+%   H =  s v_F \vec{p} \vec{\sigma} + v_F \vec{t}^s \vec{p},
+% \end{equation}
+% where \( s \) denotes the chirality of the Dirac cone, \( v_F \) is the Fermi velocity, and \( \vec{t} \) is the \emph{tilt vector}.
+% In general the Fermi velocity is anisotropic, as was the case in the general Dirac Hamiltonian given in Eq. \eqref{eq:4}.
+% By an anisotropic scaling of the momenta \( \vec{k} \), the system may always be mapped to an isotropic case, which we will consider here.
+In this thesis, we consider the tilted Weyl cone Hamiltonian
+\[
+H^s = s v_F \vec{\sigma} \vec{p} + v_F \vec{t}^s \vec{p}.
+\]
 The tilt vector will in general depend on the chirality of the cone.
-As the cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry, as was the result from the tight binding model in the subsection on \emph{\nameref{sec:tilt:tightbindingmodel}}.
+As the cones always appear in pairs, \( \vec{t}^s = s \vec{t} \) will give a system with inversion symmetry, as was the result from the tight binding model in the previous subsection.
 In the case of broken inversion symmetry, we will consider the case of a tilt equal in direction and magnitude between the two cones, \( \vec{t}^s = \vec{t} \).
 In short, we define
 \begin{equation}
@@ -292,9 +292,14 @@ This convention is used in most literature \cite{vanderwurffMagnetovorticalTherm
 With no magnetic field, the eigenvalues of the system are
 \begin{equation}
   \label{eq:12}
-  E(\vec{k}) = \vec{\omega_{0}} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}} = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
+  E_s(\vec{k})
+  = \pm v_F |k| + v_F \vec{t}^s \vec{k},
+  % = v_F \vec{t} \vec{k} \pm \sqrt{(v_{i} k_{i})^{2}}
+  %
+  % = |(t^{s}_i \pm 1)| \sqrt{( v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}}
+  % = \sqrt{(t_{i} v_{i} k_{i})^{2}} \pm \sqrt{(v_{i} k_{i})^{2}},
 \end{equation}
-where in the literature the first term is sometimes referred to as the \emph{kinetic} term while the latter is the \emph{potential} term.
+where in the literature the first term is sometimes referred to as the \emph{potential} term while the latter is the \emph{kinetic} term.
 The definition for the system to be Type-II is that there exists a direction in momentum space for which the kinetic term dominates over the potential term \cite{soluyanovTypeIIWeylSemimetals2015}.
 The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 1\) we have a Type-II, else we have a Type-I.
 
@@ -304,11 +309,11 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
   In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
 \end{Proof}
 
-To properly investigate the symmetry properties of the system, we must consider the 4x4, not 2x2 Hamiltonians.
-While the 2x2 system does a goood job at describing a single cone, much important phsycis is lost when reducing the 4x4 Hamiltonian.
-For example, the requirement that the total Berry curvature over the entire Briolluine zone is zero is not met for the 2x2 Hamiltonian, as it describes only one cone of a certain chirality.
-The 4x4, however, includes two cones, which may in general be superimposed, thus conserving the total zero-divergence of the Berry curvature.
-As a matter of fact, the inclusion of both cones is important also for symmetry considerations.
+% To properly investigate the symmetry properties of the system, we must consider the \(4\times 4\), not \(2\times 2\) Hamiltonian.
+% While the 2x2 system does a goood job at describing a single cone, much important phsycis is lost when reducing the 4x4 Hamiltonian.
+% For example, the requirement that the total Berry curvature over the entire Briolluine zone is zero is not met for the 2x2 Hamiltonian, as it describes only one cone of a certain chirality.
+% The 4x4, however, includes two cones, which may in general be superimposed, thus conserving the total zero-divergence of the Berry curvature.
+% As a matter of fact, the inclusion of both cones is important also for symmetry considerations.
 
 When considering the symmetry properties of the system, we must consider the full \( 4\times 4 \) Dirac equation.
 The \( 2\times 2 \) Weyl equation describing one cone does not capture the symmetries of the full system, which involve both Weyl cones.
@@ -367,6 +372,7 @@ We thus see explicitly, by applying the parity and time reversal operators, that
   \caption{Time reversal breaking in tilted system.
     Cross section in the tilt direction shown, with blue showing one cone and red the other.
     Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
+    \todo{Must be referred to in text. Related to the spin structure of the cone}
   }
 \end{figure}
 
@@ -444,10 +450,3 @@ Under a Lorentz boost, which we will take to be in the \( x \) direction without
 Rescaling the energy by \( \gamma \), this is a tilted cone.
 Importantly, the Lorentz boost is only properly defined up to \( |\beta| < 1 \), exactly restricting us to a Type-I system.
 }
-
-\begin{itemize}
-  \item In this model, the hole pocket is ``shared'' between the two cones. There are also models with individual pockets (see \cite{mccormickMinimalModelsTopological2017})
-        \item \todo{remove all items}
-\end{itemize}
-
-

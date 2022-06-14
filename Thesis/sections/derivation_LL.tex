@@ -172,10 +172,11 @@ Reintroducing $\chi = (y-k_xl_B^2) /l_B$ and normalizing we get:
       \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_B}} H_M \left( \frac{y-k_x l_B^2}{l_B} \right)
     \end{pmatrix},
   \end{multline}
-  where capital letters indicate absolute value of corresponding quantity, $M=|m|, \vec{k} = (k_x, k_z)$, and with the normalization factor
+  where \( \vec{k} = (k_x, k_z)\), and with the normalization factor
   \begin{equation}
     \alpha_{k_z m s} = \frac{-s \sqrt{2eB M}}{\frac{E_{k_z m s}}{v_{F}} - s k_z}.
   \end{equation}
+  Here, capital letters indicate absolute value of corresponding quantity, \( M=|m| \), a convention we will use throughout the chapter.
 \end{summary}
 \subsection{The tilted Hamiltonian}
 As we have seen, the eigenvalues of a Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
@@ -187,7 +188,6 @@ For Type-I materials, the description is valid for all directions of the \(B\)-f
 We will in this section derive and elucidate the Landau levels and their regions of validity.
 
 Consider again the Hamiltonian
-\footnote{In general, the Fermi velocity may be anisotropic, in which case the momentum enter as \( v_i k_i \), instead of \( v_F k_i \). By a rescaling of the momenta, we may consider any, in general anisotropic, system to be isotropic in velocity.}
 \begin{equation}
   \label{eq:29}
   H = v_{F} \vec{t}^s  \vec{p} + s v_{F} \vec{p} \vec{\sigma},
@@ -339,7 +339,12 @@ As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller an
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground.png}
-  \caption{\label{fig:tiltSphere} TODO}
+  \caption{Geometric visualization of the \emph{tilt vector} \( \vec{t} \).
+    When the vector is inside the unit sphere (\( t < 1 \)), the system is in the Type-I regime.
+    When the vector is outside the unit sphere (\( t > 1 \)), the system is in the Type-II regime.
+    When the projection onto the \( xy \)-plane is on the unit disc, the system is in the \emph{magnetic} regime, otherwise it is in the \emph{electric} regime.
+\label{fig:tiltSphere}
+  }
 \end{figure}
 
 We now return to solving Eq.~\eqref{eq:32}, using the solution angle we just found.
@@ -386,7 +391,7 @@ These expressions warrant some explanation, as the Lorentz boost is of course
 where we used the four momentum \( p^{\mu } = (\frac{E}{v_{F}}, \vec{p}) \), and the effective speed of light \( v_F \).
 It can thus look like our expression in Eq. \eqref{eq:40} is wrong.
 The solution to this seeming inconsitency is that the proper energy is not \( \frac{E}{v_{F}} - k_z t_{\parallel} \), but rather \( \frac{E}{v_{F}} - k_z t_{\parallel} - k_x t_{\perp}\).
-\todo{Something smart here}
+\todo{Something smart here, or remove discussion}
 
 The eigenvalue equation is simply
 \begin{equation}
@@ -443,7 +448,9 @@ The Landau levels are shown in Figure~\ref{fig:llevelstilt}.
 
 \begin{figure}[p!]
   \centering
+  \resizebox{\textwidth}{!}{
   \input{figures/lllevels.pgf}
+  }
   % \includegraphics[width=0.8\textwidth]{example-image-10x16}
   \caption{\label{fig:llevelstilt}Landau levels for different values of \( t_x, t_z \).
     The top two rows show Type-I, while the lowest row shows Type-II.

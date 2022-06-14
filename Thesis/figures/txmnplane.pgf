@@ -59,6 +59,11 @@
         ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
       }
       \tmp
+
+      \ifthenelse{\theplotnum=0}{
+        \draw[dotted, gray] (axis cs:-1.5,-1.5) rectangle (axis cs:1.5,1.5) node[pos=0, pin={[pin edge={solid}]-180:\( \gamma_0 \)}] {};
+        \draw[dotted, gray] (axis cs:-2.5,-2.5) rectangle (axis cs:2.5,2.5) node[pos=0, pin={[pin edge={solid}]-110:\( \gamma_1 \)}] {};
+      }{}
       \stepcounter{plotnum}
     }
   \end{groupplot}
