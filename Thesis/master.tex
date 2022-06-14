@@ -51,50 +51,6 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \input{sections/derivation_tiltless}
 \input{sections/derivation_tilt}
 
-\section{Discussion of results}
-\todo{Old, from specialization project}
-In the static and local limit $\lim_{\omega \to 0} \lim_{\vec{q}\to 0}$ the  transverse response function $\chi^{xy}$ of the charge current to a temperature perturbation
-\begin{equation}
-  J^x = \chi ^{xy} \frac{- \nabla^y T}{T}
-\end{equation}
-from a single Dirac point was found  to be
-\begin{equation}
-  \lim_{\omega \to 0} \lim_{\vec{q}\to 0}
-  \chi ^{xy}
-  =
-  \gamma_{N}
-  \frac{e^2 B v_F}{4 (2\pi )^2 \hbar },
-\end{equation}
-with $\gamma _N$ a prefactor dependent on how many landau levels are included in the final evaluation of the response function.
-The response function is independent of the chirality $s$ of the Dirac point.
-It was found that $\gamma _0 = 1, \gamma _{20} \approx 2$ and that the prefactor goes like $\log N$.
-
-% Firstly, the result differ slightly from that found by~\textcite{arjonaFingerprintsConformalAnomaly2019}
-% \begin{equation}
-%   \lim_{\omega \to 0} \lim_{\vec{q}\to 0}
-%   \chi ^{xy}
-%   =
-%   2 \gamma_{N}
-%   \frac{e^2 B v_F}{4 (2\pi )^2 \hbar },
-% \end{equation}
-% which differ by a factor of two.
-
-Secondly, the sum will diverge as $N\to \infty $.
-However, not all Landau levels are filled, and thus the sum should not be taken to all levels.
-Similarly to a Quantum Hall effect, the number of filled bands, the filling factor $\nu $, is inverse proportional to the $B$-field strength
-\begin{equation}
-  \nu \propto \frac{1}{B}.
-\end{equation}
-Thus, we expect that the $N$-sum should be truncated at a Landau level, given by the filling factor $\nu $.
-A detailed derivation of the exact truncation of the $N$-sum has not been done.
-If a precise result for the numerical prefactor is found to be of importance, this should be straightforward.
-
-The divergence is not discussed by~\citeauthor{arjonaFingerprintsConformalAnomaly2019}, where only the values of $N = 0$ and  $N=20$ are given, and the final result is that of $N=20$.
-Furthermore, they state that the contributions from higher values of $N$ decrease very rapidly.
-However, we found the contributions to go like $1 /x$, which is not decreasing rapidly enough to give a finite total contribution, thus giving the total contribution diverging logarithmically.
-\todo{Say that we are communicating with them  to better understand their choice of truncation?}
-Comparing our result with the different procedure done by~\citeauthor{chernodubGenerationNernstCurrent2018}~\cite{chernodubGenerationNernstCurrent2018}, the numerical prefactor found in our calculation including only the first term ($M=0$) coincides very well with the numerical prefactor found there, with a ratio of $16 / 18$.
-
 \appendix
 \include{sections/appendix-longexpressions}
 \include{sections/appendix-stressotherterm}
