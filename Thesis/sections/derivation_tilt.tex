@@ -697,40 +697,8 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
  + 2 \log\Lambda
 \right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
 \end{equation}
+The contribution is shown in figure~\ref{fig:divergent-factor} for the first Landau levels.
 
-
-\begin{figure}[htp]
-  \centering
-  \tikzsetnextfilename{divergentContribCutoff}
-  \begin{tikzpicture}
-    \begin{axis}[
-      xlabel=\( \Lambda \),
-      ylabel=Contribution,
-      legend pos=south east,
-      % cycle list name=exotic,
-      cycle list={
-        teal,every mark/.append style={fill=teal!80!black},mark=*\\
-        orange, dashed, every mark/.append style={fill=orange!80!black},mark=square*\\
-        cyan!60!black, densely dotted, every mark/.append style={fill=cyan!80!black},mark=otimes*\\
-        red!70!white, dashdotted, mark=star\\
-        lime!80!black, loosely  dashed, every mark/.append style={fill=lime},mark=diamond*\\
-        red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\
-        yellow!60!black,densely dashed,
-        every mark/.append style={solid,fill=yellow!80!black},mark=square*\\
-        black,every mark/.append style={solid,fill=gray},mark=otimes*\\
-        blue,densely dashed,mark=star,every mark/.append style=solid\\
-        red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
-      },  %% exotic with various line types
-      ]
-      \foreach \i in {1,...,5} {
-        \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
-        \addlegendentryexpanded{\( m = \i \)};
-      }
-    \end{axis}
-  \end{tikzpicture}
-  \caption{The divergent factor \( \gamma_{\text{div}, N} / t_{z} \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
-  \label{fig:divergent-factor}}
-\end{figure}
 
 
 \subsubsection{Type-II}
@@ -825,7 +793,7 @@ In the static and local limit $\lim_{\omega \to 0} \lim_{\vec{q}\to 0}$ the  tra
 \begin{equation}
   J^x = \chi^{xy} \frac{- \nabla^y T}{T}
 \end{equation}
-from a single Dirac point was found  to be
+from a single Weyl cone was found  to be
 \begin{equation}
   \lim_{\omega \to 0} \lim_{\vec{q}\to 0}
   \chi^{xy}
@@ -837,7 +805,7 @@ with $\gamma _N$ a prefactor dependent on the chirality \( s \), the tilt \( \ve
 
 In general, the prefactor \( \gamma_N \) diverges as $N\to \infty$.
 However, not all Landau levels are filled, and thus the sum should not be taken to all levels.
-Similarly to a Quantum Hall effect, the number of filled bands, the filling factor $\nu $, is inverse proportional to the $B$-field strength
+Similarly to a quantum Hall effect, the number of filled bands, the filling factor $\nu $, is inverse proportional to the $B$-field strength
 \begin{equation}
   \nu \propto \frac{1}{B}.
 \end{equation}
@@ -849,7 +817,7 @@ As described above, the contribution from the cone with chirality \( s = -1 \) c
 In the case of perpendicular tilt, they are exactly the same.
 In the case of parallel tilt, it depends on the symmetry of the tilt.
 For systems with broken inversion symmetry, the response from the two cones are the same.
-On the other hand, for inversion symmeric systems, the contribution form the cone with chirality \( s=-1 \) is the same as that of the \( s=+1 \) cone at the opposite tilt \( t_z \to - t_z \).
+On the other hand, for inversion symmetric systems, the contribution from the cone with chirality \( s=-1 \) is the same as that of the \( s=+1 \) cone at the opposite tilt \( t_z \to - t_z \).
 Therefore, it is useful to separate the contribution into even and odd components, for finding the total contribution from the two cones combined.
 For some contribution \( \gamma(t_{x /z}) \), we define
 \begin{align}
@@ -859,22 +827,22 @@ For some contribution \( \gamma(t_{x /z}) \), we define
 All results will be given in terms of these components, at \( t_{x /y} > 0 \).
 \subsection{Perpendicular tilt}
 In the case of a tilt perpendicular to the magnetic field, we are, as previously explained, restricted to Type-I materials, as the Landau level description breaks down for Type-II perpendicular tilt.
-Importantly, this does not generally mean that the effect is not present for Type-II systems, but simply that the Linear model Landau level description is not a good basis for the system.
+Importantly, this does not generally mean that the effect is not present for Type-II systems, but simply that the linear model Landau level description is not a good basis for the system.
 The collapse of the Landau levels caused \textcite{soluyanovTypeIIWeylSemimetals2015} to erroneously predict the collapse of the chiral anomaly in their now famous paper first describing Type-II Weyl semimetals.
 
 As explained in section \ref{sec:perptiltsum}, the \( m,n \) summation is restricted to the fourth quadrant in the \( m,n \) plane.
 In the case of no tilt, only contributions from \( M = N + 1 \) were non-zero;
 we named the contribution from the \( 0\to 1 \) transition \( \gamma_0 \), the \( -1\to 2 \) transition \( \gamma_1 \) and so forth.
-For perpendicular tilt, as there are contributions also away from the \( M=N + 1 \) line, we denote by \( \gamma_0 \) the contributions from inside the square of length 3 centered at the origin.
-The \( \gamma_1 \) contributions are those inside the square of length 5, and in general \( \gamma_n \) the square with length \( 2 n + 1 \).
-This is indicated in figure \ref{fig:contribs}.
+For perpendicular tilt, as there are contributions also away from the \( M=N + 1 \) line, we denote by \( \gamma_0 \) the contributions from inside the square of length 2 centered at the origin.
+The \( \gamma_1 \) contributions are those inside the square of length 4, and in general \( \gamma_n \) the square with length \( 2 n \).
+This is indicated in figure~\ref{fig:contribs}.
 This definition effectively sets a ceiling on which Landau levels we consider.
 
 \todo{Correct which values }
-The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), shown in figure \ref{fig:contribs}.
+The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in figure~\ref{fig:contribs}.
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
-The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure \ref{fig:total_contribs}.
+The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure~\ref{fig:total_contribs}.
 The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section \ref{sec:perptiltsum}.
 
 \begin{figure}[ht]
@@ -910,28 +878,78 @@ The contribution is even in \( t_x \), and the two cones have the same contribut
     \end{axis}
     \node[anchor=south] at (myaxis.north) {\ref{contribs}};
   \end{tikzpicture}
-  \caption{Total contribution \( \gamma_N \) for a perpendicular tilt \( t_x \).
+  \caption{Total contribution \( \gamma_N \) for a perpendicular tilt \( t_x \), which only has an even component.
     See main text for details on how \( \gamma_N \) is defined.
     \label{fig:total_contribs}}
 \end{figure}
 
+\FloatBarrier
 \subsection{Parallel tilt}
+\subsubsection{Type-I}
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
-In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), Eq. \eqref{eq:125}, dependent on a momentum cutoff \( \Lambda \).
-The contribution is odd in \( t_z \), so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
+In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), Eq. \eqref{eq:123}, dependent on a momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 e B}  \), where \(k^{\text{cutoff}}\) is the physical cutoff.
+The contribution is proportional to \( t_z \), i.e. there is no even component, so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In case of inversion symmetry, the contributions from the two chiralities are equal and add up.
-In the large cutoff limit, the divergence goes like \( \log \Lambda \), where the dimensionfull cutoff \( k^{\text{cutoff}}_z = \sqrt{2 e B} \Lambda  \).
 
+In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( \mathcal{O}(1 /\Lambda^2) \), we found Eq.~\eqref{eq:126},
+\[
+  \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
+  t_z
+  \left(
+    \left[
+      -1 + N \log\left(\frac{N}{N+1}\right) - \log \frac{N+1}{4}
+    \right]
+    + 2 \log\Lambda
+  \right).
+\]
+The first term, independent of \( \Lambda \), is a negative factor that decreases as \( N \) increases, and goes like \( -\log N \) for large \( N \).
+\todo{Some discussion: we get a positive addition to the prefactor. }
+
+\begin{figure}[htp]
+  \centering
+  \tikzsetnextfilename{divergentContribCutoff}
+    \begin{tikzpicture}
+      \begin{axis}[
+        xlabel=\( \Lambda \),
+        ylabel={\( [ \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1}] /t_z \)},
+        legend pos=south east,
+        % cycle list name=exotic,
+        cycle list={
+          teal,every mark/.append style={fill=teal!80!black},mark=*\\
+          orange, dashed, every mark/.append style={fill=orange!80!black},mark=square*\\
+          cyan!60!black, densely dotted, every mark/.append style={fill=cyan!80!black},mark=otimes*\\
+          red!70!white, dashdotted, mark=star\\
+          lime!80!black, loosely  dashed, every mark/.append style={fill=lime},mark=diamond*\\
+          red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\
+          yellow!60!black,densely dashed,
+          every mark/.append style={solid,fill=yellow!80!black},mark=square*\\
+          black,every mark/.append style={solid,fill=gray},mark=otimes*\\
+          blue,densely dashed,mark=star,every mark/.append style=solid\\
+          red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
+        },  %% exotic with various line types
+        ]
+        \foreach \i in {1,...,5} {
+          \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
+          \addlegendentryexpanded{\( m = \i \)};
+        }
+      \end{axis}
+    \end{tikzpicture}
+    \caption{The divergent factor \( \gamma_{\text{div}, N} / t_{z} \) for the first Landau levels, as a function of the momentum cutoff \( \Lambda \).
+    \todo{What is \( m \) here?}
+    \label{fig:divergent-factor}}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Type-II}
 In the Type-II regime, the contributions have more complicated form.
-Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:129},, which is odd in \( t_z \), the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
+Considering firstly only the lowest Landau level contribution, Eq. \eqref{eq:129}, which is odd in \( t_z \), the total contribution cancel between the chiralitites for broken inversion symmetry, while it adds up for inversion symmetric systems.
 As \( |t_z| \to 1 \) from above, the contribution blows up.
-This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.
-\footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
-See \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}}
+This is to be expected as we move towards the Lifshitz transition, where we expect the linear model to perform poorly.\footnote{As the Fermi surface of the linear model is vastly different from the Fermi surface of the tight binding model.
+See discussion on page \pageref{sec:tilt:fermisurface-paragraph} in section \ref{sec:tilt:fermisurface-paragraph} and  \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019}.}
 The contribution goes to zero as \( t_z \to \infty \), shown in figure \ref{fig:contribtzII}.
 
 Considering also higher Landau level contributions, both interband and intraband transitions must be included,
-\footnote{By band we here refer to the ``conduction'' band and ``valence'' band}
+\footnote{By band we here refer to the ``conduction'' band and ``valence'' band.}
 meaning the summation is no longer restricted to a quadrant in the \( m,n \) plane, but rather to half the plane.
 The contributions are shown in figure \ref{fig:contribtzII}.
 These contributions are not odd in \( t_z \) -- they have a finite even component.

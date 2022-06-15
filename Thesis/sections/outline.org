@@ -276,3 +276,6 @@ One hope is that the magnetization will cancel our divergence.
 ** Extend to finite potential
 Having a non-zero potential is very interesting, as this drastically changes the Fermi surface, particualrly for tilted systems
 "The anomalous hall and nernst effect has beens shown to have interesting chemical potential dependence for tilted system..." (see ferreirosAnomalousNernstThermal2017)
+
+** TODO Check discussion about Dirac T valid
+Anticommutation grassman etc

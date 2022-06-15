@@ -18,7 +18,9 @@
   \pgfmathsetmacro\hsecond{#2 * \x + #1 * sqrt(#1 + \x^2)}
   % \show\hfirst
   % \show\hsecond
+  \ifdim#2pt<1pt
   \draw[->] (axis cs:\x,\hfirst)--(axis cs:\x, \hsecond);
+  \fi
   \newcommand\tz{#2}
   % ifdim is hack as if only integer
   \ifdim#2pt>1pt

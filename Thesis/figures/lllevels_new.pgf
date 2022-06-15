@@ -1,0 +1,93 @@
+\newcommand{\LLplot}[2]{
+  %% #1 is alpha, #2 is tz
+  \addplot[forget plot]{(#2-#1) * x};  % Zeroth level
+  \addplot[forget plot, black!60, dash pattern={on 3pt off 2pt on 1pt off 2pt on 1pt off 2pt on 1pt off 2pt}]{(-#2+#1) * x};  % Zeroth level, s=-1
+  \addplot[forget plot, dashed]{(#2+#1) * x};  % Zeroth level, s=-1, P broken
+  \addplot[forget plot, dotted]{(-#2-#1) * x};  % Zeroth level, s=1, tz<1
+  \addplot[dashed, forget plot, gray] {0};
+  \pgfplotsforeachungrouped \n in {1,...,5} {
+    \addplot+[red, forget plot, solid] {#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue, solid] {#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+  }
+  \pgfplotsforeachungrouped \n in {1,...,5} {
+    \addplot+[red, forget plot, dotted] {-#2 * x + #1 * sqrt(\n * #1 + x^2)};  % Positive E
+    \addplot+[blue, dotted] {-#2 * x - #1 * sqrt(\n * #1 + x^2)};  % Negative E
+  }
+}
+
+\tikzsetnextfilename{lllevels}
+%% \hspace{-1.6cm}
+\begin{tikzpicture}
+  \begin{groupplot} [%
+    % width=0.64\textwidth, %% Width of each window... Can be set more elegantly, but here just trial and error
+    cycle list name=linestyles,
+    samples=100,
+    ymin=-2.5,ymax=2.5,
+    xmin=-3.9, xmax=3.9,
+    xlabel=\( \kappa_z \),
+    ylabel=\( \epsilon_{\kappa_z m s} \),
+    group style={
+      x descriptions at=edge bottom,
+      y descriptions at=edge left,
+      horizontal sep=4pt, vertical sep=4pt,
+      group size=2 by 3,
+    },
+    ]
+    \newcommand\varalpha{1}
+    \newcommand\vartz{0}
+    %%
+    \nextgroupplot
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{\vartz-\varalpha}
+    \pgfmathsetmacro\hsecond{\vartz * 1 + \varalpha * sqrt(\varalpha + 1)}
+    \draw[->] (axis cs:1,\hfirst)--(axis cs:1, \hsecond);
+    %%
+    \nextgroupplot
+    \renewcommand\varalpha{0.6}
+    \renewcommand\vartz{0}
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{\vartz-\varalpha}
+    \pgfmathsetmacro\hsecond{\vartz * 1 + \varalpha * sqrt(\varalpha + 1)}
+    \draw[->] (axis cs:1,\hfirst)--(axis cs:1, \hsecond);
+    %%
+
+    \nextgroupplot
+    \renewcommand\varalpha{1}
+    \renewcommand\vartz{0.5}
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{\vartz-\varalpha}
+    \pgfmathsetmacro\hsecond{\vartz * 1 + \varalpha * sqrt(\varalpha + 1)}
+    \draw[->] (axis cs:1,\hfirst)--(axis cs:1, \hsecond);
+    %%
+    \nextgroupplot
+    \renewcommand\varalpha{0.6}
+    \renewcommand\vartz{0.5}
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{\vartz-\varalpha}
+    \pgfmathsetmacro\hsecond{\vartz * 1 + \varalpha * sqrt(\varalpha + 1)}
+    \draw[->] (axis cs:1,\hfirst)--(axis cs:1, \hsecond);
+
+    \pgfmathsetmacro\x{-0.8}
+    \pgfmathsetmacro\gfirst{\vartz * \x - \varalpha * sqrt(1 * \varalpha + (\x)^2)}
+    \pgfmathsetmacro\gsecond{\vartz * \x + \varalpha * sqrt(4 * \varalpha + (\x)^2)}
+    \draw[brown, ->] (axis cs:\x,\gfirst)--(axis cs:\x, \gsecond);  %% Higher order transition
+    %%
+    \nextgroupplot
+    \renewcommand\varalpha{1}
+    \renewcommand\vartz{1.2}
+    \pgfmathsetmacro\x{-sqrt(\varalpha^2/(\vartz^2-\varalpha^2))-0.3}
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{\vartz * \x + \varalpha * sqrt(\varalpha + (\x)^2)}
+    \pgfmathsetmacro\hsecond{\vartz * \x + \varalpha * sqrt(2 * \varalpha + (\x)^2)}
+    \draw[teal!80!black, ->, thick] (axis cs:\x,\hfirst)--(axis cs:\x, \hsecond);  %% Intraband
+    %%
+    \nextgroupplot
+    \renewcommand\varalpha{0.6}
+    \renewcommand\vartz{1.2}
+    \pgfmathsetmacro\x{-sqrt(\varalpha^2/(\vartz^2-\varalpha^2))/2}
+    \LLplot{\varalpha}{\vartz}
+    \pgfmathsetmacro\hfirst{(\vartz - \varalpha) * \x}
+    \pgfmathsetmacro\hsecond{\vartz * \x + \varalpha * sqrt(1 * \varalpha + (\x)^2)}
+    \draw[->] (axis cs:\x,\hfirst)--(axis cs:\x,\hsecond);
+  \end{groupplot}
+\end{tikzpicture}
