@@ -15,10 +15,12 @@ BCOR=5mm,
 \begin{document}
 % \includepdf{frontpagethesis.pdf}
 \frontmatter
+\input{sections/summary}  % English and norwegian
 \input{conventionsAndSymbols}
 \tableofcontents
 
 \mainmatter
+\input{sections/introduction}
 % \part{Background material}
 
 \chapter{Topological materials}
@@ -50,6 +52,7 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \input{sections/derivation_LL}
 \input{sections/derivation_tiltless}
 \input{sections/derivation_tilt}
+\input{sections/conclusion_outlook}
 
 \appendix
 \include{sections/appendix-longexpressions}

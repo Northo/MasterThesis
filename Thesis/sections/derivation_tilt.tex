@@ -7,7 +7,7 @@ Due to the boost transformation, the elements of the spinor in the untilted syst
 We thus have twice as many terms to keep track of.
 }
 
-\subsection{Explicit form of the matrix elements}
+\subsection{Explicit form of the matrix elements}\label{sec:explicit-form-tilt}
 We will here find an explicit form of the matrix elements, starting with the charge current
 \begin{equation}
   \label{eq:tilt:currentExpr}
@@ -843,21 +843,42 @@ The integral was computed numerically for \( M,N \leq 6 \) over different values
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
 The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure~\ref{fig:total_contribs}.
-The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section \ref{sec:perptiltsum}.
+The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section~\ref{sec:perptiltsum}.
+Also shown in figure~\ref{fig:total_contribs} is \( \gamma_0 \) as a function of \( t_x \), which is seen to be strictly decreasing to zero as \( t_x \to 1 \).
+This last observation is discussed further in section~\ref{sec:other-observe:zeroton}, under
+``\nameref{sec:other-observe:zeroton}''.
 
 \begin{figure}[ht]
   \centering
   \tikzsetnextfilename{contribtx}
+  \resizebox{0.8\textwidth}{!}{
   \begin{tikzpicture}
+    \pgfplotsset{set layers} %% See 4.9.11 in PGFPlots manual
+    \begin{axis}[
+      axis x line*=top, axis y line*=right,
+      scale only axis,
+      width=12cm,
+      height=8cm,
+      tick label style={gray},
+      ylabel=\( \gamma_0(t_x) \),
+      xlabel=\( t_x \),
+      x label style={at={(axis description cs:0.95,1.02)}, anchor=south west, gray},
+      y label style={gray},
+      ]
+      \addplot[teal!60, dashed] table[col sep=comma] {data/contribTilttx-zerothll.csv};
+    \end{axis}
     \begin{axis}[
       legend columns=-1,
-      legend to name=contribs,
+      legend style={at={(0.5, 1.1)}, anchor=south,},
+      % legend to name=contribs,
       xlabel=Number of Landau levels,
       ylabel=\( \gamma_N \),
       width=12cm,
       height=8cm,
       name=myaxis,
+      axis x line*=bottom, axis y line*=left,
       xtick distance=1,
+      scale only axis,
       ]
       \newcommand\plotContrib[1]{
         \addplot table[col sep=comma] {data/contribSumTilttx#1PbrokenTrue.csv};
@@ -876,10 +897,12 @@ The contribution is even in \( t_x \), and the two cones have the same contribut
       % \addplot table[col sep=comma] {data/contribSumTilttx-0.375PbrokenTrue.csv};
       % \addplot table[col sep=comma] {data/contribSumTilttx-0.5PbrokenTrue.csv};
     \end{axis}
-    \node[anchor=south] at (myaxis.north) {\ref{contribs}};
+    % \node[anchor=south] at (myaxis.north) {\ref{contribs}};
   \end{tikzpicture}
+  } %% Resizebox
   \caption{Total contribution \( \gamma_N \) for a perpendicular tilt \( t_x \), which only has an even component.
     See main text for details on how \( \gamma_N \) is defined.
+    Shown in dashed \textcolor{teal!80!black}{teal} on secondary axis (gray labels) is \( \gamma_0 \) as a function of \( t_x \), which is strictly decreasing from 1 at \( t_x = 0 \) to 0 at \( t_x = 1 \).
     \label{fig:total_contribs}}
 \end{figure}
 
@@ -1054,12 +1077,12 @@ A schematic plot of all the contributions of a parallel tilt is shown in figure 
 \end{figure}
 
 \FloatBarrier
-\subsection{Other observations}
+\subsection{Other observations}\label{sec:other-observe}
 We here present some further observations that are of interest, which we have been unable to investigate further due to time constraints.
 We therefore do not have conclusive result, and do not want to present them together with the main results.
 However, they are of great importance, and will be investigated further in future work.
 
-\subsubsection{Perpendicular tilt with only zeroth level transitions}
+\subsubsection{Perpendicular tilt with only zeroth level transitions}\label{sec:other-observe:zeroton}
 Above, we defined the prefactor \( \gamma_N \) for perpendicular tilt as all transitions \( m\to n, \: |m|,|n| < N \);
 in other words, all transitions between Landau levels up to some cutoff level \( N \).
 However, there are also other possible ways one may consider including the Landau level cutoff.
@@ -1087,7 +1110,8 @@ Here, however, it qualitatively changes the response as a function of the tilt!
       legend pos=south west,
       cycle multiindex* list={
         [samples of colormap=5 of viridis]\nextlist
-        mark=o\\mark=oplus\\mark=square\\
+        mark=o\\mark=oplus\\mark=square\\\nextlist
+        % solid\\ dashdotted\\ dashed\\ dotted\\
       },
       mark repeat={4},
       ]
@@ -1100,6 +1124,7 @@ Here, however, it qualitatively changes the response as a function of the tilt!
   \end{tikzpicture}
   \caption{Numerically computed values of the prefactor \( \gamma_N \) with only the first Landau level included for perpendicular tilt \( t_x \).
     The contribution is even in \( t_x \), and vanish as \( |t_x| \to 1 \).
+    For clarity, only every 4th mark is drawn.
     \label{fig:0tontx}
   }
 \end{figure}
@@ -1135,26 +1160,4 @@ However, both the issue of how to do a cutoff in the case of perpendicular tilt 
     Figure inspired by \textcite{arjonaFingerprintsConformalAnomaly2019}.
     }
     \label{fig:platau}
-\end{figure}
-
-
-\begin{figure}[h]
-  \centering
-  \tikzsetnextfilename{symmetryspin}
-  \begin{tikzpicture}
-    \draw[->] (-4, 0) -- (4, 0) node[right] {\(k\)};
-    \draw[->] (0, 0) -- (0, 4) node[right] {\(E\)};
-
-    % vf = 1, v0 = 0.8
-    \draw[blue] (-3.5, 0.7) -- (0, 0) -- (2, 3.6) node[right] {\(\ket{\uparrow}\)} coordinate[pos=0.7] (a);
-    \draw[red] (3.5, 0.7) node[right] {\(\ket{\downarrow }\)} -- (0, 0) -- (-2, 3.6)
-    coordinate[pos=0.7] (b);
-
-    \draw[->] (a) -- ++(1, 0);
-    \draw[->] (b) -- ++(1, 0);
-  \end{tikzpicture}
-  \caption{Time reversal breaking in tilted system.
-    Cross section in the tilt direction shown, with blue showing one cone and red the other.
-    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
-  }
 \end{figure}

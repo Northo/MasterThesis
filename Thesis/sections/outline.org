@@ -6,8 +6,7 @@
 Norsk and english
 
 ** Preface
-
-** Acknowledgements
+Acknowledgements
 
 ** Introduction?
 Background
