@@ -156,22 +156,20 @@ Reintroducing $\chi = (y-k_xl_B^2) /l_B$ and normalizing we get:
     \end{align}
   \end{subequations}
   The eigenstates are
-  \begin{multline}
+  \begin{equation}
     \phi _{\vec{k} m s}(\vec{r}) =
-    \frac{1}{\sqrt{L_xL_z}}
-    \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{\alpha_{k_z m s}^2 + 1}}
-    e^{-\frac{\left(y-k_x l_B^2\right)^2}{2 l_B^2}}\\
+    \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{L_xL_z}}
+    \frac{e^{-\frac{\left(y-k_x l_B^2\right)^2}{2 l_B^2}}}{\sqrt{\alpha_{k_z m s}^2 + 1}}
     % \frac{
     %   \exp \left[ik_x x + ik_z z - \frac{(y - k_x l_B^2)^2}{2 l_{B}^2}\right]
     % }{
     %   \sqrt{L_{x}  L_z} \sqrt{\alpha_{k_{z} m s}^2 + 1}
     % }
-    \times
     \begin{pmatrix}
       \frac{\alpha_{k_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_B}} H_{M-1}\left( \frac{y-k_x l_B^2}{l_B} \right)\\
       \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_B}} H_M \left( \frac{y-k_x l_B^2}{l_B} \right)
     \end{pmatrix},
-  \end{multline}
+  \end{equation}
   where \( \vec{k} = (k_x, k_z)\), and with the normalization factor
   \begin{equation}
     \alpha_{k_z m s} = \frac{-s \sqrt{2eB M}}{\frac{E_{k_z m s}}{v_{F}} - s k_z}.
@@ -471,9 +469,8 @@ H = v_{F} \sigma ^{i} ( p_{i} + e A_{i} ),
 \]
 with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis, is
 \begin{equation}
-  \phi _{\vec{k} m s}(\vec{r}) = \frac{1}{\sqrt{L_xL_z}}
-  \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{\alpha_{k_z m s}^2 + 1}}
-  e^{-\frac{y-k_x l^2}{2 l_B^2}}
+  \phi _{\vec{k} m s}(\vec{r}) =  \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{L_xL_z}}
+  \frac{e^{-\frac{(y-k_x l^2)^2}{2 l_B^2}}}{\sqrt{\alpha_{k_z m s}^2 + 1}}
   \begin{pmatrix}
     \frac{\alpha_{k_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_B}} H_{M-1}\left( \frac{y-k_x l_B^2}{l_B} \right)\\
     \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_B}} H_M \left( \frac{y-k_x l_B^2}{l_B} \right)
@@ -487,9 +484,8 @@ Taking care to keep track of boosted and rescaled quantites, the eigenstate in t
 \begin{equation}
   \label{eq:47}
   \tilde{\psi}(\tilde{\vec{r}}) =
-  \frac{1}{\sqrt{L_xL_z}}
-  \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{\alpha_{\tilde{k}_z m s}^2 + 1}}
-  e^{-\frac{\left(\tilde{y} - \tilde{k}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}
+  \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{L_xL_z}}
+  \frac{e^{-\frac{\left(\tilde{y} - \tilde{k}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}}{\sqrt{\alpha_{\tilde{k}_z m s}^2 + 1}}
   \begin{pmatrix}
     \frac{\alpha_{\tilde{k}_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_{B'}}} H_{M-1}\left( \frac{\tilde{y} - \tilde{k}_x l_{B'}^2}{l_{B'}} \right)\\
     \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_{B'}}} H_M \left( \frac{\tilde{y} - \tilde{k}_x l_{B'}^2}{l_{B'}} \right)

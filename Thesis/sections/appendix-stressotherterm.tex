@@ -1,11 +1,11 @@
 \chapter{Contributions from symmetric energy-momentum tensor}\label{sec:otherterm-appendix}
 As noted in the main text, there are some subtlety in the definition of the energy-momentum tensor.
 The \emph{canonical} definition, which we have used in the main text, is in general not symmetric.
-The tensor enter our calculation from the conservation law
-\[
-\partial_\mu T^{\mu \nu} = 0,
-\]
-which for \( \nu = 0 \) is nothing more than the conservation law of energy: \( \partial_t \epsilon - \vec{\nabla} \vec{J}_\epsilon = 0 \), where \( \epsilon \) is energy density and \( \vec{J}_\epsilon \) is the energy current.
+% The tensor enter our calculation from the conservation law
+% \[
+% \partial_\mu T^{\mu \nu} = 0,
+% \]
+% which for \( \nu = 0 \) is nothing more than the conservation law of energy: \( \partial_t \epsilon - \vec{\nabla} \vec{J}_\epsilon = 0 \), where \( \epsilon \) is energy density and \( \vec{J}_\epsilon \) is the energy current.
 In the calculation by~\citeauthor{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, the symmetrized\footnote{See section~\ref{sec:commen-T} for a more precise discussion on the symmetrization of the energy-momentum tensor.}
 energy-momentum tensor
 \[
@@ -307,13 +307,13 @@ gives
   \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \tilde{p}_{y}
   \phi_{\vec{k} ms} (y)
   =
-  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
     - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
+\times\frac{ - i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
-  \Big[
+\times  \Big[
   a_{\vec{k} + \qvec{q} ns} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )
   \left\{
     a_{\vec{k} ms} (M-1) H_{M-2} ( \chi _{\vec{k}} )
@@ -442,13 +442,13 @@ With the now well-known completion of the square and substitution, we have
   \left[\tilde{p}_y \phi ^{*}_{\vec{k} + \qvec{q} ns}(y) \right]
   \phi_{\vec{k} ms} (y)
   =
-  - \frac{i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \exp
   \left[
     - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 - 2 i (2k' _x + q' _x) q_{y} + (q' _x)^2 )
   \right  ]\\
+  \times \frac{ - i\hbar 2 \sqrt{\alpha} }{l_{B} \sqrt{1 - t_{x}^2} }
   \int \mathrm{d} \tilde{y} \frac{l_{B}}{\sqrt{\alpha } }\\
-  \Big[
+  \times \Big[
   a_{\vec{k} + \qvec{q} ns} (N-1) H_{N-2}(\chi_{\vec{k}+\qvec{q}})
   \left\{a_{\vec{k} ms} H_{M-1} (\chi_{\vec{k}}) - t_{x} b_{\vec{k} ms} H_{M} (\chi_{\vec{k}})\right\}\\
   +
@@ -514,11 +514,11 @@ The non-canonical part of the energy-momentum tensor \( T_F^{\mu \nu} = T^{\nu \
   \end{align}
   with
   \[
-    \Gamma _{\vec{k} \qvec{q} m n s}^{\pm} =
+    \Gamma _{\vec{k} \qvec{q} m n s}^{+} =
     \frac{
       \exp
       \left[
-        - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) \pm  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
+        - \frac{l_{B}^2}{4 \alpha } (q_{y}^2 + (q' _x)^2) +  i q_y l_B^2 (k' _x + \frac{q'_x}{2} )  )
       \right  ]
     }{
       \left[(\alpha_{k_z m s}^2 +1) (\alpha_{k_z + \qvec{q}_z ns} ^2 + 1)\right]^{\frac{1}{2}}
@@ -578,14 +578,14 @@ The response from \( T^{(2)} \) and \( T^{(3)} \) is thus equal.
 
 By the procedure explained in \cref{sec:commen-T}, the response of \( T^{(2)} + T^{(3)} \) may be rewritten as the response of \( T^{(1)} \), which contains the factor \( E_{k_z m s} + E_{k_z n s} \), with the energies replaced with the untilted energies.
 In other words, using the energy momentum tensor \( T^{\mu \nu}_F \), the response is the same as the response found for parallel tilt in the main text, \cref{eq:120},
-\[
+\begin{multline*}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   - \frac{e^2 v_F B}{2 (2\pi)^2}
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
   \xi(\kappa_z)
-  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
-\]
+  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})\\
+  \times(\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
+\end{multline*}
 with the term \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) replaced with the untilted energies \( \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z m s}\).
 The response from the \( T^{\mu \nu}_F \) tensor is therefore the exact same as that of the untilted cone, as long as one stays in Type-I.
 It differs from the response found in the main text by the divergent prefactor \( \gamma_{\text{div}, N} \).

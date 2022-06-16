@@ -14,13 +14,14 @@ BCOR=5mm,
 
 \begin{document}
 % \includepdf{frontpagethesis.pdf}
-\begin{comment}
 \frontmatter
+\KOMAoptions{open=any}
 \input{sections/summary}  % English and norwegian
 \input{conventionsAndSymbols}
 \tableofcontents
 
 \mainmatter
+\KOMAoptions{open=right}
 \input{sections/introduction}
 % \part{Background material}
 
@@ -46,7 +47,6 @@ Some topics discussed are directly applicable to the thesis, while others are in
 
 \chapter{Anomalies in quantum field theory}
 \input{sections/anomalies}
-\end{comment}
 
 % \part{New work}
 \chapter{Charge current from the conformal anomaly}\label{ch:charge-current}
@@ -57,15 +57,17 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \input{sections/conclusion_outlook}
 
 \appendix
-% \include{sections/appendix-longexpressions}
+\include{sections/appendix-longexpressions}
 \include{sections/appendix-stressotherterm}
-% \include{sections/appendix-conformalsymmetry}
-% \include{sections/appendix-spinstructureweyl}
+\chapter{Auxiliary results}
+\input{sections/appendix-conformalsymmetry}
+\input{sections/appendix-spinstructureweyl}
+\input{sections/appendix-transinvariant}
 
 \backmatter
 \printglossaries
 
-\printbibliography
+\printbibliography[heading=bibintoc]
 
 % \includepdf{endpagethesis.pdf}
 \end{document}

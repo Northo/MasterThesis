@@ -41,10 +41,11 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
   \label{eq:21}
   \braket{J^i}(t, \vec{r}) = \!\!
   \underbrace{
-  \int\limits_{-\infty }^{\infty } \mathrm{d}t' \mathrm{d}\vec{r}' \!\!
+    \int\limits_{-\infty }^{t} \mathrm{d}t'
+    \int \mathrm{d}\vec{r}' \!\!
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
-    \frac{-i v_F}{\hbar } \Theta (t-t')
+    \frac{-i v_F}{\hbar }
     \Braket{
       [J^i(t, \vec{r}), T^{j 0} (t'', \vec{r}')]
     }
@@ -54,7 +55,7 @@ Recall the linear response from the Kubo formalism in Eq. (\ref{eq:current-lutti
 \end{equation}
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
 As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in Eq. (\ref{eq:21}) can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
-Starting with Fourier transforming the position part, notice that the structure of Eq. (\ref{eq:21}) is
+Starting with Fourier transforming the position part, notice that the structure of Eq.~(\ref{eq:21}) is
 \[
   \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') (-\partial _j' T(\vec{r}') /T),
 \]

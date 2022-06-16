@@ -437,13 +437,13 @@ Importantly, the degeneracy factor does \emph{not} depend on the renormalized ma
 We consider here the specialized situation where \( \vec{t} = t_x \hat{x} \), i.e. only tilt perpendicular to the magnetic field.
 The response function
 \begin{multline*}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
   \frac{e B i v_F}{(2 \pi)^2}
   \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k} n s}]\\
   \times \frac{
     J^x_{\vec{k} m s, \vec{k} ns} (\vec{q}\to 0) T^{y 0}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
   }{
-    (E_{k_z m s} - E_{k_z ns} + i \eta)(E_{k_z m s}-E_{k_z ns} + i \eta)
+    (E_{k_z m s} - E_{k_z ns})(E_{k_z m s}-E_{k_z ns})
   }.
 \end{multline*}
 Writing out the matrix products we have
@@ -463,7 +463,7 @@ Writing out the matrix products we have
 And so, inserting into the response function
 \begin{multline}
   \label{eq:115}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \lim_{\eta \to 0}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
   \frac{- e^2 \alpha^3 v_F B }{2 (2 \pi)^2 }
   \sum\limits_{mn}^{}
   \int \mathrm{d}\kappa_z
@@ -474,7 +474,7 @@ And so, inserting into the response function
     (\alpha_{\kappa_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(0, m,n, s)^2)
   }{
     (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns} + i \eta)^2
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
   },
 \end{multline}
 where we also made a change of variables \( k_z = \sqrt{2 e B} \kappa_z \).
@@ -554,7 +554,6 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
       (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
     },
   \end{equation}
-  \footnote{note to self. \( \eta \) was taken to zero}
   where the summation goes over \( m > 0, n \leq 0 \), capped at the Landau level \( N \).
   The integration limits are \( (-\infty, \infty) \), except for \( n = 0 \), where they are \( [0, \infty) \)\footnote{Where we have used \( s=+1 \).}.
   \todo{Make sure numerical prefactors are correct. In particular, have we included the 2 from restricting to half plane?}
@@ -605,15 +604,15 @@ This is important wrt. saying that \( \gamma_0 \) is all contributison withtin s
 Even though the treatment above for a general tilt is valid for parallel tilt, the response can be found more directly from the untilted case.
 For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{y 0} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
 We may thus immediately use the result from the untilted case
-\begin{equation}
+\begin{multline}
   \label{eq:120}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   - \frac{e^2 v_F B}{2 (2\pi)^2}
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
   \xi(\kappa_z)
-  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
-\end{equation}
+  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})\\
+  \times (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
+\end{multline}
 with
 \begin{align}
   \label{eq:121}
@@ -630,7 +629,7 @@ with
     (\epsilon _{\kappa m s} - \epsilon _{\kappa n s})^2
   }.
 \end{align}
-In the untilted case we made several simplifications to this expression, especially with regards to limiting the summation domain.
+In the untilted case we made several simplifications to this expression, especially with regard to limiting the summation domain.
 We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
 
 Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), \( \xi(\kappa_z), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.

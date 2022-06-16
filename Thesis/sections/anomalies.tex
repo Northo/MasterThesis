@@ -237,7 +237,7 @@ Consider the criterion for the vector current to be conserved
 \begin{equation}
   \label{eq:criterion-conserved}
   k_{1\mu } \mathcal{A} ^{\lambda \mu \nu } (k_1, k_2) =
-  i\int \frac{\mathrm{d}^4p}{ (2\pi)^{4}}
+  i\! \int\! \frac{\mathrm{d}^4p}{ (2\pi)^{4}}
   \operatorname{Tr}\left(
     \gamma ^{\lambda } \gamma ^5 \frac{1}{\slashed{p} - \slashed{q}} \gamma ^{\nu}
     \frac{1}{\slashed{p} - \slashed{k}_{1}}
@@ -323,13 +323,13 @@ Similarly to before, let
   },
 \end{multline}
 where we as above removed all terms symmetric under $\sigma \leftrightarrow \tau$.
-Now, Eq. (\ref{eq:criterion-conserved}) becomes
+Now, Eq.~(\ref{eq:criterion-conserved}) becomes
 \begin{equation}
   k_{1\mu } \mathcal{A}^{\lambda \mu \nu } =
   \frac{i}{(2\pi)^4} \lim_{P \to \infty } ik_2^{\mu } \frac{P_{\mu }}{P}
   \frac{{-4i\epsilon ^{\tau \nu \sigma \lambda } k_{2\tau } (k_{1\sigma }-p_{\sigma })}}{P^{4}}
   2\pi^2P^3
-  = \frac{i}{8\pi^2} \epsilon ^{\lambda \nu \tau \sigma } k_{2\tau }k_{2\sigma }.
+  = \frac{ i \epsilon ^{\lambda \nu \tau \sigma } }{8\pi^2}  k_{2\tau }k_{2\sigma }.
 \end{equation}
 \todo{Check there is not misssing a -1 in last espression}
 Where we used that the only term contributing is the $p_{\sigma }$, as the term with $k_{1\sigma }$ goes like $P^{-1}$.
@@ -487,7 +487,7 @@ The vanishing trace ensures the conservation of the dilation current as
 \begin{align}
   \label{eq:dilation-diff}
   \partial _{\mu } J_D^{\mu } &= T^{\mu \nu }\partial_{\mu } x_\nu +
-                                \underbrace{\left( \partial _{\mu }T^{\mu \nu } \right)}_{=0} x_{\nu }\\
+                                (\overbrace{ \partial _{\mu }T^{\mu \nu } }^{0}) x_{\nu }\\
   \nonumber &= T^{\mu \nu }\delta _{\mu \nu } = T^{\mu }_{\mu },
 \end{align}
 where we used the property of the stress-energy tensor that $\partial _{\mu }T^{\mu \nu } = 0$.

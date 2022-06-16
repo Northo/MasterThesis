@@ -379,10 +379,11 @@ Introduce Eq. (\ref{eq:18}) in the response relation (\ref{eq:current-from-gravi
 giving
 \begin{equation}\label{eq:current-luttinger-gravity-final}
   \braket{\vec{J}^i}(t, \vec{r}) =
-  \int \mathrm{d}t' \mathrm{d} \vec{r'}
+  \int\limits_{-\infty}^{t} \mathrm{d}t'
+  \int \mathrm{d} \vec{r'}
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
-    \frac{-i v_{F}}{\hbar} \Theta(t-t') \Braket{\left[
+    \frac{-i v_{F}}{\hbar} \Braket{\left[
         \vec{J}^i(t, \vec{r}), T^{j0}(t'', \vec{r'})
       \right]}
   \right\} 
@@ -391,10 +392,11 @@ giving
 By Luttinger's relation
 \begin{equation}\label{eq:current-luttinger-final}
   \braket{\vec{J}^i}(t, \vec{r}) =
-  \int \mathrm{d}t' \mathrm{d} \vec{r'}
+  \int\limits_{-\infty}^t \mathrm{d}t'
+  \int \mathrm{d} \vec{r'}
   \int\limits_{-\infty }^{t'} \mathrm{d}t''
   \left\{
-    \frac{i v_{F}}{\hbar} \Theta(t-t') \Braket{\left[
+    \frac{i v_{F}}{\hbar} \Braket{\left[
         \vec{J}^i(t, \vec{r}), T^{j0}(t'', \vec{r'})
       \right]}
   \right\} 

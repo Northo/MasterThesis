@@ -332,8 +332,8 @@ As usual, the measure in the integration is given by the density of states in mo
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, n}^{} \int \mathrm{d}l_x \mathrm{d}l_z \frac{L_xL_z}{4 \pi ^2}
                     J^x_{\vec{k}ms, \vec{l}ns} (\vec{q}) a^{\dagger}_{\vec{k} ms} (t) a_{\vec{l} ns}(t)\\
   \nonumber &= \int \mathrm{d}l_x \mathrm{d} l_{z} \int \mathrm{d} y e^{-i q_y y}
-                    \delta (l_x - k_x - q_x) \delta (l_z - k_z -  q_z)
-                    sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
+                    \delta (l_x - k_x - q_x) \delta (l_z - k_z -  q_z)\\
+                    \nonumber &\pe \times sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
 The exact same procedure may be done for the stress-energy tensor in Eq.~(\ref{eq:67}).
@@ -381,20 +381,20 @@ J^x(t, \vec{q}), T^{y 0}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
-The integral part of Eq. (\ref{eq:69}), ignoring everything without time dependence for clarity, is then
-\begin{multline}
-  \lim_{\eta \to 0}
+The integral part of Eq.~(\ref{eq:69}), ignoring everything without time dependence for clarity, is then
+\begin{align}
+  &\lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
-    \exp \left[ i \left(
+    e^{\left[ i \left(
         E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + \omega   + i \eta
-      \right) t \right]
-    \exp \left[ i \left(
+      \right) t \right]}
+    e^{\left[ i \left(
         E_{k_z m s} - E_{k_z+\qvec{q}_z ns} + i \eta
-      \right) t' \right]\\
+      \right) t' \right]} \nonumber \\
   =
-  \lim_{\eta \to 0} i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
+  &\lim_{\eta \to 0} i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
 i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1}.
-\end{multline}
+\end{align}
 The response function then reads
 \begin{multline}
   \chi ^{xy}(\omega , \vec{q}) =
@@ -419,11 +419,13 @@ where the matrix elements are
               e^{iq_y y}
               \phi ^{*}_{\vec{k}+\qvec{q} n s}(y)
               (s\sigma^y + t^s_y )
-              \left(
+              \phi _{\vec{k} m s}(y)\\
+\nonumber              & \times \left(
               E_{k_zm s} + E_{k_z+\qvec{q}_z n s} - 2 \mu
-              \right)
-              \phi _{\vec{k} m s}(y).
+              \right).
 \end{align}
+We will for the rest of the calculation consider \( \eta \to 0 \).
+The calculation was also done with a finite impurity \( \eta \), which gives no important contributions.
 
 We will consider the response function in the static limit \( \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \).
 We may use the property of the limit of a product of functions \( \lim A\cdot B = \lim A \cdot \lim B \) to write
@@ -495,26 +497,26 @@ The matrix element
 where we completed the square in the exponent, to get the form $e^{-a(y + b)^2}$.
 Also, $\qvec{q}_y=(q_x, q_y)$, was introduced, not to be confused with $\qvec{q} = (q_x, q_z)$.
 By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the matrix element may be rewritten
-\begin{equation}
+\begin{multline}
   \label{eq:73}
-  \begin{split}
-    J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
+    J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
 \exp \left[- \frac{1}{4} l_B^2 \left\{
     \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y 
     \right\}\right]\\
+  \begin{split}
   e^{-\tilde{y}^2}
    &\left[
     a_{k_zms}b_{k_z + \qvec{q}_z ns}
     H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
-   &\left. +
+    &+\left.
     b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
     \right].
   \end{split}
-\end{equation}
+\end{multline}
 Taking the limit we find the simple form
 \begin{equation}
   \label{eq:74}
@@ -580,6 +582,8 @@ Recall that
   \end{pmatrix}.
 \end{equation}
 The form of the integrand is very similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
+{
+\setlength\multlinegap{0pt}  %% Make multline go all the way left
 \begin{multline}
 T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
   = \frac{i s}{2}
@@ -590,21 +594,21 @@ T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
     + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
     \right].
 \end{multline}
+}
 Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done
 \begin{equation}
   \begin{split}
-    &T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})\\
-    &=
+    &T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) =
     \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
     \exp \left[
       -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\}
     \right]\\
-    &\phantom{=} \int \mathrm{d}y
+    &\times \int \mathrm{d}y
     \exp \left[
       -\left\{ y + \frac{l_B^2}{2} (-iq_y - 2 k_x - q_x) \right\}^2 / l_B^2
     \right]\\
-    &\phantom{=} \left[
+    &\times \left[
       - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )
       + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
     \right].
@@ -613,30 +617,30 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
 The arguments of the Hermite polynomials have been dropped for brevity of notation.
 As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:hermite-shift-ortho}).
 Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
-\begin{equation}
+{\setlength\multlinegap{0pt}  %% Make multline go all the way left
+\begin{multline}
   \label{eq:76}
-  \begin{split}
     T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
-    &= \frac{i s}{2}
+    = \frac{i s}{2}
     (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
     \exp \left[
       -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2- 2 i q_y (2 k_x + q_x) \right\}
-    \right]
-    \int \mathrm{d}\tilde{y} \; l_B
-    e^{-\tilde{y}^2}\\
+    \right]\\
     % \exp \left[
     %   -\left\{ y + \frac{l_B^2}{2} (-iq_y - 2 k_x - q_x) \right\}^2 / l_B^2
     % \right]\\
-    &\phantom{=} \left[
+    \int \mathrm{d}\tilde{y} \; l_B
+    e^{-\tilde{y}^2}
+     \left[
       - a_{\vec{k}+\qvec{q} ns} b_{\vec{k} ms}
       H_{N-1} \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
       H_M \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)\right.\\
-      &\phantom{=\big[} \left.+ b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms}
+       \left.+ b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms}
       H_N \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
       H_{M-1} \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)
     \right].
-  \end{split}
-\end{equation}
+\end{multline}
+}
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
 \begin{equation}
   \label{eq:77}
@@ -656,7 +660,6 @@ The terms in the integrand are exactly the same as in the current matrix element
     \delta_{M, N-1}
   \right).
 \end{equation}
-
 \begin{summary}
   For a untilted case, in the local limit \( q\to 0 \), we have the matrix elements
   \begin{align}
@@ -700,7 +703,6 @@ This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B / $, resul
 Recall the response function
 \begin{equation}
   \chi ^{xy} (\omega , \vec{q}) =
-  \lim_{\eta \to 0}
   \sum\limits_{\vec{k}, mn}^{}
   \frac{1}{\mathcal{V}}
   \frac{
@@ -709,13 +711,13 @@ Recall the response function
     \;
     [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
   }{
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} + i   \eta )
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} +  \omega + i   \eta )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} )
+    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} +  \omega)
   }
   .
 \end{equation}
 Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
-Collecting dimensionfull quantites, the response function reads
+Collecting dimensionfull quantities, the response function reads
 \begin{multline}
   \label{eq:90}
 \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
@@ -729,7 +731,7 @@ Collecting dimensionfull quantites, the response function reads
     (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
     (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M})
   }{
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} + i \eta)^2
+    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s})^2
   }.
 \end{multline}
 
@@ -738,13 +740,13 @@ Let us now define
   \xi(\kappa_z) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
   \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
-    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + i \frac{  \eta }{v_F\sqrt{2 e B  }})
-    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{ \omega }{v_F \sqrt{2 e B  }} + i \frac{  \eta }{v_F\sqrt{2 e B  }})
+    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} )
+    (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{ \omega }{v_F \sqrt{2 e B  }} )
   }.
 \end{equation}
-As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under interchagne of \( m,n \) and inversion of \( \kappa_z \).
+As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under interchange of \( m,n \) and inversion of \( \kappa_z \).
 \todo{Clean up. Is it inversion or sign flip or what?}
-% which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \eta \) also acquires a sign, but this is not an issue.}
+% which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \etae \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
 In the last term of Eq. \eqref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
@@ -771,7 +773,7 @@ The final expression is then
     \(  \hphantom{(m, n, \kappa_z)}\mathllap{ (m, n)} \mapsto (n, m)\) & -1 &&\\
     \bottomrule
   \end{tabular}
-  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \vec{q}\to 0, \eta\to 0 \). \label{tab:transform-sign}}
+  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \vec{q}\to 0 \). \label{tab:transform-sign}}
 \end{table}
 
 Before solving the integral, we note that in addition to the \todo{say the word diatomic?} \( N=M-1 \) selection rule of the sum, the factor with the distributions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) impose further restrictions on which transitions are energetically allowed.
