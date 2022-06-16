@@ -1,4 +1,4 @@
-\chapter{Contributions from symmetric energy-momentum tensor}
+\chapter{Contributions from symmetric energy-momentum tensor}\label{sec:otherterm-appendix}
 As noted in the main text, there are some subtlety in the definition of the energy-momentum tensor.
 The \emph{canonical} definition, which we have used in the main text, is in general not symmetric.
 The tensor enter our calculation from the conservation law
@@ -6,19 +6,55 @@ The tensor enter our calculation from the conservation law
 \partial_\mu T^{\mu \nu} = 0,
 \]
 which for \( \nu = 0 \) is nothing more than the conservation law of energy: \( \partial_t \epsilon - \vec{\nabla} \vec{J}_\epsilon = 0 \), where \( \epsilon \) is energy density and \( \vec{J}_\epsilon \) is the energy current.
-In the calculation by \citeauthor{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, the symmetrized energy-momentum tensor
+In the calculation by~\citeauthor{arjonaFingerprintsConformalAnomaly2019}\cite{arjonaFingerprintsConformalAnomaly2019}, the symmetrized\footnote{See section~\ref{sec:commen-T} for a more precise discussion on the symmetrization of the energy-momentum tensor.}
+energy-momentum tensor
 \[
 T_S^{\mu \nu} = \frac{T^{\mu \nu} + T^{\nu \mu}}{2}
 \]
 was used.
 In this appendix we show the contributions of the symmetric tensor.
-The contributions from \( T^{\mu \nu} \) and \( T^{\nu \mu} \) is shown to be equal in the non-tilted case.
+The contributions from \( T^{\mu \nu} \) and \( T^{\nu \mu} \) is shown to be equal in the non-tilted case, while they differ in the tilted case.
 
-\section{No tilt}
 In the main text we have already found the contributions from the canonical tensor, and so we focus here on the contributions from \( T_F^{\mu \nu } = T^{\nu \mu} \).
-The relevant element is \( T_F^{y 0} = \frac{v_F}{4}\left( \phi^{\dagger} p_y \phi - p_y\phi^{\dagger} \phi \right) \)
+The relevant element is \( T_F^{y 0} = T^{0 y} \).
 
-Consider now the latter part of the stress-energy tensor, which is split into two parts
+The tilted canonical energy-momentum tensor, \cref{eq:T-canon-tilt},
+\[
+  T^{\mu\nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \partial_{\nu} \phi
+  - \partial_{\nu} \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \phi
+  - \eta^{\mu \nu} \mathcal{L}
+  ),
+\]
+and so the symmetric tensor is
+\renewcommand\overleftrightarrow[1]{\overset{\tiny\leftrightarrow}{#1}}
+\begin{equation}
+  \label{eq:87}
+  T_S^{\mu\nu} =
+  \frac{i}{2} (
+  \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \overleftrightarrow{\partial}_{\nu} \phi
+  +
+  \phi^{\dagger} \tilde{\sigma}_s ^{\nu} \overleftrightarrow{\partial}_{\mu} \phi
+  - \eta^{\mu \nu} \mathcal{L}
+  ),
+\end{equation}
+where we used the notation \( \phi^{\dagger} \overleftrightarrow{\partial} \phi = (\phi^{\dagger} \partial \phi - (\partial \phi^{\dagger}) \phi) /2 \).
+We split \( T_S^{y0} \) into three parts;
+the first part corresponds to the canonical energy-momentum tensor, while the two latter correspond to the two terms of \( T_F^{y0} \).
+Explicitly
+\begin{equation}
+  \label{eq:88}
+  T_S^{y 0} =
+  \underbrace{\frac{i}{2} \phi^{\dagger} \tilde{\sigma}_s^{y} \overleftrightarrow{\partial_0} \phi}_{T^{(1)}}
+  +  \underbrace{ \frac{i}{4} \phi^{\dagger} \partial_y \phi}_{T^{(2)}}
+  + \underbrace{ \frac{i}{4} \phi^{\dagger} \partial_y \phi}_{T^{(3)}}.
+\end{equation}
+In other words, the first part is half that found in the main text, while the two latter are unique to the symmetric tensor.
+For convenience, we will for the rest of the appendix rename \( T^{\mu \nu} = T_S^{\mu \nu} \).
+
+\section{No tilt}\label{sec:otherstressterm:notilt}
+Begin by considering the matrix elements
 \begin{align}
   \label{eq:144}
   T ^{0y\; (2)} _{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &= +
@@ -141,6 +177,31 @@ which with the same procedure as above gives
   }
   \delta_{M, N-1}.
 \end{equation}
+
+\begin{summary}\label{summary:notilt-otherterm}
+  In the untilted case, we have
+  \begin{align}
+    \label{eq:71}
+    \lim_{\vec{q} \to 0} T^{y0\; (2)}_{\vec{k} n s, \vec{k} m s} &= -\frac{i \hbar \sqrt{2}}{4}
+        \frac{
+          \alpha_{k m s} \alpha_{k n s} \sqrt{M-1}
+          +
+          \sqrt{M}
+        }{
+          {l_{B} \sqrt{\alpha_{k m s}^2 + 1}\sqrt{\alpha_{k n s} ^2 + 1}}
+        }
+                                                                   \delta_{N, M-1},\\
+    \lim_{\vec{q} \to 0} T^{y0\; (3)}_{\vec{k} n s, \vec{k} m s} &= \frac{i \hbar \sqrt{2}}{4}
+        \frac{
+          \alpha_{k m s} \alpha_{k n s} \sqrt{N-1}
+          +
+          \sqrt{N}
+        }{
+          {l_{B} \sqrt{\alpha_{k m s}^2 + 1}\sqrt{\alpha_{k n s} ^2 + 1}}
+        }
+                                                                   \delta_{M, N-1}.
+  \end{align}
+\end{summary}
 
 \section{With tilt}
 In the tilted case, we have shown in the main text that \todo{insert ref}
@@ -266,7 +327,7 @@ gives
   \Big].
 \end{multline}
 
-We must now evaluate the integral, and express the result in the \( \Xi \)-functions.
+We must now evaluate the integral, and express the result in the \( \Xi \)-functions, defined in \cref{eq:xi1def,eq:xi2def} of the main text.
 \[
     \begin{pmatrix}
       a_{\vec{k} + \qvec{q} n s} H_{N-1} ( \chi _{\vec{k} + \qvec{q}} )\\
@@ -283,7 +344,7 @@ We must now evaluate the integral, and express the result in the \( \Xi \)-funct
       b_{\vec{k} m s} M H_{M-1} ( \chi _{\vec{k}} )
     \end{pmatrix}
 \]
-For each of the entries in \( T \), we get a product on of Hermite polynomials.
+For each of the entries in \( T \), we get a product of Hermite polynomials.
 Where the untilted cone had two such terms, the tilt parameter \( t _x \) now gives two extra products, which we must evaluate.
 Let \( M^{(2)}_{ij} \) be the product corresponding to \( T_{ij} \), i.e.
 \begin{align}
@@ -495,4 +556,36 @@ The non-canonical part of the energy-momentum tensor \( T_F^{\mu \nu} = T^{\nu \
 
 \subsection{Parallel tilt}
 The procedure greatly simplifies in the case of parallel tilt.
-As noted in the main text, parallel tilt only rescales the energies Landau levels, while the wave functions and operators stay invariant
+As noted in the main text, parallel tilt only rescales the energies Landau levels, while the wave functions and operators stay invariant.
+The procedure for the untitled cone, done in \cref{sec:otherstressterm:notilt}, is thus relevant here as well, with an interchange of the energy levels where relevant.
+
+The \( T^{(2)} \) and \( T^{(3)} \) parts of the energy-momentum tensor for parallel tilt is therefore the same as the result without tilt, found in summary~\ref{summary:notilt-otherterm}.
+In the main text we showed a simplification procedure for terms of the form
+\begin{equation}
+ \label{eq:86}
+  \alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1,M}
+\end{equation}
+in the total response function.
+The outline of the idea was to note that we sum over all \( m,n \), and by certain symmetries of the terms under interchange of \( m\leftrightarrow n \), we could rename summation indices and replace
+\begin{equation}
+  \alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1,M}
+  \to
+  2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
+\end{equation}
+For details on the procedure see \cref{sec:response_notilt} of the main text.
+By simply inserting \( T^{(2)}, T^{(3)} \) in the response function, one may easily show that the resulting term is on the form \cref{eq:86}, with the first term corresponding to \( T^{(3)} \) and the second to \( T^{(2)} \).
+The response from \( T^{(2)} \) and \( T^{(3)} \) is thus equal.
+
+By the procedure explained in \cref{sec:commen-T}, the response of \( T^{(2)} + T^{(3)} \) may be rewritten as the response of \( T^{(1)} \), which contains the factor \( E_{k_z m s} + E_{k_z n s} \), with the energies replaced with the untilted energies.
+In other words, using the energy momentum tensor \( T^{\mu \nu}_F \), the response is the same as the response found for parallel tilt in the main text, \cref{eq:120},
+\[
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  - \frac{e^2 v_F B}{2 (2\pi)^2}
+  \sum\limits_{mn} \int \mathrm{d} \kappa_z
+  \xi(\kappa_z)
+  (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+  (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
+\]
+with the term \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) replaced with the untilted energies \( \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z m s}\).
+The response from the \( T^{\mu \nu}_F \) tensor is therefore the exact same as that of the untilted cone, as long as one stays in Type-I.
+It differs from the response found in the main text by the divergent prefactor \( \gamma_{\text{div}, N} \).

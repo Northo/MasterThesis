@@ -1,13 +1,13 @@
 \usepackage{mathtools}
 \usepackage[final]{pdfpages}
 \usepackage{amsfonts}
-\usepackage[style=alphabetic]{biblatex}
+\usepackage[style=alphabetic, backref=true]{biblatex}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{braket}
 % \usepackage{lmodern}
-% \usepackage{mlmodern}  %% 'Blacker' font
+\usepackage{mlmodern}  %% 'Blacker' font
 \usepackage[T1]{fontenc}
 \usepackage{amsthm}
 \usepackage{microtype}
@@ -121,3 +121,45 @@ final=true,
   afterindent=false,
   afterskip=2.5\baselineskip,
 ]{chapter}
+
+
+%%% Backref biblate
+
+% \newlength{\marginwritesep}
+% \setlength{\marginwritesep}{1em}
+% \newlength{\marginwritewidth}
+% \setlength{\marginwritewidth}{4em}
+% % based on egreg's (https://tex.stackexchange.com/users/4427/egreg)
+% % answer to https://tex.stackexchange.com/a/123451/35864
+% % originally CC BY-SA 3.0, but dual-licensed under LPPL
+% % see https://tex.meta.stackexchange.com/a/3333/35864
+% \newcommand{\marginwrite}[1]{%
+%   \strut\vadjust{%
+%     \vbox to 0pt{%
+%       \kern-\the\dimexpr\ht\strutbox+\dp\strutbox\relax
+%         \hfill\rlap{\kern\marginwritesep
+%           #1}%
+%       \vss
+%     }%
+%   }%
+% }
+
+% % \newcommand*{\simplecolorparbox}[3]{%
+%   % \colorbox{#1}{\parbox{#2}{#3}}}
+
+% \newcommand*{\simplecolorparbox}[3]{%
+%   \colorbox{#1}{\begin{varwidth}{#2}#3\end{varwidth}
+%   }}
+
+% \makeatletter
+% \renewbibmacro*{begentry}{%
+%   \iflistundef{pageref}
+%     {}
+%     {\marginwrite{%
+%        \simplecolorparbox{blue!5}{\marginwritewidth}{%
+%          \scriptsize\raggedright
+%          \printlist[pageref][-\value{listtotal}]{pageref}}}%
+%      \blx@initunit}}
+% \makeatother
+
+% \renewbibmacro*{pageref}{}%
