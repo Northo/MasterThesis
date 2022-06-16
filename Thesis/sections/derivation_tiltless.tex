@@ -80,7 +80,7 @@ From the definition of the canonical energy-momentum tensor for Dirac fields Eq.
   T^{\mu \nu} =
   \frac{i}{2} (
   \phi^{\dagger} \sigma_s^{\mu} \partial_{\nu} \phi
-  - \sigma_s^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \partial_{\nu} \phi^{\dagger} \sigma_s^{\mu} \phi
   - \eta^{\mu \nu} \mathcal{L}
   ).
 \end{equation}
@@ -95,10 +95,11 @@ Exactly analogous to the treatment of \textcite{vanderwurffMagnetovorticalThermo
 where \( \tilde{\sigma}_s^{\mu} = \sigma_s^{\mu} + (t^s)^{\mu}, \; (t^s)^{\mu} = (0, \vec{t^s}) \).
 The corresponding energy-momentum tensor, after again symmetrizing in the fields,
 \begin{equation}
+  \label{eq:T-canon-tilt}
   T^{\mu\nu} =
   \frac{i}{2} (
   \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \partial_{\nu} \phi
-  - \tilde{\sigma}_s ^{\mu} \phi \partial_{\nu} \phi^{\dagger}
+  - \partial_{\nu} \phi^{\dagger} \tilde{\sigma}_s ^{\mu} \phi
   - \eta^{\mu \nu} \mathcal{L}
   ).
 \end{equation}
