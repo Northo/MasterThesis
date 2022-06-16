@@ -1,0 +1,24 @@
+\section{Only translationally invariant systems have conservation of momentum in correlators}
+\todo{rewrite section title}
+\begin{theorem}
+  If the momentum space correlator is $\braket{A(p)B(-p)}$, the real space correlator is translationally invariant.
+\end{theorem}
+\begin{Proof}
+Consider the correlator
+\begin{equation}
+  \Braket{A(x)B(y)}.
+\end{equation}
+If its momentum space equivalent is
+\begin{equation}
+  \Braket{A(q)B(-q)} = \Braket{A(q)B(p)} \delta (p+q),
+\end{equation}
+then the real space correlator is given by
+\begin{equation}
+  \int \mathrm{d}p \mathrm{d}q
+  \Braket{A(p)B(q)}\delta (p+q)
+  e^{ipx + iqy}
+  = \int \mathrm{d}p \Braket{A(p)B(-p)} e^{ip(x-y)}.
+\end{equation}
+This function is only dependent on $x-y$, and thus translationally invariant.
+Therefore, the only way to get a correlator on the form $\braket{A(p)B(-p)}$ is to assume trnaslational invariance.
+\end{Proof}

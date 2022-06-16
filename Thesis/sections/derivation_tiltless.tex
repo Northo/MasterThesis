@@ -204,11 +204,13 @@ where we defined the modified Pauli matrices
       a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
       -
       i \left(\partial_t a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
-      +  2\mu  a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
+      -  2\mu  a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
         \right].
 \end{multline}
-Here, also a non-zero potential $\mu $ is included.
-Our final result will be given at zero potential, however it is included in the calculations as it might be of interest to consider finite potential in later work.
+Here, also a non-zero potential $\mu $ is included by hand%
+\footnote{This is of course in no way a rigerous treatment of the chemical potential. Heuristically, one may argue that as the \( T^{y0} \) component is to be regarded as the energy flux, the contribution from chemical potential should be the chemical potential multiplied by the particle velocity operator. },%
+similar to what was done in \textcite{arjonaFingerprintsConformalAnomaly2019}.
+Our final result will be given at zero potential, however, it is included in the calculations as it is later interesting to consider small deviations from zero chemical potential.
 Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
 \[
   i \partial_t a_{\lambda }(t) = E_{\lambda }a_{\lambda },
@@ -229,11 +231,8 @@ which further simplifies the expression.
                           \sum\limits_{\vec{k} m, \vec{l} n}^{}
                           \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
 \nonumber        &\times \left[
-          a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
-          -
-          i \left(\partial_t a^{\dagger}_{\vec{k} ms }(t) \right) a_{\vec{l} n s}(t)
-          +  2\mu  a^{\dagger}_{\vec{k} m s}(t) a_{\vec{l} n s}(t)
-          \right].
+                   E_{k_z m s} + E_{l_z n s} - 2\mu \right]
+                   a^{\dagger}_{\vec{k} m s}(t)  a_{\vec{l} n s}(t).
   \end{align}
 \end{summary}
 
