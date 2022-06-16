@@ -5,13 +5,32 @@
 ** Abstract
 Norsk and english
 
+- Emergent Dirac equations in condensed matter physics may, as opposed to their high energy phsyics equivalents, have Lorentz breaking terms.
+- Transverse charge current to thermal perturbation, contribution to the nernst effect magnetic field
+- Conformal anomaly
+- Finite at zero chemical potential and temperature
+- Not the anomalous nernst effect
+- Kubo calculation with Luttingers method
+- We find the reponse to be tunable by the tilt direction and magnitude
+- Candidates for expermiental signatures
+- Demonstrate the importance of choice of the stress energy tensor
+
+
 ** Preface
 Acknowledgements
 
 ** Introduction?
 Background
 
-Structure of the thesisStrucutre
+*** Strucure of thesis
+The thesis consists of four chapters;
+the first three chapters introduce central concepts, the fourth is the derivation of the response function.
+Note that some sections of the thirsdfk specialization project
+
+In the first chapter we topo, symmetry, weyl and tilt
+In the second chapter, we discuss linear response theory in light of the Kubo formula and Luttinger's approach to thermal transport
+In the third chapter we introduce quantu anomalies, and discuss the chiral and conformal anomaly in the context of high energy physics.
+
 
 ** Topological materials
 
@@ -218,18 +237,29 @@ Anyways a very good discussion point about the results
 The chiral anomaly may be used in chiral qbit, see Dmitri E. Kharzeev and Qiang Li, “The Chiral Qubit: quantum computing with chiral anomaly,” arXiv (2019), 1903.07133 [quant-ph].
 Maybe hope for conformal as well
 
-** Further work
+** Conclusion and outlook
+*** Conclusion
+The response function chi is tunable with the tilt parameter t
+the landau levels behavior is massively different for parallel and perpendicular tilt, as so is the behavior of the response function
 
-*** Tilt parallel to the temperature gradient, i.e. ty
+some results must be normalized from expermiental observations
+very exciting signature from tx tilt if correct
+strong dependence on the symmetry
 
-*** Inclusion of finite chemical potential
+energy momentum tensor choice of central importantce
+
+
+*** Outlook
+**** Tilt parallel to the temperature gradient, i.e. ty
+
+**** Inclusion of finite chemical potential
 See [[file:~/Documents/NTNU/10semester/meetings/05-30.org::*https://www.youtube.com/watch?v=Zu2Rzd6rkVQ&t=96s][Notes from Vozmediano YouTube video]] on why the chemical potential is important
 In particular, something something only lowest landau level
 I think acually the computation is quite easy in the untilted case.
 I also suspect that this is quite interesting, as the fermi surface and region of only one LL drastically change with tilt.
 
-*** More research into the energy-momentum tensor
-*** Fully covariant calculation
+**** More research into the energy-momentum tensor
+**** Fully covariant calculation
 Place the tilt in the metric
 
 * Ideas and Problems

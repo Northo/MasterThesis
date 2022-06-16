@@ -1,16 +1,40 @@
-\section{Conclusion and outlook}
+% \section{Conclusion and outlook}
+\addchap{Conclusion and outlook}
+We found the response function \( \chi \) to be tunable with the tilt parameter \( t \).
+The behavior Landau levels of the tilted Weyl cone is massively different depending on the direction of the tilt with respect to the magnetic field.
+We found the behavior of \( \chi \) to also be massively different depending on the direction.
 
+The results also offer potential experimental signatures.
+The response of parallel tilt is odd in the tilt \( t_\parallel \) and the response of perpendicular tilt is suppressed with increasing tilt \( t_\perp \).
+We believe this opens up the possibility of various experimental designs.
+One example is to rotate the sample in a magnetic field, such that the tilt goes from being parallel to perpendicular.
+The response of perpendicular tilt discussed in \cref{sec:other-observe}, also shown in \cref{fig:0tontx}, is a good candidate for an experimental signature as well, however it requires some more work before it is sufficiently rigorous.
 
+The calculation has also demonstrated the importance of a correct treatment of the energy-momentum tensor.
+Depending on the definition used, the resulting response is qualitatively different for tilted systems, as opposed to untilted systems.
+
+After this work, we have several unanswered questions, and believe this to be a fruitful topic for the future.
+Here we propose a selection of ideas and questions that are relevant, which are direct extensions of the work in this thesis.
 \begin{description}
   \item[Tilt parallel to temperature gradient]
-        -Time constraints did not compute for tilt parallel to \( \nabla T \).
+        Due to time constraints, we were not able to extend the calculation to tilt parallel to \( \nabla T \) in time for writing the thesis.
+        This is a natural extension, and we hope to be able to do this for a manuscript currently being written.
 
   \item[The energy-momentum tensor]
-        - Still open question
+        The ambiguity related to the energy-momentum tensor, discussed in \cref{sec:commen-T} is still an open question, which should be explored more.
+        Much literature has been written on the topic, both in general~\cite{forgerCurrentsEnergyMomentumTensor2004} and specific to Dirac and Weyl semimetals~\cite{vanderwurffMagnetovorticalThermoelectricTransport2019,arjonaFingerprintsConformalAnomaly2019}.
+        We have had discussions on the topic with María Vozmediano and Alberto Cortijo, and have several venues that we wish to explore further on this question.
 
-  \item[Fully covariant calculation]
-        - Move the explicit tilt parameter in the lagrangian into the metric
+        One of our current ideas involve a fully covariant calculation, absorbing the tilt directly in the metric instead of explicitly including it in the Lagrangian.
+        That will involve combining the curvature of the tilt and Luttinger's perturbation in a Kubo calculation.
+        It is of interest to see if this leads to the same expressions as we found from having explicit tilt in flat space.
+
+        - Important symmetries, gmunu non-symmetric, related to torsion and stress tensors
 
   \item[Finite chemical potential and temperature]
-        Similar to doen ine sec
+        As was discussed in \cref{sec:other-observe}, it would be interesting to extend the calculation to finite potential and temperature.
+        In the untitled case, the response has a stable plateau as a function of chemical potential even for finite temperature, related to the energy gap between the \( \pm 1 \) Landau levels, where there is only the zeroth Landau level.
+        As the cone is tilted, the gap is reduced, and vanishes at the transition between Type-I and Type-II.
+        An explicit calculation of this is a natural next steps, and requires only minor adaptions of the work done here.
+
 \end{description}
