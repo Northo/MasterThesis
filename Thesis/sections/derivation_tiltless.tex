@@ -48,7 +48,7 @@ In the standard textbook derivation of the canonical energy-momentum tensor, one
 This expansion, however, ignores the non-commutative nature of the fields.
 For concreteness, consider \( \psi _i = \bar{\psi} \).
 Heuristically, the correct expression would be obtained by reordering the factors in the two terms.
-By naively employing Eq.~\eqref{eq:55}, the resulting canonical energy-momentum tensor of the Dirac theory would be
+By naively employing \cref{eq:55}, the resulting canonical energy-momentum tensor of the Dirac theory would be
 \begin{equation}
   T^{\mu \nu} = \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \bar{\psi})} \partial^{\nu} \bar{\psi}  + \frac{\delta \mathcal{L}}{\delta (\partial_{\mu} \psi)} \partial^{\nu} \psi - \eta^{\mu \nu} \mathcal{L},
 \end{equation}
@@ -75,7 +75,7 @@ Symmetrize in daggered and undaggered fields
   \mathcal{L}_s = \frac{i}{2} (\phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma_s^{\mu} \phi),
 \end{equation}
 which will prove more convenient to work with.
-From the definition of the canonical energy-momentum tensor for Dirac fields Eq.~\eqref{eq:57}, one gets
+From the definition of the canonical energy-momentum tensor for Dirac fields \cref{eq:57}, one gets
 \begin{equation}
   T^{\mu \nu} =
   \frac{i}{2} (
@@ -132,7 +132,7 @@ Symmetrizing in daggered and undaggered fields
   \mathcal{L} = \frac{i}{2} \left(\phi^{\dagger} \sigma^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma^{\mu} \phi \right),
 \]
 which will prove to be more convenient to work with.
-Adapting the definition Eq.~\eqref{eq:57} the energy-momentum tensor for the untilted Dirac cone is thus
+Adapting the definition \cref{eq:57} the energy-momentum tensor for the untilted Dirac cone is thus
 \begin{equation}
   \label{eq:59}
   T^{\mu \nu} =
@@ -258,7 +258,7 @@ which further simplifies the expression.
   where $\psi $ is to be understood as the solutions found above, $D_{\mu }=\partial _{\mu }  - i e A_{\mu }$ is the covariant derivative, and $\sigma ^{\mu } = (I, \sigma ^i)$
   In our calculations we will require the $T^{y 0}$ component, which we will now find.
 
-  By using Eq. (\ref{eq:65}) directly
+  By using \cref{eq:65} directly
   \begin{align}
     T^{y 0} &= \frac{i}{2} \psi ^{\dagger} \left( D^{y} + \sigma ^{y} D^{0} \right)\psi \\
            &= \frac{i}{2} \psi ^{\dagger} \left( \partial ^{y} + \sigma ^{y} \partial ^{0} \right)\psi \\
@@ -281,7 +281,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the \gls{qed} Lagrangian in Eq. (\ref{eq:64}) to our system.
+  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the \gls{qed} Lagrangian in \cref{eq:64} to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -322,11 +322,11 @@ where the matrix elements in momentum space are given by
                                               (s \sigma ^y + (t^s)^y)
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
-Note that as $T^{y 0}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{y 0}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of Eq. (\ref{eq:68}).
+Note that as $T^{y 0}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{y 0}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of \cref{eq:68}.
 
 As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
-The sum over $\vec{l}$ in Eq. (\ref{eq:66}) can be replaced by an integration, as it is a good quantum number.
+The sum over $\vec{l}$ in \cref{eq:66} can be replaced by an integration, as it is a good quantum number.
 As usual, the measure in the integration is given by the density of states in momentum space, the well known $L_{i} /2\pi $, with $L_i$ being the length of the system in the $i$-direction.
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}m, n}^{} \int \mathrm{d}l_x \mathrm{d}l_z \frac{L_xL_z}{4 \pi ^2}
@@ -336,7 +336,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     \nonumber &\pe \times sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
-The exact same procedure may be done for the stress-energy tensor in Eq.~(\ref{eq:67}).
+The exact same procedure may be done for the stress-energy tensor in \cref{eq:67}.
 Eliminating $l$ by doing the integrals yields
 \begin{align}
   J^x(t, \vec{q}) &= \sum\limits_{\vec{k}, mn}^{}
@@ -369,7 +369,7 @@ where \( n_{\vec{k} m s} \) is the Fermi-Dirac distribution, the correlation fun
   \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right].
 \end{multline}
 
-We are now ready to find the correlation function $\chi ^{xy}$ given in Eq. (\ref{eq:22})
+We are now ready to find the correlation function $\chi ^{xy}$ given in \cref{eq:22}
 \begin{equation}
   \label{eq:69}
   \chi ^{xy}(\omega, \vec{q}) =
@@ -381,7 +381,7 @@ J^x(t, \vec{q}), T^{y 0}(t', -\vec{q})
     \right]}.
 \end{equation}
 Introduce as usual a decay factor $e^{-\eta (t-t')}$ to ensure convergence in the time integrals, and make a change of variables $t' \to -t'	$.
-The integral part of Eq.~(\ref{eq:69}), ignoring everything without time dependence for clarity, is then
+The integral part of \cref{eq:69}, ignoring everything without time dependence for clarity, is then
 \begin{align}
   &\lim_{\eta \to 0}
   \int\limits_{0}^{\infty } \mathrm{d}t \mathrm{d}t'
@@ -615,7 +615,7 @@ Taking care to note that the factor from the Fourier transform, that was $e^{-iq
   \end{split}
 \end{equation}
 The arguments of the Hermite polynomials have been dropped for brevity of notation.
-As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials Eq.~(\ref{eq:hermite-shift-ortho}).
+As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials \cref{eq:hermite-shift-ortho}.
 Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
 {\setlength\multlinegap{0pt}  %% Make multline go all the way left
 \begin{multline}
@@ -748,7 +748,7 @@ As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under 
 \todo{Clean up. Is it inversion or sign flip or what?}
 % which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \etae \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions some.
-In the last term of Eq. \eqref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
+In the last term of \cref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
 \[
 \alpha_{\kappa_z m s}^2 \delta_{M-1,N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \to 2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
@@ -805,10 +805,10 @@ Consequently, the integrand is invariant under \( (\kappa_z, s) \mapsto (-\kappa
 Similarly to the argumentation used above, as the integral goes over all \( \kappa_z \), the integral is invariant under \( s \mapsto -s \).
 
 \begin{Proposition}
-  We have shown the following simplifications of Eq. \eqref{eq:90}:
+  We have shown the following simplifications of \cref{eq:90}:
   \begin{itemize}
     \item The contributions from the terms \( \alpha_{\kappa_z m s}^2 \delta_{M-1, N} \) and \( - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \) are equal, and we consider therefore only one of them, adding a degeneracy factor 2.
-    \item The difference of the step functions takes the form Eq. \eqref{eq:92}, which limits the transitions to states with energies of opposite sign.
+    \item The difference of the step functions takes the form \cref{eq:92}, which limits the transitions to states with energies of opposite sign.
           For each value of \( M,N \), this means the only valid transitions are \( m=M, n=-N \) and \( m=-M, n=N \).
     \item As the integrand is invariant under \( (m,n,\kappa_z) \mapsto (-m, -n, -\kappa_z) \), we may consider only one of the transitions mentioned in the previous point, adding once again a degeneracy factor of 2.
     \item We lastly showed that the contribution is independent of the chirality \( s \).

@@ -10,7 +10,7 @@
     % width=14cm,
     % height=8cm,
     % ymode=log,
-    legend pos=south east,
+    legend pos=north west,
     ]
     \ifthenelse{\isundefined\prefix}{\newcommand\prefix{t_x=}}{}
     \foreach \datafile/\entry in \datafiles {

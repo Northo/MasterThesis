@@ -29,7 +29,7 @@ A  non-rigorous motivation for this form of the response is the fact that
   + \frac{\partial {A}_{S}}{\partial t}, 
 \end{equation}
 with $A_S$ the Schrödinger picture operator, whose derivative is from here on assumed zero.
-Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrate over the interaction time, the result is reminiscent of Eq.~(\ref{eq:lin-response-1}).
+Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrate over the interaction time, the result is reminiscent of \cref{eq:lin-response-1}.
 For a proper derivation see for example~\citeauthor{giulianiQuantumTheoryElectron2005}~\cite[Chapter 3.3]{giulianiQuantumTheoryElectron2005}.
 \todo{Note about time dependent vs independent operators/picture ? see Giuliani and Vaginal (3.29).}
 \todo{Some other formulation for what the $\braket\dots_0$ means.}
@@ -45,7 +45,7 @@ Firstly, by taking advantage of the time translation invariance of the uncoupled
     {A}(t-t'), {B}(0)
     \right]}_0.
 \end{equation}
-Inserting this back to Eq. (\ref{eq:lin-response-1}), and performing a change of variable $\tau = t  - t'$ we have
+Inserting this back to \cref{eq:lin-response-1}, and performing a change of variable $\tau = t  - t'$ we have
 \begin{equation}
 \label{eq:13}
 \delta {A} = -\frac{i}{\hbar} \int\limits_{0}^{t-t_0}
@@ -129,13 +129,13 @@ Let $\sigma_{ij}(\vec{r} - \vec{x}, t-s) \equiv \sigma_{ij}(\vec{r}, t, \vec{x},
 % \sigma_{ij}(\vec{q}, \omega) = \iint \mathrm{d}t \mathrm{d}\vec{r}
 % e^{i(\omega t -\vec{r}\vec{q})} \sigma_{ij}(\vec{r}, t),
 % \end{equation}
-Recognizing the right-hand side of Eq. (\ref{eq:ohm})
+Recognizing the right-hand side of \cref{eq:ohm}
 \todo{Is it an issue that the t integration in (\ref{eq:ohm}) is only to t, and not infinity?}
 \begin{equation}
   \int \mathrm{d} \vec{x} \int \mathrm{d} t
   \sigma _{ij} (\vec{r}-\vec{x}, t-s ) \vec{E}_{j}(\vec{x}, s)
 \end{equation}
-as a convolution, we can write Eq. (\ref{eq:ohm}) as
+as a convolution, we can write \cref{eq:ohm} as
 \begin{equation}
 \label{eq:ohm-fourier}
   \vec{J}_i(\vec{q}, \omega) =
@@ -143,7 +143,7 @@ as a convolution, we can write Eq. (\ref{eq:ohm}) as
   \vec{E}_j(\vec{q}, \omega),
 \end{equation}
 by using the well known result that the Fourier transform of a convolution is the product of the transformed functions of the convolution~\cite{rottmannMatematiskFormelsamling1995}.
-Alternatively, the same result is found by simply inserting the definition Eq. (\ref{eq:15}) for both $\vec{E}$ and $\sigma $ in Eq. (\ref{eq:ohm}), and use
+Alternatively, the same result is found by simply inserting the definition \cref{eq:15}) for both $\vec{E}$ and $\sigma $ in Eq. (\ref{eq:ohm}, and use
 \[
 \int \mathrm{d} x e^{-i x a} = 2\pi \delta (a).
   \]
@@ -155,7 +155,7 @@ The current couple to the electromagnetic potential $\vec{A}$ by a Hamiltonian t
   H_{\vec{A}} = -\int \mathrm{d}\vec{r}
   \vec{J}(\vec{r}) \cdot \vec{A}(\vec{r}, t).
 \end{equation}
-Comparing with the notation introduced earlier for general linear response, where the perturbing Hamiltonian in Eq. (\ref{eq:kubo-perturbation}) was
+Comparing with the notation introduced earlier for general linear response, where the perturbing Hamiltonian in \cref{eq:kubo-perturbation} was
 \[
 F(t) {B},
 \]
@@ -196,14 +196,14 @@ With $\tau = t-s$ and $\vec{x'} = \vec{r} - \vec{x}$,
   \chi(\vec{x'}, \tau)
   \vec{A}(\vec{r} - \vec{x'}, t-\tau).
 \end{equation}
-By the Fourier transformation introduced in Eq. (\ref{eq:15})
+By the Fourier transformation introduced in \cref{eq:15}
 \[
   A(\vec{q}, \omega ) =
   \iint \mathrm{d}t \mathrm{d} \vec{r}
   e^{i(\omega  t - \vec{q} \vec{r} )}
   A(\vec{r}, t),
 \]
-the time transformed version of Eq. (\ref{eq:conductivity-kubo-invariant}) is 
+the time transformed version of \cref{eq:conductivity-kubo-invariant} is 
 \todo{Should either implicitly or explicitly put the $t-t_0$ limit of the integral inside of A, so that the Fourier transform is simple}
 \begin{equation}
   \delta \vec{J}(\vec{r}, \omega) = 
@@ -337,7 +337,7 @@ the reason for choosing other definitions might be to have more convenient expre
 The success of Luttinger's method was that the transport coefficients could now be calculated directly, and yielded the same results as had previously been found by less formal approaches.
 
 By the introduction of the Hamiltonian perturbation $H_L$, the response may now be investigated in the Kubo formalism.
-By the response in Eq. (\ref{eq:lin-response-1}) the electric current generated from the gravitational perturbation is
+By the response in \cref{eq:lin-response-1} the electric current generated from the gravitational perturbation is
 % \begin{equation}
 %   \label{eq:current-from-gravity}
 %   \braket{\vec{J}^i}(t, \vec{r}) =
@@ -372,7 +372,7 @@ By the fundamental theorem of calculus this obviously gives for the zero-zero co
   T^{00}(t, \vec{r}) = - \int\limits_{-\infty }^t \mathrm{d}t'
   v_F \partial _i T^{i 0}(t', \vec{r}).
 \end{equation}
-Introduce Eq. (\ref{eq:18}) in the response relation (\ref{eq:current-from-gravity}), and use integration by parts
+Introduce \cref{eq:18}) in the response relation (\ref{eq:current-from-gravity}, and use integration by parts
 \begin{equation}
   \int u v' = uv - \int u' v,
 \end{equation}
@@ -419,7 +419,7 @@ where care must be taken to distinguish the stress-energy tensor $T^{j0}$ and th
 % \begin{equation}
 %   g_{00} = 1 + 2\psi.
 % \end{equation}
-% One may therefore equivalently to Eq. (\ref{eq:current-from-gravity}) consider the response to variations of the metric component $g_{00}$ giving a term in the Hamiltonian
+% One may therefore equivalently to \cref{eq:current-from-gravity} consider the response to variations of the metric component $g_{00}$ giving a term in the Hamiltonian
 % \begin{equation}
 %   H_L' = \int \mathrm{d}\vec{r}  \frac{g_{00}}{2} T^{00}
 % \end{equation}

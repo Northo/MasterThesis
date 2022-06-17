@@ -55,7 +55,7 @@ So far, we have the result that for any variation $\delta \phi_a$ that leave the
 \end{equation}
 There is, however, an even stronger formulation of Noether's theorem.
 As the equations of motion are only dependent on the transformation being a symmetry transformation of the action, we realize that even a change in the Lagrangian of the form $\delta \mathcal{L} = \partial_{\mu}K^{\mu}$ will not change the equations of motion, as long as boundary terms of the integral over the Lagrangian may be dropped ($K\to  0, r \to \infty$).
-Thus, altering the starting point in Eq. (\ref{eq:noether-1}) to $0 = \delta \mathcal{L} - \partial_{\mu}K^{\mu}$ we get Noether's theorem, theorem \ref{sec:noethers-theorem}.
+Thus, altering the starting point in \cref{eq:noether-1} to $0 = \delta \mathcal{L} - \partial_{\mu}K^{\mu}$ we get Noether's theorem, theorem \ref{sec:noethers-theorem}.
 \begin{theorem}[Noether's theorem]\label{sec:noethers-theorem}
   For any continuous transformation that leave the Lagrangian $\mathcal{L}$ invariant up to a total derivative $\partial _{\mu }K^{\mu }$, there must be an associated conserved current
   \begin{equation}
@@ -279,7 +279,7 @@ Rotating back to Minkowski space we gain an additional i, with
   = \lim_{P\to \infty } ia^{\mu } \left( \frac{P_{\mu }}{P} \right) f(P) S_{d-1}(P).
 \end{equation}
 
-We will now perform such a shift of variables in the second term of the trace in Eq.~(\ref{eq:criterion-conserved}), as we notice that shifting $p \to p-k_1$ makes the two terms cancel, leaving only the boundary term.
+We will now perform such a shift of variables in the second term of the trace in \cref{eq:criterion-conserved}, as we notice that shifting $p \to p-k_1$ makes the two terms cancel, leaving only the boundary term.
 Let
 \begin{equation}
   \label{eq:trace-trickery}
@@ -299,8 +299,8 @@ In the second equality, we first wrote the Feynman slash operator by its definit
   \operatorname{Tr}(\gamma ^5\gamma ^{\tau }\gamma ^{\nu }\gamma ^{\sigma }g^{\lambda }) = -4i\epsilon ^{\tau \nu \sigma \lambda },
 \end{equation}
 where $\epsilon $ is the totally antisymmetric tensor.
-The trace can be split into two terms, where the first vanishes as it is proportional to $\epsilon ^{\tau \nu \sigma \lambda }p_{\tau }p_{\sigma }$, and one is left with the expression in Eq. (\ref{eq:trace-trickery}).
-Thus, Eq. (\ref{eq:criterion-conserved}) becomes
+The trace can be split into two terms, where the first vanishes as it is proportional to $\epsilon ^{\tau \nu \sigma \lambda }p_{\tau }p_{\sigma }$, and one is left with the expression in \cref{eq:trace-trickery}.
+Thus, \cref{eq:criterion-conserved} becomes
 \begin{equation}
   \label{eq:criterion-conserved-simp}
   k_{1\mu } \mathcal{A}^{\lambda \mu \nu } =
@@ -309,7 +309,7 @@ Thus, Eq. (\ref{eq:criterion-conserved}) becomes
   = \frac{i}{8\pi^2} \epsilon ^{\lambda \nu \tau \sigma } k_{1\tau }k_{2\sigma }.
 \end{equation}
 
-Consider now, however, what happens if we shift $p\to p+k_2$ in the first term of Eq.~(\ref{eq:criterion-conserved}) instead.
+Consider now, however, what happens if we shift $p\to p+k_2$ in the first term of \cref{eq:criterion-conserved} instead.
 Surely, if our answer above is correct, any arbitrary shift must yield the same answer.
 Similarly to before, let
 \begin{multline}
@@ -323,7 +323,7 @@ Similarly to before, let
   },
 \end{multline}
 where we as above removed all terms symmetric under $\sigma \leftrightarrow \tau$.
-Now, Eq.~(\ref{eq:criterion-conserved}) becomes
+Now, \cref{eq:criterion-conserved} becomes
 \begin{equation}
   k_{1\mu } \mathcal{A}^{\lambda \mu \nu } =
   \frac{i}{(2\pi)^4} \lim_{P \to \infty } ik_2^{\mu } \frac{P_{\mu }}{P}
@@ -335,7 +335,7 @@ Now, Eq.~(\ref{eq:criterion-conserved}) becomes
 Where we used that the only term contributing is the $p_{\sigma }$, as the term with $k_{1\sigma }$ goes like $P^{-1}$.
 Our results differ depending on the non-physical shift of variables!
 As is shown by several textbooks,~\cite{zeeQuantumFieldTheory2010}~\cite{kachelriessQuantumFieldsHubble2018}, this comes from the fact that the integral we started with is in fact linearly divergent -- its value is not well-defined.
-What we will have to do, is consider an arbitrary shift $a$ in the integration variable of the amplitude Eq. (\ref{eq:amplitude}), which we will show changes the amplitude by a quantity dependent on $a$.
+What we will have to do, is consider an arbitrary shift $a$ in the integration variable of the amplitude \cref{eq:amplitude}, which we will show changes the amplitude by a quantity dependent on $a$.
 To cancel this, a counter term must be inserted;
 however, as we will see, this counter term can only make either the axial current or the vector current conserved!
 Consider now a shift in the integration variable $p \to p - a$ in the amplitude (\ref{eq:amplitude}), where we denote the amplitude with shifted integration variable
@@ -350,7 +350,7 @@ Consider now a shift in the integration variable $p \to p - a$ in the amplitude 
   \right).
 \end{multline}
 
-From Eq. (\ref{eq:shift-trickery}) we already have a formula for the difference
+From \cref{eq:shift-trickery} we already have a formula for the difference
 \begin{equation}
   \label{eq:amplitude-difference}
   \mathcal{A}^{\lambda \mu \nu } (a, k_1, k_2) - \mathcal{A}^{\lambda \mu \nu }(k_1, k_2),
@@ -369,14 +369,14 @@ Ignore for now the prefactor, and note that in the limit
   \end{split}
 \end{equation}
 In the second equality we used the anti-commutation relation of gamma matrices in $\slashed{p} \gamma ^{\mu } = 2p^{\mu } - \gamma ^{\mu } \slashed{p}$ and $\slashed{a}^2 = a^2$.
-In the last equality, we used again Eq. (\ref{eq:trace-gamma}), and the vanishing of all terms symmetric under interchanging indices when contracted with the fully antisymmetric tensor.
+In the last equality, we used again \cref{eq:trace-gamma}, and the vanishing of all terms symmetric under interchanging indices when contracted with the fully antisymmetric tensor.
 We now find the amplitude difference (\ref{eq:amplitude-difference}).
 Firstly, we simplify the  expression slightly as
 \begin{equation}
   \Delta \mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) \equiv \int \mathrm{d}^4p f(p-a) - f(p) +  \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\},
 \end{equation}
 where the last term indicates to repeat the preceding expression with interchange of $k_1 \leftrightarrow  k_2$ and $\mu \leftrightarrow \nu$.
-Thus, by Eq. (\ref{eq:shift-trickery}),
+Thus, by \cref{eq:shift-trickery},
 \begin{equation}
   \label{eq:amplitude-difference-explicit}
   \begin{split}
@@ -397,7 +397,7 @@ A priori $\mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2)$ should be just as valid a
 In fact, that formulation is quite the misnomer, as $a=0$ is no less arbitrary than any $a\neq 0$ in this setting;
 % $p$ is simply a name we have denoted the momentum transfer in our diagram.
 $p$ is simply a name by which we denote the moment transfer in our diagram.
-\emph{However}, using Eq. (\ref{eq:amplitude-difference-explicit}), leading to
+\emph{However}, using \cref{eq:amplitude-difference-explicit}, leading to
 \begin{multline}
   \label{eq:19}
   k_{1\mu } \mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) - k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(a=0, k_1, k_2) =\\
@@ -414,7 +414,7 @@ Recall that both the UV-cutoff and dimensional regularization schemes introduce 
 Let $a=\alpha (k_1+k_2) + \beta (k_1-k_2)$.
 This is allowed as $k_1, k_2$ are independent, and the only parameters of our equations.
 The $\alpha$ term is obviously symmetric under interchange of $k_1, k_2$, while the $\beta$ term is antisymmetric.
-Thus, we see that in Eq. (\ref{eq:19}) only the $\beta $ part survives when adding the pair with interchanged indices and momenta.
+Thus, we see that in \cref{eq:19} only the $\beta $ part survives when adding the pair with interchanged indices and momenta.
 Thus,
 \begin{align}
   k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) &=
@@ -423,7 +423,7 @@ Thus,
                                                          \epsilon ^{\lambda \nu \tau \sigma }k_{1\tau }k_{2\sigma } - 2 \epsilon ^{\sigma \nu \mu \lambda } \beta (k_{1\sigma } - k_{2\sigma })k_{1\mu }\right)\\
   &= \frac{i}{8\pi^2} \epsilon ^{\lambda \nu \tau \sigma } k_{1\tau }k_{2\sigma } (1+ 2\beta ).
 \end{align}
-Here we inserted our previous result for $k_{1\mu }\mathcal{A}^{\lambda \mu \nu }$ given in Eq. (\ref{eq:criterion-conserved-simp}).
+Here we inserted our previous result for $k_{1\mu }\mathcal{A}^{\lambda \mu \nu }$ given in \cref{eq:criterion-conserved-simp}.
 In the last equation we used that $k_{1\sigma }k_{1\mu }$ vanishes when contracted with the Levi Cevita symbol, and relabeled the dummy indices.
 It is now  apparent that choosing $\beta = -1 / 2$ makes the criterion for conservation of vector current hold!
 
@@ -494,7 +494,7 @@ where we used the property of the stress-energy tensor that $\partial _{\mu }T^{
 As the trace is zero, the dilation current is conserved in the classical picture.
 
 However, this symmetry does not hold when quantum corrections are taken into account.
-Loop effects give non-vanishing contributions to the trace, and by Eq.~(\ref{eq:dilation-diff}) this makes the dilation current non-conserved.
+Loop effects give non-vanishing contributions to the trace, and by \cref{eq:dilation-diff} this makes the dilation current non-conserved.
 Due to this, the conformal anomaly is also often referred to as the trace anomaly.
 % Firstly, an intuitive and quick explanation for why the loop effect breaks the symmetry will be given, and then a more lengthy calculation showing this explicitly.
 Recall that when calculating the propagators of the \gls{qed} theory, we end up with infinities.
