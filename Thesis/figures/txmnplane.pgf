@@ -18,11 +18,12 @@
 \newcounter{plotnum}
 \tikzsetnextfilename{contribmn-P}
 \begin{tikzpicture}
+  \newcommand\myaxislimit{9.5}
   \begin{groupplot}[
     width=0.5\textwidth,
     unit vector ratio=1 1 1,unit rescale keep size=false, %% Do not enlarge limit, keep unit equal
-    xmin=-6.5, xmax=6.5,
-    ymin=-6.5, ymax=6.5,
+    xmin=-\myaxislimit, xmax=\myaxislimit,
+    ymin=-\myaxislimit, ymax=\myaxislimit,
     % title={\( t_x= \title \)},
     title style={ at={(0.75, 0.7)} },
     group style={
@@ -35,10 +36,14 @@
     },
     ]
     \pgfplotsforeachungrouped \datafile/\title in {
-      contribTilttx0.PbrokenFalse.csv/0,
-      contribTilttx0.125PbrokenFalse.csv/0.16,
-      contribTilttx0.25PbrokenFalse.csv/0.25,
-      contribTilttx0.5PbrokenFalse.csv/0.5
+      % contribTilttx0.PbrokenFalse.csv/0,
+      % contribTilttx0.125PbrokenFalse.csv/0.16,
+      % contribTilttx0.25PbrokenFalse.csv/0.25,
+      % contribTilttx0.5PbrokenFalse.csv/0.5
+      contribmnTilttx0..csv/0,
+      contribmnTilttx0.125.csv/0.125,
+      contribmnTilttx0.25.csv/0.25,
+      contribmnTilttx0.5.csv/0.5
     }{
       \edef\tmp{
         \noexpand\ifthenelse{\theplotnum=1}{
@@ -54,15 +59,21 @@
         % \noexpand\nextgroupplot[title={$t_x = \title$}, colorbar, colorbar horizontal, colorbar to name={mycolorbar}]
         \noexpand\addplot [
         matrix plot*,
-        mesh/cols=13,
+        % mesh/cols=14,
         point meta=explicit,
-        ] table[x=m, y=n, meta=Contrib, col sep=comma] {data/\datafile};
+        ] table[meta index=2, col sep=comma] {data/\datafile};
+        \noexpand\addplot [
+        matrix plot*,
+        % mesh/cols=14,
+        point meta=explicit,
+        ] table[meta index=2, x expr=-\noexpand\thisrowno{0}, y expr=-\noexpand\thisrowno{1}, col sep=comma] {data/\datafile}; %% Other half plane
       }
       \tmp
 
       \ifthenelse{\theplotnum=0}{
         \draw[dotted, gray] (axis cs:-1.5,-1.5) rectangle (axis cs:1.5,1.5) node[pos=0, pin={[pin edge={solid}]-180:\( \gamma_0 \)}] {};
         \draw[dotted, gray] (axis cs:-2.5,-2.5) rectangle (axis cs:2.5,2.5) node[pos=0, pin={[pin edge={solid}]-110:\( \gamma_1 \)}] {};
+
 
         % \draw[dotted, gray] (axis cs:0.5,-0.5) rectangle (axis cs:1.5,0.5) node[pos=0, yshift=4pt, pin={[pin edge={solid}]-140:\( \gamma_0 \)}] {};
         % \draw[dotted, gray] (axis cs:0.5,-1.5) rectangle (axis cs:2.5,0.5) node[pos=0, pin={[pin edge={solid}]-140:\( \gamma_1 \)}] {};

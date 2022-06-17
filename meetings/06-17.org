@@ -1,0 +1,51 @@
+#+title: 06 17
+
+* Finish draft by the weekend, when can Alireza read through?
+I think I should hand in by Friday next week
+
+* Perp. tilt 0->n finding
+
+Probably should sum over all N.
+N is not tunable
+
+* Manuscript
+
+** Change metric
+Have looked at briefly, but not in much detail.
+Suspect it might be difficult for me to do, as there is much new mathematics that I am not so familiar with.
+
+    Metric formulation is more interesting
+
+** Tilt parallel to temperature gradient
+
+** Finite chemical potential and temperature
+
+** TODO Add names of Maria and Alberto, share with maria
+me, alberto, maria, alireza
+
+* Correct way to include the chemical potential in the T
+Does not appear maybe formally
+Stoof had mu, but nothing in T
+
+* Does chiral anomaly go to zero as T goes to zeor?
+
+To be topological, should have topo number in answer
+
+* FUture work, spin current instead of charge current
+
+* Vertical lines in table 4.2
+
+* Physical print
+
+| Amount | Price | Price pr. copy |
+|      1 |   328 |            328 |
+|      2 |   421 |            210 |
+|      3 |   514 |            171 |
+|      4 |   607 |            152 |
+|      5 |   700 |            140 |
+|      6 |   793 |            132 |
+#+TBLFM: $3=$2/$1;%4.f
+
+* formal
+have intro to each section, what is it about?
+APS guide lines

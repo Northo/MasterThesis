@@ -1,6 +1,6 @@
 figures/external/contribtx.pdf: data/contribTilttx-zerothll.csv
-figures/external/contribtx.pdf: data/contribSumTilttx0.PbrokenTrue.csv
-figures/external/contribtx.pdf: data/contribSumTilttx0.125PbrokenTrue.csv
-figures/external/contribtx.pdf: data/contribSumTilttx0.25PbrokenTrue.csv
-figures/external/contribtx.pdf: data/contribSumTilttx0.375PbrokenTrue.csv
-figures/external/contribtx.pdf: data/contribSumTilttx0.5PbrokenTrue.csv
+figures/external/contribtx.pdf: data/contribSumTilttx.csv
+figures/external/contribtx.pdf: data/contribSumTilttx.csv
+figures/external/contribtx.pdf: data/contribSumTilttx.csv
+figures/external/contribtx.pdf: data/contribSumTilttx.csv
+figures/external/contribtx.pdf: data/contribSumTilttx.csv
