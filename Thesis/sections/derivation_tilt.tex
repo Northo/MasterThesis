@@ -680,7 +680,7 @@ and the contribution from each term of the sum
     \label{eq:125}
 \end{multline}
 where we used the selection rule of the sum \( N = M - 1 \) and \( m>0, n<0 \).
-This contribution is shown in figure \ref{fig:divergent-factor}.
+This contribution is shown in \cref{fig:divergent-factor}.
 \todo{is it ok to write 'the contribution \eqref{eq:125}', or must it always be 'the contribution \cref{eq:125}'?}
 The contribution \eqref{eq:125} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
 
@@ -695,7 +695,7 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
  + 2 \log\Lambda
 \right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
 \end{equation}
-The contribution is shown in figure~\ref{fig:divergent-factor} for the first Landau levels.
+The contribution is shown in \cref{fig:divergent-factor} for the first Landau levels.
 
 
 
@@ -705,7 +705,7 @@ For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
-See plot of the tilted Landau levels in figure~\ref{fig:llevelstilt}.
+See plot of the tilted Landau levels in \cref{fig:llevelstilt}.
 
 % Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 % For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
@@ -853,16 +853,16 @@ In the case of no tilt, only contributions from \( M = N + 1 \) were non-zero;
 we named the contribution from the \( 0\to 1 \) transition \( \gamma_0 \), the \( -1\to 2 \) transition \( \gamma_1 \) and so forth.
 For perpendicular tilt, as there are contributions also away from the \( M=N + 1 \) line, we denote by \( \gamma_0 \) the contributions from inside the square of length 2 centered at the origin.
 The \( \gamma_1 \) contributions are those inside the square of length 4, and in general \( \gamma_n \) the square with length \( 2 n \).
-This is indicated in figure~\ref{fig:contribs}.
+This is indicated in \cref{fig:contribs}.
 This definition effectively sets a ceiling on which Landau levels we consider.
 
 \todo{Correct which values }
-The integral was computed numerically for \( M,N \leq 14 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in figure~\ref{fig:contribs}.
+The integral was computed numerically for \( M,N \leq 14 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in \cref{fig:contribs}.
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
-The total contribution \( \gamma_{\bar{N}} \) as a function of \( \bar{N} \) is shown in figure~\ref{fig:total_contribs}.
+The total contribution \( \gamma_{\bar{N}} \) as a function of \( \bar{N} \) is shown in \cref{fig:total_contribs}.
 The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section~\ref{sec:perptiltsum}.
-Also shown in figure~\ref{fig:total_contribs} is \( \gamma_0 \) as a function of \( t_x \), which is seen to be strictly decreasing to zero as \( t_x \to 1 \).
+Also shown in \cref{fig:total_contribs} is \( \gamma_0 \) as a function of \( t_x \), which is seen to be strictly decreasing to zero as \( t_x \to 1 \).
 This last observation is discussed further in section~\ref{sec:other-observe:zeroton}, under
 ``\nameref{sec:other-observe:zeroton}''.
 
@@ -998,7 +998,7 @@ The contribution goes to zero as \( t_z \to \infty \), shown in \cref{fig:contri
 Considering also higher Landau level contributions, both interband and intraband transitions must be included,%
 \footnote{By band we here refer to the ``conduction'' band and ``valence'' band.}
 meaning the summation is no longer restricted to a quadrant in the \( m,n \) plane, but rather to half the plane.
-The contributions are shown in figure \ref{fig:contribtzII}.
+The contributions are shown in \cref{fig:contribtzII}.
 These contributions are not odd in \( t_z \) -- they have a finite even component.
 Due to this, the contribution does not cancel for inversion broken systems, however, the even contribution is small in magnitude compared to the other contributions.
 
@@ -1130,7 +1130,7 @@ In the untilted case, the \emph{dipolar} selection rule \( M = N + 1 \) makes th
 With no such selection rule, the choice is however less obvious, and one other natural choice would be the following.
 Assuming a large magnetic field, only the lowest Landau level is occupied~\cite{chernodubThermalTransportGeometry2021}, and so it would be natural to only consider \( 0 \to n, |n| < \bar{N} \) transitions.
 Doing this, the resulting response is very interesting!
-If we define by \( \gamma_{\bar{N}} \) the sum of all \( 0\to n, |n| < \bar{N} \) transitions, and compute \( \gamma_{\bar{N}} \) as a function of the tilt \( t_x \) for various \( \bar{N} \), we get the result shown in figure~\ref{fig:0tontx}.
+If we define by \( \gamma_{\bar{N}} \) the sum of all \( 0\to n, |n| < \bar{N} \) transitions, and compute \( \gamma_{\bar{N}} \) as a function of the tilt \( t_x \) for various \( \bar{N} \), we get the result shown in \cref{fig:0tontx}.
 When including transitions to higher Landau levels, \( \gamma_{\bar{N}} \) as a function of \( t_x \) is no longer strictly decreasing -- it has a maximum at \( 0 < t_x < 1 \)!
 This would be a very interesting experimental signature.
 
@@ -1186,7 +1186,7 @@ For a sufficiently large magnetic field, only the zeroth Landau level is filled 
 For a chemical potential \( \mu \) small enough to be contained between the \( \pm 1 \) Landau levels, i.e. \( |\mu| /(v_F \sqrt{2eB} ) < 1 \), the response function was found to be invariant.
 Furthermore, for a finite temperature, it was found that thermally activated carriers increased the magnitude of the effect, with a stable platau around \( \mu = 0 \).
 The width of the plateau is inversely proportional to the temperature.
-See figure \ref{fig:platau}.
+See \cref{fig:platau}.
 
 As tilt is introduced, the energy interval in which one only has the zeroth Landau level is reduced, and as \( t \to 1 \) the interval vanishes.
 So as the system is tilted, the width of the plateau is reduced.
