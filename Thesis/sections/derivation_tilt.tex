@@ -857,7 +857,7 @@ This is indicated in figure~\ref{fig:contribs}.
 This definition effectively sets a ceiling on which Landau levels we consider.
 
 \todo{Correct which values }
-The integral was computed numerically for \( M,N \leq 6 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in figure~\ref{fig:contribs}.
+The integral was computed numerically for \( M,N \leq 14 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in figure~\ref{fig:contribs}.
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
 The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure~\ref{fig:total_contribs}.
@@ -935,6 +935,7 @@ This last observation is discussed further in section~\ref{sec:other-observe:zer
 \subsubsection{Type-I}
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
 In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), \cref{eq:123}, dependent on a momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 e B}  \), where \(k^{\text{cutoff}}\) is the physical cutoff.
+The contribution from each new Landau level, \( \gamma_{\text{div}, N}-\gamma_{\text{div}, N} \) is shown in \cref{fig:divergent-factor}.
 In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( \mathcal{O}(1 /\Lambda^2) \), we found \cref{eq:126},
 \[
   \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
@@ -1005,6 +1006,19 @@ A schematic plot of all the contributions of a parallel tilt is shown in \cref{f
 In systems with broken inversion symmetry, where only the even contribution survives, we see that in the Type-I regime, the response is independent of the tilt \( t_z \).
 In the Type-II regime, the response has the opposite sign, and is heavily reduced in magnitude;
 for a sufficiently large magnetic field, when only the zeroth Landau level is filled, the effect is non-existent.
+
+One disadvantage of using the Kubo formalism to find the response function, as opposed to the procedure of \textcite{chernodubGenerationNernstCurrent2018}, who argued more directly from fundamental principles, is that the origin of the effect is less clear.
+Specifically, it is not clear directly from the Kubo calculation that the origin of the effect is the conformal anomaly.
+In the case of Type-II, it is in fact not entirely clear what is the origin of the effect.
+We have not been able to investigate this in depth, but note the following important observation.
+When the material is tilted into Type-II, the density of states goes abruptly from vanishing to finite at the Dirac point, as mentioned earlier.
+As the density of states is finite, there is some finite energy related to the system as well.
+It is then a valid question to ask if the effect is indeed of conformal anomaly origin;
+the scale invariance of the system is broken by the energy scale introduced by the density of states, and so the anomaly itself is also broken.
+This is especially pertinent in light of the non-physical behaviour seen around the Lifshitz transition;
+in the transition from Type-I to Type-II the chiral anomaly is not broken, and chiral anomaly effects have been found to have analytical behaviour in the transition, even for the linear model~\cite{sharmaChiralAnomalyLongitudinal2017}.
+This is still an open question.
+
 
 \begin{figure}[ht]
   \centering
@@ -1120,6 +1134,12 @@ If we define by \( \gamma_N \) the sum of all \( 0\to n, |n| < N \) transitions,
 When including transitions to higher Landau levels, \( \gamma_N \) as a function of \( t_x \) is no longer strictly decreasing -- it has a maximum at \( 0 < t_x < 1 \)!
 This would be a very interesting experimental signature.
 
+One pertinent question is how the cutoff level \( N \) should be found in this context.
+The cutoff \( N \) is not tunable in any obvious way -- we have already assumed the system to be in the deep quantum limit where only the zeroth level is Landau level is filled.
+We do note that the effect of including ever-higher levels is diminishing;
+the \( 0 \to n \) contributions become smaller for higher \( n \), and seem to converge as \( n \) becomes large%
+\footnote{This, of course, warrants an investigation into the \( 0\to n \) transition contributions shown in \cref{fig:contribs}, to find if they are indeed decreasing faster than \( 1 / n \).}.
+
 The procedure, however, is not rigorous.
 Due to time limitations, we have not been able to investigate this effect further in time for this print, however, we plan to do a more rigorous treatment in the future.
 In particular, this shows the importance of the choice of how one truncates the Landau level sum when there is no dipolar selection rule;
@@ -1161,24 +1181,31 @@ Here, however, it qualitatively changes the response as a function of the tilt!
 
 \subsubsection{Experimental signature at finite potential and temperature}
 In real materials, the Fermi level is close to, but not exactly at, the Dirac point.
-\textcite{arjonaFingerprintsConformalAnomaly2019} investigated this, which is of great interest with regards to experimental observations, by extending the computation to finite chemical potential and temperature.
-For sufficiently large magnetic field, only the zeroth Landau level is filled \cite{arjonaFingerprintsConformalAnomaly2019,vozmedianoTheoreticalPhysicsColloquium2021}, and the only transitions are the \( 0 \to \pm 1 \) transitions.
+\textcite{arjonaFingerprintsConformalAnomaly2019} investigated this, which is of great interest with regard to experimental observations, by extending the computation to finite chemical potential and temperature.
+For a sufficiently large magnetic field, only the zeroth Landau level is filled \cite{arjonaFingerprintsConformalAnomaly2019,vozmedianoTheoreticalPhysicsColloquium2021}, and the only transitions are the \( 0 \to \pm 1 \) transitions.
 For a chemical potential \( \mu \) small enough to be contained between the \( \pm 1 \) Landau levels, i.e. \( |\mu| /(v_F \sqrt{2eB} ) < 1 \), the response function was found to be invariant.
 Furthermore, for a finite temperature, it was found that thermally activated carriers increased the magnitude of the effect, with a stable platau around \( \mu = 0 \).
 The width of the plateau is inversely proportional to the temperature.
 See figure \ref{fig:platau}.
 
 As tilt is introduced, the energy interval in which one only has the zeroth Landau level is reduced, and as \( t \to 1 \) the interval vanishes.
-So as the system is tilted, the width of the platau is reduced.
+So as the system is tilted, the width of the plateau is reduced.
 We reproduced the calculation for finite potential and temperature%
-\footnote{Using the non-symmetric choice of the energy-momentum tensor, as opposed to the symmetric one used in te original calculation~\cite{arjonaFingerprintsConformalAnomaly2019}.}
+\footnote{Using the non-symmetric choice of the energy-momentum tensor, as opposed to the symmetric one used in the original calculation~\cite{arjonaFingerprintsConformalAnomaly2019}.}
 in the untilted situation, but have not yet extended the computation to the tilted case.
-This should, however, not be very difficult.
-However, both the issue of how to do a cutoff in the case of perpendicular tilt and the momentum cutoff in the case of parallell tilt, has to be given extra care.
+This should not present any major differences to what has been done in this work, other than including the Fermi-Dirac distribution when evaluating the \( k_z \) integral in the response function.
+However, both the issue of which Landau levels to include in the case of perpendicular tilt and the momentum cutoff in the case of parallel tilt has to be given extra care.
 
-\todo{Comment on we found this also for non-symmetric energy-momentum tensor?}
-\todo{Do the computation for tz? In that case, compute separately the even and odd component}
-\todo{See also \cite{chernodubThermalTransportGeometry2021} FIG. 9 and discussion}
+We may, however, make some conclusions without explicit calculations in the case of parallel tilt.
+We restrict ourselves to the Type-I case, where the aforementioned gap is finite.
+In the case of zero temperature, the situation is rather easy.
+Recall that the contribution is \( \gamma^0_N + \gamma_{\text{div}, N} \).
+The first term explicitly depends on the chemical potential, but it is also independent of the tilt.
+The second term is tilt-dependent, and the chemical potential enters only through the Fermi-Dirac distribution;
+when the chemical potential is within the gap, the distribution is independent of the chemical potential, for zero temperature.
+Thus, the plateau is retained, with a potential independent addition \( \gamma_{\text{div},N} \);
+the width of the plateau, however, is reduced according to the width of the gap.
+At finite temperature, the thermal activation makes the above argument invalid, as the distribution function in the tilt-dependent term will also be affected by the chemical potential.
 
 \begin{figure}[htb]
   \centering
