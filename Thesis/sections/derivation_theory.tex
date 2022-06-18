@@ -2,13 +2,13 @@ In 2016~\textcite{chernodubAnomalousTransportDue2016} showed that the conformal 
 This effect was further explored by~\textcite{chernodubGenerationNernstCurrent2018}, showing through Luttinger's method that such an anomalous transport could be generated from a temperature gradient, giving additional contributions to the Nernst current.
 The same effect was shortly after derived more formally through the Kubo formalism, by \textcite{arjonaFingerprintsConformalAnomaly2019}.
 
-In this chapter we extend the Kubo calculation to tilted Weyl cones.
+In this chapter, we extend the Kubo calculation to tilted Weyl cones.
 Firstly, the result for the untilted system is rederived, where we also show several simplifications compared to previous computations.
 The results for the untilted cone are then generalized to tilted cones.
-The computation is quite lengthy, and the thesis is explicit in each step, with the goal being that a graduate level student should be able to comfortably follow the calculations.
+The computation is quite lengthy, and the thesis is explicit in each step, with the goal being that a graduate-level student should be able to comfortably follow the calculations.
 
 The chapter is divided into sections, each representing a somewhat contained part of the calculation.
-The text is not, however, written such that a reader should expect to understand a section without reading the preceeding one.
+The text is not, however, written such that a reader should expect to understand a section without reading the preceding one.
 Due to the nature of the work, certain sections are rather technical.
 For the benefit of the reader, we have included summaries of intermediate results, enabling the reader to skip the more technical parts.
 In particular, the latter part of \cref{sec:ll-tilt} and section~\ref{sec:explicit-form-tilt} may be skipped without much loss.
@@ -123,19 +123,19 @@ In frequency and momentum space the response function is thus
 % \section{Complications and considerations}
 \section{General remarks}
 Before beginning the computation, we here briefly mention some complications and considerations important to our result.
-Firstly we discuss how the charge current form a Kubo calculation relate to experimentally measurable currents.
-Secondly we discuss the ambiguity related to the energy-momentum tensor.
+Firstly we discuss how the charge current from a Kubo calculation relates to experimentally measurable currents.
+Secondly, we discuss the ambiguity related to the energy-momentum tensor.
 
 \subsection{Transport and magnetization}
 \label{sec:transport-magnetization}
-Recall that we generally define the transport coeffieicents (\cref{eq:17})
+Recall that we generally define the transport coefficients (\cref{eq:17})
 \[
 J^i = -e L_{ij}^{11} \left[
           E_j - T \nabla_j \frac{\mu}{T}
   \right] - e L^{12}_{ij} T \nabla_j \frac{1}{T},
 \]
 where \( J^i \) is the electrical current.
-In our work, we focus on the \( L^{12} \) coefficient, however the following discussion is valid also more generally.
+In our work, we focus on the \( L^{12} \) coefficient, however, the following discussion is valid also more generally.
 The definition of transport currents becomes more subtle in systems with broken time-reversal symmetry\cite{vanderwurffMagnetovorticalThermoelectricTransport2019, chernodubThermalTransportGeometry2021}.
 In such systems, unobservable, circulating \emph{magnetization} currents arise.
 These currents do not contribute to transport, but the Kubo treatment derives the local current, which in general also includes non-transporting currents.
@@ -158,7 +158,7 @@ The result from the Kubo calculation is therefore the actual transport current.
 
 
 \subsection{Comment on the energy-momentum tensor}\label{sec:commen-T}
-There is some ambiguity with regards to the definition of the energy-momentum tensor\cites{kachelriessQuantumFieldsHubble2018}{chernodubThermalTransportGeometry2021}{vanderwurffMagnetovorticalThermoelectricTransport2019}{forgerCurrentsEnergyMomentumTensor2004}.
+There is some ambiguity regarding the definition of the energy-momentum tensor~\cites{kachelriessQuantumFieldsHubble2018}{chernodubThermalTransportGeometry2021}{vanderwurffMagnetovorticalThermoelectricTransport2019}{forgerCurrentsEnergyMomentumTensor2004}.
 The \emph{canonical} energy-momentum tensor, derived from Lagrangian mechanics, is defined as
 \begin{equation}
 	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
@@ -168,10 +168,11 @@ On the other hand, from general relativity, the \emph{dynamical} energy-momentum
 \begin{equation}
 	T^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
 \end{equation}
-Immediately, we see that the first definition is in general not symmetric, while the latter is, as the metric is always symmetric \footnote{something with torsion never}.
+Immediately, we see that the first definition is in general not symmetric, while the latter is, as the metric is always symmetric%
+\footnote{something with torsion never}.
 As the energy-momentum tensor is an observable, this presents a problem:
 how should the tensor be defined?
-This issue is not trivial, and has puzzled physicists for decades\cite{forgerCurrentsEnergyMomentumTensor2004}.
+This issue is not trivial and has puzzled physicists for decades\cite{forgerCurrentsEnergyMomentumTensor2004}.
 
 Superficially, we make the following observations.
 The \emph{defining} property of the energy-momentum tensor is its conservation law
@@ -187,7 +188,7 @@ We can then define another tensor
   \label{eq:79}
   T^{\mu\nu} = \hat{T}^{\mu \nu} + \partial_{\alpha} S^{\alpha \mu \nu}.
 \end{equation}
-By letting the additional term be anti-symmetric \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), it is divergence free.
+By letting the additional term be antisymmetric \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), it is divergence free.
 This is easily shown as follows:
 \begin{align}
   \label{eq:80}
@@ -196,8 +197,8 @@ This is easily shown as follows:
   &= -\partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu},
 \end{align}
 where we used the commutation of partial derivatives and relabelling of the dummy indices \( \mu, \lambda \).
-By an appropriate choice of \( S^{\alpha \mu \nu} \) the canonical energy-momentum tensor may be symmetrized, importantly while still abiding the conservation law.
-The correction that symmetrizes the energy-momentum tensor is known as the ``Belifnante tensor'', which for the Dirac Lagrangian is\cite{chernodubThermalTransportGeometry2021}
+By an appropriate choice of \( S^{\alpha \mu \nu} \) the canonical energy-momentum tensor may be symmetrized, importantly while still abiding by the conservation law.
+The correction that symmetrizes the energy-momentum tensor is known as the ``Belinfante tensor'', which for the Dirac Lagrangian is\cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
   \label{eq:81}
   S^{\alpha \mu \nu} = \frac{1}{8} \bar{\Psi}\left[ \gamma^{\alpha}, \sigma^{\mu\nu} \right] \Psi,
@@ -221,11 +222,11 @@ Writing it out explicitly
   \partial_0T^{00} + \partial_i T^{i0} = \partial_0 \epsilon + \partial_i j^i_{\epsilon} = 0,
 \end{equation}
 with \( \epsilon \) the energy density and \( \vec{j}_{\epsilon} \) the energy density current, the question is really seen to be finding the energy density current, ignoring all formal arguments about the energy-momentum tensor in a general context.
-Using such a line of reasoning \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems, is the unsymmetrized canonical tensor.
+Using such a line of reasoning \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems is the unsymmetrized canonical tensor.
 In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by \textcite{arjonaFingerprintsConformalAnomaly2019}.
-In the untilted case, the two definitions give the same contribution, while for a titled cone, the response from the two definitions differ.
+In the untilted case, the two definitions give the same contribution, while for a tilted cone, the response from the two definitions differs.
 
-In the case of an untilted system, the components of interest of the canonical energy-momentum tensor reads
+For an untilted system, the components of interest of the canonical energy-momentum tensor reads
 \begin{subequations}
 \begin{align}
   T^{y 0} &= \frac{s i}{4}
@@ -281,7 +282,7 @@ where \( \epsilon^0_{\kappa_z m s} \) is the energy levels of the untilted syste
 The last term in \cref{eq:163} gives a non-zero contribution to the total response, and so the results for a tilted cone is generally dependent on the choice of the energy-momentum tensor.
 
 The calculation presented in the thesis has for completeness been carried out also for the symmetric energy-momentum tensor as well.
-The result presented in \cref{sec:otherterm-appendix}.
+The result is presented in \cref{sec:otherterm-appendix}.
 
 
 \todo{Decide dimless or dimfull quantities}
