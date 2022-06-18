@@ -111,7 +111,7 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
         extra y ticks = 0,
         legend columns = 3,
         legend entries = {Filled right movers, Filled left movers},
-        legend to name = leg,
+        legend to name=chiralLeg,
         domain=-4:4,
         ]
         \addplot [domain=-4:0, samples=8, mark=*, only marks, very thick, blue] {x};
@@ -142,7 +142,10 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
       \end{axis}
     \end{tikzpicture}\\
 
-    \ref{leg}  % Legend
+    % \tikzset{/tikz/external/export next=false}\ref{chiralLeg}  % Legend
+    % \ref{chiralLeg}  % Legend
+    \pgfplotslegendfromname{chiralLeg}
+    %% NB!!! For the ref to work, you must manually!! call the jobnmme
     % }
     \caption{Dispersion of Weyl fermions, black showing unfilled states, blue filled right movers, and red filled left movers.
       \textbf{(Left)} No electric field applied, Fermi level at the crossing.

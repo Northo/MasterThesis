@@ -83,5 +83,7 @@
     }
   \end{groupplot}
   %% Shfit half vertical sep
-  \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
+  \node[anchor=west, yshift=4pt] at (contribs c2r2.north east)
+  {\pgfplotscolorbarfromname{mycolorbar}};
+  % \node[anchor=west, yshift=4pt] at (contribs c2r2.north east) {\ref{mycolorbar}};
 \end{tikzpicture}
