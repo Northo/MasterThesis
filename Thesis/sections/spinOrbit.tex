@@ -1,5 +1,4 @@
-\section{Spin-orbit interaction}
-\label{sec:spin-orbit}
+\section{Spin-orbit interaction}\label{sec:spin-orbit}
 Spin-orbit interactions are not used directly in this thesis.
 It is, however, relevant to include some superficial introduction to the subject, both in order to conclude that spin-orbit interactions are not something one has to consider in later derivations of this thesis, and also that it might prove useful in future applications of the ideas and theory discussed in the thesis.
 
@@ -147,52 +146,46 @@ The spin together with the energy solutions are shown in \cref{fig:rashba}.
 %     \caption{Band splitting under Zeeman term. Note the breaking of Kramer's doublet.}
 %   \end{subfigure}
 %   \caption{Illustration of band splitting when lifting the degeneracy with Zeeman filed and SoC}
-%   \label{fig:band_splitting}
 % \end{figure}
 
 
-\begin{comment}
-\begin{figure}[ht]
-  \centering
-  \ref{named}  %% Legend
-  \begin{tikzpicture}
-    \begin{groupplot}[group style={
-        group name=splitting,
-        group size=2 by 1,
-        horizontal sep=3pt,
-      },
-      xmin=-5, xmax=5,
-      legend to name=named,
-      cycle list name=linestyles,
-      ]
-      \nextgroupplot
-      \addplot {(x-1)^2}
-      node[left]{$\uparrow$};
-      
-      \addplot {(x+1)^2}
-      node[left]{$\downarrow$};
-      
-      \draw[<->] (-3, 4) node[above]{$\downarrow$} -- (3, 4) node[above] {$\uparrow$};
-      \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
+% \begin{figure}[ht]
+%   \centering
+%   \ref{named}  %% Legend
+%   \begin{tikzpicture}
+%     \begin{groupplot}[group style={
+%         group name=splitting,
+%         group size=2 by 1,
+%         horizontal sep=3pt,
+%       },
+%       xmin=-5, xmax=5,
+%       legend to name=named,
+%       cycle list name=linestyles,
+%       ]
+%       \nextgroupplot
+%       \addplot {(x-1)^2}
+%       node[left]{$\uparrow$};
 
-      \nextgroupplot[yticklabels={}]
-      \addplot {(x)^2}
-      node[left] {$\uparrow$};
-      \addplot {(x)^2 + 10}
-      node[left] {$\downarrow$};
+%       \addplot {(x+1)^2}
+%       node[left]{$\downarrow$};
 
-      \draw[<->] (-3, 3^2) node[above]{$\uparrow$} -- (3, 3^2) node[above]{$\uparrow$};
-      \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
+%       \draw[<->] (-3, 4) node[above]{$\downarrow$} -- (3, 4) node[above] {$\uparrow$};
+%       \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
 
-      \legend{$\uparrow$, $\downarrow$}
-    \end{groupplot}
-  \end{tikzpicture}
-  \caption{Illustration of band splitting when lifting the degeneracy with Zeeman filed and SoC.
-    For the SoC (left) Kramer's doublet is not broken. That is, there is an energy degeneracy with opposite spins and momentum.
-    %\todo{find out if this is the actual definiton of Kramer's doublet}
-    For the Zeeman case (right) Kramer's doublet is broken.}
-  \label{fig:band_splitting}
-\end{figure}
-\end{comment}
+%       \nextgroupplot[yticklabels={}]
+%       \addplot {(x)^2}
+%       node[left] {$\uparrow$};
+%       \addplot {(x)^2 + 10}
+%       node[left] {$\downarrow$};
 
+%       \draw[<->] (-3, 3^2) node[above]{$\uparrow$} -- (3, 3^2) node[above]{$\uparrow$};
+%       \draw[very thin, gray, dotted] (0, -10) -- (0, 40);
 
+%       \legend{$\uparrow$, $\downarrow$}
+%     \end{groupplot}
+%   \end{tikzpicture}
+%   \caption{Illustration of band splitting when lifting the degeneracy with Zeeman filed and SoC.
+%     For the SoC (left) Kramer's doublet is not broken. That is, there is an energy degeneracy with opposite spins and momentum.
+%     %\todo{find out if this is the actual definiton of Kramer's doublet}
+%     For the Zeeman case (right) Kramer's doublet is broken.}
+% \end{figure}
