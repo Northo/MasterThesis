@@ -1,9 +1,9 @@
 % Assumes \datafiles is set
 \begin{tikzpicture}
   \begin{axis}[
-    title=\ifthenelse{\equal{\plottitle}{}}{Convergence Plot}{\plottitle},
-    xlabel={Number of terms $N$},
-    ylabel={$\gamma_N$},
+    % title=\ifthenelse{\equal{\plottitle}{}}{Convergence Plot}{\plottitle},
+    xlabel={Number of terms $\bar{N}$},
+    ylabel={$\gamma_{\bar{N}}$},
     grid=major,
     width=\textwidth,
     height=.62\textwidth,
@@ -15,8 +15,8 @@
     \ifthenelse{\isundefined\prefix}{\newcommand\prefix{t_x=}}{}
     \foreach \datafile/\entry in \datafiles {
       \addplot[mark=o] table[col sep=comma] {data/\datafile};
-      \edef\tmp{\noexpand\addlegendentry{$ \prefix \entry $}}
-      \tmp
+      % \edef\tmp{\noexpand\addlegendentry{$ \prefix \entry $}}
+      % \tmp
     }
   \end{axis}
 \end{tikzpicture}

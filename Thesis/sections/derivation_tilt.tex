@@ -529,14 +529,14 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
     \label{eq:118}
     \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
     \frac{e^2v_F B }{2 (2 \pi)^2 }
-    \gamma^{t_x}_N,
+    \gamma^{t_x}_{\bar{N}},
   \end{equation}
   with
   \begin{equation}
     \label{eq:119}
-    \gamma^{t_x}_N =
+    \gamma^{t_x}_{\bar{N}} =
     -4 \alpha^3
-    \sum\limits_{mn}^{N}
+    \sum\limits_{mn}^{{\bar{N}}}
     \int \mathrm{d}\kappa_z
     e^{-P^2}
     \frac{
@@ -547,7 +547,7 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
       (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
     },
   \end{equation}
-  where the summation goes over \( m > 0, n \leq 0 \), indicated in \cref{fig:nmregion}, capped at the Landau level \( N \).
+  where the summation goes over \( m > 0, n \leq 0 \), indicated in \cref{fig:nmregion}, capped at the Landau level \( \bar{N} \).
   The integration limits are \( (-\infty, \infty) \), except for \( n = 0 \), where they are \( [0, \infty) \).
 
   The tilt \( t_x \) enters the expression only through its square, in \( \alpha \) and \( P \), and so the contribution is even in \( t_x \).
@@ -590,10 +590,10 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
 \begin{figure}[htb]
   \centering
   \input{figures/txmnplane.pgf}
-  \caption{Contributions to \( \gamma_N \) from \( m\to n \) transitions for different values of \( t_x \).
+  \caption{Contributions to \( \gamma_{\bar{N}} \) from \( m\to n \) transitions for different values of \( t_x \).
     In order to retain contrast, the color values are capped at \( 0.1 \), meaning that the \( \gamma_0 \) contributions are clipped.
     Note that all quadrants of the \( m,n \)-plane are shown, although as proven in the main text, only the fourth quadrant needs to be computed, as the second quadrant contributions are equal.
-    Lastly, the \( \gamma_N \) square regions indicated in the first pane are drawn with lengths \( 2N + 1 \), while they in the main text are defined with sides \( 2N \);
+    Lastly, the \( \gamma_{\bar{N}} \) square regions indicated in the first pane are drawn with lengths \( 2 \bar{N} + 1 \), while they in the main text are defined with sides \( 2 \bar{N} \);
     this choice of representation is only to make the figure more clear, as the colored tiles have edges at half-integer values.
     \label{fig:contribs}
     }
@@ -653,12 +653,12 @@ In Type-I systems, the selection rules from the step functions are independent o
 The response is therefore
 \begin{equation}
   \label{eq:122}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{2 (2\pi)^2} (\gamma_N^0 + \gamma_{\text{div}, N}),
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2v_F B}{2 (2\pi)^2} (\gamma_{\bar{N}}^0 + \gamma_{\text{div}, {\bar{N}}}),
 \end{equation}
-where \( \gamma_N^0 \) is the prefactor of the untilted case, and according to \cref{eq:93}
+where \( \gamma_{\bar{N}}^0 \) is the prefactor of the untilted case, and according to \cref{eq:93}
 \begin{equation}
   \label{eq:123}
-  \gamma_{\text{div}, N} = -4 \sum\limits_{i=0}^{N} \int \mathrm{d} \kappa_z \xi(\kappa_z)
+  \gamma_{\text{div}, {\bar{N}}} = -4 \sum\limits_{i=0}^{{\bar{N}}} \int \mathrm{d} \kappa_z \xi(\kappa_z)
   2 \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
 \end{equation}
 which has an UV divergence.
@@ -670,12 +670,12 @@ Introduce the momentum cutoff \( \Lambda \), in which case the integral can be s
 \end{equation}
 and the contribution from each term of the sum
 \begin{multline}
-  \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
+  \gamma_{\text{div}, {\bar{N}}} - \gamma_{\text{div}, {\bar{N}}-1} =
   2 t_z
   \Bigg\{
-    \Lambda\left(\sqrt{\Lambda^2 + N} - \sqrt{\Lambda^2 + N + 1}  \right)\\
-    + (N + 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + N + 1} } \right]
-    - N \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + N}}\right]
+    \Lambda\left(\sqrt{\Lambda^2 + \bar{N}} - \sqrt{\Lambda^2 + \bar{N} + 1}  \right)\\
+    + (\bar{N} + 1) \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + \bar{N} + 1} } \right]
+    - \bar{N} \tanh^{-1}\left[\frac{\Lambda}{\sqrt{\Lambda^2 + \bar{N}}}\right]
     \Bigg\},
     \label{eq:125}
 \end{multline}
@@ -690,7 +690,7 @@ Assuming \( \Lambda \gg 1 \) the expression is approximated by
   t_z
   \left(
     \left[
-  -1 + N \log\left(\frac{N}{N+1}\right) - \log \frac{N+1}{4}
+  -1 + \bar{N} \log\left(\frac{\bar{N}}{\bar{N}+1}\right) - \log \frac{\bar{N}+1}{4}
   \right]
  + 2 \log\Lambda
 \right) + \mathcal{O}\left(\frac{1}{\Lambda^2}\right).
@@ -746,7 +746,7 @@ The \( 0\to 1 \) transitions was computed analytically, and found to be
   |t_z| \sinh^{-1}\left(\frac{1}{\sqrt{t_{z}^2-1} }\right) -1
 \right  ).
 \end{equation}
-For a general \( n \to m, \; N>0, M=N+1 \) transition, the contribution \( \gamma_N - \gamma_{N-1} \) was found to have very lengthy expressions.
+For a general \( n \to m, \; N>0, M=N+1 \) transition, the contribution \( \gamma_{\bar{N}} - \gamma_{\bar{N}-1} \) was found to have very lengthy expressions.
 Consult Table~\ref{tab:typeii-expressions} to find the appropriate expressions for positive and negative tilt, and interband and intraband transitions.
 
 \begin{table}[ht]
@@ -797,12 +797,12 @@ from a single Weyl cone was found  to be
   \lim_{\omega \to 0} \lim_{\vec{q}\to 0}
   \chi^{xy}
   =
-  \gamma_{N}
+  \gamma_{\bar{N}}
   \frac{e^2 B v_F}{2 (2\pi )^2 \hbar },
 \end{equation}
-with $\gamma _N$ a prefactor dependent on the chirality \( s \), the tilt \( \vec{t} \), and  how many landau levels are included in the final evaluation of the response function.
+with $\gamma _{\bar{N}}$ a prefactor dependent on the chirality \( s \), the tilt \( \vec{t} \), and  how many landau levels are included in the final evaluation of the response function.
 
-In general, the prefactor \( \gamma_N \) diverges as $N\to \infty$.
+In general, the prefactor \( \gamma_{\bar{N}} \) diverges as $\bar{N} \to \infty$.
 However, not all Landau levels are filled, and thus the sum should not be taken to all levels.
 Similarly to a quantum Hall effect, the number of filled bands, the filling factor $\nu $, is inverse proportional to the $B$-field strength
 \begin{equation}
@@ -860,7 +860,7 @@ This definition effectively sets a ceiling on which Landau levels we consider.
 The integral was computed numerically for \( M,N \leq 14 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in figure~\ref{fig:contribs}.
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
-The total contribution \( \gamma_N \) as a function of \( N \) is shown in figure~\ref{fig:total_contribs}.
+The total contribution \( \gamma_{\bar{N}} \) as a function of \( \bar{N} \) is shown in figure~\ref{fig:total_contribs}.
 The contribution is even in \( t_x \), and the two cones have the same contribution, as shown analytically in section~\ref{sec:perptiltsum}.
 Also shown in figure~\ref{fig:total_contribs} is \( \gamma_0 \) as a function of \( t_x \), which is seen to be strictly decreasing to zero as \( t_x \to 1 \).
 This last observation is discussed further in section~\ref{sec:other-observe:zeroton}, under
@@ -890,7 +890,7 @@ This last observation is discussed further in section~\ref{sec:other-observe:zer
       legend style={at={(0.5, 1.1)}, anchor=south,},
       % legend to name=contribs,
       xlabel=Number of Landau levels,
-      ylabel=\( \gamma_N \),
+      ylabel=\( \gamma_{\bar{N}} \),
       width=12cm,
       height=8cm,
       name=myaxis,
@@ -924,7 +924,7 @@ This last observation is discussed further in section~\ref{sec:other-observe:zer
     % \node[anchor=south] at (myaxis.north) {\ref{contribs}};
   \end{tikzpicture}
   } %% Resizebox
-  \caption{Total contribution \( \gamma_N \) for a perpendicular tilt \( t_x \), which only has an even component.
+  \caption{Total contribution \( \gamma_{\bar{N}} \) for a perpendicular tilt \( t_x \), which only has an even component.
     See main text for details on how \( \gamma_N \) is defined.
     Shown in dashed \textcolor{teal!80!black}{teal} on secondary axis (gray labels) is \( \gamma_0 \) as a function of \( t_x \), which is strictly decreasing from 1 at \( t_x = 0 \) to 0 at \( t_x = 1 \).
     \label{fig:total_contribs}}
@@ -934,20 +934,20 @@ This last observation is discussed further in section~\ref{sec:other-observe:zer
 \subsection{Parallel tilt}
 \subsubsection{Type-I}
 \todo{Should we also compute the momentum cutoff for nontilted terms?}
-In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, N} \), \cref{eq:123}, dependent on a momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 e B}  \), where \(k^{\text{cutoff}}\) is the physical cutoff.
-The contribution from each new Landau level, \( \gamma_{\text{div}, N}-\gamma_{\text{div}, N} \) is shown in \cref{fig:divergent-factor}.
+In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, \bar{N}} \), \cref{eq:123}, dependent on a momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 e B}  \), where \(k^{\text{cutoff}}\) is the physical cutoff.
+The contribution from each new Landau level, \( \gamma_{\text{div}, \bar{N}}-\gamma_{\text{div}, \bar{N}} \) is shown in \cref{fig:divergent-factor}.
 In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( \mathcal{O}(1 /\Lambda^2) \), we found \cref{eq:126},
 \[
-  \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1} =
+  \gamma_{\text{div}, \bar{N}} - \gamma_{\text{div}, \bar{N}-1} =
   t_z
   \left(
     \left[
-      -1 + N \log\left(\frac{N}{N+1}\right) - \log \frac{N+1}{4}
+      -1 + \bar{N} \log\left(\frac{\bar{N}}{\bar{N}+1}\right) - \log \frac{\bar{N}+1}{4}
     \right]
     + 2 \log\Lambda
   \right).
 \]
-The first term, independent of \( \Lambda \), is a negative factor that decreases as \( N \) increases, and goes like \( -\log N \) for large \( N \).
+The first term, independent of \( \Lambda \), is a negative factor that decreases as \( \bar{N} \) increases, and goes like \( -\log \bar{N} \) for large \( \bar{N} \).
 The contribution is proportional to \( t_z \), i.e. there is no even component, so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In the case of inversion symmetry, the contributions from the two chiralities are equal and add up.
 The contribution has the same sign as the tilt, and the magnitude depends on the landau cutoff \( N \) and momentum cutoff \( \Lambda \).
@@ -959,7 +959,7 @@ The contribution has the same sign as the tilt, and the magnitude depends on the
     \begin{tikzpicture}
       \begin{axis}[
         xlabel=\( \Lambda \),
-        ylabel={\( [ \gamma_{\text{div}, N} - \gamma_{\text{div}, N-1}] /t_z \)},
+        ylabel={\( [ \gamma_{\text{div}, \bar{N}} - \gamma_{\text{div}, \bar{N}-1}] /t_z \)},
         legend pos=south east,
         % cycle list name=exotic,
         cycle list={
@@ -978,7 +978,7 @@ The contribution has the same sign as the tilt, and the magnitude depends on the
         ]
         \foreach \i in {1,...,5} {
           \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
-          \addlegendentryexpanded{\( N = \the\numexpr\i-1\relax \)};
+          \addlegendentryexpanded{\( \bar{N} = \the\numexpr\i-1\relax \)};
         }
       \end{axis}
     \end{tikzpicture}
@@ -1123,19 +1123,19 @@ We therefore do not have conclusive result, and do not want to present them toge
 However, they are of great importance, and will be investigated further in future work.
 
 \subsubsection{Perpendicular tilt with only zeroth level transitions}\label{sec:other-observe:zeroton}
-Above, we defined the prefactor \( \gamma_N \) for perpendicular tilt as all transitions \( m\to n, \: |m|,|n| < N \);
-in other words, all transitions between Landau levels up to some cutoff level \( N \).
+Above, we defined the prefactor \( \gamma_{\bar{N}} \) for perpendicular tilt as all transitions \( m\to n, \: |m|,|n| < \bar{N} \);
+in other words, all transitions between Landau levels up to some cutoff level \( \bar{N} \).
 However, there are other possible ways one may consider including the Landau level cutoff.
 In the untilted case, the \emph{dipolar} selection rule \( M = N + 1 \) makes the choice obvious.
 With no such selection rule, the choice is however less obvious, and one other natural choice would be the following.
-Assuming a large magnetic field, only the lowest Landau level is occupied~\cite{chernodubThermalTransportGeometry2021}, and so it would be natural to only consider \( 0 \to n, |n| < N \) transitions.
+Assuming a large magnetic field, only the lowest Landau level is occupied~\cite{chernodubThermalTransportGeometry2021}, and so it would be natural to only consider \( 0 \to n, |n| < \bar{N} \) transitions.
 Doing this, the resulting response is very interesting!
-If we define by \( \gamma_N \) the sum of all \( 0\to n, |n| < N \) transitions, and compute \( \gamma_N \) as a function of the tilt \( t_x \) for various \( N \), we get the result shown in figure~\ref{fig:0tontx}.
-When including transitions to higher Landau levels, \( \gamma_N \) as a function of \( t_x \) is no longer strictly decreasing -- it has a maximum at \( 0 < t_x < 1 \)!
+If we define by \( \gamma_{\bar{N}} \) the sum of all \( 0\to n, |n| < \bar{N} \) transitions, and compute \( \gamma_{\bar{N}} \) as a function of the tilt \( t_x \) for various \( \bar{N} \), we get the result shown in figure~\ref{fig:0tontx}.
+When including transitions to higher Landau levels, \( \gamma_{\bar{N}} \) as a function of \( t_x \) is no longer strictly decreasing -- it has a maximum at \( 0 < t_x < 1 \)!
 This would be a very interesting experimental signature.
 
 One pertinent question is how the cutoff level \( N \) should be found in this context.
-The cutoff \( N \) is not tunable in any obvious way -- we have already assumed the system to be in the deep quantum limit where only the zeroth level is Landau level is filled.
+The cutoff \( \bar{N} \) is not tunable in any obvious way -- we have already assumed the system to be in the deep quantum limit where only the zeroth level is Landau level is filled.
 We do note that the effect of including ever-higher levels is diminishing;
 the \( 0 \to n \) contributions become smaller for higher \( n \), and seem to converge as \( n \) becomes large%
 \footnote{This, of course, warrants an investigation into the \( 0\to n \) transition contributions shown in \cref{fig:contribs}, to find if they are indeed decreasing faster than \( 1 / n \).}.
@@ -1165,13 +1165,13 @@ Here, however, it qualitatively changes the response as a function of the tilt!
       ]
       \foreach \i in {1,3,5,7,10,12} {
       \addplot table[y index=\i, col sep=comma] {data/contribTilttx-zerothll.csv};
-      \addlegendentryexpanded{\( N = \ifnum\i<10\relax \phantom{1}\i\else\i\fi \)};
+      \addlegendentryexpanded{\( \bar{N} = \ifnum\i<10\relax \phantom{1}\i\else\i\fi \)};
       % \addlegendentryexpanded{\( N = \i \)};
       % \addplot[mark=o] table[x expr=-\thisrowno{0}, y index=\i, col sep=comma] {data/contribTilttx-zerothll.csv};
       }
     \end{axis}
   \end{tikzpicture}
-  \caption{Numerically computed values of the prefactor \( \gamma_N \) with only the first Landau level included for perpendicular tilt \( t_x \).
+  \caption{Numerically computed values of the prefactor \( \gamma_{\bar{N}} \) with only the first Landau level included for perpendicular tilt \( t_x \).
     The contribution is even in \( t_x \), and vanish as \( |t_x| \to 1 \).
     For clarity, only every 4th mark is drawn.
     \label{fig:0tontx}
@@ -1199,7 +1199,7 @@ However, both the issue of which Landau levels to include in the case of perpend
 We may, however, make some conclusions without explicit calculations in the case of parallel tilt.
 We restrict ourselves to the Type-I case, where the aforementioned gap is finite.
 In the case of zero temperature, the situation is rather easy.
-Recall that the contribution is \( \gamma^0_N + \gamma_{\text{div}, N} \).
+Recall that the contribution is \( \gamma^0_{\bar{N}} + \gamma_{\text{div}, \bar{N}} \).
 The first term explicitly depends on the chemical potential, but it is also independent of the tilt.
 The second term is tilt-dependent, and the chemical potential enters only through the Fermi-Dirac distribution;
 when the chemical potential is within the gap, the distribution is independent of the chemical potential, for zero temperature.

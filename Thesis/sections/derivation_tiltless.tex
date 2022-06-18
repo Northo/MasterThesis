@@ -834,37 +834,37 @@ Including only the first term of the sum, we find
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
 \end{equation}
 where we have reinserted the explicit \( \hbar \).
-Including contributions from the \( N \) lowest landau levels, one acquire additional numerical prefactors,
+Including contributions from the \( \bar{N} \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
   \label{eq:95}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_N \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_{\bar{N}} \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
 \end{equation}
 where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
-Furthermore, \( \gamma_N \) goes like \( \log N \).
+Furthermore, \( \gamma_{\bar{N}} \) goes like \( \log \bar{N} \).
 The first 300 contributions are shown in Figure \ref{fig:contributions}.
 
 Solving the integral analytically, we obtained the contribution from each term
 \begin{equation}
-  \gamma_N - \gamma_{N-1} = 1 + 2 N \left\{1 - (1+N) \log(1 + \frac{1}{N}) \right\} , \quad N > 0.
+  \gamma_{\bar{N}} - \gamma_{\bar{N}-1} = 1 + 2 \bar{N} \left\{1 - (1+\bar{N}) \log(1 + \frac{1}{\bar{N}}) \right\} , \quad \bar{N} > 0.
 \end{equation}
 The sum can be shown to equal the rather nasty expression
 \begin{equation}
   \begin{split}
-  \gamma_N = \gamma_0 + \frac{1}{3} &\Big(
-    6 \zeta ^{(1,0)}(-2,N+1)
-    -6 \zeta ^{(1,0)}(-2,N+2)
-    +6 \zeta^{(1,0)}(-1,N+1)\\
-    &\hphantom{\Big(} \mathllap{+} 6 \zeta^{(1,0)}(-1,N+2)
+  \gamma_{\bar{N}} = \gamma_0 + \frac{1}{3} &\Big(
+    6 \zeta ^{(1,0)}(-2,\bar{N}+1)
+    -6 \zeta ^{(1,0)}(-2,\bar{N}+2)
+    +6 \zeta^{(1,0)}(-1,\bar{N}+1)\\
+    &\hphantom{\Big(} \mathllap{+} 6 \zeta^{(1,0)}(-1,\bar{N}+2)
     +12 \log (\xi)
-    +3 N^2
-    +6 N
+    +3 \bar{N}^2
+    +6 \bar{N}
     -1
   \Big),
   \end{split}
 \end{equation}
 where \( \xi \approx  1.28243 \) is Glaisher's constant.
-This expression goes like \( \log N \).
-\todo{Series expand in \( x=\frac{1}{N} \) }
+This expression goes like \( \log \bar{N} \).
+\todo{Series expand in \( x=\frac{1}{\bar{N}} \) }
 
 \begin{figure}[ht]
   \centering
@@ -874,7 +874,7 @@ This expression goes like \( \log N \).
   \newcommand\prefix{\gamma_N}
   \tikzsetnextfilename{notiltcontrib}
   \input{figures/total_prefactor.pgf}
-  \caption{Prefactor \( \gamma_N \) as a function of the number of inlcuded Landau levels~\( N \).}
+  \caption{Prefactor \( \gamma_{\bar{N}} \) as a function of the number of inlcuded Landau levels~\( \bar{N} \).}
   \label{fig:contributions}
 \end{figure}
 
