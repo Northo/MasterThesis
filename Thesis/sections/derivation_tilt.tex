@@ -754,6 +754,13 @@ Consult \cref{tab:typeii-expressions} to find the appropriate expressions for po
 
 \begin{table}[ht]
   \centering
+  \caption{\label{tab:typeii-expressions}%
+    % The expression for the \( m\to n; N> 0, M=N+1 \) transition is given by the equation number at the various choices of \( t_z \) and \( \sign (n) \).
+    Decision matrix for the expression of the \( m \to n; N > 0, M =N+1 \) transition over different regions.
+    Expressions given in Mathematica code format;
+    the code listings are found in \cref{cha:long_expression}.
+    % Code listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
+    See main text for details.}
   \renewcommand\arraystretch{2.5}
   \begin{tabular}{ll | c | c |}
     &\multicolumn{1}{c}{}&\multicolumn{2}{c}{\textbf{Tilt direction}}\\[-2ex]
@@ -776,16 +783,6 @@ Consult \cref{tab:typeii-expressions} to find the appropriate expressions for po
   %   \( n > 0 \)& Lst.~\ref{lst:typeii-intraband-tzpos} & Lst.~\ref{lst:typeii-intraband-tzneg}\\
   %   \cline{2-3}
   % \end{tabular}
-
-  \caption{
-    % The expression for the \( m\to n; N> 0, M=N+1 \) transition is given by the equation number at the various choices of \( t_z \) and \( \sign (n) \).
-    Decision matrix for the expression of the \( m \to n; N > 0, M =N+1 \) transition over different regions.
-    Expressions given in Mathematica code format;
-    the code listings are found in \cref{cha:long_expression}.
-    % Code listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
-    See main text for details.%
-  }
-  \label{tab:typeii-expressions}
 \end{table}
 
 
@@ -833,6 +830,9 @@ The total contribution \( \gamma_{\text{tot}} \) for the two cones is found by t
 
 \begin{table}[h]
   \centering
+  \caption{The total contribution from two cones \( \gamma_{\text{tot}} \) is found by linear combinations of the even and odd components of \( \gamma \), depending on the case at hand.
+    Note that total contribution given in the table is \( \gamma_{\text{tot}} /2 \).%
+    \label{tab:gamma-tot}}
   \begin{tabular}{l c}
     \toprule
     Case & Total contribution, \( \gamma_{\text{tot}} /2 \)\\
@@ -841,9 +841,6 @@ The total contribution \( \gamma_{\text{tot}} \) for the two cones is found by t
     Parallel tilt, broken inversion symmetry & \( \gamma_{\text{even}} \)\\
     Parallel tilt, inversion symmetry &  \(  \gamma_{\text{odd}} + \gamma_{\text{even}} = \gamma \)\\\bottomrule
   \end{tabular}
-  \caption{The total contribution from two cones \( \gamma_{\text{tot}} \) is found by linear combinations of the even and odd components of \( \gamma \), depending on the case at hand.
-    Note that total contribution given in the table is \( \gamma_{\text{tot}} /2 \).
-    \label{tab:gamma-tot}}
 \end{table}
 
 \subsection{Perpendicular tilt}
