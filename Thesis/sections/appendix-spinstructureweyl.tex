@@ -38,9 +38,25 @@ Simply evaluating \cref{eq:133}, yields
 \end{equation}
 
 The spin structure is that of a hedgehog.
+This gives a nice intuitive explanation of the symmetries of a Dirac cone.
+Recall that under an inversion transformation, momentum is flipped while spin is invariant.
+Under time-reversal both momentum and spin change direction.
+When all symmetries are present, the Dirac cone consists of two superimposed Weyl cones.
+Breaking inversion symmetry separates the cones in momentum while breaking time-reversal symmetry separates the cones in energy\footnote{Giving a nodal loop.}.
+The three cases are shown schematically in \cref{fig:spinStructure}.
+By inspection, one sees that when the cones are separated in momentum, the spin at the opposite momentum has the same direction, and so time-reversal symmetry is broken.
+Similarly, when the cones are separated in energy, the spin at the opposite momentum has the opposite direction, and so inversion symmetry is broken.
 
-\begin{figure}[ht]
+
+\begin{figure}[p]
   \centering
   \includegraphics[width=0.75\textwidth]{figures/spinStructureWeyl}
-  \caption{\label{fig:spinStructure} }
+  \caption{\label{fig:spinStructure}%
+    Schematic overview of symmetry properties of a Dirac cone.
+    Drawn is the energy contour of a Dirac cone for some non-zero energy;
+    in other words, the intersection of a Dirac cone with a plane at some energy \( E \neq 0 \).
+    The arrows indicate the spin direction.
+    From top to bottom, there is a Dirac cone with two superimposed Weyl cones, momentum separated Weyl cones, and energy separated Weyl cones.
+    The solid and dashed lines corresponds to the two chiralities.
+  }
 \end{figure}

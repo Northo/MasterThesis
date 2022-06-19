@@ -263,6 +263,11 @@ I also suspect that this is quite interesting, as the fermi surface and region o
 Place the tilt in the metric
 
 * Ideas and Problems
+
+** TODO Tips and tricks?
+Where can one place 'reccomendations/lessons learned?'
+For example, use xi instead of xi1 and xi2
+
 ** Directions
 We have made certain choices of which directions we consider.
 Specifically, we have chosen to specifically consider the perpendicular tilt to be parallell to the charge current.

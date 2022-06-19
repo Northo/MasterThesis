@@ -69,21 +69,32 @@ We call these electron and hole pockets, respectively.
 Note that in this model, the pockets are shared between the two nodes.
 One may also construct tight binding models with isolated pockets \cite{mccormickMinimalModelsTopological2017}.
 
-\begin{figure}[htb]
+\begin{figure}[p]
   \centering
-  \begin{subcaptionblock}[t]{0.49\textwidth}
+  \begin{subcaptionblock}[t]{\textwidth}
+    \centering
     % \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
-    \includegraphics[width=\textwidth]{figures/typeIImoveTransition}
-    \caption{\label{fig:typeii:move-nodes} A Type-II Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).
-      See main text for details about the model.}
+    \includegraphics[width=.7\textwidth]{figures/typeIImoveTransition}
+    \caption{\label{fig:typeii:move-nodes}A Type-I Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).}
   \end{subcaptionblock}
 % \end{figure}
 % \begin{figure}[!htb]
-  \begin{subcaptionblock}[t]{0.49\textwidth}
+  \begin{subcaptionblock}[t]{\textwidth}
     \centering
-    \includegraphics[width=\textwidth]{figures/bendingTransition.png}
-    \caption{\label{fig:typeii:bendbands}Tight binding model of tilted Dirac cones, with the parameter \( \gamma \) increased from left to right, transitioning the system from Type-I to Type-II. See main text for details about the model.}
+    % \vspace{1em}  % More space to fig above
+    \medskip
+    \includegraphics[width=.7\textwidth]{figures/bendingTransition.png}
+    \caption{\label{fig:typeii:bendbands}The ``warping'' parameter \( \gamma \) increased from left to right, %
+      \( \gamma = 0, 2 t, 3 t \), %
+      transitioning the system from Type-I to Type-II.}
   \end{subcaptionblock}
+  \caption{Two-band tight binding model for a tilted Dirac semimetal.
+    Shown are the two energy bands plotted in the \( xz \)-plane in momentum space;
+    the separation of the nodes is in the \( x \)-direction.
+    In \subref{fig:typeii:move-nodes} the separation between the two nods is adjusted.
+    In \subref{fig:typeii:bendbands} the bands are ``warped'' to induce tilt.
+    See main text for details of the model.
+  }
 \end{figure}
 
 Linearizing around the Weyl nodes the Hamiltonian reduces to the familiar expression of a Dirac cone
@@ -119,68 +130,68 @@ As discussed earlier, this may be mitigated by a rescaling of \( k_x \).
 %   \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline}\todo{Write this}}
 % \end{figure}
 
-\begin{figure}[ht]
-  \centering
-  \tikzsetnextfilename{ridgeline}
-  \begin{tikzpicture}
-    \pgfplotscreateplotcyclelist{myexotic}{
-      teal,fill=teal!80!black\\
-      orange,fill=orange!80!black\\
-      cyan!60!black,fill=cyan!80!black\\
-      lime!80!black,fill=lime\\
-      red,fill=red!80!black\\
-      yellow!60!black,fill=yellow!80!black\\
-      black,fill=gray\\
-      red,fill=red!80!black\\
-    }
-    \begin{axis}[
-      area plot/.style={
-        fill opacity=0.75,
-        % draw=#1!80!black,thick,
-        % fill=#1,
-        mark=none,
-      },
-      cycle list name={myexotic},
-      plot box ratio=3 5 1,
-      view={-40}{20},
-      zmin=-0.2, zmax=0.2,
-      xlabel=\( k_x \),
-      ylabel=\( \gamma \),
-      zlabel=Energy,
-      xtick={-3.1415,-1.5708,0,1.5708,3.1415},
-      xticklabels={\( -\pi \), \( -\frac{\pi}{2} \), 0, \( \frac{\pi}{2} \), \( \pi \)},
-      ytick={1,2,3,4},
-      yticklabels={0,0.05,0.1,0.15},
-      ]
+% \begin{figure}[ht]
+%   \centering
+%   \tikzsetnextfilename{ridgeline}
+%   \begin{tikzpicture}
+%     \pgfplotscreateplotcyclelist{myexotic}{
+%       teal,fill=teal!80!black\\
+%       orange,fill=orange!80!black\\
+%       cyan!60!black,fill=cyan!80!black\\
+%       lime!80!black,fill=lime\\
+%       red,fill=red!80!black\\
+%       yellow!60!black,fill=yellow!80!black\\
+%       black,fill=gray\\
+%       red,fill=red!80!black\\
+%     }
+%     \begin{axis}[
+%       area plot/.style={
+%         fill opacity=0.75,
+%         % draw=#1!80!black,thick,
+%         % fill=#1,
+%         mark=none,
+%       },
+%       cycle list name={myexotic},
+%       plot box ratio=3 5 1,
+%       view={-40}{20},
+%       zmin=-0.2, zmax=0.2,
+%       xlabel=\( k_x \),
+%       ylabel=\( \gamma \),
+%       zlabel=Energy,
+%       xtick={-3.1415,-1.5708,0,1.5708,3.1415},
+%       xticklabels={\( -\pi \), \( -\frac{\pi}{2} \), 0, \( \frac{\pi}{2} \), \( \pi \)},
+%       ytick={1,2,3,4},
+%       yticklabels={0,0.05,0.1,0.15},
+%       ]
 
-      % \addplot3[area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
-      % \addplot3[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      % \addplot3[area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
-      % \addplot3[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      % \addplot3[area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
-      % \addplot3[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      % \addplot3[area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
-      % \addplot3[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       % \addplot3[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
 
 
-      \addplot3+[forget plot, area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
-      \addplot3+[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[forget plot, area plot=teal] table[z index=7, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[area plot=teal] table[z index=8, y expr=4, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      \addplot3+[forget plot, area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
-      \addplot3+[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[forget plot, area plot=teal] table[z index=5, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[area plot=teal] table[z index=6, y expr=3, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      \addplot3+[forget plot, area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
-      \addplot3+[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[forget plot, area plot=blue] table[z index=3, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[area plot=blue] table[z index=4, y expr=2, col sep=comma] {data/tightBindModel-topbottom.csv};
 
-      \addplot3+[forget plot, area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
-      \addplot3+[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
-    \end{axis}
-  \end{tikzpicture}
-  \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline2}\todo{Write this}}
-\end{figure}
+%       \addplot3+[forget plot, area plot=orange] table[z index=1, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+%       \addplot3+[area plot=orange] table[z index=2, y expr=1, col sep=comma] {data/tightBindModel-topbottom.csv};
+%     \end{axis}
+%   \end{tikzpicture}
+%   \caption{The values of the parameters were chosen to be \(m=0.15, t=-0.05, \) and \(2 k_{0}=\pi\).\label{fig:ridgeline2}\todo{Write this add ref}}
+% \end{figure}
 
 
 The linearized model is accurate in describing low energy interactions around the Fermi level.
