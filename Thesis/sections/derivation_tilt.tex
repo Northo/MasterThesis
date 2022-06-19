@@ -590,18 +590,6 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
   \label{fig:nmregion}
 \end{figure}
 
-\begin{figure}[htb]
-  \centering
-  \input{figures/txmnplane.pgf}
-  \caption{Contributions to \( \gamma_{\bar{N}} \) from \( m\to n \) transitions for different values of \( t_x \).
-    In order to retain contrast, the color values are capped at \( 0.1 \), meaning that the \( \gamma_0 \) contributions are clipped.
-    Note that all quadrants of the \( m,n \)-plane are shown, although as proven in the main text, only the fourth quadrant needs to be computed, as the second quadrant contributions are equal.
-    Lastly, the \( \gamma_{\bar{N}} \) square regions indicated in the first pane are drawn with lengths \( 2 \bar{N} + 1 \), while they in the main text are defined with sides \( 2 \bar{N} \);
-    this choice of representation is only to make the figure more clear, as the colored tiles have edges at half-integer values.
-    \label{fig:contribs}
-    }
-\end{figure}
-
 \subsection{Tilt parallel to the magnetic field}
 Even though the treatment above for a general tilt is valid for parallel tilt, the response can be found more directly from the untilted case.
 For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{y 0} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
@@ -625,7 +613,7 @@ with
                           \end{cases}\\
   \alpha_{\kappa_z m s} &=
                           -s \frac{\sqrt{M}}{\epsilon_{\kappa_z  m s}^0 - s \kappa_z },\\
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0}\xi(\kappa_z) &= \frac{[n_{\kappa ms} - n_{\kappa ns}]
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0}\xi(\kappa_z, m, n) &= \frac{[n_{\kappa ms} - n_{\kappa ns}]
   \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa ns}^2 + 1) \right]^{-1}
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa n s})^2
@@ -634,7 +622,7 @@ with
 In the untilted case, we made several simplifications to this expression, especially with regard to limiting the summation domain.
 We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
 
-Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), \( \xi(\kappa_z), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.
+Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), the factors of the integrand \( \xi(\kappa_z, m, n), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.
 As the integral is over all \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
 However, in the untilted case, the sum was restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energy of opposite signs.
 In the case of Type-II systems, this requirement does not restrict the sum to one quadrant.
@@ -866,7 +854,18 @@ Also shown in \cref{fig:total_contribs} is \( \gamma_0 \) as a function of \( t_
 This last observation is discussed further in \cref{sec:other-observe:zeroton}, under
 ``\nameref{sec:other-observe:zeroton}''.
 
-\begin{figure}[ht]
+\begin{figure}[htb]
+  \centering
+  \input{figures/txmnplane.pgf}
+  \caption{Contributions to \( \gamma_{\bar{N}} \) from \( m\to n \) transitions for different values of \( t_x \).
+    In order to retain contrast, the color values are capped at \( 0.1 \), meaning that the \( \gamma_0 \) contributions are clipped.
+    Note that all quadrants of the \( m,n \)-plane are shown, although as proven in the main text, only the fourth quadrant needs to be computed, as the second quadrant contributions are equal.
+    Lastly, the \( \gamma_{\bar{N}} \) square regions indicated in the first pane are drawn with lengths \( 2 \bar{N} + 1 \), while they in the main text are defined with sides \( 2 \bar{N} \);
+    this choice of representation is only to make the figure more clear, as the colored tiles have edges at half-integer values.%
+    \label{fig:contribs}}
+\end{figure}
+
+\begin{figure}[htb]
   \centering
   \tikzsetnextfilename{contribtx}
   \resizebox{0.8\textwidth}{!}{
@@ -933,7 +932,6 @@ This last observation is discussed further in \cref{sec:other-observe:zeroton}, 
 \FloatBarrier
 \subsection{Parallel tilt}
 \subsubsection{Type-I}
-\todo{Should we also compute the momentum cutoff for nontilted terms?}
 In the Type-I regime, the contributions differ from that of the untitled system by \( \gamma_{\text{div}, \bar{N}} \), \cref{eq:123}, dependent on a momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 e B}  \), where \(k^{\text{cutoff}}\) is the physical cutoff.
 The contribution from each new Landau level, \( \gamma_{\text{div}, \bar{N}}-\gamma_{\text{div}, \bar{N}} \) is shown in \cref{fig:divergent-factor}.
 In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( \mathcal{O}(1 /\Lambda^2) \), we found \cref{eq:126},
@@ -950,13 +948,14 @@ In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( 
 The first term, independent of \( \Lambda \), is a negative factor that decreases as \( \bar{N} \) increases, and goes like \( -\log \bar{N} \) for large \( \bar{N} \).
 The contribution is proportional to \( t_z \), i.e. there is no even component, so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In the case of inversion symmetry, the contributions from the two chiralities are equal and add up.
-The contribution has the same sign as the tilt, and the magnitude depends on the landau cutoff \( N \) and momentum cutoff \( \Lambda \).
+The contribution has the same sign as the tilt, and the magnitude depends on the landau cutoff \( N \) and momentum cutoff~\( \Lambda \).
+\nowidow[3]
 
-
-\begin{figure}[htp]
+\begin{figure}[htb]
   \centering
   \tikzsetnextfilename{divergentContribCutoff}
     \begin{tikzpicture}
+      \def\axisdefaultheight{170pt}
       \begin{axis}[
         xlabel=\( \Lambda \),
         ylabel={\( [ \gamma_{\text{div}, \bar{N}} - \gamma_{\text{div}, \bar{N}-1}] /t_z \)},
@@ -1020,7 +1019,7 @@ in the transition from Type-I to Type-II the chiral anomaly is not broken, and c
 This is still an open question.
 
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
   \centering
   \subcaptionbox{Intraband, \( -N \to N + 1 \).}{
   \tikzsetnextfilename{tzcontribtypeii}
@@ -1086,14 +1085,15 @@ This is still an open question.
   \label{fig:contribtzII}
 \end{figure}
 
-\begin{figure}[p]
+\begin{figure}[htbp]
   \centering
+  \resizebox{.7\textwidth}{!}{
   \tikzsetnextfilename{schematic_tz}
   \begin{tikzpicture}
     \begin{axis}[
-      ymax=1,
+      ymax=0.8,
       xmin=0, xmax=2,
-      width=13cm, height=10cm,
+      width=13cm, height=8cm,
       legend entries={Even,Odd},
       xtick={0,1,2},
       ytick=\empty,
@@ -1108,13 +1108,13 @@ This is still an open question.
       \addplot[mark=none] table[col sep=comma, y=-1] {data/contribtypeii_diffsigntz.csv};
     \end{axis}
   \end{tikzpicture}
+  }  %% resizebox
   \caption{
     Schematic summary of the contribution for parallel tilt \( t_z \).
     Shown are the even (solid line) and odd (dashed line) parts as a function of \( t_z \).
     As explained in the main text and shown in \cref{tab:gamma-tot}, the total contribution for a pair of cones is given by the sum of the components in inversion symmetric systems, and by the even component for broken inversion symmetric systems.
-    Note that, as the contributions depend on factors such as the number of Landau levels and momentum cutoff, their relative magnitudes in the sketch are of little importance.
-    \label{fig:scetch}
-  }
+    Note that, as the contributions depend on factors such as the number of Landau levels and momentum cutoff, their relative magnitudes in the sketch are of little importance.%
+    \label{fig:scetch}}
 \end{figure}
 
 \FloatBarrier
@@ -1155,7 +1155,8 @@ Here, however, it qualitatively changes the response as a function of the tilt!
     \begin{axis}[
       xlabel=\( t_x \),
       ylabel=\( \gamma_0 \),
-      width=0.75\textwidth,
+      width=0.8\textwidth,
+      height=.6\textwidth,
       legend pos=south west,
       legend cell align=left,
       cycle multiindex* list={
@@ -1179,7 +1180,6 @@ Here, however, it qualitatively changes the response as a function of the tilt!
     \label{fig:0tontx}
   }
 \end{figure}
-
 
 \subsubsection{Experimental signature at finite potential and temperature}
 In real materials, the Fermi level is close to, but not exactly at, the Dirac point.

@@ -736,14 +736,14 @@ Collecting dimensionfull quantities, the response function reads
 
 Let us now define
 \begin{equation}
-  \xi(\kappa_z) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
+  \xi(\kappa_z, m, n) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
   \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} )
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{ \omega }{v_F \sqrt{2 e B  }} )
   }.
 \end{equation}
-As is shown in \cref{tab:transform-sign}, in the limit, \( \xi(\kappa_z) \) is odd under interchange of \( m,n \).
+As is shown in \cref{tab:transform-sign}, in the limit, \( \xi(\kappa_z, m, n) \) is odd under interchange of \( m,n \).
 % which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \etae \) also acquires a sign, but this is not an issue.}
 Using this, we may simplify our expressions.
 In the last term of \cref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
@@ -756,16 +756,16 @@ The simplified expression is then
   \label{eq:91}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{e^2 v_F B}{(2 \pi)^2} \sum\limits_{\underset{N=M-1}{mn}}
-  \int \mathrm{d}\kappa_z \xi(\kappa_z)
+  \int \mathrm{d}\kappa_z \xi(\kappa_z, m, n)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} - 2 \mu) \alpha_{\kappa_z m s}^2.
 \end{equation}
 
 \begin{table}[ht]
   \centering
-  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \vec{q}\to 0 \). \label{tab:transform-sign}}
+  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z, m, n) \) is taken in the limit \( \omega\to0, \vec{q}\to 0 \). \label{tab:transform-sign}}
   \begin{tabular}{l r r r}
     \toprule
-    Transformation & \( \xi(\kappa_z) \) & \( \epsilon_{\kappa_z m s} \) & \( \alpha_{\kappa_z m s} \)\\
+    Transformation & \( \xi(\kappa_z, m, n) \) & \( \epsilon_{\kappa_z m s} \) & \( \alpha_{\kappa_z m s} \)\\
     \midrule
     \( (m, n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \) & -1 & -1 & -1\\
     \( \hphantom{(m, n, \kappa_z)}\mathllap{(\kappa_z, s)} \mapsto (-\kappa_z, -s) \) & +1 & +1 & -1\\
@@ -774,9 +774,9 @@ The simplified expression is then
   \end{tabular}
 \end{table}
 
-Before solving the integral, we note that in addition to the \( N=M-1 \) selection rule%
+Before solving the integral, we note that in addition to the \( {N = M - 1} \) selection rule%
 \footnote{Known as the \emph{dipolar} selection rule~\cite{tchoumakovMagneticFieldInducedRelativisticProperties2016}.} %
-of the sum, the distribution functions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) in \( \xi(\kappa_z) \) impose further restrictions on which transitions are energetically allowed.
+of the sum, the distribution functions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) in \( \xi(\kappa_z, m, n) \) impose further restrictions on which transitions are energetically allowed.
 We consider the limit \( T \to 0 \), where the distributions take the form of step functions, \( n_{\kappa_z m s} \to \theta(-\epsilon_{\kappa_z m s}) \).
 As the sign of energy level \( m \), for \( m \neq 0 \), is given by the sign of \( m \) itself, this gives a rather simple restriction on the sum.
 For the zeroth energy level, the sign of the energy is given by \( \sign(-s\kappa_z) \).
@@ -793,7 +793,7 @@ The distribution factor is
 Combining this with the selection rule \( N=M-1 \), we see that the only allowed transitions are
 \[ M \to -N = -(M-1), \; -M \to N = (M-1). \]
 
-The sum may be further restricted by noting that as both \( \xi(\kappa_z) \) and \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) are odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), the two transitions above give the same contribution when \( \mu = 0 \).
+The sum may be further restricted by noting that as both \( \xi(\kappa_z, m, n) \) and \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) are odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), the two transitions above give the same contribution when \( \mu = 0 \).
 In the case of zero chemical potential, the expression may thus be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
 
 Lastly, we now show that the contributions from cones of opposite chirality \( s \) are the same.
@@ -820,7 +820,7 @@ For zero chemical potential, the response function is
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{2 e^2 v_F B}{(2 \pi)^2}
   \sum\limits_{i=0} \int \mathrm{d}\kappa_z
-  \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
+  \xi(\kappa_z, m, n) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
   \alpha_{\kappa_z m s}^2
   \big|_{\underset{n=-i}{m=i+1}},
 \end{equation}
@@ -872,7 +872,7 @@ This expression goes like \( \log \bar{N} \).
   \newcommand\prefix{\gamma_N}
   \tikzsetnextfilename{notiltcontrib}
   \input{figures/total_prefactor.pgf}
-  \caption{Prefactor \( \gamma_{\bar{N}} \) as a function of the number of included Landau levels~\( \bar{N} \).}
+  \caption{Prefactor \( \gamma_{\bar{N}} \) for a non-tilted system as a function of the number of included Landau levels~\( \bar{N} \).}
   \label{fig:contributions}
 \end{figure}
 
