@@ -60,13 +60,13 @@ We will use the general time-reversal breaking model described by \textcite{mcco
 where \( t \) must not be confused with the tilt term of the linear model.
 There are Weyl nodes at \(\vec{K}' = (\pm k_{0}, 0,0)\), and the parameter $\gamma$ controls the tilting of the emerging cones.
 For \( k_0 = \pi /2 \), the cones are isotropic in low-energy expansion.
-As \( k_0 \) is reduced, the cones are brought closer together and made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction, as shown in \cref{fig:typeii:move-nodes}, where two cones are moved unitl they meet at the origin.
+As \( k_0 \) is reduced, the cones are brought closer together and made anisotropic, as the effective Fermi velocity is not the same in the \( x \) and \( y \) direction, as shown in \cref{fig:typeii:move-nodes}, where two cones are moved until they meet at the origin.
 % \cref{fig:ridgeline} shows the cross section \(k_{y} = 0\) of the eigenvalues of this system, as \(\gamma\) is gradually increased from 0 to 0.15 \todo{verify numbers}.
 \cref{fig:typeii:bendbands} shows the eigenvalues of the system, as \( \gamma \) is increased from 0 to \( 3t \).
 A value of $\gamma=0$ gives no tilt, while for $\gamma > |2 t|$ the Type-II system emerges.
 The \(\gamma\)-term ``warps'' the bands, and in the limit of Type-II the hole band crosses the Fermi level into positive energy, while the particle band crosses the Fermi level into negative energies.
 We call these electron and hole pockets, respectively.
-Note that in this model, the pockets are shared between the two noedes.
+Note that in this model, the pockets are shared between the two nodes.
 One may also construct tight binding models with isolated pockets \cite{mccormickMinimalModelsTopological2017}.
 
 \begin{figure}[htb]
@@ -184,26 +184,26 @@ As discussed earlier, this may be mitigated by a rescaling of \( k_x \).
 
 
 The linearized model is accurate in describing low energy interactions around the Fermi level.
-For higher energies its validity falls apart, and more complex models are warranted.
+For higher energies, its validity falls apart, and more complex models are warranted.
 For our calculations, we will take the linear model to be sufficient.
-It is much easier to work with, and sufficient in most cases.
+It is much easier to work with and sufficient in most cases.
 
 \label{sec:tilt:fermisurface-paragraph}
 One of the most obvious differences between the tight binding model and the linear model is the finiteness of the former.
-This is particularly important with regards to two aspects: the Dirac sea and the topology of the Fermi surface.
-In high energy physics, the Dirac sea is infinitely deep \cites{burkovTopologicalSemimetals2016,vozmedianoTheoreticalPhysicsColloquium2021}, whereas in condensed matter physics, it is not.
-As is seen from the tight binding model, the Dirac sea of the two cones, is really connected;
-this has consequences among other for the interpretation of the chiral anomaly.
+This is particularly important with regard to two aspects: the Dirac sea and the topology of the Fermi surface.
+In high energy physics, the Dirac sea is infinitely deep \cites{burkovTopologicalSemimetals2016,vozmedianoTheoreticalPhysicsColloquium2021}, whereas, in condensed matter physics, it is not.
+As is seen from the tight binding model, the Dirac sea of the two cones is really connected;
+this has consequences for, among others, the interpretation of the chiral anomaly.
 In our context, also the topology of the Fermi surface is of importance.
 As mentioned, in the Lifshitz transition from Type-I to Type-II, the Fermi surface goes from being closed to open in the linear model.
 This is not the case in the tight binding model, whose Fermi surface is shown in \cref{fig:fermiSurfaceTight}.
 According to \textcite{ferreirosAnomalousNernstThermal2017} the linear model will be able to give qualitatively correct results for Type-II in the deep tilt limit.
 We propose yet another argument for this claim here.
 Consider again the Fermi surface in \cref{fig:fermiSurfaceTight};
-as the tilt is increased the Fermi surface resemble more and more that of the linear model.
+as the tilt is increased the Fermi surface resembles more and more that of the linear model.
 Although this is in no way rigorous, it gives hope that the linear model may give qualitatively valid results for Type-II materials in the deep tilt limit.
 
-A priori, it is not obvious when and how the linear model falls short, and a critical interpretation and evaluation of results derived from it is always warrented.
+A priori, it is not obvious when and how the linear model falls short, and a critical interpretation and evaluation of results derived from it is always warranted.
 It is, however, a very useful and interesting model.
 One of the more obvious remedies one might consider, is a momentum cutoff, restricting the model to the region where it is the most correct, as is common in for example graphene calculations.
 \todo{cite graphene}
@@ -307,7 +307,7 @@ The \(\vec{t}\)-vector is thus a convenient tool for categorization -- if \(t > 
 
 \begin{Proof}
   We may always rotate our coordinate system such that, without loss of generality, \(\vec{t} = t \hat{x}\).
-  In that case, the first term obviously dominates in the \(x\)-direction, when $t>1$.
+  In that case, the first term dominates in the \(x\)-direction, when $t>1$.
 \end{Proof}
 
 % To properly investigate the symmetry properties of the system, we must consider the \(4\times 4\), not \(2\times 2\) Hamiltonian.
@@ -353,7 +353,7 @@ Obviously then, the Hamiltonian is both time-reversal and parity invariant, as \
 Notice that as \( \mathcal{P} \tau \mathcal{P}^{\dagger} = - \tau \), the chiralities of the cones are interchanged under a parity transformation.
 
 The tilt term takes the form \(v_F \tau_z^i \otimes \mathcal{I}_{2} \, \vec{t} \cdot \vec{p} \), where \( i=1 \) for inversion symmetric systems (\( \vec{t}^s = s \vec{t} \)) and \( i=2 \) for broken inversion symmetry (\( \vec{t}^s = \vec{t} \)).
-We thus see explicitly, by applying the parity and time-reversal operators, that the term breaks time-reversal symmetry, and that we get self consistency for the parity transformation.
+We thus see explicitly, by applying the parity and time-reversal operators, that the term breaks time-reversal symmetry, and that we get self-consistency for the parity transformation.
 
 \begin{figure}[h]
   \centering
@@ -371,8 +371,8 @@ We thus see explicitly, by applying the parity and time-reversal operators, that
     \draw[->] (b) -- ++(1, 0);
   \end{tikzpicture}
   \caption{Time reversal breaking in tilted system.
-    Cross section in the tilt direction shown, with blue showing one cone and red the other.
-    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proporitional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
+    The cross-section in the tilt direction is shown, with blue showing one cone and red the other.
+    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proportional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
     \todo{Must be referred to in text. Related to the spin structure of the cone}
   }
 \end{figure}
@@ -385,13 +385,13 @@ x_{\mu } x^{\mu } = t^2 - x^2 - y^2 - z^2,
 \]
 i.e. all isometries of Minkowski space.
 More specifically, the group consists of all 3D rotations, \( O(3) \), and all \emph{boosts}.
-A boost is a hyperbolic rotation from a spactial dimension to the temporal dimension.
+A boost is a hyperbolic rotation from a spacial dimension to the temporal dimension.
 If we now direct our focus at the Hamiltonian of the Dirac cone
 \[
 H = \pm v_{F} \vec{\sigma} \vec{p},
 \]
 we may easily show the Lorentz invariance of the system.
-The time independent Schrodinger equation is
+The time independent Schrödinger equation is
 \begin{equation}
   \label{eq:136}
   H \ket{\psi } = E \ket{\psi } \implies (H^2 - E^2) = 0.
@@ -436,9 +436,9 @@ leads to the equation
 This is \emph{not} invariant under a Lorentz transformation, as can be seen by, for example, a rotation around the \( z \)-axis.
 
 \todo{
-In literature, however, it is sometimes written that Type-II break Lorentz symmetry,
+In literature, however, it is sometimes written that Type-II breaks Lorentz symmetry,
 \todo{cite}
-however we showed that any finite tilt breaks Lorentz invariance.
+however, we showed that any finite tilt breaks Lorentz invariance.
 What is meant is the following:
 the energy of an untilted cone is
 \[

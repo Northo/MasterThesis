@@ -130,10 +130,10 @@ In fact, for \( b > m \), the perturbation is simply a shift in $k_z$ of the Dir
   \right]^{\frac{1}{2}}.
 \end{equation}
 This still has Weyl node solutions at $k_z^2 = (b^2-m^2) /v_F^2$, where the dispersion is linear in the vicinity of the nodal solutions.
-This thus separates two Dirac nodes in momentum space, giving  a \emph{Weyl} semimetal.
+The effect is thus to separate the two Dirac nodes in momentum space, giving a \emph{Weyl} semimetal.
 This also illustrates that the decomposition in \cref{eq:3} is valid around either of the shifted nodes.
 Expanding around one of the Dirac points of the Weyl semimetal, the Hamiltonian is exactly \cref{eq:3}, after decomposing the $4 \times 4$ Hamiltonian into its two chiral  $2\times 2$ Weyl constituents.
-If one instead perturbs the system with a Zeeman field in the $x$-direction, $b' \neq 0$, the separation is instead in energy, giving nodal loop where the two cones intersect.
+If one instead perturbs the system with a Zeeman field in the $x$-direction, $b' \neq 0$, the separation is instead in energy, giving a nodal loop where the two cones intersect.
 We will not go into any depth on these types of materials.
 
 The three cases described here: unperturbed, where the two cones are superimposed; perturbed by $b$, where the cones are separated in momentum; and perturbed by $b'$, where the cones are separated in energy, are shown in \cref{fig:conetypes}.
@@ -141,7 +141,7 @@ Notice that in the two latter cases, the Dirac points, i.e. crossings, are not s
 As will be substantiated more in \cref{sec:chern-number-weyl}, this makes the crossings very robust, as the two nodes must merge before a gap may be opened.
 
 
-The Hamiltonian in \cref{eq:3} is not the most general \( 2 \times 2 \) Weyl system, if we allow for anisotropy in the system.
+The Hamiltonian in \cref{eq:3} is not the most general \( 2 \times 2 \) Weyl system if we allow for anisotropy in the system.
 In three dimensions we have more generally the \emph{tilted} Weyl Hamiltonian
 \begin{equation}
   \label{eq:4}
@@ -166,7 +166,7 @@ These types of systems, which are the systems of interest for this thesis, are c
   % \includegraphics[width=\textwidth]{figures/cones_types-verysmall}
   % \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque.png}
   \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque-small.png}
-  \caption{Dispersion curves in the $k_z, k_x$-plane. \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, givng a nodal loop.
+  \caption{Dispersion curves in the $k_z, k_x$-plane. \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, giving a nodal loop.
     \todo{Consider making middle one with mass term.}
   }
   \label{fig:conetypes}
@@ -193,7 +193,7 @@ These types of systems, which are the systems of interest for this thesis, are c
 
 \subsection{Chern number of the Weyl point}\label{sec:chern-number-weyl}
 In order to more explicitly demonstrate the topological nature of the tilted Weyl cone in \cref{eq:3}, we will find a non-zero topological invariant associated with that state.
-Thereby showing that the material is a topological material.
+Thereby showing that the material is topological.
 The topological number we will calculate is the Chern number, related to the Berry curvature of the bands in some enclosed surface.
 In order to calculate the Chern number, we must first find an expression for the Berry curvature of our system.
 This derivation will follow closely Berry's original derivation~\cite{berryQuantalPhaseFactors1984} of the Berry phase of a two-level system with the Hamiltonian
@@ -206,7 +206,7 @@ Some notation has been modernized with inspiration from the treatment of the Ber
 Suppose we have a Hamiltonian $H(t)$, and that its $t$-dependence can be parameterized by $\vec{R} = \vec{R}(t)$, as in $H(t) = H(\vec{R}(t))$.
 Any evolution of the Hamiltonian through time, may then be described as a geometric path through the $\vec{R}$-space.
 As the reader might be aware, Berry's most famous discovery was that a closed path through $\vec{R}$-space gives an observable phase to the system, unlike the non-physical dynamical phase, which may be removed by a suitable choice of gauge.
-Here we will however focus on the so-called Berry curvature, $\vec{B}$, a vector field which will be shown to be useful in the categorization of topological materials.
+Here we will however focus on the so-called Berry curvature, $\vec{B}$, a vector field that will be shown to be useful in the categorization of topological materials.
 Note that there is some variation in the literature on the naming of the various quantities, and the sign convention used.
 In particular, the word Berry curvature will in some literature refer to a rank two tensor, while our quantity $\vec{B}$ is referred to as the Berry field strength.
 In particular, if we let the rank two tensor be denoted $F_{ij}$, the Berry field strength $\vec{B}$ is given by
@@ -230,7 +230,7 @@ The Berry curvature for the state $n$ is explicitly defined as~\cite{berryQuanta
 where $\times $ denotes the cross product.
 Notice that for a degeneracy $E_n = E_m$ there will be an infinity in $\vec{B_n}$.
 Considering the Berry curvature as a field in $\vec{R}$-space, this resembles a source, as will become relevant later.
-This may now be applied to for example the Weyl semimetal, both in the interest of solidifying the above theory, and as it will be useful in future  consideration.
+This may now be applied to for example the Weyl semimetal, both in the interest of solidifying the above theory, and as it will be useful in future consideration.
 
 The Hamiltonian around the (untilted) Weyl point is
 \begin{equation}
@@ -317,7 +317,7 @@ This divergence is zero everywhere except in the monopole source, giving
   \nabla \cdot \vec{B_+} = -\frac12 \nabla \cdot \hat{R} / R^2 = -2 \pi \delta(\vec{p}),
 \end{equation}
 where $\delta$ is the Dirac delta distribution.
-By virtue of the divergence theorem the Chern number is then found to be
+By virtue of the divergence theorem, the Chern number is then found to be
 \begin{equation}\label{eq:chern}
   C = \frac{1}{2\pi} \int_C \nabla \cdot \vec{B_+} \mathrm{d} C = -1,
 \end{equation}
@@ -329,7 +329,7 @@ Note that some literature will have a Chern number differing from \eqref{eq:cher
 \end{equation}
 This simply comes from the definition of the eigenstates.
 We have put the sign dependence in the state, making the $E_+$ state always have positive eigenenergy.
-In literature that instead defines $E_+ = v_F |R|$ the state's energy will depend on the sign of the Fermi velocity, and as a consequence, the sign dependence will end up in the Chern number instead.
+In the literature that instead defines $E_+ = v_F |R|$ the state's energy will depend on the sign of the Fermi velocity, and as a consequence, the sign dependence will end up in the Chern number instead.
 
 The overall divergence of Berry curvature must be zero, or equivalently, the sum of the Chern numbers must be zero.
 The Hamiltonian \cref{eq:6} chosen with the opposite chirality,
@@ -342,7 +342,7 @@ Thus, Dirac cones must appear in pairs of opposite chirality, either superimpose
 In light of the interpretation of the Dirac point as a monopole of Berry curvature, the discussion in \cref{sec:weyl-dirac-cones}, on page \pageref{sec:stability-of-gap}, on the stability of the band crossing in two and three dimensions gets an intuitive and geometric interpretation.
 In \cref{fig:curvature_plane} the Berry curvature pole is shown in $p$-space, together with a plane parallel to the $xy$-plane, which we will denote the \emph{state plane}.
 In the two-dimensional case, the state is confined to the state plane, with the $z$-position of the plane given by any mass terms $m \sigma _z$.
-In the three-dimensional case, the state is not confined to this plane, as the parameter $p_z$ is a free variable, or alternatively it may be considered as a freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
+In the three-dimensional case, the state is not confined to this plane, as the parameter $p_z$ is a free variable, or alternatively, it may be considered as the freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
 It is thus obvious that one may never reach the monopole in the two-dimensional case, and thus for no $\vec{k}$ is there a band crossing.
 Importantly, the Berry curvature is indeed non-zero, however any closed  curve of integration will give a Chern number of zero;
 the  monopole has been moved outside the dimensionality of freedom.
