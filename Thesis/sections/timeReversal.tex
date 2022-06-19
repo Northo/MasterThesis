@@ -1,11 +1,11 @@
 \section{Time reversal}
 %% Much of this is taken from
 %% Verneveig's Topological insulator ....
-We will now consider the time reversal operator $\Theta $.
+We will now consider the time-reversal operator $\Theta $.
 Firstly we will show that it must be antiunitary, then we will show $\Theta^2 = \pm 1$, and find a more specific form of $\Theta$ for half-integer spin systems.
 
 
-The time reversal operator by definition will invert the value of the time
+The time-reversal operator by definition will invert the value of the time
 $$
 \Theta: t \rightarrow -t
 $$
@@ -21,7 +21,7 @@ The momentum operator, however, is flipped due to its time dependence
   \label{eq:Pdef}
   \Theta p \Theta^{-1} = - p.
 \end{equation}
-A schematic representation of inversion symmetry and time reversal symmetry is given in \cref{fig:symmetry_considerations}.
+A schematic representation of inversion symmetry and time-reversal symmetry is given in \cref{fig:symmetry_considerations}.
 
 \begin{figure}[h]
   \centering
@@ -103,8 +103,8 @@ A schematic representation of inversion symmetry and time reversal symmetry is g
     \textbf{(Left:)} Both time-reversal and inversion symmetry present, with the two energy bands being degenerate at all momenta.
     \textbf{(Center:)} Inversion symmetry is broken. Notice how at the \gls{trim} points, $-\pi, 0, \pi$, the two energy levels are degenerate, as, by definition, we have $\vec{k} = -\vec{k}$.
     \textbf{(Right:)} Time reversal symmetry is broken.
-    Notice how in the time reversal symmetric case Kramer's doublet is present, as for any state at $k$, the state at $-k$ is degenerate  in energy and has opposite spin.
-    This is not the case when time reversal symmetry is broken, as the spin at  $-k$ has the same spin.
+    Notice how in the time-reversal symmetric case Kramer's doublet is present, as for any state at $k$, the state at $-k$ is degenerate  in energy and has opposite spin.
+    This is not the case when time-reversal symmetry is broken, as the spin at  $-k$ has the same spin.
     Figure inspired by \citeauthor{ramazashviliZeemanSpinorbitCoupling2019}~\cite{ramazashviliZeemanSpinorbitCoupling2019}.
   }
   \label{fig:symmetry_considerations}
@@ -120,7 +120,7 @@ This all leads to the relation
 \begin{equation}
   \Theta i \Theta^{-1} = -i.
 \end{equation}
-From this, we gather that the time reversal operator must be antiunitary.
+From this, we gather that the time-reversal operator must be antiunitary.
 An antiunitary transformation is a transformation
 $$
 \ket{a} \rightarrow \ket{\tilde{a}} = \theta \ket{a}, \quad 
@@ -155,7 +155,7 @@ Consider
   \Theta^2 = UKUK = UU^* = U(U^T)^{-1} \equiv \phi,
 \end{equation}
 where we in the second last equality used the unitarity of $U$.
-As applying the time reversal operator twice must result in the original state, up to some phase, $\phi$ must surely be diagonal.
+As applying the time-reversal operator twice must result in the original state, up to some phase, $\phi$ must surely be diagonal.
 From \cref{eq:1} it follows
 \begin{equation}
   U = \phi U^T, \quad U^T = U \phi
@@ -169,8 +169,8 @@ This holds in general only for $\phi = \pm 1$, and thus $\Theta^2 = \pm 1$.
 Furthermore, we will later show that for integer spin particles $\Theta^2 = 1$ while for half-integer spin particles $\Theta^2 = -1$.
 
 \subsection{Time reversal operator on spinful particles}
-When considering spinful particles, we must enforce yet another property on the time reversal operator.
-As spin is odd under time reversal one must have
+When considering spinful particles, we must enforce yet another property on the time-reversal operator.
+As spin is odd under time-reversal one must have
 \begin{equation}
   \label{eq:2}
   \Theta S \Theta^{-1} = -S.
@@ -185,7 +185,7 @@ Let
   \Theta \ket{s, m} = \eta \ket{s, -m},
 \]
 where $\eta $ is some phase.
-Consider now the commutation of the ladder operators $J_{\pm} = S_x \pm i S_y$ with the time reversal operator.
+Consider now the commutation of the ladder operators $J_{\pm} = S_x \pm i S_y$ with the time-reversal operator.
 \begin{equation}
   \begin{split}
     \underbrace{\left[ S_x \pm i S_y \right]}_{S_{\pm}} \Theta  &= -\Theta S_x \mp i \Theta S_y\\
@@ -227,7 +227,7 @@ Thus, for half integer spin, $\frac{1}{2}, \frac{3}{2}, \dots $, $\Theta ^2 = -1
 
 
 \begin{comment}
-  We implement this by letting the time reversal operator be a $\pi $ rotation of the spin, around some axis.
+  We implement this by letting the time-reversal operator be a $\pi $ rotation of the spin, around some axis.
   Following the convention of considering this as a rotation around the $y$-axis, the $\Theta = UK$ operator gets the form~\cite{bernevigTopologicalInsulatorsTopological2013}
   $$
   \Theta = \eta e^{-i\pi S_y} K,
