@@ -1,17 +1,26 @@
+\clearpage
 % \section{Type II Weyl semimetals}
 \subsection{Tilted Dirac semimetals}
 \label{sec:typeii}
-
-\begin{figure}[ht]
+% \setlength{\wrapoverhang}{\marginparwidth}
+% \addtolength{\wrapoverhang}{\marginparsep}
+% \addtolength{\wrapoverhang}{-1cm}
+\begin{wrapfigure}[15]{r}{.25\textwidth}
   \centering
-  \includegraphics[width=0.4\textwidth]{figures/conicSection}
-  \caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}
-\end{figure}
-
+  \vspace{-2.6em}
+  \includegraphics[width=.25\textwidth]{figures/conicSection}
+  \setcapindent*{0pt}
+  \caption{The conic section. \label{fig:conic-section-sketch}}
+\end{wrapfigure}
 The conic section problem with the intersecting plane restricted to pass through the node of the cone is trivially seen to have two solutions: a point and two intersecting lines, shown schematically in \cref{fig:conic-section-sketch}.
 Despite this, the possibility of a Weyl cone tilted beyond the Fermi level was never considered before \textcite{soluyanovTypeIIWeylSemimetals2015} described this new class of Weyl semimetals in 2015.
-This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects.
-\todo{add some concrete examples or cites}
+This now seemingly obvious possibility made an already rich field even more exciting, opening up for a wider range of novel and interesting effects~\cite{soluyanovTypeIIWeylSemimetals2015,sharmaChiralAnomalyLongitudinal2017,yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016,ferreirosAnomalousNernstThermal2017}.
+
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[width=0.25\textwidth]{figures/conicSection}
+%   \caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}
+% \end{figure}
 
 In this section, we investigate in more detail the tilted Weyl cone, the star of this thesis.
 The tilted Hamiltonian was introduced in \cref{eq:hamil-tilt-isotropic}
@@ -218,7 +227,6 @@ A priori, it is not obvious when and how the linear model falls short, and a cri
 It is, however, a very useful and interesting model.
 One of the more obvious remedies one might consider, is a momentum cutoff, restricting the model to the region where it is the most correct, as is common in for example graphene calculations.
 \todo{cite graphene}
-\todo{discussion a la second order contrib ... deep in tilt see ferreirosAnomalousNernstThermal2017}
 
 \begin{figure}[htb]
   \centering
@@ -273,7 +281,6 @@ One of the more obvious remedies one might consider, is a momentum cutoff, restr
 \end{figure}
 
 % In our calculations the linear models is sufficient, and much easier to work with, and we will thus mainly consider the linear model from here on.
-\todo{Fermi surface when tilt, cutoff, finite sea ....}
 
 \subsubsection{The tilt term -- symmetries and Type-I vs.\! Type-II}
 % For tilted Dirac cones we will consider the Hamiltonian
@@ -365,6 +372,7 @@ Notice that as \( \mathcal{P} \tau \mathcal{P}^{\dagger} = - \tau \), the chiral
 
 The tilt term takes the form \(v_F \tau_z^i \otimes \mathcal{I}_{2} \, \vec{t} \cdot \vec{p} \), where \( i=1 \) for inversion symmetric systems (\( \vec{t}^s = s \vec{t} \)) and \( i=2 \) for broken inversion symmetry (\( \vec{t}^s = \vec{t} \)).
 We thus see explicitly, by applying the parity and time-reversal operators, that the term breaks time-reversal symmetry, and that we get self-consistency for the parity transformation.
+This is also shown in \cref{fig:spin-struct-tilt}.
 
 \begin{figure}[h]
   \centering
@@ -383,8 +391,8 @@ We thus see explicitly, by applying the parity and time-reversal operators, that
   \end{tikzpicture}
   \caption{Time reversal breaking in tilted system.
     The cross-section in the tilt direction is shown, with blue showing one cone and red the other.
-    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is proportional to  \(k\) while for \(\ket{\downarrow {}}\) is proportional to \( -k \).
-    \todo{Must be referred to in text. Related to the spin structure of the cone}
+    Black arrows indicate spin direction, which for \(\ket{\uparrow {}}\) is parallel to  \(\vec{k}\) while for \(\ket{\downarrow {}}\) is parallel to \( -\vec{k} \).
+    \label{fig:spin-struct-tilt}
   }
 \end{figure}
 
@@ -412,7 +420,6 @@ As
 p^{\mu } = \left(\frac{E}{c}, \vec{p}\right),
 \]
 the operator in \cref{eq:136} is nothing more than
-\todo{ Make clear the matrix strucute here. There is an implicit identity matrix of size 2 }
 \begin{equation}
   \label{eq:137}
   H^2-E^2 = v_{F}^2 \vec{p}^2 - c^2 \left(p^0\right)^2 ,

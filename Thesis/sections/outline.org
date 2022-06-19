@@ -264,6 +264,7 @@ Place the tilt in the metric
 
 * Ideas and Problems
 
+
 ** TODO Tips and tricks?
 Where can one place 'reccomendations/lessons learned?'
 For example, use xi instead of xi1 and xi2
@@ -313,3 +314,34 @@ Having a non-zero potential is very interesting, as this drastically changes the
 
 ** TODO Check discussion about Dirac T valid
 Anticommutation grassman etc
+
+* TODOS [7/10]
+** TODO Size and pos of conic sketch
+[[file:typeii.tex::\caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}]]
+
+** DONE Concrete examples of interesting effects of type ii
+[[file:typeii.tex::\todo{add some concrete examples or cites}]]
+
+** DONE Refer to figure fig:spin-struct-tilt
+
+** DONE Fix legend of dispersion in chiral anomaly
+[[file:anomalies.tex::\label{fig:chiral-dispersion}}]]
+
+** DONE Fix note about what lorentz boost actually is
+[[file:derivation_LL.tex::\todo{Something smart here, or remove discussion}]]
+
+** DONE Refer to explicitly defined a ,b
+[[file:derivation_tiltless.tex::\todo{These are already explicitly defined}]]
+
+** DONE Clean up symmetry argument
+[[file:derivation_tiltless.tex::\todo{Clean up. Is it inversion or sign flip or what?}]]
+and
+[[file:derivation_tiltless.tex::\todo{is it supposed to be \( \epsilon + \epsilon \)?}]]
+
+** DONE Fix sum to over i, same as tilted case
+[[file:derivation_tiltless.tex::\todo{Consider change sum to sum over i to N}]]
+
+** HOLD Explicitly series expandn in 1/N
+[[file:derivation_tiltless.tex::\todo{Series expand in \( x=\frac{1}{\bar{N}} \) }]]
+
+** TODO Consistent colors in results for plots

@@ -455,8 +455,7 @@ Let
     b_{k_zms} H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
   \end{pmatrix},
 \end{equation}
-thus implicitly defining the prefactors $a_{k_z ms}, b_{k_z ms}$.
-\todo{These are already explicitly defined}
+where \( a_{k_z m s}, b_{k_z m s} \) are as defined in \cref{eq:52,eq:53}, with \( \vec{t}=0 \).
 
 
 \subsubsection{The current operator}
@@ -744,16 +743,15 @@ Let us now define
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} + \frac{ \omega }{v_F \sqrt{2 e B  }} )
   }.
 \end{equation}
-As is shown in table \ref{tab:transform-sign}, \( \xi(\kappa_z) \) is odd under interchange of \( m,n \) and inversion of \( \kappa_z \).
-\todo{Clean up. Is it inversion or sign flip or what?}
+As is shown in \cref{tab:transform-sign}, in the limit, \( \xi(\kappa_z) \) is odd under interchange of \( m,n \).
 % which is odd under interchange of \( m,n \), i.e. \( \xi_{m,n} = -\xi _{n,m} \). \footnote{The impurity factor \( \etae \) also acquires a sign, but this is not an issue.}
-Using this, we may simplify our expressions some.
+Using this, we may simplify our expressions.
 In the last term of \cref{eq:90}, relabel the summation indices \( m \leftrightarrow n \), and then use that \( \xi \) is odd under interchange of \( m,n \).
 This renders the two terms equal, and we may consider
 \[
 \alpha_{\kappa_z m s}^2 \delta_{M-1,N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \to 2 \alpha_{\kappa_z m s}^2 \delta_{M-1, N}.
 \]
-The final expression is then
+The simplified expression is then
 \begin{equation}
   \label{eq:91}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
@@ -776,8 +774,10 @@ The final expression is then
   \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z) \) is taken in the limit \( \omega\to0, \vec{q}\to 0 \). \label{tab:transform-sign}}
 \end{table}
 
-Before solving the integral, we note that in addition to the \todo{say the word diatomic?} \( N=M-1 \) selection rule of the sum, the factor with the distributions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) impose further restrictions on which transitions are energetically allowed.
-We consider the limit \( T \to 0 \) \todo{something about the Luttinger in this limit? I.e. the fact we get finite result in T-> 0 is the interesting thing about this result}, where the distributions take the form of step functions, \( n_{\kappa_z m s} \to \theta(-\epsilon_{\kappa_z m s}) \).
+Before solving the integral, we note that in addition to the \( N=M-1 \) selection rule%
+\footnote{Known as the \emph{dipolar} selection rule~\cite{tchoumakovMagneticFieldInducedRelativisticProperties2016}.} %
+of the sum, the distribution functions \( n_{\kappa_z m s} - n_{\kappa_z n s} \) in \( \xi(\kappa_z) \) impose further restrictions on which transitions are energetically allowed.
+We consider the limit \( T \to 0 \), where the distributions take the form of step functions, \( n_{\kappa_z m s} \to \theta(-\epsilon_{\kappa_z m s}) \).
 As the sign of energy level \( m \), for \( m \neq 0 \), is given by the sign of \( m \) itself, this gives a rather simple restriction on the sum.
 For the zeroth energy level, the sign of the energy is given by \( \sign(-s\kappa_z) \).
 The distribution factor is
@@ -793,9 +793,8 @@ The distribution factor is
 Combining this with the selection rule \( N=M-1 \), we see that the only allowed transitions are
 \[ M \to -N = -(M-1), \; -M \to N = (M-1). \]
 
-The last simplification we will make, is to note that the step function is odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), and likewise with \( \epsilon_{\kappa_z m s} - \epsilon_{\kappa_z n s} \).
-\todo{is it supposed to be \( \epsilon + \epsilon \)?}
-In the case of zero chemical potential, the expression may be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
+The sum may be further restricted by noting that as both \( \xi(\kappa_z) \) and \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) are odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), the two transitions above give the same contribution when \( \mu = 0 \).
+In the case of zero chemical potential, the expression may thus be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
 
 Lastly, we now show that the contributions from cones of opposite chirality \( s \) are the same.
 Under the transformation \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), the product \( \kappa_z s \) is obviously invariant.
@@ -820,13 +819,12 @@ For zero chemical potential, the response function is
   \label{eq:93}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
   -\frac{2 e^2 v_F B}{(2 \pi)^2}
-  \sum\limits_{N=0} \int \mathrm{d}\kappa_z
+  \sum\limits_{i=0} \int \mathrm{d}\kappa_z
   \xi(\kappa_z) (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
   \alpha_{\kappa_z m s}^2
-  \big|_{\underset{n=-N}{m=N+1}},
+  \big|_{\underset{n=-i}{m=i+1}},
 \end{equation}
-\todo{Consider change sum to sum over i to N}
-where the integration limits are \( (-\infty, \infty) \) for \( N \neq 0 \), \( (-\infty, 0) \) for \( N = 0, s=-1 \), and \( (0, \infty) \) for \( N=0, s=1 \).
+where the integration limits are \( (-\infty, \infty) \) for \( i \neq 0 \), \( (-\infty, 0) \) for \( i = 0, s=-1 \), and \( (0, \infty) \) for \( i=0, s=1 \).
 
 Including only the first term of the sum, we find
 \begin{equation}
@@ -864,7 +862,7 @@ The sum can be shown to equal the rather nasty expression
 \end{equation}
 where \( \xi \approx  1.28243 \) is Glaisher's constant.
 This expression goes like \( \log \bar{N} \).
-\todo{Series expand in \( x=\frac{1}{\bar{N}} \) }
+% \todo{Series expand in \( x=\frac{1}{\bar{N}} \) }
 
 \begin{figure}[ht]
   \centering

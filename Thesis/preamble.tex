@@ -15,11 +15,18 @@
 \usepackage{hyphenat}
 \usepackage{thmtools}
 \usepackage{siunitx}
+\usepackage{wrapfig}
 \usepackage[subrefformat=parens]{subcaption}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+% \usepackage{hyperref}
 \usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+allcolors=blue!80!red!60!black,
+final=true,
+}
 \usepackage{float}
 \usepackage{etoolbox}
 \usepackage{booktabs}
@@ -31,12 +38,6 @@
 \usepackage{slashed}  % Gives the /slashed{A} macro. Consider in the future to switch with manually greated macro /slashed made from /not operator, as read in forum (supposedly looks better)
 \usepackage[acronym]{glossaries}
 \usepackage[compat=1.1.0]{tikz-feynman}
-\usepackage{hyperref}
-\hypersetup{
-colorlinks=true,
-allcolors=blue!80!red!60!black,
-final=true,
-}
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{compat=1.18}
 \usepgfplotslibrary{groupplots}
@@ -47,6 +48,9 @@ final=true,
 \pgfkeys{/pgf/images/include external/.code={\href{file:#1}{\includegraphics[draft=false]{#1}}}} %% for draft mode. See pgf manual
 
 \setacronymstyle{short-long}
+
+\setcapindent{2em}  % Make caption slightly hang. See KOMA manual p. 140
+\captionsetup{labelfont=bf}
 
 \lstset{frame=tb}
 

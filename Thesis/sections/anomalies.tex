@@ -111,6 +111,7 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
         extra y ticks = 0,
         legend columns = 3,
         legend entries = {Filled right movers, Filled left movers},
+        legend style={/tikz/every even column/.append style={column sep=0.5cm}},
         legend to name=chiralLeg,
         domain=-4:4,
         ]
@@ -118,7 +119,14 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
         \addplot [domain=0:4, samples=8,  mark=*, only marks, very thick, red] {-x};
         \addplot[samples=2, mark=none] {x};
         \addplot[samples=2, mark=none] {-x};
+
+        % \addplot[mark=halfcircle*, only marks, domain=0:0.5, mark repeat={2}, fill=blue, mark color=red, samples=2] {x};
+        \coordinate (O) at (axis cs: 0,0);
       \end{axis}
+        \begin{scope}
+          \clip (O)+(-1,-1) rectangle ++(0,1);
+          \fill[blue] (O) circle(0.092);
+        \end{scope}
     \end{tikzpicture}
     % }
   % \resizebox{0.4\textwidth}{!}{
