@@ -7,7 +7,7 @@ The system and its relation to high energy physics is discussed first.
 Then, several perturbations of the system are introduced.
 The topological nature of the system is considered in the context of Chern numbers and Berry curvature.
 Lastly, we go into tilted Dirac cones in some more depth.
-The reader is also advice to consult the many recent reviews on the topic, notably \textcite{armitageWeylDiracSemimetals2018} for a general introduction and overview of the field, \textcite{jiaWeylSemimetalsFermi2016} with a focus on material realizations, and \textcite{chernodubThermalTransportGeometry2021} which is the most directly relevant for our work, discussing in particular thermal transport and the analogy to high energy physics.
+The reader is also advised to consult the many recent reviews on the topic, notably \textcite{armitageWeylDiracSemimetals2018} for a general introduction and overview of the field, \textcite{jiaWeylSemimetalsFermi2016} with a focus on material realizations, and \textcite{chernodubThermalTransportGeometry2021} which is the most directly relevant for our work, discussing in particular thermal transport and the analogy to high energy physics.
 
 % Firstly, we will consider the so-called band crossing, and how the opening of a gap at the band crossing behaves differently in two and three dimensions.
 % Then, various perturbations that do not open a gap will be considered, giving interesting effects in the dispersion relations.
@@ -15,20 +15,20 @@ The reader is also advice to consult the many recent reviews on the topic, notab
 
 The standard model for metals in condensed matter physics is the Landau Fermi liquid \cites{landauTheoryFermiLiquid1956,chernodubThermalTransportGeometry2021}, where electrons are described by the Hamiltonian \( p^2 /2 m^* \), with \( m^* \) some effective mass.
 The model works remarkably well for many systems, but fails for Dirac materials, where the electrons behave as ``Dirac fermions''.
-The notion of a ``Dirac fermion'' is almost comical from a high energy point of view\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
+The notion of a ``Dirac fermion'' is almost comical from a high energy point of view~\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
 A fermion is by its very definition a Dirac spinor.
 In condensed matter language, however, we mean by fermion that it obeys the Pauli exclusion principle and follows the Fermi-Dirac distribution.
 By Dirac fermion in condensed matter we mean fermions whose effective Hamiltonian is linear in momenta, they obey an effective Dirac equation.
 
 This field unifies concepts from high and low energy physics;
-a ``new era of grand unification of low and high energy phiscs'' as \textcite{chernodubThermalTransportGeometry2021} puts it.
+a ``new era of grand unification of low and high energy physics'' as \textcite{chernodubThermalTransportGeometry2021} puts it.
 The emergent Dirac and Weyl cones in condensed matter physics follow in beautiful analogy their high energy counterparts.
 Thus, the theory and results from high energy physics may be applied in these emergent Dirac systems.
 Likewise, these materials offer the opportunity to probe the fundamental theories of our universe, and beyond, at much lower energy and cost scales.
 % Unfortunately, some concepts of \gls{qft} and high energy physics are somewhat inaccessible for condensed matter physicists.
 Unfortunately, the language of \gls{qft} and high energy physics is somewhat inaccessible for condensed matter physicists.
 At the same time, the condensed matter descriptions have been difficult to relate back to the \gls{qft} formalism.
-So while the intersection of the two fields offer the possibility of great new insight, it also comes with some misunderstandings.
+So while the intersection of the two fields offers the possibility of great new insight, it also comes with some misunderstandings.
 Some phenomena are known under different names, while different phenomena may be mistaken for the same.
 The recent and excellent review paper by \textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, with its ``main purpose [...] to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
 
@@ -37,10 +37,11 @@ The (massive) Dirac equation reads
 \begin{equation}
   (i \slashed{\partial} - m ) \psi = 0,
 \end{equation}
-where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) are the so-called \emph{gamma matrices} \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
+where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) are the so-called \emph{gamma matrices}%
+\footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
 Note also that natural units \( c = \hbar = 1 \), as usual, is used and that the systems is \( 4\times 4 \).
-It may of course be written as the Schrodinger equation\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
-The great insight of Dirac, was that due to the requirement of Lorentz invariance, the momentum and time operators had to appear at the same order, as opposed to the standard free particle \( H = p^2 /2m \).
+It may of course be written as the Schrödinger equation~\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
+The great insight of Dirac was that due to the requirement of Lorentz invariance, the momentum and time operators had to appear at the same order, as opposed to the standard free particle \( H = p^2 /2m \).
 % The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
 Shortly after Dirac published his theory, Weyl commented that for a massless particle, the equation could be decomposed into two \( 2 \times 2 \) equations -- a Weyl decomposition.
 This yields two independent subsystems, themselves also linear in momentum,
@@ -51,20 +52,20 @@ This yields two independent subsystems, themselves also linear in momentum,
 with the \( \pm \) defining the \emph{chirality}.
 
 Interestingly, massless Dirac fermions may appear in condensed matter as low energy effective descriptions of electronic systems near a two-band crossing.
-Instead of obeying the Landau Fermi liquid theory, as most materials, they obey a Dirac equation, with the speed of light being replaced by the Fermi velocity $v_F$.
+Instead of obeying the Landau Fermi liquid theory, like most materials, they obey a Dirac equation, with the speed of light being replaced by the Fermi velocity $v_F$.
 As in the high energy case, the Dirac equation may be decomposed into chiral Weyl equations
 \begin{equation}
   \label{eq:3}
 H_D = s v_{F} \vec{\sigma} \vec{p},
 \end{equation}
-where $\vec{\sigma}$ are the Pauli matricies, $v_F$ the Fermi velocity, $\vec{p}$ the momentum, and $s=\pm 1$ denotes the chirality.
+where $\vec{\sigma}$ are the Pauli matrices, $v_F$ the Fermi velocity, $\vec{p}$ the momentum, and $s=\pm 1$ denotes the chirality.
 % It is here important to note that the spin degree of freedom expressed by the Pauli matricies, may either be real spin or some pseudo spin degree of freedom.
 It is here important to note that the Pauli matrices represent either real spin degree of freedom or some pseudo spin degree of freedom.
-Examples of pseudo spin is that of bipartite lattices, such as Graphene, in which case one must be careful when for example applying time reversal, as only real spin is odd under this operation, and not pseudo spin.
+Examples of pseudo spin are that of bipartite lattices, such as Graphene, in which case one must be careful when for example applying time reversal, as only real spin is odd under this operation, and not pseudo spin.
 
 These linear low energy emergent systems may appear in both 2D and 3D.
 There are, however, important differences depending on the dimensionality.
-When we here refer to Dirac and Weyl materials, we always mean 3D systems, which has become the norm in the literature.
+When we here refer to Dirac and Weyl materials, we always mean 3D systems, which have become the norm in the literature.
 In some older literature, the term might also be applied to 2D systems, such as graphene.
 
 \label{sec:stability-of-gap}
@@ -97,10 +98,10 @@ Say for example we add a term like $m \sigma_z$, where the $z$-direction was cho
 The only effect this will have on the crossing is to translate it in $p_z$.
 Tying this back to the accidental degeneracy of \cref{sec:accidental-degeneracy}, we see that no matter the perturbation, the three-dimensional momentum space will always have a point of degeneracy, i.e., a crossing.
 The crossing is \emph{topologically protected}.
-A more formal approach to topological materials, is that of topological invariants -- numbers related to the topology of the material.
-Having a non-trivial topological invariant number, is the very definition of topological materials, and we will in \cref{sec:chern-number-weyl} show that Dirac cones makes the Chern number of these materials non-trivial.
+A more formal approach to topological materials is that of topological invariants -- numbers related to the topology of the material.
+Having a non-trivial topological invariant number is the very definition of topological materials, and we will in \cref{sec:chern-number-weyl} show that Dirac cones make the Chern number of these materials non-trivial.
 
-Opposed to high energy physics, the emergent Dirac equation in condensed matter physics need of course not be Lorentz invariant.
+As opposed to high energy physics, the emergent Dirac equation in condensed matter physics need of course not be Lorentz invariant.
 We may therefore introduce terms that break Lorentz invariance.
 Introduce to the system a pseudospin degree of freedom, thus extending the system to $4\times 4$-matricies;
 in effect re-construct the full Dirac equation from the Weyl equations, and then introduce perturbations.
@@ -112,7 +113,7 @@ The Hamiltonian of the system
 with $\vec{\tau}$ the Pauli matrices related to the pseudospin, and $I_2$ the identity matrix of dimension 2.
 The perturbing parameters $m, b, b'$ are a mass parameter, and Zeeman fields in the $z$ and $x$ direction, respectively~\cite{armitageWeylDiracSemimetals2018}.
 Ignore for now $b'$, i.e. $b' = 0$, which is related to a state known as the line node semimetal.
-Notice that the $b$ term breaks time reversal symmetry in the system, as the real spin $\sigma $ is odd under time reversal.
+Notice that the $b$ term breaks time-reversal symmetry in the system, as the real spin $\sigma $ is odd under time reversal.
 The eigenvalues of this system~\cite{armitageWeylDiracSemimetals2018}
 \begin{equation}
   E_{s \mu }(\vec{k}) = s \left[

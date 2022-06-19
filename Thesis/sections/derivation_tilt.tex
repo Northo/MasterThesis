@@ -60,7 +60,7 @@ where we have defined
 \end{align}
 \todo{check sign of E above}
 These must not be confused with the transformed momenta \( \tilde{k} \), which are similar in form.
-\cref{eq:100} is on the same for as in the untilted cone case, and we may thus proceed with the same method.
+\cref{eq:100} is on the same form as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
 \tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - 2 k' _x - q' _x )\right),
@@ -126,6 +126,8 @@ With a procedure similar to above, with the same substitution and completion of 
     \big].
 \end{multline}
 By inspection,  recalling \( \sqrt{1 - t_x^2} = \alpha \), we see
+{%
+\setlength\multlinegap{0pt}  %% Make multline go all the way left
 \begin{multline}
 J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
   s v_F e \sqrt{\alpha} \int \mathrm{d}\tilde{y} \: l_B
@@ -145,6 +147,7 @@ J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
   H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)
   \Big].
 \end{multline}
+}
 
 To perform the integration, we use the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
@@ -632,7 +635,7 @@ In the untilted case, we made several simplifications to this expression, especi
 We will here consider which of those simplifications apply also in the case of tilt \( t_z \).
 
 Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), \( \xi(\kappa_z), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.
-As the integral is overall \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
+As the integral is over all \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
 However, in the untilted case, the sum was restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energy of opposite signs.
 In the case of Type-II systems, this requirement does not restrict the sum to one quadrant.
 It is thus convenient to consider Type-I and Type-II separately.
@@ -710,7 +713,7 @@ See plot of the tilted Landau levels in \cref{fig:llevelstilt}.
 % Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 % For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
 % As the energies change between the chiralities, so does the step function, giving other selection rules.
-% For inversion symmetric systems, we may thus simply choose a value of \( s \), for example \( s=1 \), and compute all results for that value.
+% For inversion symmetric systems, we may thus simply choose a value of \( s \), for example, \( s=1 \), and compute all results for that value.
 % For broken inversion symmetry, however, the results must be computed separately for the two chiralities.
 % \todo{Or maybe it is easier to do all calculations with \( t_x^s \) (and its sign) in focus, and then later apply inversion (broken) symmetry?}
 
@@ -996,7 +999,7 @@ See discussion on page \pageref{sec:tilt:fermisurface-paragraph} in \cref{sec:ti
 The contribution goes to zero as \( t_z \to \infty \), shown in \cref{fig:contribtzII}.
 
 Considering also higher Landau level contributions, both interband and intraband transitions must be included,%
-\footnote{By band we here refer to the ``conduction'' band and ``valence'' band.}
+\footnote{By band, we here refer to the ``conduction'' band and ``valence'' band.}
 meaning the summation is no longer restricted to a quadrant in the \( m,n \) plane, but rather to half the plane.
 The contributions are shown in \cref{fig:contribtzII}.
 These contributions are not odd in \( t_z \) -- they have a finite even component.
