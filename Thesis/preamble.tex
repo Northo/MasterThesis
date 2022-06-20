@@ -133,43 +133,65 @@ final=true,
 ]{chapter}
 
 
+%%%%%% Bibliography %%%%%%%
+
+%%% Only DOI, URL as fallback
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map{
+      \step[fieldsource=doi,final]
+      \step[fieldset=url,null]
+      \step[fieldset=urldate,null]
+      \step[fieldset=issn,null]
+      \step[fieldset=eprint,null]
+    }
+    \map{
+      \step[fieldsource=eprint,final]
+      \step[fieldset=url,null]
+      \step[fieldset=urldate,null]
+      \step[fieldset=issn,null]
+    }
+  }
+}
+
 %%% Backref biblate
 
-% \newlength{\marginwritesep}
-% \setlength{\marginwritesep}{1em}
-% \newlength{\marginwritewidth}
-% \setlength{\marginwritewidth}{4em}
-% % based on egreg's (https://tex.stackexchange.com/users/4427/egreg)
-% % answer to https://tex.stackexchange.com/a/123451/35864
-% % originally CC BY-SA 3.0, but dual-licensed under LPPL
-% % see https://tex.meta.stackexchange.com/a/3333/35864
-% \newcommand{\marginwrite}[1]{%
-%   \strut\vadjust{%
-%     \vbox to 0pt{%
-%       \kern-\the\dimexpr\ht\strutbox+\dp\strutbox\relax
-%         \hfill\rlap{\kern\marginwritesep
-%           #1}%
-%       \vss
-%     }%
-%   }%
-% }
-
-% % \newcommand*{\simplecolorparbox}[3]{%
-%   % \colorbox{#1}{\parbox{#2}{#3}}}
+\newlength{\marginwritesep}
+\setlength{\marginwritesep}{1em}
+\newlength{\marginwritewidth}
+\setlength{\marginwritewidth}{2.8em}
+% based on egreg's (https://tex.stackexchange.com/users/4427/egreg)
+% answer to https://tex.stackexchange.com/a/123451/35864
+% originally CC BY-SA 3.0, but dual-licensed under LPPL
+% see https://tex.meta.stackexchange.com/a/3333/35864
+\newcommand{\marginwrite}[1]{%
+  \strut\vadjust{%
+    \vbox to 0pt{%
+      \kern-\the\dimexpr\ht\strutbox+\dp\strutbox\relax
+        \hfill\rlap{\kern\marginwritesep
+          #1}%
+      \vss
+    }%
+  }%
+}
 
 % \newcommand*{\simplecolorparbox}[3]{%
-%   \colorbox{#1}{\begin{varwidth}{#2}#3\end{varwidth}
-%   }}
+%   \colorbox{#1}{\parbox{#2}{#3}}}
 
-% \makeatletter
-% \renewbibmacro*{begentry}{%
-%   \iflistundef{pageref}
-%     {}
-%     {\marginwrite{%
-%        \simplecolorparbox{blue!5}{\marginwritewidth}{%
-%          \scriptsize\raggedright
-%          \printlist[pageref][-\value{listtotal}]{pageref}}}%
-%      \blx@initunit}}
-% \makeatother
+\usepackage{varwidth}
+\newcommand*{\simplecolorparbox}[3]{%
+  \colorbox{#1}{\begin{varwidth}{#2}#3\end{varwidth}
+  }}
 
-% \renewbibmacro*{pageref}{}%
+\makeatletter
+\renewbibmacro*{begentry}{%
+  \iflistundef{pageref}
+    {}
+    {\marginwrite{%
+       \simplecolorparbox{blue!5}{\marginwritewidth}{%
+         \scriptsize\raggedright
+         \printlist[pageref][-\value{listtotal}]{pageref}}}%
+     \blx@initunit}}
+\makeatother
+
+\renewbibmacro*{pageref}{}%
