@@ -83,7 +83,11 @@ One may also construct tight binding models with isolated pockets \cite{mccormic
   \begin{subcaptionblock}[t]{\textwidth}
     \centering
     % \includegraphics[width=0.7\textwidth]{figures/movetypeiinode}
-    \includegraphics[width=.7\textwidth]{figures/typeIImoveTransition}
+    \iftoggle{full-size-image}{%
+      \includegraphics[width=.7\textwidth]{figures/typeIImoveTransition}
+    }{%
+      \includegraphics[width=.7\textwidth]{figures/typeIImoveTransition-small}
+    }
     \caption{\label{fig:typeii:move-nodes}A Type-I Weyl semimetal with separation between the nodes \(2k_{0} = 0, \pi/2, \pi \).}
   \end{subcaptionblock}
 % \end{figure}
@@ -92,7 +96,11 @@ One may also construct tight binding models with isolated pockets \cite{mccormic
     \centering
     % \vspace{1em}  % More space to fig above
     \medskip
-    \includegraphics[width=.7\textwidth]{figures/bendingTransition.png}
+    \iftoggle{full-size-image}{%
+      \includegraphics[width=.7\textwidth]{figures/bendingTransition}
+    }{%
+      \includegraphics[width=.7\textwidth]{figures/bendingTransition-small}
+    }
     \caption{\label{fig:typeii:bendbands}The ``warping'' parameter \( \gamma \) increased from left to right, %
       \( \gamma = 0, 2 t, 3 t \), %
       transitioning the system from Type-I to Type-II.}

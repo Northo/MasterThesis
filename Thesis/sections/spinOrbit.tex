@@ -101,7 +101,11 @@ The spin together with the energy solutions are shown in \cref{fig:rashba}.
 
 \begin{figure}[hp]
   \centering
-  \includegraphics[width=\textwidth]{figures/rashba_combine-wside-small.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=\textwidth]{figures/rashba_combine-wside}
+  }{%
+    \includegraphics[width=\textwidth]{figures/rashba_combine-wside-small}
+  }
   \caption{Dispersion curves for a system with Rashba spin-orbit coupling. \textbf{Left:} Seen from above. \textbf{Right:} Seen from the front.
     The projection into the $xy$-plane is shown, as well as a cross section in a plane perpendicular to the $xy$-plane.
     The spin of the two states are shown as arrow above the dispersion curves, which defines the chirality of each state.

@@ -164,8 +164,11 @@ These types of systems, which are the systems of interest for this thesis, are c
   \centering
   % \includegraphics[width=\textwidth]{figures/cone}
   % \includegraphics[width=\textwidth]{figures/cones_types-verysmall}
-  % \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque.png}
-  \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque-small.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque}
+  }{%
+    \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque-small}
+  }
   \caption{Dispersion curves in the $k_z, k_x$-plane. \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, giving a nodal loop.
     \todo{Consider making middle one with mass term.}
   }
@@ -177,7 +180,11 @@ These types of systems, which are the systems of interest for this thesis, are c
   % \includegraphics[width=0.75\textwidth]{figures/tilt_cone}
   % \includegraphics[width=0.75\textwidth]{figures/conesTransparent-verysmall.png}
   % \includegraphics[width=\textwidth]{figures/cones-tilt-color1.png}
-  \includegraphics[width=\textwidth]{figures/cones-tilt-color1-small.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=\textwidth]{figures/cones-tilt-color1}
+  }{%
+    \includegraphics[width=\textwidth]{figures/cones-tilt-color1-small}
+  }
   \caption{Tilted Dirac cones.
     From left to right the tilt increases, from no tilt in the first cone to overtilt in the last.
     The three first are Type-I Weyl semimetals, the last is a Type-II semimetal.
@@ -345,8 +352,11 @@ Importantly, the Berry curvature is indeed non-zero, however any closed  curve o
 the  monopole has been moved outside the dimensionality of freedom.
 \begin{figure}[ht]
   \centering
-  % \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath.png}
-  \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath-small.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath}
+  }{%
+    \includegraphics[width=0.5\textwidth]{figures/berryCurvePlanewpath-small}
+  }
   \caption{The state plane, transparent yellow, parallel to the $xy$-plane and a Berry curvature monopole at the origin.
   An integration contour is shown in blue dashed.
   See main text for details.}

@@ -338,7 +338,11 @@ As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller an
   \centering
   % \includegraphics[width=0.75\textwidth]{figures/tiltSphere.png}
   % \includegraphics[width=0.75\textwidth]{figures/tiltSpherewactualWhiteBackground.png}
-  \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground}
+  }{%
+    \includegraphics[width=0.75\textwidth]{figures/tiltSpherewBackground-small}
+  }
   \caption{Geometric visualization of the \emph{tilt vector} \( \vec{t} \).
     When the vector is inside the unit sphere (\( t < 1 \)), the system is in the Type-I regime.
     When the vector is outside the unit sphere (\( t > 1 \)), the system is in the Type-II regime.

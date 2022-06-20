@@ -23,7 +23,11 @@ This geometry is shown in \cref{fig:setup}.
 \begin{figure}[ht]
   \centering
   % \includegraphics[width=0.7\textwidth]{figures/setup.png}
-  \includegraphics[width=0.7\textwidth]{figures/setup-small.png}
+  \iftoggle{full-size-image}{%
+    \includegraphics[width=0.7\textwidth]{figures/setup}
+  }{%
+    \includegraphics[width=0.7\textwidth]{figures/setup-small}
+  }
   \caption{Sketch of the geometry used in the derivation. Note that we consider only bulk response, and the finite sample is only for illustration purposes. \label{fig:setup}}
 \end{figure}
 In the derivation of~\citeauthor{chernodubGenerationNernstCurrent2018}~\cite{chernodubGenerationNernstCurrent2018} the response
