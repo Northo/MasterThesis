@@ -58,14 +58,12 @@ where we have defined
   q' _x &= q_x \alpha  - \frac{\beta}{v_{F} }( E^0_{n,\alpha B} - E^0_{m, \alpha B} ),\\
   k' _x &= k_x\alpha - \frac{\beta}{v_F } E^0_{m, \alpha B}.
 \end{align}
-\todo{check sign of E above}
 These must not be confused with the transformed momenta \( \tilde{k} \), which are similar in form.
 \cref{eq:100} is on the same form as in the untilted cone case, and we may thus proceed with the same method.
 Make a change of variable
 \[
 \tilde{y} = \frac{\sqrt{\alpha }}{l_{B}} \left(y + \frac{l_{B}^2}{2\alpha } (iq_{y} - 2 k' _x - q' _x )\right),
 \]
-\todo{Follow up the substitution of the root in the integral. Consider moving the root into \(\Xi \)}
 to get the exponent on the form \(e^{-\tilde{y}^2}\).
 With this substitution,
 \begin{align}
@@ -749,7 +747,8 @@ Consult \cref{tab:typeii-expressions} to find the appropriate expressions for po
     the code listings are found in \cref{cha:long_expression}.
     % Code listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
     See main text for details.}
-  \renewcommand\arraystretch{2.5}
+  \renewcommand\arraystretch{2.5}%
+  \vspace{-2em}
   \begin{tabular}{ll | c | c |}
     &\multicolumn{1}{c}{}&\multicolumn{2}{c}{\textbf{Tilt direction}}\\[-2ex]
     &\multicolumn{1}{c}{}
@@ -844,7 +843,6 @@ The \( \gamma_1 \) contributions are those inside the square of length 4, and in
 This is indicated in \cref{fig:contribs}.
 This definition effectively sets a ceiling on which Landau levels we consider.
 
-\todo{Correct which values }
 The integral was computed numerically for \( M,N \leq 14 \) over different values of \( t_x \) with \( t_z = 0 \), with the individual contributions shown in \cref{fig:contribs}.
 Note that the figure shows contributions for the entire \( m,n \)-plane, not only the fourth quadrant as discussed above.
 This is purely for illustration purposes, and only the fourth quadrant needs to be computed.
