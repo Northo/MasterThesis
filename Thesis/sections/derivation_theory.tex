@@ -229,6 +229,8 @@ Using such a line of reasoning~\textcite{vanderwurffMagnetovorticalThermoelectri
 In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by~\textcite{arjonaFingerprintsConformalAnomaly2019}.
 In the untilted case, the two definitions give the same contribution, while for a tilted cone, the response from the two definitions differs.
 
+We here show explicitly how the response differs for the two choices of the energy-momentum tensor.
+The discussion relies on results found later in the text, however, we find it instructive to include the discussion already here.
 For an untilted system, the components of interest of the canonical energy-momentum tensor reads
 \begin{subequations}
 \begin{align}
@@ -246,7 +248,7 @@ The symmetrized energy-momentum tensor used by~\textcite{arjonaFingerprintsConfo
 \begin{equation}
   T_s^{y 0} = \frac{T^{y 0} + T^{0 y}}{2}.
 \end{equation}
-The response was found to be
+Using this, the response was found to be
 \begin{equation}
   \chi = [\dots] \sum\limits_{\underset{N=M-1}{m,n}}^{} \int \mathrm{d} \kappa_z (F^{(1)} + F^{(2)}) \alpha_{\kappa_z m s}^2,
 \end{equation}
@@ -256,15 +258,12 @@ They are
   F^{(1)} &= \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s},\\
   F^{(2)} &= s \alpha_{\kappa_z n s} \sqrt{M-1} + \frac{s \sqrt{M}}{\alpha_{\kappa_z m s}},
 \end{align}
-where we have used the dimensionless
+where \( \epsilon_{\kappa_z m s} \) and \( \kappa_z \) are dimensionless energy and momentum, and
 \[
-  \epsilon_{\kappa_z m s} = \frac{\sqrt{2eB}}{v_{F}} E_{k_z m s}, \quad \kappa_z = \sqrt{2 e B} k_z.
+  \alpha_{k_z m s} = - \frac{s \sqrt{M}}{\epsilon_{m} - s \kappa_z}
 \]
-Using the explicit form of the normalization factor
-\[
-  \alpha_{k_z m s} = - \frac{s \sqrt{M}}{\epsilon_{m} - s \kappa_z},
-\]
-and energy eigenstates
+is a normalization factor of the eigenstate.
+Using the explicit form of the energy
 \[
   \epsilon_m = \sign (m) \sqrt{M + \kappa_{z}^2},
 \]
@@ -273,19 +272,16 @@ it is not difficult to show that
   F^{(2)} = \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = F^{(1)}.
 \end{equation}
 
-Tilting parallel to the magnetic field does not alter the eigenstates, it only changes the eigenvalues by a factor \( t_{\parallel} v_F k_z \)~\cites{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
+A tilt vector parallel to the magnetic field \( \vec{t} \parallel \vec{B} \) does not alter the eigenstates, it only changes the eigenvalues by a factor \( t v_F k_z \)~\cites{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
 The results from the untilted case may thus be applied directly, with rescaled energies.
 As the normalization factor \( \alpha_{\kappa_z m s} \) is invariant under the tilt, \( F^{(2)} \) does not change.
 However, \( F^{(1)} \) changes to
 \begin{equation}
   \label{eq:163}
-  F^{(1)} = \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z n s} + 2 \kappa_z t_{\parallel},
+  F^{(1)} = \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = \epsilon^0_{\kappa_z m s} + \epsilon^0_{\kappa_z n s} + 2 \kappa_z t,
 \end{equation}
-where \( \epsilon^0_{\kappa_z m s} \) is the energy levels of the untilted system.
+where \( \epsilon^0_{\kappa_z m s} \) are the energy levels of the untilted system.
 The last term in \cref{eq:163} gives a non-zero contribution to the total response, and so the results for a tilted cone is generally dependent on the choice of the energy-momentum tensor.
 
-The calculation presented in the thesis has for completeness been carried out also for the symmetric energy-momentum tensor as well.
+The calculation presented in the thesis has for completeness been carried out for the symmetric energy-momentum tensor as well.
 The result is presented in \cref{sec:otherterm-appendix}.
-
-
-\todo{Decide dimless or dimfull quantities}
