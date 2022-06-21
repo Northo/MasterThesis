@@ -1,0 +1,91 @@
+\documentclass{scrarticle}
+
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{bm}
+% \usepackage{xcolor}
+
+\renewcommand\vec\bm
+\declaretheorem[shaded, style=remark]{remark}
+
+\begin{document}
+\section{Non-flat metric}
+In the main text, we have used the Lagrangian
+\begin{equation}
+  \label{eq:1}
+  L_s = i \phi^{\dagger} \tilde{\sigma} ^{\mu} \partial_{\mu} \phi,
+\end{equation}
+where we have used \emph{modified} Pauli matrices \( \tilde{\sigma} ^{\mu}= \sigma^{\mu} + t^{\mu}, \; t^{\mu} = (0, \vec{t}) \).
+We here present an alternative, where we instead consider moving the tilting into the metric, i.e. considering a non-tilted cone in curved spacetime.
+In essence, we want
+\[
+g^{\mu \nu} \sigma_{\nu} p_{\mu}
+\]
+to give \( (\sigma^{\mu} + t^{\mu}) p_{\mu} \).
+We see that this involves putting \( t^{\mu} \) on the 0-components of the metric.
+
+Consider the metric
+\begin{equation}
+  \label{eq:2}
+  g^{\mu \nu} = \eta^{\mu \nu } + t^{\mu} (\delta^{\mu}_0 + \delta^{\nu}_0) =
+  \begin{pmatrix}
+    1 & t^x & t^y & t^z\\
+    t^x & -1 & 0 &0\\
+    t^y & 0 & -1 &0\\
+    t^z & 0 & 0 &-1
+  \end{pmatrix}.
+\end{equation}
+The top row is however problematic, as it gives an unwanted
+\[
+g^{0 \nu} \sigma_{\nu} = \sigma^0 - \vec{t} \vec{\sigma}.
+\]
+Interestingly, the metric thus \emph{cannot} be symmetric!
+We conclude that the appropriate choice is
+\begin{equation}
+  \label{eq:3}
+  g^{\mu \nu} = \eta^{\mu \nu } + t^{\mu} \delta^{\nu}_0 =
+  \begin{pmatrix}
+    1 & 0 & 0 & 0\\
+    t^x & -1 & 0 &0\\
+    t^y & 0 & -1 &0\\
+    t^z & 0 & 0 &-1
+  \end{pmatrix}.
+\end{equation}
+
+Consider therefore the Lagrangian
+\begin{equation}
+  \label{eq:4}
+  \mathcal{L} = \phi^{\dagger} g^{\mu \sigma} \sigma_{\sigma} \partial_{\mu} \phi.
+\end{equation}
+Using once again the canoncial defintion
+\begin{align}
+  \label{eq:5}
+  T^{\mu \nu} &= \frac{\partial \mathcal{L}}{\partial(\partial_{\mu}\phi)} \partial^{\nu} \phi\\
+  &= \phi^{\dagger} g^{\mu \sigma} \sigma_{\sigma} \partial^{\nu} \phi,
+\end{align}
+we find the component of the energy-momentum tensor
+\begin{equation}
+  \label{eq:6}
+  T^{y 0} = \phi^{\dagger} g^{y \sigma} \sigma_{\sigma} \partial^0 \phi =
+  \phi^{\dagger} (t^y \sigma_0 + \sigma_y) \partial^0 \phi.
+\end{equation}
+
+\begin{remark}
+  The four-Pauli matrices are defined as
+  \begin{equation}
+    \label{eq:7}
+    \sigma^{\mu} = (\sigma^0, \sigma^1, \sigma^2, \sigma^{3}) = (\sigma^0, \sigma_x, \sigma_y, \sigma_z),
+  \end{equation}
+  where the matrices with lower roman indices are the well-known Pauli matrices.
+  Thus, the four-matrices with lowered inddex are
+  \begin{equation}
+    \label{eq:8}
+    \sigma_{\mu} = g_{\mu \nu} \sigma^{\mu} = (\sigma^0, -\sigma^1, -\sigma^2, -\sigma^{3}).
+  \end{equation}
+\end{remark}
+
+\end{document}
