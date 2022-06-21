@@ -1,6 +1,6 @@
 In 2016~\textcite{chernodubAnomalousTransportDue2016} showed that the conformal anomaly of \gls{qed} leads to electrical currents in an inhomogeneous gravitational background.
 This effect was further explored by~\textcite{chernodubGenerationNernstCurrent2018}, showing through Luttinger's method that such an anomalous transport could be generated from a temperature gradient, giving additional contributions to the Nernst current.
-The same effect was shortly after derived more formally through the Kubo formalism, by \textcite{arjonaFingerprintsConformalAnomaly2019}.
+The same effect was shortly after derived more formally through the Kubo formalism, by~\textcite{arjonaFingerprintsConformalAnomaly2019}.
 
 In this chapter, we extend the Kubo calculation to tilted Weyl cones.
 Firstly, the result for the untilted system is rederived, where we also show several simplifications compared to previous computations.
@@ -30,11 +30,11 @@ This geometry is shown in \cref{fig:setup}.
   }
   \caption{Sketch of the geometry used in the derivation. Note that we consider only bulk response, and the finite sample is only for illustration purposes. \label{fig:setup}}
 \end{figure}
-In the derivation of~\citeauthor{chernodubGenerationNernstCurrent2018}~\cite{chernodubGenerationNernstCurrent2018} the response
+In the derivation of~\textcite{chernodubGenerationNernstCurrent2018} the response
 \begin{equation}
   \chi ^{xy} = \frac{e^2 v_F B}{18 \pi ^2 \hbar }
 \end{equation}
-was found, while the derivation of~\citeauthor{arjonaFingerprintsConformalAnomaly2019}~\cite{arjonaFingerprintsConformalAnomaly2019} found
+was found, while the derivation of~\textcite{arjonaFingerprintsConformalAnomaly2019} found
 \footnote{The paper is somewhat unclear on what is their final result, as there is some possible confusion related to the number of Landau levels included and whether one is including both or only one Dirac cone.
 The above result is what is meant, to the best of our understanding.}
 \begin{equation}
@@ -72,7 +72,7 @@ This is a convolution, and the Fourier transform is thus simply given by the pro
 \end{equation}
 where it was also used that the Fourier transform of a derivative gives the component of the variable.
 Showing explicitly how to find the form of the response $\chi $ in momentum space is often overlooked in much literature, and as it does involve some finesse, we want to show it here.
-This trick is courtesy of~\citeauthor{changLectureNotesManybody2018}~\cite{changLectureNotesManybody2018}.
+This trick is courtesy of~\textcite{changLectureNotesManybody2018}.
 By definition, the Fourier transform of the response is, where the variable of integration has been chosen to be $\vec{r}-\vec{r}'$ for later convenience,
 \begin{align}
   \chi (\vec{q}) &= \int \mathrm{d}(\vec{r} - \vec{r}') e^{-i\vec{q}(\vec{r}-\vec{r}')} \chi (\vec{r} - \vec{r}')\\
@@ -140,7 +140,7 @@ J^i = -e L_{ij}^{11} \left[
 \]
 where \( J^i \) is the electrical current.
 In our work, we focus on the \( L^{12} \) coefficient, however, the following discussion is valid also more generally.
-The definition of transport currents becomes more subtle in systems with broken time-reversal symmetry\cite{vanderwurffMagnetovorticalThermoelectricTransport2019, chernodubThermalTransportGeometry2021}.
+The definition of transport currents becomes more subtle in systems with broken time-reversal symmetry~\cite{vanderwurffMagnetovorticalThermoelectricTransport2019, chernodubThermalTransportGeometry2021}.
 In such systems, unobservable, circulating \emph{magnetization} currents arise.
 These currents do not contribute to transport, but the Kubo treatment derives the local current, which in general also includes non-transporting currents.
 Let
@@ -150,14 +150,13 @@ Let
 \end{equation}
 where \( \vec{J} \) is the total local current, \( \vec{J}_{\text{tr}} \) is the transport current, and \( \vec{J}_M \) is the circulating magnetization current.
 The Kubo formalism generally gives the response to the total local current, \( \chi \);
-we are more interested in the experimentally measurable transport response \( L_{ij}^{12} \), related to our Kubo result as
-\cite{chernodubThermalTransportGeometry2021}
+we are more interested in the experimentally measurable transport response \( L_{ij}^{12} \), related to our Kubo result as~\cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
   \label{eq:24}
   L^{12}_{ij} = -\chi_{ij} /e + \epsilon^{ijl} M_l,
 \end{equation}
 with \( M_l \) the magnetization.
-For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \) \cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
+For zero chemical potential, however, these magnetization currents have been shown to go to zero as \( T \to 0 \)~\cite{vanderwurffMagnetovorticalThermoelectricTransport2019}.
 The result from the Kubo calculation is therefore the actual transport current.
 
 
@@ -167,7 +166,7 @@ The \emph{canonical} energy-momentum tensor, derived from Lagrangian mechanics, 
 \begin{equation}
 	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
 \end{equation}
-On the other hand, from general relativity, the \emph{dynamical} energy-momentum tensor is defined by the variation of the (matter) action with respect to the metric\cite{kachelriessQuantumFieldsHubble2018}
+On the other hand, from general relativity, the \emph{dynamical} energy-momentum tensor is defined by the variation of the (matter) action with respect to the metric~\cite{kachelriessQuantumFieldsHubble2018}
 \todo{Signs depend on choice of g}
 \begin{equation}
 	T^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
@@ -176,7 +175,7 @@ Immediately, we see that the first definition is in general not symmetric, while
 \footnote{something with torsion never}.
 As the energy-momentum tensor is an observable, this presents a problem:
 how should the tensor be defined?
-This issue is not trivial and has puzzled physicists for decades\cite{forgerCurrentsEnergyMomentumTensor2004}.
+This issue is not trivial and has puzzled physicists for decades~\cite{forgerCurrentsEnergyMomentumTensor2004}.
 
 Superficially, we make the following observations.
 The \emph{defining} property of the energy-momentum tensor is its conservation law
@@ -202,7 +201,7 @@ This is easily shown as follows:
 \end{align}
 where we used the commutation of partial derivatives and relabelling of the dummy indices \( \mu, \lambda \).
 By an appropriate choice of \( S^{\alpha \mu \nu} \) the canonical energy-momentum tensor may be symmetrized, importantly while still abiding by the conservation law.
-The correction that symmetrizes the energy-momentum tensor is known as the ``Belinfante tensor'', which for the Dirac Lagrangian is\cite{chernodubThermalTransportGeometry2021}
+The correction that symmetrizes the energy-momentum tensor is known as the ``Belinfante tensor'', which for the Dirac Lagrangian is~\cite{chernodubThermalTransportGeometry2021}
 \begin{equation}
   \label{eq:81}
   S^{\alpha \mu \nu} = \frac{1}{8} \bar{\Psi}\left[ \gamma^{\alpha}, \sigma^{\mu\nu} \right] \Psi,
@@ -226,8 +225,8 @@ Writing it out explicitly
   \partial_0T^{00} + \partial_i T^{i0} = \partial_0 \epsilon + \partial_i j^i_{\epsilon} = 0,
 \end{equation}
 with \( \epsilon \) the energy density and \( \vec{j}_{\epsilon} \) the energy density current, the question is really seen to be finding the energy density current, ignoring all formal arguments about the energy-momentum tensor in a general context.
-Using such a line of reasoning \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems is the unsymmetrized canonical tensor.
-In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by \textcite{arjonaFingerprintsConformalAnomaly2019}.
+Using such a line of reasoning~\textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems is the unsymmetrized canonical tensor.
+In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by~\textcite{arjonaFingerprintsConformalAnomaly2019}.
 In the untilted case, the two definitions give the same contribution, while for a tilted cone, the response from the two definitions differs.
 
 For an untilted system, the components of interest of the canonical energy-momentum tensor reads
@@ -243,7 +242,7 @@ For an untilted system, the components of interest of the canonical energy-momen
   \right].
 \end{align}
 \end{subequations}
-The symmetrized energy-momentum tensor used by \textcite{arjonaFingerprintsConformalAnomaly2019}
+The symmetrized energy-momentum tensor used by~\textcite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
   T_s^{y 0} = \frac{T^{y 0} + T^{0 y}}{2}.
 \end{equation}
@@ -274,7 +273,7 @@ it is not difficult to show that
   F^{(2)} = \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = F^{(1)}.
 \end{equation}
 
-Tilting parallel to the magnetic field does not alter the eigenstates, it only changes the eigenvalues by a factor \( t_{\parallel} v_F k_z \) \cites{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
+Tilting parallel to the magnetic field does not alter the eigenstates, it only changes the eigenvalues by a factor \( t_{\parallel} v_F k_z \)~\cites{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
 The results from the untilted case may thus be applied directly, with rescaled energies.
 As the normalization factor \( \alpha_{\kappa_z m s} \) is invariant under the tilt, \( F^{(2)} \) does not change.
 However, \( F^{(1)} \) changes to
