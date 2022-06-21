@@ -147,7 +147,7 @@ gives
 \end{equation}
 There are thus four quantum numbers related to the eigenvectors, $k_x,  k_z, m, s$.
 Reintroducing $\chi = (y-k_xl_B^2) /l_B$ and normalizing we get:
-\begin{summary}
+\begin{summary}\label{summary:ll-notilt}
   The Landau levels of a Weyl cone coupled to a magnetic field \( B_z \) has the eigenvalues
   \begin{subequations}
     \begin{align}
@@ -223,11 +223,8 @@ with
 \end{equation}
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 We may again make the plane wave ansatz \( \phi(\vec{r}) = e^{i k_x x + i k_z z} \phi(y) \), similar to what was done for the untilted Hamiltonian in \cref{sec:ll-notilt}, to replace \( p_{(x /z)} \to k_{(x /z)} \).
-In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian, as we must reformulate the equation in terms of the ladder operators.
-\footnote{It would also be possible to choose the frame such that the tilt was both in \(x\) and \(y\) direction, in which case we would get ladder operators also on the diagonal.
-  This system, albeit tedious, could also have been solved directly.
-  \todo{Verify this}
-}
+In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian.%
+\footnote{One could, in principle, have solved the system directly without such a transformation, however, it would be very tedeous.~\cite{tchoumakovMagneticFieldInducedRelativisticProperties2016}}
 To achieve this, we will use a ``Lorentz boost'', which as we will show only leaves \(k_{z}\) and \(E\) in the diagonal.
 Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on \cref{eq:30} from the left, and insert identity on the form \( R R^{-1} \) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = R^{-1} \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
@@ -299,7 +296,11 @@ The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal 
   \theta = - s \tanh^{-1} t^s_{\perp}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in \cref{fig:arctanh}.
-\begin{figure}[ht]
+For \(|t_{\perp}| < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
+For \(|t_{\perp}| \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
+More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( |t_\perp| \to 1 \), the level separation \( \Delta E \to 0 \).
+
+\begin{figure}[htb]
   \tikzsetnextfilename{arctanh}
   \centering
   \begin{tikzpicture}
@@ -310,9 +311,10 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
       samples=200,
       enlarge x limits=false,
       grid=both,
+      width=.7\textwidth,
+      height=.5\textwidth,
       no markers,
       % axis equal
-      xlabel=\(x\),
       ylabel=\(\tanh^{-1} x\),
       % ytick=none,
       ]
@@ -323,12 +325,9 @@ The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1
   \end{tikzpicture}
   \caption{\label{fig:arctanh} Plot of \(\tanh^{-1}\), which diverges as the argument goes to \(\pm 1\).}
 \end{figure}
-For \(|t_{\perp}| < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
-For \(|t_{\perp}| \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
-More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( |t_\perp| \to 1 \), the level separation \( \Delta E \to 0 \).
 
-Interestingly, there are no restrictions in the perpendicular tilt, \( t_\parallel \).
-The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plotting the \( t \)-vector inside a unit sphere, shown in \cref{fig:tiltSphere}.
+Interestingly, there are no restrictions on the parallel tilt, \( t_\parallel \).
+The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plotting the \( \vec{t} \)-vector inside a unit sphere, shown in \cref{fig:tiltSphere}.
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
 When the projection is on the unit disc, the system is in the \emph{magnetic} regime, otherwise, we denote it by the \emph{electric} regime.
@@ -397,7 +396,7 @@ where \( E \) is the effective energy, and we used the four momentum \( p^{\mu }
 It can thus look like our expression in \cref{eq:40} is wrong.
 The solution to this seeming inconsistency is that the proper effective energy is not \( E - v_F k_z t^{s}_{\parallel} \), but rather \( E  - v_F k_z t^{s}_{\parallel} - v_F k_x t^{s}_{\perp}\)~\cite{yuPredictedUnusualMagnetoresponse2016}.
 
-The eigenvalue equation is simply
+The eigenvalue equation in the transformed momenta is simply
 \begin{equation}
   \label{eq:42}
   \left[  \gamma \left( t^s_{\parallel} \tilde{k}_{z} - \frac{E}{v_{F}} \right) \mathcal{I}_{2} +
@@ -422,12 +421,12 @@ We may thus use directly the result for the untilted cone, \cref{eq:26}, giving
     \left(E - t^s_{\parallel} v_{F} \tilde{k}_{z} \right) \gamma &= - s   \tilde{k}_{z} v_{F}, & m=0.
   \end{align}
 \end{subequations}
-Cleaning up, we get
+Cleaning up and introducing explicitly the quantum numbers to the energy
 \begin{subequations}
   \label{eq:45}
   \begin{align}
-    E &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) v_F \sqrt{2 |m| e \frac{B}{\gamma ^3}  + \tilde{k}_{z}^2 /\gamma ^2}, & m\neq 0,\\
-    E &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s  / \gamma  \right), & m=0.
+    E_{k_z m s} &= t^s_{\parallel} v_F \tilde{k}_{z} + \sign(m) \frac{v_F}{\gamma} \sqrt{2 |m| e \frac{B}{\gamma}  + \tilde{k}_{z}^2}, & m\neq 0,\\
+    E_{k_z 0 s} &= \tilde{k}_{z} v_{F} \left( t^s_{\parallel}  - s  / \gamma  \right), & m=0.
   \end{align}
 \end{subequations}
 
@@ -438,11 +437,11 @@ In particular, the separation between Landau levels is reduced by a factor \(\al
 The effect of the tilt on the Landau levels is to squeeze the Landau levels together, and we will call the \(\alpha \) the \emph{squeezing factor}.
 We note that when approaching the degree of tilt where we are no longer able to find a boost that enables us to solve for the Landau levels, i.e. when \( |t_{\perp}| \to 1\), the squeezing factor goes to zero.
 As the tilt exceeds this limit, the squeezing factor is imaginary.
-The Landau level description is only valid for \( |t_{\perp}| < 1 \).
+% The Landau level description is only valid for \( |t_{\perp}| < 1 \).
 
 The energy levels of the tilted cone expressed in terms of the energy levels of the untilted cone
 \[
-E = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
+E_{k_z m s} = t^s_{\parallel} v_F k_z + \alpha E^0_{m, \alpha B},
 \]
 where \( E^0_{m, \alpha B} \) is the energy in the untilted case, with magnetic field \( \alpha B \).
 Tilting of the Landau levels is induced by the parallel tilt component, \( t_\parallel \).
@@ -456,12 +455,13 @@ The Landau levels are shown in \cref{fig:llevelstilt}.
   \input{figures/lllevels_new.pgf}
   }
   % \includegraphics[width=0.8\textwidth]{example-image-10x16}
-  \caption{\label{fig:llevelstilt}Landau levels for different values of \( t_x, t_z \).
+  \caption{\label{fig:llevelstilt}Landau levels for different values of \( t_\perp, t_\parallel \).
     The top two rows show Type-I, while the lowest row shows Type-II.
-    Left column shows \( t_x = 0 \), right column \( t_x = 0.64 \) (\( \alpha = 0.6 \)).
-    The rows show \( t_z = 0, 0.5, 1.2 \), from top to bottom.
-    The dotted lines show the Landau levels with opposite sign of \( t_z \), the dashed show the opposite chirality.
+    Left column shows \( t_\perp = 0 \), right column \( t_\perp = 0.64 \) (\( \alpha = 0.6 \)).
+    The rows show \( t_\parallel = 0, 0.5, 1.2 \), from top to bottom.
+    The dotted lines show the Landau levels with opposite sign of \( t_\parallel \), the dashed show the opposite chirality.
     The arrows indicate valid ``transitions'', namely the \( 0\to 1 \) interband in black, \( -1 \to 4 \) interband in \textcolor{brown!70!black}{brown}, and \( 1\to 2 \) intraband in \textcolor{teal!70!black}{teal}.
+    See main text for details.
   }
 \end{figure}
 
@@ -469,15 +469,15 @@ The eigenstate of
 \[
 H = v_{F} \sigma ^{i} ( p_{i} + e A_{i} ),
 \]
-with \(A_{i} = - B_{z} y \delta _{i x}\), given in the position basis, is
-\begin{equation}
+with \(A_{i} = - B_{z} y \delta _{i x}\), as given in summary \ref{summary:ll-notilt} using the position basis,
+\begin{equation*}
   \phi _{\vec{k} m s}(\vec{r}) =  \frac{e^{ik_x x}e^{ik_z z}}{\sqrt{L_xL_z}}
   \frac{e^{-\frac{(y-k_x l^2)^2}{2 l_B^2}}}{\sqrt{\alpha_{k_z m s}^2 + 1}}
   \begin{pmatrix}
     \frac{\alpha_{k_z m s}}{\sqrt{2^{M-1} (M-1)! \sqrt{\pi } l_B}} H_{M-1}\left( \frac{y-k_x l_B^2}{l_B} \right)\\
     \frac{1}{\sqrt{2^M M! \sqrt{\pi } l_B}} H_M \left( \frac{y-k_x l_B^2}{l_B} \right)
   \end{pmatrix},
-\end{equation}
+\end{equation*}
 where capital letters indicate absolute value of corresponding quantity, $M=|m|, \vec{k} = (k_x, k_z)$, and with the normalization factor
 \begin{equation}
   \alpha_{k_z m s} = \frac{-\sqrt{2eB M}}{\frac{E_{k_z m s}}{s v_{F}} -   k_z}.
@@ -485,7 +485,7 @@ where capital letters indicate absolute value of corresponding quantity, $M=|m|,
 Taking care to keep track of boosted and rescaled quantities, the eigenstate in the boosted frame is
 \begin{equation}
   \label{eq:47}
-  \tilde{\psi}(\tilde{\vec{r}}) =
+  \tilde{\phi}(\tilde{\vec{r}}) =
   \frac{e^{i \tilde{k}_x \tilde{x}}e^{i k_z z}}{\sqrt{L_xL_z}}
   \frac{e^{-\frac{\left(\tilde{y} - \tilde{k}_x l_{B'}^2\right)^2}{2 l_{B'}^2}}}{\sqrt{\alpha_{\tilde{k}_z m s}^2 + 1}}
   \begin{pmatrix}
@@ -584,8 +584,9 @@ Recall that
 \[
   \ket{\psi} = \frac{1}{\mathcal{N}} e^{\theta /2 \sigma _x} \ket{\tilde{\psi}},
 \]
-and
+and use that for \( \theta = \tanh^{-1}(-s t^s_{\perp}) \) the hyperbolic rotation
 \[
+  R^2 =
 e^{\theta \sigma _x} =
 \frac{1}{\alpha }
 \begin{pmatrix}

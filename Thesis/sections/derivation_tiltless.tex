@@ -19,7 +19,7 @@ Using the relation of Heisenberg operators $\dot{A} = -i [A, H] $~\cite{sakuraiM
   &= -i v_F (s \sigma^i + (t^s)^i) \left[\vec{r}, p^B_i\right]\\
   &= v_F (s \vec{\sigma} + \vec{t}^s),
 \end{align}
-where we used the canonical commutation relation \( [r_i, p_j] = i \delta_{ij} \) and the commutation between the position operator and magnetic potential \( \vec{A} \).
+where we used the canonical commutation relation \( [r_i, p_j] = i \delta_{ij} \) and that the position operator and magnetic potential \( \vec{A} \) commute.
 We thus get
 \begin{equation}
   J^x = \psi ^{\dagger} \hat{J}^x \psi = sv_F e \sum\limits_{\vec{k}m, \vec{l}n}^{}
@@ -62,14 +62,14 @@ The untilted Weyl Hamiltonian
 \begin{equation}
   H_s = s \sigma^i p_i,
 \end{equation}
-where natural units (\( c = v_F = 1 \)) are used, to have the expressions explicitly match those of \gls{qft} literature;
-the associated Lagrange density~\cite{kachelriessQuantumFieldsHubble2018}
+where natural units (\( c = v_F = 1 \)) are used, to have the expressions explicitly match those of \gls{qft} literature.
+The associated Lagrange density~\cite{kachelriessQuantumFieldsHubble2018}
 \begin{equation}
   \mathcal{L}_s = i \phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi,
 \end{equation}
 with \( \sigma_s^{\mu} = (I_2, s \vec{\sigma}) \), i.e. \( \sigma_{s=1}^{\mu} = \sigma^{\mu}, \sigma_{s=-1}^{\mu} = \bar{\sigma}^{\mu} \) known from the Dirac solutions.
 This is seen directly from the Dirac Lagrangian \( i \bar{\psi} \slashed{\partial} \psi \) by taking \( \psi = (\phi_L, \phi_R)^T \) and setting, for example, \( \phi_R = 0 \).
-Symmetrize in daggered and undaggered fields
+Symmetrize in daggered and undaggered fields%
 \footnote{The Lagrangian itself is nonphysical, and we may transform it in any way that leaves the action \( \int \mathcal{L} \) invariant.}
 \begin{equation}
   \mathcal{L}_s = \frac{i}{2} (\phi^{\dagger} \sigma_s^{\mu} \partial_{\mu} \phi - \partial_{\mu} \phi^{\dagger} \sigma_s^{\mu} \phi),
@@ -92,7 +92,7 @@ Exactly analogous to the treatment of~\textcite{vanderwurffMagnetovorticalThermo
 \begin{equation}
   \mathcal{L}_s = i \phi^{\dagger} \tilde{\sigma}_s^{\mu} \partial_{\mu} \phi,
 \end{equation}
-where \( \tilde{\sigma}_s^{\mu} = \sigma_s^{\mu} + (t^s)^{\mu}, \; (t^s)^{\mu} = (0, \vec{t^s}) \).
+where \( \tilde{\sigma}_s^{\mu} = \sigma_s^{\mu} + (t^s)^{\mu}, \text{ with } (t^s)^{\mu} = (0, \vec{t^s}) \).
 The corresponding energy-momentum tensor, after again symmetrizing in the fields,
 \begin{equation}
   \label{eq:T-canon-tilt}
@@ -466,8 +466,8 @@ where \( a_{k_z m s}, b_{k_z m s} \) are as defined in \cref{eq:52,eq:53}, with 
 \subsubsection{The current operator}
 The matrix element
 \begin{align}
-  &J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q})\\
-  \nonumber &=  \int \mathrm{d}y
+  &J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q})\nonumber\\
+  &=  \int \mathrm{d}y
     e^{-iq_yy} sv_Fe \phi ^{*}_{\vec{k} ms}(y)
     \sigma ^x
     \phi _{\vec{k} +\qvec{q} ns}(y)\\
@@ -475,24 +475,30 @@ The matrix element
     \exp \left\{
     - i q_yy - \frac{(y-k_xl_B^2)^2 + (y-(k_x + q_x) l_B^2)^2}{2 l_B^2}
     \right\}\\
-  \nonumber &\pe \left[
+  \nonumber &\pe \times \left[
     a_{k_zms}b_{k_z + \qvec{q}_z ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)\right.\\
-  \nonumber &+
+  \nonumber &\pe\quad\quad +
     \left.  b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x+ q_x) l_B^2}{l_B} \right)
     \right]\\
     %%% 
   &= s v_F e \int \mathrm{d}y
-    \exp \left[-\left\{
-    y+ \frac{l_B^2}{2} \left( iq_y - 2k_x - q_x \right)
-    \right\}^2 /l_B^2\right]\\
-  \nonumber &\pe \exp \left[- \frac{1}{4} l_B^2 \left\{
-    \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y 
-    \right\}\right]\\
-  \nonumber &\pe \left[
+    % \exp \left[-\left\{
+    % y+ \frac{l_B^2}{2} \left( iq_y - 2k_x - q_x \right)
+    % \right\}^2 /l_B^2\right]
+    e^{-\left\{
+    y+ l_B^2 \left( iq_y - 2k_x - q_x \right) /2
+      \right\}^2 /l_B^2 }
+    e^{- \frac{1}{4} l_B^2 \left\{
+    \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
+    \right\}} \\
+  % \nonumber &\pe \times \exp \left[- \frac{1}{4} l_B^2 \left\{
+  %   \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
+  %   \right\}\right]\\
+  \nonumber &\pe \times \left[
     a_{k_zms}b_{k_z + \qvec{q}_z ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right) \right.\\
-  \nonumber &\left. +
+  \nonumber &\pe \quad\quad \left. +
     b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)
@@ -507,14 +513,14 @@ By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the m
     s v_F e \int \mathrm{d}\tilde{y} \: l_B
 \exp \left[- \frac{1}{4} l_B^2 \left\{
     \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y 
-    \right\}\right]\\
-  \begin{split}
-  e^{-\tilde{y}^2}
-   &\left[
+  \right\}\right]
+  e^{-\tilde{y}^2}\\
+  \quad\begin{split}
+   &\times\left[
     a_{k_zms}b_{k_z + \qvec{q}_z ns}
     H_{M-1} \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_N\left( \tilde{y} + \frac{l_B}{2}(-q_x - iq_y) \right) \right.\\
-    &+\left.
+    &\quad +\left.
     b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \tilde{y} + \frac{l_B}{2}(q_x - iq_y) \right)
     H_{N-1} \left( \tilde{y} +  \frac{l_B}{2}(-q_x - iq_y)\right)
@@ -576,15 +582,15 @@ T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 \phi ^* _{\vec{k}+\qvec{q} ns}(y) s \sigma ^y (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
 \phi _{\vec{k} ms}(y).
 \end{equation}
-Recall that 
-\begin{equation}
-  \phi _{\vec{k}ms}(y) =
-  e^{- \frac{(y - k_x l_B ^2)^2}{2 l_B^2}}
-  \begin{pmatrix}
-    a_{k_z ms} H_{M-1} \left( \frac{y-k_x l_B^2}{l_B} \right)\\
-    b_{k_z ms} H_M \left( \frac{y - k_x l_B^2}{l_B} \right)
-  \end{pmatrix}.
-\end{equation}
+% Recall that
+% \begin{equation}
+%   \phi _{\vec{k}ms}(y) =
+%   e^{- \frac{(y - k_x l_B ^2)^2}{2 l_B^2}}
+%   \begin{pmatrix}
+%     a_{k_z ms} H_{M-1} \left( \frac{y-k_x l_B^2}{l_B} \right)\\
+%     b_{k_z ms} H_M \left( \frac{y - k_x l_B^2}{l_B} \right)
+%   \end{pmatrix}.
+% \end{equation}
 The form of the integrand is similar to the current matrix case, with the exchange of the Pauli matrix $\sigma ^x \to \sigma ^y$, thus giving an additional $i$ and a negative sign to the first term.
 {
 \setlength\multlinegap{0pt}  %% Make multline go all the way left
@@ -602,50 +608,58 @@ T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
 Taking care to note that the factor from the Fourier transform, that was $e^{-iq_y y}$ in the current matrix element is here $e^{+ i q_y y}$, a similar completion of the square is done
 \begin{equation}
   \begin{split}
-    &T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) =
+    T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q}) &=
     \frac{i s}{2}
     (E_{k_z m s} + E_{k_z+\qvec{q}_z n s}- 2\mu )
-    \exp \left[
-      -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\}
-    \right]\\
-    &\times \int \mathrm{d}y
+      e^{
+      -l_B^2 \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\} /4
+      }\\
+    % \exp \left[
+    %   -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2 - 2 i q_y (2 k_x + q_x) \right\}
+    % \right]\\
+    &\pe \times \int \mathrm{d}y
     \exp \left[
       -\left\{ y + \frac{l_B^2}{2} (-iq_y - 2 k_x - q_x) \right\}^2 / l_B^2
     \right]\\
-    &\times \left[
-      - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )
-      + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
-    \right].
+    &\pe
+      \begin{multlined}[t]
+        \times \Big[
+        - a_{k_z+\qvec{q}_z ns} b_{k_z ms} H_{N-1} (\dots ) H_M(\dots )\\
+        + b_{k_z+\qvec{q}_z ns} a_{k_zms} H_N(\dots ) H_{M-1}(\dots )
+        \Big].
+      \end{multlined}
   \end{split}
 \end{equation}
 The arguments of the Hermite polynomials have been dropped for brevity of notation.
-As before make a change of variables to get the integral on the form of the shifted orthogonality relation for the Hermite polynomials \cref{eq:hermite-shift-ortho}.
-Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the shifted orthogonality relation is used on the expression
+As before make a change of variables to get the integral on the form of the orthogonality relation for the Hermite polynomials \cref{eq:hermite-ortho}.
+Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ the orthogonality relation is used on the expression
 {\setlength\multlinegap{0pt}  %% Make multline go all the way left
 \begin{multline}
   \label{eq:76}
     T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms} (\vec{q})
-    = \frac{i s}{2}
+    = \frac{i s l_B}{2}
     (E_{k \mu s} + E_{\lambda \nu s}- 2\mu )
-    \exp \left[
-      -\frac{l_B^2}{4} \left\{ \qvec{q}_y^2- 2 i q_y (2 k_x + q_x) \right\}
-    \right]\\
+   e^{
+      -l_B^2 \left\{ \qvec{q}_y^2- 2 i q_y (2 k_x + q_x) \right\} /4
+    }
     % \exp \left[
     %   -\left\{ y + \frac{l_B^2}{2} (-iq_y - 2 k_x - q_x) \right\}^2 / l_B^2
     % \right]\\
-    \int \mathrm{d}\tilde{y} \; l_B
-    e^{-\tilde{y}^2}
-     \left[
-      - a_{\vec{k}+\qvec{q} ns} b_{\vec{k} ms}
-      H_{N-1} \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
-      H_M \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)\right.\\
-       \left.+ b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms}
-      H_N \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
-      H_{M-1} \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)
-    \right].
-\end{multline}
-}
+    \int \mathrm{d}\tilde{y} e^{-\tilde{y}^2}\\
+    \times \begin{multlined}[t]
+      \left[
+        - a_{\vec{k}+\qvec{q} ns} b_{\vec{k} ms}
+        H_{N-1} \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
+        H_M \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)\right.\\
+      \left.\quad + b_{\vec{k}+\qvec{q} ns} a_{\vec{k}ms}
+        H_N \left( \tilde{y} + \frac{l_B}{2} ( iq_y - q_x) \right)
+        H_{M-1} \left( \tilde{y} + \frac{l_B}{2} (iq_y + q_x) \right)
+      \right].
+    \end{multlined}
+  \end{multline}
+}%
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
+In the limti \( \vec{q} \to 0 \)
 \begin{equation}
   \label{eq:77}
   T^{y 0}_{\vec{k} ns, \vec{k}ms} (\vec{q})
@@ -704,22 +718,31 @@ This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B$, resultin
   &= \frac{\mathcal{V} e B}{(2 \pi)^2  } \int \mathrm{d}k_{z}.
 \end{align}
 
-Recall the response function
+Recall the response function \eqref{eq:general-response-function}
 \begin{equation}
-  \chi ^{xy} (\omega , \vec{q}) =
-  \sum\limits_{\vec{k}, mn}^{}
-  \frac{1}{\mathcal{V}}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F }{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
   \frac{
-    i v_F  J^x_{\vec{k} m s, \vec{k}+\qvec{q} n s}(\vec{q})
-    T^{y 0}_{\vec{k}+\qvec{q} ns, \vec{k}ms}(\vec{q})
-    \;
-    [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
+    J^x_{\vec{k} m s, \vec{k} n s} T^{y 0}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
   }{
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} )
-    (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} +  \omega)
-  }
-  .
+    % (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
+    (E_{k_z m s} - E_{k_z n s})^2
+  }.
 \end{equation}
+% \begin{equation}
+%   \chi ^{xy} (\omega , \vec{q}) =
+%   \sum\limits_{\vec{k}, mn}^{}
+%   \frac{1}{\mathcal{V}}
+%   \frac{
+%     i v_F  J^x_{\vec{k} m s, \vec{k}+\qvec{q} n s}(\vec{q})
+%     T^{y 0}_{\vec{k}+\qvec{q} ns, \vec{k}ms}(\vec{q})
+%     \;
+%     [n_{\vec{k} m s}- n_{\vec{k}+\qvec{q} ns }]
+%   }{
+%     (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} )
+%     (E_{k_z m s} - E_{k_z + \qvec{q}_z ns} +  \omega)
+%   }
+%   .
+% \end{equation}
 Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
 Collecting dimensionfull quantities, the response function reads
 \begin{multline}
@@ -840,34 +863,29 @@ where we have reinserted the explicit \( \hbar \).
 Including contributions from the \( \bar{N} \) lowest landau levels, one acquire additional numerical prefactors,
 \begin{equation}
   \label{eq:95}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_{\bar{N}} \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_{\bar{N}} \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar}.
 \end{equation}
-where the factor by analytical integration was found to be \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
-Furthermore, \( \gamma_{\bar{N}} \) goes like \( \log \bar{N} \).
-The first 300 contributions are shown in \cref{fig:contributions}.
-
 Solving the integral analytically, we obtained the contribution from each term
 \begin{equation}
   \gamma_{\bar{N}} - \gamma_{\bar{N}-1} = 1 + 2 \bar{N} \left\{1 - (1+\bar{N}) \log(1 + \frac{1}{\bar{N}}) \right\} , \quad \bar{N} > 0.
 \end{equation}
 The sum can be shown to equal the rather nasty expression
-\begin{equation}
-  \begin{split}
-  \gamma_{\bar{N}} = \gamma_0 + \frac{1}{3} &\Big(
+\begin{multline}
+  \gamma_{\bar{N}} = \gamma_0 + \frac{1}{3} \Big(
     6 \zeta ^{(1,0)}(-2,\bar{N}+1)
     -6 \zeta ^{(1,0)}(-2,\bar{N}+2)
     +6 \zeta^{(1,0)}(-1,\bar{N}+1)\\
-    &\hphantom{\Big(} \mathllap{+} 6 \zeta^{(1,0)}(-1,\bar{N}+2)
+    + 6 \zeta^{(1,0)}(-1,\bar{N}+2)
     +12 \log (\xi)
     +3 \bar{N}^2
     +6 \bar{N}
     -1
   \Big),
-  \end{split}
-\end{equation}
+\end{multline}
 where \( \xi \approx  1.28243 \) is Glaisher's constant.
-This expression goes like \( \log \bar{N} \).
-% \todo{Series expand in \( x=\frac{1}{\bar{N}} \) }
+Specifically \( \gamma_0 = 1, \gamma_{20} \approx 2 \).
+Furthermore, \( \gamma_{\bar{N}} \) goes like \( \log \bar{N} \).
+The first 300 contributions are shown in \cref{fig:contributions}.
 
 \begin{figure}[ht]
   \centering

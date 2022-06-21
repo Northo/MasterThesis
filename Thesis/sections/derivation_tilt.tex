@@ -79,7 +79,7 @@ The first part of the current matrix element, \cref{eq:tilt:currentExpr}, is thu
       -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
     \right]
    \\
-    e^{-\tilde{y}^2}
+   \times e^{-\tilde{y}^2}
    &\left[
     a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
     H_{M-1} \left(  \chi_{\vec{k}} \right)
@@ -109,43 +109,79 @@ Next consider the second term of the current operator,
   \phi ^{*}_{\vec{k} m s}(y)  \phi _{\vec{k} + \qvec{q} n s}(y).
 \end{equation}
 With a procedure similar to above, with the same substitution and completion of the square
-\begin{multline}
-  \label{eq:105}
-  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+% \begin{multline}
+%   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) =
+%   \frac{s v_F e t^s_x}{\sqrt{\alpha}}
+%   \int \mathrm{d} \tilde{y} l_B
+%     \exp \left[
+%       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
+%     \right]\\
+%   e^{-\tilde{y}^2} \big[
+%     a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(s a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
+%    +
+%     b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + s b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
+%     \big].
+% \end{multline}
+% \begin{equation}
+%   \begin{split}
+%   J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) &=
+%   \frac{s v_F e t^s_x}{\sqrt{\alpha}}
+%   \int \mathrm{d} \tilde{y} l_B
+%     \exp \left[
+%       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
+%     \right]\\
+%     \times e^{-\tilde{y}^2} &
+%     \big[
+%     a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) s a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )\\
+%       &-a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} )\\
+%       &- b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )\\
+%       &+ s b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} )
+%     \big].
+%   \end{split}
+% \end{equation}
+\begin{equation}
+   \label{eq:105}
+  \begin{split}
+  J_{\vec{k} m s; \vec{k} + \qvec{q} n s}^{(2)} (\vec{q}) &=
   \frac{s v_F e t^s_x}{\sqrt{\alpha}}
   \int \mathrm{d} \tilde{y} l_B
     \exp \left[
       -\frac{l_{B}^2}{4 \alpha } (q_{y}^2 + 2i (2 k'_x + q' _x) q_{y}  + (q'_x)^2 )
     \right]\\
-  e^{-\tilde{y}^2} \big[
-    a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) \left(s a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) - t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)\\
-   +
-    b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) \left(- t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} ) + s b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} ) \right)
-    \big].
-\end{multline}
+    &\pe \times e^{-\tilde{y}^2}
+    \begin{multlined}[t]
+      \Big[
+      a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) s a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )\\
+      \shoveleft-a_{\vec{k} m s} H_{M-1}( \chi _{\vec{k}} ) t^s_{x} b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} )\\
+      \shoveleft- b_{\vec{k} m s} H_{M}( \chi _{\vec{k}} ) t^s_{x} a_{\vec{k} + \qvec{q} n s} H_{N-1}( \chi _{\vec{k} + \qvec{q}} )\\
+      + s b_{\vec{k} + \qvec{q} n s} H_{N}( \chi _{\vec{k} + \qvec{q}} )
+      \Big].
+    \end{multlined}
+  \end{split}
+\end{equation}
 By inspection,  recalling \( \sqrt{1 - t_x^2} = \alpha \), we see
 {%
 \setlength\multlinegap{0pt}  %% Make multline go all the way left
-\begin{multline}
-J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) =
+\begin{align}
+J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) &=
   s v_F e \sqrt{\alpha} \int \mathrm{d}\tilde{y} \: l_B
   \exp \left[
     -\frac{l_{B}^2}{4 \alpha } \left(q_{y}^2 + 2i (2 k' _x + q' _x) q_{y} + (q'_x)^2 \right)
-  \right]
-  e^{-\tilde{y}^2}
-  \\
-  \times
-  \Big[
-  a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
-  H_{M-1} \left(  \chi_{\vec{k}} \right)
-  H_N\left( \chi_{\vec{k} + \qvec{q}} \right)
-  +
-  b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
-  H_M \left( \chi_{\vec{k}} \right)
-  H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)
-  \Big].
-\end{multline}
-}
+  \right]\nonumber\\
+  &\pe\times e^{-\tilde{y}^2}
+    \begin{multlined}[t]
+      \Big[
+      a_{\vec{k}ms}b_{\vec{k} + \qvec{q} ns}
+      H_{M-1} \left(  \chi_{\vec{k}} \right)
+      H_N\left( \chi_{\vec{k} + \qvec{q}} \right)\\
+      +
+      b_{\vec{k}ms} a_{\vec{k} + \qvec{q} ns}
+      H_M \left( \chi_{\vec{k}} \right)
+      H_{N-1} \left( \chi_{\vec{k} + \qvec{q}} \right)
+      \Big].
+    \end{multlined}
+\end{align}}
+The diagonal elements cancel!
 
 To perform the integration, we use the \emph{shifted orthogonality} relation for Hermite polynomials~\cite[Eq. (7.377)]{gradshteinTableIntegralsSeries2015}
 \begin{equation}
@@ -275,7 +311,7 @@ we get the very fortunate result
   = \frac{1}{\mathcal{N}^{*} \mathcal{N}} \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}
   = \alpha \tilde{\phi}^{*} \sigma _{y} \tilde{\phi}.
 \end{equation}
-The first term of the energy-momentum tensor thus has the exact same form as the untilted case, however with a prefactor \( \alpha \) and using the transformed coordinates \( \chi \).
+The energy-momentum tensor thus has the exact same form as the untilted case, however with a prefactor \( \alpha \) and using the transformed coordinates \( \chi \).
 We thus get
 \begin{multline}
   \label{eq:109}
@@ -329,8 +365,9 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                         + \alpha_{k_z + \qvec{q}_z n s} \Xi _{2} (\vec{q}, m, n, s) \right],\\
     T_{\vec{k} + \qvec{q} n s, \vec{k} m s}^{0y} (\vec{q}) &=
                                                              \frac{is \alpha}{2}
-                                                             (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu) \Gamma ^+_{\vec{k} \qvec{q} m n s} \\
-    \nonumber &\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
+                                                             \Gamma ^+_{\vec{k} \qvec{q} m n s}
+                                                             (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu)\\
+    \nonumber &\pe\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
   \end{align}
   with \( \bar{\vec{q}} = (q_x, -q_y, q_z) \) and
   \[
