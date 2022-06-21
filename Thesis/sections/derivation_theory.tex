@@ -11,14 +11,14 @@ The chapter is divided into sections, each representing a somewhat contained par
 The text is not, however, written such that a reader should expect to understand a section without reading the preceding one.
 Due to the nature of the work, certain sections are rather technical.
 For the benefit of the reader, we have included summaries of intermediate results, enabling the reader to skip the more technical parts.
-In particular, the latter part of \cref{sec:ll-tilt} and section~\ref{sec:explicit-form-tilt} may be skipped without much loss.
+In particular, the latter part of \cref{sec:ll-tilt} and \cref{sec:explicit-form-tilt} may be skipped without much loss.
 
 We will find the current response of a single Dirac cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
 The current response of interest in the given geometry is thus in the $x$-direction,
 \begin{equation}\label{eq:20}
-  J^x = \chi ^{xy} \frac{- \nabla _yT}{T},
+  J^x = \chi ^{xy} \left( \frac{- \nabla _yT}{T} \right),
 \end{equation}
-with $\chi^{xy}$  being the response\footnote{The sign in \cref{eq:20} depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
+with $\chi^{xy}$  being the response function\footnote{The sign in \cref{eq:20} depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}.
 This geometry is shown in \cref{fig:setup}.
 \begin{figure}[ht]
   \centering
@@ -30,16 +30,19 @@ This geometry is shown in \cref{fig:setup}.
   }
   \caption{Sketch of the geometry used in the derivation. Note that we consider only bulk response, and the finite sample is only for illustration purposes. \label{fig:setup}}
 \end{figure}
-In the derivation of~\textcite{chernodubGenerationNernstCurrent2018} the response
+For the untilted case, the response was first calculated by~\textcite{chernodubGenerationNernstCurrent2018} by direct application of the scale magnetic effect~\cite{chernodubAnomalousTransportDue2016} to thermally perturbed condensed matter systems using the Luttinger formalism, where the response function
 \begin{equation}
   \chi ^{xy} = \frac{e^2 v_F B}{18 \pi ^2 \hbar }
 \end{equation}
-was found, while the derivation of~\textcite{arjonaFingerprintsConformalAnomaly2019} found
-\footnote{The paper is somewhat unclear on what is their final result, as there is some possible confusion related to the number of Landau levels included and whether one is including both or only one Dirac cone.
-The above result is what is meant, to the best of our understanding.}
+was found.
+Later, \textcite{arjonaFingerprintsConformalAnomaly2019} found%
+% \footnote{The paper is somewhat unclear on what is their final result, as there is some possible confusion related to the number of Landau levels included and whether one is including both or only one Dirac cone.
+% The above result is what is meant, to the best of our understanding.}
 \begin{equation}
   \chi ^{xy} = \frac{e^2 v_F B}{4 \pi ^2 \hbar }.
 \end{equation}
+The results differ only by numerical prefactors, with the dependence on parameters of the system otherwise equal.
+As we will show, the response function for the tilted system differs from the untilted case only by a numerical prefactor as well, dependent on the tilt.
 
 Recall the linear response from the Kubo formalism in \cref{eq:current-luttinger-final}, found through Luttinger's approach.
 \begin{equation}
@@ -56,8 +59,9 @@ Recall the linear response from the Kubo formalism in \cref{eq:current-luttinger
     }
   \right\}
   }_{\chi^{ij}}
-  \frac{- \partial _j' T(t', \vec{r}')}{T}.
+  \left( \frac{- \partial' _{j} T(t', \vec{r}')}{T} \right),
 \end{equation}
+where, as before, \( \partial'_j = \partial / \partial r'_j \).
 Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
 As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in \cref{eq:21} can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
 Starting with Fourier transforming the position part, notice that the structure of \cref{eq:21} is
@@ -132,7 +136,7 @@ Secondly, we discuss the ambiguity related to the energy-momentum tensor.
 
 \subsection{Transport and magnetization}
 \label{sec:transport-magnetization}
-Recall that we generally define the transport coefficients (\cref{eq:17})
+Recall from \cref{eq:17} that we generally define the transport coefficients
 \[
 J^i = -e L_{ij}^{11} \left[
           E_j - T \nabla_j \frac{\mu}{T}
@@ -162,17 +166,17 @@ The result from the Kubo calculation is therefore the actual transport current.
 
 \subsection{Comment on the energy-momentum tensor}\label{sec:commen-T}
 There is some ambiguity regarding the definition of the energy-momentum tensor~\cites{kachelriessQuantumFieldsHubble2018}{chernodubThermalTransportGeometry2021}{vanderwurffMagnetovorticalThermoelectricTransport2019}{forgerCurrentsEnergyMomentumTensor2004}.
-The \emph{canonical} energy-momentum tensor, derived from Lagrangian mechanics, is defined as
+The \emph{canonical} energy-momentum tensor, derived from the Lagrangian formalism, is defined as
 \begin{equation}
 	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
 \end{equation}
 On the other hand, from general relativity, the \emph{dynamical} energy-momentum tensor is defined by the variation of the (matter) action with respect to the metric~\cite{kachelriessQuantumFieldsHubble2018}
 \todo{Signs depend on choice of g}
 \begin{equation}
-	T^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
+	T_{\text{dyn}}^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
 \end{equation}
 Immediately, we see that the first definition is in general not symmetric, while the latter is, as the metric is always symmetric%
-\footnote{something with torsion never}.
+\footnote{In a torsionless manifold. For manifolds with torsion, the definitions are still generally different.}.
 As the energy-momentum tensor is an observable, this presents a problem:
 how should the tensor be defined?
 This issue is not trivial and has puzzled physicists for decades~\cite{forgerCurrentsEnergyMomentumTensor2004}.
@@ -185,18 +189,19 @@ The \emph{defining} property of the energy-momentum tensor is its conservation l
 \end{equation}
 on a flat manifold.
 This, of course, only defines the tensor up to a total divergence.
-Denote by \( \hat{T}^{\mu \nu} \) the \emph{canonical} energy-momentum tensor.
+Denote by \( T^{\mu \nu} \) the \emph{canonical} energy-momentum tensor.
 We can then define another tensor
 \begin{equation}
   \label{eq:79}
-  T^{\mu\nu} = \hat{T}^{\mu \nu} + \partial_{\alpha} S^{\alpha \mu \nu}.
+  \hat{T}^{\mu\nu} = T^{\mu \nu} + \partial_{\alpha} S^{\alpha \mu \nu}.
 \end{equation}
-By letting the additional term be antisymmetric \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), it is divergence free.
-This is easily shown as follows:
+By letting \( S^{\alpha \mu \nu} \) be antisymmetric in \( \alpha\) and \( \mu \), the last term of \cref{eq:79} is divergence free.
+% \( S^{\alpha \mu \nu} = - S^{\mu \alpha \nu}\), the last term of \cref{eq:79} is divergence free.
+This is easily shown as
 \begin{align}
   \label{eq:80}
-  \partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu} &= - \partial_{\mu} \partial_{\alpha} S^{\mu \alpha \nu}\\
-                                                        &= - \partial_{\alpha} \partial_{\mu} S^{\mu \alpha \nu}\\
+  \partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu} &= - \partial_{\mu} \partial_{\alpha} S^{\mu \alpha \nu}\nonumber \\
+                                                        &= - \partial_{\alpha} \partial_{\mu} S^{\mu \alpha \nu}\nonumber \\
   &= -\partial_{\mu} \partial_{\alpha} S^{\alpha \mu \nu},
 \end{align}
 where we used the commutation of partial derivatives and relabelling of the dummy indices \( \mu, \lambda \).
@@ -209,7 +214,7 @@ The correction that symmetrizes the energy-momentum tensor is known as the ``Bel
 which gives
 \begin{equation}
   \label{eq:82}
-  T^{\mu \nu} = \frac{1}{4} \bar{\Psi} (\gamma^{\mu} D^{\nu} + \gamma^{\nu} D^{\mu}) \Psi.
+  \hat{T}^{\mu \nu} = T^{\mu \nu}_{\text{dyn}} = \frac{1}{4} \bar{\Psi} (\gamma^{\mu} D^{\nu} + \gamma^{\nu} D^{\mu}) \Psi.
 \end{equation}
 Which, in the case of the Dirac Lagrangian, so happens to correspond to the naive symmetrization
 \begin{equation}
@@ -227,7 +232,7 @@ Writing it out explicitly
 with \( \epsilon \) the energy density and \( \vec{j}_{\epsilon} \) the energy density current, the question is really seen to be finding the energy density current, ignoring all formal arguments about the energy-momentum tensor in a general context.
 Using such a line of reasoning~\textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} argued that the appropriate form of the energy-momentum tensor that should be used in linear response calculations of Dirac material systems is the unsymmetrized canonical tensor.
 In this work, we will therefore use the canonical energy-momentum tensor, as opposed to the symmetric form used in the linear response calculation of an untitled cone done by~\textcite{arjonaFingerprintsConformalAnomaly2019}.
-In the untilted case, the two definitions give the same contribution, while for a tilted cone, the response from the two definitions differs.
+In the untilted case, even though the two definitions are generally different, they give the same contribution, while for a tilted cone, the response from the two definitions differs.
 
 We here show explicitly how the response differs for the two choices of the energy-momentum tensor.
 The discussion relies on results found later in the text, however, we find it instructive to include the discussion already here.
@@ -241,9 +246,10 @@ For an untilted system, the components of interest of the canonical energy-momen
   T^{0 y} &= \frac{v_F}{4}
   \left[
   \phi^{\dagger} p_y \phi - p_y \phi^{\dagger} \phi
-  \right].
+  \right],
 \end{align}
 \end{subequations}
+where \( \phi, \phi^{\dagger} \) are the fields.
 The symmetrized energy-momentum tensor used by~\textcite{arjonaFingerprintsConformalAnomaly2019}
 \begin{equation}
   T_s^{y 0} = \frac{T^{y 0} + T^{0 y}}{2}.
@@ -283,5 +289,6 @@ However, \( F^{(1)} \) changes to
 where \( \epsilon^0_{\kappa_z m s} \) are the energy levels of the untilted system.
 The last term in \cref{eq:163} gives a non-zero contribution to the total response, and so the results for a tilted cone is generally dependent on the choice of the energy-momentum tensor.
 
+As mentioned, we have used the non-symmetric canonical energy-momentum tensor.
 The calculation presented in the thesis has for completeness been carried out for the symmetric energy-momentum tensor as well.
 The result is presented in \cref{sec:otherterm-appendix}.

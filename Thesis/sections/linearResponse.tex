@@ -274,7 +274,9 @@ Luttinger~\cite{luttingerTheoryThermalTransport1964} mentions the derivations of
 Luttinger's method attempts to put the results of those calculations on a ``more solid basis''.
 
 We will here simply outline the basic idea of Luttinger, without a rigorous derivation.
-Introduce to the Hamiltonian a \emph{gravitational} scalar potential field $\psi$ coupling to the energy density $T^{00}$ of the (flat) system~\cite{luttingerTheoryThermalTransport1964}
+Introduce to the Hamiltonian a \emph{gravitational} scalar potential field $\psi$ coupling to the energy density, here denoted by the $T^{00}$ component of the energy-momentum tensor%
+\footnote{Also known as the \emph{stress-energy tensor} and \emph{stress-energy-momentum tensor}.}%
+, of the (flat) system~\cite{luttingerTheoryThermalTransport1964}
 \begin{equation}
   \label{eq:luttinger-term}
   H_L = \int \mathrm{d}\vec{r} \psi T^{00}.
@@ -368,7 +370,7 @@ By the fundamental theorem of calculus this obviously gives for the zero-zero co
   T^{00}(t, \vec{r}) = - \int\limits_{-\infty }^t \mathrm{d}t'
   v_F \partial _i T^{i 0}(t', \vec{r}).
 \end{equation}
-Introduce \cref{eq:18}) in the response relation (\ref{eq:current-from-gravity}, and use integration by parts
+Introduce \cref{eq:18} in the response relation \cref{eq:current-from-gravity}, and use integration by parts
 \begin{equation}
   \int u v' = uv - \int u' v,
 \end{equation}
@@ -383,8 +385,9 @@ giving
         \vec{J}^i(t, \vec{r}), T^{j0}(t'', \vec{r'})
       \right]}
   \right\} 
-  \partial'_j \psi (t', \vec{r'}).
+  \partial'_j \psi (t', \vec{r'}),
 \end{equation}
+where we have defined \( \partial'_i = \partial /\partial r'_i \).
 By Luttinger's relation
 \begin{equation}\label{eq:current-luttinger-final}
   \braket{\vec{J}^i}(t, \vec{r}) =

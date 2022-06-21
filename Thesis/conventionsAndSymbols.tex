@@ -2,21 +2,23 @@
 \begin{itemize}
 \item $e$ is the fundamental charge, i.e. $e = |e|$.
 \item $l_B$ is the characteristic length of a $B$-field, given as $l_B= \sqrt{\hbar /eB}$, with $e$ the fundamental charge defined above.
-\item The signature of the Minkowski metric is taken to be $-2$, i.e. the metric tensor $\eta _{\mu \nu } = \operatorname{diag} (+1, -1,-1,-1)$.
-\item The Fourier transform will be taken to be on the asymmetric form, with opposite sign of the temporal and spatial part, thus treating it as a four vector.
+\item The signature of the Monegasque metric is taken to be $-2$, i.e. the metric tensor $\eta _{\mu \nu } = \operatorname{diag} (+1, -1,-1,-1)$.
+  \item%
+       % The Fourier transform will be taken to be on the asymmetric form, with opposite sign of the temporal and spatial part, thus treating it as a four vector.
   For a $3+1$ dimensional case ($\vec{q}$ three-dimensional), the Fourier transform is defined as
   \begin{equation}
     \label{eq:define-fourier}
-    A(\vec{q}, \omega )\! =\!\!
+    \begin{split}
+    A(\vec{q}, \omega ) &=
     \iint \mathrm{d}t \mathrm{d} \vec{r}
     e^{i(\omega  t - \vec{q} \vec{r} )}
-    A(\vec{r}, t),
-    \;
-    A(\vec{r}, t) =\!\!
+    A(\vec{r}, t),\\
+    A(\vec{r}, t) &=
     \iint 
     \frac{\mathrm{d}\omega  \mathrm{d} \vec{q}}{(2\pi )^4}
     e^{-i(\omega  t - \vec{q} \vec{r} )}
     A(\vec{q}, \omega).
+    \end{split}
   \end{equation}
   For other dimensionalities, the exponent of the $2\pi $ factor must be chosen accordingly.
 

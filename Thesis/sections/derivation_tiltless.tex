@@ -210,8 +210,9 @@ Reintroducing the explicit effective speed of light \( v_F \) and recalling \( \
 Here, also a non-zero potential $\mu $ is included by hand%
 \footnote{This is of course in no way a rigorous treatment of the chemical potential. Heuristically, one may argue that as the \( T^{y0} \) component is to be regarded as the energy flux, the contribution from chemical potential should be the chemical potential multiplied by the particle velocity operator. },%
 \todo{The footnote makes the definition sound much like heat current (see Mahan eq. 3.484)}
-similar to what was done in~\textcite{arjonaFingerprintsConformalAnomaly2019}.
-Our final result will be given at zero potential, however, it is included in the calculations as it is later interesting to consider small deviations from zero chemical potential.
+equal to what was done in~\textcite{arjonaFingerprintsConformalAnomaly2019}.
+% Our final result will be given at zero potential, however, it is included in the calculations as it is later interesting to consider small deviations from zero chemical potential.
+Our final result will be given at zero potential, however, it is included in the calculations as it for future work is interesting to consider small deviations from zero chemical potential.
 Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
 \[
   i \partial_t a_{\lambda }(t) = E_{\lambda }a_{\lambda },
@@ -324,7 +325,7 @@ where the matrix elements in momentum space are given by
 \end{align}
 Note that as $T^{y 0}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{y 0}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of \cref{eq:68}.
 
-As was noted earlier, the eigenvectors are plane waves in the $x, z$-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
+As was noted earlier, the eigenvectors are plane waves in the \( x \)- and \( z \)-directions, and the non-trivial part is the $y$-dependent $\phi (y)$.
 Thus, we want to express these matrix elements in terms of $\phi (y)$.
 The sum over $\vec{l}$ in \cref{eq:66} can be replaced by an integral, as it is a good quantum number.
 As usual, the measure in the integration is given by the density of states in momentum space, the well-known $L_{i} /2\pi $, with $L_i$ being the length of the system in the $i$-direction.
@@ -333,7 +334,7 @@ As usual, the measure in the integration is given by the density of states in mo
                     J^x_{\vec{k}ms, \vec{l}ns} (\vec{q}) a^{\dagger}_{\vec{k} ms} (t) a_{\vec{l} ns}(t)\\
   \nonumber &= \int \mathrm{d}l_x \mathrm{d} l_{z} \int \mathrm{d} y e^{-i q_y y}
                     \delta (l_x - k_x - q_x) \delta (l_z - k_z -  q_z)\\
-                    \nonumber &\pe \times sv_F e \phi ^{*}_{\vec{k} ms}(y) \sigma ^x \phi _{\vec{l}ns}(y).
+                    \nonumber &\pe \times sv_F e \phi ^{*}_{\vec{k} ms}(y) (\sigma^x + s t^s_x) \phi _{\vec{l}ns}(y).
 \end{align}
 The Dirac delta functions appeared from taking the integrals from the matrix element over $x$ and $z$, as the integrand in these variables was only plane waves.
 The exact same procedure may be done for the energy-momentum tensor in \cref{eq:67}.
@@ -430,11 +431,13 @@ The calculation was also done with a finite impurity \( \eta \), which gives no 
 We will consider the response function in the static limit \( \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \).
 We may use the property of the limit of a product of functions \( \lim A\cdot B = \lim A \cdot \lim B \) to write
 \begin{equation}
+  \label{eq:general-response-function}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) = \frac{i v_F }{\mathcal{V}} \sum\limits_{\vec{k} m n}^{}
   \frac{
     J^x_{\vec{k} m s, \vec{k} n s} T^{y 0}_{\vec{k} n s, \vec{k} m s} [n_{\vec{k} m s} - n_{\vec{k} n s}]
   }{
-    (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
+    % (E_{k_z m s} - E_{k_z n s}) (E_{k_z m s}- E_{k_z n s})
+    (E_{k_z m s} - E_{k_z n s})^2
   },
 \end{equation}
 where the current and energy-momentum tensor matrix elements are the expression given in \cref{eq:70,eq:9} taken in the limit.
@@ -442,6 +445,8 @@ Furthermore, we will take the zero temperature limit \( T\to 0 \), where \( n_{\
 
 
 \section{Response of an untilted cone}
+We here evaluate \cref{eq:general-response-function} for the untilted cone.
+
 \subsection{Explicit form of the matrix elements}\label{sec:notilt:explicit}
 Compared to the procedure used by~\textcite{arjonaFingerprintsConformalAnomaly2019}, taking the limit of each matrix element by itself greatly simplifies the calculation.
 
@@ -692,10 +697,10 @@ It is now finally possible to write out the entire response function.
 We begin by replacing the sum over \( \vec{k} \) with an integral.
 Firstly, we will show that the sum over $k_x$ is restricted;
 recall that the eigenfunctions are exponentially centered around $y_0 = k_x l_B^2$, which for a finite sample we expect to be restricted to $0 \leq y_0 \leq L_y$.
-This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B / $, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}, as the integrand is independent of \( k_x \).
+This restricts the $k_x$ sum to $0 \leq k_x \leq L_y / l_B^2 = L_ye B$, resulting in the $k_x$ summation giving a finite degeneracy contribution~\cites[Ch.~1.4.1]{tongGaugeTheoryLecture}{linderIntermediateQuantumMechanics2017}, as the integrand is independent of \( k_x \).
 \begin{align}
-  \sum\limits_{\vec{k}}^{} = \sum\limits_{k_x = 0}^{L_y eB /  } \sum\limits_{k_z}^{} &\to
-                                                                                            \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B / } \mathrm{d}k_x \int\mathrm{d}k_z \\
+  \sum\limits_{\vec{k}}^{} = \sum\limits_{k_x = 0}^{L_y eB } \sum\limits_{k_z}^{} &\to
+                                                                                            \frac{L_xL_z}{(2\pi )^2} \int\limits_0^{L_y e B } \mathrm{d}k_x \int\mathrm{d}k_z \\
   &= \frac{\mathcal{V} e B}{(2 \pi)^2  } \int \mathrm{d}k_{z}.
 \end{align}
 
@@ -803,7 +808,7 @@ While it is not the case for \( \alpha_{\kappa_z m s} \), it is the case for its
 Consequently, the integrand is invariant under \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \).
 Similar to the argumentation used above, as the integral goes over all \( \kappa_z \), the integral is invariant under \( s \mapsto -s \).
 
-\begin{Proposition}
+\begin{summary}
   We have shown the following simplifications of \cref{eq:90}:
   \begin{itemize}
     \item The contributions from the terms \( \alpha_{\kappa_z m s}^2 \delta_{M-1, N} \) and \( - \alpha_{\kappa_z n s}^2 \delta_{N-1, M} \) are equal, and we consider therefore only one of them, adding a degeneracy factor 2.
@@ -812,7 +817,7 @@ Similar to the argumentation used above, as the integral goes over all \( \kappa
     \item As the integrand is invariant under \( (m,n,\kappa_z) \mapsto (-m, -n, -\kappa_z) \), we may consider only one of the transitions mentioned in the previous point, adding once again a degeneracy factor of 2.
     \item We lastly showed that the contribution is independent of the chirality \( s \).
   \end{itemize}
-\end{Proposition}
+\end{summary}
 
 For zero chemical potential, the response function is
 \begin{equation}

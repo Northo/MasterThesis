@@ -18,7 +18,7 @@ The model works remarkably well for many systems, but fails for Dirac materials,
 The notion of a ``Dirac fermion'' is almost comical from a high energy point of view~\cites{chernodubThermalTransportGeometry2021,vozmedianoTheoreticalPhysicsColloquium2021} -- what else can they be?
 A fermion is by its very definition a Dirac spinor.
 In condensed matter language, however, we mean by fermion that it obeys the Pauli exclusion principle and follows the Fermi-Dirac distribution.
-By Dirac fermion in condensed matter we mean fermions whose effective Hamiltonian is linear in momenta, they obey an effective Dirac equation.
+By Dirac fermion in condensed matter we mean fermions whose effective low-energy Hamiltonian is linear in momenta, they obey an effective Dirac equation.
 
 This field unifies concepts from high and low energy physics;
 a ``new era of grand unification of low and high energy physics'' as~\textcite{chernodubThermalTransportGeometry2021} puts it.
@@ -30,7 +30,7 @@ Unfortunately, the language of \gls{qft} and high energy physics is somewhat ina
 At the same time, the condensed matter descriptions have been difficult to relate back to the \gls{qft} formalism.
 So while the intersection of the two fields offers the possibility of great new insight, it also comes with some misunderstandings.
 Some phenomena are known under different names, while different phenomena may be mistaken for the same.
-The recent and excellent review paper by~\textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, with its ``main purpose [...] to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
+The recent and excellent review paper by~\textcite{chernodubThermalTransportGeometry2021} attempts to make the topics approachable for researchers from both fields, with its ``main purpose \dots to present the basic notions underlying new developments in condensed matter in a language equally accessible to both high energy and condensed matter communities''.
 
 We wish here to briefly illuminate the connection between the high energy Dirac theory and the Dirac and Weyl semimetals of condensed matter physics, assuming the reader to be an expert in neither.
 The (massive) Dirac equation reads
@@ -49,7 +49,9 @@ This yields two independent subsystems, themselves also linear in momentum,
   \label{eq:156}
   H_{\pm} = \pm \vec{\sigma} \cdot \vec{p},
 \end{equation}
-with the \( \pm \) defining the \emph{chirality}.
+with the \( \pm \) defining the \emph{chirality}%
+\footnote{For massless particles equivalent with the helicity.}
+of the Weyl component.
 
 Interestingly, massless Dirac fermions may appear in condensed matter as low energy effective descriptions of electronic systems near a two-band crossing.
 Instead of obeying the Landau Fermi liquid theory, like most materials, they obey a Dirac equation, with the speed of light being replaced by the Fermi velocity $v_F$.
@@ -61,12 +63,13 @@ H_D = s v_{F} \vec{\sigma} \vec{p},
 where $\vec{\sigma}$ are the Pauli matrices, $v_F$ the Fermi velocity, $\vec{p}$ the momentum, and $s=\pm 1$ denotes the chirality.
 % It is here important to note that the spin degree of freedom expressed by the Pauli matricies, may either be real spin or some pseudo spin degree of freedom.
 It is here important to note that the Pauli matrices represent either real spin degree of freedom or some pseudo spin degree of freedom.
-Examples of pseudo spin are that of bipartite lattices, such as Graphene, in which case one must be careful when for example applying time-reversal, as only real spin is odd under this operation, and not pseudo spin.
+Examples of pseudo spin are that of bipartite lattices, such as graphene, in which case one must be careful when for example applying time-reversal, as only real spin is odd under this operation, and not pseudo spin.
 
 These linear low energy emergent systems may appear in both 2D and 3D.
 There are, however, important differences depending on the dimensionality.
-When we here refer to Dirac and Weyl materials, we always mean 3D systems, which have become the norm in the literature.
-In some older literature, the term might also be applied to 2D systems, such as graphene.
+When we here refer to Dirac and Weyl materials, we always mean 3D systems.
+% , which have become the norm in the literature.
+% In some older literature, the term might also be applied to 2D systems, such as graphene.
 
 \label{sec:stability-of-gap}
 The dispersion of the Hamiltonian (\ref{eq:3}) has a band crossing at  $\vec{p} = 0$.
@@ -157,8 +160,9 @@ By a simple rescaling of the momenta, we may in general consider a system with i
 The energy bands are
 \begin{equation}
   \label{eq:tilted-eigenvalue}
-  E_s(\vec{k}) = \pm v_F |k| + v_F \vec{t}^{s} \vec{k}.
+  E_s(\vec{k}) = \pm v_F |k| + v_F \vec{t}^{s} \vec{k},
 \end{equation}
+as shown in \cref{fig:tilted-cones}.
 These types of systems, which are the systems of interest for this thesis, are considered in detail in \cref{sec:typeii}.
 
 \begin{figure}[p!]
@@ -218,8 +222,9 @@ Any evolution of the Hamiltonian through time, may then be described as a geomet
 As the reader might be aware, Berry's most famous discovery was that a closed path through $\vec{R}$-space gives an observable phase to the system, unlike the non-physical dynamical phase, which may be removed by a suitable choice of gauge.
 Here we will however focus on the so-called Berry curvature, $\vec{B}$, a vector field that will be shown to be useful in the categorization of topological materials.
 Note that there is some variation in the literature on the naming of the various quantities, and the sign convention used.
-In particular, the term Berry curvature will in some literature refer to a rank two tensor, while our quantity $\vec{B}$ is referred to as the Berry field strength.
-In particular, if we let the rank two tensor be denoted $F_{ij}$, the Berry field strength $\vec{B}$ is given by
+In particular, the term \emph{Berry curvature} will in some literature refer to a rank two tensor;
+what we call Berry curvature is referred to as the \emph{Berry field strength}.
+In particular, if we let the rank two tensor be denoted $F_{ij}$, the Berry curvature is given by
 \begin{equation}
   B_i = \epsilon_{ijk} F_{jk}.
 \end{equation}
@@ -238,7 +243,7 @@ The Berry curvature for the state $n$ is explicitly defined as~\cite{berryQuanta
   },
 \end{equation}
 where $\times $ denotes the cross product.
-Notice that for a degeneracy $E_n = E_m$ there will be an infinity in $\vec{B_n}$.
+Notice that for a degeneracy $E_n = E_m$ there will be a pole in $\vec{B_n}$.
 Considering the Berry curvature as a field in $\vec{R}$-space, this resembles a source, as will become relevant later.
 This may now be applied to for example the Weyl semimetal, both in the interest of solidifying the above theory, and as it will be useful in future consideration.
 

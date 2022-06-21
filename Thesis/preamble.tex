@@ -59,6 +59,10 @@ final=true,
 \addbibresource{manual.bib}
 \renewcommand\multicitedelim{\addsemicolon\space}
 
+%% Put section number in margin
+\renewcommand\sectionlinesformat[4]{%
+  \makebox[0pt][r]{#3}#4%
+}
 
 \usepackage{fancyhdr}
 

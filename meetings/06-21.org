@@ -1,0 +1,15 @@
+#+title: 06 21
+
+* summary
+** ... to house a new contribution to the Nernst effetct, whose origin confromal anomay
+Emphasis that nernst is not from conformal
+
+
+* Feedback on feedback
+** Landau Fermi liquid
+https://www.nature.com/articles/nphys2049.pdf
+** Schrodinger equation
+Keep the name schrodinger equation for H psi = E psi , as chernodub does
+** Berry curvature def for degenerate
+** partial derivative prime
+\( \partial '_i \)
