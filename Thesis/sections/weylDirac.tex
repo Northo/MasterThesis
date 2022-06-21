@@ -40,7 +40,7 @@ The (massive) Dirac equation reads
 where \( \slashed{\partial} = \gamma^{\mu} \partial_{\mu} \), \( \gamma^{\mu} \) are the so-called \emph{gamma matrices}%
 \footnote{Also known as the Dirac matrices. They are any irreducible matrix representation of the Clifford algebra.}, \( m \) is some mass parameter, and \( \psi \) the Dirac spinor.
 Note also that natural units \( c = \hbar = 1 \), as usual, is used and that the systems is \( 4\times 4 \).
-It may of course be written as the Schrödinger equation~\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
+It may of course be written as a Schrödinger equation~\cite{chernodubThermalTransportGeometry2021} \( i \partial_t \psi = H \psi \), with \( H = \gamma^0 m + \gamma^0\gamma^ip_i \).
 The great insight of Dirac was that due to the requirement of Lorentz invariance, the momentum and time operators had to appear at the same order, as opposed to the standard free particle \( H = p^2 /2m \).
 % The great insight of Dirac, was that the momentum and time operators had to appear at the same order, due to the requirement of Lorentz invariance.
 Shortly after Dirac published his theory, Weyl commented that for a massless particle, the equation could be decomposed into two \( 2 \times 2 \) equations -- a Weyl decomposition.
@@ -82,7 +82,7 @@ As the Hamiltonian commutes with the momentum operator, we replace the momentum 
 \begin{equation}
 E_{\pm} = \pm v_F \hbar \sqrt{k_x^2 + k_y^2 + \frac{m^2}{\hbar ^2 v_{F}^2}}.
 \end{equation}
-For a finite \( m \), there are no solutions $k_x, k_y$ making the energy levels degenerate (i.e. \( E_{\pm} = 0 \)).
+For a non-zero \( m \), there are no solutions $k_x, k_y$ making the energy levels degenerate (i.e. \( E_{\pm} = 0 \)).
 The crossing is thus only protected by symmetry considerations, and is not \emph{topologically protected}.
 \todo{Is this usage of topologically protected correct?}
 
@@ -95,7 +95,7 @@ In this case, no perturbing term may open a gap at the crossing.
 There is no $2\times 2$ matrix $\sigma_4$ that anticommutes with the Pauli matrices and while also being linearly independent, i.e. there is no ``fourth'' Pauli matrix;
 therefore no perturbative term will open the gap.
 Say for example we add a term like $m \sigma_z$, where the $z$-direction was chosen arbitrarily.
-The only effect this will have on the crossing is to translate it in $p_z$.
+The only effect this will have on the crossing is to translate it in $k_z$.
 Tying this back to the accidental degeneracy of \cref{sec:accidental-degeneracy}, we see that no matter the perturbation, the three-dimensional momentum space will always have a point of degeneracy, i.e., a crossing.
 The crossing is \emph{topologically protected}.
 A more formal approach to topological materials is that of topological invariants -- numbers related to the topology of the material.
@@ -104,7 +104,7 @@ Having a non-trivial topological invariant number is the very definition of topo
 As opposed to high energy physics, the emergent Dirac equation in condensed matter physics need of course not be Lorentz invariant.
 We may therefore introduce terms that break Lorentz invariance.
 Introduce to the system a pseudospin degree of freedom, thus extending the system to $4\times 4$-matricies;
-in effect re-construct the full Dirac equation from the Weyl equations, and then introduce perturbations.
+in effect re-constructing the full Dirac equation from the Weyl equations, and then introduce perturbations.
 The Hamiltonian of the system
 \begin{equation}
   \label{eq:5}
@@ -121,8 +121,9 @@ The eigenvalues of this system~\cite{armitageWeylDiracSemimetals2018}
   \right]^{\frac{1}{2}},
 \end{equation}
 with $s=\pm 1, \mu = \pm 1$ encoding the degeneracies related to the spin and pseudospin degrees of freedom, respectively.
-There are still linear dispersions for $b > m$, for $b < m$, a gap opens, and the dispersion is non-linear.
-In fact, for \( b > m \), the perturbation is simply a shift in $k_z$ of the Dirac cone, as  is seen by rewriting
+There are still linear dispersions for $b > m$.
+For $b < m$, a gap opens, and the dispersion is non-linear.
+In fact, for \( b > m \), the perturbation is simply a shift in $k_z$ of the Dirac cone, similar to what was discussed in the \( 2\times 2 \) case, as  is seen by rewriting
 \begin{equation}
   E_{s \mu }(\vec{k}) = s v_F
   \left[
@@ -147,7 +148,7 @@ In three dimensions we have more generally the \emph{tilted} Weyl Hamiltonian
   \label{eq:4}
   H_s = (\vec{t}^{s} + s \vec{\sigma}) (\vec{v} \odot \vec{p}),
 \end{equation}
-where $\vec{t}$ is  the \emph{tilt vector}, $\vec{v}$ is some anisotropic velocity, $(\vec{v} \odot \vec{p})_i = v_i p_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
+where $\vec{t}^{s}$ is  the \emph{tilt vector}, $\vec{v}$ is some anisotropic velocity, $(\vec{v} \odot \vec{p})_i = v_i p_i$ is the Hadamard product of the anisotropic velocity and the momentum,  and $\vec{\sigma}$ are the Pauli matrices corresponding to spin degree of freedom.
 By a simple rescaling of the momenta, we may in general consider a system with isotropic Fermi velocity \( v_F \), giving
 \begin{equation}
   \label{eq:hamil-tilt-isotropic}
@@ -169,7 +170,10 @@ These types of systems, which are the systems of interest for this thesis, are c
   }{%
     \includegraphics[width=\textwidth]{figures/cones-types-col1-opaque-small}
   }
-  \caption{Dispersion curves in the $k_z, k_x$-plane. \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, giving a nodal loop.
+  \caption{%
+    % Dirac cones in the $k_z, k_x$-plane, .
+    Dirac cones in the plane, with the perpendicular momentum set to zero.
+    \textbf{(Left)} Dirac material with superimposed cones. \textbf{(Center)} Time reversal symmetry broken, giving a Weyl material with the cones separated in momentum  space. \textbf{(Right)} The cones shifted in energy, giving a nodal loop.
     \todo{Consider making middle one with mass term.}
   }
   \label{fig:conetypes}
@@ -185,7 +189,7 @@ These types of systems, which are the systems of interest for this thesis, are c
   }{%
     \includegraphics[width=\textwidth]{figures/cones-tilt-color1-small}
   }
-  \caption{Tilted Dirac cones.
+  \caption{Tilted Dirac cones in the plane, with the perpendicular momentum set to zero.
     From left to right the tilt increases, from no tilt in the first cone to overtilt in the last.
     The three first are Type-I Weyl semimetals, the last is a Type-II semimetal.
     The Fermi surface is marked in red.
@@ -214,20 +218,21 @@ Any evolution of the Hamiltonian through time, may then be described as a geomet
 As the reader might be aware, Berry's most famous discovery was that a closed path through $\vec{R}$-space gives an observable phase to the system, unlike the non-physical dynamical phase, which may be removed by a suitable choice of gauge.
 Here we will however focus on the so-called Berry curvature, $\vec{B}$, a vector field that will be shown to be useful in the categorization of topological materials.
 Note that there is some variation in the literature on the naming of the various quantities, and the sign convention used.
-In particular, the word Berry curvature will in some literature refer to a rank two tensor, while our quantity $\vec{B}$ is referred to as the Berry field strength.
+In particular, the term Berry curvature will in some literature refer to a rank two tensor, while our quantity $\vec{B}$ is referred to as the Berry field strength.
 In particular, if we let the rank two tensor be denoted $F_{ij}$, the Berry field strength $\vec{B}$ is given by
 \begin{equation}
   B_i = \epsilon_{ijk} F_{jk}.
 \end{equation}
+
 The Berry curvature for the state $n$ is explicitly defined as~\cite{berryQuantalPhaseFactors1984}
 \todo{Should we add some more comments about adabiatic? See topo book}
 \begin{equation}
   \vec{B_n}(\vec{R}) =
   -\Im \sum_{m\neq n}
   \frac{
-    \braket{n(\vec{R}) | \nabla_{\vec{R}} H | m(\vec{R}) }
+    \braket{n(\vec{R}) | \vec{\nabla}_{\vec{R}} H | m(\vec{R}) }
     \times
-    \braket{m(\vec{R}) | \nabla_{\vec{R}} H | n(\vec{R}) }
+    \braket{m(\vec{R}) | \vec{\nabla}_{\vec{R}} H | n(\vec{R}) }
   }{
     (E_m(\vec{R}) - E_n(\vec{R}))^2
   },
@@ -244,7 +249,8 @@ The Hamiltonian around the (untilted) Weyl point is
 with $v_F$ the Fermi velocity, $\vec{\sigma}$ the Pauli matrices, and $\vec{p}$ the momentum operator.
 % \todo{Now suddenly R is not dependent  on t??}
 By letting $\vec{R} = v_F \vec{p}$, the Berry curvature of the Hamiltonian can be found.
-The eigenvalues of this system are
+The eigenvalues of this system are%
+\footnote{Technically, this is sloppy notation, as the eigenvalues are of course \( E_+ = -E_- = v_F |k| \). We chose to use the above notation for clarity and to be more true to Berry's original derivation, even though that included implicit interchanging of \( \vec{k} \leftrightarrow \vec{p} \).}
 \begin{equation}
     E_+ = -E_-
     = |R|.
@@ -306,6 +312,7 @@ Furthermore, the gradient of the Hamiltonian, \cref{eq:gradHamil}, gains a facto
   \nabla_{\vec{R}} H = \vec\sigma + \vec{t},
 \end{equation}
 which does not affect the result, as \( \braket{\pm | \vec{t} | \mp} = 0 \).
+Consequently, tilting does not affect the Berry curvature.
 
 As mentioned, the Chern number is one of several numbers that is used to classify topological materials.
 The Chern number is defined as
@@ -327,7 +334,7 @@ By virtue of the divergence theorem, the Chern number is then found to be
 \end{equation}
 where the property of integrals over Dirac delta distributions was used.
 
-Note that some literature will have a Chern number differing from \eqref{eq:chern} by the sign of the Fermi velocity,
+Note that some literature will have a Chern number differing from \cref{eq:chern} by the sign of the Fermi velocity,
 \begin{equation}
   C = - \operatorname{sign}(v_F).
 \end{equation}
@@ -346,7 +353,7 @@ Thus, Dirac cones must appear in pairs of opposite chirality, either superimpose
 In light of the interpretation of the Dirac point as a monopole of Berry curvature, the discussion in \cref{sec:weyl-dirac-cones}, on page \pageref{sec:stability-of-gap}, on the stability of the band crossing in two and three dimensions gets an intuitive and geometric interpretation.
 In \cref{fig:curvature_plane} the Berry curvature pole is shown in $p$-space, together with a plane parallel to the $xy$-plane, which we will denote the \emph{state plane}.
 In the two-dimensional case, the state is confined to the state plane, with the $z$-position of the plane given by any mass terms $m \sigma _z$.
-In the three-dimensional case, the state is not confined to this plane, as the parameter $p_z$ is a free variable, or alternatively, it may be considered as the freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
+In the three-dimensional case, the state is not confined to this plane, as the parameter $k_z$ is a free variable, or alternatively, it may be considered as the freedom to move the state plane freely, with its initial position simply shifted by any mass terms.
 It is thus obvious that one may never reach the monopole in the two-dimensional case, and thus for no $\vec{k}$ is there a band crossing.
 Importantly, the Berry curvature is indeed non-zero, however any closed  curve of integration will give a Chern number of zero;
 the  monopole has been moved outside the dimensionality of freedom.
