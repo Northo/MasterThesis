@@ -325,16 +325,18 @@ Thus, \cref{eq:criterion-conserved} becomes
 Consider now, however, what happens if we shift $p\to p+k_2$ in the first term of \cref{eq:criterion-conserved} instead.
 Surely, if our answer above is correct, any arbitrary shift must yield the same answer.
 Similarly to before, let
-\begin{multline}
-  f(p) = \Tr\left(\gamma^{\lambda }\gamma^5 \frac{1}{\slashed{p} - \slashed{q}} \gamma^{\nu } \frac{1}{\slashed{p} - \slashed{k}_{1}} \right)\\
-  = \frac{\Tr \left( \gamma ^5 (\slashed{p}-\slashed{q}) \gamma ^{\nu } (\slashed{p}-\slashed{k}_1)\gamma ^{\lambda } \right)}{
-   (p-q)^2(p-k_1)^2
-  }
-  =
-  \frac{-4i\epsilon ^{\tau \nu \sigma \lambda } k_{2\tau } (k_{1\sigma } - p_{\sigma })}{
-   (p-q)^2(p-k_1)^2
-  },
-\end{multline}
+\begin{equation}
+  \begin{split}
+    f(p) &= \Tr\left(\gamma^{\lambda }\gamma^5 \frac{1}{\slashed{p} - \slashed{q}} \gamma^{\nu } \frac{1}{\slashed{p} - \slashed{k}_{1}} \right)
+         = \frac{\Tr \left( \gamma ^5 (\slashed{p}-\slashed{q}) \gamma ^{\nu } (\slashed{p}-\slashed{k}_1)\gamma ^{\lambda } \right)}{
+           (p-q)^2(p-k_1)^2
+           }\\
+         &=
+           \frac{-4i\epsilon ^{\tau \nu \sigma \lambda } k_{2\tau } (k_{1\sigma } - p_{\sigma })}{
+           (p-q)^2(p-k_1)^2
+           },
+  \end{split}
+\end{equation}
 where we as above removed all terms symmetric under $\sigma \leftrightarrow \tau$.
 Now, \cref{eq:criterion-conserved} becomes
 \begin{equation}
@@ -352,16 +354,21 @@ What we will have to do, is consider an arbitrary shift $a$ in the integration v
 To cancel this, a counter term must be inserted;
 however, as we will see, this counter term can only make either the axial current or the vector current conserved!
 Consider now a shift in the integration variable $p \to p - a$ in the amplitude \cref{eq:amplitude}, where we denote the amplitude with shifted integration variable
-\begin{multline}
+\begin{equation}
   \label{eq:amplitude-shift}
-  \mathcal{A}^{\lambda \mu \nu}(a, k_1, k_2) =
+  \begin{split}
+    &\mathcal{A}^{\lambda \mu \nu}(a, k_1, k_2)\\
+    &\quad=
   (-1) i^3 \int \frac{\mathrm{d}^4p}{(2\pi)^{4}}
-  \Tr \left(
-    \gamma ^{\lambda } \gamma ^5 \frac{1}{\slashed{p} - \slashed{a} - \slashed{q}} \gamma ^{\nu } \frac{1}{\slashed{p} - \slashed{a}- \slashed{k}_{1}} \gamma ^{\mu } \frac{1}{\slashed{p} - \slashed{a}} \right.\\
-    +
-   \left. \gamma ^{\lambda }\gamma ^5 \frac{1}{\slashed{p} - \slashed{a}- \slashed{q}} \gamma ^{\mu } \frac{1}{\slashed{p} - \slashed{a} - \slashed{k}_2} \gamma ^{\nu } \frac{1}{\slashed{p} - \slashed{a}}
-  \right).
-\end{multline}
+  \begin{multlined}[t]
+    \Tr \left(
+      \gamma ^{\lambda } \gamma ^5 \frac{1}{\slashed{p} - \slashed{a} - \slashed{q}} \gamma ^{\nu } \frac{1}{\slashed{p} - \slashed{a}- \slashed{k}_{1}} \gamma ^{\mu } \frac{1}{\slashed{p} - \slashed{a}} \right.\\
+   \quad +
+    \left. \gamma ^{\lambda }\gamma ^5 \frac{1}{\slashed{p} - \slashed{a}- \slashed{q}} \gamma ^{\mu } \frac{1}{\slashed{p} - \slashed{a} - \slashed{k}_2} \gamma ^{\nu } \frac{1}{\slashed{p} - \slashed{a}}
+    \right).
+  \end{multlined}
+  \end{split}
+\end{equation}
 
 From \cref{eq:shift-trickery} we already have a formula for the difference
 \begin{equation}
@@ -398,7 +405,7 @@ Thus, by \cref{eq:shift-trickery},
     \lim_{p\to \infty } i  a^{\mu } \left( \frac{p_{\mu }}{p} \right)
   \frac{i}{(2\pi)^{4}} \frac{{4ip_{\sigma }\epsilon ^{\sigma \nu \mu \lambda }}}{p^{4}}
   2\pi^2p^3\\
-  &\phantom{=}+ \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\}\\
+  &\quad + \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\}\\
   &= \lim_{p\to \infty } \frac{{-ia^{\mu }}}{2\pi^2} \frac{{p_{\mu }p_{\sigma }}}{p^2} \epsilon ^{\sigma \nu \mu \lambda } +  \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\}\\
   &= - \frac{ia_{\sigma }}{8 \pi^2}\epsilon ^{\sigma \nu \mu \lambda } +  \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\}.
   \end{split}
@@ -411,12 +418,14 @@ In fact, that formulation is quite the misnomer, as $a=0$ is no less arbitrary t
 % $p$ is simply a name we have denoted the momentum transfer in our diagram.
 $p$ is simply a name by which we denote the moment transfer in our diagram.
 \emph{However}, using \cref{eq:amplitude-difference-explicit}, leading to
-\begin{multline}
+\begin{equation}
   \label{eq:19}
-  k_{1\mu } \mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) - k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(a=0, k_1, k_2) =\\
-  -\frac{i}{8\pi^2} \left[
+  \begin{split}
+  &k_{1\mu } \mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) - k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(a=0, k_1, k_2) \\
+ &\quad = -\frac{i}{8\pi^2} \left[
   \epsilon ^{\sigma \nu \mu \lambda } a_{\sigma } +  \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\} \right] k_{1\mu }, 
-\end{multline}
+  \end{split}
+\end{equation}
 we see that the criterion for vector current conservation, \cref{eq:criterion-conserved}, may or may not be met depending on our choice of $a$!
 \todo{Should this be related to counter terms as Kachelriess does? What does it really mean that we have to choose some shift}
 Owning to a trick from~\textcite{zeeQuantumFieldTheory2010}, we will show that the resolve of this is to chose one particular $a$, and the choice will be that $a$ which preserves the consistency of our theory.
@@ -429,13 +438,15 @@ This is allowed as $k_1, k_2$ are independent, and the only parameters of our eq
 The $\alpha$ term is obviously symmetric under interchange of $k_1, k_2$, while the $\beta$ term is antisymmetric.
 Thus, we see that in \cref{eq:19} only the $\beta $ part survives when adding the pair with interchanged indices and momenta.
 Thus,
-\begin{align}
+\begin{equation}
+  \begin{split}
   k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2) &=
                                                          -\frac{i}{4\pi^2} \epsilon ^{\sigma \nu \mu \lambda } \beta (k_{1\sigma } - k_{2\sigma })k_{1\mu } + k_{1\mu }\mathcal{A}^{\lambda \mu \nu }(k_1, k_2)\\
                                                        &= \frac{i}{8\pi^2} \left(
                                                          \epsilon ^{\lambda \nu \tau \sigma }k_{1\tau }k_{2\sigma } - 2 \epsilon ^{\sigma \nu \mu \lambda } \beta (k_{1\sigma } - k_{2\sigma })k_{1\mu }\right)\\
   &= \frac{i}{8\pi^2} \epsilon ^{\lambda \nu \tau \sigma } k_{1\tau }k_{2\sigma } (1+ 2\beta ).
-\end{align}
+  \end{split}
+\end{equation}
 Here we inserted our previous result for $k_{1\mu }\mathcal{A}^{\lambda \mu \nu }$ given in \cref{eq:criterion-conserved-simp}.
 In the last equation we used that $k_{1\sigma }k_{1\mu }$ vanishes when contracted with the Levi Cevita symbol, and relabeled the dummy indices.
 It is now  apparent that choosing $\beta = -1 / 2$ makes the criterion for conservation of vector current hold!
