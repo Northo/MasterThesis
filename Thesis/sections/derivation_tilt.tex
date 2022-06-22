@@ -313,18 +313,17 @@ we get the very fortunate result
 \end{equation}
 The energy-momentum tensor thus has the exact same form as the untilted case, however with a prefactor \( \alpha \) and using the transformed coordinates \( \chi \).
 We thus get
-\begin{multline}
-  \label{eq:109}
-  T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y (1)} (\vec{q}) =
+\begin{align}
+  T_{\vec{k}+\qvec{q} ns, \vec{k} m s}^{0y} (\vec{q}) &=
   \frac{is \alpha}{2} (E_{k_z m s} + E_{k_z + \qvec{q}_z n s} - 2 \mu)
   \int \mathrm{d} y
   e^{i q_{y} y}
-  e^{-\frac{1}{2} (\chi_{\vec{k}+\qvec{q}}^2 + \chi_{\vec{k}} ^2) }\\
-  [
-  -a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s} H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}})
-  + b_{\vec{k} + \qvec{q} n s} a_{\vec{k} ms} H_{N}(\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}})
-  ].
-\end{multline}
+  e^{-\frac{1}{2} (\chi_{\vec{k}+\qvec{q}}^2 + \chi_{\vec{k}} ^2) }\nonumber\\
+  &\quad \times [
+  -a_{\vec{k} + \qvec{q} ns} b_{\vec{k} m s} H_{N-1} (\chi_{\vec{k} + \qvec{q}}) H_{M} (\chi_{\vec{k}})\nonumber\\
+  & \qquad\; + b_{\vec{k} + \qvec{q} n s} a_{\vec{k} ms} H_{N}(\chi_{\vec{k} + \qvec{q}}) H_{M-1} (\chi_{\vec{k}})
+  ].\label{eq:109}
+\end{align}
 We will perform once again the completion of the square and substitution of \(y\).
 The exponent is the same as that which we found for the current operator case, \cref{eq:100}, with the change \(q_{y} \to - q_{y}\).
 We thus make the change of variables
@@ -367,7 +366,7 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
                                                              \frac{is \alpha}{2}
                                                              \Gamma ^+_{\vec{k} \qvec{q} m n s}
                                                              (E_{k_z m s} + E_{k_z + \qvec{q}_z n  s} - 2 \mu)\\
-    \nonumber &\pe\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
+    \nonumber &\quad\times [- \alpha_{k_z + \qvec{q}_z n s} \Xi_{2} (\bar{\vec{q}}, m, n, s) + \alpha_{k_z m s} \Xi_{1}(\bar{\vec{q}}, m, n, s)],
   \end{align}
   with \( \bar{\vec{q}} = (q_x, -q_y, q_z) \) and
   \[
@@ -384,14 +383,12 @@ where \(\bar{\vec{q}} = (q_{x}, -q_{y}, q_{z})\).
 \end{summary}
 \subsection{Static limit and dimensionless form of the matrix elements}
 We are interested in the response in the static limit \( \vec{q} \to  0 \).
-Use the property of limits that
+As before, we use the property of limits of products
 \[
   \lim_{n \to a} A \cdot  B = \lim_{n \to a} A \cdot \lim_{n \to a} B.
 \]
-We may thus consider the limits of the current and energy-momentum matrix elements separately, which we will do here.
-Furthermore, to facilitate for more easily solving the integration later, we will introduce dimensionless quantities.
-
-Let the dimensionless energy and momentum \( \epsilon_{\kappa_z m s} = v_F \sqrt{2 e B} E_{k_{z} m s}, \; \kappa_z = \sqrt{2 e B} k_{z}  \).
+We may thus consider the limits of the current and energy-momentum matrix elements separately, as we did in the untilted case.
+Furthermore, to facilitate for more easily solving the integration later, we will use the same dimensionless energy and momentum \( \epsilon_{\kappa_z m s} = v_F \sqrt{2 e B} E_{k_{z} m s}, \; \kappa_z = \sqrt{2 e B} k_{z}  \) as before, where \( B \) is importantly still the actual magnetic field, and not the rescaled \( \alpha B \).
 Consider firstly the exponent in the \( \Gamma ^{\pm } \) factor from summary \ref{summary:tilt:matrixelements},
 \[
   \Gamma^{\pm}_{\vec{k} \qvec{q} m n s} \propto
@@ -425,7 +422,7 @@ Explicitly, it is given in dimensionless quantities as
   = -\frac{\sqrt{\alpha M}}{s \epsilon ^{0}_{m, \alpha B} - \kappa }.
 \end{equation}
 
-In the tilted case, the \( \Xi_{i} \) functions, defined in \cref{eq:xi1def,eq:xi2def}, do not have a trivial form in the static limit, as was the case in the untilted case.
+When there is a non-zero tilt, the \( \Xi_{i} \) functions, defined in \cref{eq:xi1def,eq:xi2def}, do not have a trivial form in the static limit.
 Expressed in the quantities introduced here, they simplify to
 \begin{subequations}
   \begin{align}
@@ -470,54 +467,59 @@ Importantly, the degeneracy factor does \emph{not} depend on the renormalized ma
 \label{sec:perptiltsum}
 We consider here the specialized situation where \( \vec{t} = t_x \hat{x} \), i.e. only tilt perpendicular to the magnetic field.
 The response function
-\begin{multline*}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
+\begin{equation}
+  \begin{split}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) &=
   \frac{e B i v_F}{(2 \pi)^2}
   \sum\limits_{mn}^{} \int \mathrm{d}k_z [n_{\vec{k} m s} - n_{\vec{k} n s}]\\
-  \times \frac{
+  &\quad \times \frac{
     J^x_{\vec{k} m s, \vec{k} ns} (\vec{q}\to 0) T^{y 0}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
   }{
     (E_{k_z m s} - E_{k_z ns})(E_{k_z m s}-E_{k_z ns})
   }.
-\end{multline*}
+  \end{split}
+\end{equation}
 Writing out the matrix products we have
-\begin{multline}
-  J^x_{\vec{k} m s, \vec{k} ns} (\vec{q} \to 0) T^{y 0}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
-  =
-  \frac{v_F e i \alpha^{3}}{2}
-  e^{-P^2}\\
-  \frac{
-    (E_{k_{z} m s} + E_{k_z n s})
-    (\alpha_{k_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{k_z n s}^2 \Xi_2(0, m,n, s)^2)
-  }{
-    (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z n s}^2 + 1)
-  }.
+\begin{equation}
+  \begin{multlined}
+    J^x_{\vec{k} m s, \vec{k} ns} (\vec{q} \to 0) T^{y 0}_{\vec{k} n s, \vec{k}ms}(\vec{q} \to 0)
+    =
+    \frac{v_F e i \alpha^{3}}{2}
+    e^{-P^2}\\
+    \times \frac{
+      (E_{k_{z} m s} + E_{k_z n s})
+      (\alpha_{k_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{k_z n s}^2 \Xi_2(0, m,n, s)^2)
+    }{
+      (\alpha_{k_z m s}^2 + 1)(\alpha_{k_z n s}^2 + 1)
+    }.
+  \end{multlined}
   \label{eq:114}
-\end{multline}
+\end{equation}
 And so, inserting into the response function
+{\setlength{\multlinegap}{0pt}%
 \begin{multline}
   \label{eq:115}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
-  \frac{- e^2 \alpha^3 v_F B }{2 (2 \pi)^2 }
-  \sum\limits_{mn}^{}
-  \int \mathrm{d}\kappa_z
-  e^{-P^2}\\
-  \frac{
-    [n_{\kappa_z m s} - n_{\kappa_z n s}]
-    (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})
-    (\alpha_{\kappa_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(0, m,n, s)^2)
-  }{
-    (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
-    (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
-  },
-\end{multline}
+    \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
+    \frac{- e^2 \alpha^3 v_F B }{2 (2 \pi)^2 }
+    \sum\limits_{mn}^{}
+    \int \mathrm{d}\kappa_z
+    e^{-P^2}
+      [n_{\kappa_z m s} - n_{\kappa_z n s}]
+      (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})\\
+    \times\frac{
+      (\alpha_{\kappa_z m s}^2 \Xi_1(0, m,n, s)^2 - \alpha_{\kappa_z n s}^2 \Xi_2(0, m,n, s)^2)
+    }{
+      (\alpha_{\kappa_z m s}^2 + 1)(\alpha_{\kappa_z n s}^2 + 1)
+      (\epsilon_{\kappa_z m s} - \epsilon_{\kappa_z ns})^2
+    },
+\end{multline}}
 where we also made a change of variables \( k_z = \sqrt{2 e B} \kappa_z \).
 
 We make the observation that \( \Xi _1(m, n) = \Xi _2(n, m) \), where it is important to note that \( P \) changes sign under interchange of \( m,n \).
 The rest of the factors are invariant under the interchange \( m \leftrightarrow n \), except for the step functions, which give an overall sign change.
 Thus, using \( \Xi _1(m, n) = \Xi _2(n, m) \) and relabelling the summation indices we may consider
 \[
-  \alpha_{\kappa_z m s}^2 \Xi_1^2 - \alpha_{\kappa_z n s}^2 \to 2 \alpha_{\kappa_z m s}^2 \Xi_1^2.
+  \alpha_{\kappa_z m s}^2 \Xi_1^2 - \alpha_{\kappa_z n s}^2\Xi_2^2 \to 2 \alpha_{\kappa_z m s}^2 \Xi_1^2.
 \]
 
 We may also simplify the step function expression.
@@ -540,7 +542,7 @@ It is easy to show that
 \end{equation}
 
 Furthermore, the contributions from the second and fourth quadrants are equal, which we will now show.
-The mapping \( (m,n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), i.e. a \( \pi \) rotation, transforms points from the \( m < 0 \) half plane to the \( m > 0 \) half plane, including mapping the second quadrant to the fourth quadrant.
+The mapping \( (m,n, \kappa_z) \mapsto (-m, -n, -\kappa_z) \), i.e. a \( \pi \) rotation and \( \kappa_z \) inversion, transforms points from the \( m < 0 \) half plane to the \( m > 0 \) half plane, including mapping the second quadrant to the fourth quadrant.
 We want to consider how the integrand in question transforms under such a mapping.
 Recall
 \begin{align*}
@@ -562,7 +564,7 @@ Lastly, completely analogous to the untilted case, the integrand only depend on 
 As the integral spans all of \( \kappa_z \), the contribution is independent of the chirality \( s \) and may be calculated for a specific choice, which is here taken to be \( s=+1 \).
 
 \begin{summary}
-  The response of a perpendicularly tilted cone with chirality \( s=+1 \) is given by
+  The response of a perpendicularly tilted cone with chirality \( s \) is given by
   \begin{equation}
     \label{eq:118}
     \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy}(\omega, \vec{q}) =
@@ -629,15 +631,17 @@ As the integral spans all of \( \kappa_z \), the contribution is independent of 
 Even though the treatment above for a general tilt is valid for parallel tilt, the response can be found more directly from the untilted case.
 For \( \vec{t} = t_z \hat{z} \), the energy momentum tensor \( T^{y 0} \), charge current \( J^x \), and wave functions \( \phi(\vec{r}) \) are all independent of \( t_z \), and the only difference compared to the untilted system is a change in the energies of the Landau levels.
 We may thus immediately use the result from the untilted case
-\begin{multline}
+\begin{equation}
   \label{eq:120}
-  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
+  \begin{split}
+  \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} &=
   - \frac{e^2 v_F B}{2 (2\pi)^2}
   \sum\limits_{mn} \int \mathrm{d} \kappa_z
-  \xi(\kappa_z)
+  \xi(\kappa_z, m, n)
   (\epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s})\\
-  \times (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
-\end{multline}
+  &\quad \times (\alpha_{\kappa_z m s}^2 \delta_{M-1, N} - \alpha_{\kappa_z n s}^2 \delta_{N-1, M}),
+  \end{split}
+\end{equation}
 with
 \begin{align}
   \label{eq:121}
@@ -688,7 +692,7 @@ where \( \gamma_{\bar{N}}^0 \) is the prefactor of the untilted case, and accord
   2 \kappa_z t^s_z \alpha_{\kappa_z m s}^2 \Big|_{\overset{m=i+1}{n=-i}},
 \end{equation}
 which has a UV divergence.
-Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result\footnote{Note the minus sign introduced by the step function in \( \xi \).}
+Introduce the momentum cutoff \( \Lambda \), in which case the integral can be solved analytically, with the result
 \begin{equation}
   \label{eq:124}
   \gamma_{\text{div}, 0} = 2 t_z \left(\Lambda  \left(\Lambda -\sqrt{\Lambda ^2+1}\right)+\sinh ^{-1}(\Lambda
@@ -731,7 +735,7 @@ For \( m = 0 \) the sign of the energy is given by \( -s \sign{\kappa } \).
 Due to this, the sum is restricted to \( n=M+1, m=-M \) and \( n=-M-1, m=M \).
 In the case of Type-II, however, the situation is not so simple.
 The energy bands cross the Fermi surface, and we must also include in our sum overlap between states of the same sign, i.e. \( n=M+1, m=M \) and \( n=-M-1, m=-M \), which is non-zero for certain intervals of \( \kappa  \).
-See plot of the tilted Landau levels in \cref{fig:llevelstilt}.
+See plot of the tilted Landau levels in \cref{fig:llevelstilt} (on page \pageref{fig:llevelstilt}).
 
 % Furthermore, the expression is no longer invariant under \( (s, \kappa_z) \mapsto (-s, -\kappa_z) \).
 % For inversion symmetric systems, \( \vec{t^s} = s \vec{t} \), the symmetry is still conserved, however, for broken inversion symmetry, the extra term in the energies, \( t^s_z \kappa_z \) breaks the symmetry between the chiralitites.
@@ -780,8 +784,8 @@ Consult \cref{tab:typeii-expressions} to find the appropriate expressions for po
   \caption{\label{tab:typeii-expressions}%
     % The expression for the \( m\to n; N> 0, M=N+1 \) transition is given by the equation number at the various choices of \( t_z \) and \( \sign (n) \).
     Decision matrix for the expression of the \( m \to n; N > 0, M =N+1 \) transition over different regions.
-    Expressions given in Mathematica code format;
-    the code listings are found in \cref{cha:long_expression}.
+    Expressions given in Mathematica code format.
+    The code listings are found in \cref{cha:long_expression}.
     % Code listings starting on page \pageref{lst:typeii-interband-tzpos} in \cref{cha:long_expression}.
     See main text for details.}
   \renewcommand\arraystretch{2.5}%
@@ -824,7 +828,7 @@ from a single Weyl cone was found  to be
   \gamma_{\bar{N}}
   \frac{e^2 B v_F}{2 (2\pi )^2 \hbar },
 \end{equation}
-with $\gamma _{\bar{N}}$ a prefactor dependent on the chirality \( s \), the tilt \( \vec{t} \), and  how many landau levels are included in the final evaluation of the response function.
+with $\gamma _{\bar{N}}$ a prefactor dependent on the chirality \( s \), the tilt \( \vec{t} \), and  how many Landau levels \( \bar{N} \) are included in the final evaluation of the response function.
 
 In general, the prefactor \( \gamma_{\bar{N}} \) diverges as $\bar{N} \to \infty$.
 However, not all Landau levels are filled, and thus the sum should not be taken to all levels.
@@ -834,9 +838,9 @@ Similarly to a quantum Hall effect, the number of filled bands, the filling fact
 \end{equation}
 Thus, we expect that the $N$-sum should be truncated at a Landau level, given by the filling factor $\nu $.
 A detailed derivation of the exact truncation of the $N$-sum has not been done.
-If a precise result for the numerical prefactor is found to be of importance, this should be straightforward.
+% If a precise result for the numerical prefactor is found to be of importance, this should be straightforward.
 
-As described above, the contribution from the cone with chirality \( s = -1 \) can be found from the result of the positive chirality cone.
+As described earlier, the contribution from the cone with chirality \( s = -1 \) can be found from the result of the positive chirality cone.
 In the case of perpendicular tilt, they are exactly the same.
 In the case of parallel tilt, it depends on the symmetry of the tilt.
 For systems with inversion symmetry, the responses from the two cones are the same.
@@ -1040,6 +1044,12 @@ A schematic plot of all the contributions of a parallel tilt is shown in \cref{f
 In systems with broken inversion symmetry, where only the even contribution survives, we see that in the Type-I regime, the response is independent of the tilt \( t_z \).
 In the Type-II regime, the response has the opposite sign, and is heavily reduced in magnitude;
 for a sufficiently large magnetic field, when only the zeroth Landau level is filled, the effect is non-existent.
+In inversion symmetric systems, however, also the odd component contributes.
+In the Type-I regime, there is a contribution linear in \( t_z \) dependent on the momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 eB}   \), with the same sign as \( t_z \).
+Fixing the magnitude of the term, equivalently fixing the momentum cutoff, has not been done.
+In the Type-II regime, close to the Lifshitz transition (\( t_z = 1 \)), the result is divergent, which we expect is a non-physical discrepancy caused by the non-validity of the linear model.
+Deeper in the Type-II regime, the contribution decreases to zero but is still a significant contribution.
+The odd component dominates over the even component, and so the total response is of the same sign as the tilt \( t_z \).
 
 One disadvantage of using the Kubo formalism to find the response function, as opposed to the procedure of~\textcite{chernodubGenerationNernstCurrent2018}, who argued more directly from fundamental principles, is that the origin of the effect is less clear.
 Specifically, it is not clear directly from the Kubo calculation that the origin of the effect is the conformal anomaly.
@@ -1159,7 +1169,7 @@ We, therefore, do not have conclusive results and do not want to present them to
 However, they are of great importance and will be investigated further in future work.
 
 \subsubsection{Perpendicular tilt with only zeroth level transitions}\label{sec:other-observe:zeroton}
-Above, we defined the prefactor \( \gamma_{\bar{N}} \) for perpendicular tilt as all transitions \( m\to n, \: |m|,|n| < \bar{N} \);
+Above, we defined the prefactor \( \gamma_{\bar{N}} \) for perpendicular tilt as the sum of all transitions \( m\to n, \: |m|,|n| < \bar{N} \);
 in other words, all transitions between Landau levels up to some cutoff level \( \bar{N} \).
 However, there are other possible ways one may consider including the Landau level cutoff.
 In the untilted case, the \emph{dipolar} selection rule \( M = N + 1 \) makes the choice obvious.
@@ -1170,11 +1180,11 @@ If we define by \( \gamma_{\bar{N}} \) the sum of all \( 0\to n, |n| < \bar{N} \
 When including transitions to higher Landau levels, \( \gamma_{\bar{N}} \) as a function of \( t_x \) is no longer strictly decreasing -- it has a maximum at \( 0 < t_x < 1 \)!
 This would be a very interesting experimental signature.
 
-One pertinent question is how the cutoff level \( N \) should be found in this context.
+One pertinent question is how the cutoff level \( \bar{N} \) should be found in this context.
 The cutoff \( \bar{N} \) is not tunable in any obvious way -- we have already assumed the system to be in the deep quantum limit where only the zeroth level is Landau level is filled.
 We do note that the effect of including ever-higher levels is diminishing;
-the \( 0 \to n \) contributions become smaller for higher \( n \), and seem to converge as \( n \) becomes large%
-\footnote{This, of course, warrants an investigation into the \( 0\to n \) transition contributions shown in \cref{fig:contribs}, to find if they are indeed decreasing faster than \( 1 / n \).}.
+the \( 0 \to n \) contributions become smaller for higher \( n \), and seem to converge as \( n \) becomes large.%
+\footnote{This, of course, warrants an investigation into the \( 0\to n \) transition contributions shown in \cref{fig:contribs}, to find if they are indeed decreasing faster than \( 1 / n \).}
 
 The procedure, however, is not rigorous.
 Due to time limitations, we have not been able to investigate this effect further in time for this print, however, we plan to do a more rigorous treatment in the future.
@@ -1196,7 +1206,7 @@ Here, however, it qualitatively changes the response as a function of the tilt!
       legend cell align=left,
       cycle multiindex* list={
         [samples of colormap=6 of viridis]\nextlist
-        mark=o\\mark=opus\\mark=square\\\nextlist
+        mark=o\\mark=oplus\\mark=square\\\nextlist
         % solid\\ dashdotted\\ dashed\\ dotted\\
       },
       mark repeat={4},
@@ -1209,7 +1219,7 @@ Here, however, it qualitatively changes the response as a function of the tilt!
       }
     \end{axis}
   \end{tikzpicture}
-  \caption{Numerically computed values of the prefactor \( \gamma_{\bar{N}} \) with only the first Landau level included for perpendicular tilt \( t_x \).
+  \caption{Numerically computed values of the prefactor \( \gamma_{\bar{N}} \) with only the \( \bar{N}\) lowest, \( 0\to n\) transitions included for perpendicular tilt \( t_x \).
     The contribution is even in \( t_x \), and vanish as \( |t_x| \to 1 \).
     For clarity, only every 4th mark is drawn.
     \label{fig:0tontx}
