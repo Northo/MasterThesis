@@ -16,7 +16,7 @@ The current operator $\hat{\vec{J}} = e \hat{\vec{v}}$, where $\hat{\vec{v}}$ is
 Using the relation of Heisenberg operators $\dot{A} = -i [A, H] $~\cite{sakuraiModernQuantumMechanics2017}, for the operator $A$ and Hamiltonian $H$, and with the minimal coupling \( \vec{p}^B = \vec{p} + e \vec{A} \),
 \begin{align}
   \vec{v} = \dot{\vec{r}} &= -i \left[ \vec{r}, H \right]\\
-  &= -i v_F (s \sigma^i + (t^s)^i) \left[\vec{r}, p^B_i\right]\\
+  &= -i v_F (s \sigma_i + t^s_i) \left[\vec{r}, p^B_i\right]\\
   &= v_F (s \vec{\sigma} + \vec{t}^s),
 \end{align}
 where we used the canonical commutation relation \( [r_i, p_j] = i \delta_{ij} \) and that the position operator and magnetic potential \( \vec{A} \) commute.
@@ -199,7 +199,7 @@ Reintroducing the explicit effective speed of light \( v_F \) and recalling \( \
     T^{y_0}(t, \vec{r}) =
     \frac{1}{2}
     \sum\limits_{\vec{k} m, \vec{l} n}^{}
-    \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
+    \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + t^s_y) \phi _{\vec{l} n s }(\vec{r})\\
     \times \left[
       a^{\dagger}_{\vec{k} m s}(t) i \partial_t  a_{\vec{l} n s}(t)
       -
@@ -231,7 +231,7 @@ which further simplifies the expression.
     T^{y_0}(t, \vec{r}) &=
                           \frac{1}{2}
                           \sum\limits_{\vec{k} m, \vec{l} n}^{}
-                          \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + (t^s)^y) \phi _{\vec{l} n s }(\vec{r})\\
+                          \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + t^s_y) \phi _{\vec{l} n s }(\vec{r})\\
 \nonumber        &\times \left[
                    E_{k_z m s} + E_{l_z n s} - 2\mu \right]
                    a^{\dagger}_{\vec{k} m s}(t)  a_{\vec{l} n s}(t).
@@ -320,7 +320,7 @@ where the matrix elements in momentum space are given by
   T^{y 0}_{\vec{k}m s, \vec{l} n s}(\vec{q}) &= \frac{1}{2}
                                                 \int \mathrm{d}\vec{r} e^{i\vec{q}\vec{r}}
                                               \phi ^{*}_{\vec{k}m s}(\vec{r})
-                                              (s \sigma ^y + (t^s)^y)
+                                              (s \sigma ^y + t^s_y)
                                                 (E_{\vec{k}_z m s} + E_{\vec{l}_z n  s} - 2 \mu ) \phi _{\vec{l} n  s}(\vec{r}).
 \end{align}
 Note that as $T^{y 0}(t, -\vec{q})$ will be used later, we here for convenience included the sign into the definition of the matrix element  $T^{y 0}_{\vec{k}ms, \vec{l}ns}$, as is reflected in the sign of the exponent of \cref{eq:68}.
