@@ -107,6 +107,7 @@ A schematic representation of inversion symmetry and time-reversal symmetry is g
     \textbf{(Right:)} Time-reversal symmetry is broken.
     Notice how in the time-reversal symmetric case Kramer's doublet is present, as for any state at $k$, the state at $-k$ is degenerate  in energy and has opposite spin.
     This is not the case when time-reversal symmetry is broken, as the spin at  $-k$ has the same spin.
+    (Kramer's doubled discussed more in \cref{sec:kramers}.)
     Figure inspired by~\textcite{ramazashviliZeemanSpinorbitCoupling2019}.
   }
   \label{fig:symmetry_considerations}
@@ -133,6 +134,7 @@ such that
   \braket{\tilde{b} | \tilde{a}} &= \braket{b | a}^*,\\
   O\left(c_1 \ket{a} + c_2 \ket{b}\right) &= c_1^* O\ket{a} + c_2^* O\ket{b}.
 \end{align}
+
 \emph{A note of caution:} the Dirac bra-ket notation was originally designed to handle linear operators, where it excels.
 For anti-linear operators, which antiunitary operators are, the bra-ket notation can be deceiving.
 We will always take anti-linear operators to work on kets, never on bras from the right.
@@ -142,7 +144,7 @@ should be understood as
 $$ \bra{a} \left(\ket{O |b}\right)$$
 and \emph{never}
 $$ \left(\bra{a|O}\right) \ket{b}.$$
-The left operation of an anti-linear operator on a bra, $\bra{a} O$, will not be defined.
+The right operation of an anti-linear operator on a bra, $\bra{a} O$, will not be defined~\cite[discussion based on][Ch.~4.4]{sakuraiModernQuantumMechanics2017}.
 
 We will in general write
 \begin{equation}
@@ -168,7 +170,7 @@ From this follows that
   U = \phi U \phi \Rightarrow U \phi^{-1} = \phi U.
 \end{equation}
 This holds in general only for $\phi = \pm 1$, and thus $\mathcal{T}^2 = \pm 1$.
-Furthermore, we will later show that for integer spin particles $\mathcal{T}^2 = 1$ while for half-integer spin particles $\mathcal{T}^2 = -1$.
+Furthermore, we will in the next section show that for integer spin particles $\mathcal{T}^2 = 1$ while for half-integer spin particles $\mathcal{T}^2 = -1$.
 
 \subsection{Time-reversal operator on spinful particles}
 When considering spinful particles, we must enforce yet another property on the time-reversal operator.
@@ -196,16 +198,20 @@ Consider now the commutation of the ladder operators $J_{\pm} = S_x \pm i S_y$ w
 \end{equation}
 where the anti-linearity of $\mathcal{T} $ is emphasized.
 Thus, operating with $S_+$ on $\mathcal{T} \ket{s, m}$ gives
-\begin{align}
+\begin{equation}
+  \begin{split}
   S_+ \mathcal{T} \ket{s, m} &= \eta_{sm} S_+ \ket{s, -m}\\
   &= \eta_{sm} \hbar \sqrt{(s+m) (s-m+1)} \ket{s, -m +  1}.
-\end{align}
+  \end{split}
+\end{equation}
 On the other hand, commuting the two operators first gives
-\begin{align}
+\begin{equation}
+  \begin{split}
   S_+ \mathcal{T}  \ket{s, m} &= - \mathcal{T}  S_- \ket{s, m}\\
                          &= - \mathcal{T} \hbar \sqrt{(s+m)(s-m+1)} \ket{s, m-1}\\
   &= -\hbar \sqrt{(s+m)(s-m+1)} \eta_{s, m-1} \ket{s, -m + 1}.
-\end{align}
+  \end{split}
+\end{equation}
 By comparison, $\eta _{sm}= - \eta _{s, m-1}$; $\eta _{sm}$ has a flip of its sign under increments of $m$.
 The $m$ dependence should therefore be $(-1)^m$.
 For later convenience, we will choose to also include an $s$-term in the exponent, so that the exponent is integer also for half-integer systems, resulting in
@@ -214,11 +220,13 @@ For later convenience, we will choose to also include an $s$-term in the exponen
 \end{equation}
 where  $f(s)$  is some phase that does not depend on $m$.
 We are now in a position where we may find $\mathcal{T} ^2$, by acting on a general spin $s$ system.
-\begin{align}
+\begin{equation}
+  \begin{split}
   \mathcal{T} ^2 \sum\limits_{m = -s}^s a_m \ket{s, m} &= \mathcal{T}  \sum\limits_m^{} a^{*}_m f(s) (-1)^{s-m} \ket{s, -m}\\
                                                   &= \sum\limits_m^{} a_m f^{*}(s) (-1)^{s-m} \mathcal{T} \ket{s, -m}\\
   &= \sum\limits_m^{} a_m |f(s)|^2 (-1)^{2s} \ket{s, m}.
-\end{align}
+  \end{split}
+\end{equation}
 Note that it was important that $(-1)^{s-m}$ was real, which is taken care of by the $s$-term.
 As $f(s)$ is only a phase, this gives
 \begin{equation}

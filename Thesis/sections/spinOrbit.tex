@@ -63,19 +63,19 @@ Consider a free electron model where we add a Rashba term
 \begin{equation}
   H = \frac{p^2}{2m} + \alpha (p_y \sigma _x - p_x \sigma _y).
 \end{equation}
-The Hamiltonian commutes with the momentum operator, so we may replace the momentum operator with its eigenvalue $\hbar k$.
+The Hamiltonian commutes with the momentum operator, so we may replace the momentum operator with its eigenvalue $\hbar \vec{k}$.
 Solving for the eigenvalue is straight forward, and gives
 \begin{equation}
   E_{\pm} = \frac{\hbar k^2}{2m} \pm \alpha k,
 \end{equation}
 where $k=|\vec{k}|$.
-We expect the eigenvalues to be linear combinations of spin up and spin down states, and also that the coefficients depend on $k$, as the Rashba term has copuled spin and momentum.
+We expect the eigenvalues to be linear combinations of spin up and spin down states, and also that the coefficients depend on $k$, as the Rashba term has coupled spin and momentum.
 Take
 \begin{equation}
-  \psi_{\pm} = \frac{e^{i \vec{k} \vec{r}}}{\sqrt{2}} \left( \ket{\uparrow} + b \ket{\downarrow} \right),
+  \psi_{\pm} = \frac{e^{i \vec{k} \vec{r}}}{\sqrt{2}} \left( \ket{\uparrow} + a \ket{\downarrow} \right),
 \end{equation}
-where $b$ is some phase we must find.
-By inserting into the time-independent Schrödinger equation, we find $b = \mp i (k_x + k_y ) /k$, which is obviously $b=\mp i \exp (i \theta )$, where $\theta $ is the angle of the momentum, $\vec{k} = (k \cos \theta , k \sin \theta)$.
+where $a$ is some phase we must find.
+By inserting into the time-independent Schrödinger equation, we find $a = \mp i (k_x + k_y ) /k$, which is obviously $a=\mp i \exp (i \theta )$, where $\theta $ is the angle of the momentum, $\vec{k} = (k \cos \theta , k \sin \theta)$.
 Using the matrix representation $\ket{\uparrow} = (1,0)^T, \ket{\downarrow} = (0,1)^T$, the eigenvalues are given as
 \begin{equation}
   \psi _{\pm} =

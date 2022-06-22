@@ -1,16 +1,17 @@
-We will now introduce the general theory of linear response, also referred to as the Kubo formalism.
+% We will now introduce the general theory of linear response, also referred to as the Kubo formalism.
+We will now introduce the Kubo formalism of linear response theory.
 Later, the theory will be specialized to thermoelectric response.
 The material of this section is mostly inspired by the explanations given in~\textcite{giulianiQuantumTheoryElectron2005}.
 The specialization to the electric response and Luttinger's method is also inspired by~\textcite{mahanManyparticlePhysics2000}.
 
 We are interested in expressing the response of the observable ${A}$ to some field $F$ coupling to another observable ${B}$.
-Let the uncoupled system be described by the Hamiltonian $H_{0}$ and the coupling term be $H_F = F(t) {B}$.
+Let the uncoupled system be described by the Hamiltonian $H_{0}$ and the coupling term be $H_F(t) = F(t) {B}$.
 Assume also that the coupling field $F$ is turned on at $t=t_0$,  such that $H_F(t) = 0$ for $t < t_0$.
 Let the unperturbed Hamiltonian be $H_0$, which will be assumed time independent.
 The total Hamiltonian describing the coupled system is
 \begin{equation}
   \label{eq:kubo-perturbation}
-{H}(t) = H_0 + H_F = H_0+ F(t) {B}.
+{H}(t) = H_0 + H_F(t) = H_0+ F(t) {B}.
 \end{equation}
 Linear response theory tells us then that the response $\delta {A}$ is given by~\cite{giulianiQuantumTheoryElectron2005}
 \begin{equation}\label{eq:lin-response-1}
@@ -27,7 +28,7 @@ A  non-rigorous motivation for this form of the response is the fact that
   + \frac{\partial {A}_{S}}{\partial t}, 
 \end{equation}
 with $A_S$ the Schrödinger picture operator, whose derivative is from here on assumed zero.
-Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrate over the interaction time, the result is reminiscent of \cref{eq:lin-response-1}.
+Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrateing over the interaction time, the result is reminiscent of \cref{eq:lin-response-1}.
 For a proper derivation see for example~\textcite[Chapter 3.3]{giulianiQuantumTheoryElectron2005}.
 \todo{Note about time dependent vs independent operators/picture ? see Giuliani and Vaginal (3.29).}
 \todo{Some other formulation for what the $\braket\dots_0$ means.}
@@ -86,7 +87,8 @@ Then our final expression for the response of ${A}$ is
 \end{equation}
 Note of course that the limits could be altered to $\int_{-\infty}^{\infty}$ given that the coupling field is zero for times earlier than $t_0$ and we have chosen the retarded response function.
 
-\section[Charge response from electromagnetic coupling]{Linear response in charge current from electromagnetic coupling}
+% \section[Charge response from electromagnetic coupling]{Linear response in charge current from electromagnetic coupling}
+\section{Charge current from electromagnetic coupling}
 We will now discuss the electric \emph{conductivity} in light of the Kubo formalism, as an example to better understand and demonstrate the preceding discussion.
 Firstly the concept of conductivity will be presented, then it will be derived using the machinery of the Kubo formula.
 As mentioned above, this part follow the derivation of~\textcite{mahanManyparticlePhysics2000}.
@@ -99,7 +101,7 @@ The charge current $\vec{J}$ that is induced from an electric field $\vec{E}$ in
   \sigma_{ij}(\vec{r}, t, \vec{x}, s)
   \vec{E}_j(\vec{x}, s).
 \end{equation}
-Above the Einstein summation convention is used, and $\sigma$ is the \emph{conductivity tensor}.
+Above the Einstein summation convention is used, and $\sigma_{ij}$ is the \emph{conductivity tensor}.
 We see of course that this has the familiar form of a response relation.
 In the case of a simple and isotropic material, meaning symmetric under SO(n) and with no transverse response, the tensor is diagonal with $\vec{\sigma} = \sigma I$ and one gets the more well-known version of Ohm's law $\vec{J} = \sigma \vec{E}$.
 
@@ -150,7 +152,7 @@ The current couple to the electromagnetic potential $\vec{A}$ by a Hamiltonian t
 \begin{equation}
   \label{eq:electromagnetic-coupling}
   H_{\vec{A}} = -\int \mathrm{d}\vec{r}
-  \vec{J}(\vec{r}) \cdot \vec{A}(\vec{r}, t).
+   \vec{A}(\vec{r}, t) \cdot \vec{J}(\vec{r}).
 \end{equation}
 Comparing with the notation introduced earlier for general linear response, where the perturbing Hamiltonian in \cref{eq:kubo-perturbation} was
 \[
@@ -159,79 +161,78 @@ F(t) {B},
 we identify the perturbing field $F$ as $\vec{A}$ and the observable ${B}$ as the current density.
 We thus identify the \emph{response function}
 \begin{equation}
-  \chi_{\alpha\beta}(\vec{r}, t, \vec{x}, s) = - \frac{i}{\hbar} 
+  \chi_{ij}(\vec{r}, t, \vec{x}, s) = - \frac{i}{\hbar}
   \Theta(t-s)
   \Braket{
     \left[
-      \vec{J}_{\alpha}(\vec{r}, t), \vec{J}_{\beta}(\vec{x}, s)
+      \vec{J}_{i}(\vec{r}, t), \vec{J}_{j}(\vec{x}, s)
     \right]
   }_{0}.
 \end{equation}
 This gives the response
 \begin{equation}
   \label{eq:conductivity-kubo}
-  \delta  \vec{J}(\vec{r}, t) =
+  \delta  \vec{J}_{i}(\vec{r}, t) =
   \int\limits_{t_0}^{t} \! \mathrm{d}s
   \int \mathrm{d}\vec{x}
-  \chi(\vec{r}, t, \vec{x}, s)
-  \vec{A}(\vec{x}, s),
+  \chi_{ij}(\vec{r}, t, \vec{x}, s)
+  \vec{A}_{j}(\vec{x}, s).
 \end{equation}
-where the indices $\alpha, \beta$ has been dropped for clearer notation.
 Assuming spatial and temporal translational invariance,
 \begin{equation}
   \label{eq:response_trans_invariant}
-  \chi(\vec{r}-\vec{x}, t-s) \equiv \chi(\vec{r}, t, \vec{x}, s),
+  \chi_{ij}(\vec{r}-\vec{x}, t-s) \equiv \chi_{ij}(\vec{r}, t, \vec{x}, s),
 \end{equation}
 the expression can be simplified quite a bit.
 Firstly, we will make a change of variables, and then Fourier transform both the spatial and temporal argument.
 With $\tau = t-s$ and $\vec{x'} = \vec{r} - \vec{x}$,
 \begin{equation}
   \label{eq:conductivity-kubo-invariant}
-  \delta \vec{J}(\vec{r}, t) =
+  \delta \vec{J}_i(\vec{r}, t) =
   \int\limits_0^{t-t_0} \mathrm{d}\tau
   \int \mathrm{d}\vec{x'}
-  \chi(\vec{x'}, \tau)
-  \vec{A}(\vec{r} - \vec{x'}, t-\tau).
+  \chi_{ij}(\vec{x'}, \tau)
+  \vec{A}_{j}(\vec{r} - \vec{x'}, t-\tau).
 \end{equation}
 By the Fourier transformation introduced in \cref{eq:15}
 \[
-  A(\vec{q}, \omega ) =
+  \vec{A}(\vec{q}, \omega ) =
   \iint \mathrm{d}t \mathrm{d} \vec{r}
   e^{i(\omega  t - \vec{q} \vec{r} )}
-  A(\vec{r}, t),
+  \vec{A}(\vec{r}, t),
 \]
 the time transformed version of \cref{eq:conductivity-kubo-invariant} is 
 \todo{Should either implicitly or explicitly put the $t-t_0$ limit of the integral inside of A, so that the Fourier transform is simple}
 \begin{equation}
-  \delta \vec{J}(\vec{r}, \omega) = 
+  \delta \vec{J}_{i}(\vec{r}, \omega) =
   \int\limits_0^{t-t_0} \! \mathrm{d}\tau
   \int \mathrm{d}\vec{x'}
-  \chi(\vec{x'}, \tau)
+  \chi_{ij}(\vec{x'}, \tau)
   \underbrace{
     \int\limits_{-\infty}^{\infty} \mathrm{d}t
     e^{i \omega t}
-    \vec{A}(\vec{r} - \vec{x'}, t-\tau)
-    }_{\equiv e^{i\omega \tau} \vec{A}(\vec{r} - \vec{x'}, \omega)}.
+    \vec{A}_{j}(\vec{r} - \vec{x'}, t-\tau)
+    }_{\equiv e^{i\omega \tau} \vec{A}_{j}(\vec{r} - \vec{x'}, \omega)}.
 \end{equation}
 Similarly, Fourier transforming the spatial component yields
 \begin{equation}
   \label{eq:resonse_fourier}
-  \delta \vec{J}(\vec{q}, \omega) =
+  \delta \vec{J}_{i}(\vec{q}, \omega) =
   \int\limits_0^{t - t_0}\mathrm{d}\tau
   \int \mathrm{d} \vec{x'}
-  \chi(\vec{x'}, \tau)
+  \chi_{ij}(\vec{x'}, \tau)
   e^{i \omega\tau}
   \underbrace{
     \int \mathrm{d}\vec{r} \;
     e^{-i \vec{q} \vec{r}}
-  \vec{A}(\vec{r} - \vec{x'}, \omega)
-  }_{\equiv e^{-i \vec{q} \vec{x'}} \vec{A}(\vec{q}, \omega)}.
+  \vec{A}_{j}(\vec{r} - \vec{x'}, \omega)
+  }_{\equiv e^{-i \vec{q} \vec{x'}} \vec{A}_{j}(\vec{q}, \omega)}.
 \end{equation}
 Identifying the remaining part as the Fourier transform of the response function, we finally end up with,
 \begin{equation}
-  \delta \vec{J}(\vec{q}, \omega) =
-  \chi(\vec{q}, \omega)
-  \vec{A}(\vec{q}, \omega).
+  \delta \vec{J}_{i}(\vec{q}, \omega) =
+  \chi_{ij}(\vec{q}, \omega)
+  \vec{A}_{j}(\vec{q}, \omega).
 \end{equation}
 One could of course also have used the observation that the original expression is a convolution or the direct insertion of the Fourier transform for $\chi $ and $\vec{A}$, as shown earlier.
 
@@ -243,20 +244,20 @@ In the current derivation, the scalar field potential $\phi$ is taken to be zero
 Thus, the response can be written as
 \begin{equation}
   \label{eq:response_kubo}
-  \delta \vec{J}(\vec{q}, \omega) =
+  \delta \vec{J}_{i}(\vec{q}, \omega) =
   \frac{i}{\omega}
-  \chi(\vec{q}, \omega)
-  \vec{E}(\vec{q}, \omega).
+  \chi_{ij}(\vec{q}, \omega)
+  \vec{E}_{j}(\vec{q}, \omega).
 \end{equation}
 The expression \eqref{eq:response_kubo} found using the Kubo formalism may now be compared to Ohm's equation (\ref{eq:ohm-fourier}), where we see that, re-inserting the component indices explicitly,
 \begin{align}
-    \sigma_{\alpha\beta}(\vec{q}, \omega) &= \frac{i}{\omega} \chi_{\alpha\beta}(\vec{q}, \omega), \\
-  \chi_{\alpha\beta}(\vec{q}, \omega) &= \int \mathrm{d}\vec{x} \int \mathrm{d} t \; e^{i\omega t -i \vec{q} \vec{x}}\chi_{\alpha\beta}(\vec{x}, t)\\
+    \sigma_{ij}(\vec{q}, \omega) &= \frac{i}{\omega} \chi_{ij}(\vec{q}, \omega), \\
+  \chi_{ij}(\vec{q}, \omega) &= \int \mathrm{d}\vec{x} \int \mathrm{d} t \; e^{i\omega t -i \vec{q} \vec{x}}\chi_{ij}(\vec{x}, t)\\
   &=
     -\frac{i}{\hbar}\int \mathrm{d} \vec{r} \int \mathrm{d} t \; e^{i \omega t - i \vec{q} \vec{x}}
     \Theta (t)
     \Braket{\left[
-       \vec{J}_{\alpha}(\vec{r}, t), \vec{J}_{\beta}(0, 0)
+       \vec{J}_{i}(\vec{r}, t), \vec{J}_{j}(0, 0)
       \right]}_0. \nonumber
 \end{align}
 It is here important to remember that it was here assumed only transverse current.
