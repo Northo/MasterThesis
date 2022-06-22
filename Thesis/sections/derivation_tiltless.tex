@@ -764,7 +764,9 @@ Collecting dimensionfull quantities, the response function reads
 
 Let us now define
 \begin{equation}
-  \xi(\kappa_z, m, n) = \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
+  \xi(\kappa_z, m, n) =
+  \lim_{\omega\to0} \lim_{\vec{q} \to 0}
+  \frac{[n_{\kappa ms} - n_{\kappa + \qvec{q} ns}]
   \left[ (\alpha_{\kappa ms}^2 + 1) (\alpha_{\kappa +\qvec{q} ns}^2 + 1) \right]^{-1}
   }{
     (\epsilon _{\kappa m s} - \epsilon _{\kappa +\qvec{q}ns} )
@@ -790,7 +792,7 @@ The simplified expression is then
 
 \begin{table}[ht]
   \centering
-  \caption{Sign change of factors under various transformations. Note that \( \xi(\kappa_z, m, n) \) is taken in the limit \( \omega\to0, \vec{q}\to 0 \). \label{tab:transform-sign}}
+  \caption{Sign change of factors under various transformations.\label{tab:transform-sign}}
   \begin{tabular}{l r r r}
     \toprule
     Transformation & \( \xi(\kappa_z, m, n) \) & \( \epsilon_{\kappa_z m s} \) & \( \alpha_{\kappa_z m s} \)\\

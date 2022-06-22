@@ -49,9 +49,9 @@ Recall the linear response from the Kubo formalism in \cref{eq:current-luttinger
   \label{eq:21}
   \braket{J^i}(t, \vec{r}) = \!\!
   \underbrace{
-    \int\limits_{-\infty }^{t} \mathrm{d}t'
+    \int\limits_{-\infty }^{t} \!\! \mathrm{d}t' \!\!
     \int \mathrm{d}\vec{r}' \!\!
-  \int\limits_{-\infty }^{t'} \mathrm{d}t''
+  \int\limits_{-\infty }^{t'} \!\! \mathrm{d}t''
   \left\{
     \frac{-i v_F}{\hbar }
     \Braket{
@@ -66,7 +66,7 @@ Fourier transforming now to the frequency and momentum domain, will be beneficia
 As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in \cref{eq:21} can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
 Starting with Fourier transforming the position part, notice that the structure of \cref{eq:21} is
 \[
-  \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') (-\partial _j' T(\vec{r}') /T),
+  \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \left(-\frac{\partial _j' T(\vec{r}')}{ T} \right),
 \]
 where the temporal parts were dropped for clarity.
 This is a convolution, and the Fourier transform is thus simply given by the product of the two factors~\cite{rottmannMatematiskFormelsamling1995}.
