@@ -915,27 +915,26 @@ This last observation is discussed further in \cref{sec:other-observe:zeroton}, 
     \begin{axis}[
       axis x line*=top, axis y line*=right,
       scale only axis,
-      width=12cm,
-      height=8cm,
+      width=8.5cm,
+      height=5cm,
       tick label style={gray},
       ylabel=\( \gamma_0(t_x) \),
       xlabel=\( t_x \),
-      x label style={at={(axis description cs:0.95,1.02)}, anchor=south west, gray},
+      x label style={at={(axis description cs:0.95,1.01)}, anchor=south west, gray},
       y label style={gray},
       ]
       \addplot[teal!60, dashed] table[col sep=comma] {data/contribTilttx-zerothll.csv};
     \end{axis}
     \begin{axis}[
       legend columns=-1,
-      legend style={at={(0.5, 1.1)}, anchor=south,},
+      legend style={at={(0.5, 1.13)}, anchor=south, nodes={scale=0.7, transform shape}},
       % legend to name=contribs,
-      xlabel=Number of Landau levels,
+      xlabel={Number of Landau levels \( \bar{N} \)},
       ylabel=\( \gamma_{\bar{N}} \),
-      width=12cm,
-      height=8cm,
+      width=8.5cm,
+      height=5cm,
       name=myaxis,
       axis x line*=bottom, axis y line*=left,
-      xtick distance=1,
       scale only axis,
       ]
       \newcommand\plotContrib[1]{
