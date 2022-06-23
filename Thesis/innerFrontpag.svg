@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
+   width="176mm"
+   height="250mm"
+   viewBox="0 0 176 250"
    version="1.1"
    id="svg5"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
@@ -25,12 +25,12 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.72905795"
-     inkscape:cx="181.74138"
-     inkscape:cy="563.05538"
-     inkscape:window-width="953"
-     inkscape:window-height="1038"
-     inkscape:window-x="962"
-     inkscape:window-y="37"
+     inkscape:cx="186.5421"
+     inkscape:cy="453.32473"
+     inkscape:window-width="1890"
+     inkscape:window-height="1018"
+     inkscape:window-x="15"
+     inkscape:window-y="47"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
@@ -40,66 +40,68 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:none;stroke:#9a9a9a;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 105,271.50846 105,39.692777"
+       style="fill:none;stroke:#9a9a9a;stroke-width:0.207485px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 88,229.13059 V 20.869406"
        id="path178"
        sodipodi:nodetypes="cc" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.119263;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0935258;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
        id="rect1226"
-       width="87.410103"
-       height="11.200827"
-       x="61.294949"
-       y="236.77058" />
+       width="68.546829"
+       height="8.7836657"
+       x="53.726585"
+       y="188.65332" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.406419;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.318713;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
        id="rect1228"
-       width="190.42369"
-       height="59.707001"
-       x="9.7033997"
-       y="60.160641" />
+       width="149.32988"
+       height="46.822109"
+       x="13.33506"
+       y="50.156158" />
     <rect
-       style="fill:#ffffff;fill-opacity:1;stroke:#9a9a9a;stroke-width:0.374289;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
+       style="fill:#ffffff;fill-opacity:1;stroke:#9a9a9a;stroke-width:0.293517;stroke-linecap:square;stroke-opacity:1;paint-order:fill markers stroke;stop-color:#000000"
        id="rect1168"
-       width="188.43773"
-       height="51.173481"
-       x="10.696383"
-       y="64.427399" />
+       width="147.77249"
+       height="40.130142"
+       x="14.113754"
+       y="53.502144" />
     <text
        xml:space="preserve"
-       style="font-size:7.05556px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:179.142;stroke-width:0.264583"
+       style="font-size:7.05556px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:179.142;display:inline;stroke-width:0.264583"
        x="120.79565"
        y="52.355881"
        id="text63"
-       transform="translate(-15.940626,24.736009)"><tspan
+       transform="matrix(0.784198,0,0,0.784198,-6.5884724,22.376235)"><tspan
          x="120.79565"
          y="52.355881"
-         id="tspan1260"><tspan
+         id="tspan671"><tspan
            style="font-size:12.7px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal'"
-           id="tspan1258">Thermal Transport
+           id="tspan669">Thermal Transport
 </tspan></tspan><tspan
          x="120.79565"
          y="68.23088"
-         id="tspan1264"><tspan
+         id="tspan675"><tspan
            style="font-size:12.7px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal'"
-           id="tspan1262">in
+           id="tspan673">in
 </tspan></tspan><tspan
          x="120.79565"
          y="84.105884"
-         id="tspan1268"><tspan
+         id="tspan681"><tspan
            style="font-size:12.7px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal'"
-           id="tspan1266">tilted Dirac and Weyl semimetals</tspan></tspan></text>
+           id="tspan677">T</tspan><tspan
+           style="font-size:12.7px;font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal'"
+           id="tspan679">ilted Dirac and Weyl Semimetals</tspan></tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:7.05556px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:179.142;stroke-width:0.264583"
+       style="font-size:7.05556px;line-height:1.25;font-family:'Fira Code';-inkscape-font-specification:'Fira Code, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;white-space:pre;inline-size:179.142;display:inline;stroke-width:0.264583"
        x="120.79565"
        y="52.355881"
        id="text1172"
-       transform="translate(-15.82412,192.37521)"><tspan
+       transform="matrix(0.784198,0,0,0.784198,-6.750033,153.83857)"><tspan
          x="120.79565"
          y="52.355881"
-         id="tspan1272"><tspan
+         id="tspan685"><tspan
            style="font-family:'Nimbus Roman';-inkscape-font-specification:'Nimbus Roman, Normal'"
-           id="tspan1270">Thorvald Molthe Ballestad</tspan></tspan></text>
+           id="tspan683">Thorvald Molthe Ballestad</tspan></tspan></text>
   </g>
 </svg>

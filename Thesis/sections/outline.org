@@ -315,8 +315,8 @@ Having a non-zero potential is very interesting, as this drastically changes the
 ** TODO Check discussion about Dirac T valid
 Anticommutation grassman etc
 
-* TODOS [7/10]
-** TODO Size and pos of conic sketch
+* TODOS [8/10]
+** DONE Size and pos of conic sketch
 [[file:typeii.tex::\caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}]]
 
 ** DONE Concrete examples of interesting effects of type ii

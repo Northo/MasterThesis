@@ -6,10 +6,21 @@ Emphasis that nernst is not from conformal
 
 
 * Feedback on feedback
-** Landau Fermi liquid
-https://www.nature.com/articles/nphys2049.pdf
-** Schrodinger equation
+** TODO Landau Fermi liquid
+
+- https://www.nature.com/articles/nphys2049.pdf
+
+- Vozmediano video
+  Says that Dirac/Weyl materials (including Graphene) does not comply with the Landau Fermi liquid paradigm
+
+- Chernodub et al review
+  "However, in the scale-invariant limit of vanishing density and temperature, all the parameters of the system reduce to dimensionless quantities and the Fermi liquid phenomenology can no more be used"
+
+
+** DONE Schrodinger equation
 Keep the name schrodinger equation for H psi = E psi , as chernodub does
-** Berry curvature def for degenerate
-** partial derivative prime
+
+** TODO Berry curvature def for degenerat
+
+** DONE partial derivative prime
 \( \partial '_i \)
