@@ -397,17 +397,19 @@ The integral part of \cref{eq:69}, ignoring everything without time dependence f
 i \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1}.
 \end{align}
 The response function then reads
-\begin{multline}
-  \chi ^{xy}(\omega , \vec{q}) =
+\begin{equation}
+  \begin{split}
+  &\chi ^{xy}(\omega , \vec{q}) =
   \frac{i v_F  }{\mathcal{V} }
   \lim_{\eta \to 0}
   \sum\limits_{\vec{k}mn}^{}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q})
   T^{y 0}_{\vec{k}+\qvec{q}ns, \vec{k}ms}(\vec{q})
-  \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right] \\
-  \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
+  \left[ n_{\vec{k}ms}- n_{\vec{k}+\qvec{q} ns} \right]\\
+  &\quad\times\left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + \omega   + i\eta   \right]^{-1}
   \left[ E_{k_zms} - E_{k_z+\qvec{q}_z ns} + i \eta   \right]^{-1},
-\end{multline}
+  \end{split}
+\end{equation}
 where the matrix elements are
 \begin{align}\label{eq:70}
   J^x_{\vec{k}ms, \vec{k}+\qvec{q}ns}(\vec{q}) &= \int \mathrm{d}y
@@ -481,9 +483,14 @@ The matrix element
     \left.  b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x+ q_x) l_B^2}{l_B} \right)
-    \right]\\
-    %%% 
-  &= s v_F e \int \mathrm{d}y
+    \right].
+\end{align}
+\vspace{-3em}%
+We wish to write the exponent on the form $e^{-a(y + b)^2}$.
+Introduce $\qvec{q}_y=(q_x, q_y)$, not to be confused with $\qvec{q} = (q_x, q_z)$, and complete the square
+\begin{equation}
+  \begin{split}
+&J_{\vec{k}ms; \vec{k}+\qvec{q} ns}(\vec{q}) = s v_F e \int \mathrm{d}y
     % \exp \left[-\left\{
     % y+ \frac{l_B^2}{2} \left( iq_y - 2k_x - q_x \right)
     % \right\}^2 /l_B^2\right]
@@ -496,16 +503,15 @@ The matrix element
   % \nonumber &\pe \times \exp \left[- \frac{1}{4} l_B^2 \left\{
   %   \qvec{q}_y^2 + 2 i (2k_x + q_x) q_y
   %   \right\}\right]\\
-  \nonumber &\pe \times \left[
+   &\pe \times \left[
     a_{k_zms}b_{k_z + \qvec{q}_z ns} H_{M-1} \left( \frac{y - k_xl_B^2}{l_B} \right) H_N\left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right) \right.\\
-  \nonumber &\pe \quad\quad \left. +
+   &\pe \quad\quad \left. +
     b_{k_zms} a_{k_z + \qvec{q}_z ns}
     H_M \left( \frac{y - k_xl_B^2}{l_B} \right)
     H_{N-1} \left( \frac{y - (k_x + q_x) l_B^2}{l_B} \right)
-    \right],
-\end{align}
-where we completed the square in the exponent, to get the form $e^{-a(y + b)^2}$.
-Also, $\qvec{q}_y=(q_x, q_y)$, was introduced, not to be confused with $\qvec{q} = (q_x, q_z)$.
+    \right].
+  \end{split}
+\end{equation}
 By introducing $\tilde{y} = \frac{y}{l_{B}} + l_B(iq_y - q_x - 2 k_x) / 2$ the matrix element may be rewritten
 \begin{multline}
   \label{eq:73}
