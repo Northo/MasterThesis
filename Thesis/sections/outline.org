@@ -242,6 +242,16 @@ Maybe hope for conformal as well
 The response function chi is tunable with the tilt parameter t
 the landau levels behavior is massively different for parallel and perpendicular tilt, as so is the behavior of the response function
 
+The repsonse dependes on the symmetries of the tilt
+- parallel inversion broken tilt, no change of the effect in type i.
+  At type ii, collapse
+- parallel inverion symmetric tilt, extra contribution proportional to titl, positive for tilt in the same direction of the magnetic field
+  Dependent on some momentum cutoff
+  At type ii, drastic artifact, then diminish
+- perp tilt, gradually diminish
+  possible to have more exciting response, but must be made more
+
+
 some results must be normalized from expermiental observations
 very exciting signature from tx tilt if correct
 strong dependence on the symmetry

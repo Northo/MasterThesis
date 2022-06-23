@@ -1000,19 +1000,28 @@ The contribution has the same sign as the tilt, and the magnitude depends on the
         ylabel={\( [ \gamma_{\text{div}, \bar{N}} - \gamma_{\text{div}, \bar{N}-1}] /t_z \)},
         legend pos=south east,
         % cycle list name=exotic,
-        cycle list={
-          teal,every mark/.append style={fill=teal!80!black},mark=*\\
-          orange, dashed, every mark/.append style={fill=orange!80!black},mark=square*\\
-          cyan!60!black, densely dotted, every mark/.append style={fill=cyan!80!black},mark=otimes*\\
-          red!70!white, dashdotted, mark=star\\
-          lime!80!black, loosely  dashed, every mark/.append style={fill=lime},mark=diamond*\\
-          red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\
-          yellow!60!black,densely dashed,
-          every mark/.append style={solid,fill=yellow!80!black},mark=square*\\
-          black,every mark/.append style={solid,fill=gray},mark=otimes*\\
-          blue,densely dashed,mark=star,every mark/.append style=solid\\
-          red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
-        },  %% exotic with various line types
+        % cycle list={
+        %   teal,every mark/.append style={fill=teal!80!black},mark=*\\
+        %   orange, dashed, every mark/.append style={fill=orange!80!black},mark=square*\\
+        %   cyan!60!black, densely dotted, every mark/.append style={fill=cyan!80!black},mark=otimes*\\
+        %   red!70!white, dashdotted, mark=star\\
+        %   lime!80!black, loosely  dashed, every mark/.append style={fill=lime},mark=diamond*\\
+        %   red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=*\\
+        %   yellow!60!black,densely dashed,
+        %   every mark/.append style={solid,fill=yellow!80!black},mark=square*\\
+        %   black,every mark/.append style={solid,fill=gray},mark=otimes*\\
+        %   blue,densely dashed,mark=star,every mark/.append style=solid\\
+        %   red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
+        % },  %% exotic with various line types
+        % cycle multiindex* list={
+        %   [samples of colormap=5 of viridis]\nextlist
+        %   % mark=o\\mark=oplus\\mark=square\\\nextlist
+        %   solid\\ dashdotted\\ dashed\\ loosely dashed\\ dashdotdotted\\
+        % },
+        cycle multiindex* list={
+          color\nextlist
+          linestyles*
+        }
         ]
         \foreach \i in {1,...,5} {
           \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
@@ -1084,6 +1093,11 @@ This is still an open question.
       }, %% There is a bug with \to
       % cycle list={[samples of colormap={4} of colormap/autumn]},
       % cycle list={[of colormap=colormap/autumn]},
+      % cycle multiindex* list={
+      %   [samples of colormap=4 of viridis]\nextlist
+      %   mark=o\\mark=oplus\\mark=square\\\nextlist
+      %   % solid\\ dashdotted\\ dashed\\ dotted\\
+      % },
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       % \addplot+[mark=none] {(-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
@@ -1112,6 +1126,11 @@ This is still an open question.
         \( 1 \rightarrow 2\),
         \( 2\rightarrow 3 \),
       }, %% There is a bug with \to
+      % cycle multiindex* list={
+      %   [samples of colormap=4 of viridis]\nextlist
+      %   mark=o\\mark=oplus\\mark=square\\\nextlist
+      %   % solid\\ dashdotted\\ dashed\\ dotted\\
+      % },
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_intraband_odd.csv};

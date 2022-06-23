@@ -21,6 +21,10 @@ Emphasis that nernst is not from conformal
 Keep the name schrodinger equation for H psi = E psi , as chernodub does
 
 ** TODO Berry curvature def for degenerat
+"singly degenerate"??
 
 ** DONE partial derivative prime
 \( \partial '_i \)
+
+** "Anomalous thermoelectric"
+Is the word anomalous too related to spin?

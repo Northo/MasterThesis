@@ -199,8 +199,9 @@ In the following, we will show that the two currents \emph{cannot} be simultaneo
 As is often the case, there are many ways to do this.
 For example, one could show directly that the measure of the path integral is not invariant under a transformation.
 We will, however, show it in a somewhat crude way, but where there are no complicated formal considerations, only brute force calculation which is hopefully more readily appreciated by those not familiar to the concept.
-The calculation also has some historical importance, as the problem we will solve is in fact exactly the same as the problem that led to the discovery of anomalies!
-\todo{Consider to spice up this historic reference}
+The calculation also has some historical importance, as the problem we will solve is in fact exactly the same as the problem that led to the discovery of anomalies~\cite{adlerAxialVectorVertexSpinor1969,bellPCACPuzzleP01969}!%
+\footnote{The anomaly was discovered independently by \textcite{adlerAxialVectorVertexSpinor1969} and \textcite{bellPCACPuzzleP01969} in 1969. See~\textcite{tongGaugeTheoryLecture} for a more in-depth historic commentary.}
+
 
 We will calculate the triangle diagram
 % \begin{figure}[h]
@@ -209,8 +210,8 @@ We will calculate the triangle diagram
   \tikzsetnextfilename{feynman-triangle}
   \nocite{ellisTikZFeynmanFeynmanDiagrams2017}
   %% NB! tikz-feynman must be compiled with lualatexx
-  \feynmandiagram [vertical'=t2 to t3, spring electrical layout]{
-    t1[label=left:\(\gamma ^{\lambda }\gamma ^5 \)]
+  \feynmandiagram [vertical'=t2 to t3, small]{
+    t1[label=left:\(\gamma ^{\lambda }\gamma ^5 \), left=3cm]  % 'longer' triangle
     -- [fermion, edge label=\(p\)] t2 [label=above:\(\gamma ^{\mu }\)]
     -- [fermion, edge label=\(p-k_1\)] t3 [label=below:\(\gamma ^{\nu }\)]
     --  [fermion, edge label=\(p-q\)] t1,
@@ -479,8 +480,8 @@ Consider massless \gls{qed}
 \begin{equation}
   \mathcal{L} = -\frac{1}{4} F^{\mu\nu}F_{\mu\nu} + i \bar{\psi} \slashed{D} \psi,
 \end{equation}
-with $\psi$ the Dirac field, $\bar{\psi} = \psi^{\dagger}\gamma^0$, $\slashed{D} = \gamma^{\mu} D_{\mu}$, $D$ the covariant derivative $D_{\mu} = \partial_{\mu}-ieA_{\mu}$, $\gamma^{\mu}$ the Dirac matrices, and $F$ the electromagnetic field.
-$A$ is the electromagnetic potential, $\partial _{\mu }A_{\nu } - \partial _{\nu } A_{\mu }$, and $e$ is the coupling, here the fundamental charge.
+with $\psi$ the Dirac field, $\bar{\psi} = \psi^{\dagger}\gamma^0$, $\slashed{D} = \gamma^{\mu} D_{\mu}$, $D$ the covariant derivative $D_{\mu} = \partial_{\mu}-ieA_{\mu}$, $\gamma^{\mu}$ the Dirac matrices.
+$A_{\mu}$ is the electromagnetic potential, $F_{\mu \nu} = \partial _{\mu }A_{\nu } - \partial _{\nu } A_{\mu }$ the electromagnetic field, and $e$ is the coupling, here the fundamental charge.
 The theory is classically scale-invariant.
 That is, under the transformation
 \begin{equation}
@@ -493,10 +494,11 @@ the Lagrangian transforms as
 which is canceled by the transformation of measure $\mathrm{d}^4 x \to \mathrm{d}^4x \lambda ^{-4}$ in the action.
 As the action is invariant, thus so are the equations of motion.
 
-By Noether's theorem there must be some conserved current corresponding to this symmetry transformation, which we will now show is the dilation current $j_D^{\mu } = T^{\mu \nu } x_{\nu }$.
+By Noether's theorem, there must be some conserved current corresponding to this symmetry transformation, which we will now show is the dilation current $j_D^{\mu } = T^{\mu \nu } x_{\nu }$, where \( T^{\mu \nu} \) is the energy-momentum tensor.
 Consider a conformal transformation of the type $g_{\mu \nu } = e^{2\tau } \eta _{\mu \nu }$, also known as a Weyl transformation of the metric.
 The variation of the metric is obviously $\delta g_{\mu \nu } = 2 \tau \eta _{\mu \nu }$.
-Recall also that the energy-momentum tensor is defined as the response of the action to a variation of the metric
+Recall also that the energy-momentum tensor is defined as the response of the action to a variation of the metric%
+\footnote{This defines the \emph{dynamical} energy-momentum tensor. See \cref{sec:commen-T} for more details.}
 \begin{equation}
   T_{\mu \nu } = \frac{2}{\sqrt{|g|}} \frac{{\delta S}}{\delta  g^{\mu \nu }},
 \end{equation}
@@ -576,7 +578,7 @@ In one loop, the massless fermion beta function is~\cite{chernodubAnomalousTrans
 \begin{comment}
   \section{Notes for the section}
   %% Notes for this section:
-  In order to better understand this ... introduce \gls{qft}, Path Integral, Chiral Anomlay
+  In order to better understand this ... introduce \gls{qft}, Path Integral, Chiral Anomaly
   The renormalization introduces a scale-invariance breaking quantity $\mu$.
 
   Anomalies must not be confused with spontaneous symmetry breaking, where sym of state is lower than sym of hamiltonian.

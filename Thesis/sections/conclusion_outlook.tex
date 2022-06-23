@@ -1,37 +1,58 @@
 % \section{Conclusion and outlook}
 \addchap{Conclusion and Outlook}
-We have computed a contribution to the transverse thermoelectric response function -- Nernst response -- of a tilted Weyl cone.
-The origin of the contribution is the conformal anomlay, and it is finite in the limit of no chemical potential and zero temperature.
-The response function \( \chi \) was found to be tunable with the tilt parameter \( t \).
-The behavior of the Landau levels for a tilted Weyl cone is different depending on the direction of the tilt with respect to the magnetic field.
-We found the behavior of \( \chi \) to also be massively different depending on the direction.
+We have computed a contribution to the transverse thermoelectric response function -- Nernst response -- of a tilted Dirac cone.
+The response was calculated for a single Weyl cone, and then the total response was found by summing the response of two Weyl cones of opposite chirality.
+The origin of the contribution is the conformal anomaly, and it is finite in the limit of no chemical potential and zero temperature.
+The response function was found to be tunable with the tilt vector \( \vec{t} \).
+% Depending on the direction of the tilt with respect to the magnetic field, the response function behaves differently.
+% The behavior of the Landau levels for a tilted Weyl cone is different depending on the direction of the tilt with respect to the magnetic field.
+% We found the behavior of the response function to also be massively different depending on the direction.
 
-The results also offer potential experimental signatures.
-The response of parallel tilt is odd in the tilt \( t_\parallel \) and the response of perpendicular tilt is suppressed with increasing tilt \( t_\perp \).
-We believe this opens up the possibility of various experimental designs.
-One example is to rotate the sample in a magnetic field, such that the tilt goes from being parallel to perpendicular.
-The response of perpendicular tilt discussed in \cref{sec:other-observe}, also shown in \cref{fig:0tontx}, is a good candidate for an experimental signature as well, however, it requires some more work before it is sufficiently rigorous.
+In the case of tilt perpendicular to the magnetic field and parallel to the charge current, we found the response function to be even in the perpendicular tilt component \( t_{\perp} \).
+The response decreases as the magnitude of the tilt is increased, and as the tilt approaches the critical tilt between Type-I and Type-II, the response is zero.
+In the Type-II regime with perpendicular tilt, the Landau levels collapse, and our method is no longer appropriate.
+In the case of tilt parallel to the magnetic field, the response function depends on the symmetry of the tilt of the Dirac cone -- the effect of the two Weyl cones partially cancel when they tilt in the same direction, while for inversion symmetric tilt their contributions add up.
+We split the response into even and odd parts as functions of the parallel tilt component \( t_{\parallel} \).
+% Both survive for tilt with inversion, while only the even component survives for broken inversion symmetric tilt.
+For inversion symmeric tilt both contribute, while for broken inversion symmetry only the even component survives.
+The even component was found to be independent of the tilt in the Type-I regime, while it is heavily suppressed in the Type-II regime.
+The odd component, which only survives for inversion symmetric tilt, is proportional to the magnitude of the tilt in the Type-I regime, with its proportionality constant dependent on a momentum cutoff.
+In the Type-II regime, the odd component diverges to infinity close to the topological Lifshitz transition but quickly decreases as the tilt is increased.
+The divergence at the Lifshitz transition is believed to be an artifact of the linearized model.
 
-\todo{
-  - Dramatic change around the transition from type I to type II
-  - Opposed to what Sharma found in their semiclassical bolztman computation of chiral anomaly, where there is no abrubt change
-}
-\todo{
-  Discuss whether Type-II is anomalous?
-  We have DoS, so energy scale, and thus maybe not conformal contribution? (Maybe compare with no abrubt change for chiral anomaly from type i to type ii) i.e. we break the scale invariance when we tilt to type ii
-  only the 0th that is truly conformal??
-  This is probably more result than conclusion material...
-}
+This work facilitates future experimental designs and theoretical investigation into the effect and the conformal anomaly.
+As the direction of the tilt relative to the magnetic field is easily tunable, by simply rotating the field or sample, the dependence on the direction of the tilt, in particular, poses an interesting venue for experimental setups.
+We furthermore found the possibility of a distinct maximum of the response function in the case of perpendicular tilt, when considering the deep quantum where only the lowest Landau level is filled.
+This, however, requires further theoretical investigation.
+
+% The results offer potential experimental signatures.
+% The response of parallel tilt is odd as a function of the tilt and the response of perpendicular tilt is suppressed with increasing tilt.
+% We believe this opens up the possibility of various experimental designs.
+% One example is to rotate the sample in a magnetic field, such that the tilt goes from being parallel to perpendicular.
+% The response of perpendicular tilt discussed in \cref{sec:other-observe}, also shown in \cref{fig:0tontx}, is a good candidate for an experimental signature as well, however, it requires some more work before it is sufficiently rigorous.
+
+% \todo{
+%   - Dramatic change around the transition from type I to type II
+%   - Opposed to what Sharma found in their semiclassical bolztman computation of chiral anomaly, where there is no abrubt change
+% }
+% \todo{
+%   Discuss whether Type-II is anomalous?
+%   We have DoS, so energy scale, and thus maybe not conformal contribution? (Maybe compare with no abrubt change for chiral anomaly from type i to type ii) i.e. we break the scale invariance when we tilt to type ii
+%   only the 0th that is truly conformal??
+%   This is probably more result than conclusion material...
+% }
 
 The calculation has also demonstrated the importance of the correct treatment of the energy-momentum tensor.
-Depending on the definition used, the resulting response is qualitatively different for tilted systems, as opposed to untilted systems.
+Depending on the definition used, the resulting response is qualitatively different for tilted systems, as opposed to untilted systems.%\nowidow[4]
 
-After this work, we have several unanswered questions and believe this to be a fruitful topic for the future.
+As we conclude this thesis, there are several unanswered questions, and we believe this to be a fruitful topic for the future.
 Here we propose a selection of ideas and questions that are relevant, which are direct extensions of the work in this thesis.
 \begin{description}
   \item[Tilt parallel to temperature gradient]
         Due to time constraints, we were not able to extend the calculation to tilt parallel to \( \nabla T \) in time for writing the thesis.
         This is a natural extension, and we hope to be able to do this for a manuscript currently being written.
+        This extension is mostly a technical matter.
+        In particular, this situation is interesting as a \( t_y \)-component, in the geometry considered in the thesis, gives rise to a new term in the matrix element of the energy-momentum tensor.
 
   \item[The energy-momentum tensor]
         The ambiguity related to the energy\hyp{}momentum tensor, discussed in \cref{sec:commen-T} is still an open question, which should be explored more.
@@ -41,8 +62,9 @@ Here we propose a selection of ideas and questions that are relevant, which are 
         One of our current ideas involves a fully covariant calculation, absorbing the tilt directly in the metric instead of explicitly including it in the Lagrangian.
         That will involve combining the curvature of the tilt and Luttinger's perturbation in a Kubo calculation.
         It is of interest to see if this leads to the same expressions as we found from having explicit tilt in flat space.
+        For some initial work on this, see \cref{sec:tilt-metric}.
 
-        \todo{- Important symmetries, gmunu non-symmetric, related to torsion and stress tensors}
+        % \todo{- Important symmetries, gmunu non-symmetric, related to torsion and stress tensors}
 
   \item[Finite chemical potential and temperature]
         As discussed in \cref{sec:other-observe}, it would be interesting to extend the calculation to finite potential and temperature.

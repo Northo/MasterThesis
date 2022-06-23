@@ -1,7 +1,7 @@
 \usepackage{mathtools}
 \usepackage[final]{pdfpages}
 \usepackage{amsfonts}
-\usepackage[style=alphabetic, backref=true]{biblatex}
+\usepackage[style=alphabetic, backref=true, safeinputenc]{biblatex}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{bm}
@@ -60,9 +60,9 @@ final=true,
 \renewcommand\multicitedelim{\addsemicolon\space}
 
 %% Put section number in margin
-\renewcommand\sectionlinesformat[4]{%
-  \makebox[0pt][r]{#3}#4%
-}
+% \renewcommand\sectionlinesformat[4]{%
+%   \makebox[0pt][r]{#3}#4%
+% }
 
 \usepackage{fancyhdr}
 
