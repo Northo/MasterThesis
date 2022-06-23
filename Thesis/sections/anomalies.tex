@@ -76,23 +76,23 @@ and why it matters in condensed matter physics.
 That discussion will be based on the discussion given in~\textcite{wehlingDiracMaterials2014} and~\textcite[Ch.~3]{tongGaugeTheoryLecture}.
 Then we will present a more thorough derivation of the anomaly, based on the derivation of~\textcite{zeeQuantumFieldTheory2010} and~\textcite{kachelriessQuantumFieldsHubble2018}.
 
-In the massless case the Dirac equation reduce to the Weyl equation, whose solutions are right and left moving fermions.
+In the massless case, the Dirac equation reduces to two Weyl equations, whose solutions are right- and left-moving fermions.
 In 1+1 dimensions they have the energy dispersion
 \[
   \epsilon  _{\pm} = \pm |p|,
 \]
-where the $\pm$ indicate positive and negative energy solutions.
+where the $\pm$ indicates positive and negative energy solutions.
 Consider the case now in the Dirac sea picture.
 The negative energy solutions, antiparticles in high energy physics  and holes in condensed matter physics, are all filled, with the energy band going to $\pm \infty $ momentum.
-The particles with energy $\epsilon  = +p$ are right moving solutions, while $\epsilon  = -p$ represent left moving solutions.
+The particles with energy $\epsilon  = +p$ are right-moving solutions, while $\epsilon  = -p$ represent left-moving solutions.
 Note that in this language, an antiparticle with negative momentum, is right moving, and of course a particle with positive momentum is right moving.
 The situation is shown in the left pane of \cref{fig:chiral-dispersion}.
 Introduce now an electric field \(E\).
 This will cause the states to shift, according to $\dot{p} = e E$, with $e$ being the electric coupling, which is here taken to be the fundamental charge;
-note that this shift does not discriminate against left and right movers, they are both shifted the same.
-For a field $E > 0$ the right movers are shifted towards higher energies and the left movers are shifted towards lower energies, shown in the right pane of \cref{fig:chiral-dispersion}.
-This also shifts the densities of left and right movers!
-Denote by $n_+$ the right movers and $n_-$ the left movers.
+note that this shift does not discriminate against left- and right-movers, they are both shifted the same.
+For a field $E > 0$ the right-movers are shifted towards higher energies and the left-movers are shifted towards lower energies, shown in the right pane of \cref{fig:chiral-dispersion}.
+This also shifts the densities of left- and right-movers!
+Denote by $n_+$ the right-movers and $n_-$ the left-movers.
 The total density $n = n_+ + n_-$ is constant, however, the difference $n_+ - n_-$ is not conserved.
 Identifying $J = n_+ + n_-$ as the vector current and $J_A = n_+  - n_{-}$ as the axial current, we see that the vector current is conserved, but the \emph{axial} current is not!
 Notice how the origin of the anomaly in this context, is the infinite depth of the Dirac sea.
@@ -157,11 +157,10 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
     \pgfplotslegendfromname{chiralLeg}
     %% NB!!! For the ref to work, you must manually!! call the jobnmme
     % }
-    \caption{Dispersion of Weyl fermions, black showing unfilled states, blue filled right movers, and red filled left movers.
+    \caption{Dispersion of Weyl fermions, black showing unfilled states, blue filled right-movers, and red filled left-movers.
       \textbf{(Left)} No electric field applied, Fermi level at the crossing.
       \textbf{(Right)} Electric field in the positive direction applied, shifting the filled states.
       See main text for details.
-      \todo{Consider changing for solid lines (not marks). In that case, have thiccc lines.}
     \label{fig:chiral-dispersion}}
 \end{figure}
 
@@ -186,12 +185,17 @@ Notice how the origin of the anomaly in this context, is the infinite depth of t
   This causes the conductivity along the direction of the magnetic field to increase~\cite{wehlingDiracMaterials2014}.
 \end{comment}
 
-We will now give a purely field theoretical derivation of the axial anomaly, under a gauge transformation
+The above argumentation gives an intuitive explanation and interpretation of the anomaly, but it is obviously not rigorous.
+We here give a purely field theoretical derivation of the axial anomaly.
+Consider a massless \gls{qft}
+\( \mathcal{L} = \bar{\psi} i \gamma^{\mu}\partial_{\mu} \psi \),
+which under the gauge transformation
 \begin{equation}
-  \psi \to  e^{i \theta + i\theta \gamma^5} \psi,
+  \psi \to  e^{i \theta + i\theta \gamma^5} \psi
 \end{equation}
-corresponding to a gauge transformation of the coupling fields.
-\todo{remove or write more about these coupling fields, as we do not have them in our Lagrangian. See Zee and Kachelriess}
+is invariant.
+It can be shown that the associated conserved Noether currents are the vector current \( J^{\mu} = \bar{\psi} \gamma^{\mu} \psi \) and the axial current \( J_5^{\mu} = \bar{\psi} \gamma^{\mu} \gamma^5 \psi \)~\cite{zeeQuantumFieldTheory2010}.
+In the following, we will show that the two currents \emph{cannot} be simultaneously conserved -- that is the chiral anomaly.
 As is often the case, there are many ways to do this.
 For example, one could show directly that the measure of the path integral is not invariant under a transformation.
 We will, however, show it in a somewhat crude way, but where there are no complicated formal considerations, only brute force calculation which is hopefully more readily appreciated by those not familiar to the concept.
@@ -225,11 +229,12 @@ The amplitude of the diagram is
 \end{equation}
 with the vector current $J^{\mu }= \bar{\psi} \gamma ^{\mu } \psi $ and the axial current $J_5^{\mu } = \bar{\psi} \gamma ^{\mu } \gamma ^5\psi $.
 Written out explicitly in momentum space
-\begin{multline}
+\begin{equation}
   \label{eq:amplitude}
-  \mathcal{A}^{\lambda \mu \nu}(k_1, k_2) =\\
-  (-1) i^3 \int \frac{\mathrm{d}^4p}{(2 \pi)^{4}}
-  \operatorname{Tr}\left(
+  \begin{split}
+  &\mathcal{A}^{\lambda \mu \nu}(k_1, k_2) =
+  (-1) i^3 \int \frac{\mathrm{d}^4p}{(2 \pi)^{4}}\\
+  &\quad\times\operatorname{Tr}\left(
     \gamma^{\lambda}\gamma^5 \frac{1}{\slashed{p} - \slashed{q}}
     \gamma^{\nu} \frac{1}{\slashed{p} - \slashed{k}_{1}}
     \gamma ^{\mu} \frac{1}{\slashed{p}}
@@ -239,11 +244,12 @@ Written out explicitly in momentum space
     \gamma ^{\mu } \frac{1}{\slashed{p} -\slashed{k}_{2}}
     \gamma ^{\nu } \frac{1}{\slashed{p}}
   \right),
-\end{multline}
+  \end{split}
+\end{equation}
 where $q = k_1 + k_2$.
 For the vector current to be conserved the requirement $k_{1\mu }\mathcal{A} ^{\lambda \mu \nu } = k_{2\nu }\Delta ^{\lambda \mu \nu } = 0$ must hold.
-For the axial current to be conserved, the requirement is $q_{\lambda }\mathcal{A}^{\lambda \mu \nu } = 0$.
-\todo{show or cite the requirements. I think maybe it is quite simple to see from the wick contractions}
+For the axial current to be conserved, the requirement is $q_{\lambda }\mathcal{A}^{\lambda \mu \nu } = 0$~\cite{zeeQuantumFieldTheory2010}.
+% \todo{show or cite the requirements. I think maybe it is quite simple to see from the wick contractions}
 
 One must be careful when carrying out this calculation, as is also stressed in many textbooks dealing with this issue, for example~\cite{kachelriessQuantumFieldsHubble2018} and~\cite{zeeQuantumFieldTheory2010}.
 Consider the criterion for the vector current to be conserved
