@@ -1013,17 +1013,17 @@ The contribution has the same sign as the tilt, and the magnitude depends on the
         %   blue,densely dashed,mark=star,every mark/.append style=solid\\
         %   red,densely dashed,every mark/.append style={solid,fill=red!80!black},mark=diamond*\\
         % },  %% exotic with various line types
-        % cycle multiindex* list={
-        %   [samples of colormap=5 of viridis]\nextlist
-        %   % mark=o\\mark=oplus\\mark=square\\\nextlist
-        %   solid\\ dashdotted\\ dashed\\ loosely dashed\\ dashdotdotted\\
-        % },
         cycle multiindex* list={
-          color\nextlist
-          linestyles*
-        }
+          [samples of colormap=5 of viridis]\nextlist
+          % mark=o\\mark=oplus\\mark=square\\\nextlist
+          solid\\ dashdotted\\ dashed\\ loosely dashed\\ dashdotdotted\\
+        },
+        % cycle multiindex* list={
+        %   color\nextlist
+        %   solid\\ dashed\\ dashdotted\\ loosely dashed\\
+        % }
         ]
-        \foreach \i in {1,...,5} {
+        \foreach \i in {1,3,5,7} {
           \addplot+[mark=none] table[x index=0, y index=\i, col sep=comma] {data/divergentFactor.csv};
           \addlegendentryexpanded{\( \bar{N} = \the\numexpr\i-1\relax \)};
         }
@@ -1093,11 +1093,11 @@ This is still an open question.
       }, %% There is a bug with \to
       % cycle list={[samples of colormap={4} of colormap/autumn]},
       % cycle list={[of colormap=colormap/autumn]},
-      % cycle multiindex* list={
-      %   [samples of colormap=4 of viridis]\nextlist
-      %   mark=o\\mark=oplus\\mark=square\\\nextlist
-      %   % solid\\ dashdotted\\ dashed\\ dotted\\
-      % },
+      cycle multiindex* list={
+        [samples of colormap=4 of viridis]\nextlist
+        mark=o\\mark=oplus\\mark=square\\\nextlist
+        % solid\\ dashdotted\\ dashed\\ dotted\\
+      },
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       % \addplot+[mark=none] {(-1 + x * ln((1+x)/sqrt(x^2-1)))}; %% Same as above, just more stable
@@ -1126,11 +1126,11 @@ This is still an open question.
         \( 1 \rightarrow 2\),
         \( 2\rightarrow 3 \),
       }, %% There is a bug with \to
-      % cycle multiindex* list={
-      %   [samples of colormap=4 of viridis]\nextlist
-      %   mark=o\\mark=oplus\\mark=square\\\nextlist
-      %   % solid\\ dashdotted\\ dashed\\ dotted\\
-      % },
+      cycle multiindex* list={
+        [samples of colormap=4 of viridis]\nextlist
+        mark=o\\mark=oplus\\mark=square\\\nextlist
+        % solid\\ dashdotted\\ dashed\\ dotted\\
+      },
       ]
       % \addplot[mark=none] {0.5 * (x * arcsinh(1/sqrt(x^2-1)) - 1)};
       \addplot+[mark=none] table[col sep=comma, y=2] {data/contribtypeii_intraband_odd.csv};
