@@ -325,7 +325,7 @@ Having a non-zero potential is very interesting, as this drastically changes the
 ** TODO Check discussion about Dirac T valid
 Anticommutation grassman etc
 
-* TODOS [13/20]
+* TODOS [17/24]
 ** TODO Summary
 - To include the introductory sentence or to not include the introductory sentence, that is the question.
 ** DONE Introduction
@@ -337,7 +337,11 @@ Anticommutation grassman etc
 - Do we answer what we set out to find?
 ** TODO Spell check everything
 Also (especially) the old sections
-** TODO Align fig 1.7 with text
+** DONE Align fig 1.7 with text
+** DONE Placement of figs in results
+** TODO Side by side or above fig 1.8?
+** DONE Clean up repetition around 4.5 (type-I)
+** DONE Cleanup around 4.197 4.198 wrt fig reference
 ** TODO Check if anything needs cite
 -
 -
