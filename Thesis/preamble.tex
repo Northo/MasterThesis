@@ -1,7 +1,7 @@
 \usepackage{mathtools}
 \usepackage[final]{pdfpages}
 \usepackage{amsfonts}
-\usepackage[style=alphabetic, backref=true, safeinputenc]{biblatex}
+\usepackage[style=alphabetic, backref=true, safeinputenc, giveninits=true, sortcites=true]{biblatex}
 \usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage{bm}
@@ -10,6 +10,7 @@
 \usepackage{mlmodern}  %% 'Blacker' font
 \usepackage[T1]{fontenc}
 \usepackage{amsthm}
+% \usepackage[tikz]{mdframed}
 \usepackage{microtype}
 \usepackage{nowidow}
 \usepackage{hyphenat}
@@ -22,13 +23,19 @@
 \usepackage{pgfplotstable}
 % \usepackage{hyperref}
 \usepackage{hyperref}
-\hypersetup{
-colorlinks=true,
-allcolors=blue!80!red!60!black,
-final=true,
+\iftoggle{print}{
+  \hypersetup{
+    pdfborder=0 0 0,
+    final=true,
+  }
+}{
+  \hypersetup{
+    colorlinks=true,
+    allcolors=blue!80!red!60!black,
+    final=true,
+  }
 }
 \usepackage{float}
-\usepackage{etoolbox}
 % \usepackage{letltxmacro}  % https://tex.stackexchange.com/questions/70547/how-can-i-renew-includegraphics-to-always-use-shadowbox
 \usepackage{booktabs}
 \usepackage{multirow}
@@ -57,7 +64,7 @@ final=true,
 
 \addbibresource{Master.bib}
 \addbibresource{manual.bib}
-\renewcommand\multicitedelim{\addsemicolon\space}
+% \renewcommand\multicitedelim{\addsemicolon\space}
 
 %% Put section number in margin
 % \renewcommand\sectionlinesformat[4]{%

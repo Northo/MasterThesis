@@ -8,7 +8,7 @@ The fields are given, in the position basis, by
                    a^{\dagger}_{\vec{k}ns}(t)
                    =\sum\limits_{\vec{k}n}^{} \phi^{*}_{\vec{k} n s} (\vec{r}) a^{\dagger}_{\vec{k}n s}(t).
 \end{align}
-\todo{Is the asterisk supposed to be dagger? \( \phi^{*} \to \phi^{\dagger} \) as it must be transpose??}
+\todo{Is the asterisk supposed to be dagger? \( \phi^{*} \to \phi^{\dagger} \) as it must be transpose??}%
 Here $a_{\lambda }^{\dagger} (t) = \exp(iE_{\lambda } t / ) a_{\lambda }^{\dagger}$ and $a_{\lambda }^{\dagger}, a_{\lambda }$ are the creation and annihilation operators of the state with quantum numbers $\lambda $.
 \subsection{Expressions for the operators}
 \subsubsection{The current operator}
@@ -209,7 +209,7 @@ Reintroducing the explicit effective speed of light \( v_F \) and recalling \( \
 \end{multline}
 Here, also a non-zero potential $\mu $ is included by hand,%
 \footnote{This is of course in no way a rigorous treatment of the chemical potential. Heuristically, one may argue that as the \( T^{y0} \) component is to be regarded as the energy flux, the contribution from chemical potential should be the chemical potential multiplied by the particle velocity operator. }
-\todo{The footnote makes the definition sound much like heat current (see Mahan eq. 3.484)}
+\todo{The footnote makes the definition sound much like heat current (see Mahan eq. 3.484)}%
 equal to what was done in~\textcite{arjonaFingerprintsConformalAnomaly2019}.
 % Our final result will be given at zero potential, however, it is included in the calculations as it is later interesting to consider small deviations from zero chemical potential.
 Our final result will be given at zero potential, however, it is included in the calculations as it for future work is interesting to consider small deviations from zero chemical potential.
@@ -220,9 +220,9 @@ Recalling the time dependence of $a(t), a^{\dagger}(t)$ we have that
   i \partial_t a^{\dagger}_{\lambda }(t) = -E_{\lambda }a^{\dagger}_{\lambda },
 \]
 which further simplifies the expression.
-
 \begin{summary}
   The current- and energy-momentum tensor operator are
+  \vspace{1em} % Fix line rbeaking of box
   \begin{align}
     J^x &= sv_F e \sum\limits_{\vec{k}m, \vec{l}n}^{}
           \phi _{\vec{k}ms}^{*}(\vec{r}) \left(\sigma^x + s t^s_x\right) \phi _{\vec{l}ns}(\vec{r})
@@ -232,7 +232,7 @@ which further simplifies the expression.
                           \frac{1}{2}
                           \sum\limits_{\vec{k} m, \vec{l} n}^{}
                           \phi ^{*}_{\vec{k} m s}(\vec{r}) (s \sigma^y + t^s_y) \phi _{\vec{l} n s }(\vec{r})\\
-\nonumber        &\times \left[
+\nonumber        &\quad\times \left[
                    E_{k_z m s} + E_{l_z n s} - 2\mu \right]
                    a^{\dagger}_{\vec{k} m s}(t)  a_{\vec{l} n s}(t).
   \end{align}
@@ -282,7 +282,7 @@ which further simplifies the expression.
       a^{\dagger}a
     \right].
   \end{equation}
-  Now, recovering our dimensionfull quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the \gls{qed} Lagrangian in \cref{eq:64} to our system.
+  Now, recovering our dimensionful quantities by letting $i\partial_{\mu }  \to v_F p_{\mu }$ \todo{what happens to s?}, which we see from comparing the \gls{qed} Lagrangian in \cref{eq:64} to our system.
   The four momentum is given as usual, with $c \to v_F$, by $p_{\mu } = \left( \frac{E}{v_{F}}, -\vec{p} \right) =  (i\frac{\partial_0}{v_{F}}, -p _i)$.
   This gives the final expression 
   \begin{equation}
@@ -485,7 +485,6 @@ The matrix element
     H_{N-1} \left( \frac{y - (k_x+ q_x) l_B^2}{l_B} \right)
     \right].
 \end{align}
-\vspace{-3em}%
 We wish to write the exponent on the form $e^{-a(y + b)^2}$.
 Introduce $\qvec{q}_y=(q_x, q_y)$, not to be confused with $\qvec{q} = (q_x, q_z)$, and complete the square
 \begin{equation}
@@ -665,7 +664,7 @@ Upon introducing $\tilde{y} = \frac{y}{l_{B}} + l_B( -iq_y - q_x - 2k_x) / 2$ th
   \end{multline}
 }%
 The terms in the integrand are exactly the same as in the current matrix element case, just in the reverse order and with $q_y \to -q_y$.
-In the limti \( \vec{q} \to 0 \)
+In the limit \( \vec{q} \to 0 \)
 \begin{equation}
   \label{eq:77}
   T^{y 0}_{\vec{k} ns, \vec{k}ms} (\vec{q})
@@ -750,7 +749,7 @@ Recall the response function \eqref{eq:general-response-function}
 %   .
 % \end{equation}
 Firstly, introduce the dimensionless quantities \( \kappa_z \sqrt{2 eB} = k_z, \epsilon_{k_z m s} v_F \sqrt{2 e B} = E_{k_z m s}  \), in order to facilitate solving the integral over \( k_z \).
-Collecting dimensionfull quantities, the response function reads
+Collecting dimensionful quantities, the response function reads
 \begin{multline}
   \label{eq:90}
 \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} =
@@ -830,7 +829,7 @@ Combining this with the selection rule \( N=M-1 \), we see that the only allowed
 \[ M \to -N = -(M-1), \; -M \to N = (M-1). \]
 
 The sum may be further restricted by noting that as both \( \xi(\kappa_z, m, n) \) and \( \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} \) are odd under \( (m, n, \kappa_z) \to (-m, -n, -\kappa_z) \), the two transitions above give the same contribution when \( \mu = 0 \).
-In the case of zero chemical potential, the expression may thus be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor 2.
+In the case of zero chemical potential, the expression may thus be simplified further, by considering only \( -N \to M = N + 1\) transitions, adding a factor of 2.
 
 Lastly, we now show that the contributions from cones of opposite chirality \( s \) are the same.
 Under the transformation \( (\kappa_z, s) \mapsto (-\kappa_z, -s) \), the product \( \kappa_z s \) is obviously invariant.
@@ -868,7 +867,7 @@ Including only the first term of the sum, we find
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar},
 \end{equation}
 where we have reinserted the explicit \( \hbar \).
-Including contributions from the \( \bar{N} \) lowest landau levels, one acquire additional numerical prefactors,
+Including contributions from the \( \bar{N} \) lowest Landau levels, one acquire additional numerical prefactors,
 \begin{equation}
   \label{eq:95}
   \lim_{\omega \to 0} \lim_{\vec{q} \to 0} \chi^{xy} = \gamma_{\bar{N}} \frac{e^2 v_F B}{2 (2 \pi)^2 \hbar}.

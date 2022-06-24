@@ -2,7 +2,7 @@
   \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
 }
 \newcommand{\todo}[2][orange]{\hfill\break{\bfseries\cbox[#1]{#2}}\break}
-% \renewcommand{\todo}{\empty}
+\renewcommand{\todo}[1]{}
 
 % \setlength\multlinegap{0pt}  %% Make multline go all the way left
 
@@ -16,7 +16,7 @@
 \newcommand{\qvec}[1]{\mathfrak{#1}} % Used for two-dim vec
 
 \declaretheorem[shaded, style=remark]{remark}
-\declaretheorem[thmbox=S]{Proposition}
+% \declaretheorem[thmbox=S]{Proposition}
 \declaretheorem[thmbox=M, style=remark]{summary}
 \declaretheoremstyle[
     spaceabove=6pt,
@@ -28,6 +28,43 @@
     headpunct={:}]{myproofstyle}
 \declaretheorem[style=myproofstyle, unnumbered]{Proof}
 \declaretheorem[name=Theorem]{theorem}
+
+% \newmdtheoremenv [ %
+% outerlinewidth=2,%
+% leftmargin=40,%
+% rightmargin=40,%
+% splittopskip=\topskip,%
+% ntheorem=true,%
+% % rightline=false,
+% % leftline=false,
+% ]{summary}{Summary}
+
+% \newcounter{summary}\setcounter{summary}{0}
+% % \renewcommand{\thesummary}{\arabic{section}.\arabic{summary}}
+% \newenvironment{summary}[1][]{%
+% \tikzexternaldisable
+% \refstepcounter{summary}%
+% \ifstrempty{#1}%
+% {\mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20]
+% {\strut Summary~\thesummary};}}
+% }%
+% {\mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20]
+% {\strut Summary~\thesummary:~#1};}}%
+% }%
+% \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+% linewidth=2pt,topline=true,%
+% frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+% }
+% \begin{mdframed}[]\relax%
+% }{\end{mdframed}%
+% \tikzexternalenable
+% }
 
 % \newcommand{\gls}[1]{#1}  % Hack until glossaries work
 \newacronym{qed}{QED}{quantum electrodynamics}

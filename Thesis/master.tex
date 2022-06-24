@@ -8,13 +8,16 @@ BCOR=5mm,
 captions=tableheading,
 ]{scrbook}
 
+\usepackage{etoolbox}
+\newtoggle{full-size-image}  % from etoolbox
+\newtoggle{print}
+\settoggle{full-size-image}{false}
+\settoggle{print}{false}
+
 \input{preamble}
 \input{definitions}
 
 % \includeonly{sections/derivation_tilt}
-
-\newtoggle{full-size-image}  % from etoolbox
-\settoggle{full-size-image}{true}
 
 \begin{document}
 % \includepdf{frontpagethesis.pdf}

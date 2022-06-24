@@ -179,7 +179,7 @@ The Landau levels of a Weyl cone coupled to a magnetic field \( B_z \) has the e
 \subsection{The tilted Hamiltonian}\label{sec:ll-tilt}
 As we have seen, the eigenvalues of a Type-II Weyl semimetal are simple to find, and are not qualitatively different from those of Type-I, other than the appearance of particle and hole pockets at the Fermi level.
 We will also consider the Landau levels of these materials, which importantly are very different from Type-I.
-In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field~\cites{soluyanovTypeIIWeylSemimetals2015,sharmaChiralAnomalyLongitudinal2017}.
+In fact, erroneous treatment of the Landau spectrum of Type-II semimetals caused the original paper describing Type-II materials to mistakenly assert that the chiral anomaly would not be present for certain directions of a background magnetic field~\cite{soluyanovTypeIIWeylSemimetals2015,sharmaChiralAnomalyLongitudinal2017}.
 
 The issue with the Landau level description is that for certain directions of the \(B\)-field, the Landau levels break down.
 For Type-I materials, the description is valid for all directions of the \(B\)-field, but as the cone tilts into a Type-II material, the description breaks down when the \(B\)-field and tilt direction are perpendicular~\cite{sharmaChiralAnomalyLongitudinal2017}, and as the magnitude of the tilt increases, the Landau levels are only valid up to a certain angle between the tilt direction and magnetic field.
@@ -223,7 +223,7 @@ with
 where \(\mathcal{I}_{2}\) is the identity matrix of size 2.
 We may again make the plane wave ansatz \( \phi(\vec{r}) = e^{i k_x x + i k_z z} \phi(y) \), similar to what was done for the untilted Hamiltonian in \cref{sec:ll-notilt}, to replace \( p_{(x /z)} \to k_{(x /z)} \).
 In order to use the ladder operator method used for the untilted cone, we must get rid of the \(k^B_{x}\) on the diagonal of the Hamiltonian.%
-\footnote{One could, in principle, have solved the system directly without such a transformation, however, it would be very tedeous.~\cite{tchoumakovMagneticFieldInducedRelativisticProperties2016}}
+\footnote{One could, in principle, have solved the system directly without such a transformation, however, it would be very tedious.~\cite{tchoumakovMagneticFieldInducedRelativisticProperties2016}}
 To achieve this, we will use a ``Lorentz boost'', which as we will show only leaves \(k_{z}\) and \(E\) in the diagonal.
 Act with the hyperbolic rotation operator \(R = \exp[\Theta /2 \sigma_{x}]\) on \cref{eq:30} from the left, and insert identity on the form \( R R^{-1} \) before the state vector.
 By introducing the state in the rotated frame \(\ket{\tilde{\psi}} = R^{-1} \mathcal{N} \ket{\psi } \), with \(\mathcal{N}\) a normalization factor compensating for the non-unitarity of the transformation, we get the eigenvalue equation
@@ -295,9 +295,9 @@ The required hyperbolic tilt angle to eliminate the \(k^B_{x}\) in the diagonal 
   \theta = - s \tanh^{-1} t^s_{\perp}.
 \end{equation}
 The inverse of \(\tan \), of course, diverges as the argument approaches \(\pm 1\), as shown in \cref{fig:arctanh}.
-For \(|t_{\perp}| < 1\) we are able to find an angle \(\theta \) which transforms our Hamiltonian into a form which we may solve.
+For \(|t_{\perp}| < 1\) we can find an angle \(\theta \) which transforms our Hamiltonian into a form that we may solve.
 For \(|t_{\perp}| \geq 1\), however, no (real) solution of \(\theta \) exits, and the Landau level description collapses.
-More concretely, as we will show later, the separation of the landau levels is reduced as the perpendicular tilt increases, and as \( |t_\perp| \to 1 \), the level separation \( \Delta E \to 0 \).
+More concretely, as we will show later, the separation of the Landau levels is reduced as the perpendicular tilt increases, and as \( |t_\perp| \to 1 \), the level separation \( \Delta E \to 0 \).
 
 \begin{figure}[htb]
   \tikzsetnextfilename{arctanh}
@@ -330,8 +330,9 @@ The \( \vec{t} \) parametrization of the tilt is conveniently visualized by plot
 If the vector is outside the unit sphere, it is a Type-II, if it is inside, it is a Type-I.
 Also, if the projection of the vector onto the \(x,y\)-plane is on the unit disk, the Landau level description is valid, if not, the Landau levels collapse.
 When the projection is on the unit disc, the system is in the \emph{magnetic} regime, otherwise, we denote it by the \emph{electric} regime.
-All Type-I materials may thus be described by Landau levels, while it for Type-II is only valid for certain directions of \(\vec{t}\).
 As the \(t\)-vector gets larger, the magnetic regime is restricted to smaller angles between \( \vec{t} \) and \( \vec{B} \).
+The magnetic regime is where the Landau levels are valid.
+All Type-I materials may thus be described by Landau levels, while for Type-II the Landau level description is only valid for certain directions of \(\vec{t}\).
 \begin{figure}[ht]
   \centering
   % \includegraphics[width=0.75\textwidth]{figures/tiltSphere.png}
@@ -458,7 +459,7 @@ The Landau levels are shown in \cref{fig:llevelstilt} for different choices of \
     The top two rows show Type-I, while the lowest row shows Type-II.
     Left column shows \( t_\perp = 0 \), right column \( t_\perp = 0.64 \) (\( \alpha = 0.6 \)).
     The rows show \( t_\parallel = 0, 0.5, 1.2 \), from top to bottom.
-    The dotted lines show the Landau levels with opposite sign of \( t_\parallel \), the dashed show the opposite chirality.
+    The dotted lines show the Landau levels with opposite sign of \( t_\parallel \), and the dashed show the opposite chirality.
     The arrows indicate valid ``transitions'', namely the \( 0\to 1 \) interband in black, \( -1 \to 4 \) interband in \textcolor{brown!70!black}{brown}, and \( 1\to 2 \) intraband in \textcolor{teal!70!black}{teal}.
     See main text for details.
   }

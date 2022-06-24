@@ -224,7 +224,7 @@ Refer to figure.
 
 **** Momentum cutoff in the tz case
 
-**** "Conformalness" of Type-II
+**** TODO "Conformalness" of Type-II
 See notes from second vozmediano meeting, [[file:~/Documents/NTNU/10semester/meetings/meeting-vozmediano2.org::*Type-II][Type-II]].
 It seems like it is less trivial to conclude that the origin of the transport in type ii has its origin in conformal anomaly.
 Anyways a very good discussion point about the results
@@ -233,9 +233,6 @@ Anyways a very good discussion point about the results
 
 **** Div:
 
-***** Applications
-The chiral anomaly may be used in chiral qbit, see Dmitri E. Kharzeev and Qiang Li, “The Chiral Qubit: quantum computing with chiral anomaly,” arXiv (2019), 1903.07133 [quant-ph].
-Maybe hope for conformal as well
 
 ** Conclusion and outlook
 *** Conclusion
@@ -258,6 +255,9 @@ strong dependence on the symmetry
 
 energy momentum tensor choice of central importantce
 
+***** TODO Applications
+The chiral anomaly may be used in chiral qbit, see Dmitri E. Kharzeev and Qiang Li, “The Chiral Qubit: quantum computing with chiral anomaly,” arXiv (2019), 1903.07133 [quant-ph].
+Maybe hope for conformal as well
 
 *** Outlook
 **** Tilt parallel to the temperature gradient, i.e. ty
@@ -325,7 +325,31 @@ Having a non-zero potential is very interesting, as this drastically changes the
 ** TODO Check discussion about Dirac T valid
 Anticommutation grassman etc
 
-* TODOS [8/10]
+* TODOS [13/20]
+** TODO Summary
+- To include the introductory sentence or to not include the introductory sentence, that is the question.
+** DONE Introduction
+- Is it clear what we set out to do?
+** DONE Intro ch. 4
+** TODO Results
+- Comment on the cutoff in any way?
+** TODO Conclusion
+- Do we answer what we set out to find?
+** TODO Spell check everything
+Also (especially) the old sections
+** TODO Align fig 1.7 with text
+** TODO Check if anything needs cite
+-
+-
+-
+** DONE Bibliography
+*** DONE Formatting
+*** DONE Check sources (i.e. actual journal, not arxiv etc.)
+
+** DONE Sorting in multicite
+** HOLD Explicitly series expandn in 1/N
+[[file:derivation_tiltless.tex::\todo{Series expand in \( x=\frac{1}{\bar{N}} \) }]]
+
 ** DONE Size and pos of conic sketch
 [[file:typeii.tex::\caption{Sketch of the conic section with the plane passing through the node of the cone. The intersection surface is either a point at the node or two intersecting lines. \label{fig:conic-section-sketch}}]]
 
@@ -351,7 +375,4 @@ and
 ** DONE Fix sum to over i, same as tilted case
 [[file:derivation_tiltless.tex::\todo{Consider change sum to sum over i to N}]]
 
-** HOLD Explicitly series expandn in 1/N
-[[file:derivation_tiltless.tex::\todo{Series expand in \( x=\frac{1}{\bar{N}} \) }]]
-
-** TODO Consistent colors in results for plots
+** DONE Consistent colors in results for plots

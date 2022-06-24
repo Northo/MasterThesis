@@ -28,12 +28,12 @@ A  non-rigorous motivation for this form of the response is the fact that
   + \frac{\partial {A}_{S}}{\partial t}, 
 \end{equation}
 with $A_S$ the Schrödinger picture operator, whose derivative is from here on assumed zero.
-Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrateing over the interaction time, the result is reminiscent of \cref{eq:lin-response-1}.
+Taking $H=H_F$, the part of the Hamiltonian whose dynamics we are interested in, and integrating over the interaction time, the result is reminiscent of \cref{eq:lin-response-1}.
 For a proper derivation see for example~\textcite[Chapter 3.3]{giulianiQuantumTheoryElectron2005}.
 % \todo{Note about time dependent vs independent operators/picture ? see Giuliani and Vaginal (3.29).}
 % \todo{Some other formulation for what the $\braket\dots_0$ means.}
 
-We will now try to make this expression slightly more manageable, and in the process we will highlight some important physical properties of the expression.
+We will now try to make this expression slightly more manageable, and in the process, we will highlight some important physical properties of the expression.
 Firstly, by taking advantage of the time translation invariance of the uncoupled Hamiltonian $H_0$, we may realize that the average taken in the unperturbed basis may be taken at a more convenient time, preserving the time separation of the operators
 \begin{equation}
   \Braket{\left[
@@ -202,7 +202,7 @@ By the Fourier transformation introduced in \cref{eq:15}
   \vec{A}(\vec{r}, t),
 \]
 the time transformed version of \cref{eq:conductivity-kubo-invariant} is 
-\todo{Should either implicitly or explicitly put the $t-t_0$ limit of the integral inside of A, so that the Fourier transform is simple}
+\todo{Should either implicitly or explicitly put the $t-t_0$ limit of the integral inside of A, so that the Fourier transform is simple}%
 \begin{equation}
   \delta \vec{J}_{i}(\vec{r}, \omega) =
   \int\limits_0^{t-t_0} \! \mathrm{d}\tau
@@ -267,10 +267,10 @@ If that was not the case, there would be an additional contribution to the $\sig
 
 \section{The Luttinger approach to thermal transport}
 Thermal transport, i.e. response to thermal gradients, is more convoluted than the response to an electromagnetic field, as there is no well-defined Hamiltonian describing the temperature gradient, which of course is a statistical property of the system.
-\todo{Consider including some of Mahan's  disucssion about having a thermal gradient when we in the calculations have assumed constant temperature.}
+\todo{Consider including some of Mahan's discussion about having a thermal gradient when we in the calculations have assumed constant temperature.}%
 In his now illustrious paper~\cite{luttingerTheoryThermalTransport1964} Luttinger seeks to make the theory of transport due to temperature gradients more formal and ``mechanical'', as he puts it.
 Inspired by the mechanical derivation of Kubo for the electric transport, he introduces a method where the transport may be derived mechanically from a phenomenological term in the Hamiltonian -- the \emph{Luttinger term}.
-Earlier calculations of the transport properties of temperature gradients was conducted from local variable theories;
+Earlier calculations of the transport properties of temperature gradients were conducted from local variable theories;
 Luttinger~\cite{luttingerTheoryThermalTransport1964} mentions the derivations of Green and Mori, where they respectively had assumed a Markoff process and ``local equilibrium distribution''.
 Luttinger's method attempts to put the results of those calculations on a ``more solid basis''.
 
@@ -292,14 +292,14 @@ Luttinger showed that the system is in equilibrium, i.e. the thermal and gravita
 \end{equation}
 % Note that the relative sign of the two terms may vary depending on the convention.
 Borrowing the language of Tatara~\cite{tataraThermalVectorPotential2015}, this is essentially a trick to be able to calculate transport coefficients without introducing temperature gradients in the Hamiltonian.
-Instead, one introduces the fictitious field $\psi$, for which the origin is not addressed, and find the transport coefficients for this system.
+Instead, one introduces the fictitious field $\psi$, for which the origin is not addressed, and finds the transport coefficients for this system.
 The situation is depicted in \cref{fig:luttinger-idea}, where the temperature field is shown, together with an accompanying gravitational field.
 % \todo{Need some more explanation of what actually happens here. I believe the idea is something like that by introducing the field, we may have temperature gradients in the equilibrium state, thus we may use equilibrium quantum mechanics to calculate everything}
 \begin{figure}[h]
   \centering
   % \import{figures/}{LinearResponse_bump}
   \includegraphics{figures/LinearResponse_bump}
-  \caption{Illustration of Luttinger's solution to heat transport. To include a temperature fluctuation $T$, couple the system to some (fictions) gravitational potential $\psi$ giving the same current response as the temperature fluctuation.}
+  \caption{Illustration of Luttinger's solution to heat transport. To include a temperature fluctuation $T$, couple the system to some (possibly fictious) gravitational potential $\psi$ giving the same current response as the temperature fluctuation.}
   \label{fig:luttinger-idea}
 \end{figure}
 
@@ -330,10 +330,10 @@ Or, more compactly,
   \end{pmatrix}.
 \end{equation}
 Importantly, note that these relations are valid when \( \vec{J}, \vec{J}_E \) are understood as the \emph{transport} currents, as opposed to the total currents containing also local non-transporting currents.
-This is discussed more with regards to the results of this thesis in \cref{sec:transport-magnetization}.
+This is discussed more with regard to the results of this thesis in \cref{sec:transport-magnetization}.
 The coefficients of transportation, $\vec{L}_{ij}$ is a widely used convention, however, several slight variations are used, which at times may cause confusion.
-In particular these differences are on which factors of \( T \) and \( \mu \) are included explicitly;
-the reason for choosing other definitions might be to have more convenient expressions for the Onsager relation, Seebeck coefficient, thermal conductivity tensor, etc~\cites{mahanManyparticlePhysics2000,chernodubThermalTransportGeometry2021,lundgrenThermoelectricPropertiesWeyl2014}.
+In particular, these differences are on which factors of \( T \) and \( \mu \) are included explicitly;
+the reason for choosing other definitions might be to have more convenient expressions for the Onsager relation, Seebeck coefficient, thermal conductivity tensor, etc.~\cite{mahanManyparticlePhysics2000,chernodubThermalTransportGeometry2021,lundgrenThermoelectricPropertiesWeyl2014}.
 The success of Luttinger's method was that the transport coefficients could now be calculated directly, and yielded the same results as had previously been found by less formal approaches.
 
 By the introduction of the Hamiltonian perturbation $H_L$, the response may now be investigated in the Kubo formalism.
@@ -359,7 +359,7 @@ By the response in \cref{eq:lin-response-1} the electric current generated from 
 \end{equation}
 where the integration is taken over the entire spacetime.
 In order to express this as a response to the thermal gradient, we wish to get the gradient of the gravitational potential.
-To do this, firstly the $00$-element of the energy-momentum tensor will be expressed in terms derivatives of $T^{j0}$, and then a partial integration will swap the derivative between the energy-momentum tensor and gravitational potential.
+To do this, firstly the $00$-element of the energy-momentum tensor will be expressed in terms of derivatives of $T^{j0}$, and then a partial integration will swap the derivative between the energy-momentum tensor and gravitational potential.
 Note first that in the flat system the conservation law of the  energy and momentum is simply%
 \footnote{We used the conservation law of the energy-momentum tensor \( \partial_{\mu}T^{\mu\nu}=0 \), and \( \partial_0 = \partial_t /v_F \).}
 \begin{equation}
@@ -407,7 +407,7 @@ By Luttinger's relation
   },
 \end{equation}
 where care must be taken to distinguish the energy-momentum tensor $T^{j0}$ and the temperature $T$, differentiated by the indices, or lack thereof.
-\todo{Check the sign here. Depending on how we understand Luttinger's method, it should be positive or negative.}
+\todo{Check the sign here. Depending on how we understand Luttinger's method, it should be positive or negative.}%
 
 
 % \todo{The following section might  be moved. If we want it, need to unify. See park}

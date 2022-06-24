@@ -13,12 +13,13 @@ Due to the nature of the work, certain sections are rather technical.
 For the benefit of the reader, we have included summaries of intermediate results, enabling the reader to skip the more technical parts.
 In particular, the latter part of \cref{sec:ll-tilt} and \cref{sec:explicit-form-tilt} may be skipped without much loss.
 
-We will find the current response of a single Dirac cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
+We will find the current response of a single Weyl cone, with a temperature gradient $\nabla_y T$ and a magnetic field $B_z$.
 The current response of interest in the given geometry is thus in the $x$-direction,
 \begin{equation}\label{eq:20}
   J^x = \chi ^{xy} \left( \frac{- \nabla _yT}{T} \right),
 \end{equation}
-with $\chi^{xy}$  being the response function.\footnote{The sign in \cref{eq:20} depends on the choice of the response function being the response of the gravitational potential or the temperature gradient. Thus, the sign may differ in the literature.}
+with $\chi^{xy}$  being the response function.%
+\footnote{The sign in \cref{eq:20} may differ in the literature due to different sign conventions, as noted in~\cite{arjonaFingerprintsConformalAnomaly2019}. We follow that of \cite{arjonaFingerprintsConformalAnomaly2019}, differing from \cite{chernodubGenerationNernstCurrent2018}.}
 This geometry is shown in \cref{fig:setup}.
 \begin{figure}[ht]
   \centering
@@ -30,7 +31,7 @@ This geometry is shown in \cref{fig:setup}.
   }
   \caption{Sketch of the geometry used in the derivation. Note that we consider only bulk response, and the finite sample is only for illustration purposes. \label{fig:setup}}
 \end{figure}
-For the untilted case, the response was first calculated by~\textcite{chernodubGenerationNernstCurrent2018} by direct application of the scale magnetic effect~\cite{chernodubAnomalousTransportDue2016} to thermally perturbed condensed matter systems using the Luttinger formalism, where the response function
+For the untilted case, the first calculation by~\textcite{chernodubGenerationNernstCurrent2018} used direct application of the scale magnetic effect~\cite{chernodubAnomalousTransportDue2016} to thermally perturbed condensed matter systems using the Luttinger formalism, where the response function
 \begin{equation}
   \chi ^{xy} = \frac{e^2 v_F B}{18 \pi ^2 \hbar }
 \end{equation}
@@ -50,7 +51,7 @@ The perpendicular component is, in the given geometry, thus in the \( xy \)-plan
 In this work, we have restricted the perpendicular component to be parallel%
 \footnote{Parallel is here taken to mean ``proportional to'', i.e. either parallel or antiparallel.}
 to the charge current.
-The first part of the calculation, however, is general for any tilt, and the specializtion to \( \vec{t}_{\perp} = t_{\perp} \hat{x} \) is first made in \cref{sec:response:tilt}.
+The first part of the calculation, however, is general for any tilt, and the specialization to \( \vec{t}_{\perp} = t_{\perp} \hat{x} \) is first made in \cref{sec:response:tilt}.
 
 Recall the linear response from the Kubo formalism in \cref{eq:current-luttinger-final}, found through Luttinger's approach.
 \begin{equation}
@@ -70,8 +71,8 @@ Recall the linear response from the Kubo formalism in \cref{eq:current-luttinger
   \left( \frac{- \partial' _{j} T(t', \vec{r}')}{T} \right),
 \end{equation}
 where, as before, \( \partial'_j = \partial / \partial r'_j \).
-Fourier transforming now to the frequency and momentum domain, will be beneficial in our calculations.
-As before, the non-perturbed system will be taken to be time and position invariant, such that the correlator in \cref{eq:21} can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
+Fourier transforming to the frequency and momentum domain will be beneficial in our calculations.
+The non-perturbed system will be taken to be time and position invariant, such that the correlator in \cref{eq:21} can be taken to depend only on the differences $t-t''$ and $\vec{r} - \vec{r}' $.
 Starting with Fourier transforming the position part, notice that the structure of \cref{eq:21} is
 \[
   \braket{J^i}(\vec{r}) = \int \mathrm{d} \vec{r}' \chi (\vec{r} - \vec{r}') \left(-\frac{\partial _j' T(\vec{r}')}{ T} \right),
@@ -173,13 +174,13 @@ The result from the Kubo calculation is therefore the actual transport current.
 
 
 \subsection{Comment on the energy-momentum tensor}\label{sec:commen-T}
-There is some ambiguity regarding the definition of the energy-momentum tensor~\cites{kachelriessQuantumFieldsHubble2018}{chernodubThermalTransportGeometry2021}{vanderwurffMagnetovorticalThermoelectricTransport2019}{forgerCurrentsEnergyMomentumTensor2004}.
+There is some ambiguity regarding the definition of the energy-momentum tensor~\cite{kachelriessQuantumFieldsHubble2018,chernodubThermalTransportGeometry2021,vanderwurffMagnetovorticalThermoelectricTransport2019,forgerCurrentsEnergyMomentumTensor2004}.
 The \emph{canonical} energy-momentum tensor, derived from the Lagrangian formalism, is defined as
 \begin{equation}
 	T^{\mu \nu } = \frac{\partial \mathcal{L}}{\partial \partial _{\mu } \psi_i } \partial ^{\nu } \psi_i - \eta^{\mu \nu } \mathcal{L}.
 \end{equation}
 On the other hand, from general relativity, the \emph{dynamical} energy-momentum tensor is defined by the variation of the (matter) action with respect to the metric~\cite{kachelriessQuantumFieldsHubble2018}
-\todo{Signs depend on choice of g}
+\todo{Signs depend on choice of g}%
 \begin{equation}
 	T_{\text{dyn}}^{\mu \nu} = \frac{2}{\sqrt{g} } \frac{\delta S}{\delta g_{\mu \nu}}.
 \end{equation}
@@ -286,7 +287,7 @@ it is not difficult to show that
   F^{(2)} = \epsilon_{\kappa_z m s} + \epsilon_{\kappa_z n s} = F^{(1)}.
 \end{equation}
 
-A tilt vector parallel to the magnetic field \( \vec{t} \parallel \vec{B} \) does not alter the eigenstates, it only changes the eigenvalues by a factor \( t v_F k_z \)~\cites{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
+A tilt vector parallel to the magnetic field \( \vec{t} \parallel \vec{B} \) does not alter the eigenstates, it only changes the eigenvalues by a factor \( t v_F k_z \)~\cite{yuPredictedUnusualMagnetoresponse2016,tchoumakovMagneticFieldInducedRelativisticProperties2016}, as we will show later.
 The results from the untilted case may thus be applied directly, with rescaled energies.
 As the normalization factor \( \alpha_{\kappa_z m s} \) is invariant under the tilt, \( F^{(2)} \) does not change.
 However, \( F^{(1)} \) changes to

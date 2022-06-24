@@ -47,7 +47,7 @@ By the product rule it follows that
   = \partial_{\mu} \left( \frac{\delta \mathcal{L}}{\delta\partial_{\mu}\phi_a} \delta\phi_a \right).
 \end{equation}
 Thus, we see that the quantity in the parenthesis after the last equality must be conserved.
-We denote this quantity $j^{\mu}$, and call it a \emph{current}.
+We denote this quantity $j^{\mu}$ and call it a \emph{current}.
 
 So far, we have the result that for any variation $\delta \phi_a$ that leave the Lagrangian invariant, there is a conserved current
 \begin{equation}
@@ -83,9 +83,9 @@ In 1+1 dimensions they have the energy dispersion
 \]
 where the $\pm$ indicates positive and negative energy solutions.
 Consider the case now in the Dirac sea picture.
-The negative energy solutions, antiparticles in high energy physics  and holes in condensed matter physics, are all filled, with the energy band going to $\pm \infty $ momentum.
+The negative energy solutions, antiparticles in high energy physics and holes in condensed matter physics, are all filled, with the energy band going to $\pm \infty $ momentum.
 The particles with energy $\epsilon  = +p$ are right-moving solutions, while $\epsilon  = -p$ represent left-moving solutions.
-Note that in this language, an antiparticle with negative momentum, is right moving, and of course a particle with positive momentum is right moving.
+Note that in this language, an antiparticle with negative momentum, is right moving, and of course, a particle with positive momentum is right moving.
 The situation is shown in the left pane of \cref{fig:chiral-dispersion}.
 Introduce now an electric field \(E\).
 This will cause the states to shift, according to $\dot{p} = e E$, with $e$ being the electric coupling, which is here taken to be the fundamental charge;
@@ -198,8 +198,8 @@ It can be shown that the associated conserved Noether currents are the vector cu
 In the following, we will show that the two currents \emph{cannot} be simultaneously conserved -- that is the chiral anomaly.
 As is often the case, there are many ways to do this.
 For example, one could show directly that the measure of the path integral is not invariant under a transformation.
-We will, however, show it in a somewhat crude way, but where there are no complicated formal considerations, only brute force calculation which is hopefully more readily appreciated by those not familiar to the concept.
-The calculation also has some historical importance, as the problem we will solve is in fact exactly the same as the problem that led to the discovery of anomalies~\cite{adlerAxialVectorVertexSpinor1969,bellPCACPuzzleP01969}!%
+We will, however, show it in a somewhat crude way, but where there are no complicated formal considerations, only brute force calculation which is hopefully more readily appreciated by those not familiar with the concept.
+The calculation also has some historical importance, as the problem we will solve is exactly the same as the problem that led to the discovery of anomalies~\cite{adlerAxialVectorVertexSpinor1969,bellPCACPuzzleP01969}!%
 \footnote{The anomaly was discovered independently by \textcite{adlerAxialVectorVertexSpinor1969} and \textcite{bellPCACPuzzleP01969} in 1969. See~\textcite{tongGaugeTheoryLecture} for a more in-depth historic commentary.}
 
 
@@ -266,9 +266,9 @@ Consider the criterion for the vector current to be conserved
   \right)
   = 0.
 \end{equation}
-When calculating the integral it might be tempting to simply perform a change of variables, rendering the two terms equal and thus concluding that the criterion  is met.
+When calculating the integral it might be tempting to simply perform a change of variables, rendering the two terms equal and thus concluding that the criterion is met.
 However, we must notice that the integrand goes like $1 / p^2$ while the boundary surface of a 3-sphere is proportional to $p^3$.
-The boundary terms does therefore not vanish, and there is an extra term associated with performing such a change of variables.
+The boundary terms do therefore not vanish, and there is an extra term associated with performing such a change of variables.
 
 Consider that we want to integrate over the function $f$
 \begin{equation}
@@ -282,7 +282,7 @@ We will calculate
 where we in the first term has ``naively'' performed a change of variables, without considering the boundary terms.
 Thus, the result of this integral is indeed the boundary terms.
 Firstly, we will perform a Wick rotation into Euclidean space
-\todo{some note about why this is allowd, i.e. that there exists some Feynamn parametrization for the}
+\todo{some note about why this is allowd, i.e. that there exists some Feynamn parametrization for the}%
 \begin{equation}
   \int \mathrm{d}^d_Ep \left[ f(p+a) - f(p) \right]
   = \int \mathrm{d}_E^d p \left[ a^{\mu }\partial_{\mu} f(p) + \dots \right].
@@ -353,7 +353,7 @@ Now, \cref{eq:criterion-conserved} becomes
   2\pi^2P^3
   = \frac{ i \epsilon ^{\lambda \nu \tau \sigma } }{8\pi^2}  k_{2\tau }k_{2\sigma }.
 \end{equation}
-\todo{Check there is not misssing a -1 in last espression}
+\todo{Check there is not misssing a -1 in last espression}%
 Where we used that the only term contributing is the $p_{\sigma }$, as the term with $k_{1\sigma }$ goes like $P^{-1}$.
 Our results differ depending on the non-physical shift of variables!
 As is shown by several textbooks, see~\cite{zeeQuantumFieldTheory2010,kachelriessQuantumFieldsHubble2018}, this comes from the fact that the integral we started with is in fact linearly divergent -- its value is not well-defined.
@@ -417,7 +417,7 @@ Thus, by \cref{eq:shift-trickery},
   &= - \frac{ia_{\sigma }}{8 \pi^2}\epsilon ^{\sigma \nu \mu \lambda } +  \{(k_1,\mu ) \leftrightarrow (k_2, \nu )\}.
   \end{split}
 \end{equation}
-\todo{Figure out if there is missing an overall minus sign}
+\todo{Figure out if there is missing an overall minus sign}%
 
 Now is the time to take a break from the calculations and consider in some detail what this result means, before we will finally carry out the derivation to its end and show the anomaly.
 A priori $\mathcal{A}^{\lambda \mu \nu }(a, k_1, k_2)$ should be just as valid as $\mathcal{A}^{\lambda \mu \nu }(k_1,  k_2)$, i.e. setting $a=0$.
@@ -434,7 +434,7 @@ $p$ is simply a name by which we denote the moment transfer in our diagram.
   \end{split}
 \end{equation}
 we see that the criterion for vector current conservation, \cref{eq:criterion-conserved}, may or may not be met depending on our choice of $a$!
-\todo{Should this be related to counter terms as Kachelriess does? What does it really mean that we have to choose some shift}
+\todo{Should this be related to counter terms as Kachelriess does? What does it really mean that we have to choose some shift}%
 Owning to a trick from~\textcite{zeeQuantumFieldTheory2010}, we will show that the resolve of this is to chose one particular $a$, and the choice will be that $a$ which preserves the consistency of our theory.
 Now, this may indeed seem both strange and ad-hoc, how can we justify \emph{choosing} some parameter to get the result we want?
 This is, in fact, common in \gls{qft}.
@@ -455,8 +455,8 @@ Thus,
   \end{split}
 \end{equation}
 Here we inserted our previous result for $k_{1\mu }\mathcal{A}^{\lambda \mu \nu }$ given in \cref{eq:criterion-conserved-simp}.
-In the last equation we used that $k_{1\sigma }k_{1\mu }$ vanishes when contracted with the Levi Cevita symbol, and relabeled the dummy indices.
-It is now  apparent that choosing $\beta = -1 / 2$ makes the criterion for conservation of vector current hold!
+In the last equality, we used that $k_{1\sigma }k_{1\mu }$ vanishes when contracted with the Levi Cevita symbol, and relabeled the dummy indices.
+It is now apparent that choosing $\beta = -1 / 2$ makes the criterion for conservation of vector current hold!
 
 By choosing the shift appropriately, the vector current is preserved.
 However, it does come at a price.
@@ -471,7 +471,7 @@ This is the chiral anomaly.
 
 We could have, of course, instead chosen $\beta $ such that the axial current is conserved, at the expense of the conservation of the vector current.
 However, as~\textcite{zeeQuantumFieldTheory2010} describes, this would have catastrophic consequences, rendering the entire theory useless.
-A non-conserved vector current, would make the fermion number not conserved, clearly non-acceptable.
+A non-conserved vector current would make the fermion number not conserved, clearly non-acceptable.
 We therefore chose to sacrifice the axial current instead of the vector current.
 
 
@@ -531,7 +531,7 @@ Due to this, the conformal anomaly is also often referred to as the trace anomal
 % Firstly, an intuitive and quick explanation for why the loop effect breaks the symmetry will be given, and then a more lengthy calculation showing this explicitly.
 Recall that when calculating the propagators of the \gls{qed} theory, we end up with infinities.
 These, we regularize and renormalize, for example with dimensional regularization or UV-cutoff.
-In any case, this introduces some dimensionfull scale, $\mu $, the renormalization scale and the cutoff energy respectively for the regulators mentioned.
+In any case, this introduces some dimensionful scale, $\mu $, the renormalization scale and the cutoff energy respectively for the regulators mentioned.
 This scale dependence is encoded in the beta function of the theory, encoding the dependence of the coupling $e$ on the scale,
 \begin{equation}
   \beta (e) = \frac{\partial e}{\partial \log \mu };

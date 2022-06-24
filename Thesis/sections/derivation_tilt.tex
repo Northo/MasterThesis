@@ -40,7 +40,7 @@ With the previously found solution \(\theta = - \tanh ^{-1} t^s_{x}\), we get th
 \]
 Where we in the untilted case only have off-diagonal contributions from \( \sigma_x \), the hyperbolic rotation gives contributions on the diagonal as well.
 
-First of all, let us consider the exponent of the product.
+First, let us consider the exponent of the product.
 We want to complete the square similarly to what was done for the untilted cone in \cref{sec:notilt:explicit}.
 Due to the extra term in \(\chi\), this becomes more elaborate.
 The exponent in the current matrix element \cref{eq:tilt:currentExpr} is of course
@@ -667,7 +667,7 @@ We will here consider which of those simplifications apply also in the case of t
 
 Under the transformation \( (m,n,\kappa_z) \mapsto (-m, -n , -\kappa_z) \), the factors of the integrand \( \xi(\kappa_z, m, n), \epsilon_{\kappa_z m s}, \alpha_{\kappa_z m s} \) are all still odd, and so the integrand is invariant under such a transformation.
 As the integral is over all \( \kappa_z \), we may therefore consider only half the \( m,n \) plane, as was the case in the untilted case.
-However, in the untilted case, the sum was restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energy of opposite signs.
+However, in the untilted case, the sum was restricted to only one quadrant, as at \( T\to 0 \) the transitions must be between states with energies of opposite signs.
 In the case of Type-II systems, this requirement does not restrict the sum to one quadrant.
 It is thus convenient to consider Type-I and Type-II separately.
 
@@ -715,7 +715,7 @@ and the contribution from each term of the sum
 \end{multline}
 where we used the selection rule of the sum \( N = M - 1 \) and \( m>0, n<0 \).
 This contribution is shown in \cref{fig:divergent-factor}.
-The contribution \eqref{eq:125} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancel.
+The contribution \eqref{eq:125} is odd in \( t_z \), and so for systems with broken inversion symmetry, the total contribution from two cones cancels.
 
 Assuming \( \Lambda \gg 1 \) the expression is approximated by
 \begin{equation}
@@ -821,7 +821,7 @@ Consult \cref{tab:typeii-expressions} to find the appropriate expressions for po
 \section{Results}
 In the static and local limit $\lim_{\omega \to 0} \lim_{\vec{q}\to 0}$ the  transverse response function $\chi^{xy}$ of the charge current to a temperature perturbation
 \begin{equation}
-  J^x = \chi^{xy} \frac{- \nabla^y T}{T}
+  J^x = \chi^{xy} \left( \frac{- \nabla^y T}{T} \right)
 \end{equation}
 from a single Weyl cone was found  to be
 \begin{equation}
@@ -832,6 +832,7 @@ from a single Weyl cone was found  to be
   \frac{e^2 B v_F}{2 (2\pi )^2 \hbar },
 \end{equation}
 with $\gamma _{\bar{N}}$ a prefactor dependent on the chirality \( s \), the tilt \( \vec{t} \), and  how many Landau levels \( \bar{N} \) are included in the final evaluation of the response function.
+Here we have also reinserted the explicit \( \hbar \).
 
 In general, the prefactor \( \gamma_{\bar{N}} \) diverges as $\bar{N} \to \infty$.
 However, not all Landau levels are filled, and thus the sum should not be taken to all levels.
@@ -989,7 +990,7 @@ In the large cutoff limit, \( \Lambda \gg 1 \), expanding and dropping terms \( 
 The first term, independent of \( \Lambda \), is a negative factor that decreases as \( \bar{N} \) increases, and goes like \( -\log \bar{N} \) for large \( \bar{N} \).
 The contribution is proportional to \( t_z \), i.e. there is no even component, so for systems with broken inversion symmetry, the two chiralities cancel, and the response is equal to the untilted case.
 In the case of inversion symmetry, the contributions from the two chiralities are equal and add up.
-The contribution has the same sign as the tilt, and the magnitude depends on the landau cutoff \( N \) and momentum cutoff~\( \Lambda \).
+The contribution has the same sign as the tilt, and the magnitude depends on the Landau cutoff \( N \) and momentum cutoff~\( \Lambda \).
 \nowidow[3]
 
 \begin{figure}[htb]
@@ -1055,7 +1056,7 @@ A schematic plot of all the contributions of a parallel tilt is shown in \cref{f
 In systems with broken inversion symmetry, where only the even contribution survives, we see that in the Type-I regime, the response is independent of the tilt \( t_z \).
 In the Type-II regime, the response has the opposite sign, and is heavily reduced in magnitude;
 for a sufficiently large magnetic field, when only the zeroth Landau level is filled, the effect is non-existent.
-In inversion symmetric systems, however, also the odd component contributes.
+However, in inversion symmetric systems also the odd component contributes.
 In the Type-I regime, there is a contribution linear in \( t_z \) dependent on the momentum cutoff \( \Lambda = k^{\text{cutoff}} /\sqrt{2 eB}   \), with the same sign as \( t_z \).
 Fixing the magnitude of the term, equivalently fixing the momentum cutoff, has not been done.
 In the Type-II regime, close to the Lifshitz transition (\( t_z = 1 \)), the result is divergent, which we expect is a non-physical discrepancy caused by the non-validity of the linear model.
@@ -1071,7 +1072,7 @@ As the density of states is finite, there is some finite energy related to the s
 It is then a valid question to ask if the effect is indeed of conformal anomaly origin;
 the scale invariance of the system is broken by the energy scale introduced by the density of states, and so the anomaly itself is also broken.
 This is especially pertinent in light of the non-physical behavior seen around the Lifshitz transition;
-in the transition from Type-I to Type-II the chiral anomaly is not broken, and chiral anomaly effects have been found to have analytical behavior in the transition, even for the linear model~\cite{sharmaChiralAnomalyLongitudinal2017}.
+in the transition from Type-I to Type-II, the chiral anomaly is not broken, and chiral anomaly effects have been found to have analytical behavior in the transition, even for the linear model~\cite{sharmaChiralAnomalyLongitudinal2017}.
 This is still an open question.
 
 
