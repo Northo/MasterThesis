@@ -325,12 +325,14 @@ Having a non-zero potential is very interesting, as this drastically changes the
 ** TODO Check discussion about Dirac T valid
 Anticommutation grassman etc
 
-* TODOS [17/24]
-** TODO Summary
+* TODOS [18/25]
+** DONE Summary
 - To include the introductory sentence or to not include the introductory sentence, that is the question.
 ** DONE Introduction
 - Is it clear what we set out to do?
 ** DONE Intro ch. 4
+** TODO Cutoff
+- The untitled integral converges very quickly in kappa, so the cutoff does not affect it much
 ** TODO Results
 - Comment on the cutoff in any way?
 ** TODO Conclusion

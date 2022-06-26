@@ -11,7 +11,7 @@ captions=tableheading,
 \usepackage{etoolbox}
 \newtoggle{full-size-image}  % from etoolbox
 \newtoggle{print}
-\settoggle{full-size-image}{false}
+\settoggle{full-size-image}{true}
 \settoggle{print}{false}
 
 \input{preamble}
@@ -20,16 +20,16 @@ captions=tableheading,
 % \includeonly{sections/derivation_tilt}
 
 \begin{document}
-% \includepdf{frontpagethesis.pdf}
 \frontmatter
+\includepdf[pages=-]{frontpagethesis.pdf}
 \KOMAoptions{open=any}
 \input{sections/summary}  % English and norwegian
+\KOMAoptions{open=right}  % summary and oppsumering on same sheet
 \input{conventionsAndSymbols}
 
 \tableofcontents
 
 \mainmatter
-\KOMAoptions{open=right}
 \input{sections/introduction}
 % \part{Background material}
 
@@ -92,5 +92,5 @@ Some topics discussed are directly applicable to the thesis, while others are in
 \nocite{Mathematica}
 \printbibliography[heading=bibintoc]
 
-% \includepdf{endpagethesis.pdf}
+\includepdf{endpagethesis.pdf}
 \end{document}
