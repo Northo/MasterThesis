@@ -1,7 +1,6 @@
 \documentclass[
 % draft,
 fontsize=11pt,
-% oneside,
 paper=B5,
 % DIV=13,
 BCOR=5mm,
@@ -12,7 +11,13 @@ captions=tableheading,
 \newtoggle{full-size-image}  % from etoolbox
 \newtoggle{print}
 \settoggle{full-size-image}{true}
-\settoggle{print}{false}
+\settoggle{print}{true}
+
+\iftoggle{print}{}{
+\KOMAoptions{twoside=false}
+\setlength\evensidemargin{-17pt}
+\setlength\oddsidemargin{-17pt}
+}
 
 \input{preamble}
 \input{definitions}

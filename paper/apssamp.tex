@@ -48,9 +48,11 @@
 \renewcommand\vec\bm  % Bold vector instead of arrow
 \DeclareMathOperator\sign{sign}
 \usepackage{braket}
-\usepackage{subcaption}
+\usepackage[caption=false]{subfig}
 \usepackage{microtype}
+\usepackage[acronym]{glossaries}
 \usepackage{hyperref}% add hypertext capabilities
+\usepackage{cleveref}
 %\usepackage[mathlines]{lineno}% Enable numbering of text and display math
 %\linenumbers\relax % Commence numbering lines
 
@@ -68,6 +70,7 @@
   \colorbox{#1}{\parbox{\dimexpr\linewidth-2\fboxsep}{\strut #2\strut}}%
 }
 \newcommand{\todo}[2][orange]{\hfill\break{\bfseries\cbox[#1]{#2}}\break}
+\newacronym{ll}{LL}{Landau level}
 
 \begin{document}
 
@@ -165,7 +168,7 @@ where \( \hbar = 1 \).
 The charge current operator
 \begin{equation}
   \label{eq:current-op}
-  \vec{J} = e v_F (s \vec{\sigma} + \vec{t}^s).
+  \vec{J}_s = e v_F (s \vec{\sigma} + \vec{t}^s).
 \end{equation}
 For the energy-momentum tensor choose
 \footnote{TODO: add some discussion here or in appendix}
@@ -178,7 +181,9 @@ For the energy-momentum tensor choose
   -\eta^{\mu \nu} \mathcal{L}
   ),
 \end{equation}
-where we have defined the modified Pauli matrices \( \tilde{\sigma} ^{\mu} = \sigma^{\mu} + (t^s)^{\mu} \) with \( (t^s)^{\mu} = (0, \vec{t}^s) \).
+where we have defined the modified Pauli matrices%
+\footnote{See \cref{sec:tilt-metric}.}
+\( \tilde{\sigma} ^{\mu} = \sigma^{\mu} + (t^s)^{\mu} \) with \( (t^s)^{\mu} = (0, \vec{t}^s) \).
 
 For concreteness, we will, without loss of generality, consider the geometry \( \vec{J} \parallel \hat{x}, -\nabla T \parallel \hat{y}, \vec{B} \parallel \hat{z} \).
 We separate between \emph{perpendicular} and \emph{parallel} tilt, with the former being \( \vec{t} \perp \vec{B}
@@ -186,7 +191,7 @@ We separate between \emph{perpendicular} and \emph{parallel} tilt, with the form
 In the current work we have furthermore restricted the perpendicular tilt to be parallel to the current, i.e. \( \vec{t}_{\perp} = t_x \hat{x} \).
 
 \subsection{Landau levels}
-The Landau levels can be shown to be
+The \glspl{ll} can be shown to be
 \begin{equation}
   \label{eq:eigenlevels}
   E_{k_z m s} =
@@ -211,11 +216,8 @@ In the local limit \( \vec{q} \to 0 \) we find
 \begin{align}
   \label{eq:1}
   J_{k_z m n s} &= \Gamma_{k_z m n s} s v_F e ( \alpha_{k_z m s } \delta_{M-1, N} + m \leftrightarrow n),\\
-  T_{k_z m n s}^{0y} &=
-                       \begin{multlined}[t]
-                         \frac{i s \Gamma_{k_z m n s}}{4} (E_{k_z m s} + E_{k_z n s} - 2 \mu )\\
-                         \times (\alpha_{k_z m s} \delta_{M-1, N} - m \leftrightarrow n),
-                       \end{multlined}
+  T_{k_z m n s}^{0y} &= \frac{i s \Gamma_{k_z m n s}}{4} (E_{k_z m s} + E_{k_z n s} - 2 \mu )\\
+                  \nonumber&\quad\times (\alpha_{k_z m s} \delta_{M-1, N} - m \leftrightarrow n),
 \end{align}
 where \( m \leftrightarrow n  \) represents the preceding term under the interchange of \( m,n \), and we have defined \( \Gamma_{\kappa_z m n s} = \left[(\alpha_{k_z m s}^2 + 1) (\alpha{k_z n s}^2 + 1)\right]^{-\frac{1}{2}} \).
 
@@ -227,26 +229,26 @@ We find the response in the limit \( T\to 0 \) and with zero chemical potential 
   \chi^{xy} =
   \gamma_{N} \frac{e^2 v_F B}{(2\pi)^2},
 \end{equation}
-where \( \gamma_N \) is a term generally depending on the number of Landau levels included in the sum, and the tilting vector \( \vec{t} \).
+where \( \gamma_N \) is a term generally depending on the number of \glspl{ll} included in the sum, and the tilting vector \( \vec{t} \).
 
 The case of no tilt was first solved by \textcite{chernodubGenerationNernstCurrent2018} and then using Kubo formalism by \textcite{arjonaFingerprintsConformalAnomaly2019}.
 We have simplified their computation and found an analytical expression for the prefactor, with the iterative expression
 \begin{equation}
   \label{eq:2}
-  \gamma_{N} - \gamma_{N-1} = \frac{1}{4} \left[ 1 + 2 N \left\{ 1 - (1+N) \log \left(1 + \frac{1}{N}\right) \right\} \right],
+  \gamma_{\bar{N}} - \gamma_{\bar{N}-1} = \frac{1}{4} \left[ 1 + 2 \bar{N} \left\{ 1 - (1+\bar{N}) \log \left(1 + \frac{1}{\bar{N}}\right) \right\} \right],
 \end{equation}
-for \( N>0 \), and \( \gamma_0 = \frac{1}{4} \).
+for \( \bar{N}>0 \), and \( \gamma_0 = \frac{1}{4} \).
 It can be shown that
 \begin{multline}
   \label{eq:4}
-  \gamma_N = \gamma_0 + \frac{1}{12} \Big(
-    6 \zeta ^{(1,0)}(-2,N+1)
-    -6 \zeta ^{(1,0)}(-2,N+2)\\
-    +6 \zeta^{(1,0)}(-1,N+1)
-    + 6 \zeta^{(1,0)}(-1,N+2)\\
+  \gamma_{\bar{N}} = \gamma_0 + \frac{1}{12} \Big(
+    6 \zeta ^{(1,0)}(-2,\bar{N}+1)
+    -6 \zeta ^{(1,0)}(-2,\bar{N}+2)\\
+    +6 \zeta^{(1,0)}(-1,\bar{N}+1)
+    + 6 \zeta^{(1,0)}(-1,\bar{N}+2)\\
     +12 \log (\xi)
-    +3 N^2
-    +6 N
+    +3 \bar{N}^2
+    +6 \bar{N}
     -1
   \Big),
 \end{multline}
@@ -268,8 +270,25 @@ All results will be given in terms of these components, at \( t_{x /y} > 0 \).
 
 \subsection{Perpendicular tilt}
 We found the response to be even in \( t_x \), and independent of the chirality \( s \).
-The response was solved numerically and is shown in figure \ref{fig:contribtx}.
+The response was solved numerically and is shown in \cref{fig:contribtx}.
 As the tilt is increased, the response is gradually reduced.
+
+\subsubsection{Including only 0 to n transitions}
+In these calculations, there is always the need to cap the \glspl{ll} included.
+In the results above, the \glspl{ll} were capped by considering all transitions between \glspl{ll} below some cutoff level \( \bar{N} \).
+In the untilted case, in the deep quantum limit were only the lowest \gls{ll} is filled, one considers the only the \( 0\to \pm 1 \) transition.
+In the case of perpendicular tilt, however, where the dipolar selection rule \( M=N+1 \) is broken, it might be reasonable to consider all transitions \( 0\to n \; |n| < \bar{N} \).
+Doing this, yields a very interesting result.
+Instead of the response begin strictly decreasing as a function of the tilt \( t_\perp \), there is a maximum at non-zero tilt, as shown in \cref{fig:0tontx}.
+\begin{figure}[htb]
+  \centering
+  \vspace{0.5em} % fix overlap
+  \includegraphics[width=.7\columnwidth]{figures/contribtx-zerothll}
+  \caption{Numerically computed values of the prefactor \( \gamma_{\bar{N}} \) with only the \( \bar{N}\) lowest, \( 0\to n\) transitions included for perpendicular tilt \( t_x \).
+    The contribution is even in \( t_x \), and vanish as \( |t_x| \to 1 \).
+    For clarity, only every 4th mark is drawn.\label{fig:0tontx}}
+\end{figure}
+
 
 \subsection{Parallel tilt}
 In the Type-I regime, the response has an extra term compared to the untilted case, \( \gamma_N = \gamma^{0}_{N} + \gamma_{\text{div}, N} \), with \( \gamma_N^0 \) the untitled response and
@@ -310,23 +329,23 @@ The zeroth transition \( 0 \to 1 \) was found to be
   \left( |t_z| \sinh^{-1} \left(\frac{1}{\sqrt{t_{z}^2 -1} }\right) -1 \right).
 \end{equation}
 The higher order contributions were also computed analytically, with very lengthy expressions.
-A schematic summary of all the contributions are given in figure \ref{fig:schematic_tz}.
+A schematic summary of all the contributions are given in \cref{fig:schematic_tz}.
 
 
-\begin{figure}[p]
-\subcaptionbox{Type-I}{
-    \includegraphics[width=.8\columnwidth]{figures/divergentContribCutoff}
+\begin{figure*}[p]
+\subfloat[Type-I]{
+    \includegraphics[width=.3\textwidth]{figures/divergentContribCutoff}
 }
-\subcaptionbox{Type-II inter band}{
-    \includegraphics[width=.8\columnwidth]{figures/tzcontribtypeii}
+\subfloat[Type-II inter band]{
+    \includegraphics[width=.3\textwidth]{figures/tzcontribtypeii}
 }
-\subcaptionbox{Type-II intraband}{
-    \includegraphics[width=.8\columnwidth]{figures/tzcontribtypeii_intraband}
+\subfloat[Type-II intraband]{
+    \includegraphics[width=.3\textwidth]{figures/tzcontribtypeii_intraband}
 }
 \caption{Contributions in for parallel tilt, for Type-I and Type-II.
   Components even in \( t_z \) are given in solid line, while odd components are given in dashed line.
 }
-\end{figure}
+\end{figure*}
 
 \begin{figure*}[p]
   \centering
@@ -341,12 +360,19 @@ A schematic summary of all the contributions are given in figure \ref{fig:schema
   \caption{\label{fig:contribtx}Contribution as a function of number of Landau levels N for various values of \(t_x\).}
 \end{figure*}
 
+\appendix
+\section{Formulation of tilt as non-flat metric}\label{sec:tilt-metric}
+In the main text, we included the tilt explicitly in the Lagrangian, through \emph{modified} Pauli matrices, similar to what \textcite{vanderwurffMagnetovorticalThermoelectricTransport2019} did.
+However, we may instead incldue the tilt in the metric, leaving to explicit tilt in the Lagrangian itself.
+Let \( g^{\mu \nu} = \eta^{\mu \nu} + t^{\mu} \delta^{\nu}_0 \), where \( \eta \) is the Minkowski-metric. Thus,
+\begin{equation}
+  \label{eq:8}
+  \mathcal{L}
+  = \phi^{\dagger} g^{\mu \lambda} \sigma_{\lambda} \partial_{\mu} \phi
+  = \phi^{\dagger}(\sigma^{\mu} + t^{\mu}) \partial_{\mu} \phi.
+\end{equation}
+Note, importantly, that the metric is \emph{not} symmetric.
 
-% The \nocite command causes all entries in a bibliography to be printed out
-% whether or not they are actually referenced in the text. This is appropriate
-% for the sample file to show the different styles of references, but authors
-% most likely will not want to use it.
-\nocite{*}
 
 % \bibliography{apssamp}% Produces the bibliography via BibTeX.
 \bibliography{Master.bib}% Produces the bibliography via BibTeX.
