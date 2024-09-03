@@ -11,7 +11,7 @@ captions=tableheading,
 \newtoggle{full-size-image}  % from etoolbox
 \newtoggle{print}
 \settoggle{full-size-image}{true}
-\settoggle{print}{true}
+\input{set_print_toggle}  % for easily changin in scripts
 
 \iftoggle{print}{}{
 \KOMAoptions{twoside=false}
