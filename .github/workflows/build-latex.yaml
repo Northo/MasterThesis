@@ -42,7 +42,7 @@ jobs:
           name: PDF-print
       - name: Make montage
         run: >-
-          convert -density 150 "PDF-print/master.pdf[0,36,38,52]" -alpha remove -border 10x10 out.png
+          convert -density 150 "master.pdf[0,36,38,52]" -alpha remove -border 10x10 out.png
           convert montage -geometry +5+5 out-* example.png
       - uses: EndBug/add-and-commit@v9
         with:
