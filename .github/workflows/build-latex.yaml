@@ -22,6 +22,24 @@ jobs:
         with:
           name: PDF-${{ matrix.print && 'print' || 'digital' }}
           path: Thesis/master.pdf
+  create-preview:
+    runs-on: ubuntu-latest
+    needs: build-latex
+    steps:
+      - name: Download PDF
+        uses: actions/download-artifact@v4
+        with:
+          name: PDF-print
+      - name: Make montage
+        run: >-
+          magick -density 150 "PDF-print/master.pdf[0,36,38,52]" -alpha remove -border 10x10 out.png
+          magick montage -geometry +5+5 out-* example.png
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: example.png
+          message: Generate example image
+          committer_name: GitHub Actions
+          committer_email: 41898282+github-actions[bot]@users.noreply.github.com
   release:
     runs-on: ubuntu-latest
     needs: build-latex
