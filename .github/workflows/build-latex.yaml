@@ -29,5 +29,12 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4
+      - name: Rename files
+        run: mv PDF-print/master.pdf thesis-print.pdf && mv PDF-digital/master.pdf thesis-digital.pdf
       - name: Release
         uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            thesis-print.pdf
+            thesis-digital.pdf
+
