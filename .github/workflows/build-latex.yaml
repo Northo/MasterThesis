@@ -1,4 +1,4 @@
-name: Build LaTeX document
+
 on: [push]
 jobs:
   build-latex:
@@ -10,13 +10,23 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
+      - id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: Thesis/master.pdf
+          key: thesis-${{ hashFiles('Thesis') }}
       - name: Configure print vs. digital
         run: echo "\settoggle{print}{${{ matrix.print }}}" >  Thesis/set_print_toggle.tex
       - name: Compile LaTeX document
+        if: steps.cache-primes.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           working_directory: Thesis
           root_file: master.tex
+      - uses: actions/cache/save@v4
+        with:
+          path: Thesis/master.pdf
+          key: ${{ steps.cache-restore.outputs.cache-primary-key }}
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
@@ -32,8 +42,8 @@ jobs:
           name: PDF-print
       - name: Make montage
         run: >-
-          magick -density 150 "PDF-print/master.pdf[0,36,38,52]" -alpha remove -border 10x10 out.png
-          magick montage -geometry +5+5 out-* example.png
+          convert -density 150 "PDF-print/master.pdf[0,36,38,52]" -alpha remove -border 10x10 out.png
+          convert montage -geometry +5+5 out-* example.png
       - uses: EndBug/add-and-commit@v9
         with:
           add: example.png
