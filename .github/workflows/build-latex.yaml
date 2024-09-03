@@ -18,7 +18,7 @@ jobs:
       - name: Configure print vs. digital
         run: echo "\settoggle{print}{${{ matrix.print }}}" >  Thesis/set_print_toggle.tex
       - name: Compile LaTeX document
-        if: steps.cache-primes.outputs.cache-hit != 'true'
+        if: steps.cache-restore.outputs.cache-hit != 'true'
         uses: xu-cheng/latex-action@v3
         with:
           working_directory: Thesis
